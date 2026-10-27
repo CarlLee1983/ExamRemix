@@ -1,6 +1,8 @@
 import { expect, test, type Page } from '@playwright/test';
 
 const PAPER = '/papers/sample-math/';
+// 範例試卷 sample-math 的題數
+const QUESTION_COUNT = 21;
 
 test.describe('試卷頁', () => {
   test.beforeEach(async ({ page }) => {
@@ -32,7 +34,7 @@ test.describe('試卷頁', () => {
 
   test('選擇題有作答括號、連續題號、題幹與選項', async ({ page }) => {
     const questions = page.locator('.question-choice');
-    await expect(questions).toHaveCount(21);
+    await expect(questions).toHaveCount(QUESTION_COUNT);
 
     const first = questions.first();
     await expect(first.locator('.answer-box')).toHaveText('（　）');
@@ -43,14 +45,14 @@ test.describe('試卷頁', () => {
 
     // 題號跨大題連續：第二個大題的第一題是 11
     await expect(questions.nth(10).locator('.number')).toHaveText('11.');
-    await expect(questions.last().locator('.number')).toHaveText('21.');
+    await expect(questions.last().locator('.number')).toHaveText(`${QUESTION_COUNT}.`);
   });
 
   test('每題 break-inside 為 avoid', async ({ page }) => {
     const values = await page
       .locator('.question')
       .evaluateAll((els) => els.map((el) => getComputedStyle(el).breakInside));
-    expect(values.length).toBe(21);
+    expect(values.length).toBe(QUESTION_COUNT);
     expect(new Set(values)).toEqual(new Set(['avoid']));
   });
 
@@ -85,7 +87,7 @@ test.describe('答案卷切換', () => {
     await page.goto(PAPER);
   });
 
-  const toggle = (page: Page) => page.getByRole('button', { name: /答案卷|試卷/ });
+  const toggle = (page: Page) => page.getByRole('button', { name: '顯示答案卷' });
 
   test('載入時是試卷：切換鈕未按下，答案與解析不可見', async ({ page }) => {
     await expect(toggle(page)).toHaveAttribute('aria-pressed', 'false');
@@ -98,13 +100,18 @@ test.describe('答案卷切換', () => {
     await expect(toggle(page)).toHaveAttribute('aria-pressed', 'true');
 
     const questions = page.locator('.question-choice');
-    await expect(page.locator('.answer:visible')).toHaveCount(21);
-    await expect(page.locator('.explanation:visible')).toHaveCount(21);
+    await expect(page.locator('.answer:visible')).toHaveCount(QUESTION_COUNT);
+    await expect(page.locator('.explanation:visible')).toHaveCount(QUESTION_COUNT);
 
     for (const { index, answer, explanation } of known) {
       const q = questions.nth(index);
       await expect(q.locator('.answer')).toHaveText(answer);
-      await expect(q.locator('.answer')).toHaveCSS('color', 'rgb(255, 0, 0)');
+      // 答案以醒目的顏色標示，不與題幹同色
+      const [answerColor, stemColor] = await Promise.all([
+        q.locator('.answer').evaluate((el) => getComputedStyle(el).color),
+        q.locator('.stem').evaluate((el) => getComputedStyle(el).color),
+      ]);
+      expect(answerColor).not.toBe(stemColor);
       await expect(q.locator('.explanation')).toContainText('解析：');
       await expect(q.locator('.explanation')).toContainText(explanation);
 
@@ -127,32 +134,37 @@ test.describe('答案卷切換', () => {
     await expect(page.locator('.explanation:visible')).toHaveCount(0);
   });
 
-  test('切換前後題號、題目順序與作答括號、題幹位置不變', async ({ page }) => {
-    const snapshot = async () => {
-      const numbers = await page.locator('.question .number').allTextContents();
-      const stems = await page.locator('.question .stem').allTextContents();
-      const boxes = await page.locator('.question').evaluateAll((els) =>
-        els.map((el) => {
-          const rect = (selector: string) => el.querySelector(selector)!.getBoundingClientRect();
-          return { boxWidth: rect('.answer-box').width, stemX: rect('.stem').x, numberX: rect('.number').x };
-        }),
-      );
-      return { numbers, stems: stems.map((s) => s.replace(/\s+/g, ' ')), boxes };
-    };
+  for (const media of ['screen', 'print'] as const) {
+    test(`切換前後題號、題目順序與作答括號、題幹位置不變（${media}）`, async ({ page }) => {
+      const snapshot = async () => {
+        await page.emulateMedia({ media });
+        const numbers = await page.locator('.question .number').allTextContents();
+        const stems = await page.locator('.question .stem').allTextContents();
+        const boxes = await page.locator('.question').evaluateAll((els) =>
+          els.map((el) => {
+            const rect = (selector: string) => el.querySelector(selector)!.getBoundingClientRect();
+            return { boxWidth: rect('.answer-box').width, stemX: rect('.stem').x, numberX: rect('.number').x };
+          }),
+        );
+        return { numbers, stems: stems.map((s) => s.replace(/\s+/g, ' ')), boxes };
+      };
 
-    const before = await snapshot();
-    await toggle(page).click();
-    const after = await snapshot();
+      const before = await snapshot();
+      // 列印媒體下切換鈕隱藏，切換要在螢幕媒體下做
+      await page.emulateMedia({ media: 'screen' });
+      await toggle(page).click();
+      const after = await snapshot();
 
-    expect(after.numbers).toEqual(before.numbers);
-    expect(after.stems).toEqual(before.stems);
-    expect(after.boxes.length).toBe(21);
-    after.boxes.forEach((b, i) => {
-      expect(Math.abs(b.boxWidth - before.boxes[i]!.boxWidth)).toBeLessThanOrEqual(1);
-      expect(Math.abs(b.stemX - before.boxes[i]!.stemX)).toBeLessThanOrEqual(1);
-      expect(Math.abs(b.numberX - before.boxes[i]!.numberX)).toBeLessThanOrEqual(1);
+      expect(after.numbers).toEqual(before.numbers);
+      expect(after.stems).toEqual(before.stems);
+      expect(after.boxes.length).toBe(QUESTION_COUNT);
+      after.boxes.forEach((b, i) => {
+        expect(Math.abs(b.boxWidth - before.boxes[i]!.boxWidth)).toBeLessThanOrEqual(1);
+        expect(Math.abs(b.stemX - before.boxes[i]!.stemX)).toBeLessThanOrEqual(1);
+        expect(Math.abs(b.numberX - before.boxes[i]!.numberX)).toBeLessThanOrEqual(1);
+      });
     });
-  });
+  }
 
   test('列印：未切換時不含答案與解析，且隱藏切換鈕', async ({ page }) => {
     await page.emulateMedia({ media: 'print' });
@@ -165,13 +177,25 @@ test.describe('答案卷切換', () => {
     await toggle(page).click();
     await page.emulateMedia({ media: 'print' });
     await expect(toggle(page)).toBeHidden();
-    await expect(page.locator('.answer:visible')).toHaveCount(21);
-    await expect(page.locator('.explanation:visible')).toHaveCount(21);
+    await expect(page.locator('.answer:visible')).toHaveCount(QUESTION_COUNT);
+    await expect(page.locator('.explanation:visible')).toHaveCount(QUESTION_COUNT);
     // 解析與題目同一區塊，題目仍不可切斷
     const values = await page
       .locator('.question')
       .evaluateAll((els) => els.map((el) => getComputedStyle(el).breakInside));
     expect(new Set(values)).toEqual(new Set(['avoid']));
     await expect(page.locator('.question .explanation').first()).toBeVisible();
+  });
+});
+
+test.describe('沒有 JavaScript', () => {
+  test.use({ javaScriptEnabled: false });
+
+  test('不顯示切換鈕，答案與解析也不可見', async ({ page }) => {
+    await page.goto(PAPER);
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    await expect(page.getByRole('button', { name: '顯示答案卷' })).toBeHidden();
+    await expect(page.locator('.answer:visible')).toHaveCount(0);
+    await expect(page.locator('.explanation:visible')).toHaveCount(0);
   });
 });

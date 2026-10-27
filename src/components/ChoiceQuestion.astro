@@ -12,6 +12,7 @@ const { number, question } = Astro.props;
 
 <div class="question question-choice" data-question-type="choice">
   <p class="stem">
+    {/* 括號、題號之間刻意不留空白字元：換行會變成多餘的空格，使題幹位置與括號寬度改變 */}
     <span class="answer-slot"><span class="answer-box">（　）</span><span class="answer">{question.answer}</span></span><span
       class="number">{number}.</span>
     {question.stem}

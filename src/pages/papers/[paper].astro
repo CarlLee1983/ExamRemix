@@ -38,7 +38,7 @@ const firstNumbers = sections.map((section) => {
     <title>{paper.title}</title>
   </head>
   <body>
-    <button type="button" class="mode-toggle" id="mode-toggle" aria-pressed="false">目前：試卷（按一下切換為答案卷）</button>
+    <button type="button" class="mode-toggle" id="mode-toggle" aria-pressed="false" hidden>顯示答案卷</button>
     <main class="paper">
       <header class="paper-head">
         <h1>{paper.title}</h1>
@@ -63,12 +63,14 @@ const firstNumbers = sections.map((section) => {
       }
     </main>
     <script is:inline>
-      // 載入時一律是試卷；狀態只存在頁面上，不保存
+      // 載入時一律是試卷；狀態只存在頁面上，不保存。
+      // CSS 只讀 html 的 data-mode；aria-pressed 是給輔助技術用的，標籤固定不變。
+      // 切換鈕預設 hidden，沒有 JS 時維持隱藏，有 JS 才在此顯示。
       const toggle = document.getElementById('mode-toggle');
+      toggle.hidden = false;
       toggle.addEventListener('click', () => {
         const answer = toggle.getAttribute('aria-pressed') !== 'true';
         toggle.setAttribute('aria-pressed', String(answer));
-        toggle.textContent = answer ? '目前：答案卷（按一下切換為試卷）' : '目前：試卷（按一下切換為答案卷）';
         document.documentElement.dataset.mode = answer ? 'answer' : 'paper';
       });
     </script>

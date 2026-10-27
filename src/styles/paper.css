@@ -1,4 +1,10 @@
 /* 試卷頁樣式：螢幕上以白色 A4 紙張預覽，列印時交給 @page。 */
+/* 答案與解析的強調色、選項與解析的縮排 */
+:root {
+  --answer-color: #f00;
+  --question-indent: 12mm;
+}
+
 @page {
   size: A4;
   margin: 15mm 18mm;
@@ -98,7 +104,7 @@ body {
   position: absolute;
   inset: 0;
   text-align: center;
-  color: #f00;
+  color: var(--answer-color);
   visibility: hidden;
 }
 
@@ -106,12 +112,12 @@ body {
 .explanation {
   display: none;
   margin: 1.5mm 0 0;
-  padding-left: 12mm;
+  padding-left: var(--question-indent);
   font-size: 11pt;
 }
 
 .explanation-label {
-  color: #f00;
+  color: var(--answer-color);
 }
 
 html[data-mode='answer'] .answer {
@@ -120,6 +126,10 @@ html[data-mode='answer'] .answer {
 
 html[data-mode='answer'] .explanation {
   display: block;
+}
+
+.mode-toggle[hidden] {
+  display: none;
 }
 
 .mode-toggle {
@@ -140,7 +150,7 @@ html[data-mode='answer'] .explanation {
   flex-wrap: wrap;
   gap: 0 8mm;
   margin: 1mm 0 0;
-  padding: 0 0 0 12mm;
+  padding: 0 0 0 var(--question-indent);
   list-style: none;
 }
 

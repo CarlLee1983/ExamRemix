@@ -1,0 +1,95 @@
+// 題庫檢查模組的跨檔規則：題目 ID 不可重複、試卷只能引用存在且已確認的題目。
+// 純函式，輸入是已通過 schema 的題庫檔與試卷檔，不讀檔、不依賴 Astro（ADR 0002）。
+import { fileNameProblem } from './file-name.ts';
+import { deriveQuestionId, type BankFile, type PaperFile, type Question } from './schema.ts';
+
+/** 題庫檔：name 是題庫檔名（不含副檔名，用來組題目 ID），file 是相對於資料根目錄的路徑。 */
+export interface BankInput {
+  name: string;
+  file: string;
+  data: BankFile;
+}
+
+/** 試卷檔：file 是相對於資料根目錄的路徑。 */
+export interface PaperInput {
+  file: string;
+  data: PaperFile;
+}
+
+export interface Problem {
+  /** 問題所在的檔案（相對於資料根目錄）；題目 ID 重複時列出所有出現的檔案 */
+  files: string[];
+  questionId?: string;
+  message: string;
+}
+
+const byFile = (a: { file: string }, b: { file: string }) => (a.file < b.file ? -1 : a.file > b.file ? 1 : 0);
+
+/** 題目 ID → 題目。ID 重複時留下第一個；重複本身由 checkBank 回報。 */
+export function buildQuestionIndex(banks: readonly Pick<BankInput, 'name' | 'data'>[]): Map<string, Question> {
+  const index = new Map<string, Question>();
+  for (const bank of banks) {
+    for (const question of bank.data.questions) {
+      const id = deriveQuestionId(bank.name, question.no);
+      if (!index.has(id)) index.set(id, question);
+    }
+  }
+  return index;
+}
+
+/** 回傳所有問題；空陣列代表通過。順序固定：先檔名不合格，再題目 ID 重複，最後依試卷檔、大題、題目順序。 */
+export function checkBank(input: { banks: readonly BankInput[]; papers: readonly PaperInput[] }): Problem[] {
+  const banks = [...input.banks].sort(byFile);
+  const papers = [...input.papers].sort(byFile);
+  const problems: Problem[] = [];
+
+  // 檔名不合格的檔案
+  for (const { file } of [...banks, ...papers].sort(byFile)) {
+    const reason = fileNameProblem(file.slice(file.lastIndexOf('/') + 1));
+    if (reason) problems.push({ files: [file], message: `檔名不合格：${reason}` });
+  }
+
+  // 真正的防線是檔名規則（題庫名取自合格的檔名，不同檔案不會組出同一個 ID）；
+  // 這條規則是純函式層的保證，輸入若仍出現重複 ID 就如實回報。
+  const filesById = new Map<string, string[]>();
+  for (const bank of banks) {
+    for (const question of bank.data.questions) {
+      const id = deriveQuestionId(bank.name, question.no);
+      filesById.set(id, [...(filesById.get(id) ?? []), bank.file]);
+    }
+  }
+  for (const [id, files] of filesById) {
+    if (files.length > 1) {
+      problems.push({
+        files,
+        questionId: id,
+        message: `題目 ID ${id} 重複`,
+      });
+    }
+  }
+
+  const index = buildQuestionIndex(banks);
+  for (const paper of papers) {
+    for (const section of paper.data.sections) {
+      for (const id of section.questions) {
+        const question = index.get(id);
+        if (!question) {
+          problems.push({ files: [paper.file], questionId: id, message: `試卷引用了不存在的題目 ID ${id}` });
+        } else if (!question.confirmed) {
+          problems.push({
+            files: [paper.file],
+            questionId: id,
+            message: `試卷引用了未確認的題目 ${id}（請核對後把 confirmed 改為 true）`,
+          });
+        }
+      }
+    }
+  }
+
+  return problems;
+}
+
+/** 每個問題一行，供建置錯誤與檢查指令共用。 */
+export function formatProblem(problem: Problem): string {
+  return `${problem.files.join('、')}：${problem.message}`;
+}

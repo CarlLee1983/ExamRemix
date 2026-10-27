@@ -44,3 +44,30 @@ describe('astro build 遇到不完整的資料目錄', () => {
     expect(output).toContain(join(dataDir, 'papers'));
   }, 120_000);
 });
+
+describe('astro build 遇到跨檔問題', () => {
+  it('以非零狀態結束，並列出全部問題', () => {
+    const { status, output } = build(resolve('tests/fixtures/cross-file-problems'));
+
+    expect(status).not.toBe(0);
+    expect(output).toContain('papers/bad-refs.yaml');
+    expect(output).toContain('draft-02');
+    expect(output).toContain('draft-99');
+  }, 120_000);
+});
+
+describe('astro build 遇到不合格的檔名', () => {
+  it('檔名含大寫與底線時失敗，並指出該檔名', () => {
+    const { status, output } = build(resolve('tests/fixtures/bad-file-name'));
+
+    expect(status).not.toBe(0);
+    expect(output).toContain('bank/Sample_Math.yaml');
+  }, 120_000);
+
+  it('a b.yaml 與 a-b.yaml 並存時失敗，不會被 Astro 合併後放行', () => {
+    const { status, output } = build(resolve('tests/fixtures/colliding-names'));
+
+    expect(status).not.toBe(0);
+    expect(output).toContain('bank/a b.yaml');
+  }, 120_000);
+});

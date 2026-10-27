@@ -11,11 +11,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "check:bank": "node scripts/check-bank.ts",
     "test": "vitest run",
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "astro": "7.4.2"
+    "astro": "7.4.2",
+    "yaml": "2.9.1"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",

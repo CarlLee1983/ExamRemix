@@ -1,20 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
 import ChoiceQuestion from '../../components/ChoiceQuestion.astro';
-import { deriveQuestionId, type Question } from '../../domain/schema';
+import { loadChecked } from '../../lib/load-bank.ts';
 import '../../styles/paper.css';
 
 export async function getStaticPaths() {
-  const papers = await getCollection('papers');
-  const banks = await getCollection('bank');
-
-  // 題目 ID → 題目。暫時只擋找不到的 ID，正式的跨檔檢查（ID 重複、引用不存在、未確認）在 #3。
-  const questions = new Map<string, Question>();
-  for (const bank of banks) {
-    for (const question of bank.data.questions) {
-      questions.set(deriveQuestionId(bank.id, question.no), question);
-    }
-  }
+  // 載入時已跑過跨檔檢查：引用的題目 ID 一定存在且已確認
+  const { papers, questions } = await loadChecked();
 
   return papers.map((paper) => ({
     params: { paper: paper.id },
@@ -22,13 +13,7 @@ export async function getStaticPaths() {
       paper: paper.data,
       sections: paper.data.sections.map((section) => ({
         ...section,
-        questions: section.questions.map((id) => {
-          const question = questions.get(id);
-          if (!question) {
-            throw new Error(`試卷 ${paper.id} 引用了不存在的題目 ID：${id}`);
-          }
-          return question;
-        }),
+        questions: section.questions.map((id) => questions.get(id)!),
       })),
     },
   }));

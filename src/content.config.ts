@@ -18,14 +18,17 @@ function requireDir(path: string): string {
   return path;
 }
 
-// entry id 即檔名（不含副檔名）
+// entry id 即原始檔名（不含副檔名）。不用 glob 預設的 slug 化：它會把不同檔名合併成同一個 id，
+// 而 Astro 對重複 id 只警告並覆蓋；檔名是否合格由題庫檢查（src/domain/file-name.ts）回報。
+const generateId = ({ entry }: { entry: string }) => entry.replace(/\.yaml$/, '');
+
 const bank = defineCollection({
-  loader: glob({ pattern: '*.yaml', base: requireDir(resolve(dataDir, 'bank')) }),
+  loader: glob({ pattern: '*.yaml', base: requireDir(resolve(dataDir, 'bank')), generateId }),
   schema: bankFileSchema,
 });
 
 const papers = defineCollection({
-  loader: glob({ pattern: '*.yaml', base: requireDir(resolve(dataDir, 'papers')) }),
+  loader: glob({ pattern: '*.yaml', base: requireDir(resolve(dataDir, 'papers')), generateId }),
   schema: paperFileSchema,
 });
 

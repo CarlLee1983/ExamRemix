@@ -1,7 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
+import { loadChecked } from '../lib/load-bank.ts';
 
-const papers = await getCollection('papers');
+const { papers } = await loadChecked();
 ---
 
 <!doctype html>

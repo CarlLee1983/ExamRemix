@@ -356,3 +356,20 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 21
+  - no: 22
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "9 × 6 等於多少？"
+    options:
+      - "52"
+      - "54"
+      - "56"
+      - "63"
+    answer: 2
+    explanation: "9 × 6 = 54。"
+    confirmed: false
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 22

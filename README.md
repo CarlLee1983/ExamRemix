@@ -41,11 +41,19 @@ EXAMREMIX_DATA_DIR=data pnpm dev
 
 建議把真實資料放在 repo 根目錄的 `data/`，它已被 `.gitignore` 排除（見 ADR 0001）。題庫檔或試卷檔格式有誤時，建置會失敗並指出檔案與欄位。
 
+### 題庫檢查
+
+```sh
+pnpm check:bank [資料目錄]    # 沒給參數時依序取 EXAMREMIX_DATA_DIR、examples
+```
+
+檢查資料目錄裡的題庫檔與試卷檔：檔名是否合格（只能用小寫英數字與連字號，如 `sample-math.yaml`）、格式是否符合 schema，以及三條跨檔規則：題目 ID 不可在題庫檔之間重複、試卷只能引用存在的題目、試卷只能引用已確認的題目（未確認但沒被試卷引用的題目沒問題）。每個問題輸出一行（檔案、欄位或題目 ID、說明），最後一行是摘要；有問題以狀態碼 1 結束，沒有問題以 0 結束，資料目錄或 `bank/`、`papers/` 不存在時也非零結束。`pnpm build` 會跑同一套跨檔檢查，有任何問題就失敗並列出全部問題。agent 匯入或產生題目後應先跑這個指令，修到沒有問題為止。
+
 ### 測試
 
 ```sh
 pnpm check         # 型別檢查
-pnpm test          # Vitest：schema 單元測試，與較慢的建置失敗整合測試
+pnpm test          # Vitest：schema 與題庫檢查單元測試、檢查指令測試，與較慢的建置失敗整合測試
 pnpm test:e2e      # Playwright：以範例資料建置後測試試卷頁與 A4 列印
 ```
 

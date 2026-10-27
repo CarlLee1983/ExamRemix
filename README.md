@@ -82,7 +82,7 @@ pnpm list:questions [資料目錄] [過濾條件]
 
 ### 題型
 
-每題都有共用欄位（`no`、`type`、`subject`、`grade`、選填的 `unit`、`stem`、`explanation`、`confirmed`、選填的 `image` 與 `space`，以及原題的 `source` 或新題的 `derivedFrom` 擇一），再加上各題型自己的欄位：
+每題都有共用欄位（`no`、`type`、`subject`、`grade`、選填的 `unit`、`stem`、`explanation`、`confirmed`、選填的 `image` 與 `space`，以及原題的 `source` 或新題的 `derivedFrom` 擇一）。科目 `subject` 支援國語、數學與自然；各題型另有以下欄位：
 
 | `type` | 欄位 | 說明 |
 | --- | --- | --- |

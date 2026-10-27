@@ -74,8 +74,12 @@ describe('選擇題 schema', () => {
     expect(issuePaths(questionSchema, { ...validChoice, type: 'essay' })).toContain('type');
   });
 
+  it('接受自然科原題', () => {
+    expect(questionSchema.safeParse({ ...validChoice, subject: '自然' }).success).toBe(true);
+  });
+
   it('未知科目時指出 subject', () => {
-    expect(issuePaths(questionSchema, { ...validChoice, subject: '自然' })).toEqual(['subject']);
+    expect(issuePaths(questionSchema, { ...validChoice, subject: '社會' })).toEqual(['subject']);
   });
 });
 
@@ -356,6 +360,10 @@ describe('試卷檔 schema', () => {
 
   it('接受合法的試卷檔，配分可省略', () => {
     expect(paperFileSchema.safeParse(validPaper).success).toBe(true);
+  });
+
+  it('接受自然科試卷', () => {
+    expect(paperFileSchema.safeParse({ ...validPaper, subject: '自然' }).success).toBe(true);
   });
 
   it('沒有大題時失敗', () => {

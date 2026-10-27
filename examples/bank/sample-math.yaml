@@ -1,0 +1,358 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "3 × 4 等於多少？"
+    options:
+      - "10"
+      - "12"
+      - "15"
+      - "22"
+    answer: 2
+    explanation: "3 × 4 = 12。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 1
+  - no: 2
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "6 × 7 等於多少？"
+    options:
+      - "40"
+      - "42"
+      - "45"
+      - "52"
+    answer: 2
+    explanation: "6 × 7 = 42。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 2
+  - no: 3
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "8 × 9 等於多少？"
+    options:
+      - "70"
+      - "72"
+      - "75"
+      - "82"
+    answer: 2
+    explanation: "8 × 9 = 72。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 3
+  - no: 4
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "12 × 5 等於多少？"
+    options:
+      - "58"
+      - "60"
+      - "63"
+      - "70"
+    answer: 2
+    explanation: "12 × 5 = 60。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 4
+  - no: 5
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "15 × 4 等於多少？"
+    options:
+      - "58"
+      - "60"
+      - "63"
+      - "70"
+    answer: 2
+    explanation: "15 × 4 = 60。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 5
+  - no: 6
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "25 × 3 等於多少？"
+    options:
+      - "73"
+      - "75"
+      - "78"
+      - "85"
+    answer: 2
+    explanation: "25 × 3 = 75。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 6
+  - no: 7
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "48 + 27 等於多少？"
+    options:
+      - "65"
+      - "76"
+      - "75"
+      - "175"
+    answer: 3
+    explanation: "48 + 27 = 75。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 7
+  - no: 8
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "136 + 58 等於多少？"
+    options:
+      - "184"
+      - "195"
+      - "194"
+      - "294"
+    answer: 3
+    explanation: "136 + 58 = 194。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 8
+  - no: 9
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "305 + 196 等於多少？"
+    options:
+      - "491"
+      - "502"
+      - "501"
+      - "601"
+    answer: 3
+    explanation: "305 + 196 = 501。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 9
+  - no: 10
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "720 + 385 等於多少？"
+    options:
+      - "1095"
+      - "1106"
+      - "1105"
+      - "1205"
+    answer: 3
+    explanation: "720 + 385 = 1105。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 10
+  - no: 11
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "91 − 36 等於多少？"
+    options:
+      - "55"
+      - "65"
+      - "54"
+      - "64"
+    answer: 1
+    explanation: "91 − 36 = 55。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 11
+  - no: 12
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "400 − 157 等於多少？"
+    options:
+      - "243"
+      - "253"
+      - "242"
+      - "252"
+    answer: 1
+    explanation: "400 − 157 = 243。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 12
+  - no: 13
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "803 − 468 等於多少？"
+    options:
+      - "335"
+      - "345"
+      - "334"
+      - "344"
+    answer: 1
+    explanation: "803 − 468 = 335。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 13
+  - no: 14
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "小明有 24 顆彈珠，平均分給 6 位同學，每位同學可以分到幾顆？"
+    options:
+      - "3 顆"
+      - "4 顆"
+      - "5 顆"
+      - "6 顆"
+    answer: 2
+    explanation: "24 ÷ 6 = 4，每位同學 4 顆。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 14
+  - no: 15
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "一條緞帶長 3 公尺，剪下 85 公分後，還剩下多少公分？"
+    options:
+      - "115 公分"
+      - "215 公分"
+      - "225 公分"
+      - "285 公分"
+    answer: 2
+    explanation: "3 公尺 = 300 公分，300 − 85 = 215。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 15
+  - no: 16
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "一本故事書有 96 頁，小華每天看 8 頁，幾天可以看完？"
+    options:
+      - "10 天"
+      - "11 天"
+      - "12 天"
+      - "13 天"
+    answer: 3
+    explanation: "96 ÷ 8 = 12，需要 12 天。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 16
+  - no: 17
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "下面哪一個數最大？"
+    options:
+      - "3084"
+      - "3480"
+      - "3408"
+      - "3048"
+    answer: 2
+    explanation: "千位都是 3，百位以 4 最大，比較 3480 與 3408，十位 8 > 0，所以 3480 最大。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 17
+  - no: 18
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "1 公里等於多少公尺？"
+    options:
+      - "10 公尺"
+      - "100 公尺"
+      - "1000 公尺"
+      - "10000 公尺"
+    answer: 3
+    explanation: "1 公里 = 1000 公尺。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 18
+  - no: 19
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "一個長方形長 9 公分、寬 4 公分，周長是多少公分？"
+    options:
+      - "13 公分"
+      - "26 公分"
+      - "36 公分"
+      - "52 公分"
+    answer: 2
+    explanation: "(9 + 4) × 2 = 26。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 19
+  - no: 20
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "下面哪一個分數和 1/2 一樣大？"
+    options:
+      - "2/3"
+      - "2/4"
+      - "3/5"
+      - "1/3"
+    answer: 2
+    explanation: "2/4 的分子分母同除以 2 得 1/2。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 20
+  - no: 21
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "一個星期有 7 天，5 個星期共有幾天？"
+    options:
+      - "30 天"
+      - "35 天"
+      - "40 天"
+      - "45 天"
+    answer: 2
+    explanation: "7 × 5 = 35。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 21

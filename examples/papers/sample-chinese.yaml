@@ -1,0 +1,10 @@
+title: 三年級國語試卷（範例）
+subject: 國語
+grade: 3
+sections:
+  - title: 一、選擇題
+    points: 30
+    questions:
+      - sample-chinese-01
+      - sample-chinese-02
+      - sample-chinese-03

@@ -1,0 +1,33 @@
+title: 三年級數學試卷（範例）
+subject: 數學
+grade: 3
+sections:
+  - title: 一、計算選擇題
+    points: 40
+    questions:
+      - sample-math-01
+      - sample-math-02
+      - sample-math-03
+      - sample-math-04
+      - sample-math-05
+      - sample-math-06
+      - sample-math-07
+      - sample-math-08
+      - sample-math-09
+      - sample-math-10
+  - title: 二、減法選擇題
+    questions:
+      - sample-math-11
+      - sample-math-12
+      - sample-math-13
+  - title: 三、生活應用選擇題
+    points: 30
+    questions:
+      - sample-math-14
+      - sample-math-15
+      - sample-math-16
+      - sample-math-17
+      - sample-math-18
+      - sample-math-19
+      - sample-math-20
+      - sample-math-21

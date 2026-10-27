@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import ChoiceQuestion from '../../components/ChoiceQuestion.astro';
+import { deriveQuestionId, type Question } from '../../domain/schema';
+import '../../styles/paper.css';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('papers');
+  const banks = await getCollection('bank');
+
+  // 題目 ID → 題目。暫時只擋找不到的 ID，正式的跨檔檢查（ID 重複、引用不存在、未確認）在 #3。
+  const questions = new Map<string, Question>();
+  for (const bank of banks) {
+    for (const question of bank.data.questions) {
+      questions.set(deriveQuestionId(bank.id, question.no), question);
+    }
+  }
+
+  return papers.map((paper) => ({
+    params: { paper: paper.id },
+    props: {
+      paper: paper.data,
+      sections: paper.data.sections.map((section) => ({
+        ...section,
+        questions: section.questions.map((id) => {
+          const question = questions.get(id);
+          if (!question) {
+            throw new Error(`試卷 ${paper.id} 引用了不存在的題目 ID：${id}`);
+          }
+          return question;
+        }),
+      })),
+    },
+  }));
+}
+
+const { paper, sections } = Astro.props;
+
+// 題號在試卷內連續編號：每個大題的起始題號 = 前面各大題的題數總和 + 1
+let nextNumber = 1;
+const firstNumbers = sections.map((section) => {
+  const first = nextNumber;
+  nextNumber += section.questions.length;
+  return first;
+});
+---
+
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{paper.title}</title>
+  </head>
+  <body>
+    <main class="paper">
+      <header class="paper-head">
+        <h1>{paper.title}</h1>
+        <div class="fields">
+          <div class="field name" data-field="name"><span class="label">姓名：</span><span class="line"></span></div>
+          <div class="field date" data-field="date"><span class="label">日期：</span><span class="line"></span></div>
+          <div class="field score" data-field="score"><span class="label">分數：</span><span class="line"></span></div>
+        </div>
+      </header>
+      {
+        sections.map((section, s) => (
+          <section class="section">
+            <h2 class="section-title">
+              {section.title}
+              {section.points !== undefined && <span class="points">（{section.points} 分）</span>}
+            </h2>
+            {section.questions.map((question, i) => (
+              <ChoiceQuestion number={firstNumbers[s]! + i} question={question} />
+            ))}
+          </section>
+        ))
+      }
+    </main>
+  </body>
+</html>

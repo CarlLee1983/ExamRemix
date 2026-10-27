@@ -1,0 +1,148 @@
+import { z } from 'astro/zod';
+import { describe, expect, it } from 'vitest';
+import {
+  bankFileSchema,
+  deriveQuestionId,
+  paperFileSchema,
+  questionSchema,
+} from '../src/domain/schema';
+
+const validChoice = {
+  no: 1,
+  type: 'choice',
+  subject: '數學',
+  grade: 3,
+  unit: '乘法',
+  stem: '3 × 4 等於多少？',
+  options: ['10', '12', '14'],
+  answer: 2,
+  explanation: '3 × 4 = 12。',
+  source: { originalPaper: '虛構期中考', number: 1 },
+};
+
+/** 回傳解析失敗的 issue path（以 . 串接）；成功時回傳空陣列 */
+function issuePaths(schema: z.ZodType, value: unknown): string[] {
+  const r = schema.safeParse(value);
+  return r.success ? [] : r.error.issues.map((i) => i.path.join('.'));
+}
+
+describe('選擇題 schema', () => {
+  it('接受合法的原題，confirmed 預設為 false', () => {
+    const r = questionSchema.safeParse(validChoice);
+    expect(r.success).toBe(true);
+    expect(r.data?.confirmed).toBe(false);
+  });
+
+  it('接受合法的新題（derivedFrom）且 unit 可省略', () => {
+    const { source, unit, ...rest } = validChoice;
+    const r = questionSchema.safeParse({ ...rest, derivedFrom: ['sample-math-01'] });
+    expect(r.success).toBe(true);
+  });
+
+  it('缺題幹時指出 stem', () => {
+    const { stem, ...rest } = validChoice;
+    expect(issuePaths(questionSchema, rest)).toContain('stem');
+  });
+
+  it('選項少於 2 個時指出 options', () => {
+    expect(issuePaths(questionSchema, { ...validChoice, options: ['10'], answer: 1 })).toContain(
+      'options',
+    );
+  });
+
+  it('answer 超出選項範圍時指出 answer', () => {
+    expect(issuePaths(questionSchema, { ...validChoice, answer: 4 })).toEqual(['answer']);
+    expect(issuePaths(questionSchema, { ...validChoice, answer: 0 })).toContain('answer');
+  });
+
+  it('source 與 derivedFrom 同時存在時失敗', () => {
+    const paths = issuePaths(questionSchema, { ...validChoice, derivedFrom: ['x-01'] });
+    expect(paths).toEqual(['derivedFrom']);
+  });
+
+  it('source 與 derivedFrom 都沒有時失敗', () => {
+    const { source, ...rest } = validChoice;
+    expect(issuePaths(questionSchema, rest)).toEqual(['source']);
+  });
+
+  it('grade 超出 1–6 時指出 grade', () => {
+    expect(issuePaths(questionSchema, { ...validChoice, grade: 7 })).toEqual(['grade']);
+    expect(issuePaths(questionSchema, { ...validChoice, grade: 0 })).toEqual(['grade']);
+  });
+
+  it('未知的 type 時指出 type', () => {
+    expect(issuePaths(questionSchema, { ...validChoice, type: 'essay' })).toContain('type');
+  });
+
+  it('未知科目時指出 subject', () => {
+    expect(issuePaths(questionSchema, { ...validChoice, subject: '自然' })).toEqual(['subject']);
+  });
+});
+
+describe('題庫檔 schema', () => {
+  it('接受合法的題庫檔', () => {
+    expect(bankFileSchema.safeParse({ questions: [validChoice] }).success).toBe(true);
+  });
+
+  it('錯誤 path 帶出題目在陣列中的位置', () => {
+    const bad = { ...validChoice, no: 2, answer: 9 };
+    expect(issuePaths(bankFileSchema, { questions: [validChoice, bad] })).toEqual([
+      'questions.1.answer',
+    ]);
+  });
+
+  it('檔內 no 重複時，在重複出現的那題指出 no', () => {
+    const dup = { ...validChoice, no: 1 };
+    const other = { ...validChoice, no: 2 };
+    expect(issuePaths(bankFileSchema, { questions: [validChoice, other, dup] })).toEqual([
+      'questions.2.no',
+    ]);
+  });
+
+  it('questions 為空陣列時失敗', () => {
+    expect(issuePaths(bankFileSchema, { questions: [] })).toEqual(['questions']);
+  });
+});
+
+describe('試卷檔 schema', () => {
+  const validPaper = {
+    title: '三年級數學練習',
+    subject: '數學',
+    grade: 3,
+    sections: [
+      { title: '一、選擇題', points: 20, questions: ['sample-math-01'] },
+      { title: '二、選擇題', questions: ['sample-math-02'] },
+    ],
+  };
+
+  it('接受合法的試卷檔，配分可省略', () => {
+    expect(paperFileSchema.safeParse(validPaper).success).toBe(true);
+  });
+
+  it('沒有大題時失敗', () => {
+    expect(issuePaths(paperFileSchema, { ...validPaper, sections: [] })).toEqual(['sections']);
+  });
+
+  it('大題沒有題目時指出 questions', () => {
+    const bad = { ...validPaper, sections: [{ title: '一、', questions: [] }] };
+    expect(issuePaths(paperFileSchema, bad)).toEqual(['sections.0.questions']);
+  });
+
+  it('配分不是正整數時指出 points', () => {
+    const bad = { ...validPaper, sections: [{ title: '一、', points: 0, questions: ['a-01'] }] };
+    expect(issuePaths(paperFileSchema, bad)).toEqual(['sections.0.points']);
+  });
+
+  it('缺標題時指出 title', () => {
+    const { title, ...rest } = validPaper;
+    expect(issuePaths(paperFileSchema, rest)).toEqual(['title']);
+  });
+});
+
+describe('deriveQuestionId', () => {
+  it('以題庫檔名加兩位數序號衍生 ID', () => {
+    expect(deriveQuestionId('sample-math', 1)).toBe('sample-math-01');
+    expect(deriveQuestionId('sample-math', 12)).toBe('sample-math-12');
+    expect(deriveQuestionId('sample-math', 123)).toBe('sample-math-123');
+  });
+});

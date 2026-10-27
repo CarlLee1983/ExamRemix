@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+
+const papers = await getCollection('papers');
+---
+
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <title>ExamRemix</title>
+  </head>
+  <body>
+    <h1>試卷</h1>
+    <ul>
+      {
+        papers.map((paper) => (
+          <li><a href={`/papers/${paper.id}/`}>{paper.data.title}</a></li>
+        ))
+      }
+    </ul>
+  </body>
+</html>

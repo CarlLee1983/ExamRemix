@@ -1,0 +1,116 @@
+/* 試卷頁樣式：螢幕上以白色 A4 紙張預覽，列印時交給 @page。 */
+@page {
+  size: A4;
+  margin: 15mm 18mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #e5e7eb;
+  color: #000;
+  font-family: 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  font-size: 12pt;
+  line-height: 1.6;
+}
+
+.paper {
+  width: 210mm;
+  margin: 8mm auto;
+  padding: 15mm 18mm;
+  background: #fff;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 0.25);
+}
+
+.paper-head h1 {
+  margin: 0 0 6mm;
+  text-align: center;
+  font-size: 18pt;
+}
+
+.fields {
+  display: flex;
+  gap: 8mm;
+  margin: 0 0 8mm;
+  padding-bottom: 3mm;
+  border-bottom: 2px solid #000;
+}
+
+.field {
+  display: flex;
+  align-items: flex-end;
+  gap: 2mm;
+}
+
+.field.name,
+.field.date {
+  flex: 1;
+}
+
+.field.score {
+  flex: 0 0 38mm;
+}
+
+.field .label {
+  white-space: nowrap;
+}
+
+.field .line {
+  flex: 1;
+  min-width: 12mm;
+  border-bottom: 1px solid #000;
+  height: 1.2em;
+}
+
+.section-title {
+  margin: 6mm 0 3mm;
+  font-size: 13pt;
+  break-after: avoid;
+}
+
+.section-title .points {
+  font-weight: normal;
+  font-size: 11pt;
+}
+
+.question {
+  margin: 0 0 4mm;
+  break-inside: avoid;
+}
+
+.stem {
+  margin: 0;
+}
+
+.answer-box {
+  white-space: pre;
+}
+
+.number {
+  margin-right: 1.5mm;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 8mm;
+  margin: 1mm 0 0;
+  padding: 0 0 0 12mm;
+  list-style: none;
+}
+
+@media print {
+  body {
+    background: none;
+  }
+
+  .paper {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}

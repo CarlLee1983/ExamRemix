@@ -1,0 +1,52 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 國語
+    grade: 3
+    unit: 字詞
+    stem: "下列哪一個詞語的意思是「一點聲音也沒有」？"
+    options:
+      - "熱鬧"
+      - "寂靜"
+      - "喧嘩"
+      - "嘈雜"
+    answer: 2
+    explanation: "「寂靜」指安靜、沒有聲音；其餘三個都是吵鬧的意思。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 1
+  - no: 2
+    type: choice
+    subject: 國語
+    grade: 3
+    unit: 字詞
+    stem: "「小貓輕輕地走過來」這句話中，哪一個詞語是在形容走路的樣子？"
+    options:
+      - "小貓"
+      - "輕輕地"
+      - "走"
+      - "過來"
+    answer: 2
+    explanation: "「輕輕地」說明走路的樣子。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 2
+  - no: 3
+    type: choice
+    subject: 國語
+    grade: 3
+    unit: 修辭
+    stem: "「月亮像一個大銀盤掛在天上。」這句話用了哪一種修辭？"
+    options:
+      - "擬人"
+      - "排比"
+      - "譬喻"
+      - "設問"
+    answer: 3
+    explanation: "句中以「像」把月亮比作銀盤，是譬喻。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 3

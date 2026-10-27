@@ -1,0 +1,27 @@
+---
+import type { ChoiceQuestion } from '../domain/schema';
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: ChoiceQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-choice" data-question-type="choice">
+  <p class="stem">
+    <span class="answer-box">（　）</span><span class="number">{number}.</span>
+    {question.stem}
+  </p>
+  <ol class="options">
+    {
+      question.options.map((option, i) => (
+        <li class="option">
+          <span class="option-no">({i + 1})</span> {option}
+        </li>
+      ))
+    }
+  </ol>
+</div>

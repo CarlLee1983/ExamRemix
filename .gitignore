@@ -11,3 +11,7 @@ dist/
 
 # trail-code 的 graft map（本機快取）
 graft/
+.astro/
+test-results/
+playwright-report/
+data/

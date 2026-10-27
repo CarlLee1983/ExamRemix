@@ -1,13 +1,14 @@
 ---
 // 題目附圖：緊接在題幹之後，試卷與答案卷都顯示。圖片由 /bank-images/ 端點提供（見 pages/bank-images/）。
 import type { Question } from '../domain/schema';
+import { imageUrl } from '../domain/image';
 
 interface Props {
   image: Question['image'];
 }
 
 const { image } = Astro.props;
-const src = image && `/bank-images/${image.src.split('/').map(encodeURIComponent).join('/')}`;
+const src = image && imageUrl(image.src);
 ---
 
 {

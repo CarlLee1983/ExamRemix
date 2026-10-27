@@ -317,6 +317,80 @@ body {
   max-height: 60mm;
 }
 
+/* 圖文選項及表格欄標題沿用同一種圖片樣式。 */
+.visual-text-image {
+  display: block;
+  max-width: 100%;
+  max-height: 24mm;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.check-options {
+  margin: 1mm 0 0;
+  padding: 0 0 0 var(--question-indent);
+  list-style: none;
+}
+
+.check-options li {
+  display: flex;
+  align-items: baseline;
+}
+
+.diagram-figure {
+  margin: 1mm 0 0 var(--question-indent);
+  break-inside: avoid;
+}
+
+/* 空格定位的參考框必須與實際縮放後的圖片大小一致。 */
+.diagram-frame {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.diagram-frame > img {
+  display: block;
+  max-width: 100%;
+  max-height: 120mm;
+  width: auto;
+  height: auto;
+}
+
+.diagram-blank {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+}
+
+.diagram-answer,
+.table-answer {
+  color: var(--answer-color);
+  visibility: hidden;
+}
+
+.answer-table {
+  width: calc(100% - var(--question-indent));
+  margin: 1mm 0 0 var(--question-indent);
+  border-collapse: collapse;
+  table-layout: fixed;
+  break-inside: avoid;
+}
+
+.answer-table th,
+.answer-table td {
+  border: 1px solid #000;
+  min-width: 0;
+  height: 2.4em;
+  padding: 2mm;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
 /* 沒有內建作答區的題型覆寫 space 後，在題目下方留的空白：高度 = 行數（--space-lines）× 行高 */
 .answer-space {
   height: calc(var(--space-lines) * var(--calc-line-height));
@@ -340,6 +414,8 @@ html[data-mode='answer'] .cell-answer,
 html[data-mode='answer'] .sentence-answer,
 html[data-mode='answer'] .answer-line-text,
 html[data-mode='answer'] .vcalc-answer,
+html[data-mode='answer'] .diagram-answer,
+html[data-mode='answer'] .table-answer,
 html[data-mode='answer'] .result .vcalc-point::after {
   visibility: visible;
 }

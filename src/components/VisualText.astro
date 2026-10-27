@@ -1,0 +1,16 @@
+---
+import { imageUrl } from '../domain/image';
+import type { VisualText } from '../domain/schema';
+import RichText from './RichText.astro';
+
+interface Props {
+  content: VisualText;
+}
+
+const { content } = Astro.props;
+const text = typeof content === 'string' ? content : content.text;
+const image = typeof content === 'string' ? undefined : content.image;
+---
+
+{text !== undefined && <RichText text={text} />}
+{image && <img class="visual-text-image" src={imageUrl(image.src)} alt={image.alt} />}

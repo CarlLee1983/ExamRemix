@@ -88,7 +88,7 @@ describe('選擇題 schema', () => {
     expect(issuePaths(questionSchema, { ...validChoice, type: 'essay' })).toContain('type');
   });
 
-  it('接受自然科原題', () => {
+  it('接受自然原題', () => {
     expect(questionSchema.safeParse({ ...validChoice, subject: '自然' }).success).toBe(true);
   });
 
@@ -376,7 +376,7 @@ describe('試卷檔 schema', () => {
     expect(paperFileSchema.safeParse(validPaper).success).toBe(true);
   });
 
-  it('接受自然科試卷', () => {
+  it('接受自然試卷', () => {
     expect(paperFileSchema.safeParse({ ...validPaper, subject: '自然' }).success).toBe(true);
   });
 

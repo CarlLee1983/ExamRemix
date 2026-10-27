@@ -1,0 +1,29 @@
+---
+import { answerSpace } from '../domain/answer-space';
+import type { MultiSelectQuestion } from '../domain/schema';
+import AnswerBracket from './AnswerBracket.astro';
+import AnswerSpace from './AnswerSpace.astro';
+import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
+import RichText from './RichText.astro';
+import VisualText from './VisualText.astro';
+
+interface Props {
+  number: number;
+  question: MultiSelectQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-multi-select" data-question-type="multi-select">
+  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <QuestionFigure image={question.image} />
+  <ol class="check-options">
+    {question.options.map((option, i) => (
+      <li><AnswerBracket answer={question.answer.includes(i + 1) ? '✓' : ''} /><span><VisualText content={option} /></span></li>
+    ))}
+  </ol>
+  <AnswerSpace lines={answerSpace(question)} />
+  <Explanation text={question.explanation} />
+</div>

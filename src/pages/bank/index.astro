@@ -89,7 +89,7 @@ const filters = [
                   {hasDoubt(question) && <li class="status-doubt">有疑點：{question.doubt}</li>}
                   <li>
                     {question.source
-                      ? `出處：${question.source.originalPaper} 第 ${question.source.number} 題`
+                      ? `出處：${question.source.originalPaper}${question.source.section ? ` ${question.source.section}` : ''}${question.source.number !== undefined ? ` 第 ${question.source.number} 題` : ''}`
                       : `衍生自：${question.derivedFrom!.join('、')}`}
                   </li>
                 </ul>

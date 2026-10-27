@@ -1,11 +1,13 @@
 ---
 // 「題型 → 元件」的唯一對應。新增題型要動的地方：
 // schema.ts 的題型 schema 與 questionSchema 聯集、這個檔的 switch 與模板分支、新的題型元件、
-// answer-space.ts 的預設作答空間、paper.css 的樣式、範例題庫與試卷、README 的題型表、schema 與 e2e 測試。
+// answer-space.ts 的預設作答空間（DEFAULT_SPACE）、type-labels.ts 的中文題型名稱、paper.css 的樣式、範例題庫與試卷、README 的題型表、schema 與 e2e 測試。
 // 題型元件在題幹後放 QuestionFigure（附圖），並依 answerSpace(question) 留作答空間。漏接 switch 時 default 分支的型別檢查會報錯。
 // 題型元件輸出任何題目文字都要經過 RichText，才能在文字上加注音。
 // 唯一的例外是 CharToZhuyinQuestion 與 ZhuyinToCharQuestion 的題幹：題幹裡的每個注音標注都是考題，
 // 由元件自己渲染成作答格，刻意不經過 RichText（交給它會把考題的注音直接顯示出來），不要「修」掉。
+// 另一個例外是 VerticalCalcQuestion 的運算元與答案：schema 限定它們是純數字，元件要一個數字一格排進直式的格子，
+// 不是一段文字，沒有注音或數學式可處理，所以直接輸出數字，也不要「修」掉。
 import type { Question } from '../domain/schema';
 import CharToZhuyinQuestion from './CharToZhuyinQuestion.astro';
 import ChoiceQuestion from './ChoiceQuestion.astro';

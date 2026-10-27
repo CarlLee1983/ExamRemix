@@ -6,6 +6,7 @@
 // schema 不過的題庫檔跳過並在 stderr 提醒執行 check:bank。沒有符合的題目仍以 0 結束；資料目錄不存在或旗標錯誤以 2 結束。
 import { parseArgs } from 'node:util';
 import { bankFileSchema, deriveQuestionId } from '../src/domain/schema.ts';
+import { unitLabel } from '../src/domain/unit.ts';
 import { readDataDir, resolveDataDir } from '../src/lib/data-dir.ts';
 
 function fail(message: string): never {
@@ -59,13 +60,13 @@ for (const { name, file, raw } of contents.banks) {
       (values.unconfirmed && q.confirmed) ||
       !matches(values.subject, q.subject) ||
       !matches(values.grade, String(q.grade)) ||
-      !matches(values.unit, q.unit ?? '') ||
+      !matches(values.unit, unitLabel(q.unit)) ||
       !matches(values.type, q.type) ||
       !matches(values.id, id)
     ) {
       continue;
     }
     const status = q.confirmed ? 'confirmed' : 'unconfirmed';
-    console.log([id, q.type, q.subject, q.grade, q.unit ?? '-', status, q.stem.replace(/\s+/g, ' ').trim()].join('\t'));
+    console.log([id, q.type, q.subject, q.grade, unitLabel(q.unit), status, q.stem.replace(/\s+/g, ' ').trim()].join('\t'));
   }
 }

@@ -1,7 +1,6 @@
 ---
 import { answerSpace } from '../domain/answer-space';
-import { blankWidthEm, splitStem } from '../domain/blank';
-import { parseRichText, richPlainText } from '../domain/rich-text';
+import { answerBlankWidthEm, splitStem } from '../domain/blank';
 import type { FillBlankQuestion } from '../domain/schema';
 import AnswerSpace from './AnswerSpace.astro';
 import Explanation from './Explanation.astro';
@@ -28,7 +27,7 @@ const parts = splitStem(question.stem);
         <>
           <RichText text={part} />
           {i < question.answer.length && (
-            <span class="blank" style={`--blank-width: ${blankWidthEm(richPlainText(parseRichText(question.answer[i]!).segments))}em`}><span class="blank-answer"><RichText text={question.answer[i]!} /></span></span>
+            <span class="blank" style={`--blank-width: ${answerBlankWidthEm(question.answer[i]!)}em`}><span class="blank-answer"><RichText text={question.answer[i]!} /></span></span>
           )}
         </>
       ))

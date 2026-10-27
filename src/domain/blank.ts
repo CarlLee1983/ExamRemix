@@ -1,5 +1,7 @@
 // 填空題的空格標記：題幹中剛好連續三個半形底線是一個空格。
-// 只有 schema 與填空題元件讀這個檔，空格寫法的定義集中在此。
+// 只有 schema 與填空題、橫式計算元件讀這個檔，空格寫法的定義集中在此。
+import { parseRichText, richPlainText } from './rich-text.ts';
+
 const BLANK_MARK = /(?<!_)_{3}(?!_)/g;
 const OVERLONG_UNDERSCORES = /_{4,}/;
 
@@ -25,4 +27,9 @@ export function blankWidthEm(answer: string): number {
   let width = 1;
   for (const char of answer) width += char.codePointAt(0)! <= 0x7f ? 0.6 : 1;
   return Math.round(width * 100) / 100;
+}
+
+/** 答案文字（可含注音標注與數學式）的空格底線寬度；填空題與橫式計算共用。 */
+export function answerBlankWidthEm(answer: string): number {
+  return blankWidthEm(richPlainText(parseRichText(answer).segments));
 }

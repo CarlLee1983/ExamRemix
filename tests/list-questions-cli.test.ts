@@ -48,6 +48,17 @@ describe('pnpm list:questions', () => {
     expect(all.every((r) => r[4] !== '')).toBe(true);
   });
 
+  it('--unit - 只列出沒有單元的題目，與輸出的 - 一致', () => {
+    const { rows } = run('tests/fixtures/no-unit', '--unit', '-');
+    expect(rows.map((r) => [r[0], r[4]])).toEqual([['loose-01', '-']]);
+    // 與其他單元用重複旗標組成 OR
+    expect(run('tests/fixtures/no-unit', '--unit', '-', '--unit', '乘法').rows.map((r) => r[0])).toEqual([
+      'loose-01',
+      'loose-02',
+    ]);
+    expect(run('tests/fixtures/no-unit', '--unit', '乘法').rows.map((r) => r[0])).toEqual(['loose-02']);
+  });
+
   it('--id 只列出該題；重複旗標可列多題', () => {
     expect(run('examples', '--id', 'sample-math-05').rows.map((r) => r[0])).toEqual(['sample-math-05']);
     expect(run('examples', '--id', 'sample-math-05', '--id', 'sample-math-06').rows.map((r) => r[0])).toEqual([

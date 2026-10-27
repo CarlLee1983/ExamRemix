@@ -1,9 +1,10 @@
 // 題庫檢查模組：題庫檔與試卷檔的 schema。
-// 只依賴 astro/zod，不碰 Astro 執行環境，讓 Vitest 與 agent 都能直接呼叫（ADR 0002）。
+// 不依賴 Astro 執行環境（依賴 astro/zod 與 katex，後者用來驗證數學式），讓 Vitest 與 agent 都能直接呼叫（ADR 0002）。
 import { z } from 'astro/zod';
 import { countBlanks, hasOverlongUnderscores } from './blank.ts';
 import { imageSrcProblem } from './image.ts';
 import { parseRichText } from './rich-text.ts';
+import { NO_UNIT_LABEL } from './unit.ts';
 import { calculate, DECIMAL_FORMAT, OPERATORS, sameNumber } from './vertical-calc.ts';
 import { hasAnnotation, parseZhuyin } from './zhuyin.ts';
 
@@ -15,6 +16,11 @@ const gradeSchema = z.number().int().min(1).max(6);
 /** 題目 ID：題庫檔名（不含副檔名）加兩位數序號，例如 sample-math-01。 */
 export function deriveQuestionId(bankName: string, no: number): string {
   return `${bankName}-${String(no).padStart(2, '0')}`;
+}
+
+/** 依 ID 排序用的比較函式（題目 ID、試卷 ID 共用）。 */
+export function compareIds(a: string, b: string): number {
+  return a < b ? -1 : a > b ? 1 : 0;
 }
 
 const nonEmptyText = z.string().min(1, '文字不可為空');
@@ -67,7 +73,11 @@ const questionBase = z.strictObject({
   no: z.number().int().positive(),
   subject: subjectSchema,
   grade: gradeSchema,
-  unit: z.string().min(1).optional(),
+  unit: z
+    .string()
+    .min(1)
+    .refine((unit) => unit !== NO_UNIT_LABEL, { error: `單元不可只寫 ${NO_UNIT_LABEL}，它在列出題目與題庫瀏覽時代表「沒有單元」；沒有單元請省略這個欄位` })
+    .optional(),
   stem: richText,
   explanation: richText,
   /** 附圖，顯示在題幹下方 */

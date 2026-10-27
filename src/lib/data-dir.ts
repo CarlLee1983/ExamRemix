@@ -52,7 +52,7 @@ function readSubdir(dataDir: string, subdir: string, problems: string[]): DataFi
 }
 
 /** 圖片檔與題庫檔放在一起：bank/ 底下遞迴找出所有支援副檔名的檔案。 */
-function listImages(dataDir: string): string[] {
+export function listImages(dataDir: string): string[] {
   const bankDir = join(dataDir, 'bank');
   return readdirSync(bankDir, { recursive: true, encoding: 'utf8' })
     .filter((path) => isImageFile(path) && statSync(join(bankDir, path)).isFile())

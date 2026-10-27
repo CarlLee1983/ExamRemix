@@ -1,0 +1,24 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 數學
+    grade: 3
+    stem: "這一題沒有單元。"
+    answer: true
+    explanation: "沒有單元。"
+    confirmed: true
+    source:
+      originalPaper: 虛構小考
+      number: 1
+  - no: 2
+    type: true-false
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "這一題有單元。"
+    answer: true
+    explanation: "有單元。"
+    confirmed: true
+    source:
+      originalPaper: 虛構小考
+      number: 2

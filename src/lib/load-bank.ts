@@ -1,9 +1,9 @@
 // 建置時載入題庫與試卷，一律跑跨檔檢查；有任何問題就讓建置失敗並列出全部問題。
 import { getCollection } from 'astro:content';
 import { basename } from 'node:path';
-import { readDataDir, resolveDataDir } from './data-dir.ts';
+import { listImages, resolveDataDir } from './data-dir.ts';
 import { buildQuestionIndex, checkBank, formatProblem } from '../domain/bank-check.ts';
-import type { Question } from '../domain/schema.ts';
+import { compareIds, type Question } from '../domain/schema.ts';
 
 function actualFileName(id: string, filePath: string | undefined): string {
   if (!filePath) throw new Error(`資料項目 ${id} 缺少檔案路徑，無法檢查檔名`);
@@ -19,7 +19,7 @@ async function load() {
     return { name: basename(fileName, '.yaml'), file: `bank/${fileName}`, data: b.data };
   });
   const paperInputs = papers.map((p) => ({ file: `papers/${actualFileName(p.id, p.filePath)}`, data: p.data }));
-  const problems = checkBank({ banks: bankInputs, papers: paperInputs, images: readDataDir(resolveDataDir()).images });
+  const problems = checkBank({ banks: bankInputs, papers: paperInputs, images: listImages(resolveDataDir()) });
   if (problems.length > 0) {
     throw new Error(`題庫檢查發現 ${problems.length} 個問題：\n${problems.map((p) => `  - ${formatProblem(p)}`).join('\n')}`);
   }
@@ -28,7 +28,7 @@ async function load() {
   // 題庫瀏覽頁用：所有題目（含未確認），依 ID 排序
   const entries = [...questions]
     .map(([id, question]) => ({ id, question }))
-    .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+    .sort((a, b) => compareIds(a.id, b.id));
 
   return { papers, questions, entries };
 }

@@ -1,7 +1,6 @@
 ---
 import { answerSpace } from '../domain/answer-space';
-import { blankWidthEm } from '../domain/blank';
-import { parseRichText, richPlainText } from '../domain/rich-text';
+import { answerBlankWidthEm } from '../domain/blank';
 import type { HorizontalCalcQuestion } from '../domain/schema';
 import Explanation from './Explanation.astro';
 import QuestionFigure from './QuestionFigure.astro';
@@ -17,7 +16,7 @@ interface Props {
 
 const { number, question } = Astro.props;
 const space = answerSpace(question);
-const blankWidth = blankWidthEm(richPlainText(parseRichText(question.answer).segments));
+const blankWidth = answerBlankWidthEm(question.answer);
 ---
 
 <div class="question question-horizontal-calc" data-question-type="horizontal-calc">

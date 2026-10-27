@@ -3,6 +3,7 @@
 // 篩選在前端以 data 屬性進行，條件可寫進網址（?confirmed=false），頁面仍是純靜態、唯讀。
 import Question from '../../components/Question.astro';
 import { SUBJECTS } from '../../domain/schema';
+import { NO_UNIT_LABEL, unitLabel } from '../../domain/unit';
 import { TYPE_LABELS } from '../../domain/type-labels';
 import { loadChecked } from '../../lib/load-bank.ts';
 import '../../styles/paper.css';
@@ -10,9 +11,7 @@ import '../../styles/site.css';
 
 const { entries } = await loadChecked();
 
-// 沒有單元的題目以 NO_UNIT 作為篩選值
-const NO_UNIT = '-';
-const unitOf = (unit: string | undefined) => unit ?? NO_UNIT;
+// 沒有單元的題目以 NO_UNIT_LABEL 作為篩選值（與列出題目指令共用）
 
 const present = <T,>(pick: (e: (typeof entries)[number]) => T) => new Set(entries.map(pick));
 const subjects = SUBJECTS.filter((s) => present((e) => e.question.subject).has(s));
@@ -27,7 +26,7 @@ const filters = [
   {
     key: 'unit',
     label: '單元',
-    options: [...units.map((u) => ({ value: u, text: u })), ...(hasNoUnit ? [{ value: NO_UNIT, text: '（無單元）' }] : [])],
+    options: [...units.map((u) => ({ value: u, text: u })), ...(hasNoUnit ? [{ value: NO_UNIT_LABEL, text: '（無單元）' }] : [])],
   },
   { key: 'type', label: '題型', options: types.map((t) => ({ value: t, text: TYPE_LABELS[t] })) },
   {
@@ -75,7 +74,7 @@ const filters = [
               data-id={id}
               data-subject={question.subject}
               data-grade={question.grade}
-              data-unit={unitOf(question.unit)}
+              data-unit={unitLabel(question.unit)}
               data-type={question.type}
               data-confirmed={String(question.confirmed)}
             >

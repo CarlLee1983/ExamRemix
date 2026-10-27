@@ -649,3 +649,10 @@ describe('作答空間（space）', () => {
     expect(questionSchema.safeParse({ ...validMakeSentence, space: 1 }).success).toBe(true);
   });
 });
+
+describe('單元（unit）', () => {
+  it('不可是 -：- 在列出題目與題庫瀏覽時代表「沒有單元」', () => {
+    expect(issuePaths(questionSchema, { ...validChoice, unit: '-' })).toEqual(['unit']);
+    expect(questionSchema.safeParse({ ...validChoice, unit: '-1' }).success).toBe(true);
+  });
+});

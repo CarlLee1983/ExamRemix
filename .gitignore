@@ -8,3 +8,6 @@ dist/
 # OS / editor
 .DS_Store
 .env
+
+# trail-code 的 graft map（本機快取）
+graft/

@@ -85,8 +85,50 @@ body {
   margin: 0;
 }
 
+.answer-slot {
+  position: relative;
+}
+
 .answer-box {
   white-space: pre;
+}
+
+/* 答案疊在作答括號中央，不佔版面，切換模式時括號寬度不變 */
+.answer {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  color: #f00;
+  visibility: hidden;
+}
+
+/* 解析在每題下方，只在答案卷顯示；試卷時不佔空間 */
+.explanation {
+  display: none;
+  margin: 1.5mm 0 0;
+  padding-left: 12mm;
+  font-size: 11pt;
+}
+
+.explanation-label {
+  color: #f00;
+}
+
+html[data-mode='answer'] .answer {
+  visibility: visible;
+}
+
+html[data-mode='answer'] .explanation {
+  display: block;
+}
+
+.mode-toggle {
+  display: block;
+  margin: 8mm auto 0;
+  padding: 2mm 5mm;
+  font: inherit;
+  font-size: 11pt;
+  cursor: pointer;
 }
 
 .number {
@@ -103,6 +145,10 @@ body {
 }
 
 @media print {
+  .mode-toggle {
+    display: none;
+  }
+
   body {
     background: none;
   }

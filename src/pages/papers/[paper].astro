@@ -38,6 +38,7 @@ const firstNumbers = sections.map((section) => {
     <title>{paper.title}</title>
   </head>
   <body>
+    <button type="button" class="mode-toggle" id="mode-toggle" aria-pressed="false">目前：試卷（按一下切換為答案卷）</button>
     <main class="paper">
       <header class="paper-head">
         <h1>{paper.title}</h1>
@@ -61,5 +62,15 @@ const firstNumbers = sections.map((section) => {
         ))
       }
     </main>
+    <script is:inline>
+      // 載入時一律是試卷；狀態只存在頁面上，不保存
+      const toggle = document.getElementById('mode-toggle');
+      toggle.addEventListener('click', () => {
+        const answer = toggle.getAttribute('aria-pressed') !== 'true';
+        toggle.setAttribute('aria-pressed', String(answer));
+        toggle.textContent = answer ? '目前：答案卷（按一下切換為試卷）' : '目前：試卷（按一下切換為答案卷）';
+        document.documentElement.dataset.mode = answer ? 'answer' : 'paper';
+      });
+    </script>
   </body>
 </html>

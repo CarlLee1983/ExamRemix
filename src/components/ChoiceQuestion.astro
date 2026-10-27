@@ -12,7 +12,8 @@ const { number, question } = Astro.props;
 
 <div class="question question-choice" data-question-type="choice">
   <p class="stem">
-    <span class="answer-box">（　）</span><span class="number">{number}.</span>
+    <span class="answer-slot"><span class="answer-box">（　）</span><span class="answer">{question.answer}</span></span><span
+      class="number">{number}.</span>
     {question.stem}
   </p>
   <ol class="options">
@@ -24,4 +25,5 @@ const { number, question } = Astro.props;
       ))
     }
   </ol>
+  <p class="explanation"><span class="explanation-label">解析：</span>{question.explanation}</p>
 </div>

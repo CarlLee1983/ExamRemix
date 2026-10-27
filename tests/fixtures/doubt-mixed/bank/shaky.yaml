@@ -1,0 +1,28 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 數學
+    grade: 3
+    stem: "2 + 3 等於多少？"
+    options:
+      - "4"
+      - "5"
+    answer: 2
+    explanation: "2 + 3 = 5。"
+    doubt: 題幹被筆跡蓋住，依上下文推定
+    source:
+      originalPaper: 虛構小考
+      number: 1
+  - no: 2
+    type: choice
+    subject: 數學
+    grade: 3
+    stem: "4 + 3 等於多少？"
+    options:
+      - "6"
+      - "7"
+    answer: 2
+    explanation: "4 + 3 = 7。"
+    source:
+      originalPaper: 虛構小考
+      number: 2

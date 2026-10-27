@@ -2,6 +2,7 @@
 /* 答案與解析的強調色、選項與解析的縮排 */
 :root {
   --answer-color: #f00;
+  --doubt-color: #b45309;
   --question-indent: 12mm;
   /* 造句類題型的作答行高；行數在 SentenceLines.astro */
   --sentence-line-height: 2.4em;
@@ -360,6 +361,16 @@ html[data-mode='answer'] .explanation {
   cursor: pointer;
 }
 
+/* 疑點提示只在螢幕上看，列印時隱藏 */
+.doubt-notice {
+  max-width: 210mm;
+  margin: 8mm auto 0;
+  padding: 2mm 5mm;
+  border: 1px solid var(--doubt-color);
+  color: var(--doubt-color);
+  font-size: 11pt;
+}
+
 /* 標籤固定不變，按下狀態只能靠外觀看出來 */
 .mode-toggle[aria-pressed='true'] {
   background: #333;
@@ -381,7 +392,8 @@ html[data-mode='answer'] .explanation {
 }
 
 @media print {
-  .mode-toggle {
+  .mode-toggle,
+  .doubt-notice {
     display: none;
   }
 

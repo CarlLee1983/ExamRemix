@@ -1,6 +1,8 @@
-// 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在且已確認的題目。
+// 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在的題目、疑點（ADR 0003）。
 // 純函式，輸入是已通過 schema 的題庫檔與試卷檔，不讀檔、不依賴 Astro（ADR 0002）。
+import { hasDoubt } from './doubt.ts';
 import { fileNameProblem } from './file-name.ts';
+import type { Problem } from './problem.ts';
 import { deriveQuestionId, type BankFile, type PaperFile, type Question } from './schema.ts';
 
 /** 題庫檔：name 是題庫檔名（不含副檔名，用來組題目 ID），file 是相對於資料根目錄的路徑。 */
@@ -14,13 +16,6 @@ export interface BankInput {
 export interface PaperInput {
   file: string;
   data: PaperFile;
-}
-
-export interface Problem {
-  /** 問題所在的檔案（相對於資料根目錄）；題目 ID 重複時列出所有出現的檔案 */
-  files: string[];
-  questionId?: string;
-  message: string;
 }
 
 const byFile = (a: { file: string }, b: { file: string }) => (a.file < b.file ? -1 : a.file > b.file ? 1 : 0);
@@ -55,7 +50,7 @@ function mismatches(a: Question, b: Question, aLabel: string, bLabel: string): s
 }
 
 /**
- * 回傳所有問題；空陣列代表通過。順序固定：先檔名不合格，再題目 ID 重複，再附圖不存在，
+ * 回傳所有問題（試卷引用有疑點的題目是警告，其餘是錯誤）；沒有錯誤代表通過。順序固定：先檔名不合格，再題目 ID 重複，再附圖不存在，
  * 再新題的衍生規則（依題庫檔、題目順序），最後依試卷檔、大題、題目順序。
  * images 是 bank/ 底下所有圖片檔相對於 bank/ 的路徑。
  */
@@ -67,11 +62,13 @@ export function checkBank(input: {
   const banks = [...input.banks].sort(byFile);
   const papers = [...input.papers].sort(byFile);
   const problems: Problem[] = [];
+  const addError = (problem: Omit<Problem, 'severity'>) => problems.push({ severity: 'error', ...problem });
+  const addWarning = (problem: Omit<Problem, 'severity'>) => problems.push({ severity: 'warning', ...problem });
 
   // 檔名不合格的檔案
   for (const { file } of [...banks, ...papers].sort(byFile)) {
     const reason = fileNameProblem(file.slice(file.lastIndexOf('/') + 1));
-    if (reason) problems.push({ files: [file], message: `檔名不合格：${reason}` });
+    if (reason) addError({ files: [file], message: `檔名不合格：${reason}` });
   }
 
   // 真正的防線是檔名規則（題庫名取自合格的檔名，不同檔案不會組出同一個 ID）；
@@ -85,7 +82,7 @@ export function checkBank(input: {
   }
   for (const [id, files] of filesById) {
     if (files.length > 1) {
-      problems.push({
+      addError({
         files,
         questionId: id,
         message: `題目 ID ${id} 重複`,
@@ -98,7 +95,7 @@ export function checkBank(input: {
     for (const question of bank.data.questions) {
       if (question.image && !images.has(question.image.src)) {
         const id = deriveQuestionId(bank.name, question.no);
-        problems.push({
+        addError({
           files: [bank.file],
           questionId: id,
           message: `題目 ${id} 找不到附圖 ${question.image.src}（圖片要放在 bank/ 底下，路徑相對於 bank/）`,
@@ -109,12 +106,12 @@ export function checkBank(input: {
 
   const index = buildQuestionIndex(banks);
 
-  // 衍生規則：新題只能衍生自已確認的原題，且題型、科目、年級、單元都與原題一致
+  // 衍生規則：新題只能衍生自沒有疑點的原題，且題型、科目、年級、單元都與原題一致
   for (const bank of banks) {
     for (const question of bank.data.questions) {
       if (!question.derivedFrom) continue;
       const id = deriveQuestionId(bank.name, question.no);
-      const report = (message: string) => problems.push({ files: [bank.file], questionId: id, message });
+      const report = (message: string) => addError({ files: [bank.file], questionId: id, message });
       const originals: [string, Question][] = [];
       for (const originalId of question.derivedFrom) {
         const original = index.get(originalId);
@@ -123,7 +120,7 @@ export function checkBank(input: {
           continue;
         }
         originals.push([originalId, original]);
-        if (!original.confirmed) report(`新題 ${id} 衍生自未確認的原題 ${originalId}（請先核對原題並把 confirmed 改為 true）`);
+        if (hasDoubt(original)) report(`新題 ${id} 衍生自有疑點的原題 ${originalId}：${original.doubt}（請先解除原題的疑點，或改從其他原題衍生）`);
         if (original.derivedFrom) report(`新題 ${id} 衍生自 ${originalId}，但它也是新題；新題只能衍生自原題`);
         const diff = mismatches(question, original, '新題', '原題');
         if (diff.length > 0) report(`新題 ${id} 與原題 ${originalId} 的${diff.join('、')}不一致`);
@@ -147,12 +144,13 @@ export function checkBank(input: {
       for (const id of section.questions) {
         const question = index.get(id);
         if (!question) {
-          problems.push({ files: [paper.file], questionId: id, message: `試卷引用了不存在的題目 ID ${id}` });
-        } else if (!question.confirmed) {
-          problems.push({
+          addError({ files: [paper.file], questionId: id, message: `試卷引用了不存在的題目 ID ${id}` });
+        } else if (hasDoubt(question)) {
+          // 已組好的試卷引用到有疑點的題目只提出警告，不讓建置停擺
+          addWarning({
             files: [paper.file],
             questionId: id,
-            message: `試卷引用了未確認的題目 ${id}（請核對後把 confirmed 改為 true）`,
+            message: `試卷引用了有疑點的題目 ${id}：${question.doubt}`,
           });
         }
       }
@@ -160,9 +158,4 @@ export function checkBank(input: {
   }
 
   return problems;
-}
-
-/** 每個問題一行，供建置錯誤與檢查指令共用。 */
-export function formatProblem(problem: Problem): string {
-  return `${problem.files.join('、')}：${problem.message}`;
 }

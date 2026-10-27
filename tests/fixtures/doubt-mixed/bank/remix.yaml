@@ -1,0 +1,13 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 數學
+    grade: 3
+    stem: "3 + 3 等於多少？"
+    options:
+      - "6"
+      - "7"
+    answer: 1
+    explanation: "3 + 3 = 6。"
+    derivedFrom:
+      - shaky-01

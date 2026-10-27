@@ -19,7 +19,7 @@ describe('pnpm list:questions', () => {
     expect(rows.length).toBeGreaterThan(40);
     for (const row of rows) expect(row).toHaveLength(7);
     const first = rows.find((r) => r[0] === 'sample-math-01')!;
-    expect(first.slice(1, 6)).toEqual(['choice', '數學', '3', '乘法', 'confirmed']);
+    expect(first.slice(1, 6)).toEqual(['choice', '數學', '3', '乘法', '-']);
     expect(first[6]).toBe('3 × 4 等於多少？');
   });
 
@@ -27,17 +27,41 @@ describe('pnpm list:questions', () => {
     expect(run('--id', 'sample-math-01').rows).toHaveLength(1);
   });
 
-  it('過濾條件以 AND 組合：科目、題型與未確認', () => {
-    const { rows } = run('examples', '--subject', '數學', '--type', 'choice', '--unconfirmed');
-    expect(rows.map((r) => r[0])).toEqual(['sample-math-22']);
-    expect(rows[0]![5]).toBe('unconfirmed');
+  it('過濾條件以 AND 組合：科目、題型與疑點', () => {
+    const { rows } = run('examples', '--subject', '數學', '--type', 'choice', '--doubt');
+    expect(rows.map((r) => r[0])).toEqual(['sample-math-02', 'sample-math-22']);
+    expect(new Set(rows.map((r) => r[5]))).toEqual(new Set(['doubt']));
   });
 
-  it('重複同一個旗標是 OR；--confirmed 排除未確認的題目', () => {
-    const { rows } = run('examples', '--subject', '數學', '--type', 'true-false', '--type', 'fill-blank', '--confirmed');
+  it('重複同一個旗標是 OR；--no-doubt 排除有疑點的題目', () => {
+    const { rows } = run('examples', '--subject', '數學', '--type', 'true-false', '--type', 'fill-blank', '--no-doubt');
     expect(rows.length).toBeGreaterThan(0);
     expect(new Set(rows.map((r) => r[1]))).toEqual(new Set(['true-false', 'fill-blank']));
-    expect(new Set(rows.map((r) => r[5]))).toEqual(new Set(['confirmed']));
+    expect(new Set(rows.map((r) => r[5]))).toEqual(new Set(['-']));
+  });
+
+  it('移除的 --confirmed、--unconfirmed 當作不認得的旗標：結束狀態 2', () => {
+    expect(run('examples', '--confirmed').status).toBe(2);
+    expect(run('examples', '--unconfirmed').status).toBe(2);
+  });
+
+  it('疑點欄標出有疑點的題目：doubt 或 -', () => {
+    const { rows } = run('tests/fixtures/doubt-warning');
+    expect(rows.map((r) => [r[0], r[5]])).toEqual([
+      ['shaky-01', 'doubt'],
+      ['shaky-02', '-'],
+    ]);
+  });
+
+  it('--doubt 只列有疑點的題目，--no-doubt 只列沒有疑點的題目', () => {
+    expect(run('tests/fixtures/doubt-warning', '--doubt').rows.map((r) => r[0])).toEqual(['shaky-01']);
+    expect(run('tests/fixtures/doubt-warning', '--no-doubt').rows.map((r) => r[0])).toEqual(['shaky-02']);
+  });
+
+  it('--doubt 與 --no-doubt 同時指定：沒有符合的題目，結束狀態 0', () => {
+    const { status, lines } = run('tests/fixtures/doubt-warning', '--doubt', '--no-doubt');
+    expect(status).toBe(0);
+    expect(lines).toEqual([]);
   });
 
   it('--grade 與 --unit 過濾；沒有單元的題目以 - 顯示', () => {

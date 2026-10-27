@@ -8,13 +8,14 @@ function run(...args: string[]) {
     env: { ...process.env, EXAMREMIX_DATA_DIR: '' },
     encoding: 'utf8',
   });
-  return { status: result.status, output: `${result.stdout}\n${result.stderr}` };
+  return { status: result.status, stdout: result.stdout, output: `${result.stdout}\n${result.stderr}` };
 }
 
 describe('pnpm check:bank', () => {
-  it('範例資料通過：結束狀態 0', () => {
+  it('範例資料通過：只有範例試卷引用有疑點題目的警告，結束狀態 0', () => {
     const { status, output } = run('examples');
-    expect(output).toContain('沒有問題');
+    expect(output).toContain('警告｜papers/sample-math.yaml：試卷引用了有疑點的題目 sample-math-02');
+    expect(output).toContain('0 個錯誤、1 個警告');
     expect(status).toBe(0);
   });
 
@@ -31,18 +32,19 @@ describe('pnpm check:bank', () => {
   });
 
   it('跨檔問題：結束狀態 1，每個問題列出檔案與題目 ID', () => {
-    const { status, output } = run('tests/fixtures/cross-file-problems');
+    const { status, stdout, output } = run('tests/fixtures/cross-file-problems');
     expect(status).toBe(1);
     expect(output).toContain('papers/bad-refs.yaml');
-    expect(output).toContain('draft-02');
     expect(output).toContain('draft-99');
-    expect(output).toContain('2 個問題');
+    expect(output).toContain('錯誤｜papers/bad-refs.yaml');
+    expect(stdout.trim().split('\n').at(-1)).toContain('1 個錯誤、0 個警告');
   });
 
   it('schema 錯誤：結束狀態 1，輸出檔案與欄位', () => {
     const { status, output } = run('tests/fixtures/bad-data');
     expect(status).toBe(1);
     expect(output).toContain('bank/broken.yaml');
+    expect(output).toContain('錯誤｜bank/broken.yaml');
     expect(output).toContain('questions.0.answer');
   });
 
@@ -73,6 +75,32 @@ describe('pnpm check:bank', () => {
     expect(output).toContain('bank/pic.yaml');
     expect(output).toContain('pic-01');
     expect(output).toContain('pic/missing.png');
+  });
+
+  it('只有疑點警告：結束狀態 0，列出警告與摘要', () => {
+    const { status, stdout } = run('tests/fixtures/doubt-warning');
+    expect(status).toBe(0);
+    expect(stdout).toContain('警告｜papers/uses-shaky.yaml');
+    expect(stdout).toContain('shaky-01');
+    expect(stdout).toContain('題幹被筆跡蓋住');
+    expect(stdout.trim().split('\n').at(-1)).toContain('0 個錯誤、1 個警告');
+  });
+
+  it('疑點錯誤與警告並存：結束狀態 1，錯誤列在警告之前', () => {
+    const { status, stdout } = run('tests/fixtures/doubt-mixed');
+    expect(status).toBe(1);
+    const lines = stdout.trim().split('\n');
+    expect(lines[0]).toMatch(/^錯誤｜bank\/remix\.yaml：.*shaky-01.*題幹被筆跡蓋住/);
+    expect(lines[1]).toMatch(/^警告｜papers\/uses-shaky\.yaml/);
+    expect(lines.at(-1)).toContain('1 個錯誤、1 個警告');
+  });
+
+  it('舊資料寫了 confirmed：結束狀態 1，指出檔案與欄位', () => {
+    const { status, output } = run('tests/fixtures/legacy-confirmed');
+    expect(status).toBe(1);
+    expect(output).toContain('bank/old.yaml');
+    expect(output).toContain('questions.0');
+    expect(output).toContain('confirmed');
   });
 
   it('資料目錄不存在：非零結束並說明路徑', () => {

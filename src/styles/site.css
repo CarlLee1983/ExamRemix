@@ -114,7 +114,7 @@
   list-style: none;
 }
 
-.meta .status-unconfirmed {
+.meta .status-doubt {
   color: #b45309;
   font-weight: bold;
 }

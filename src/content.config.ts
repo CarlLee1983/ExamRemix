@@ -2,6 +2,7 @@ import { relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineCollection } from 'astro:content';
 import type { Loader } from 'astro/loaders';
+import { reportProblems } from './domain/problem.ts';
 import { bankFileSchema, paperFileSchema } from './domain/schema';
 import { readDataDir, resolveDataDir, type DataFile } from './lib/data-dir.ts';
 
@@ -13,8 +14,9 @@ function dataLoader(name: string, pick: (contents: ReturnType<typeof readDataDir
     name,
     async load({ store, parseData, config }) {
       const contents = readDataDir(resolveDataDir());
-      if (contents.problems.length > 0) {
-        throw new Error(`資料檔無法讀入：\n${contents.problems.map((p) => `  - ${p}`).join('\n')}`);
+      const report = reportProblems(contents.problems);
+      if (report.failed) {
+        throw new Error(`資料檔無法讀入：\n${report.lines.map((line) => `  - ${line}`).join('\n')}`);
       }
       store.clear();
       for (const { name: id, file, path, raw } of pick(contents)) {

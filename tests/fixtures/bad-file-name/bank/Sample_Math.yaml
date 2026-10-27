@@ -9,7 +9,6 @@ questions:
       - "2"
     answer: 2
     explanation: "1 + 1 = 2。"
-    confirmed: true
     source:
       originalPaper: 虛構小考
       number: 1

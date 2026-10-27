@@ -12,7 +12,6 @@ questions:
       - "20"
     answer: 2
     explanation: "周長是 20。"
-    confirmed: true
     source:
       originalPaper: 虛構小考
       number: 1

@@ -35,10 +35,9 @@ describe('pnpm check:bank', () => {
     const { status, stdout, output } = run('tests/fixtures/cross-file-problems');
     expect(status).toBe(1);
     expect(output).toContain('papers/bad-refs.yaml');
-    expect(output).toContain('draft-02');
     expect(output).toContain('draft-99');
     expect(output).toContain('錯誤｜papers/bad-refs.yaml');
-    expect(stdout.trim().split('\n').at(-1)).toContain('2 個錯誤、0 個警告');
+    expect(stdout.trim().split('\n').at(-1)).toContain('1 個錯誤、0 個警告');
   });
 
   it('schema 錯誤：結束狀態 1，輸出檔案與欄位', () => {
@@ -94,6 +93,14 @@ describe('pnpm check:bank', () => {
     expect(lines[0]).toMatch(/^錯誤｜bank\/remix\.yaml：.*shaky-01.*題幹被筆跡蓋住/);
     expect(lines[1]).toMatch(/^警告｜papers\/uses-shaky\.yaml/);
     expect(lines.at(-1)).toContain('1 個錯誤、1 個警告');
+  });
+
+  it('舊資料寫了 confirmed：結束狀態 1，指出檔案與欄位', () => {
+    const { status, output } = run('tests/fixtures/legacy-confirmed');
+    expect(status).toBe(1);
+    expect(output).toContain('bank/old.yaml');
+    expect(output).toContain('questions.0');
+    expect(output).toContain('confirmed');
   });
 
   it('資料目錄不存在：非零結束並說明路徑', () => {

@@ -3,9 +3,9 @@ import { buildQuestionIndex, checkBank, type BankInput, type PaperInput } from '
 import { formatProblem } from '../src/domain/problem.ts';
 import type { BankFile, PaperFile } from '../src/domain/schema.ts';
 
-function bank(name: string, questions: Array<{ no: number; confirmed?: boolean }>, file = `bank/${name}.yaml`): BankInput {
+function bank(name: string, questions: Array<{ no: number }>, file = `bank/${name}.yaml`): BankInput {
   const data: BankFile = {
-    questions: questions.map(({ no, confirmed }) => ({
+    questions: questions.map(({ no }) => ({
       no,
       type: 'choice',
       subject: '數學',
@@ -14,7 +14,6 @@ function bank(name: string, questions: Array<{ no: number; confirmed?: boolean }
       options: ['甲', '乙'],
       answer: 1,
       explanation: '解析',
-      confirmed: confirmed ?? true,
       source: { originalPaper: '虛構小考', number: no },
     })),
   };
@@ -32,10 +31,10 @@ function paper(name: string, ids: string[]): PaperInput {
 }
 
 describe('checkBank', () => {
-  it('合法的題庫與試卷回傳空清單；未確認但沒被引用的題目允許', () => {
+  it('合法的題庫與試卷回傳空清單', () => {
     const problems = checkBank({
       images: [],
-      banks: [bank('a', [{ no: 1 }, { no: 2, confirmed: false }])],
+      banks: [bank('a', [{ no: 1 }, { no: 2 }])],
       papers: [paper('p', ['a-01'])],
     });
     expect(problems).toEqual([]);
@@ -80,28 +79,16 @@ describe('checkBank', () => {
     expect(problems[0]?.message).toContain('a-09');
   });
 
-  it('試卷引用未確認的題目：回報試卷檔與該題目 ID', () => {
-    const problems = checkBank({
-      images: [],
-      banks: [bank('a', [{ no: 1, confirmed: false }])],
-      papers: [paper('p', ['a-01'])],
-    });
-    expect(problems).toHaveLength(1);
-    expect(problems[0]?.files).toEqual(['papers/p.yaml']);
-    expect(problems[0]?.questionId).toBe('a-01');
-    expect(problems[0]?.message).toContain('未確認');
-  });
-
   it('多個問題同時存在時全部回報，順序穩定', () => {
     const input = {
       images: [],
-      banks: [bank('b', [{ no: 1, confirmed: false }]), bank('a', [{ no: 1 }])],
-      papers: [paper('q', ['b-01', 'zz-01']), paper('p', ['a-02'])],
+      banks: [bank('b', [{ no: 1 }]), bank('a', [{ no: 1 }])],
+      papers: [paper('q', ['b-02', 'zz-01']), paper('p', ['a-02'])],
     };
     const problems = checkBank(input);
     expect(problems.map((p) => [p.files[0], p.questionId])).toEqual([
       ['papers/p.yaml', 'a-02'],
-      ['papers/q.yaml', 'b-01'],
+      ['papers/q.yaml', 'b-02'],
       ['papers/q.yaml', 'zz-01'],
     ]);
     // 輸入順序不影響結果
@@ -122,7 +109,6 @@ function customBank(name: string, questions: Array<Record<string, unknown> & { n
         options: ['甲', '乙'],
         answer: 1,
         explanation: '解析',
-        confirmed: true,
         source: { originalPaper: '虛構小考', number: patch.no },
         ...patch,
       };
@@ -137,7 +123,6 @@ const derived = (no: number, from: string[], patch: Record<string, unknown> = {}
   no,
   source: undefined,
   derivedFrom: from,
-  confirmed: false,
   ...patch,
 });
 
@@ -164,7 +149,7 @@ describe('checkBank：附圖引用', () => {
 describe('checkBank：衍生規則', () => {
   const run = (...banks: BankInput[]) => checkBank({ images: [], banks, papers: [] });
 
-  it('合法的新題（原題存在、已確認、四個欄位一致）通過', () => {
+  it('合法的新題（原題存在、沒有疑點、四個欄位一致）通過', () => {
     expect(run(customBank('a', [{ no: 1 }]), customBank('n', [derived(1, ['a-01'])]))).toEqual([]);
   });
 
@@ -177,19 +162,10 @@ describe('checkBank：衍生規則', () => {
     expect(problems[0]?.message).toContain('不存在');
   });
 
-  it('原題未確認', () => {
-    const problems = run(customBank('a', [{ no: 1, confirmed: false }]), customBank('n', [derived(1, ['a-01'])]));
-    expect(problems).toHaveLength(1);
-    expect(problems[0]?.files).toEqual(['bank/n.yaml']);
-    expect(problems[0]?.questionId).toBe('n-01');
-    expect(problems[0]?.message).toContain('a-01');
-    expect(problems[0]?.message).toContain('未確認');
-  });
-
   it('原題本身是新題：新題只能衍生自原題', () => {
     const problems = run(
       customBank('a', [{ no: 1 }]),
-      customBank('n', [derived(1, ['a-01'], { confirmed: true }), derived(2, ['n-01'])]),
+      customBank('n', [derived(1, ['a-01']), derived(2, ['n-01'])]),
     );
     expect(problems).toHaveLength(1);
     expect(problems[0]?.questionId).toBe('n-02');
@@ -262,10 +238,10 @@ describe('buildQuestionIndex', () => {
 });
 
 describe('嚴重度', () => {
-  it('現有規則回報的問題全部是錯誤', () => {
+  it('疑點警告以外的規則回報的問題都是錯誤', () => {
     const problems = checkBank({
       images: [],
-      banks: [bank('a', [{ no: 1, confirmed: false }]), bank('a', [{ no: 1 }], 'bank/A_b.yaml')],
+      banks: [bank('a', [{ no: 1 }]), bank('a', [{ no: 1 }], 'bank/A_b.yaml')],
       papers: [paper('p', ['a-01', 'zz-01'])],
     });
     expect(problems.length).toBeGreaterThan(0);
@@ -305,11 +281,11 @@ describe('checkBank：疑點', () => {
     expect(line).toContain(doubt);
   });
 
-  it('沒有疑點的題目照常可被引用與衍生', () => {
+  it('沒有疑點的題目照常可被引用與衍生（題目預設可用）', () => {
     expect(
       checkBank({
         images: [],
-        banks: [customBank('a', [{ no: 1 }]), customBank('n', [derived(1, ['a-01'], { confirmed: true })])],
+        banks: [customBank('a', [{ no: 1 }]), customBank('n', [derived(1, ['a-01'])])],
         papers: [paper('p', ['a-01', 'n-01'])],
       }),
     ).toEqual([]);

@@ -27,10 +27,14 @@ function issuePaths(schema: z.ZodType, value: unknown): string[] {
 }
 
 describe('選擇題 schema', () => {
-  it('接受合法的原題，confirmed 預設為 false', () => {
-    const r = questionSchema.safeParse(validChoice);
-    expect(r.success).toBe(true);
-    expect(r.data?.confirmed).toBe(false);
+  it('接受合法的原題', () => {
+    expect(questionSchema.safeParse(validChoice).success).toBe(true);
+  });
+
+  it('舊資料寫了 confirmed 時失敗，訊息指出這個欄位', () => {
+    const r = questionSchema.safeParse({ ...validChoice, confirmed: true });
+    expect(r.success).toBe(false);
+    expect(r.error?.issues.map((i) => i.message).join('\n')).toContain('confirmed');
   });
 
   it('接受選填的疑點 doubt', () => {

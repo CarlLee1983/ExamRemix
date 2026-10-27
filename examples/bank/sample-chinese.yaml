@@ -12,7 +12,6 @@ questions:
       - "嘈雜"
     answer: 2
     explanation: "「寂靜」指安靜、沒有聲音；其餘三個都是吵鬧的意思。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 1
@@ -29,7 +28,6 @@ questions:
       - "過來"
     answer: 2
     explanation: "「輕輕地」說明走路的樣子。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 2
@@ -46,7 +44,6 @@ questions:
       - "設問"
     answer: 3
     explanation: "句中以「像」把月亮比作銀盤，是譬喻。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 3
@@ -58,7 +55,6 @@ questions:
     stem: "「小鳥在樹上唱歌」這句話用了擬人的修辭。"
     answer: true
     explanation: "小鳥不會真的唱歌，把小鳥當成人來寫，是擬人。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 4
@@ -70,7 +66,6 @@ questions:
     stem: "「寂靜」和「喧嘩」的意思相近。"
     answer: false
     explanation: "「寂靜」是沒有聲音，「喧嘩」是吵鬧，意思相反。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 5
@@ -84,7 +79,6 @@ questions:
       - "譬喻"
       - "像"
     explanation: "把月亮比作銀盤，是譬喻，喻詞是「像」。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 6
@@ -97,7 +91,6 @@ questions:
     answer:
       - "黃河入海流"
     explanation: "出自王之渙〈登鸛雀樓〉。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 7
@@ -108,7 +101,6 @@ questions:
     unit: 字音
     stem: "小明和媽媽到[公園|ㄍㄨㄥ ㄩㄢˊ]散步，看見一朵美麗的[花|ㄏㄨㄚ]。"
     explanation: "「公園」唸ㄍㄨㄥ ㄩㄢˊ，「花」唸ㄏㄨㄚ。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 8
@@ -119,7 +111,6 @@ questions:
     unit: 字音
     stem: "[圖書館|ㄊㄨˊ ㄕㄨ ㄍㄨㄢˇ]裡很安靜，大家都在看書。"
     explanation: "「圖書館」唸ㄊㄨˊ ㄕㄨ ㄍㄨㄢˇ。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 9
@@ -130,7 +121,6 @@ questions:
     unit: 字形
     stem: "星期天，我和[爸爸|ㄅㄚˋ ˙ㄅㄚ]到[公園|ㄍㄨㄥ ㄩㄢˊ]放風箏。"
     explanation: "ㄅㄚˋ ˙ㄅㄚ 寫成「爸爸」，ㄍㄨㄥ ㄩㄢˊ 寫成「公園」。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 10
@@ -141,7 +131,6 @@ questions:
     unit: 字形
     stem: "弟弟最喜歡吃[蘋果|ㄆㄧㄥˊ ㄍㄨㄛˇ]。"
     explanation: "ㄆㄧㄥˊ ㄍㄨㄛˇ 寫成「蘋果」。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 11
@@ -153,7 +142,6 @@ questions:
     stem: "用「雖然……但是……」造句。"
     answer: "雖然今天下大雨，但是我還是準時到校。"
     explanation: "句子要有轉折：前半句說一件事，後半句說相反或不受影響的結果。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 12
@@ -165,7 +153,6 @@ questions:
     stem: "用「一邊……一邊……」造句。"
     answer: "妹妹一邊[唱歌|ㄔㄤˋ ㄍㄜ]，一邊洗手。"
     explanation: "兩件事同時進行，兩個「一邊」後面各接一個動作。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 13
@@ -178,7 +165,6 @@ questions:
     example: "月亮像一個大銀盤掛在天上。"
     answer: "太陽像一顆大火球掛在天上。"
     explanation: "仿照例句，用「像」把一個東西比作另一個東西。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 14
@@ -191,7 +177,6 @@ questions:
     example: "小鳥在樹上快樂地唱歌。"
     answer: "小狗在草地上開心地奔跑。"
     explanation: "句型是「誰＋在哪裡＋怎樣地＋做什麼」。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級國語小考
       number: 15
@@ -207,7 +192,6 @@ questions:
       - "花園"
     answer: 1
     explanation: "「公園」的注音是 ㄍㄨㄥ ㄩㄢˊ。"
-    confirmed: false
     source:
       originalPaper: 虛構三年級國語小考
       number: 16

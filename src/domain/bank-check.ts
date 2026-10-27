@@ -1,4 +1,4 @@
-// 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在且已確認的題目、疑點。
+// 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在的題目、疑點（ADR 0003）。
 // 純函式，輸入是已通過 schema 的題庫檔與試卷檔，不讀檔、不依賴 Astro（ADR 0002）。
 import { hasDoubt } from './doubt.ts';
 import { fileNameProblem } from './file-name.ts';
@@ -106,7 +106,7 @@ export function checkBank(input: {
 
   const index = buildQuestionIndex(banks);
 
-  // 衍生規則：新題只能衍生自已確認的原題，且題型、科目、年級、單元都與原題一致
+  // 衍生規則：新題只能衍生自沒有疑點的原題，且題型、科目、年級、單元都與原題一致
   for (const bank of banks) {
     for (const question of bank.data.questions) {
       if (!question.derivedFrom) continue;
@@ -120,7 +120,6 @@ export function checkBank(input: {
           continue;
         }
         originals.push([originalId, original]);
-        if (!original.confirmed) report(`新題 ${id} 衍生自未確認的原題 ${originalId}（請先核對原題並把 confirmed 改為 true）`);
         if (hasDoubt(original)) report(`新題 ${id} 衍生自有疑點的原題 ${originalId}：${original.doubt}（請先解除原題的疑點，或改從其他原題衍生）`);
         if (original.derivedFrom) report(`新題 ${id} 衍生自 ${originalId}，但它也是新題；新題只能衍生自原題`);
         const diff = mismatches(question, original, '新題', '原題');
@@ -146,15 +145,8 @@ export function checkBank(input: {
         const question = index.get(id);
         if (!question) {
           addError({ files: [paper.file], questionId: id, message: `試卷引用了不存在的題目 ID ${id}` });
-        } else if (!question.confirmed) {
-          addError({
-            files: [paper.file],
-            questionId: id,
-            message: `試卷引用了未確認的題目 ${id}（請核對後把 confirmed 改為 true）`,
-          });
-        }
-        // 已組好的試卷引用到有疑點的題目只提出警告，不讓建置停擺
-        if (question && hasDoubt(question)) {
+        } else if (hasDoubt(question)) {
+          // 已組好的試卷引用到有疑點的題目只提出警告，不讓建置停擺
           addWarning({
             files: [paper.file],
             questionId: id,

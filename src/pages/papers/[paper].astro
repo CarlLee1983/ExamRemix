@@ -5,7 +5,7 @@ import { loadChecked } from '../../lib/load-bank.ts';
 import '../../styles/paper.css';
 
 export async function getStaticPaths() {
-  // 載入時已跑過跨檔檢查：引用的題目 ID 一定存在且已確認；引用到有疑點的題目只是警告，照常產生頁面
+  // 載入時已跑過跨檔檢查：引用的題目 ID 一定存在；引用到有疑點的題目只是警告，照常產生頁面
   const { papers, questions } = await loadChecked();
 
   return papers.map((paper) => ({

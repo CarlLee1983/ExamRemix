@@ -12,7 +12,6 @@ questions:
       - "22"
     answer: 2
     explanation: "3 × 4 = 12。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 1
@@ -29,7 +28,6 @@ questions:
       - "52"
     answer: 2
     explanation: "6 × 7 = 42。"
-    confirmed: true
     doubt: 範例疑點：原卷這題被筆跡蓋住，題幹依上下文推定
     source:
       originalPaper: 虛構三年級數學小考
@@ -47,7 +45,6 @@ questions:
       - "82"
     answer: 2
     explanation: "8 × 9 = 72。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 3
@@ -64,7 +61,6 @@ questions:
       - "70"
     answer: 2
     explanation: "12 × 5 = 60。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 4
@@ -81,7 +77,6 @@ questions:
       - "70"
     answer: 2
     explanation: "15 × 4 = 60。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 5
@@ -98,7 +93,6 @@ questions:
       - "85"
     answer: 2
     explanation: "25 × 3 = 75。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 6
@@ -115,7 +109,6 @@ questions:
       - "175"
     answer: 3
     explanation: "48 + 27 = 75。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 7
@@ -132,7 +125,6 @@ questions:
       - "294"
     answer: 3
     explanation: "136 + 58 = 194。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 8
@@ -149,7 +141,6 @@ questions:
       - "601"
     answer: 3
     explanation: "305 + 196 = 501。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 9
@@ -166,7 +157,6 @@ questions:
       - "1205"
     answer: 3
     explanation: "720 + 385 = 1105。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 10
@@ -183,7 +173,6 @@ questions:
       - "64"
     answer: 1
     explanation: "91 − 36 = 55。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 11
@@ -200,7 +189,6 @@ questions:
       - "252"
     answer: 1
     explanation: "400 − 157 = 243。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 12
@@ -217,7 +205,6 @@ questions:
       - "344"
     answer: 1
     explanation: "803 − 468 = 335。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 13
@@ -234,7 +221,6 @@ questions:
       - "6 顆"
     answer: 2
     explanation: "24 ÷ 6 = 4，每位同學 4 顆。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 14
@@ -251,7 +237,6 @@ questions:
       - "285 公分"
     answer: 2
     explanation: "3 公尺 = 300 公分，300 − 85 = 215。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 15
@@ -268,7 +253,6 @@ questions:
       - "13 天"
     answer: 3
     explanation: "96 ÷ 8 = 12，需要 12 天。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 16
@@ -285,7 +269,6 @@ questions:
       - "3048"
     answer: 2
     explanation: "千位都是 3，百位以 4 最大，比較 3480 與 3408，十位 8 > 0，所以 3480 最大。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 17
@@ -302,7 +285,6 @@ questions:
       - "10000 公尺"
     answer: 3
     explanation: "1 公里 = 1000 公尺。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 18
@@ -319,7 +301,6 @@ questions:
       - "52 公分"
     answer: 2
     explanation: "(9 + 4) × 2 = 26。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 19
@@ -336,7 +317,6 @@ questions:
       - "1/3"
     answer: 2
     explanation: "2/4 的分子分母同除以 2 得 1/2。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 20
@@ -353,7 +333,6 @@ questions:
       - "45 天"
     answer: 2
     explanation: "7 × 5 = 35。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 21
@@ -370,7 +349,7 @@ questions:
       - "63"
     answer: 2
     explanation: "9 × 6 = 54。"
-    confirmed: false
+    doubt: 範例疑點：原卷這題的選項印刷模糊，54 與 56 依計算推定
     source:
       originalPaper: 虛構三年級數學小考
       number: 22
@@ -382,7 +361,6 @@ questions:
     stem: "7 × 8 = 56。"
     answer: true
     explanation: "7 × 8 = 56，所以這句話是對的。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 23
@@ -394,7 +372,6 @@ questions:
     stem: "1 公里等於 100 公尺。"
     answer: false
     explanation: "1 公里 = 1000 公尺，所以這句話是錯的。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 24
@@ -406,7 +383,6 @@ questions:
     stem: "3/4 比 1/2 大。"
     answer: true
     explanation: "3/4 = 3/4，1/2 = 2/4，3/4 比 2/4 大。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 25
@@ -420,7 +396,6 @@ questions:
       - "7"
       - "14"
     explanation: "1 個星期有 7 天，2 個星期有 7 × 2 = 14 天。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 26
@@ -434,7 +409,6 @@ questions:
       - 300
       - 1000
     explanation: "1 公尺 = 100 公分，所以 3 公尺 = 300 公分；1 公里 = 1000 公尺。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 27
@@ -447,7 +421,6 @@ questions:
     answer:
       - "40"
     explanation: "5 × 8 = 40。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 28
@@ -459,7 +432,6 @@ questions:
     stem: "$36 + 48 =$"
     answer: 84
     explanation: "$36 + 48 = 84$。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 29
@@ -471,7 +443,6 @@ questions:
     stem: "$125 - 68 =$"
     answer: 57
     explanation: "$125 - 68 = 57$。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 30
@@ -483,7 +454,6 @@ questions:
     stem: "$7 \\times 8 =$"
     answer: "56"
     explanation: "$7 \\times 8 = 56$。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 31
@@ -497,7 +467,6 @@ questions:
     operator: "+"
     answer: "825"
     explanation: "個位 8 + 7 = 15，進 1；十位 5 + 6 + 1 = 12，進 1；百位 3 + 4 + 1 = 8。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 32
@@ -511,7 +480,6 @@ questions:
     operator: "+"
     answer: "7.35"
     explanation: "小數點對齊再相加：$4.60 + 2.75 = 7.35$。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 33
@@ -525,7 +493,6 @@ questions:
     operator: "-"
     answer: "424"
     explanation: "個位向十位借不到，要連續向百位借：$902 - 478 = 424$。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 34
@@ -539,7 +506,6 @@ questions:
     operator: "×"
     answer: "408"
     explanation: "$34 \\times 2 = 68$，$34 \\times 10 = 340$，$68 + 340 = 408$。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 35
@@ -551,7 +517,6 @@ questions:
     stem: "小明有 5 顆蘋果，姐姐又給他 7 顆，小明共有幾顆蘋果？"
     answer: "小明共有 12 顆蘋果。"
     explanation: "$5 + 7 = 12$，共有 12 顆。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 36
@@ -563,7 +528,6 @@ questions:
     stem: "媽媽買了 3 盒雞蛋，每盒有 12 顆，一共買了幾顆雞蛋？"
     answer: "媽媽一共買了 36 顆雞蛋。"
     explanation: "$12 \\times 3 = 36$，一共 36 顆。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 37
@@ -575,7 +539,6 @@ questions:
     stem: "小華有 85 元，買筆記本花了 47 元，還剩多少元？"
     answer: "小華還剩 38 元。"
     explanation: "$85 - 47 = 38$，還剩 38 元。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 38
@@ -590,7 +553,6 @@ questions:
       alt: 長 9 公分、寬 4 公分的長方形
     answer: "長方形的周長是 26 公分。"
     explanation: "$(9 + 4) \\times 2 = 26$，周長是 26 公分。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 39
@@ -603,7 +565,6 @@ questions:
     space: 8
     answer: "老闆應該找她 94 元。"
     explanation: "鉛筆 $12 \\times 3 = 36$ 元，筆記本 $35 \\times 2 = 70$ 元，共 $36 + 70 = 106$ 元，$200 - 106 = 94$。"
-    confirmed: true
     source:
       originalPaper: 虛構三年級數學小考
       number: 40

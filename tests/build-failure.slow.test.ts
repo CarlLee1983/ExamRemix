@@ -51,7 +51,6 @@ describe('astro build 遇到跨檔問題', () => {
 
     expect(status).not.toBe(0);
     expect(output).toContain('papers/bad-refs.yaml');
-    expect(output).toContain('draft-02');
     expect(output).toContain('draft-99');
   }, 120_000);
 });

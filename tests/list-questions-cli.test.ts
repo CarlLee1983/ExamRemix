@@ -13,36 +13,41 @@ function run(...args: string[]) {
 }
 
 describe('pnpm list:questions', () => {
-  it('沒有過濾條件時列出全部題目，每題一行、八個以 tab 分隔的欄位', () => {
+  it('沒有過濾條件時列出全部題目，每題一行、七個以 tab 分隔的欄位', () => {
     const { status, rows } = run('examples');
     expect(status).toBe(0);
     expect(rows.length).toBeGreaterThan(40);
-    for (const row of rows) expect(row).toHaveLength(8);
+    for (const row of rows) expect(row).toHaveLength(7);
     const first = rows.find((r) => r[0] === 'sample-math-01')!;
-    expect(first.slice(1, 7)).toEqual(['choice', '數學', '3', '乘法', 'confirmed', '-']);
-    expect(first[7]).toBe('3 × 4 等於多少？');
+    expect(first.slice(1, 6)).toEqual(['choice', '數學', '3', '乘法', '-']);
+    expect(first[6]).toBe('3 × 4 等於多少？');
   });
 
   it('沒給參數時預設讀 examples/', () => {
     expect(run('--id', 'sample-math-01').rows).toHaveLength(1);
   });
 
-  it('過濾條件以 AND 組合：科目、題型與未確認', () => {
-    const { rows } = run('examples', '--subject', '數學', '--type', 'choice', '--unconfirmed');
-    expect(rows.map((r) => r[0])).toEqual(['sample-math-22']);
-    expect(rows[0]![5]).toBe('unconfirmed');
+  it('過濾條件以 AND 組合：科目、題型與疑點', () => {
+    const { rows } = run('examples', '--subject', '數學', '--type', 'choice', '--doubt');
+    expect(rows.map((r) => r[0])).toEqual(['sample-math-02', 'sample-math-22']);
+    expect(new Set(rows.map((r) => r[5]))).toEqual(new Set(['doubt']));
   });
 
-  it('重複同一個旗標是 OR；--confirmed 排除未確認的題目', () => {
-    const { rows } = run('examples', '--subject', '數學', '--type', 'true-false', '--type', 'fill-blank', '--confirmed');
+  it('重複同一個旗標是 OR；--no-doubt 排除有疑點的題目', () => {
+    const { rows } = run('examples', '--subject', '數學', '--type', 'true-false', '--type', 'fill-blank', '--no-doubt');
     expect(rows.length).toBeGreaterThan(0);
     expect(new Set(rows.map((r) => r[1]))).toEqual(new Set(['true-false', 'fill-blank']));
-    expect(new Set(rows.map((r) => r[5]))).toEqual(new Set(['confirmed']));
+    expect(new Set(rows.map((r) => r[5]))).toEqual(new Set(['-']));
+  });
+
+  it('移除的 --confirmed、--unconfirmed 當作不認得的旗標：結束狀態 2', () => {
+    expect(run('examples', '--confirmed').status).toBe(2);
+    expect(run('examples', '--unconfirmed').status).toBe(2);
   });
 
   it('疑點欄標出有疑點的題目：doubt 或 -', () => {
     const { rows } = run('tests/fixtures/doubt-warning');
-    expect(rows.map((r) => [r[0], r[6]])).toEqual([
+    expect(rows.map((r) => [r[0], r[5]])).toEqual([
       ['shaky-01', 'doubt'],
       ['shaky-02', '-'],
     ]);

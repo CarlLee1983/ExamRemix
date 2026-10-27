@@ -5,8 +5,16 @@
   --question-indent: 12mm;
   /* 造句類題型的作答行高；行數在 SentenceLines.astro */
   --sentence-line-height: 2.4em;
-  /* 國字注音作答格每組注音的寬度 */
+  /* 國字注音／注音寫國字的作答格：注音寫國字每字一格，這是格子的邊長（也是高度） */
+  --cell-size: 1.6em;
+  /* 國字注音作答格內答案的字級；答案卷的注音以較小字級填入，才放得進格子 */
+  --zhuyin-answer-font-size: 0.8em;
+  /* 國字注音作答格每組注音的寬度。最長的一組注音有 4 個符號（如「ㄓㄨㄤˋ」），
+     每個符號約 1 個字寬，在 --zhuyin-answer-font-size 下為 4 × 0.8em = 3.2em，
+     寬度 3.6em 再留 0.4em 給組與組之間的空白；改字級時這個寬度要一起檢查 */
   --zhuyin-syllable-width: 3.6em;
+  /* 作答格與前後文字、作答格之間的間距 */
+  --cell-gap: 0.25em;
 }
 
 @page {
@@ -139,6 +147,7 @@ body {
    注音寫國字：每個字一格，注音是格子上方的 ruby。答案疊在格內，不佔版面，兩種模式格子大小不變 */
 .target-char {
   text-decoration: underline;
+  /* 底線稍微拉開，不貼著字底 */
   text-underline-offset: 0.2em;
 }
 
@@ -146,19 +155,21 @@ body {
 .char-cell {
   position: relative;
   display: inline-block;
-  height: 1.6em;
+  height: var(--cell-size);
   border: 1px solid #000;
+  /* 與周圍文字的底部對齊，行高不被撐開（同 .blank） */
   vertical-align: text-bottom;
 }
 
 .zhuyin-cell {
   width: calc(var(--syllables) * var(--zhuyin-syllable-width));
-  margin: 0 0.25em;
+  margin: 0 var(--cell-gap);
 }
 
 .char-cell {
-  width: 1.6em;
-  margin: 0 0.1em;
+  width: var(--cell-size);
+  /* 同一個詞的格子靠得近些，注音（rt）才看得出屬於哪一格 */
+  margin: 0 calc(var(--cell-gap) / 2);
 }
 
 .cell-answer {
@@ -173,17 +184,19 @@ body {
 }
 
 .zhuyin-cell .cell-answer {
-  font-size: 0.8em;
+  font-size: var(--zhuyin-answer-font-size);
 }
 
 /* 造句與照樣造句：例句、作答行與解析同縮排；範例句子疊在作答行上，行高與作答行相同，換行時仍落在行上 */
 .example {
+  /* 與選項同樣貼近題幹（見 .options） */
   margin: 1mm 0 0;
   padding-left: var(--question-indent);
 }
 
 .sentence-lines {
   position: relative;
+  /* 縮排與例句、解析對齊；上方留 1mm 與題幹或例句分開 */
   margin: 1mm 0 0 var(--question-indent);
 }
 

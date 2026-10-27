@@ -7,10 +7,8 @@ export type Segment =
   | { kind: 'text'; text: string }
   | {
       kind: 'ruby';
-      /** 被標注的字，一個元素一個字 */
-      chars: string[];
-      /** 每個字一組注音，與 chars 一一對應 */
-      zhuyin: string[];
+      /** 被標注的字與各自的注音，一個元素一個字 */
+      chars: { char: string; zhuyin: string }[];
     };
 
 export interface ParseResult {
@@ -19,13 +17,17 @@ export interface ParseResult {
   errors: string[];
 }
 
-// ㄅ–ㄩ（U+3105–U+3129）至少要有一個，其餘只能是聲調符號
-const VALID_GROUP = /^(?=.*[ㄅ-ㄩ])[ㄅ-ㄩˊˇˋ˙]+$/;
+// 一組注音的結構：輕聲 ˙ 只能放最前面，注音符號（ㄅ–ㄩ，U+3105–U+3129）至少一個，
+// 其他聲調（ˊ ˇ ˋ）最多一個且放最後
+const VALID_GROUP = /^˙?[ㄅ-ㄩ]+[ˊˇˋ]?$/;
+
+// 以字素為單位數字：帶異體字選擇符等組合字元的字算一個字
+const graphemes = new Intl.Segmenter('zh-Hant', { granularity: 'grapheme' });
 
 function parseAnnotation(content: string): { segment?: Segment; errors: string[] } {
   const marker = `[${content}]`;
   const bar = content.indexOf('|');
-  const chars = Array.from(content.slice(0, bar));
+  const chars = Array.from(graphemes.segment(content.slice(0, bar)), (g) => g.segment);
   const groups = content.slice(bar + 1).split(' ');
   const errors: string[] = [];
 
@@ -40,14 +42,14 @@ function parseAnnotation(content: string): { segment?: Segment; errors: string[]
   }
   for (const group of groups.filter((g) => g !== '' && !VALID_GROUP.test(g))) {
     errors.push(
-      `注音標注「${marker}」含非法注音「${group}」，只能使用注音符號（ㄅ–ㄩ）與聲調符號（ˊ ˇ ˋ ˙）`,
+      `注音標注「${marker}」含非法注音「${group}」，只能由注音符號（ㄅ–ㄩ）組成，輕聲 ˙ 放最前面，其他聲調（ˊ ˇ ˋ）最多一個且放最後`,
     );
   }
   if (charsOk && groups.length !== chars.length && !groups.some((g) => g === '')) {
     errors.push(`注音標注「${marker}」的注音組數（${groups.length}）必須等於字數（${chars.length}）`);
   }
 
-  return errors.length > 0 ? { errors } : { segment: { kind: 'ruby', chars, zhuyin: groups }, errors };
+  return errors.length > 0 ? { errors } : { segment: { kind: 'ruby', chars: chars.map((char, i) => ({ char, zhuyin: groups[i]! })) }, errors };
 }
 
 /** 把文字切成一般文字與注音標注的片段，並回報所有格式錯誤；有錯誤的標注不會出現在 segments。 */
@@ -96,7 +98,7 @@ export function parseZhuyin(text: string): ParseResult {
 
 /** 去掉注音，只留字。 */
 export function plainText(segments: Segment[]): string {
-  return segments.map((s) => (s.kind === 'text' ? s.text : s.chars.join(''))).join('');
+  return segments.map((s) => (s.kind === 'text' ? s.text : s.chars.map((c) => c.char).join(''))).join('');
 }
 
 export function hasAnnotation(segments: Segment[]): boolean {

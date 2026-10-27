@@ -76,6 +76,19 @@ test.describe('注音 ruby', () => {
     expect(Math.abs(second.y - first.y)).toBeLessThanOrEqual(1);
   });
 
+  test('ruby 帶有 rp 括號，畫面上不可見', async ({ page }) => {
+    // 一般標注（第 2 題）與注音寫國字（第 10 題）都有；rp 只在不支援 ruby 或複製文字時才用到
+    for (const q of [page.locator('.question-choice').nth(1), page.locator('.question-zhuyin-to-char').first()]) {
+      const rubies = q.locator('ruby');
+      const count = await rubies.count();
+      await expect(q.locator('rp')).toHaveCount(count * 2);
+      await expect(rubies.first().locator('rp').first()).toHaveText('(');
+      await expect(rubies.first().locator('rp').last()).toHaveText(')');
+      await expect(q.locator('rp:visible')).toHaveCount(0);
+      expect(await innerText(q.locator('.stem'))).not.toMatch(/[()]/);
+    }
+  });
+
   test('注音標注的原始語法不會出現在頁面上', async ({ page }) => {
     const text = await innerText(page.locator('main'));
     expect(text).not.toMatch(/\[[^\]]*\|[^\]]*\]/);
@@ -253,10 +266,10 @@ test.describe('造句與照樣造句', () => {
     for (const [q, sentence] of expected) {
       const answer = q.locator('.sentence-answer');
       await expect(answer).toBeVisible();
-      // 含 ruby 時 textContent 會夾帶注音，比對前先去掉 rt
+      // 含 ruby 時 textContent 會夾帶注音與括號，比對前先去掉 rt、rp
       const text = await answer.evaluate((el) => {
         const copy = el.cloneNode(true) as HTMLElement;
-        copy.querySelectorAll('rt').forEach((rt) => rt.remove());
+        copy.querySelectorAll('rt, rp').forEach((el) => el.remove());
         return copy.textContent;
       });
       expect(text).toBe(sentence);

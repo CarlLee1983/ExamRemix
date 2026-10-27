@@ -15,4 +15,4 @@ if (errors.length > 0) {
 }
 ---
 
-{segments.map((segment) => segment.kind === 'text' ? segment.text : segment.chars.map((char, i) => <ruby>{char}<rt>{segment.zhuyin[i]}</rt></ruby>))}
+{segments.map((segment) => segment.kind === 'text' ? segment.text : segment.chars.map(({ char, zhuyin }) => <ruby>{char}<rp>(</rp><rt>{zhuyin}</rt><rp>)</rp></ruby>))}

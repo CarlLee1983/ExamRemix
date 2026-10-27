@@ -23,7 +23,7 @@ const { segments } = parseZhuyin(question.stem);
           segment.text
         ) : (
           <>
-            <span class="target-char">{segment.chars.join('')}</span><span class="zhuyin-cell" style={`--syllables: ${segment.zhuyin.length}`}><span class="cell-answer">{segment.zhuyin.join(' ')}</span></span>
+            <span class="target-char">{segment.chars.map(({ char }) => char).join('')}</span><span class="zhuyin-cell" style={`--syllables: ${segment.chars.length}`}><span class="cell-answer">{segment.chars.map(({ zhuyin }) => zhuyin).join(' ')}</span></span>
           </>
         ),
       )

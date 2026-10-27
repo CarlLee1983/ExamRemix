@@ -14,30 +14,30 @@ export function deriveQuestionId(bankName: string, no: number): string {
   return `${bankName}-${String(no).padStart(2, '0')}`;
 }
 
-/**
- * 可含注音標注（`[字|注音]`）的非空文字。所有文字欄位共用，格式錯誤時 path 指向該欄位。
- */
-const richText = z
-  .string()
-  .min(1)
-  .superRefine((text, ctx) => {
-    for (const message of parseZhuyin(text).errors) ctx.addIssue({ code: 'custom', message });
-  });
+const nonEmptyText = z.string().min(1, '文字不可為空');
+
+/** 把注音標注的格式錯誤加進 ctx（path 即該欄位），回傳解析結果。所有文字欄位共用。 */
+function addZhuyinIssues(text: string, ctx: z.RefinementCtx) {
+  const result = parseZhuyin(text);
+  for (const message of result.errors) ctx.addIssue({ code: 'custom', message });
+  return result;
+}
+
+/** 可含注音標注（`[字|注音]`）的非空文字。 */
+const richText = nonEmptyText.superRefine((text, ctx) => {
+  addZhuyinIssues(text, ctx);
+});
 
 /** 國字注音與注音寫國字的題幹：標注就是要考的字，至少要有一個。 */
-const zhuyinTargetStem = z
-  .string()
-  .min(1)
-  .superRefine((text, ctx) => {
-    const { segments, errors } = parseZhuyin(text);
-    for (const message of errors) ctx.addIssue({ code: 'custom', message });
-    if (errors.length === 0 && !hasAnnotation(segments)) {
-      ctx.addIssue({
-        code: 'custom',
-        message: '題幹至少要有一個注音標注，例如 [公園|ㄍㄨㄥ ㄩㄢˊ]，標注就是要考的字',
-      });
-    }
-  });
+const zhuyinTargetStem = nonEmptyText.superRefine((text, ctx) => {
+  const { segments, errors } = addZhuyinIssues(text, ctx);
+  if (errors.length === 0 && !hasAnnotation(segments)) {
+    ctx.addIssue({
+      code: 'custom',
+      message: '題幹至少要有一個注音標注，例如 [公園|ㄍㄨㄥ ㄩㄢˊ]，標注就是要考的字',
+    });
+  }
+});
 
 // 所有題型共用的欄位；新題型以 extend 加上自己的欄位。
 const questionBase = z.strictObject({

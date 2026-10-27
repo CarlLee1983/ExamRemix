@@ -174,6 +174,7 @@ describe('填空題 schema', () => {
   it('答案含空字串時指出該項', () => {
     const bad = { ...validFillBlank, answer: ['300', ''] };
     expect(issuePaths(questionSchema, bad)).toEqual(['answer.1']);
+    expect(questionSchema.safeParse(bad).error!.issues[0]!.message).toBe('文字不可為空');
   });
 
   it('answer 為空陣列時失敗', () => {
@@ -245,6 +246,9 @@ describe('造句／照樣造句 schema', () => {
 
   it('造句 answer 為空字串或缺少時指出 answer', () => {
     expect(issuePaths(questionSchema, { ...validMakeSentence, answer: '' })).toEqual(['answer']);
+    expect(questionSchema.safeParse({ ...validMakeSentence, answer: '' }).error!.issues[0]!.message).toBe(
+      '文字不可為空',
+    );
     const { answer, ...rest } = validMakeSentence;
     expect(issuePaths(questionSchema, rest)).toEqual(['answer']);
   });
@@ -257,6 +261,9 @@ describe('造句／照樣造句 schema', () => {
 
   it('照樣造句 answer 為空字串時指出 answer', () => {
     expect(issuePaths(questionSchema, { ...validImitateSentence, answer: '' })).toEqual(['answer']);
+    expect(questionSchema.safeParse({ ...validImitateSentence, example: '' }).error!.issues[0]!.message).toBe(
+      '文字不可為空',
+    );
   });
 
   it('造句不接受 example 欄位', () => {

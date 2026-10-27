@@ -21,8 +21,8 @@ const { segments } = parseZhuyin(question.stem);
       segments.map((segment) =>
         segment.kind === 'text'
           ? segment.text
-          : segment.chars.map((char, i) => (
-              <ruby><span class="char-cell"><span class="cell-answer">{char}</span></span><rt>{segment.zhuyin[i]}</rt></ruby>
+          : segment.chars.map(({ char, zhuyin }) => (
+              <ruby><span class="char-cell"><span class="cell-answer">{char}</span></span><rp>(</rp><rt>{zhuyin}</rt><rp>)</rp></ruby>
             )),
       )
     }

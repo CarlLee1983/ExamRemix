@@ -15,13 +15,13 @@ describe('parseZhuyin', () => {
 
   it('單字標注', () => {
     expect(parseZhuyin('[國|ㄍㄨㄛˊ]').segments).toEqual([
-      { kind: 'ruby', chars: ['國'], zhuyin: ['ㄍㄨㄛˊ'] },
+      { kind: 'ruby', chars: [{ char: '國', zhuyin: 'ㄍㄨㄛˊ' }] },
     ]);
   });
 
   it('多字標注：注音以半形空白分隔，與字一一對應', () => {
     expect(parseZhuyin('[公園|ㄍㄨㄥ ㄩㄢˊ]')).toEqual({
-      segments: [{ kind: 'ruby', chars: ['公', '園'], zhuyin: ['ㄍㄨㄥ', 'ㄩㄢˊ'] }],
+      segments: [{ kind: 'ruby', chars: [{ char: '公', zhuyin: 'ㄍㄨㄥ' }, { char: '園', zhuyin: 'ㄩㄢˊ' }] }],
       errors: [],
     });
   });
@@ -31,9 +31,9 @@ describe('parseZhuyin', () => {
     expect(errors).toEqual([]);
     expect(segments).toEqual([
       { kind: 'text', text: '我在' },
-      { kind: 'ruby', chars: ['公', '園'], zhuyin: ['ㄍㄨㄥ', 'ㄩㄢˊ'] },
+      { kind: 'ruby', chars: [{ char: '公', zhuyin: 'ㄍㄨㄥ' }, { char: '園', zhuyin: 'ㄩㄢˊ' }] },
       { kind: 'text', text: '看見' },
-      { kind: 'ruby', chars: ['花'], zhuyin: ['ㄏㄨㄚ'] },
+      { kind: 'ruby', chars: [{ char: '花', zhuyin: 'ㄏㄨㄚ' }] },
       { kind: 'text', text: '。' },
     ]);
   });
@@ -49,15 +49,36 @@ describe('parseZhuyin', () => {
     expect(parseZhuyin('a [b')).toEqual({ segments: [{ kind: 'text', text: 'a [b' }], errors: [] });
   });
 
-  it('輕聲 ˙ 放在注音前或後都合法', () => {
-    expect(parseZhuyin('[子|˙ㄗ]').errors).toEqual([]);
-    expect(parseZhuyin('[嗎|ㄇㄚ˙]').errors).toEqual([]);
+  it('輕聲 ˙ 只能放在注音最前面', () => {
+    expect(parseZhuyin('[的|˙ㄉㄜ]').errors).toEqual([]);
+    expect(parseZhuyin('[的|ㄉㄜ˙]').errors).toHaveLength(1);
+  });
+
+  it('聲調位置與數量：最多一個 ˊ ˇ ˋ 且放最後', () => {
+    for (const ok of ['ㄗˋ', 'ㄇㄚ', 'ㄏㄨㄚˊ', '˙ㄉㄜ']) {
+      expect(parseZhuyin(`[字|${ok}]`).errors, ok).toEqual([]);
+    }
+    for (const bad of ['ˊˇㄗ', 'ㄏˊˊㄨㄚ', 'ㄗˋˊ', 'ˊㄗ', '˙ˊㄗ', '˙˙ㄗ']) {
+      const { errors } = parseZhuyin(`[字|${bad}]`);
+      expect(errors, bad).toHaveLength(1);
+      expect(errors[0], bad).toContain(`含非法注音「${bad}」`);
+    }
+  });
+
+  it('字數以字素計：異體字選擇符與擴充區的字各算一個字', () => {
+    const vs = '葛\u{E0100}';
+    expect(parseZhuyin(`[${vs}|ㄍㄜˊ]`)).toEqual({
+      segments: [{ kind: 'ruby', chars: [{ char: vs, zhuyin: 'ㄍㄜˊ' }] }],
+      errors: [],
+    });
+    expect(parseZhuyin('[𠀀|ㄅ]').errors).toEqual([]);
+    expect(parseZhuyin(`[${vs}|ㄍㄜˊ ㄍㄜˊ]`).errors).toHaveLength(1);
   });
 
   it('與空格 ___ 共存：___ 保留在一般文字中', () => {
     expect(parseZhuyin('[花|ㄏㄨㄚ]是___的')).toEqual({
       segments: [
-        { kind: 'ruby', chars: ['花'], zhuyin: ['ㄏㄨㄚ'] },
+        { kind: 'ruby', chars: [{ char: '花', zhuyin: 'ㄏㄨㄚ' }] },
         { kind: 'text', text: '是___的' },
       ],
       errors: [],
@@ -76,7 +97,7 @@ describe('parseZhuyin', () => {
 
   it('注音含非法字元時回報錯誤，指出該組', () => {
     expect(parseZhuyin('[花|hua]').errors).toEqual([
-      '注音標注「[花|hua]」含非法注音「hua」，只能使用注音符號（ㄅ–ㄩ）與聲調符號（ˊ ˇ ˋ ˙）',
+      '注音標注「[花|hua]」含非法注音「hua」，只能由注音符號（ㄅ–ㄩ）組成，輕聲 ˙ 放最前面，其他聲調（ˊ ˇ ˋ）最多一個且放最後',
     ]);
     expect(parseZhuyin('[花|ㄏㄨㄚ1]').errors).toHaveLength(1);
   });
@@ -110,7 +131,7 @@ describe('parseZhuyin', () => {
   it('未閉合：下一個 [ 出現前沒有 ] 時回報錯誤，後面的標注仍可解析', () => {
     const { segments, errors } = parseZhuyin('[花|ㄏㄨㄚ [草|ㄘㄠˇ]');
     expect(errors).toEqual(['注音標注未閉合：「[花|ㄏㄨㄚ 」缺少 ]']);
-    expect(segments.some((s) => s.kind === 'ruby' && s.chars[0] === '草')).toBe(true);
+    expect(segments.some((s) => s.kind === 'ruby' && s.chars[0]!.char === '草')).toBe(true);
   });
 
   it('同一段文字的多個錯誤全部回報', () => {

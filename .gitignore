@@ -1,0 +1,10 @@
+# 原始考卷（可能含孩子姓名、筆跡）
+inputs/
+
+# Node / build
+node_modules/
+dist/
+
+# OS / editor
+.DS_Store
+.env

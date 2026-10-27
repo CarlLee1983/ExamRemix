@@ -22,13 +22,13 @@
 
 ## 開始使用
 
-Node.js 版本需求見 `package.json` 的 `engines`，套件管理用 npm。
+Node.js 版本需求見 `package.json` 的 `engines`，套件管理用 pnpm（版本見 `package.json` 的 `packageManager`）。
 
 ```sh
-npm install
-npm run dev        # 開發伺服器，試卷在 /papers/<試卷檔名>/
-npm run build      # 建置靜態網站到 dist/
-npm run preview    # 預覽建置結果
+pnpm install
+pnpm dev           # 開發伺服器，試卷在 /papers/<試卷檔名>/
+pnpm build         # 建置靜態網站到 dist/
+pnpm preview       # 預覽建置結果
 ```
 
 ### 指定資料目錄
@@ -36,7 +36,7 @@ npm run preview    # 預覽建置結果
 網站從資料目錄讀題庫與試卷：`<資料目錄>/bank/*.yaml` 是題庫檔，`<資料目錄>/papers/*.yaml` 是試卷檔。預設讀 repo 內虛構的 `examples/`；用環境變數 `EXAMREMIX_DATA_DIR` 改指真實資料目錄：
 
 ```sh
-EXAMREMIX_DATA_DIR=data npm run dev
+EXAMREMIX_DATA_DIR=data pnpm dev
 ```
 
 建議把真實資料放在 repo 根目錄的 `data/`，它已被 `.gitignore` 排除（見 ADR 0001）。題庫檔或試卷檔格式有誤時，建置會失敗並指出檔案與欄位。
@@ -44,12 +44,12 @@ EXAMREMIX_DATA_DIR=data npm run dev
 ### 測試
 
 ```sh
-npm run check      # 型別檢查
-npm test           # Vitest：schema 單元測試，與較慢的建置失敗整合測試
-npm run test:e2e   # Playwright：以範例資料建置後測試試卷頁與 A4 列印
+pnpm check         # 型別檢查
+pnpm test          # Vitest：schema 單元測試，與較慢的建置失敗整合測試
+pnpm test:e2e      # Playwright：以範例資料建置後測試試卷頁與 A4 列印
 ```
 
-首次跑 `test:e2e` 前需要 `npx playwright install chromium`。
+首次跑 `test:e2e` 前需要 `pnpm exec playwright install chromium`。
 
 ## 隱私
 

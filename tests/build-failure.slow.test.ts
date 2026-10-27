@@ -9,7 +9,7 @@ const tmpRoot = mkdtempSync(join(tmpdir(), 'examremix-build-'));
 afterAll(() => rmSync(tmpRoot, { recursive: true, force: true }));
 
 function build(dataDir: string) {
-  const result = spawnSync('npx', ['astro', 'build', '--outDir', join(tmpRoot, 'dist')], {
+  const result = spawnSync('pnpm', ['exec', 'astro', 'build', '--outDir', join(tmpRoot, 'dist')], {
     env: { ...process.env, EXAMREMIX_DATA_DIR: dataDir },
     encoding: 'utf8',
   });

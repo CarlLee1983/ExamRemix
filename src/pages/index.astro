@@ -1,23 +1,21 @@
 ---
-import { loadChecked } from '../lib/load-bank.ts';
-
-const { papers } = await loadChecked();
+import '../styles/site.css';
 ---
 
 <!doctype html>
 <html lang="zh-Hant-TW">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ExamRemix</title>
   </head>
-  <body>
-    <h1>試卷</h1>
-    <ul>
-      {
-        papers.map((paper) => (
-          <li><a href={`/papers/${paper.id}/`}>{paper.data.title}</a></li>
-        ))
-      }
-    </ul>
+  <body class="site-body">
+    <main class="site">
+      <h1>ExamRemix</h1>
+      <ul class="paper-list">
+        <li><a href="/bank/">題庫瀏覽</a><span class="paper-meta">依科目、年級、單元、題型與確認狀態篩選題目，核對答案與解析</span></li>
+        <li><a href="/papers/">試卷列表</a><span class="paper-meta">開啟試卷與答案卷，列印</span></li>
+      </ul>
+    </main>
   </body>
 </html>

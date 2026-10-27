@@ -24,12 +24,18 @@ async function load() {
     throw new Error(`題庫檢查發現 ${problems.length} 個問題：\n${problems.map((p) => `  - ${formatProblem(p)}`).join('\n')}`);
   }
 
-  return { papers, questions: buildQuestionIndex(bankInputs) as ReadonlyMap<string, Question> };
+  const questions = buildQuestionIndex(bankInputs) as ReadonlyMap<string, Question>;
+  // 題庫瀏覽頁用：所有題目（含未確認），依 ID 排序
+  const entries = [...questions]
+    .map(([id, question]) => ({ id, question }))
+    .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+
+  return { papers, questions, entries };
 }
 
 let loaded: ReturnType<typeof load> | undefined;
 
-/** 檢查通過才回傳試卷與題目索引（題目 ID → 題目）；同一次建置只算一次。 */
+/** 檢查通過才回傳試卷、題目索引（題目 ID → 題目）與依 ID 排序的所有題目；同一次建置只算一次。 */
 export function loadChecked() {
   return (loaded ??= load());
 }

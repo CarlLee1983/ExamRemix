@@ -1,0 +1,125 @@
+/* 站內導覽頁（首頁、試卷列表、題庫瀏覽）的共用樣式；試卷頁用 paper.css。 */
+.site {
+  max-width: 190mm;
+  margin: 0 auto;
+  padding: 8mm 6mm 16mm;
+}
+
+.site-nav {
+  display: flex;
+  gap: 5mm;
+  margin: 0 0 6mm;
+  font-size: 11pt;
+}
+
+.site h1 {
+  margin: 0 0 4mm;
+  font-size: 18pt;
+}
+
+.paper-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paper-list li {
+  display: flex;
+  gap: 4mm;
+  align-items: baseline;
+  margin: 0 0 3mm;
+  padding: 3mm 4mm;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.2);
+}
+
+.paper-list a {
+  font-size: 13pt;
+}
+
+.paper-list .paper-meta {
+  color: #555;
+  font-size: 10.5pt;
+}
+
+/* 題庫瀏覽：篩選列 */
+.filters {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3mm 5mm;
+  align-items: center;
+  margin: 0 0 4mm;
+  padding: 3mm 4mm;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.2);
+}
+
+.filters[hidden] {
+  display: none;
+}
+
+.filters label {
+  display: flex;
+  gap: 1.5mm;
+  align-items: center;
+  font-size: 10.5pt;
+}
+
+.filters #count {
+  margin-left: auto;
+  font-size: 10.5pt;
+}
+
+/* 題庫瀏覽：每題一張卡片，題目沿用試卷的排版 */
+.bank-item {
+  margin: 0 0 4mm;
+  padding: 3mm 4mm 1mm;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.2);
+}
+
+.bank-item[hidden] {
+  display: none;
+}
+
+.bank-item-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm 4mm;
+  align-items: baseline;
+  margin: 0 0 2mm;
+  padding-bottom: 2mm;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 家長要把 ID 複製進試卷檔，所以醒目且可選取 */
+.question-id {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 13pt;
+  font-weight: bold;
+  user-select: text;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 3mm;
+  margin: 0;
+  padding: 0;
+  color: #444;
+  font-size: 10pt;
+  list-style: none;
+}
+
+.meta .status-unconfirmed {
+  color: #b45309;
+  font-weight: bold;
+}
+
+/* 題目卡片裡不需要試卷的題間距 */
+.bank-item .question {
+  margin-bottom: 2mm;
+}

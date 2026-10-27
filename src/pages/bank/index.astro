@@ -1,0 +1,143 @@
+---
+// 題庫瀏覽頁：列出題庫所有題目（含未確認），每題顯示 ID、屬性、出處與答案卷版面的題目（答案與解析都可見）。
+// 篩選在前端以 data 屬性進行，條件可寫進網址（?confirmed=false），頁面仍是純靜態、唯讀。
+import Question from '../../components/Question.astro';
+import { SUBJECTS } from '../../domain/schema';
+import { TYPE_LABELS } from '../../domain/type-labels';
+import { loadChecked } from '../../lib/load-bank.ts';
+import '../../styles/paper.css';
+import '../../styles/site.css';
+
+const { entries } = await loadChecked();
+
+// 沒有單元的題目以 NO_UNIT 作為篩選值
+const NO_UNIT = '-';
+const unitOf = (unit: string | undefined) => unit ?? NO_UNIT;
+
+const present = <T,>(pick: (e: (typeof entries)[number]) => T) => new Set(entries.map(pick));
+const subjects = SUBJECTS.filter((s) => present((e) => e.question.subject).has(s));
+const grades = [...present((e) => e.question.grade)].sort((a, b) => a - b);
+const units = [...present((e) => e.question.unit)].filter((u): u is string => u !== undefined).sort((a, b) => a.localeCompare(b, 'zh-Hant'));
+const hasNoUnit = entries.some((e) => e.question.unit === undefined);
+const types = (Object.keys(TYPE_LABELS) as (keyof typeof TYPE_LABELS)[]).filter((t) => present((e) => e.question.type).has(t));
+
+const filters = [
+  { key: 'subject', label: '科目', options: subjects.map((s) => ({ value: s, text: s })) },
+  { key: 'grade', label: '年級', options: grades.map((g) => ({ value: String(g), text: `${g} 年級` })) },
+  {
+    key: 'unit',
+    label: '單元',
+    options: [...units.map((u) => ({ value: u, text: u })), ...(hasNoUnit ? [{ value: NO_UNIT, text: '（無單元）' }] : [])],
+  },
+  { key: 'type', label: '題型', options: types.map((t) => ({ value: t, text: TYPE_LABELS[t] })) },
+  {
+    key: 'confirmed',
+    label: '確認狀態',
+    options: [
+      { value: 'true', text: '已確認' },
+      { value: 'false', text: '未確認' },
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="zh-Hant-TW" data-mode="answer">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>題庫瀏覽 - ExamRemix</title>
+  </head>
+  <body class="site-body">
+    <main class="site">
+      <nav class="site-nav"><a href="/">首頁</a><a href="/papers/">試卷列表</a></nav>
+      <h1>題庫瀏覽</h1>
+      {/* 篩選要 JS 才能運作，沒有 JS 時整列隱藏，所有題目照常列出 */}
+      <form class="filters" id="filters" hidden>
+        {
+          filters.map((filter) => (
+            <label>
+              {filter.label}
+              <select name={filter.key}>
+                <option value="">全部</option>
+                {filter.options.map((option) => <option value={option.value}>{option.text}</option>)}
+              </select>
+            </label>
+          ))
+        }
+        <span id="count" role="status"></span>
+      </form>
+      <div id="items">
+        {
+          entries.map(({ id, question }) => (
+            <article
+              class="bank-item"
+              data-id={id}
+              data-subject={question.subject}
+              data-grade={question.grade}
+              data-unit={unitOf(question.unit)}
+              data-type={question.type}
+              data-confirmed={String(question.confirmed)}
+            >
+              <header class="bank-item-head">
+                <code class="question-id">{id}</code>
+                <ul class="meta">
+                  <li>{question.subject}</li>
+                  <li>{question.grade} 年級</li>
+                  <li class="meta-unit">{question.unit}</li>
+                  <li>{TYPE_LABELS[question.type]}</li>
+                  <li class={question.confirmed ? 'status-confirmed' : 'status-unconfirmed'}>{question.confirmed ? '已確認' : '未確認'}</li>
+                  <li>
+                    {question.source
+                      ? `出處：${question.source.originalPaper} 第 ${question.source.number} 題`
+                      : `衍生自：${question.derivedFrom!.join('、')}`}
+                  </li>
+                </ul>
+              </header>
+              <Question number={question.no} question={question} />
+            </article>
+          ))
+        }
+      </div>
+    </main>
+    <script is:inline>
+      // 篩選條件：各 <select> 的值，空字串是全部；條件之間是 AND。條件與網址的查詢字串雙向同步（用 replaceState，不留歷史）。
+      const form = document.getElementById('filters');
+      const items = [...document.querySelectorAll('.bank-item')];
+      const count = document.getElementById('count');
+      const selects = [...form.querySelectorAll('select')];
+      form.hidden = false;
+      form.addEventListener('submit', (event) => event.preventDefault());
+
+      const params = new URLSearchParams(location.search);
+      for (const select of selects) {
+        const value = params.get(select.name);
+        // 網址裡不認得的值當作全部
+        if (value !== null && [...select.options].some((o) => o.value === value)) select.value = value;
+      }
+
+      function apply() {
+        let shown = 0;
+        for (const item of items) {
+          const match = selects.every((s) => s.value === '' || item.dataset[s.name] === s.value);
+          item.hidden = !match;
+          if (match) shown += 1;
+        }
+        count.textContent = `共 ${items.length} 題，顯示 ${shown} 題`;
+      }
+
+      function syncUrl() {
+        const query = new URLSearchParams();
+        for (const s of selects) if (s.value !== '') query.set(s.name, s.value);
+        const text = query.toString();
+        history.replaceState(null, '', text === '' ? location.pathname : `?${text}`);
+      }
+
+      form.addEventListener('change', () => {
+        apply();
+        syncUrl();
+      });
+      apply();
+    </script>
+  </body>
+</html>

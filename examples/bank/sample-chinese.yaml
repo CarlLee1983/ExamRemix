@@ -195,3 +195,19 @@ questions:
     source:
       originalPaper: 虛構三年級國語小考
       number: 15
+  - no: 16
+    type: choice
+    subject: 國語
+    grade: 3
+    unit: 字音
+    stem: "下列哪一個詞語的注音是 ㄍㄨㄥ ㄩㄢˊ？"
+    options:
+      - "公園"
+      - "公路"
+      - "花園"
+    answer: 1
+    explanation: "「公園」的注音是 ㄍㄨㄥ ㄩㄢˊ。"
+    confirmed: false
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 16

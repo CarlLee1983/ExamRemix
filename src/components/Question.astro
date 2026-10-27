@@ -1,6 +1,6 @@
 ---
 // 「題型 → 元件」的唯一對應。新增題型要動的地方：
-// schema.ts 的題型 schema 與 questionSchema 聯集、這個檔的 switch、新的題型元件、
+// schema.ts 的題型 schema 與 questionSchema 聯集、這個檔的 switch 與模板分支、新的題型元件、
 // paper.css 的樣式、範例題庫與試卷、schema 與 e2e 測試。漏接 switch 時 default 分支的型別檢查會報錯。
 import type { Question } from '../domain/schema';
 import ChoiceQuestion from './ChoiceQuestion.astro';
@@ -19,20 +19,17 @@ function unreachable(question: never): never {
   throw new Error(`未處理的題型：${JSON.stringify(question)}`);
 }
 
-function componentFor(question: Question) {
-  switch (question.type) {
-    case 'choice':
-      return ChoiceQuestion;
-    case 'true-false':
-      return TrueFalseQuestion;
-    case 'fill-blank':
-      return FillBlankQuestion;
-    default:
-      return unreachable(question);
-  }
+// 只做窮舉檢查；模板依 question.type 收窄後渲染，各題型元件的 props 仍有型別檢查
+switch (question.type) {
+  case 'choice':
+  case 'true-false':
+  case 'fill-blank':
+    break;
+  default:
+    unreachable(question);
 }
-
-const Component = componentFor(question);
 ---
 
-<Component number={number} question={question as never} />
+{question.type === 'choice' && <ChoiceQuestion number={number} question={question} />}
+{question.type === 'true-false' && <TrueFalseQuestion number={number} question={question} />}
+{question.type === 'fill-blank' && <FillBlankQuestion number={number} question={question} />}

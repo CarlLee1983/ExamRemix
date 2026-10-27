@@ -1,8 +1,13 @@
 import { expect, test, type Page } from '@playwright/test';
 
 const PAPER = '/papers/sample-math/';
-// 範例試卷 sample-math 的題數
-const QUESTION_COUNT = 21;
+// 範例試卷 sample-math 的各題型題數
+const CHOICE_COUNT = 21;
+const TRUE_FALSE_COUNT = 3;
+const FILL_BLANK_COUNT = 3;
+const QUESTION_COUNT = CHOICE_COUNT + TRUE_FALSE_COUNT + FILL_BLANK_COUNT;
+// 有作答括號的題數（選擇題與是非題）；填空題的答案另有 .blank-answer
+const BRACKET_COUNT = CHOICE_COUNT + TRUE_FALSE_COUNT;
 
 test.describe('試卷頁', () => {
   test.beforeEach(async ({ page }) => {
@@ -24,7 +29,7 @@ test.describe('試卷頁', () => {
 
   test('大題標題與選填配分', async ({ page }) => {
     const titles = page.locator('.section-title');
-    await expect(titles).toHaveCount(3);
+    await expect(titles).toHaveCount(5);
     await expect(titles.nth(0)).toContainText('一、計算選擇題');
     await expect(titles.nth(0).locator('.points')).toHaveText('（40 分）');
     // 第二個大題沒有配分
@@ -34,7 +39,7 @@ test.describe('試卷頁', () => {
 
   test('選擇題有作答括號、連續題號、題幹與選項', async ({ page }) => {
     const questions = page.locator('.question-choice');
-    await expect(questions).toHaveCount(QUESTION_COUNT);
+    await expect(questions).toHaveCount(CHOICE_COUNT);
 
     const first = questions.first();
     await expect(first.locator('.answer-box')).toHaveText('（　）');
@@ -45,7 +50,7 @@ test.describe('試卷頁', () => {
 
     // 題號跨大題連續：第二個大題的第一題是 11
     await expect(questions.nth(10).locator('.number')).toHaveText('11.');
-    await expect(questions.last().locator('.number')).toHaveText(`${QUESTION_COUNT}.`);
+    await expect(questions.last().locator('.number')).toHaveText(`${CHOICE_COUNT}.`);
   });
 
   test('每題 break-inside 為 avoid', async ({ page }) => {
@@ -100,7 +105,7 @@ test.describe('答案卷切換', () => {
     await expect(toggle(page)).toHaveAttribute('aria-pressed', 'true');
 
     const questions = page.locator('.question-choice');
-    await expect(page.locator('.answer:visible')).toHaveCount(QUESTION_COUNT);
+    await expect(page.locator('.answer:visible')).toHaveCount(BRACKET_COUNT);
     await expect(page.locator('.explanation:visible')).toHaveCount(QUESTION_COUNT);
 
     for (const { index, answer, explanation } of known) {
@@ -140,7 +145,7 @@ test.describe('答案卷切換', () => {
         await page.emulateMedia({ media });
         const numbers = await page.locator('.question .number').allTextContents();
         const stems = await page.locator('.question .stem').allTextContents();
-        const boxes = await page.locator('.question').evaluateAll((els) =>
+        const boxes = await page.locator('.question:has(.answer-box)').evaluateAll((els) =>
           els.map((el) => {
             const rect = (selector: string) => el.querySelector(selector)!.getBoundingClientRect();
             return { boxWidth: rect('.answer-box').width, stemX: rect('.stem').x, numberX: rect('.number').x };
@@ -157,7 +162,7 @@ test.describe('答案卷切換', () => {
 
       expect(after.numbers).toEqual(before.numbers);
       expect(after.stems).toEqual(before.stems);
-      expect(after.boxes.length).toBe(QUESTION_COUNT);
+      expect(after.boxes.length).toBe(BRACKET_COUNT);
       after.boxes.forEach((b, i) => {
         expect(Math.abs(b.boxWidth - before.boxes[i]!.boxWidth)).toBeLessThanOrEqual(1);
         expect(Math.abs(b.stemX - before.boxes[i]!.stemX)).toBeLessThanOrEqual(1);
@@ -177,7 +182,7 @@ test.describe('答案卷切換', () => {
     await toggle(page).click();
     await page.emulateMedia({ media: 'print' });
     await expect(toggle(page)).toBeHidden();
-    await expect(page.locator('.answer:visible')).toHaveCount(QUESTION_COUNT);
+    await expect(page.locator('.answer:visible')).toHaveCount(BRACKET_COUNT);
     await expect(page.locator('.explanation:visible')).toHaveCount(QUESTION_COUNT);
     // 解析與題目同一區塊，題目仍不可切斷
     const values = await page
@@ -185,6 +190,157 @@ test.describe('答案卷切換', () => {
       .evaluateAll((els) => els.map((el) => getComputedStyle(el).breakInside));
     expect(new Set(values)).toEqual(new Set(['avoid']));
     await expect(page.locator('.question .explanation').first()).toBeVisible();
+  });
+});
+
+test.describe('是非題', () => {
+  // 範例資料已知：sample-math-23 答案是、24 答案非、25 答案是
+  const known = [
+    { index: 0, mark: '○' },
+    { index: 1, mark: '✕' },
+    { index: 2, mark: '○' },
+  ];
+  const toggle = (page: Page) => page.getByRole('button', { name: '顯示答案卷' });
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto(PAPER);
+  });
+
+  test('試卷：有作答括號與題號，括號寬度與選擇題一致，答案不可見', async ({ page }) => {
+    const questions = page.locator('.question-true-false');
+    await expect(questions).toHaveCount(TRUE_FALSE_COUNT);
+    const first = questions.first();
+    await expect(first.locator('.answer-box')).toHaveText('（　）');
+    await expect(first.locator('.number')).toHaveText(`${CHOICE_COUNT + 1}.`);
+    await expect(first.locator('.stem')).toContainText('7 × 8 = 56');
+    await expect(first.locator('.answer')).toBeHidden();
+    await expect(first.locator('.explanation')).toBeHidden();
+
+    const choiceBox = (await page.locator('.question-choice .answer-box').first().boundingBox())!;
+    const tfBox = (await first.locator('.answer-box').boundingBox())!;
+    expect(Math.abs(tfBox.width - choiceBox.width)).toBeLessThanOrEqual(1);
+  });
+
+  test('答案卷：括號內是 ○ 或 ✕，括號寬度不變，解析可見', async ({ page }) => {
+    const questions = page.locator('.question-true-false');
+    const widthsBefore = await questions
+      .locator('.answer-box')
+      .evaluateAll((els) => els.map((el) => el.getBoundingClientRect().width));
+    await toggle(page).click();
+
+    for (const { index, mark } of known) {
+      const q = questions.nth(index);
+      await expect(q.locator('.answer')).toBeVisible();
+      await expect(q.locator('.answer')).toHaveText(mark);
+      const [answerColor, stemColor] = await Promise.all([
+        q.locator('.answer').evaluate((el) => getComputedStyle(el).color),
+        q.locator('.stem').evaluate((el) => getComputedStyle(el).color),
+      ]);
+      expect(answerColor).not.toBe(stemColor);
+      const box = (await q.locator('.answer-box').boundingBox())!;
+      const ans = (await q.locator('.answer').boundingBox())!;
+      expect(ans.x).toBeGreaterThanOrEqual(box.x - 1);
+      expect(ans.x + ans.width).toBeLessThanOrEqual(box.x + box.width + 1);
+      await expect(q.locator('.explanation')).toBeVisible();
+      await expect(q.locator('.explanation')).toContainText('解析：');
+    }
+
+    const widthsAfter = await questions
+      .locator('.answer-box')
+      .evaluateAll((els) => els.map((el) => el.getBoundingClientRect().width));
+    widthsAfter.forEach((w, i) => expect(Math.abs(w - widthsBefore[i]!)).toBeLessThanOrEqual(1));
+  });
+});
+
+test.describe('填空題', () => {
+  // 範例資料已知：sample-math-26 兩個空格（7、14）、27 兩個空格（300、1000）、28 一個空格（40）
+  const known = [
+    { index: 0, answers: ['7', '14'] },
+    { index: 1, answers: ['300', '1000'] },
+    { index: 2, answers: ['40'] },
+  ];
+  const toggle = (page: Page) => page.getByRole('button', { name: '顯示答案卷' });
+  const blankWidths = (page: Page) =>
+    page
+      .locator('.question-fill-blank .blank')
+      .evaluateAll((els) => els.map((el) => el.getBoundingClientRect().width));
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto(PAPER);
+  });
+
+  test('試卷：空格是底線，題幹不出現 ___，答案與解析不可見', async ({ page }) => {
+    const questions = page.locator('.question-fill-blank');
+    await expect(questions).toHaveCount(FILL_BLANK_COUNT);
+    await expect(questions.first().locator('.number')).toHaveText(`${CHOICE_COUNT + TRUE_FALSE_COUNT + 1}.`);
+
+    for (const { index, answers } of known) {
+      const q = questions.nth(index);
+      await expect(q.locator('.stem')).not.toContainText('___');
+      await expect(q.locator('.blank')).toHaveCount(answers.length);
+      const borders = await q
+        .locator('.blank')
+        .evaluateAll((els) => els.map((el) => getComputedStyle(el).borderBottomStyle));
+      expect(new Set(borders)).toEqual(new Set(['solid']));
+    }
+    await expect(page.locator('.blank-answer:visible')).toHaveCount(0);
+    await expect(page.locator('.question-fill-blank .explanation:visible')).toHaveCount(0);
+  });
+
+  test('試卷：答案較長的空格比較寬', async ({ page }) => {
+    // 第 2 題：答案 300（3 字）與 1000（4 字）
+    const [short, long] = await page
+      .locator('.question-fill-blank')
+      .nth(1)
+      .locator('.blank')
+      .evaluateAll((els) => els.map((el) => el.getBoundingClientRect().width));
+    expect(long!).toBeGreaterThan(short! + 1);
+    // 第 1 題：答案 7（1 字）與 14（2 字）
+    const [one, two] = await page
+      .locator('.question-fill-blank')
+      .first()
+      .locator('.blank')
+      .evaluateAll((els) => els.map((el) => el.getBoundingClientRect().width));
+    expect(two!).toBeGreaterThan(one! + 1);
+  });
+
+  test('答案卷：各空格顯示正確答案，底線寬度不變，解析可見', async ({ page }) => {
+    const before = await blankWidths(page);
+    await toggle(page).click();
+    const after = await blankWidths(page);
+    expect(after.length).toBe(before.length);
+    after.forEach((w, i) => expect(Math.abs(w - before[i]!)).toBeLessThanOrEqual(1));
+
+    const questions = page.locator('.question-fill-blank');
+    for (const { index, answers } of known) {
+      const q = questions.nth(index);
+      await expect(q.locator('.blank-answer')).toHaveText(answers);
+      await expect(q.locator('.blank-answer:visible')).toHaveCount(answers.length);
+      const [answerColor, stemColor] = await Promise.all([
+        q.locator('.blank-answer').first().evaluate((el) => getComputedStyle(el).color),
+        q.locator('.stem').evaluate((el) => getComputedStyle(el).color),
+      ]);
+      expect(answerColor).not.toBe(stemColor);
+      // 答案落在各自底線的範圍內
+      for (let i = 0; i < answers.length; i++) {
+        const blank = (await q.locator('.blank').nth(i).boundingBox())!;
+        const ans = (await q.locator('.blank-answer').nth(i).boundingBox())!;
+        expect(ans.x).toBeGreaterThanOrEqual(blank.x - 1);
+        expect(ans.x + ans.width).toBeLessThanOrEqual(blank.x + blank.width + 1);
+      }
+      await expect(q.locator('.explanation')).toBeVisible();
+    }
+  });
+
+  test('切換前後題幹的版面位置不變', async ({ page }) => {
+    const positions = () =>
+      page
+        .locator('.question-fill-blank .stem')
+        .evaluateAll((els) => els.map((el) => el.getBoundingClientRect().height));
+    const before = await positions();
+    await toggle(page).click();
+    const after = await positions();
+    after.forEach((h, i) => expect(Math.abs(h - before[i]!)).toBeLessThanOrEqual(1));
   });
 });
 

@@ -1,0 +1,32 @@
+---
+import { splitStem } from '../domain/blank';
+import type { FillBlankQuestion } from '../domain/schema';
+import Explanation from './Explanation.astro';
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: FillBlankQuestion;
+}
+
+const { number, question } = Astro.props;
+const parts = splitStem(question.stem);
+---
+
+<div class="question question-fill-blank" data-question-type="fill-blank">
+  <p class="stem">
+    {/* 空格與前後文字之間不留空白字元，答案卷切換時底線位置才不會動 */}
+    <span class="number">{number}.</span>
+    {
+      parts.map((part, i) => (
+        <>
+          {part}
+          {i < question.answer.length && (
+            <span class="blank" style={`--blank-chars: ${[...question.answer[i]!].length}`}><span class="blank-answer">{question.answer[i]}</span></span>
+          )}
+        </>
+      ))
+    }
+  </p>
+  <Explanation text={question.explanation} />
+</div>

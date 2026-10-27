@@ -50,3 +50,54 @@ questions:
     source:
       originalPaper: 虛構三年級國語小考
       number: 3
+  - no: 4
+    type: true-false
+    subject: 國語
+    grade: 3
+    unit: 修辭
+    stem: "「小鳥在樹上唱歌」這句話用了擬人的修辭。"
+    answer: true
+    explanation: "小鳥不會真的唱歌，把小鳥當成人來寫，是擬人。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 4
+  - no: 5
+    type: true-false
+    subject: 國語
+    grade: 3
+    unit: 字詞
+    stem: "「寂靜」和「喧嘩」的意思相近。"
+    answer: false
+    explanation: "「寂靜」是沒有聲音，「喧嘩」是吵鬧，意思相反。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 5
+  - no: 6
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    unit: 修辭
+    stem: "「月亮像一個大銀盤」用了___的修辭，句中的喻詞是「___」。"
+    answer:
+      - "譬喻"
+      - "像"
+    explanation: "把月亮比作銀盤，是譬喻，喻詞是「像」。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 6
+  - no: 7
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    unit: 詩詞
+    stem: "「白日依山盡，___。」"
+    answer:
+      - "黃河入海流"
+    explanation: "出自王之渙〈登鸛雀樓〉。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 7

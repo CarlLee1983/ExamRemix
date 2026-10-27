@@ -79,6 +79,90 @@ describe('選擇題 schema', () => {
   });
 });
 
+const validTrueFalse = {
+  no: 2,
+  type: 'true-false',
+  subject: '數學',
+  grade: 3,
+  stem: '7 × 8 = 56。',
+  answer: true,
+  explanation: '7 × 8 = 56。',
+  source: { originalPaper: '虛構期中考', number: 2 },
+};
+
+describe('是非題 schema', () => {
+  it('接受 true 與 false 的答案', () => {
+    expect(questionSchema.safeParse(validTrueFalse).success).toBe(true);
+    expect(questionSchema.safeParse({ ...validTrueFalse, answer: false }).success).toBe(true);
+  });
+
+  it('answer 不是布林值時指出 answer', () => {
+    expect(issuePaths(questionSchema, { ...validTrueFalse, answer: 'true' })).toEqual(['answer']);
+    expect(issuePaths(questionSchema, { ...validTrueFalse, answer: 1 })).toEqual(['answer']);
+  });
+
+  it('缺 answer 時指出 answer', () => {
+    const { answer, ...rest } = validTrueFalse;
+    expect(issuePaths(questionSchema, rest)).toEqual(['answer']);
+  });
+});
+
+const validFillBlank = {
+  no: 3,
+  type: 'fill-blank',
+  subject: '數學',
+  grade: 3,
+  stem: '3 公尺 = ___ 公分；1 公里 = ___ 公尺。',
+  answer: ['300', '1000'],
+  explanation: '1 公尺 = 100 公分，1 公里 = 1000 公尺。',
+  source: { originalPaper: '虛構期中考', number: 3 },
+};
+
+describe('填空題 schema', () => {
+  it('接受一個空格與多個空格', () => {
+    expect(questionSchema.safeParse(validFillBlank).success).toBe(true);
+    const single = { ...validFillBlank, stem: '5 × 8 = ___', answer: ['40'] };
+    expect(questionSchema.safeParse(single).success).toBe(true);
+  });
+
+  it('空格數多於答案數時指出 answer，訊息說明兩個數量', () => {
+    const bad = { ...validFillBlank, answer: ['300'] };
+    expect(issuePaths(questionSchema, bad)).toEqual(['answer']);
+    const r = questionSchema.safeParse(bad);
+    const message = r.error!.issues[0]!.message;
+    expect(message).toContain('2');
+    expect(message).toContain('1');
+  });
+
+  it('空格數少於答案數時指出 answer', () => {
+    const bad = { ...validFillBlank, answer: ['300', '1000', '5'] };
+    expect(issuePaths(questionSchema, bad)).toEqual(['answer']);
+  });
+
+  it('題幹沒有空格時失敗', () => {
+    const bad = { ...validFillBlank, stem: '3 公尺等於幾公分？', answer: ['300'] };
+    expect(issuePaths(questionSchema, bad)).toEqual(['stem']);
+  });
+
+  it('只有兩個底線不算空格', () => {
+    const bad = { ...validFillBlank, stem: '3 公尺 = __ 公分', answer: ['300'] };
+    expect(issuePaths(questionSchema, bad)).toEqual(['stem']);
+  });
+
+  it('答案含空字串時指出該項', () => {
+    const bad = { ...validFillBlank, answer: ['300', ''] };
+    expect(issuePaths(questionSchema, bad)).toEqual(['answer.1']);
+  });
+
+  it('answer 為空陣列時失敗', () => {
+    expect(issuePaths(questionSchema, { ...validFillBlank, answer: [] })).toContain('answer');
+  });
+
+  it('answer 不是陣列時指出 answer', () => {
+    expect(issuePaths(questionSchema, { ...validFillBlank, answer: '300' })).toEqual(['answer']);
+  });
+});
+
 describe('題庫檔 schema', () => {
   it('接受合法的題庫檔', () => {
     expect(bankFileSchema.safeParse({ questions: [validChoice] }).success).toBe(true);

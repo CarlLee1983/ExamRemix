@@ -373,3 +373,80 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 22
+  - no: 23
+    type: true-false
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "7 × 8 = 56。"
+    answer: true
+    explanation: "7 × 8 = 56，所以這句話是對的。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 23
+  - no: 24
+    type: true-false
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "1 公里等於 100 公尺。"
+    answer: false
+    explanation: "1 公里 = 1000 公尺，所以這句話是錯的。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 24
+  - no: 25
+    type: true-false
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "3/4 比 1/2 大。"
+    answer: true
+    explanation: "3/4 = 3/4，1/2 = 2/4，3/4 比 2/4 大。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 25
+  - no: 26
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "一個星期有 ___ 天，兩個星期有 ___ 天。"
+    answer:
+      - "7"
+      - "14"
+    explanation: "1 個星期有 7 天，2 個星期有 7 × 2 = 14 天。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 26
+  - no: 27
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "3 公尺 = ___ 公分；1 公里 = ___ 公尺。"
+    answer:
+      - "300"
+      - "1000"
+    explanation: "1 公尺 = 100 公分，所以 3 公尺 = 300 公分；1 公里 = 1000 公尺。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 27
+  - no: 28
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "5 × 8 = ___"
+    answer:
+      - "40"
+    explanation: "5 × 8 = 40。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 28

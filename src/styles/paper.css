@@ -108,6 +108,28 @@ body {
   visibility: hidden;
 }
 
+/* 填空題的空格：底線寬度依答案字數決定，兩種模式相同；答案疊在底線上，不佔版面 */
+.blank {
+  position: relative;
+  display: inline-block;
+  min-width: 2em;
+  width: calc(var(--blank-chars) * 1em + 1em);
+  margin: 0 0.25em;
+  border-bottom: 1px solid #000;
+  /* 底線與周圍文字的基線對齊，行高不被撐開 */
+  height: 1.2em;
+  vertical-align: text-bottom;
+}
+
+.blank-answer {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--answer-color);
+  visibility: hidden;
+}
+
 /* 解析在每題下方，只在答案卷顯示；試卷時不佔空間 */
 .explanation {
   display: none;
@@ -120,7 +142,8 @@ body {
   color: var(--answer-color);
 }
 
-html[data-mode='answer'] .answer {
+html[data-mode='answer'] .answer,
+html[data-mode='answer'] .blank-answer {
   visibility: visible;
 }
 

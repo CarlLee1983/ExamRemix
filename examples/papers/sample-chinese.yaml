@@ -8,3 +8,11 @@ sections:
       - sample-chinese-01
       - sample-chinese-02
       - sample-chinese-03
+  - title: 二、是非題
+    questions:
+      - sample-chinese-04
+      - sample-chinese-05
+  - title: 三、填空題
+    questions:
+      - sample-chinese-06
+      - sample-chinese-07

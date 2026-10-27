@@ -1,0 +1,32 @@
+---
+// 「題型 → 元件」的唯一對應；新增題型時，只改這裡與題型元件本身。
+import type { Question } from '../domain/schema';
+import ChoiceQuestion from './ChoiceQuestion.astro';
+import FillBlankQuestion from './FillBlankQuestion.astro';
+import TrueFalseQuestion from './TrueFalseQuestion.astro';
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: Question;
+}
+
+const { number, question } = Astro.props;
+
+// 漏接的題型會讓 question 無法指派給 never，型別檢查就會報錯
+function unreachable(question: never): never {
+  throw new Error(`未處理的題型：${JSON.stringify(question)}`);
+}
+---
+
+{
+  question.type === 'choice' ? (
+    <ChoiceQuestion number={number} question={question} />
+  ) : question.type === 'true-false' ? (
+    <TrueFalseQuestion number={number} question={question} />
+  ) : question.type === 'fill-blank' ? (
+    <FillBlankQuestion number={number} question={question} />
+  ) : (
+    unreachable(question)
+  )
+}

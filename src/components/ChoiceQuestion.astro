@@ -1,5 +1,7 @@
 ---
 import type { ChoiceQuestion } from '../domain/schema';
+import AnswerBracket from './AnswerBracket.astro';
+import Explanation from './Explanation.astro';
 
 interface Props {
   /** 試卷內的連續題號 */
@@ -13,8 +15,7 @@ const { number, question } = Astro.props;
 <div class="question question-choice" data-question-type="choice">
   <p class="stem">
     {/* 括號、題號之間刻意不留空白字元：換行會變成多餘的空格，使題幹位置與括號寬度改變 */}
-    <span class="answer-slot"><span class="answer-box">（　）</span><span class="answer">{question.answer}</span></span><span
-      class="number">{number}.</span>
+    <AnswerBracket answer={question.answer} /><span class="number">{number}.</span>
     {question.stem}
   </p>
   <ol class="options">
@@ -26,5 +27,5 @@ const { number, question } = Astro.props;
       ))
     }
   </ol>
-  <p class="explanation"><span class="explanation-label">解析：</span>{question.explanation}</p>
+  <Explanation text={question.explanation} />
 </div>

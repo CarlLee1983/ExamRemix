@@ -1,0 +1,22 @@
+---
+import type { TrueFalseQuestion } from '../domain/schema';
+import AnswerBracket from './AnswerBracket.astro';
+import Explanation from './Explanation.astro';
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: TrueFalseQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-true-false" data-question-type="true-false">
+  <p class="stem">
+    {/* 括號、題號之間刻意不留空白字元，理由同選擇題 */}
+    <AnswerBracket answer={question.answer ? '○' : '✕'} /><span class="number">{number}.</span>
+    {question.stem}
+  </p>
+  <Explanation text={question.explanation} />
+</div>

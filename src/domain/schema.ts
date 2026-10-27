@@ -1,6 +1,7 @@
 // 題庫檢查模組：題庫檔與試卷檔的 schema。
 // 只依賴 astro/zod，不碰 Astro 執行環境，讓 Vitest 與 agent 都能直接呼叫（ADR 0002）。
 import { z } from 'astro/zod';
+import { countBlanks } from './blank.ts';
 
 export const SUBJECTS = ['國語', '數學'] as const;
 
@@ -43,9 +44,33 @@ export const choiceQuestionSchema = questionBase
     message: '答案必須落在選項範圍內',
   });
 
+export const trueFalseQuestionSchema = questionBase.extend({
+  type: z.literal('true-false'),
+  answer: z.boolean(),
+});
+
+export const fillBlankQuestionSchema = questionBase
+  .extend({
+    type: z.literal('fill-blank'),
+    /** 每個空格一個答案，依題幹中空格出現的順序 */
+    answer: z.array(z.string().min(1)).min(1),
+  })
+  .superRefine((q, ctx) => {
+    const blanks = countBlanks(q.stem);
+    if (blanks === 0) {
+      ctx.addIssue({ code: 'custom', path: ['stem'], message: '填空題的題幹至少要有一個空格（___）' });
+    } else if (blanks !== q.answer.length) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['answer'],
+        message: `題幹有 ${blanks} 個空格，但 answer 有 ${q.answer.length} 個答案`,
+      });
+    }
+  });
+
 // 題型的鑑別聯集；之後的 ticket 在這裡加題型。
 export const questionSchema = z
-  .discriminatedUnion('type', [choiceQuestionSchema])
+  .discriminatedUnion('type', [choiceQuestionSchema, trueFalseQuestionSchema, fillBlankQuestionSchema])
   .superRefine((q, ctx) => {
     const hasSource = q.source !== undefined;
     const hasDerived = q.derivedFrom !== undefined;
@@ -98,5 +123,7 @@ export const paperFileSchema = z.strictObject({
 
 export type Question = z.infer<typeof questionSchema>;
 export type ChoiceQuestion = z.infer<typeof choiceQuestionSchema>;
+export type TrueFalseQuestion = z.infer<typeof trueFalseQuestionSchema>;
+export type FillBlankQuestion = z.infer<typeof fillBlankQuestionSchema>;
 export type BankFile = z.infer<typeof bankFileSchema>;
 export type PaperFile = z.infer<typeof paperFileSchema>;

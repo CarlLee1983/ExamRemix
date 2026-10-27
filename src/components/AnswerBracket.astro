@@ -1,0 +1,10 @@
+---
+interface Props {
+  /** 答案卷時填在括號內的答案 */
+  answer: string | number;
+}
+
+const { answer } = Astro.props;
+---
+
+<span class="answer-slot"><span class="answer-box">（　）</span><span class="answer">{answer}</span></span>

@@ -1,5 +1,5 @@
 ---
-import ChoiceQuestion from '../../components/ChoiceQuestion.astro';
+import Question from '../../components/Question.astro';
 import { loadChecked } from '../../lib/load-bank.ts';
 import '../../styles/paper.css';
 
@@ -56,7 +56,7 @@ const firstNumbers = sections.map((section) => {
               {section.points !== undefined && <span class="points">（{section.points} 分）</span>}
             </h2>
             {section.questions.map((question, i) => (
-              <ChoiceQuestion number={firstNumbers[s]! + i} question={question} />
+              <Question number={firstNumbers[s]! + i} question={question} />
             ))}
           </section>
         ))

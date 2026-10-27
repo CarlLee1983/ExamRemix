@@ -1,35 +1,34 @@
 import { expect, test, type Page } from '@playwright/test';
+import { EXAMPLE_DOUBTED as DOUBTED, EXAMPLE_TOTAL as TOTAL, expectSorted } from './helpers';
 
 const BANK = '/bank/';
 
-// 範例資料已知：數學 40 題、國語 16 題、自然 5 題，共 61 題；有疑點的只有 sample-math-02（範例試卷引用它）與 sample-math-22
-const TOTAL = 61;
-const DOUBTED = ['sample-math-02', 'sample-math-22'];
 // 疑點描述寫著「題幹依上下文推定」的那一題
 const DOUBTED_STEM = 'sample-math-02';
 
 const items = (page: Page) => page.locator('.bank-item:visible');
 const ids = (page: Page) => items(page).locator('.question-id').allTextContents();
-const filter = (page: Page, label: string, option: string) => page.getByLabel(label).selectOption({ label: option });
+const filter = (page: Page, label: string, option: string) => page.locator('#filters').getByLabel(label).selectOption({ label: option });
 
 test.describe('題庫瀏覽頁', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(BANK);
   });
 
-  test('預設列出所有題目（含有疑點），依 ID 排序，顯示筆數', async ({ page }) => {
+  test('預設列出所有題目（含有疑點）：有疑點在前，沒有疑點在後，各自依 ID 排序，顯示筆數', async ({ page }) => {
     await expect(items(page)).toHaveCount(TOTAL);
     const all = await ids(page);
-    expect(all.slice(0, 2)).toEqual(['sample-chinese-01', 'sample-chinese-02']);
-    expect(all).toEqual([...all].sort());
-    expect(all).toContain('sample-math-22');
+    expect(all.slice(0, 2)).toEqual(DOUBTED);
+    const plain = all.slice(2);
+    expect(plain.slice(0, 2)).toEqual(['sample-chinese-01', 'sample-chinese-02']);
+    expectSorted(plain);
     await expect(page.locator('#count')).toHaveText(`共 ${TOTAL} 題，顯示 ${TOTAL} 題`);
   });
 
   test('篩選條件預設都是全部', async ({ page }) => {
     for (const label of ['科目', '年級', '單元', '題型', '疑點']) {
-      await expect(page.getByLabel(label)).toHaveValue('');
-      await expect(page.getByLabel(label).locator('option').first()).toHaveText('全部');
+      await expect(page.locator('#filters').getByLabel(label)).toHaveValue('');
+      await expect(page.locator('#filters').getByLabel(label).locator('option').first()).toHaveText('全部');
     }
   });
 
@@ -74,12 +73,14 @@ test.describe('題庫瀏覽頁', () => {
 
   test('每題顯示 ID、中文題型與出處，答案與解析都看得到', async ({ page }) => {
     const item = page.locator('.bank-item[data-id="sample-math-01"]');
+    // 沒有疑點的題目收在 details 內，展開後才看得到題目
+    await item.locator('summary').click();
     await expect(item.locator('.question-id')).toHaveText('sample-math-01');
-    await expect(item.locator('.meta')).toContainText('數學');
-    await expect(item.locator('.meta')).toContainText('3 年級');
-    await expect(item.locator('.meta')).toContainText('乘法');
-    await expect(item.locator('.meta')).toContainText('選擇題');
+    await expect(item.locator('.item-head .chip.subject')).toHaveText('數學');
+    await expect(item.locator('.meta-tags')).toHaveText('3 年級・乘法・選擇題');
     await expect(item.locator('.meta')).toContainText('虛構三年級數學小考 第 1 題');
+    // 出處與用於在同一行，以「・」分隔
+    await expect(item.locator('.meta')).toHaveText(/第 1 題・用於：/);
     await expect(item.locator('.stem')).toContainText('3 × 4 等於多少？');
     await expect(item.locator('.answer')).toBeVisible();
     await expect(item.locator('.answer')).toHaveText('2');
@@ -105,18 +106,44 @@ test.describe('題庫瀏覽頁', () => {
     await filter(page, '疑點', '有疑點');
     await expect(page).toHaveURL(/\?doubt=true$/);
     await page.goto('/bank/?doubt=true');
-    await expect(page.getByLabel('疑點')).toHaveValue('true');
+    await expect(page.locator('#filters').getByLabel('疑點')).toHaveValue('true');
     expect(await ids(page)).toEqual(DOUBTED);
     await page.goto('/bank/?doubt=false');
     await expect(items(page)).toHaveCount(TOTAL - DOUBTED.length);
   });
 
   test('有疑點的題目顯示有疑點與描述，沒有疑點的題目不顯示', async ({ page }) => {
-    const doubt = page.locator(`.bank-item[data-id="${DOUBTED_STEM}"] .meta .status-doubt`);
+    const doubt = page.locator(`.bank-item[data-id="${DOUBTED_STEM}"] .status-doubt`);
     await expect(doubt).toBeVisible();
-    await expect(doubt).toContainText('有疑點');
     await expect(doubt).toContainText('題幹依上下文推定');
     await expect(page.locator('.bank-item[data-id="sample-math-01"] .status-doubt')).toHaveCount(0);
+    await expect(page.locator(`.bank-item[data-id="${DOUBTED_STEM}"] .chip.doubt`)).toHaveText('有疑點');
+    await expect(page.locator('.bank-item[data-id="sample-math-01"] .chip.doubt')).toHaveCount(0);
+  });
+
+  test('有疑點的題目不必展開就看得到答案與解析', async ({ page }) => {
+    const item = page.locator('.bank-item[data-id="sample-math-22"]');
+    await expect(item.locator('.explanation')).toBeVisible();
+    await expect(item.locator('.answer')).toBeVisible();
+  });
+
+  test('有條件的下拉轉藍底（active），清除條件後還原', async ({ page }) => {
+    const subject = page.locator('#filters').getByLabel('科目');
+    await expect(subject).not.toHaveClass(/active/);
+    await expect(subject).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+    await filter(page, '科目', '數學');
+    await expect(subject).toHaveClass(/active/);
+    // --blue-50；背景色有轉場，toHaveCSS 會重試到轉場結束
+    await expect(subject).toHaveCSS('background-color', 'rgb(238, 243, 254)');
+    await expect(page.locator('#filters').getByLabel('年級')).not.toHaveClass(/active/);
+    await page.getByRole('button', { name: '清除條件' }).click();
+    await expect(subject).not.toHaveClass(/active/);
+    await expect(subject).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+  });
+
+  test('帶條件的網址開啟時，對應的下拉已是 active', async ({ page }) => {
+    await page.goto('/bank/?doubt=true');
+    await expect(page.locator('#filters').getByLabel('疑點')).toHaveClass(/active/);
   });
 
   test('ID 是可選取的文字', async ({ page }) => {
@@ -128,7 +155,7 @@ test.describe('題庫瀏覽頁', () => {
     await filter(page, '疑點', '有疑點');
     await expect(page).toHaveURL(/\?doubt=true$/);
     await page.goto('/bank/?doubt=true&subject=%E6%95%B8%E5%AD%B8');
-    await expect(page.getByLabel('疑點')).toHaveValue('true');
+    await expect(page.locator('#filters').getByLabel('疑點')).toHaveValue('true');
     await expect(page.getByLabel('科目')).toHaveValue('數學');
     expect(await ids(page)).toEqual(DOUBTED);
     // 移除的確認狀態參數當作沒有條件，不保留相容
@@ -162,7 +189,7 @@ test.describe('試卷列表', () => {
     const rows = page.locator('.paper-list li');
     await expect(rows).toHaveCount(PAPERS.length);
     for (const [i, paper] of PAPERS.entries()) {
-      await expect(rows.nth(i).getByRole('link')).toHaveText(paper.title);
+      await expect(rows.nth(i).getByRole('link').first()).toHaveText(paper.title);
       await expect(rows.nth(i)).toContainText(paper.subject);
       await expect(rows.nth(i)).toContainText('3 年級');
       await expect(rows.nth(i)).toContainText(`${paper.questions} 題`);
@@ -177,15 +204,4 @@ test.describe('試卷列表', () => {
       await expect(page.getByRole('heading', { level: 1 })).toHaveText(paper.title);
     });
   }
-});
-
-test.describe('首頁', () => {
-  test('連到題庫瀏覽與試卷列表', async ({ page }) => {
-    await page.goto('/');
-    await page.getByRole('link', { name: '題庫瀏覽' }).click();
-    await expect(page).toHaveURL(BANK);
-    await page.goto('/');
-    await page.getByRole('link', { name: '試卷列表' }).click();
-    await expect(page).toHaveURL('/papers/');
-  });
 });

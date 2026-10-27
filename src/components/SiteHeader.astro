@@ -1,0 +1,24 @@
+---
+// 站內導覽頁（首頁、題庫瀏覽、試卷列表）共用的外殼；試卷頁不用，它有自己的工具列。
+export type Current = 'home' | 'bank' | 'papers';
+
+interface Props {
+  current: Current;
+}
+
+const { current } = Astro.props;
+const links: { key: Current; href: string; text: string }[] = [
+  { key: 'home', href: '/', text: '首頁' },
+  { key: 'bank', href: '/bank/', text: '題庫瀏覽' },
+  { key: 'papers', href: '/papers/', text: '試卷列表' },
+];
+---
+
+<header class="shell">
+  <div class="shell-in">
+    <a class="brand" href="/" aria-label="ExamRemix 首頁"><span class="brand-mark" aria-hidden="true">卷</span><span class="brand-label" aria-hidden="true">ExamRemix</span></a>
+    <nav aria-label="主選單">
+      {links.map((link) => <a href={link.href} aria-current={link.key === current ? 'page' : undefined}>{link.text}</a>)}
+    </nav>
+  </div>
+</header>

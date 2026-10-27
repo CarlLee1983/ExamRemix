@@ -1,0 +1,43 @@
+---
+// 題庫瀏覽頁每題的內容：頂列（ID、疑點、科目、年級・單元・題型、複製 ID）、疑點描述（有的話）、答案卷版面的題目，以及出處或衍生自、用於哪些試卷。
+// 有疑點的卡片與沒有疑點的 details 共用；ID 已經在 summary 的題目不重複顯示 ID。
+import { hasDoubt } from '../domain/doubt';
+import { TYPE_LABELS } from '../domain/type-labels';
+import type { Question as QuestionData } from '../domain/schema';
+import Icon from './Icon.astro';
+import Question from './Question.astro';
+
+interface Props {
+  id: string;
+  question: QuestionData;
+  /** 用到這題的試卷標題；空陣列表示尚未用於試卷 */
+  usedIn: readonly string[];
+  /** 是否在內容開頭顯示 ID（有疑點的卡片顯示，沒有疑點的 ID 在 summary） */
+  showId: boolean;
+}
+
+const { id, question, usedIn, showId } = Astro.props;
+---
+
+<div class={`item-head subj-${question.subject}`}>
+  {showId && <code class="question-id">{id}</code>}
+  {hasDoubt(question) && <span class="chip doubt">有疑點</span>}
+  <span class="chip subject">{question.subject}</span>
+  {/* 年級・單元・題型合成一個標籤；沒有單元時不留多餘的「・」 */}
+  <span class="chip meta-tags">{question.grade} 年級{question.unit !== undefined && <>・<span class="meta-unit">{question.unit}</span></>}・{TYPE_LABELS[question.type]}</span>
+  <span class="spacer"></span>
+  {/* 複製要 JS 才能運作，預設 hidden */}
+  <button type="button" class="btn quiet sm copy-id" hidden><Icon name="copy" /><span>複製 ID</span></button>
+</div>
+{hasDoubt(question) && <p class="status-doubt">疑點：{question.doubt}</p>}
+<Question number={question.no} question={question} />
+{/* 出處與用於寫在同一行，以「・」分隔 */}
+<p class="meta">
+  <span class="source">
+    {
+      question.source
+        ? `出處：${question.source.originalPaper}${question.source.section ? ` ${question.source.section}` : ''}${question.source.number !== undefined ? ` 第 ${question.source.number} 題` : ''}`
+        : `衍生自：${question.derivedFrom!.join('、')}`
+    }
+  </span>・<span class="used-in">{usedIn.length > 0 ? `用於：${usedIn.join('、')}` : '尚未用於試卷'}</span>
+</p>

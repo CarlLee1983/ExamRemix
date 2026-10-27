@@ -1,0 +1,34 @@
+---
+// 站內導覽頁的共同骨架：頁首外殼加內容區。試卷頁不用（它是 A4 紙張加工具列）。
+import SiteHeader from '../components/SiteHeader.astro';
+import type { Current } from '../components/SiteHeader.astro';
+import '../styles/tokens.css';
+import '../styles/ui.css';
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  current: Current;
+  /** 寫在 <html> 的 data-mode；題庫瀏覽頁固定顯示答案卷版面 */
+  mode?: 'paper' | 'answer';
+}
+
+const { title, current, mode } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-Hant-TW" data-mode={mode}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body class="site-body">
+    <SiteHeader current={current} />
+    {/* 首頁的主視覺要跨滿全寬，放在內容區之外 */}
+    <slot name="hero" />
+    <main class="content">
+      <slot />
+    </main>
+  </body>
+</html>

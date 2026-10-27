@@ -1,125 +1,346 @@
-/* 站內導覽頁（首頁、試卷列表、題庫瀏覽）的共用樣式；試卷頁用 paper.css。 */
-.site {
-  max-width: 190mm;
-  margin: 0 auto;
-  padding: 8mm 6mm 16mm;
-}
-
-.site-nav {
-  display: flex;
-  gap: 5mm;
-  margin: 0 0 6mm;
-  font-size: 11pt;
-}
-
-.site h1 {
-  margin: 0 0 4mm;
-  font-size: 18pt;
-}
-
-.paper-list {
+/* 站內導覽頁（首頁、題庫瀏覽、試卷列表）的共用樣式，只讀 tokens.css；試卷頁用 paper.css。 */
+.site-body {
+  min-height: 100vh;
   margin: 0;
-  padding: 0;
-  list-style: none;
+  background: var(--ground);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: 1.6;
 }
 
-.paper-list li {
-  display: flex;
-  gap: 4mm;
-  align-items: baseline;
-  margin: 0 0 3mm;
-  padding: 3mm 4mm;
-  background: #fff;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 0.2);
-}
-
-.paper-list a {
-  font-size: 13pt;
-}
-
-.paper-list .paper-meta {
-  color: #555;
-  font-size: 10.5pt;
-}
-
-/* 題庫瀏覽：篩選列 */
-.filters {
+/* 外殼：黏頂、半透明；目前頁用底線指示（不用填色，避免和按鈕混淆） */
+.shell {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 5;
+  border-bottom: 1px solid var(--line);
+  background: var(--shell-bg);
+  backdrop-filter: saturate(1.4) blur(8px);
+}
+
+.shell-in,
+.hero-in,
+.content {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+.shell-in {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3mm 5mm;
+  gap: 24px;
   align-items: center;
-  margin: 0 0 4mm;
-  padding: 3mm 4mm;
-  background: #fff;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 0.2);
+  height: var(--shell-height);
 }
 
-.filters[hidden] {
-  display: none;
-}
-
-.filters label {
-  display: flex;
-  gap: 1.5mm;
+.brand {
+  display: inline-flex;
+  gap: 10px;
   align-items: center;
-  font-size: 10.5pt;
+  color: var(--text);
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
 }
 
-.filters #count {
-  margin-left: auto;
-  font-size: 10.5pt;
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-small);
+  background: var(--blue-600);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.2);
+  color: var(--on-accent);
+  font-size: var(--fs-body);
 }
 
-/* 題庫瀏覽：每題一張卡片，題目沿用試卷的排版 */
-.bank-item {
-  margin: 0 0 4mm;
-  padding: 3mm 4mm 1mm;
-  background: #fff;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 0.2);
-}
-
-.bank-item[hidden] {
-  display: none;
-}
-
-.bank-item-head {
+.shell nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1mm 4mm;
+  gap: 4px;
+  height: 100%;
+}
+
+.shell nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.15s var(--ease);
+}
+
+.shell nav a:hover {
+  color: var(--text);
+}
+
+.shell nav a[aria-current] {
+  color: var(--blue-700);
+}
+
+.shell nav a[aria-current]::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  bottom: -1px;
+  left: 14px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--blue-600);
+}
+
+.content {
+  padding-block: 36px 56px;
+}
+
+.display {
+  margin: 0;
+  font-size: var(--fs-h1);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.content h2,
+.content h3 {
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.lede {
+  margin: 8px 0 24px;
+  color: var(--muted);
+}
+
+.card {
+  border-radius: var(--r-card);
+  background: var(--surface);
+  box-shadow: var(--elev);
+}
+
+/* 首頁主視覺：淺藍漸層，左邊問候與摘要，右邊兩張統計卡 */
+.hero {
+  background: linear-gradient(var(--hero-top), var(--ground));
+}
+
+.hero-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px 220px;
+  gap: 20px;
+  align-items: stretch;
+  padding-block: 44px 40px;
+}
+
+.greet {
+  align-self: center;
+}
+
+.greet .date {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.greet .sum {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+}
+
+.greet .sum b {
+  color: var(--text);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 22px 20px;
+}
+
+/* 標題把數字與說明包在一起，讀屏軟體會連著讀「2 有疑點的題目」；畫面上數字在上、說明在下 */
+.stat h2 {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 16px;
+  letter-spacing: 0;
+}
+
+.stat-label {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+
+.stat .btn {
+  margin-top: auto;
+}
+
+.stat-num {
+  margin: 0;
+  font-size: var(--fs-num);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 沒有疑點時取代大數字，字級同高以維持卡片等高 */
+.stat-num.all-clear {
+  display: flex;
+  align-items: flex-end;
+  min-height: 79px;
+  font-size: var(--fs-h1);
+  letter-spacing: -0.02em;
+}
+
+/* 首頁與試卷列表的區塊：標題在卡片上方 */
+.block + .block {
+  margin-top: 40px;
+}
+
+.content .block-head {
+  display: flex;
+  gap: 10px;
   align-items: baseline;
-  margin: 0 0 2mm;
-  padding-bottom: 2mm;
-  border-bottom: 1px solid #ddd;
+  margin: 0 0 14px;
 }
 
-/* 家長要把 ID 複製進試卷檔，所以醒目且可選取 */
-.question-id {
-  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
-  font-size: 13pt;
-  font-weight: bold;
-  user-select: text;
+.card > .block-head {
+  margin: 0;
+  padding: 22px 24px 14px;
 }
 
-.meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 3mm;
+/* 試卷塊：首頁與試卷列表共用 */
+.paper-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
   margin: 0;
   padding: 0;
-  color: #444;
-  font-size: 10pt;
   list-style: none;
 }
 
-.meta .status-doubt {
-  color: #b45309;
-  font-weight: bold;
+.paper-tile {
+  display: grid;
+  gap: 14px;
+  padding: 22px 24px;
 }
 
-/* 題目卡片裡不需要試卷的題間距 */
-.bank-item .question {
-  margin-bottom: 2mm;
+.paper-title {
+  color: var(--text);
+  font-size: var(--fs-h3);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.paper-title:hover {
+  color: var(--blue-700);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.print-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 題庫組成：每個科目一段，色段交替深淺，寬度依題型題數 */
+.mix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px 32px;
+  padding: 4px 24px 24px;
+}
+
+.mix-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.mix-bar {
+  display: flex;
+  gap: 2px;
+  height: 10px;
+  margin: 10px 0 6px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.mix-bar span {
+  background: var(--sc);
+}
+
+.mix-bar span:nth-child(even) {
+  background: var(--sc-mid);
+}
+
+@media (max-width: 760px) {
+  .shell-in,
+  .hero-in,
+  .content {
+    padding-inline: 16px;
+  }
+
+  .shell-in {
+    gap: 12px;
+  }
+
+  .shell nav a {
+    padding: 0 8px;
+  }
+
+  .shell nav a[aria-current]::after {
+    right: 8px;
+    left: 8px;
+  }
+
+  .brand-label {
+    display: none;
+  }
+
+  .display {
+    font-size: 32px;
+  }
+
+  .hero-in {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    padding-block: 32px 24px;
+  }
+
+  .greet {
+    grid-column: 1 / -1;
+  }
+
+  .stat {
+    padding: 16px;
+  }
+
+  .stat-num {
+    font-size: 56px;
+  }
+
+  .stat-num.all-clear {
+    min-height: 50px;
+    font-size: var(--fs-h3);
+  }
+
+  .paper-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .paper-tile {
+    padding: 20px 16px;
+  }
 }

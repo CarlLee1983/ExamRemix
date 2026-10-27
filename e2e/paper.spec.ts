@@ -133,11 +133,16 @@ test.describe('答案卷切換', () => {
         const s = getComputedStyle(el);
         return `${s.backgroundColor} ${s.color}`;
       });
-    const before = await look();
+    // 游標移開再量：hover 與轉場都會改變瞬間的顏色；poll 等轉場結束
+    const settle = async () => {
+      await page.mouse.move(0, 0);
+      return look();
+    };
+    const before = await settle();
     await toggle(page).click();
-    expect(await look()).not.toBe(before);
+    await expect.poll(settle).not.toBe(before);
     await toggle(page).click();
-    expect(await look()).toBe(before);
+    await expect.poll(settle).toBe(before);
   });
 
   test('切換成答案卷：答案填在作答括號，解析在題目下方', async ({ page }) => {

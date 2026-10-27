@@ -4,6 +4,7 @@ inputs/
 # Node / build
 node_modules/
 dist/
+dist-fixture/
 
 # OS / editor
 .DS_Store

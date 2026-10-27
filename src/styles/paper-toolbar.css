@@ -1,0 +1,35 @@
+/* 試卷頁螢幕上方的工具列：返回、切換試卷／答案卷、列印。列印時整列隱藏。只讀 tokens.css 與 ui.css。 */
+.paper-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--shell-bg);
+  backdrop-filter: saturate(1.4) blur(8px);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+/* A4 紙張比手機螢幕寬，讓它在這個容器內橫向捲動，不要讓整頁橫捲 */
+.paper-scroll {
+  overflow-x: auto;
+  padding-inline: 8px;
+}
+
+@media print {
+  .paper-toolbar {
+    display: none;
+  }
+
+  .paper-scroll {
+    overflow: visible;
+    padding: 0;
+  }
+}

@@ -1,8 +1,12 @@
 ---
+import Icon from '../../components/Icon.astro';
 import Question from '../../components/Question.astro';
 import { doubtedNumbers, firstNumbers } from '../../domain/paper-numbers.ts';
 import { loadChecked } from '../../lib/load-bank.ts';
+import '../../styles/tokens.css';
+import '../../styles/ui.css';
 import '../../styles/paper.css';
+import '../../styles/paper-toolbar.css';
 
 export async function getStaticPaths() {
   // 載入時已跑過跨檔檢查：引用的題目 ID 一定存在；引用到有疑點的題目只是警告，照常產生頁面
@@ -35,48 +39,74 @@ const doubted = doubtedNumbers(sections);
     <title>{paper.title}</title>
   </head>
   <body>
-    <button type="button" class="mode-toggle" id="mode-toggle" aria-pressed="false" hidden>顯示答案卷</button>
-    {
-      doubted.length > 0 && (
-        <p class="doubt-notice" role="note">
-          這份試卷有 {doubted.length} 題有疑點：{doubted.map((n) => `第 ${n} 題`).join('、')}
-        </p>
-      )
-    }
-    <main class="paper">
-      <header class="paper-head">
-        <h1>{paper.title}</h1>
-        <div class="fields">
-          <div class="field name" data-field="name"><span class="label">姓名：</span><span class="line"></span></div>
-          <div class="field date" data-field="date"><span class="label">日期：</span><span class="line"></span></div>
-          <div class="field score" data-field="score"><span class="label">分數：</span><span class="line"></span></div>
-        </div>
-      </header>
+    <header class="paper-toolbar">
+      <a class="btn quiet" href="/papers/"><Icon name="arrow-left" />試卷列表</a>
+      <span class="spacer"></span>
+      {/* 切換與列印要 JS 才能運作，預設 hidden，沒有 JS 時工具列只剩返回連結 */}
+      <button type="button" class="btn outline" id="mode-toggle" aria-pressed="false" hidden><Icon name="check" class="when-pressed" />顯示答案卷</button>
+      <button type="button" class="btn primary" id="print-button" hidden><Icon name="print" />列印</button>
+    </header>
+    <div class="paper-scroll">
       {
-        sections.map((section, s) => (
-          <section class="section">
-            <h2 class="section-title">
-              {section.title}
-              {section.points !== undefined && <span class="points">（{section.points} 分）</span>}
-            </h2>
-            {section.questions.map((question, i) => (
-              <Question number={numbers[s]! + i} question={question} />
-            ))}
-          </section>
-        ))
+        doubted.length > 0 && (
+          <p class="doubt-notice" role="note">
+            這份試卷有 {doubted.length} 題有疑點：{doubted.map((n) => `第 ${n} 題`).join('、')}
+          </p>
+        )
       }
-    </main>
+      <main class="paper">
+        <header class="paper-head">
+          <h1>{paper.title}</h1>
+          <div class="fields">
+            <div class="field name" data-field="name"><span class="label">姓名：</span><span class="line"></span></div>
+            <div class="field date" data-field="date"><span class="label">日期：</span><span class="line"></span></div>
+            <div class="field score" data-field="score"><span class="label">分數：</span><span class="line"></span></div>
+          </div>
+        </header>
+        {
+          sections.map((section, s) => (
+            <section class="section">
+              <h2 class="section-title">
+                {section.title}
+                {section.points !== undefined && <span class="points">（{section.points} 分）</span>}
+              </h2>
+              {section.questions.map((question, i) => (
+                <Question number={numbers[s]! + i} question={question} />
+              ))}
+            </section>
+          ))
+        }
+      </main>
+    </div>
     <script is:inline>
       // 載入時一律是試卷；狀態只存在頁面上，不保存。
       // CSS 只讀 html 的 data-mode；aria-pressed 是給輔助技術用的，標籤固定不變。
-      // 切換鈕預設 hidden，沒有 JS 時維持隱藏，有 JS 才在此顯示。
+      // 切換鈕與列印鈕預設 hidden，沒有 JS 時維持隱藏，有 JS 才在此顯示。
       const toggle = document.getElementById('mode-toggle');
+      const printButton = document.getElementById('print-button');
       toggle.hidden = false;
-      toggle.addEventListener('click', () => {
-        const answer = toggle.getAttribute('aria-pressed') !== 'true';
+      printButton.hidden = false;
+
+      function setAnswerMode(answer) {
         toggle.setAttribute('aria-pressed', String(answer));
         document.documentElement.dataset.mode = answer ? 'answer' : 'paper';
-      });
+      }
+
+      toggle.addEventListener('click', () => setAnswerMode(toggle.getAttribute('aria-pressed') !== 'true'));
+      printButton.addEventListener('click', () => window.print());
+
+      // 首頁或試卷列表的列印連結（?print=paper|answer）：套用模式，等頁面與字型載入完再列印，
+      // 並把參數從網址拿掉，之後重新整理或加書籤不會又跳出列印。不認得的值不處理。
+      const params = new URLSearchParams(location.search);
+      const request = params.get('print');
+      if (request === 'paper' || request === 'answer') {
+        setAnswerMode(request === 'answer');
+        params.delete('print');
+        const rest = params.toString();
+        history.replaceState(null, '', location.pathname + (rest === '' ? '' : `?${rest}`) + location.hash);
+        const loaded = document.readyState === 'complete' ? Promise.resolve() : new Promise((resolve) => window.addEventListener('load', resolve, { once: true }));
+        loaded.then(() => document.fonts.ready).then(() => window.print());
+      }
     </script>
   </body>
 </html>

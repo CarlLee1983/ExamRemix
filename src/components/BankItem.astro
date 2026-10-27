@@ -1,0 +1,51 @@
+---
+// 題庫瀏覽頁的一題。篩選用的 data 屬性在外層元素上，由頁面的 script 讀取。
+// 有疑點：完整展開的卡片。沒有疑點：收在 details 內，summary 只有 ID、題型、單元。
+import { hasDoubt } from '../domain/doubt';
+import { unitLabel } from '../domain/unit';
+import { TYPE_LABELS } from '../domain/type-labels';
+import type { Question } from '../domain/schema';
+import BankBody from './BankBody.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  id: string;
+  question: Question;
+  usedIn: readonly string[];
+}
+
+const { id, question, usedIn } = Astro.props;
+const data = {
+  'data-id': id,
+  'data-subject': question.subject,
+  'data-grade': question.grade,
+  'data-unit': unitLabel(question.unit),
+  'data-type': question.type,
+  'data-doubt': String(hasDoubt(question)),
+};
+---
+
+{
+  !hasDoubt(question) ? (
+    <details class="bank-item plain-item" {...data}>
+      <summary class={`subj-${question.subject}`}>
+        <span class="chip subject">{question.subject}</span>
+        <code class="question-id">{id}</code>
+        <span class="summary-text muted">
+          {TYPE_LABELS[question.type]}
+          {question.unit !== undefined && `・${question.unit}`}
+        </span>
+        <Icon name="chevron-right" class="chevron" />
+      </summary>
+      <div class="item-body">
+        <BankBody id={id} question={question} usedIn={usedIn} showId={false} />
+      </div>
+    </details>
+  ) : (
+    <article class="bank-item doubt-item card" {...data}>
+      <div class="item-body">
+        <BankBody id={id} question={question} usedIn={usedIn} showId />
+      </div>
+    </article>
+  )
+}

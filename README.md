@@ -41,6 +41,19 @@ pnpm preview       # 預覽建置結果
 
 匯入的原題與產生的新題一開始都是未確認，不能放進試卷。核對流程：開啟 `/bank/?confirmed=false`（或在題庫瀏覽頁把確認狀態篩成「未確認」），逐題核對題幹、答案與解析；沒問題就到題庫 YAML 把該題的 `confirmed` 改為 `true`，或請 agent 幫你確認一個範圍的題目。改完重新建置（`pnpm dev` 會自動更新）即可。
 
+### 在 Claude Code 裡請 agent 做
+
+repo 內附四個專案 skill（`.claude/skills/`），在 Claude Code 裡直接用口語提出即可，例如「匯入 inputs/ 裡這份考卷」：
+
+| skill | 做什麼 |
+| --- | --- |
+| `import-original` | 把一份原卷（多張照片或一份 PDF）匯入成一個題庫檔，題目一律未確認，回報題數與不確定的題目 |
+| `confirm-questions` | 把你核對過的一個範圍的題目標記為已確認 |
+| `generate-questions` | 參考已確認的原題產生同題型的新題，存成一個題庫檔 |
+| `compose-paper` | 依科目、年級、單元、題型與題數，從已確認的題目組成一份試卷檔 |
+
+每個 skill 完成前都會跑 `pnpm check:bank`，修到沒有問題為止。挑題時用的 `pnpm list:questions` 見「題庫檢查」。
+
 ### 指定資料目錄
 
 網站從資料目錄讀題庫與試卷：`<資料目錄>/bank/*.yaml` 是題庫檔，`<資料目錄>/papers/*.yaml` 是試卷檔。預設讀 repo 內虛構的 `examples/`；用環境變數 `EXAMREMIX_DATA_DIR` 改指真實資料目錄：

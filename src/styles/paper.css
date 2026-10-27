@@ -360,6 +360,13 @@ html[data-mode='answer'] .explanation {
   cursor: pointer;
 }
 
+/* 標籤固定不變，按下狀態只能靠外觀看出來 */
+.mode-toggle[aria-pressed='true'] {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
 .number {
   margin-right: 1.5mm;
 }

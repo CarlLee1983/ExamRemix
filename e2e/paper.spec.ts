@@ -102,6 +102,19 @@ test.describe('答案卷切換', () => {
     await expect(page.locator('.explanation:visible')).toHaveCount(0);
   });
 
+  test('切換鈕按下後外觀改變，看得出目前是答案卷', async ({ page }) => {
+    const look = () =>
+      toggle(page).evaluate((el) => {
+        const s = getComputedStyle(el);
+        return `${s.backgroundColor} ${s.color}`;
+      });
+    const before = await look();
+    await toggle(page).click();
+    expect(await look()).not.toBe(before);
+    await toggle(page).click();
+    expect(await look()).toBe(before);
+  });
+
   test('切換成答案卷：答案填在作答括號，解析在題目下方', async ({ page }) => {
     await toggle(page).click();
     await expect(toggle(page)).toHaveAttribute('aria-pressed', 'true');

@@ -33,6 +33,16 @@ describe('選擇題 schema', () => {
     expect(r.data?.confirmed).toBe(false);
   });
 
+  it('接受選填的疑點 doubt', () => {
+    const r = questionSchema.safeParse({ ...validChoice, doubt: '答案疑為 2' });
+    expect(r.success).toBe(true);
+    expect(r.data?.doubt).toBe('答案疑為 2');
+  });
+
+  it('疑點不可為空字串', () => {
+    expect(issuePaths(questionSchema, { ...validChoice, doubt: '' })).toEqual(['doubt']);
+  });
+
   it('接受合法的新題（derivedFrom）且 unit 可省略', () => {
     const { source, unit, ...rest } = validChoice;
     const r = questionSchema.safeParse({ ...rest, derivedFrom: ['sample-math-01'] });

@@ -77,6 +77,24 @@ describe('pnpm check:bank', () => {
     expect(output).toContain('pic/missing.png');
   });
 
+  it('只有疑點警告：結束狀態 0，列出警告與摘要', () => {
+    const { status, stdout } = run('tests/fixtures/doubt-warning');
+    expect(status).toBe(0);
+    expect(stdout).toContain('警告｜papers/uses-shaky.yaml');
+    expect(stdout).toContain('shaky-01');
+    expect(stdout).toContain('題幹被筆跡蓋住');
+    expect(stdout.trim().split('\n').at(-1)).toContain('0 個錯誤、1 個警告');
+  });
+
+  it('疑點錯誤與警告並存：結束狀態 1，錯誤列在警告之前', () => {
+    const { status, stdout } = run('tests/fixtures/doubt-mixed');
+    expect(status).toBe(1);
+    const lines = stdout.trim().split('\n');
+    expect(lines[0]).toMatch(/^錯誤｜bank\/remix\.yaml：.*shaky-01.*題幹被筆跡蓋住/);
+    expect(lines[1]).toMatch(/^警告｜papers\/uses-shaky\.yaml/);
+    expect(lines.at(-1)).toContain('1 個錯誤、1 個警告');
+  });
+
   it('資料目錄不存在：非零結束並說明路徑', () => {
     const missing = join('tests', 'fixtures', 'no-such-dir');
     const { status, output } = run(missing);

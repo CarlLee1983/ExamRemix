@@ -85,6 +85,8 @@ const questionBase = z.strictObject({
   /** 覆寫作答空間（行）；沒寫時用題型預設，見 answer-space.ts */
   space: z.number().int().min(0).optional(),
   confirmed: z.boolean().default(false),
+  /** 疑點：一句說明哪裡可疑；有這個欄位就是有疑點 */
+  doubt: z.string().min(1, '疑點不可為空字串；沒有疑點請省略這個欄位').optional(),
   // 原題記錄出處，新題記錄衍生自哪些題目；兩者擇一（見 questionSchema）
   source: z
     .strictObject({

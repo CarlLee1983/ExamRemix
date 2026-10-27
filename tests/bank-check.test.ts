@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildQuestionIndex, checkBank, type BankInput, type PaperInput } from '../src/domain/bank-check.ts';
+import { formatProblem } from '../src/domain/problem.ts';
 import type { BankFile, PaperFile } from '../src/domain/schema.ts';
 
 function bank(name: string, questions: Array<{ no: number; confirmed?: boolean }>, file = `bank/${name}.yaml`): BankInput {
@@ -269,5 +270,52 @@ describe('嚴重度', () => {
     });
     expect(problems.length).toBeGreaterThan(0);
     expect(problems.every((p) => p.severity === 'error')).toBe(true);
+  });
+});
+
+describe('checkBank：疑點', () => {
+  const doubt = '題幹被筆跡蓋住，依上下文推定';
+
+  it('新題衍生自有疑點的原題：錯誤，訊息含原題 ID 與疑點描述', () => {
+    const problems = checkBank({
+      images: [],
+      banks: [customBank('a', [{ no: 1, doubt }]), customBank('n', [derived(1, ['a-01'])])],
+      papers: [],
+    });
+    expect(problems).toHaveLength(1);
+    expect(problems[0]?.severity).toBe('error');
+    expect(problems[0]?.files).toEqual(['bank/n.yaml']);
+    expect(problems[0]?.questionId).toBe('n-01');
+    expect(problems[0]?.message).toContain('a-01');
+    expect(problems[0]?.message).toContain(doubt);
+  });
+
+  it('試卷引用有疑點的題目：只有一則警告，輸出含試卷檔、題目 ID 與疑點描述', () => {
+    const problems = checkBank({
+      images: [],
+      banks: [customBank('a', [{ no: 1, doubt }])],
+      papers: [paper('p', ['a-01'])],
+    });
+    expect(problems).toHaveLength(1);
+    expect(problems[0]?.severity).toBe('warning');
+    expect(problems[0]?.questionId).toBe('a-01');
+    const line = formatProblem(problems[0]!);
+    expect(line).toContain('papers/p.yaml');
+    expect(line).toContain('a-01');
+    expect(line).toContain(doubt);
+  });
+
+  it('沒有疑點的題目照常可被引用與衍生', () => {
+    expect(
+      checkBank({
+        images: [],
+        banks: [customBank('a', [{ no: 1 }]), customBank('n', [derived(1, ['a-01'], { confirmed: true })])],
+        papers: [paper('p', ['a-01', 'n-01'])],
+      }),
+    ).toEqual([]);
+  });
+
+  it('有疑點的題目沒被引用或衍生時不回報', () => {
+    expect(checkBank({ images: [], banks: [customBank('a', [{ no: 1, doubt }])], papers: [] })).toEqual([]);
   });
 });

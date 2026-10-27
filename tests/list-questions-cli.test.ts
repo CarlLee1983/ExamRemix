@@ -13,14 +13,14 @@ function run(...args: string[]) {
 }
 
 describe('pnpm list:questions', () => {
-  it('沒有過濾條件時列出全部題目，每題一行、七個以 tab 分隔的欄位', () => {
+  it('沒有過濾條件時列出全部題目，每題一行、八個以 tab 分隔的欄位', () => {
     const { status, rows } = run('examples');
     expect(status).toBe(0);
     expect(rows.length).toBeGreaterThan(40);
-    for (const row of rows) expect(row).toHaveLength(7);
+    for (const row of rows) expect(row).toHaveLength(8);
     const first = rows.find((r) => r[0] === 'sample-math-01')!;
-    expect(first.slice(1, 6)).toEqual(['choice', '數學', '3', '乘法', 'confirmed']);
-    expect(first[6]).toBe('3 × 4 等於多少？');
+    expect(first.slice(1, 7)).toEqual(['choice', '數學', '3', '乘法', 'confirmed', '-']);
+    expect(first[7]).toBe('3 × 4 等於多少？');
   });
 
   it('沒給參數時預設讀 examples/', () => {
@@ -38,6 +38,25 @@ describe('pnpm list:questions', () => {
     expect(rows.length).toBeGreaterThan(0);
     expect(new Set(rows.map((r) => r[1]))).toEqual(new Set(['true-false', 'fill-blank']));
     expect(new Set(rows.map((r) => r[5]))).toEqual(new Set(['confirmed']));
+  });
+
+  it('疑點欄標出有疑點的題目：doubt 或 -', () => {
+    const { rows } = run('tests/fixtures/doubt-warning');
+    expect(rows.map((r) => [r[0], r[6]])).toEqual([
+      ['shaky-01', 'doubt'],
+      ['shaky-02', '-'],
+    ]);
+  });
+
+  it('--doubt 只列有疑點的題目，--no-doubt 只列沒有疑點的題目', () => {
+    expect(run('tests/fixtures/doubt-warning', '--doubt').rows.map((r) => r[0])).toEqual(['shaky-01']);
+    expect(run('tests/fixtures/doubt-warning', '--no-doubt').rows.map((r) => r[0])).toEqual(['shaky-02']);
+  });
+
+  it('--doubt 與 --no-doubt 同時指定：沒有符合的題目，結束狀態 0', () => {
+    const { status, lines } = run('tests/fixtures/doubt-warning', '--doubt', '--no-doubt');
+    expect(status).toBe(0);
+    expect(lines).toEqual([]);
   });
 
   it('--grade 與 --unit 過濾；沒有單元的題目以 - 顯示', () => {

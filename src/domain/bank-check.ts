@@ -1,4 +1,4 @@
-// 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在且已確認的題目。
+// 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在且已確認的題目、疑點。
 // 純函式，輸入是已通過 schema 的題庫檔與試卷檔，不讀檔、不依賴 Astro（ADR 0002）。
 import { fileNameProblem } from './file-name.ts';
 import type { Problem } from './problem.ts';
@@ -49,7 +49,7 @@ function mismatches(a: Question, b: Question, aLabel: string, bLabel: string): s
 }
 
 /**
- * 回傳所有問題（現有規則全部是錯誤）；沒有錯誤代表通過。順序固定：先檔名不合格，再題目 ID 重複，再附圖不存在，
+ * 回傳所有問題（試卷引用有疑點的題目是警告，其餘是錯誤）；沒有錯誤代表通過。順序固定：先檔名不合格，再題目 ID 重複，再附圖不存在，
  * 再新題的衍生規則（依題庫檔、題目順序），最後依試卷檔、大題、題目順序。
  * images 是 bank/ 底下所有圖片檔相對於 bank/ 的路徑。
  */
@@ -61,8 +61,8 @@ export function checkBank(input: {
   const banks = [...input.banks].sort(byFile);
   const papers = [...input.papers].sort(byFile);
   const problems: Problem[] = [];
-  // 現有規則全部是錯誤
   const addError = (problem: Omit<Problem, 'severity'>) => problems.push({ severity: 'error', ...problem });
+  const addWarning = (problem: Omit<Problem, 'severity'>) => problems.push({ severity: 'warning', ...problem });
 
   // 檔名不合格的檔案
   for (const { file } of [...banks, ...papers].sort(byFile)) {
@@ -120,6 +120,7 @@ export function checkBank(input: {
         }
         originals.push([originalId, original]);
         if (!original.confirmed) report(`新題 ${id} 衍生自未確認的原題 ${originalId}（請先核對原題並把 confirmed 改為 true）`);
+        if (original.doubt) report(`新題 ${id} 衍生自有疑點的原題 ${originalId}：${original.doubt}（請先解除原題的疑點，或改從其他原題衍生）`);
         if (original.derivedFrom) report(`新題 ${id} 衍生自 ${originalId}，但它也是新題；新題只能衍生自原題`);
         const diff = mismatches(question, original, '新題', '原題');
         if (diff.length > 0) report(`新題 ${id} 與原題 ${originalId} 的${diff.join('、')}不一致`);
@@ -149,6 +150,14 @@ export function checkBank(input: {
             files: [paper.file],
             questionId: id,
             message: `試卷引用了未確認的題目 ${id}（請核對後把 confirmed 改為 true）`,
+          });
+        }
+        // 已組好的試卷引用到有疑點的題目只提出警告，不讓建置停擺
+        if (question?.doubt) {
+          addWarning({
+            files: [paper.file],
+            questionId: id,
+            message: `試卷引用了有疑點的題目 ${id}：${question.doubt}`,
           });
         }
       }

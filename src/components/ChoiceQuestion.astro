@@ -6,6 +6,7 @@ import AnswerSpace from './AnswerSpace.astro';
 import Explanation from './Explanation.astro';
 import QuestionFigure from './QuestionFigure.astro';
 import RichText from './RichText.astro';
+import VisualText from './VisualText.astro';
 
 interface Props {
   /** 試卷內的連續題號 */
@@ -28,7 +29,7 @@ const space = answerSpace(question);
     {
       question.options.map((option, i) => (
         <li class="option">
-          <span class="option-no">({i + 1})</span> <RichText text={option} />
+          <span class="option-no">({i + 1})</span> <VisualText content={option} />
         </li>
       ))
     }

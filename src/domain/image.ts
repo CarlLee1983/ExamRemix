@@ -35,3 +35,8 @@ export function imageSrcProblem(src: string): string | null {
   if (!isImageFile(src)) return `圖片副檔名必須是 ${Object.keys(CONTENT_TYPES).join('、')} 其中之一`;
   return null;
 }
+
+/** bank/ 相對路徑轉成圖片端點 URL；每個路徑片段各自編碼。 */
+export function imageUrl(src: string): string {
+  return `/bank-images/${src.split('/').map(encodeURIComponent).join('/')}`;
+}

@@ -1,0 +1,29 @@
+---
+import { answerSpace } from '../domain/answer-space';
+import type { TableFillQuestion } from '../domain/schema';
+import AnswerSpace from './AnswerSpace.astro';
+import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
+import RichText from './RichText.astro';
+import VisualText from './VisualText.astro';
+
+interface Props {
+  number: number;
+  question: TableFillQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-table-fill" data-question-type="table-fill">
+  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <QuestionFigure image={question.image} />
+  <table class="answer-table">
+    <thead><tr><th aria-hidden="true"></th>{question.columns.map((column) => <th scope="col"><VisualText content={column} /></th>)}</tr></thead>
+    <tbody>{question.rows.map((row) => (
+      <tr><th scope="row"><RichText text={row.label} /></th>{row.answers.map((answer) => <td><span class="table-answer"><RichText text={answer} /></span></td>)}</tr>
+    ))}</tbody>
+  </table>
+  <AnswerSpace lines={answerSpace(question)} />
+  <Explanation text={question.explanation} />
+</div>

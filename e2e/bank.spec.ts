@@ -2,8 +2,8 @@ import { expect, test, type Page } from '@playwright/test';
 
 const BANK = '/bank/';
 
-// 範例資料已知：sample-math 40 題、sample-chinese 16 題，共 56 題；有疑點的只有 sample-math-02（範例試卷引用它）與 sample-math-22
-const TOTAL = 56;
+// 範例資料已知：數學 40 題、國語 16 題、自然 5 題，共 61 題；有疑點的只有 sample-math-02（範例試卷引用它）與 sample-math-22
+const TOTAL = 61;
 const DOUBTED = ['sample-math-02', 'sample-math-22'];
 // 疑點描述寫著「題幹依上下文推定」的那一題
 const DOUBTED_STEM = 'sample-math-02';
@@ -53,7 +53,7 @@ test.describe('題庫瀏覽頁', () => {
 
   test('年級與單元的選項只含資料裡實際出現的值，單元篩選有效', async ({ page }) => {
     await expect(page.getByLabel('年級').locator('option')).toHaveText(['全部', '3 年級']);
-    await expect(page.getByLabel('科目').locator('option')).toHaveText(['全部', '國語', '數學']);
+    await expect(page.getByLabel('科目').locator('option')).toHaveText(['全部', '國語', '數學', '自然']);
     const units = await page.getByLabel('單元').locator('option').allTextContents();
     expect(units[0]).toBe('全部');
     expect(units).toEqual(expect.arrayContaining(['乘法', '字音', '造句']));
@@ -154,9 +154,10 @@ test.describe('試卷列表', () => {
   const PAPERS = [
     { id: 'sample-chinese', title: '三年級國語試卷（範例）', subject: '國語', questions: 15 },
     { id: 'sample-math', title: '三年級數學試卷（範例）', subject: '數學', questions: 39 },
+    { id: 'sample-science', title: '三年級自然練習（虛構範例）', subject: '自然', questions: 5 },
   ];
 
-  test('列出兩份範例試卷，顯示科目、年級與題數', async ({ page }) => {
+  test('列出範例試卷，顯示科目、年級與題數', async ({ page }) => {
     await page.goto('/papers/');
     const rows = page.locator('.paper-list li');
     await expect(rows).toHaveCount(PAPERS.length);

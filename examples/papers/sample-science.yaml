@@ -1,0 +1,8 @@
+title: 三年級自然練習（虛構範例）
+subject: 自然
+grade: 3
+sections:
+  - title: 一、觀察植物
+    questions: [sample-science-01, sample-science-05]
+  - title: 二、植物構造
+    questions: [sample-science-02, sample-science-03, sample-science-04]

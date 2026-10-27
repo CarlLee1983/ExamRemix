@@ -3,7 +3,7 @@
 import { hasDoubt } from './doubt.ts';
 import { fileNameProblem } from './file-name.ts';
 import type { Problem } from './problem.ts';
-import { deriveQuestionId, type BankFile, type PaperFile, type Question } from './schema.ts';
+import { deriveQuestionId, type BankFile, type PaperFile, type Question, type VisualText } from './schema.ts';
 
 /** 題庫檔：name 是題庫檔名（不含副檔名，用來組題目 ID），file 是相對於資料根目錄的路徑。 */
 export interface BankInput {
@@ -41,6 +41,17 @@ const INHERITED_FIELDS = [
 ] as const;
 
 const show = (value: string | number | undefined) => (value === undefined ? '無' : String(value));
+
+/** 包括題目附圖、選項圖與表格欄標題圖；標示圖使用共通的 image 欄位。 */
+function imageReferences(question: Question): string[] {
+  const paths = question.image ? [question.image.src] : [];
+  const add = (content: VisualText) => {
+    if (typeof content !== 'string' && content.image) paths.push(content.image.src);
+  };
+  if (question.type === 'choice' || question.type === 'multi-select') question.options.forEach(add);
+  if (question.type === 'table-fill') question.columns.forEach(add);
+  return [...new Set(paths)];
+}
 
 /** 兩題在 INHERITED_FIELDS 中不一致的欄位，回傳「欄位（甲 值，乙 值）」。 */
 function mismatches(a: Question, b: Question, aLabel: string, bLabel: string): string[] {
@@ -93,12 +104,13 @@ export function checkBank(input: {
   const images = new Set(input.images);
   for (const bank of banks) {
     for (const question of bank.data.questions) {
-      if (question.image && !images.has(question.image.src)) {
+      for (const src of imageReferences(question)) {
+        if (images.has(src)) continue;
         const id = deriveQuestionId(bank.name, question.no);
         addError({
           files: [bank.file],
           questionId: id,
-          message: `題目 ${id} 找不到附圖 ${question.image.src}（圖片要放在 bank/ 底下，路徑相對於 bank/）`,
+          message: `題目 ${id} 找不到附圖 ${src}（圖片要放在 bank/ 底下，路徑相對於 bank/）`,
         });
       }
     }

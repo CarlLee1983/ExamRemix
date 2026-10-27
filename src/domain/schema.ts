@@ -42,6 +42,8 @@ const stringOrNumber = (message: string) => z.union([z.string(), z.number()], { 
 
 /** 填空與計算題的答案文字。 */
 const answerText = (message: string) => stringOrNumber(message).pipe(richText);
+/** 每個空格的答案 */
+const blankAnswer = answerText('每個答案必須是非空字串或數字');
 
 /** 直式計算的運算元與答案：非負十進位數，YAML 寫成數字也可以。 */
 const decimalNumber = stringOrNumber('必須是非負數字（字串或數字）').pipe(
@@ -68,6 +70,29 @@ const imageSchema = z.strictObject({
   alt: nonEmptyText,
 });
 
+/** 選項與表格欄標題可沿用文字，或用物件提供文字、圖片或兩者。 */
+const visualTextSchema = z.union([
+  richText,
+  z.strictObject({ text: richText.optional(), image: imageSchema.optional() }).refine(
+    (content) => content.text !== undefined || content.image !== undefined,
+    { message: '至少要有文字或圖片' },
+  ),
+]);
+
+const optionsSchema = z.array(visualTextSchema).min(2).max(6);
+
+const sourceSchema = z
+  .strictObject({
+    originalPaper: z.string().min(1),
+    /** 原卷的大題標題，包含印出的配分說明。 */
+    section: z.string().min(1).optional(),
+    /** 原卷印有的小題號；沒有印就省略。 */
+    number: z.number().int().positive().optional(),
+  })
+  .refine((source) => source.section !== undefined || source.number !== undefined, {
+    message: '來源至少要有原卷大題或小題號',
+  });
+
 // 所有題型共用的欄位；新題型以 extend 加上自己的欄位。
 const questionBase = z.strictObject({
   no: z.number().int().positive(),
@@ -87,25 +112,78 @@ const questionBase = z.strictObject({
   /** 疑點：一句說明哪裡可疑；有這個欄位就是有疑點 */
   doubt: z.string().min(1, '疑點不可為空字串；沒有疑點請省略這個欄位').optional(),
   // 原題記錄出處，新題記錄衍生自哪些題目；兩者擇一（見 questionSchema）
-  source: z
-    .strictObject({
-      originalPaper: z.string().min(1),
-      number: z.number().int().positive(),
-    })
-    .optional(),
+  source: sourceSchema.optional(),
   derivedFrom: z.array(z.string().min(1)).min(1).optional(),
 });
 
 export const choiceQuestionSchema = questionBase
   .extend({
     type: z.literal('choice'),
-    options: z.array(richText).min(2).max(6),
+    options: optionsSchema,
     /** 1 起算的選項編號 */
     answer: z.number().int().min(1),
   })
   .refine((q) => q.answer <= q.options.length, {
     path: ['answer'],
     message: '答案必須落在選項範圍內',
+  });
+
+export const multiSelectQuestionSchema = questionBase
+  .extend({
+    type: z.literal('multi-select'),
+    options: optionsSchema,
+    /** 所有正確選項的編號，從 1 起算；至少一個。 */
+    answer: z.array(z.number().int().positive()).min(1, '至少要有一個正確選項'),
+  })
+  .superRefine((q, ctx) => {
+    const seen = new Set<number>();
+    q.answer.forEach((number, index) => {
+      if (number > q.options.length) {
+        ctx.addIssue({ code: 'custom', path: ['answer', index], message: '答案必須落在選項範圍內' });
+      }
+      if (seen.has(number)) {
+        ctx.addIssue({ code: 'custom', path: ['answer', index], message: '同一個選項不可重複作答' });
+      }
+      seen.add(number);
+    });
+  });
+
+/** 標示空格位置與大小相對於整張圖，以百分比表示；答案與空格一起保存。 */
+const diagramLabelSchema = z
+  .strictObject({
+    x: z.number().min(0).max(100),
+    y: z.number().min(0).max(100),
+    width: z.number().positive().max(100),
+    height: z.number().positive().max(100),
+    answer: blankAnswer,
+  })
+  .superRefine((label, ctx) => {
+    if (label.x + label.width > 100) ctx.addIssue({ code: 'custom', path: ['width'], message: '空格不可超出圖片右緣' });
+    if (label.y + label.height > 100) ctx.addIssue({ code: 'custom', path: ['height'], message: '空格不可超出圖片下緣' });
+  });
+
+export const diagramLabelQuestionSchema = questionBase.extend({
+  type: z.literal('diagram-label'),
+  image: imageSchema,
+  labels: z.array(diagramLabelSchema).min(1),
+});
+
+export const tableFillQuestionSchema = questionBase
+  .extend({
+    type: z.literal('table-fill'),
+    /** 欄標題可以是文字、圖片或兩者；每列有文字標題及各欄的答案。 */
+    columns: z.array(visualTextSchema).min(1),
+    rows: z.array(z.strictObject({
+      label: richText,
+      answers: z.array(blankAnswer).min(1),
+    })).min(1),
+  })
+  .superRefine((q, ctx) => {
+    q.rows.forEach((row, index) => {
+      if (row.answers.length !== q.columns.length) {
+        ctx.addIssue({ code: 'custom', path: ['rows', index, 'answers'], message: `此列有 ${row.answers.length} 個答案，但表格有 ${q.columns.length} 欄` });
+      }
+    });
   });
 
 export const trueFalseQuestionSchema = questionBase.extend({
@@ -118,7 +196,7 @@ export const fillBlankQuestionSchema = questionBase
     type: z.literal('fill-blank'),
     /** 每個空格一個答案，依題幹中空格出現的順序 */
     answer: z
-      .array(answerText('每個答案必須是非空字串或數字'))
+      .array(blankAnswer)
       .min(1),
   })
   .superRefine((q, ctx) => {
@@ -220,6 +298,9 @@ export const wordProblemQuestionSchema = questionBase.extend({
 export const questionSchema = z
   .discriminatedUnion('type', [
     choiceQuestionSchema,
+    multiSelectQuestionSchema,
+    diagramLabelQuestionSchema,
+    tableFillQuestionSchema,
     trueFalseQuestionSchema,
     fillBlankQuestionSchema,
     charToZhuyinQuestionSchema,
@@ -282,6 +363,10 @@ export const paperFileSchema = z.strictObject({
 
 export type Question = z.infer<typeof questionSchema>;
 export type ChoiceQuestion = z.infer<typeof choiceQuestionSchema>;
+export type MultiSelectQuestion = z.infer<typeof multiSelectQuestionSchema>;
+export type DiagramLabelQuestion = z.infer<typeof diagramLabelQuestionSchema>;
+export type TableFillQuestion = z.infer<typeof tableFillQuestionSchema>;
+export type VisualText = z.infer<typeof visualTextSchema>;
 export type TrueFalseQuestion = z.infer<typeof trueFalseQuestionSchema>;
 export type FillBlankQuestion = z.infer<typeof fillBlankQuestionSchema>;
 export type CharToZhuyinQuestion = z.infer<typeof charToZhuyinQuestionSchema>;

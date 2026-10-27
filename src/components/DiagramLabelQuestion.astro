@@ -1,0 +1,31 @@
+---
+import { answerSpace } from '../domain/answer-space';
+import { imageUrl } from '../domain/image';
+import type { DiagramLabelQuestion } from '../domain/schema';
+import AnswerSpace from './AnswerSpace.astro';
+import Explanation from './Explanation.astro';
+import RichText from './RichText.astro';
+
+interface Props {
+  number: number;
+  question: DiagramLabelQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-diagram-label" data-question-type="diagram-label">
+  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <figure class="diagram-figure">
+    <div class="diagram-frame">
+      <img src={imageUrl(question.image.src)} alt={question.image.alt} />
+      {question.labels.map((label, i) => (
+        <span class="diagram-blank" aria-label={`空格 ${i + 1}`} style={`left:${label.x}%;top:${label.y}%;width:${label.width}%;height:${label.height}%`}>
+          <span class="diagram-answer"><RichText text={label.answer} /></span>
+        </span>
+      ))}
+    </div>
+  </figure>
+  <AnswerSpace lines={answerSpace(question)} />
+  <Explanation text={question.explanation} />
+</div>

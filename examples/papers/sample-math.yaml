@@ -42,3 +42,22 @@ sections:
       - sample-math-26
       - sample-math-27
       - sample-math-28
+  - title: 六、橫式計算
+    points: 15
+    questions:
+      - sample-math-29
+      - sample-math-30
+      - sample-math-31
+  - title: 七、直式計算
+    points: 20
+    questions:
+      - sample-math-32
+      - sample-math-33
+      - sample-math-34
+      - sample-math-35
+  - title: 八、應用題
+    points: 15
+    questions:
+      - sample-math-36
+      - sample-math-37
+      - sample-math-38

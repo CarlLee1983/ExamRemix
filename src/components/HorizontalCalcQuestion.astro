@@ -1,0 +1,29 @@
+---
+import { blankWidthEm } from '../domain/blank';
+import { parseRichText, richPlainText } from '../domain/rich-text';
+import type { HorizontalCalcQuestion } from '../domain/schema';
+import Explanation from './Explanation.astro';
+import RichText from './RichText.astro';
+
+// 橫式計算題下方計算區的預設行數；行高是 paper.css 的 --calc-line-height。單題覆寫尚未支援。
+const CALC_LINES = 2;
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: HorizontalCalcQuestion;
+}
+
+const { number, question } = Astro.props;
+const blankWidth = blankWidthEm(richPlainText(parseRichText(question.answer).segments));
+---
+
+<div class="question question-horizontal-calc" data-question-type="horizontal-calc">
+  <p class="stem">
+    {/* 算式、底線之間不留空白字元，答案卷切換時底線位置才不會動（理由同填空題） */}
+    <span class="number">{number}.</span>
+    <RichText text={question.stem} /><span class="blank" style={`--blank-width: ${blankWidth}em`}><span class="blank-answer"><RichText text={question.answer} /></span></span>
+  </p>
+  <div class="calc-area" style={`--calc-lines: ${CALC_LINES}`}></div>
+  <Explanation text={question.explanation} />
+</div>

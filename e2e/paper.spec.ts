@@ -6,7 +6,8 @@ const PAPER = '/papers/sample-math/';
 const CHOICE_COUNT = 21;
 const TRUE_FALSE_COUNT = 3;
 const FILL_BLANK_COUNT = 3;
-const QUESTION_COUNT = CHOICE_COUNT + TRUE_FALSE_COUNT + FILL_BLANK_COUNT;
+const MATH_COUNT = 3 + 4 + 3; // 橫式計算、直式計算、應用題
+const QUESTION_COUNT = CHOICE_COUNT + TRUE_FALSE_COUNT + FILL_BLANK_COUNT + MATH_COUNT;
 // 有作答括號的題數（選擇題與是非題）；填空題的答案另有 .blank-answer
 const BRACKET_COUNT = CHOICE_COUNT + TRUE_FALSE_COUNT;
 
@@ -30,7 +31,7 @@ test.describe('試卷頁', () => {
 
   test('大題標題與選填配分', async ({ page }) => {
     const titles = page.locator('.section-title');
-    await expect(titles).toHaveCount(5);
+    await expect(titles).toHaveCount(8);
     await expect(titles.nth(0)).toContainText('一、計算選擇題');
     await expect(titles.nth(0).locator('.points')).toHaveText('（40 分）');
     // 第二個大題沒有配分

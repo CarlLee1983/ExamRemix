@@ -385,3 +385,214 @@ describe('deriveQuestionId', () => {
     expect(deriveQuestionId('sample-math', 123)).toBe('sample-math-123');
   });
 });
+
+describe('文字欄位的數學式驗證', () => {
+  it('接受 $...$ 數學式，可用在所有文字欄位', () => {
+    const ok = '$\\frac{1}{2} + \\frac{1}{4}$';
+    expect(
+      questionSchema.safeParse({ ...validChoice, stem: ok, options: [ok, '$3^2$'], explanation: ok }).success,
+    ).toBe(true);
+    expect(questionSchema.safeParse({ ...validFillBlank, answer: ['$\\frac{3}{4}$', '1000'] }).success).toBe(true);
+  });
+
+  it('\\$ 是字面的錢字號，不開啟數學式', () => {
+    expect(questionSchema.safeParse({ ...validChoice, stem: '一枝筆 \\$5，兩枝 \\$10。' }).success).toBe(true);
+  });
+
+  it('數學式內的 \\$ 交給 KaTeX 處理', () => {
+    expect(questionSchema.safeParse({ ...validChoice, stem: '$5\\$ + 3\\$$' }).success).toBe(true);
+  });
+
+  it('未閉合的 $ 指出該欄位', () => {
+    const r = questionSchema.safeParse({ ...validChoice, stem: '算一算 $3 + 4' });
+    expect(r.error!.issues.map((i) => i.path.join('.'))).toEqual(['stem']);
+    expect(r.error!.issues[0]!.message).toContain('未閉合');
+    expect(issuePaths(questionSchema, { ...validChoice, options: ['10', '$12', '14'] })).toEqual(['options.1']);
+  });
+
+  it('空的 $$ 指出該欄位', () => {
+    const r = questionSchema.safeParse({ ...validChoice, explanation: '答案是 $$。' });
+    expect(r.error!.issues.map((i) => i.path.join('.'))).toEqual(['explanation']);
+    expect(r.error!.issues[0]!.message).toContain('空');
+  });
+
+  it('KaTeX 無法解析的 LaTeX 指出該欄位並附 KaTeX 的訊息', () => {
+    const r = questionSchema.safeParse({ ...validChoice, stem: '$\\frac{1}$' });
+    expect(r.error!.issues.map((i) => i.path.join('.'))).toEqual(['stem']);
+    expect(r.error!.issues[0]!.message).toContain('KaTeX');
+  });
+
+  it('數學式內的方括號不會被當成注音標注', () => {
+    expect(questionSchema.safeParse({ ...validChoice, stem: '$[a|b]$' }).success).toBe(true);
+  });
+
+  it('數學式以外的文字仍驗證注音標注', () => {
+    expect(issuePaths(questionSchema, { ...validChoice, stem: '$1+1$ [公園|ㄍㄨㄥ]' })).toEqual(['stem']);
+  });
+});
+
+const validHorizontalCalc = {
+  no: 29,
+  type: 'horizontal-calc',
+  subject: '數學',
+  grade: 3,
+  stem: '$36 + 48 =$',
+  answer: '84',
+  explanation: '$36 + 48 = 84$。',
+  source: { originalPaper: '虛構期中考', number: 29 },
+};
+
+describe('橫式計算 schema', () => {
+  it('接受合法的橫式計算，數字答案轉成字串', () => {
+    expect(questionSchema.safeParse(validHorizontalCalc).success).toBe(true);
+    const r = questionSchema.safeParse({ ...validHorizontalCalc, answer: 84 });
+    expect(r.success).toBe(true);
+    expect(r.data).toMatchObject({ answer: '84' });
+  });
+
+  it('答案可含數學式', () => {
+    expect(questionSchema.safeParse({ ...validHorizontalCalc, answer: '$\\frac{3}{4}$' }).success).toBe(true);
+  });
+
+  it('缺 answer、answer 為空字串或不是字串／數字時指出 answer', () => {
+    const { answer, ...rest } = validHorizontalCalc;
+    expect(issuePaths(questionSchema, rest)).toEqual(['answer']);
+    expect(issuePaths(questionSchema, { ...validHorizontalCalc, answer: '' })).toEqual(['answer']);
+    expect(issuePaths(questionSchema, { ...validHorizontalCalc, answer: true })).toEqual(['answer']);
+  });
+
+  it('答案內的壞 LaTeX 指出 answer', () => {
+    expect(issuePaths(questionSchema, { ...validHorizontalCalc, answer: '$\\frac{1}$' })).toEqual(['answer']);
+  });
+
+  it('不接受多餘欄位', () => {
+    expect(issuePaths(questionSchema, { ...validHorizontalCalc, operands: [1, 2] })).toContain('');
+  });
+});
+
+const validVerticalCalc = {
+  no: 30,
+  type: 'vertical-calc',
+  subject: '數學',
+  grade: 3,
+  stem: '用直式計算。',
+  operands: [358, '467'],
+  operator: '+',
+  answer: 825,
+  explanation: '358 + 467 = 825。',
+  source: { originalPaper: '虛構期中考', number: 30 },
+};
+
+describe('直式計算 schema', () => {
+  it('接受合法的直式計算，運算元與答案正規化成字串', () => {
+    const r = questionSchema.safeParse(validVerticalCalc);
+    expect(r.success).toBe(true);
+    expect(r.data).toMatchObject({ operands: ['358', '467'], answer: '825', operator: '+' });
+  });
+
+  it('接受小數、三個運算元、減法與乘法', () => {
+    const ok = (patch: object) => questionSchema.safeParse({ ...validVerticalCalc, ...patch }).success;
+    expect(ok({ operands: ['4.6', '2.75'], answer: '7.35' })).toBe(true);
+    expect(ok({ operands: [100, 25, 5], answer: 130 })).toBe(true);
+    expect(ok({ operands: [902, 478], operator: '-', answer: 424 })).toBe(true);
+    expect(ok({ operands: [34, 12], operator: '×', answer: 408 })).toBe(true);
+    expect(ok({ operands: ['0.6', '0.7'], operator: '×', answer: '0.42' })).toBe(true);
+  });
+
+  it('答案以數值比較：12.50 等於 12.5', () => {
+    const ok = (answer: string) =>
+      questionSchema.safeParse({ ...validVerticalCalc, operands: ['10.25', '2.25'], answer }).success;
+    expect(ok('12.5')).toBe(true);
+    expect(ok('12.50')).toBe(true);
+    expect(ok('012.5')).toBe(true);
+  });
+
+  it('答案與計算結果不符時指出 answer，訊息帶出正確值', () => {
+    const r = questionSchema.safeParse({ ...validVerticalCalc, answer: 826 });
+    expect(r.error!.issues.map((i) => i.path.join('.'))).toEqual(['answer']);
+    expect(r.error!.issues[0]!.message).toContain('825');
+  });
+
+  it('小數與乘法也用精確運算（0.1 + 0.2 = 0.3）', () => {
+    expect(
+      questionSchema.safeParse({ ...validVerticalCalc, operands: ['0.1', '0.2'], answer: '0.3' }).success,
+    ).toBe(true);
+    const r = questionSchema.safeParse({ ...validVerticalCalc, operands: ['1.5', '0.5'], operator: '×', answer: '0.8' });
+    expect(r.error!.issues[0]!.message).toContain('0.75');
+  });
+
+  it('減法結果為負時指出 operands', () => {
+    expect(issuePaths(questionSchema, { ...validVerticalCalc, operands: [5, 9], operator: '-', answer: 4 })).toEqual([
+      'operands',
+    ]);
+    expect(
+      issuePaths(questionSchema, { ...validVerticalCalc, operands: [10, 6, 7], operator: '-', answer: 3 }),
+    ).toEqual(['operands']);
+  });
+
+  it('運算元少於 2 個時指出 operands', () => {
+    expect(issuePaths(questionSchema, { ...validVerticalCalc, operands: [358], answer: 358 })).toContain('operands');
+  });
+
+  it('運算元格式錯誤時指出該運算元', () => {
+    for (const bad of ['-3', '1.2.3', '1e3', '', 'abc', '.5', '5.', '1,000']) {
+      expect(issuePaths(questionSchema, { ...validVerticalCalc, operands: ['358', bad] })).toEqual(['operands.1']);
+    }
+    expect(issuePaths(questionSchema, { ...validVerticalCalc, operands: [358, -3] })).toEqual(['operands.1']);
+    expect(issuePaths(questionSchema, { ...validVerticalCalc, operands: [358, true] })).toEqual(['operands.1']);
+  });
+
+  it('答案格式錯誤時指出 answer', () => {
+    expect(issuePaths(questionSchema, { ...validVerticalCalc, answer: 'abc' })).toEqual(['answer']);
+    expect(issuePaths(questionSchema, { ...validVerticalCalc, answer: '' })).toEqual(['answer']);
+  });
+
+  it('不認得的運算子指出 operator', () => {
+    expect(issuePaths(questionSchema, { ...validVerticalCalc, operator: '÷' })).toContain('operator');
+    expect(issuePaths(questionSchema, { ...validVerticalCalc, operator: '*' })).toContain('operator');
+  });
+
+  it('缺 operator 或 operands 時指出該欄位', () => {
+    const { operator, ...noOperator } = validVerticalCalc;
+    expect(issuePaths(questionSchema, noOperator)).toContain('operator');
+    const { operands, ...noOperands } = validVerticalCalc;
+    expect(issuePaths(questionSchema, noOperands)).toContain('operands');
+  });
+});
+
+const validWordProblem = {
+  no: 31,
+  type: 'word-problem',
+  subject: '數學',
+  grade: 3,
+  stem: '小明有 5 顆蘋果，姐姐又給他 7 顆，小明共有幾顆蘋果？',
+  answer: '小明共有 12 顆蘋果。',
+  explanation: '$5 + 7 = 12$。',
+  source: { originalPaper: '虛構期中考', number: 31 },
+};
+
+describe('應用題 schema', () => {
+  it('接受合法的應用題', () => {
+    expect(questionSchema.safeParse(validWordProblem).success).toBe(true);
+  });
+
+  it('缺 answer 或 answer 為空字串時指出 answer', () => {
+    const { answer, ...rest } = validWordProblem;
+    expect(issuePaths(questionSchema, rest)).toEqual(['answer']);
+    expect(issuePaths(questionSchema, { ...validWordProblem, answer: '' })).toEqual(['answer']);
+  });
+
+  it('答案句也驗證數學式與注音標注', () => {
+    expect(questionSchema.safeParse({ ...validWordProblem, answer: '共 $12$ 顆。' }).success).toBe(true);
+    expect(issuePaths(questionSchema, { ...validWordProblem, answer: '共 $12 顆。' })).toEqual(['answer']);
+    expect(issuePaths(questionSchema, { ...validWordProblem, answer: '[顆|ㄎㄜ ㄎ]' })).toEqual(['answer']);
+  });
+
+  it('可放進題庫檔與其他題型並存', () => {
+    expect(
+      bankFileSchema.safeParse({
+        questions: [validChoice, validHorizontalCalc, validVerticalCalc, validWordProblem],
+      }).success,
+    ).toBe(true);
+  });
+});

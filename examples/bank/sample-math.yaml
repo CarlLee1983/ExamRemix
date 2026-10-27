@@ -450,3 +450,131 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 28
+  - no: 29
+    type: horizontal-calc
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "$36 + 48 =$"
+    answer: 84
+    explanation: "$36 + 48 = 84$。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 29
+  - no: 30
+    type: horizontal-calc
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "$125 - 68 =$"
+    answer: 57
+    explanation: "$125 - 68 = 57$。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 30
+  - no: 31
+    type: horizontal-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "$7 \\times 8 =$"
+    answer: "56"
+    explanation: "$7 \\times 8 = 56$。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 31
+  - no: 32
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "用直式計算。"
+    operands: ["358", "467"]
+    operator: "+"
+    answer: "825"
+    explanation: "個位 8 + 7 = 15，進 1；十位 5 + 6 + 1 = 12，進 1；百位 3 + 4 + 1 = 8。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 32
+  - no: 33
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 小數加減
+    stem: "用直式計算。"
+    operands: ["4.6", "2.75"]
+    operator: "+"
+    answer: "7.35"
+    explanation: "小數點對齊再相加：$4.60 + 2.75 = 7.35$。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 33
+  - no: 34
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "用直式計算。"
+    operands: ["902", "478"]
+    operator: "-"
+    answer: "424"
+    explanation: "個位向十位借不到，要連續向百位借：$902 - 478 = 424$。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 34
+  - no: 35
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "用直式計算。"
+    operands: ["34", "12"]
+    operator: "×"
+    answer: "408"
+    explanation: "$34 \\times 2 = 68$，$34 \\times 10 = 340$，$68 + 340 = 408$。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 35
+  - no: 36
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "小明有 5 顆蘋果，姐姐又給他 7 顆，小明共有幾顆蘋果？"
+    answer: "小明共有 12 顆蘋果。"
+    explanation: "$5 + 7 = 12$，共有 12 顆。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 36
+  - no: 37
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "媽媽買了 3 盒雞蛋，每盒有 12 顆，一共買了幾顆雞蛋？"
+    answer: "媽媽一共買了 36 顆雞蛋。"
+    explanation: "$12 \\times 3 = 36$，一共 36 顆。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 37
+  - no: 38
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 加減法
+    stem: "小華有 85 元，買筆記本花了 47 元，還剩多少元？"
+    answer: "小華還剩 38 元。"
+    explanation: "$85 - 47 = 38$，還剩 38 元。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 38

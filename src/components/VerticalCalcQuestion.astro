@@ -1,0 +1,79 @@
+---
+import { digitCounts } from '../domain/vertical-calc';
+import type { VerticalCalcQuestion } from '../domain/schema';
+import Explanation from './Explanation.astro';
+import RichText from './RichText.astro';
+
+// 橫線下方的答案列數；答案寫在最後一列，其餘留白給進位或借位。單題覆寫尚未支援。
+const VERTICAL_ROWS = 1;
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: VerticalCalcQuestion;
+}
+
+const { number, question } = Astro.props;
+const { operands, operator } = question;
+// 答案可能寫成 012.5，排版時去掉多餘的前導 0
+const answer = question.answer.replace(/^0+(?=\d)/, '');
+const SYMBOLS = { '+': '+', '-': '−', '×': '×' } as const;
+
+// 每個數字一格。加減法依小數點對齊：整數部分靠右對齊整數欄、小數部分靠左接在小數點後；
+// 乘法不看小數點，所有數字靠右對齊（臺灣的直式乘法慣例）。小數點畫在它前一格的右緣，所以不佔欄位。
+const counts = [...operands, answer].map(digitCounts);
+const intCols = Math.max(...counts.map((c) => c.int));
+const fracCols = Math.max(...counts.map((c) => c.frac));
+const columns = operator === '×' ? Math.max(...counts.map((c) => c.int + c.frac)) : intCols + fracCols;
+
+interface Cell {
+  digit: string;
+  /** 這一格的右緣有小數點 */
+  point: boolean;
+}
+
+function toCells(decimal: string): (Cell | null)[] {
+  const { int, frac } = digitCounts(decimal);
+  const cells: (Cell | null)[] = Array.from(decimal.replace('.', ''), (digit, i) => ({
+    digit,
+    point: frac > 0 && i === int - 1,
+  }));
+  const left = operator === '×' ? columns - cells.length : intCols - int;
+  const right = columns - left - cells.length;
+  return [...Array<null>(left).fill(null), ...cells, ...Array<null>(right).fill(null)];
+}
+---
+
+<div class="question question-vertical-calc" data-question-type="vertical-calc">
+  <p class="stem">
+    <span class="number">{number}.</span>
+    <RichText text={question.stem} />
+  </p>
+  <div class="vcalc" style={`--vcalc-cols: ${columns}`}>
+    {/* 格子之間不留空白字元：格寬固定，切換答案卷時版面才不會動 */}
+    {
+      operands.map((operand, i) => {
+        const last = i === operands.length - 1;
+        return (
+          <div class={`vcalc-row operand${last ? ' rule' : ''}`}>
+            <span class="vcalc-operator">{last ? SYMBOLS[operator] : ''}</span>
+            {toCells(operand).map((cell) => <span class={`vcalc-cell${cell?.point ? ' vcalc-point' : ''}`}>{cell?.digit}</span>)}
+          </div>
+        );
+      })
+    }
+    {
+      Array.from({ length: VERTICAL_ROWS }, (_, row) => (
+        <div class="vcalc-row result">
+          <span class="vcalc-operator" />
+          {
+            toCells(row === VERTICAL_ROWS - 1 ? answer : '').map((cell) => (
+              <span class={`vcalc-cell${cell?.point ? ' vcalc-point' : ''}`}>{cell && <span class="vcalc-answer">{cell.digit}</span>}</span>
+            ))
+          }
+        </div>
+      ))
+    }
+  </div>
+  <Explanation text={question.explanation} />
+</div>

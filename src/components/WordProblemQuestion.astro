@@ -1,0 +1,26 @@
+---
+import type { WordProblemQuestion } from '../domain/schema';
+import Explanation from './Explanation.astro';
+import RichText from './RichText.astro';
+
+// 應用題計算區的預設行數；行高是 paper.css 的 --calc-line-height。單題覆寫尚未支援。
+const CALC_AREA_LINES = 4;
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: WordProblemQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-word-problem" data-question-type="word-problem">
+  <p class="stem">
+    <span class="number">{number}.</span>
+    <RichText text={question.stem} />
+  </p>
+  <div class="calc-box" style={`--calc-lines: ${CALC_AREA_LINES}`}><span class="calc-box-label">算式：</span></div>
+  <p class="answer-sentence"><span class="answer-label">答：</span><span class="answer-line"><span class="answer-line-text"><RichText text={question.answer} /></span></span></p>
+  <Explanation text={question.explanation} />
+</div>

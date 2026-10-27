@@ -15,6 +15,11 @@
   --zhuyin-syllable-width: 3.6em;
   /* 作答格與前後文字、作答格之間的間距 */
   --cell-gap: 0.25em;
+  /* 計算題的計算區：橫式計算與應用題的計算區每一行的高度；行數在各題型元件的常數 */
+  --calc-line-height: 2.4em;
+  /* 直式計算：每個數字一格，格寬、列高固定，數字才會上下對齊 */
+  --vcalc-cell-width: 1.5em;
+  --vcalc-row-height: 1.9em;
 }
 
 @page {
@@ -214,6 +219,91 @@ body {
   visibility: hidden;
 }
 
+/* 橫式計算與應用題的計算區：高度 = 行數（--calc-lines）× 行高，只留空白給孩子演算；
+   縮排與解析對齊。應用題的計算區加框並標上「算式：」 */
+.calc-area,
+.calc-box {
+  height: calc(var(--calc-lines) * var(--calc-line-height));
+  margin: 1mm 0 0 var(--question-indent);
+}
+
+.calc-box {
+  padding: 1mm 2mm;
+  border: 1px solid #000;
+}
+
+/* 應用題的答句：「答：」後面一條橫線，橫跨剩下的寬度；答句疊在線上，不佔版面 */
+.answer-sentence {
+  display: flex;
+  margin: 2mm 0 0 var(--question-indent);
+}
+
+.answer-label {
+  white-space: nowrap;
+}
+
+.answer-line {
+  position: relative;
+  flex: 1;
+  border-bottom: 1px solid #000;
+}
+
+.answer-line-text {
+  position: absolute;
+  inset: 0;
+  white-space: nowrap;
+  color: var(--answer-color);
+  visibility: hidden;
+}
+
+/* 直式計算：運算元由上到下，最後一個運算元列下方有橫線，運算子在該列最左欄。
+   欄數是 --vcalc-cols（不含運算子欄）；答案疊在格內，不佔版面，兩種模式格子大小不變 */
+.vcalc {
+  width: max-content;
+  margin: 1mm 0 0 var(--question-indent);
+}
+
+.vcalc-row {
+  display: flex;
+  height: var(--vcalc-row-height);
+  line-height: var(--vcalc-row-height);
+  font-variant-numeric: tabular-nums;
+}
+
+.vcalc-row.rule {
+  border-bottom: 1px solid #000;
+}
+
+.vcalc-operator,
+.vcalc-cell {
+  position: relative;
+  flex: none;
+  width: var(--vcalc-cell-width);
+  text-align: center;
+}
+
+/* 小數點畫在這一格的右緣（格與格之間），不佔欄位 */
+.vcalc-point::after {
+  content: '.';
+  position: absolute;
+  top: 0;
+  right: -0.2em;
+  width: 0.4em;
+  text-align: center;
+}
+
+.result .vcalc-point::after {
+  color: var(--answer-color);
+  visibility: hidden;
+}
+
+.vcalc-answer {
+  position: absolute;
+  inset: 0;
+  color: var(--answer-color);
+  visibility: hidden;
+}
+
 /* 解析在每題下方，只在答案卷顯示；試卷時不佔空間 */
 .explanation {
   display: none;
@@ -229,7 +319,10 @@ body {
 html[data-mode='answer'] .answer,
 html[data-mode='answer'] .blank-answer,
 html[data-mode='answer'] .cell-answer,
-html[data-mode='answer'] .sentence-answer {
+html[data-mode='answer'] .sentence-answer,
+html[data-mode='answer'] .answer-line-text,
+html[data-mode='answer'] .vcalc-answer,
+html[data-mode='answer'] .result .vcalc-point::after {
   visibility: visible;
 }
 

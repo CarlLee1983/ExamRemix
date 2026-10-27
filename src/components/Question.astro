@@ -9,9 +9,12 @@ import type { Question } from '../domain/schema';
 import CharToZhuyinQuestion from './CharToZhuyinQuestion.astro';
 import ChoiceQuestion from './ChoiceQuestion.astro';
 import FillBlankQuestion from './FillBlankQuestion.astro';
+import HorizontalCalcQuestion from './HorizontalCalcQuestion.astro';
 import ImitateSentenceQuestion from './ImitateSentenceQuestion.astro';
 import MakeSentenceQuestion from './MakeSentenceQuestion.astro';
 import TrueFalseQuestion from './TrueFalseQuestion.astro';
+import VerticalCalcQuestion from './VerticalCalcQuestion.astro';
+import WordProblemQuestion from './WordProblemQuestion.astro';
 import ZhuyinToCharQuestion from './ZhuyinToCharQuestion.astro';
 
 interface Props {
@@ -35,6 +38,9 @@ switch (question.type) {
   case 'zhuyin-to-char':
   case 'make-sentence':
   case 'imitate-sentence':
+  case 'horizontal-calc':
+  case 'vertical-calc':
+  case 'word-problem':
     break;
   default:
     unreachable(question);
@@ -48,3 +54,6 @@ switch (question.type) {
 {question.type === 'zhuyin-to-char' && <ZhuyinToCharQuestion number={number} question={question} />}
 {question.type === 'make-sentence' && <MakeSentenceQuestion number={number} question={question} />}
 {question.type === 'imitate-sentence' && <ImitateSentenceQuestion number={number} question={question} />}
+{question.type === 'horizontal-calc' && <HorizontalCalcQuestion number={number} question={question} />}
+{question.type === 'vertical-calc' && <VerticalCalcQuestion number={number} question={question} />}
+{question.type === 'word-problem' && <WordProblemQuestion number={number} question={question} />}

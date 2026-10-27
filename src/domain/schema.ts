@@ -2,6 +2,8 @@
 // 只依賴 astro/zod，不碰 Astro 執行環境，讓 Vitest 與 agent 都能直接呼叫（ADR 0002）。
 import { z } from 'astro/zod';
 import { countBlanks, hasOverlongUnderscores } from './blank.ts';
+import { parseRichText } from './rich-text.ts';
+import { calculate, DECIMAL_FORMAT, OPERATORS, sameNumber } from './vertical-calc.ts';
 import { hasAnnotation, parseZhuyin } from './zhuyin.ts';
 
 export const SUBJECTS = ['國語', '數學'] as const;
@@ -23,10 +25,21 @@ function addZhuyinIssues(text: string, ctx: z.RefinementCtx) {
   return result;
 }
 
-/** 可含注音標注（`[字|注音]`）的非空文字。 */
+/** 可含注音標注（`[字|注音]`）與數學式（`$...$`）的非空文字。 */
 const richText = nonEmptyText.superRefine((text, ctx) => {
-  addZhuyinIssues(text, ctx);
+  for (const message of parseRichText(text).errors) ctx.addIssue({ code: 'custom', message });
 });
+
+/** YAML 的 answer: 300 會讀成數字，轉成字串；其他型別一律拒絕。 */
+const stringOrNumber = (message: string) => z.union([z.string(), z.number()], { error: message }).transform(String);
+
+/** 填空與計算題的答案文字。 */
+const answerText = (message: string) => stringOrNumber(message).pipe(richText);
+
+/** 直式計算的運算元與答案：非負十進位數，YAML 寫成數字也可以。 */
+const decimalNumber = stringOrNumber('必須是非負數字（字串或數字）').pipe(
+  z.string().regex(DECIMAL_FORMAT, '必須是非負數字，只含數字與最多一個小數點（如 36 或 4.5）'),
+);
 
 /** 國字注音與注音寫國字的題幹：標注就是要考的字，至少要有一個。 */
 const zhuyinTargetStem = nonEmptyText.superRefine((text, ctx) => {
@@ -80,13 +93,7 @@ export const fillBlankQuestionSchema = questionBase
     type: z.literal('fill-blank'),
     /** 每個空格一個答案，依題幹中空格出現的順序 */
     answer: z
-      .array(
-        // YAML 的 answer: [300] 會讀成數字，轉成字串；其他型別一律拒絕
-        z
-          .union([z.string(), z.number()], { error: '每個答案必須是非空字串或數字' })
-          .transform(String)
-          .pipe(richText),
-      )
+      .array(answerText('每個答案必須是非空字串或數字'))
       .min(1),
   })
   .superRefine((q, ctx) => {
@@ -135,6 +142,41 @@ export const imitateSentenceQuestionSchema = questionBase.extend({
   answer: richText,
 });
 
+export const horizontalCalcQuestionSchema = questionBase.extend({
+  type: z.literal('horizontal-calc'),
+  /** 題幹含算式與結尾的等號，例如 `$36 + 48 =$`；答案填在題幹後的底線上 */
+  answer: answerText('答案必須是非空字串或數字'),
+});
+
+export const verticalCalcQuestionSchema = questionBase
+  .extend({
+    type: z.literal('vertical-calc'),
+    /** 由上到下的運算元 */
+    operands: z.array(decimalNumber).min(2),
+    operator: z.enum(OPERATORS),
+    answer: decimalNumber,
+  })
+  .superRefine((q, ctx) => {
+    // 運算元或答案本身格式有誤時，欄位的錯誤已經回報，不再算結果
+    if (![...q.operands, q.answer].every((n) => DECIMAL_FORMAT.test(n))) return;
+    const result = calculate(q.operands, q.operator);
+    if (result === null) {
+      ctx.addIssue({ code: 'custom', path: ['operands'], message: '減法的結果不可為負數（國小直式減法被減數要夠大）' });
+    } else if (!sameNumber(q.answer, result)) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['answer'],
+        message: `答案 ${q.answer} 與計算結果不符，正確答案是 ${result}`,
+      });
+    }
+  });
+
+export const wordProblemQuestionSchema = questionBase.extend({
+  type: z.literal('word-problem'),
+  /** 答句，不含「答：」前綴，例如「小明共有 12 顆蘋果。」 */
+  answer: richText,
+});
+
 // 題型的鑑別聯集；之後的 ticket 在這裡加題型。
 export const questionSchema = z
   .discriminatedUnion('type', [
@@ -145,6 +187,9 @@ export const questionSchema = z
     zhuyinToCharQuestionSchema,
     makeSentenceQuestionSchema,
     imitateSentenceQuestionSchema,
+    horizontalCalcQuestionSchema,
+    verticalCalcQuestionSchema,
+    wordProblemQuestionSchema,
   ])
   .superRefine((q, ctx) => {
     const hasSource = q.source !== undefined;
@@ -204,5 +249,8 @@ export type CharToZhuyinQuestion = z.infer<typeof charToZhuyinQuestionSchema>;
 export type ZhuyinToCharQuestion = z.infer<typeof zhuyinToCharQuestionSchema>;
 export type MakeSentenceQuestion = z.infer<typeof makeSentenceQuestionSchema>;
 export type ImitateSentenceQuestion = z.infer<typeof imitateSentenceQuestionSchema>;
+export type HorizontalCalcQuestion = z.infer<typeof horizontalCalcQuestionSchema>;
+export type VerticalCalcQuestion = z.infer<typeof verticalCalcQuestionSchema>;
+export type WordProblemQuestion = z.infer<typeof wordProblemQuestionSchema>;
 export type BankFile = z.infer<typeof bankFileSchema>;
 export type PaperFile = z.infer<typeof paperFileSchema>;

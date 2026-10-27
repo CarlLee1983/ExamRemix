@@ -62,6 +62,9 @@ pnpm check:bank [資料目錄]    # 沒給參數時依序取 EXAMREMIX_DATA_DIR�
 | `zhuyin-to-char` | 只有 `stem`，沒有 `answer` | 題幹中的注音標注就是要考的字（至少一個）：試卷上該字換成空白作答格（每字一格），注音以 ruby 顯示在格子上方 |
 | `make-sentence` | `answer`（範例句子，非空字串） | `stem` 寫說明與詞語；題幹下方留預設行數的作答行（見 `SentenceLines.astro` 的 `SENTENCE_LINES`），答案卷在行上以紅字顯示範例句子 |
 | `imitate-sentence` | `example`（例句，非空字串）、`answer`（範例句子，非空字串） | 題幹下方另起一行顯示「例句：…」，再留同造句的作答行 |
+| `horizontal-calc` | `answer`（字串或數字，可含數學式） | `stem` 寫算式與結尾的等號，例如 `$36 + 48 =$`；題幹後接一條答案底線，下方留計算區（見 `HorizontalCalcQuestion.astro` 的 `CALC_LINES`），答案卷在底線上以紅字顯示答案 |
+| `vertical-calc` | `operands`（2 個以上非負數字，字串或數字，只含數字與最多一個小數點）、`operator`（`+`、`-`、`×`）、`answer`（數字，字串或數字） | `stem` 寫說明（如「用直式計算。」）；運算元排成直式，每個數字一格：加減法依小數點對齊，乘法靠右對齊；運算子在最後一個運算元列的最左欄，其下一條橫線，再留答案列（見 `VerticalCalcQuestion.astro` 的 `VERTICAL_ROWS`），答案卷在答案列以紅字顯示。題庫檢查會以精確運算核對 `answer`（以數值比較，`12.50` 等於 `12.5`），減法結果不可為負 |
+| `word-problem` | `answer`（答句，不含「答：」前綴，可含數學式） | 題幹下方是標有「算式：」的框線計算區（見 `WordProblemQuestion.astro` 的 `CALC_AREA_LINES`），再接「答：」與一條橫線；答案卷在橫線上以紅字顯示答句 |
 
 填空題的空格數必須等於 `answer` 的長度，且至少一個空格，答案依空格出現的順序排列，例如：
 
@@ -87,6 +90,23 @@ pnpm check:bank [資料目錄]    # 沒給參數時依序取 EXAMREMIX_DATA_DIR�
   stem: "照樣造句。"
   example: "月亮像一個大銀盤掛在天上。"
   answer: "太陽像一顆大火球掛在天上。"
+```
+
+### 數學式
+
+所有題型的所有文字欄位（題幹、選項、解析、各種 `answer`、例句）都能寫行內數學式：用 `$...$` 包住 LaTeX，例如 `$\frac{3}{4} + \frac{1}{4} =$`；字面的錢字號寫成 `\$`。數學式在建置時由 KaTeX 渲染，CSS 與字型都打包在站內，不需要網路。數學式的內容不做注音解析，數學式以外的文字照常支援注音標注。數學式未閉合、空的 `$$`、或 KaTeX 無法解析的 LaTeX，題庫檢查與建置都會指出題目與欄位。填空題答案含數學式時，底線寬度以原始 LaTeX 的長度估算。
+
+```yaml
+- no: 29
+  type: horizontal-calc
+  stem: "$36 + 48 =$"
+  answer: 84
+- no: 33
+  type: vertical-calc
+  stem: "用直式計算。"
+  operands: ["4.6", "2.75"]
+  operator: "+"
+  answer: "7.35"
 ```
 
 ### 測試

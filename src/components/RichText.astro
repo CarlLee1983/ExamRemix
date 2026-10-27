@@ -1,18 +1,30 @@
 ---
-// 題目文字的唯一輸出元件：注音標注 `[字|注音]` 渲染成每字一個 <ruby>，一般文字照常輸出。
-// 所有題型元件輸出題幹、選項、解析、答案時都經過這裡，所以任何文字都能加注音。
-import { parseZhuyin } from '../domain/zhuyin';
+// 題目文字的唯一輸出元件：注音標注 `[字|注音]` 渲染成每字一個 <ruby>，數學式 `$...$` 由 KaTeX 在建置時渲染，
+// 一般文字照常輸出。所有題型元件輸出題幹、選項、解析、答案時都經過這裡，所以任何文字都能加注音與數學式。
+// KaTeX 的 CSS 與字型由 Vite 打包到站內，不連外部網路。
+import 'katex/dist/katex.min.css';
+import { parseRichText, renderMath } from '../domain/rich-text';
 
 interface Props {
   text: string;
 }
 
 const { text } = Astro.props;
-const { segments, errors } = parseZhuyin(text);
+const { segments, errors } = parseRichText(text);
 // 資料載入時 schema 已檢查過；走到這裡仍有錯誤代表檢查被繞過，直接中止建置
 if (errors.length > 0) {
-  throw new Error(`注音標注格式錯誤：${errors.join('；')}（文字：${text}）`);
+  throw new Error(`文字格式錯誤：${errors.join('；')}（文字：${text}）`);
 }
 ---
 
-{segments.map((segment) => segment.kind === 'text' ? segment.text : segment.chars.map(({ char, zhuyin }) => <ruby>{char}<rp>(</rp><rt>{zhuyin}</rt><rp>)</rp></ruby>))}
+{
+  segments.map((segment) =>
+    segment.kind === 'text' ? (
+      segment.text
+    ) : segment.kind === 'math' ? (
+      <span class="math" set:html={renderMath(segment.tex)} />
+    ) : (
+      segment.chars.map(({ char, zhuyin }) => <ruby>{char}<rp>(</rp><rt>{zhuyin}</rt><rp>)</rp></ruby>)
+    ),
+  )
+}

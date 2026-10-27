@@ -1,0 +1,5 @@
+questions:
+  - no: 1
+    type: choice
+    stem: "沒有閉合的引號
+    answer: 1

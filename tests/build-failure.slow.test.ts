@@ -71,3 +71,30 @@ describe('astro build 遇到不合格的檔名', () => {
     expect(output).toContain('bank/a b.yaml');
   }, 120_000);
 });
+
+describe('astro build 遇到 YAML 語法錯誤', () => {
+  it('以非零狀態結束，並指出檔案', () => {
+    const { status, output } = build(resolve('tests/fixtures/bad-yaml'));
+
+    expect(status).not.toBe(0);
+    expect(output).toContain('bank/broken-syntax.yaml');
+  }, 120_000);
+});
+
+describe('check:bank 與 astro build 的判定一致', () => {
+  const fixtures = [
+    'examples',
+    'tests/fixtures/bad-data',
+    'tests/fixtures/bad-yaml',
+    'tests/fixtures/bad-file-name',
+    'tests/fixtures/colliding-names',
+    'tests/fixtures/cross-file-problems',
+  ];
+
+  it.each(fixtures)('%s：兩邊同為通過或同為失敗', (dir) => {
+    const cli = spawnSync('pnpm', ['--silent', 'check:bank', dir], { encoding: 'utf8' });
+    const built = build(resolve(dir));
+
+    expect(built.status === 0).toBe(cli.status === 0);
+  }, 120_000);
+});

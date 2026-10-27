@@ -60,6 +60,13 @@ describe('pnpm check:bank', () => {
     expect(output).not.toContain('bank/a-b.yaml');
   });
 
+  it('YAML 語法錯誤：結束狀態 1，指出檔案', () => {
+    const { status, output } = run('tests/fixtures/bad-yaml');
+    expect(status).toBe(1);
+    expect(output).toContain('bank/broken-syntax.yaml');
+    expect(output).toContain('YAML 格式錯誤');
+  });
+
   it('資料目錄不存在：非零結束並說明路徑', () => {
     const missing = join('tests', 'fixtures', 'no-such-dir');
     const { status, output } = run(missing);

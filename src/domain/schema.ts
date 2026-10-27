@@ -8,7 +8,7 @@ import { NO_UNIT_LABEL } from './unit.ts';
 import { calculate, DECIMAL_FORMAT, OPERATORS, sameNumber } from './vertical-calc.ts';
 import { hasAnnotation, parseZhuyin } from './zhuyin.ts';
 
-export const SUBJECTS = ['國語', '數學'] as const;
+export const SUBJECTS = ['國語', '數學', '自然'] as const;
 
 const subjectSchema = z.enum(SUBJECTS);
 const gradeSchema = z.number().int().min(1).max(6);

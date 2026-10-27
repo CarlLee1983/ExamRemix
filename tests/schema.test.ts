@@ -129,9 +129,7 @@ describe('填空題 schema', () => {
     const bad = { ...validFillBlank, answer: ['300'] };
     expect(issuePaths(questionSchema, bad)).toEqual(['answer']);
     const r = questionSchema.safeParse(bad);
-    const message = r.error!.issues[0]!.message;
-    expect(message).toContain('2');
-    expect(message).toContain('1');
+    expect(r.error!.issues[0]!.message).toBe('題幹有 2 個空格，但 answer 有 1 個答案');
   });
 
   it('空格數少於答案數時指出 answer', () => {
@@ -147,6 +145,30 @@ describe('填空題 schema', () => {
   it('只有兩個底線不算空格', () => {
     const bad = { ...validFillBlank, stem: '3 公尺 = __ 公分', answer: ['300'] };
     expect(issuePaths(questionSchema, bad)).toEqual(['stem']);
+  });
+
+  it('空格請用剛好三個底線：連續四個以上時指出 stem 並說明', () => {
+    for (const run of ['____', '______']) {
+      const bad = { ...validFillBlank, stem: `3 公尺 = ${run} 公分`, answer: ['300'] };
+      expect(issuePaths(questionSchema, bad)).toEqual(['stem']);
+      const r = questionSchema.safeParse(bad);
+      expect(r.error!.issues[0]!.message).toContain('空格請用剛好三個底線 ___');
+    }
+  });
+
+  it('答案寫成數字時轉成字串', () => {
+    const r = questionSchema.safeParse({ ...validFillBlank, answer: [300, '1000'] });
+    expect(r.success).toBe(true);
+    expect(r.data).toMatchObject({ answer: ['300', '1000'] });
+  });
+
+  it('答案是布林值、物件或 null 時指出該項，訊息為中文', () => {
+    for (const bad of [true, null, { a: 1 }, ['x']]) {
+      const r = questionSchema.safeParse({ ...validFillBlank, answer: ['300', bad] });
+      expect(r.success).toBe(false);
+      expect(r.error!.issues.map((i) => i.path.join('.'))).toEqual(['answer.1']);
+      expect(r.error!.issues[0]!.message).toBe('每個答案必須是非空字串或數字');
+    }
   });
 
   it('答案含空字串時指出該項', () => {

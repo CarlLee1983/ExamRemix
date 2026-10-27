@@ -1,6 +1,17 @@
 import { expect, test, type Page } from '@playwright/test';
 
 const PAPER = '/papers/sample-math/';
+/** --answer-color 解析後的實際計算色：用暫時元素套 color: var(--answer-color) 取得 */
+const expectedAnswerColor = (page: Page) =>
+  page.evaluate(() => {
+    const probe = document.createElement('span');
+    probe.style.color = 'var(--answer-color)';
+    document.body.append(probe);
+    const color = getComputedStyle(probe).color;
+    probe.remove();
+    return color;
+  });
+
 // 範例試卷 sample-math 的各題型題數
 const CHOICE_COUNT = 21;
 const TRUE_FALSE_COUNT = 3;
@@ -111,12 +122,9 @@ test.describe('答案卷切換', () => {
     for (const { index, answer, explanation } of known) {
       const q = questions.nth(index);
       await expect(q.locator('.answer')).toHaveText(answer);
-      // 答案以醒目的顏色標示，不與題幹同色
-      const [answerColor, stemColor] = await Promise.all([
-        q.locator('.answer').evaluate((el) => getComputedStyle(el).color),
-        q.locator('.stem').evaluate((el) => getComputedStyle(el).color),
-      ]);
-      expect(answerColor).not.toBe(stemColor);
+      // 答案以 --answer-color 標示
+      const answerColor = await q.locator('.answer').evaluate((el) => getComputedStyle(el).color);
+      expect(answerColor).toBe(await expectedAnswerColor(page));
       await expect(q.locator('.explanation')).toContainText('解析：');
       await expect(q.locator('.explanation')).toContainText(explanation);
 
@@ -232,11 +240,8 @@ test.describe('是非題', () => {
       const q = questions.nth(index);
       await expect(q.locator('.answer')).toBeVisible();
       await expect(q.locator('.answer')).toHaveText(mark);
-      const [answerColor, stemColor] = await Promise.all([
-        q.locator('.answer').evaluate((el) => getComputedStyle(el).color),
-        q.locator('.stem').evaluate((el) => getComputedStyle(el).color),
-      ]);
-      expect(answerColor).not.toBe(stemColor);
+      const answerColor = await q.locator('.answer').evaluate((el) => getComputedStyle(el).color);
+      expect(answerColor).toBe(await expectedAnswerColor(page));
       const box = (await q.locator('.answer-box').boundingBox())!;
       const ans = (await q.locator('.answer').boundingBox())!;
       expect(ans.x).toBeGreaterThanOrEqual(box.x - 1);
@@ -316,11 +321,10 @@ test.describe('填空題', () => {
       const q = questions.nth(index);
       await expect(q.locator('.blank-answer')).toHaveText(answers);
       await expect(q.locator('.blank-answer:visible')).toHaveCount(answers.length);
-      const [answerColor, stemColor] = await Promise.all([
-        q.locator('.blank-answer').first().evaluate((el) => getComputedStyle(el).color),
-        q.locator('.stem').evaluate((el) => getComputedStyle(el).color),
-      ]);
-      expect(answerColor).not.toBe(stemColor);
+      const colors = await q
+        .locator('.blank-answer')
+        .evaluateAll((els) => els.map((el) => getComputedStyle(el).color));
+      expect(new Set(colors)).toEqual(new Set([await expectedAnswerColor(page)]));
       // 答案落在各自底線的範圍內
       for (let i = 0; i < answers.length; i++) {
         const blank = (await q.locator('.blank').nth(i).boundingBox())!;

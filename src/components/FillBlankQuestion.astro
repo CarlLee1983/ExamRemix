@@ -1,5 +1,5 @@
 ---
-import { splitStem } from '../domain/blank';
+import { blankWidthEm, splitStem } from '../domain/blank';
 import type { FillBlankQuestion } from '../domain/schema';
 import Explanation from './Explanation.astro';
 
@@ -22,7 +22,7 @@ const parts = splitStem(question.stem);
         <>
           {part}
           {i < question.answer.length && (
-            <span class="blank" style={`--blank-chars: ${[...question.answer[i]!].length}`}><span class="blank-answer">{question.answer[i]}</span></span>
+            <span class="blank" style={`--blank-width: ${blankWidthEm(question.answer[i]!)}em`}><span class="blank-answer">{question.answer[i]}</span></span>
           )}
         </>
       ))

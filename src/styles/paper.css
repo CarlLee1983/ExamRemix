@@ -108,12 +108,13 @@ body {
   visibility: hidden;
 }
 
-/* 填空題的空格：底線寬度依答案字數決定，兩種模式相同；答案疊在底線上，不佔版面 */
+/* 填空題的空格：底線寬度（--blank-width，由元件依答案字數算出）刻意依答案長度決定，
+   試卷與答案卷同寬，所以試卷上看得出答案有幾個字，這是已知的取捨；答案疊在底線上，不佔版面 */
 .blank {
   position: relative;
   display: inline-block;
   min-width: 2em;
-  width: calc(var(--blank-chars) * 1em + 1em);
+  width: var(--blank-width);
   margin: 0 0.25em;
   border-bottom: 1px solid #000;
   /* 底線與周圍文字的基線對齊，行高不被撐開 */

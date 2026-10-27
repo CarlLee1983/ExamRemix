@@ -430,8 +430,8 @@ questions:
     unit: 生活應用
     stem: "3 公尺 = ___ 公分；1 公里 = ___ 公尺。"
     answer:
-      - "300"
-      - "1000"
+      - 300
+      - 1000
     explanation: "1 公尺 = 100 公分，所以 3 公尺 = 300 公分；1 公里 = 1000 公尺。"
     confirmed: true
     source:

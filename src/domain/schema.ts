@@ -1,7 +1,7 @@
 // 題庫檢查模組：題庫檔與試卷檔的 schema。
 // 只依賴 astro/zod，不碰 Astro 執行環境，讓 Vitest 與 agent 都能直接呼叫（ADR 0002）。
 import { z } from 'astro/zod';
-import { countBlanks } from './blank.ts';
+import { countBlanks, hasOverlongUnderscores } from './blank.ts';
 
 export const SUBJECTS = ['國語', '數學'] as const;
 
@@ -53,9 +53,24 @@ export const fillBlankQuestionSchema = questionBase
   .extend({
     type: z.literal('fill-blank'),
     /** 每個空格一個答案，依題幹中空格出現的順序 */
-    answer: z.array(z.string().min(1)).min(1),
+    answer: z
+      .array(
+        // YAML 的 answer: [300] 會讀成數字，轉成字串；其他型別一律拒絕
+        z
+          .union([z.string().min(1), z.number()], { error: '每個答案必須是非空字串或數字' })
+          .transform(String),
+      )
+      .min(1),
   })
   .superRefine((q, ctx) => {
+    if (hasOverlongUnderscores(q.stem)) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['stem'],
+        message: '空格請用剛好三個底線 ___，題幹中不可出現連續四個以上的底線',
+      });
+      return;
+    }
     const blanks = countBlanks(q.stem);
     if (blanks === 0) {
       ctx.addIssue({ code: 'custom', path: ['stem'], message: '填空題的題幹至少要有一個空格（___）' });

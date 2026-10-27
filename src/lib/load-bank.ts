@@ -1,8 +1,9 @@
-// 建置時載入題庫與試卷，一律跑跨檔檢查；有任何問題就讓建置失敗並列出全部問題。
+// 建置時載入題庫與試卷，一律跑跨檔檢查；有錯誤就讓建置失敗並列出全部問題，只有警告時印出警告後繼續。
 import { getCollection } from 'astro:content';
 import { basename } from 'node:path';
 import { listImages, resolveDataDir } from './data-dir.ts';
-import { buildQuestionIndex, checkBank, formatProblem } from '../domain/bank-check.ts';
+import { buildQuestionIndex, checkBank } from '../domain/bank-check.ts';
+import { reportProblems } from '../domain/problem.ts';
 import { compareIds, type Question } from '../domain/schema.ts';
 
 function actualFileName(id: string, filePath: string | undefined): string {
@@ -19,10 +20,12 @@ async function load() {
     return { name: basename(fileName, '.yaml'), file: `bank/${fileName}`, data: b.data };
   });
   const paperInputs = papers.map((p) => ({ file: `papers/${actualFileName(p.id, p.filePath)}`, data: p.data }));
-  const problems = checkBank({ banks: bankInputs, papers: paperInputs, images: listImages(resolveDataDir()) });
-  if (problems.length > 0) {
-    throw new Error(`題庫檢查發現 ${problems.length} 個問題：\n${problems.map((p) => `  - ${formatProblem(p)}`).join('\n')}`);
-  }
+  const report = reportProblems(
+    checkBank({ banks: bankInputs, papers: paperInputs, images: listImages(resolveDataDir()) }),
+  );
+  const details = report.lines.map((line) => `  - ${line}`).join('\n');
+  if (report.failed) throw new Error(`題庫檢查發現 ${report.summary}：\n${details}`);
+  if (report.lines.length > 0) console.warn(`題庫檢查發現 ${report.summary}：\n${details}`);
 
   const questions = buildQuestionIndex(bankInputs) as ReadonlyMap<string, Question>;
   // 題庫瀏覽頁用：所有題目（含未確認），依 ID 排序

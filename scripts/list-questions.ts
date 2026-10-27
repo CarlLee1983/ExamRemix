@@ -5,6 +5,7 @@
 //   --confirmed  --unconfirmed  --subject <科目>  --grade <年級>  --unit <單元>  --type <題型>  --id <題目 ID>
 // schema 不過的題庫檔跳過並在 stderr 提醒執行 check:bank。沒有符合的題目仍以 0 結束；資料目錄不存在或旗標錯誤以 2 結束。
 import { parseArgs } from 'node:util';
+import { formatProblem } from '../src/domain/problem.ts';
 import { bankFileSchema, deriveQuestionId } from '../src/domain/schema.ts';
 import { unitLabel } from '../src/domain/unit.ts';
 import { readDataDir, resolveDataDir } from '../src/lib/data-dir.ts';
@@ -42,7 +43,7 @@ try {
   fail((error as Error).message);
 }
 
-for (const problem of contents.problems) console.error(`${problem}（已跳過，請執行 pnpm check:bank 檢查）`);
+for (const problem of contents.problems) console.error(`${formatProblem(problem)}（已跳過，請執行 pnpm check:bank 檢查）`);
 
 /** 沒給這個旗標就全部通過；給了就要符合其中任一個值。 */
 const matches = (wanted: string[] | undefined, actual: string) => wanted === undefined || wanted.includes(actual);

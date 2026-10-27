@@ -259,3 +259,15 @@ describe('buildQuestionIndex', () => {
     expect(index.get('a-12')?.no).toBe(12);
   });
 });
+
+describe('嚴重度', () => {
+  it('現有規則回報的問題全部是錯誤', () => {
+    const problems = checkBank({
+      images: [],
+      banks: [bank('a', [{ no: 1, confirmed: false }]), bank('a', [{ no: 1 }], 'bank/A_b.yaml')],
+      papers: [paper('p', ['a-01', 'zz-01'])],
+    });
+    expect(problems.length).toBeGreaterThan(0);
+    expect(problems.every((p) => p.severity === 'error')).toBe(true);
+  });
+});

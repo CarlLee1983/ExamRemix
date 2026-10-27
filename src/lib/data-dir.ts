@@ -4,6 +4,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { basename, join, resolve, sep } from 'node:path';
 import { parse } from 'yaml';
+import type { Problem } from '../domain/problem.ts';
 import { isImageFile } from '../domain/image.ts';
 
 const EXTENSION = '.yaml';
@@ -24,8 +25,8 @@ export interface DataDirContents {
   papers: DataFile[];
   /** bank/ 底下（含子目錄）所有圖片檔，相對於 bank/、以 / 分隔，已排序 */
   images: string[];
-  /** 無法讀入的檔案（YAML 語法錯誤），每項已含檔案與原因 */
-  problems: string[];
+  /** 無法讀入的檔案（YAML 語法錯誤），一律是錯誤 */
+  problems: Problem[];
 }
 
 /** 資料根目錄：參數、EXAMREMIX_DATA_DIR、examples 依序取用（ADR 0001）。 */
@@ -33,7 +34,7 @@ export function resolveDataDir(arg?: string): string {
   return resolve(arg || process.env.EXAMREMIX_DATA_DIR || 'examples');
 }
 
-function readSubdir(dataDir: string, subdir: string, problems: string[]): DataFile[] {
+function readSubdir(dataDir: string, subdir: string, problems: Problem[]): DataFile[] {
   const dir = join(dataDir, subdir);
   if (!existsSync(dir)) {
     throw new Error(`找不到目錄 ${dir}（資料目錄 ${dataDir} 底下需有 bank/ 與 papers/，可用 EXAMREMIX_DATA_DIR 指定）`);
@@ -45,7 +46,7 @@ function readSubdir(dataDir: string, subdir: string, problems: string[]): DataFi
     try {
       files.push({ name: basename(fileName, EXTENSION), file, path, raw: parse(readFileSync(path, 'utf8')) });
     } catch (error) {
-      problems.push(`${file}：YAML 格式錯誤：${(error as Error).message.split('\n')[0]}`);
+      problems.push({ severity: 'error', files: [file], message: `YAML 格式錯誤：${(error as Error).message.split('\n')[0]}` });
     }
   }
   return files;
@@ -65,7 +66,7 @@ export function readDataDir(dataDir: string): DataDirContents {
   if (!existsSync(dataDir)) {
     throw new Error(`找不到資料目錄 ${dataDir}（可用第一個參數或 EXAMREMIX_DATA_DIR 指定）`);
   }
-  const problems: string[] = [];
+  const problems: Problem[] = [];
   const banks = readSubdir(dataDir, 'bank', problems);
   const papers = readSubdir(dataDir, 'papers', problems);
   return { banks, papers, images: listImages(dataDir), problems };

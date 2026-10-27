@@ -1,12 +1,13 @@
 ---
+import { answerSpace } from '../domain/answer-space';
 import { blankWidthEm } from '../domain/blank';
 import { parseRichText, richPlainText } from '../domain/rich-text';
 import type { HorizontalCalcQuestion } from '../domain/schema';
 import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
 import RichText from './RichText.astro';
 
-// 橫式計算題下方計算區的預設行數；行高是 paper.css 的 --calc-line-height。單題覆寫尚未支援。
-const CALC_LINES = 2;
+// 計算區的行數見 domain/answer-space.ts；行高是 paper.css 的 --calc-line-height。
 
 interface Props {
   /** 試卷內的連續題號 */
@@ -15,6 +16,7 @@ interface Props {
 }
 
 const { number, question } = Astro.props;
+const space = answerSpace(question);
 const blankWidth = blankWidthEm(richPlainText(parseRichText(question.answer).segments));
 ---
 
@@ -24,6 +26,7 @@ const blankWidth = blankWidthEm(richPlainText(parseRichText(question.answer).seg
     <span class="number">{number}.</span>
     <RichText text={question.stem} /><span class="blank" style={`--blank-width: ${blankWidth}em`}><span class="blank-answer"><RichText text={question.answer} /></span></span>
   </p>
-  <div class="calc-area" style={`--calc-lines: ${CALC_LINES}`}></div>
+  <QuestionFigure image={question.image} />
+  <div class="calc-area" data-space={space} style={`--calc-lines: ${space}`}></div>
   <Explanation text={question.explanation} />
 </div>

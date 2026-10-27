@@ -1,11 +1,12 @@
 ---
+import { answerSpace } from '../domain/answer-space';
 import { digitCounts } from '../domain/vertical-calc';
 import type { VerticalCalcQuestion } from '../domain/schema';
 import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
 import RichText from './RichText.astro';
 
-// 橫線下方的答案列數；答案寫在最後一列，其餘留白給進位或借位。單題覆寫尚未支援。
-const VERTICAL_ROWS = 1;
+// 橫線下方的答案列數見 domain/answer-space.ts；答案寫在最後一列，其餘留白給進位或借位。
 
 interface Props {
   /** 試卷內的連續題號 */
@@ -15,6 +16,7 @@ interface Props {
 
 const { number, question } = Astro.props;
 const { operands, operator } = question;
+const rows = answerSpace(question);
 // 答案可能寫成 012.5，排版時去掉多餘的前導 0
 const answer = question.answer.replace(/^0+(?=\d)/, '');
 const SYMBOLS = { '+': '+', '-': '−', '×': '×' } as const;
@@ -49,7 +51,8 @@ function toCells(decimal: string): (Cell | null)[] {
     <span class="number">{number}.</span>
     <RichText text={question.stem} />
   </p>
-  <div class="vcalc" style={`--vcalc-cols: ${columns}`}>
+  <QuestionFigure image={question.image} />
+  <div class="vcalc" data-space={rows} style={`--vcalc-cols: ${columns}`}>
     {/* 格子之間不留空白字元：格寬固定，切換答案卷時版面才不會動 */}
     {
       operands.map((operand, i) => {
@@ -63,11 +66,11 @@ function toCells(decimal: string): (Cell | null)[] {
       })
     }
     {
-      Array.from({ length: VERTICAL_ROWS }, (_, row) => (
+      Array.from({ length: rows }, (_, row) => (
         <div class="vcalc-row result">
           <span class="vcalc-operator" />
           {
-            toCells(row === VERTICAL_ROWS - 1 ? answer : '').map((cell) => (
+            toCells(row === rows - 1 ? answer : '').map((cell) => (
               <span class={`vcalc-cell${cell?.point ? ' vcalc-point' : ''}`}>{cell && <span class="vcalc-answer">{cell.digit}</span>}</span>
             ))
           }

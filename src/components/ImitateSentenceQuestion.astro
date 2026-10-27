@@ -1,6 +1,8 @@
 ---
+import { answerSpace } from '../domain/answer-space';
 import type { ImitateSentenceQuestion } from '../domain/schema';
 import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
 import RichText from './RichText.astro';
 import SentenceLines from './SentenceLines.astro';
 
@@ -18,7 +20,8 @@ const { number, question } = Astro.props;
     <span class="number">{number}.</span>
     <RichText text={question.stem} />
   </p>
+  <QuestionFigure image={question.image} />
   <p class="example"><span class="example-label">例句：</span><RichText text={question.example} /></p>
-  <SentenceLines answer={question.answer} />
+  <SentenceLines answer={question.answer} lines={answerSpace(question)} />
   <Explanation text={question.explanation} />
 </div>

@@ -1,4 +1,4 @@
-// 題庫檢查模組的跨檔規則：題目 ID 不可重複、試卷只能引用存在且已確認的題目。
+// 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在且已確認的題目。
 // 純函式，輸入是已通過 schema 的題庫檔與試卷檔，不讀檔、不依賴 Astro（ADR 0002）。
 import { fileNameProblem } from './file-name.ts';
 import { deriveQuestionId, type BankFile, type PaperFile, type Question } from './schema.ts';
@@ -37,8 +37,33 @@ export function buildQuestionIndex(banks: readonly Pick<BankInput, 'name' | 'dat
   return index;
 }
 
-/** 回傳所有問題；空陣列代表通過。順序固定：先檔名不合格，再題目 ID 重複，最後依試卷檔、大題、題目順序。 */
-export function checkBank(input: { banks: readonly BankInput[]; papers: readonly PaperInput[] }): Problem[] {
+// 新題必須與原題一致的欄位；單元以「含沒有」比較
+const INHERITED_FIELDS = [
+  ['type', '題型'],
+  ['subject', '科目'],
+  ['grade', '年級'],
+  ['unit', '單元'],
+] as const;
+
+const show = (value: string | number | undefined) => (value === undefined ? '無' : String(value));
+
+/** 兩題在 INHERITED_FIELDS 中不一致的欄位，回傳「欄位（甲 值，乙 值）」。 */
+function mismatches(a: Question, b: Question, aLabel: string, bLabel: string): string[] {
+  return INHERITED_FIELDS.filter(([key]) => a[key] !== b[key]).map(
+    ([key, label]) => `${label}（${aLabel} ${show(a[key])}，${bLabel} ${show(b[key])}）`,
+  );
+}
+
+/**
+ * 回傳所有問題；空陣列代表通過。順序固定：先檔名不合格，再題目 ID 重複，再附圖不存在，
+ * 再新題的衍生規則（依題庫檔、題目順序），最後依試卷檔、大題、題目順序。
+ * images 是 bank/ 底下所有圖片檔相對於 bank/ 的路徑。
+ */
+export function checkBank(input: {
+  banks: readonly BankInput[];
+  papers: readonly PaperInput[];
+  images: readonly string[];
+}): Problem[] {
   const banks = [...input.banks].sort(byFile);
   const papers = [...input.papers].sort(byFile);
   const problems: Problem[] = [];
@@ -68,7 +93,55 @@ export function checkBank(input: { banks: readonly BankInput[]; papers: readonly
     }
   }
 
+  const images = new Set(input.images);
+  for (const bank of banks) {
+    for (const question of bank.data.questions) {
+      if (question.image && !images.has(question.image.src)) {
+        const id = deriveQuestionId(bank.name, question.no);
+        problems.push({
+          files: [bank.file],
+          questionId: id,
+          message: `題目 ${id} 找不到附圖 ${question.image.src}（圖片要放在 bank/ 底下，路徑相對於 bank/）`,
+        });
+      }
+    }
+  }
+
   const index = buildQuestionIndex(banks);
+
+  // 衍生規則：新題只能衍生自已確認的原題，且題型、科目、年級、單元都與原題一致
+  for (const bank of banks) {
+    for (const question of bank.data.questions) {
+      if (!question.derivedFrom) continue;
+      const id = deriveQuestionId(bank.name, question.no);
+      const report = (message: string) => problems.push({ files: [bank.file], questionId: id, message });
+      const originals: [string, Question][] = [];
+      for (const originalId of question.derivedFrom) {
+        const original = index.get(originalId);
+        if (!original) {
+          report(`新題 ${id} 衍生自不存在的原題 ${originalId}`);
+          continue;
+        }
+        originals.push([originalId, original]);
+        if (!original.confirmed) report(`新題 ${id} 衍生自未確認的原題 ${originalId}（請先核對原題並把 confirmed 改為 true）`);
+        if (original.derivedFrom) report(`新題 ${id} 衍生自 ${originalId}，但它也是新題；新題只能衍生自原題`);
+        const diff = mismatches(question, original, '新題', '原題');
+        if (diff.length > 0) report(`新題 ${id} 與原題 ${originalId} 的${diff.join('、')}不一致`);
+      }
+      // 多個原題之間，以第一個為準比對其餘，列出不一致的欄位聯集
+      const [first, ...others] = originals;
+      if (first && others.length > 0) {
+        const fields = INHERITED_FIELDS.filter(([key]) => others.some(([, other]) => other[key] !== first[1][key])).map(
+          ([, label]) => label,
+        );
+        if (fields.length > 0) {
+          const ids = originals.map(([originalId]) => originalId).join('、');
+          report(`新題 ${id} 衍生自的原題 ${ids} 彼此不一致（${fields.join('、')}）；以 ${first[0]} 為準比對`);
+        }
+      }
+    }
+  }
+
   for (const paper of papers) {
     for (const section of paper.data.sections) {
       for (const id of section.questions) {

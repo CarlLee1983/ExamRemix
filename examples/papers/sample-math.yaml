@@ -61,3 +61,8 @@ sections:
       - sample-math-36
       - sample-math-37
       - sample-math-38
+  - title: 九、綜合題
+    points: 10
+    questions:
+      - sample-math-39
+      - sample-math-40

@@ -1,6 +1,7 @@
 // 建置時載入題庫與試卷，一律跑跨檔檢查；有任何問題就讓建置失敗並列出全部問題。
 import { getCollection } from 'astro:content';
 import { basename } from 'node:path';
+import { readDataDir, resolveDataDir } from './data-dir.ts';
 import { buildQuestionIndex, checkBank, formatProblem } from '../domain/bank-check.ts';
 import type { Question } from '../domain/schema.ts';
 
@@ -18,7 +19,7 @@ async function load() {
     return { name: basename(fileName, '.yaml'), file: `bank/${fileName}`, data: b.data };
   });
   const paperInputs = papers.map((p) => ({ file: `papers/${actualFileName(p.id, p.filePath)}`, data: p.data }));
-  const problems = checkBank({ banks: bankInputs, papers: paperInputs });
+  const problems = checkBank({ banks: bankInputs, papers: paperInputs, images: readDataDir(resolveDataDir()).images });
   if (problems.length > 0) {
     throw new Error(`題庫檢查發現 ${problems.length} 個問題：\n${problems.map((p) => `  - ${formatProblem(p)}`).join('\n')}`);
   }

@@ -1,0 +1,12 @@
+---
+// 沒有內建作答區的題型（選擇、是非、填空、國字注音、注音寫國字）覆寫 space 後，在題目下方留的空白；
+// 行數是 0（預設）時不輸出任何東西。行高是 paper.css 的 --calc-line-height。
+interface Props {
+  /** 作答空間的行數，見 domain/answer-space.ts */
+  lines: number;
+}
+
+const { lines } = Astro.props;
+---
+
+{lines > 0 && <div class="answer-space" data-space={lines} style={`--space-lines: ${lines}`}></div>}

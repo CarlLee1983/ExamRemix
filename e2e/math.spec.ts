@@ -3,10 +3,10 @@ import { answerToggle, expectedAnswerColor } from './helpers';
 
 const PAPER = '/papers/sample-math/';
 
-// 範例試卷 sample-math 的數學題型：29–31 橫式計算、32–35 直式計算、36–38 應用題
+// 範例試卷 sample-math 的數學題型：29–31 橫式計算、32–35 直式計算、36–40 應用題
 const HORIZONTAL_ANSWERS = ['84', '57', '56'];
 const VERTICAL_ANSWERS = ['825', '7.35', '424', '408'];
-const WORD_ANSWERS = ['小明共有 12 顆蘋果。', '媽媽一共買了 36 顆雞蛋。', '小華還剩 38 元。'];
+const WORD_ANSWERS = ['小明共有 12 顆蘋果。', '媽媽一共買了 36 顆雞蛋。', '小華還剩 38 元。', '長方形的周長是 26 公分。', '老闆應該找她 94 元。'];
 
 const horizontal = (page: Page) => page.locator('.question-horizontal-calc');
 const vertical = (page: Page) => page.locator('.question-vertical-calc');
@@ -234,7 +234,7 @@ test.describe('數學題型的答案卷與列印', () => {
   test('答案卷：三種題型都有解析', async ({ page }) => {
     await page.goto(PAPER);
     await answerToggle(page).click();
-    await expect(page.locator(MATH_QUESTIONS)).toHaveCount(10);
+    await expect(page.locator(MATH_QUESTIONS)).toHaveCount(12);
     await expect(page.locator('.explanation:visible')).toHaveCount(await page.locator('.question').count());
     for (const q of await page.locator(MATH_QUESTIONS).all()) await expect(q.locator('.explanation')).toBeVisible();
   });
@@ -242,7 +242,7 @@ test.describe('數學題型的答案卷與列印', () => {
   test('列印試卷（print media）不顯示答案與解析', async ({ page }) => {
     await page.goto(PAPER);
     await page.emulateMedia({ media: 'print' });
-    await expect(page.locator(MATH_QUESTIONS)).toHaveCount(10);
+    await expect(page.locator(MATH_QUESTIONS)).toHaveCount(12);
     await expect(
       page.locator(':is(.blank-answer, .vcalc-answer, .answer-line-text, .explanation):visible'),
     ).toHaveCount(0);
@@ -253,7 +253,7 @@ test.describe('數學題型的答案卷與列印', () => {
     await answerToggle(page).click();
     await page.emulateMedia({ media: 'print' });
     await expect(page.locator('.question-horizontal-calc .blank-answer:visible')).toHaveCount(3);
-    await expect(page.locator('.question-word-problem .answer-line-text:visible')).toHaveCount(3);
+    await expect(page.locator('.question-word-problem .answer-line-text:visible')).toHaveCount(5);
     await expect(page.locator('.question-vertical-calc .vcalc-answer:visible')).toHaveCount(
       VERTICAL_ANSWERS.join('').replace(/\./g, '').length,
     );

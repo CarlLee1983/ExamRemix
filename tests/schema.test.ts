@@ -596,3 +596,56 @@ describe('應用題 schema', () => {
     ).toBe(true);
   });
 });
+
+describe('附圖（image）', () => {
+  const withImage = (image: unknown) => ({ ...validChoice, image });
+
+  it('任一題型都可附圖，副檔名不分大小寫，可放子目錄', () => {
+    for (const src of ['a/1.png', '1.JPG', 'a/b/c.jpeg', 'x.gif', 'x.svg', 'x.WebP']) {
+      expect(questionSchema.safeParse(withImage({ src, alt: '長方形' })).success).toBe(true);
+    }
+    expect(questionSchema.safeParse({ ...validHorizontalCalc, image: { src: 'a/1.png', alt: '圖' } }).success).toBe(true);
+  });
+
+  it('src、alt 缺少或為空字串時指出該欄位', () => {
+    expect(issuePaths(questionSchema, withImage({ alt: '圖' }))).toEqual(['image.src']);
+    expect(issuePaths(questionSchema, withImage({ src: 'a/1.png' }))).toEqual(['image.alt']);
+    expect(issuePaths(questionSchema, withImage({ src: '', alt: '圖' }))).toContain('image.src');
+    expect(issuePaths(questionSchema, withImage({ src: 'a/1.png', alt: '' }))).toEqual(['image.alt']);
+  });
+
+  it('src 不可是絕對路徑、含 .. 或反斜線、副檔名不支援', () => {
+    for (const src of ['/a/1.png', '../1.png', 'a/../1.png', 'a\\1.png', 'C:\\1.png', 'a/1.bmp', 'a/1', 'a/1.png.txt']) {
+      expect(issuePaths(questionSchema, withImage({ src, alt: '圖' }))).toEqual(['image.src']);
+    }
+  });
+
+  it('不接受多餘欄位', () => {
+    expect(issuePaths(questionSchema, withImage({ src: 'a/1.png', alt: '圖', width: 3 }))).toContain('image');
+  });
+});
+
+describe('作答空間（space）', () => {
+  it('任一題型都可覆寫，0 也合法（選擇題等預設就是 0）', () => {
+    expect(questionSchema.safeParse({ ...validChoice, space: 3 }).success).toBe(true);
+    expect(questionSchema.safeParse({ ...validChoice, space: 0 }).success).toBe(true);
+    expect(questionSchema.safeParse({ ...validWordProblem, space: 8 }).success).toBe(true);
+    expect(questionSchema.safeParse({ ...validVerticalCalc, space: 2 }).success).toBe(true);
+  });
+
+  it('負數、小數與非數字時指出 space', () => {
+    for (const space of [-1, 1.5, '3', null]) {
+      expect(issuePaths(questionSchema, { ...validChoice, space })).toEqual(['space']);
+    }
+  });
+
+  it('直式計算至少要有一列答案列：space 為 0 時指出 space', () => {
+    expect(issuePaths(questionSchema, { ...validVerticalCalc, space: 0 })).toEqual(['space']);
+  });
+
+  it('造句與照樣造句的範例句子寫在作答行上：space 為 0 時指出 space', () => {
+    expect(issuePaths(questionSchema, { ...validMakeSentence, space: 0 })).toEqual(['space']);
+    expect(issuePaths(questionSchema, { ...validImitateSentence, space: 0 })).toEqual(['space']);
+    expect(questionSchema.safeParse({ ...validMakeSentence, space: 1 }).success).toBe(true);
+  });
+});

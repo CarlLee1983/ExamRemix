@@ -304,6 +304,23 @@ body {
   visibility: hidden;
 }
 
+/* 附圖：緊接在題幹後，縮排與選項、解析對齊；高度與寬度都限制在版面內，且不跨頁切開 */
+.question-figure {
+  margin: 1mm 0 0 var(--question-indent);
+  break-inside: avoid;
+}
+
+.question-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: 60mm;
+}
+
+/* 沒有內建作答區的題型覆寫 space 後，在題目下方留的空白：高度 = 行數（--space-lines）× 行高 */
+.answer-space {
+  height: calc(var(--space-lines) * var(--calc-line-height));
+}
+
 /* 解析在每題下方，只在答案卷顯示；試卷時不佔空間 */
 .explanation {
   display: none;

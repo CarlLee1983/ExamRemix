@@ -12,6 +12,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "check:bank": "node scripts/check-bank.ts",
+    "list:questions": "node scripts/list-questions.ts",
     "test": "vitest run",
     "test:e2e": "playwright test"
   },

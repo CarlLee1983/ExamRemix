@@ -1,7 +1,10 @@
 ---
+import { answerSpace } from '../domain/answer-space';
 import type { CharToZhuyinQuestion } from '../domain/schema';
 import { parseZhuyin } from '../domain/zhuyin';
+import AnswerSpace from './AnswerSpace.astro';
 import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
 
 interface Props {
   /** 試卷內的連續題號 */
@@ -10,6 +13,7 @@ interface Props {
 }
 
 const { number, question } = Astro.props;
+const space = answerSpace(question);
 const { segments } = parseZhuyin(question.stem);
 ---
 
@@ -29,5 +33,7 @@ const { segments } = parseZhuyin(question.stem);
       )
     }
   </p>
+  <QuestionFigure image={question.image} />
+  <AnswerSpace lines={space} />
   <Explanation text={question.explanation} />
 </div>

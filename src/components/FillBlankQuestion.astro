@@ -1,8 +1,11 @@
 ---
+import { answerSpace } from '../domain/answer-space';
 import { blankWidthEm, splitStem } from '../domain/blank';
 import { parseRichText, richPlainText } from '../domain/rich-text';
 import type { FillBlankQuestion } from '../domain/schema';
+import AnswerSpace from './AnswerSpace.astro';
 import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
 import RichText from './RichText.astro';
 
 interface Props {
@@ -12,6 +15,7 @@ interface Props {
 }
 
 const { number, question } = Astro.props;
+const space = answerSpace(question);
 const parts = splitStem(question.stem);
 ---
 
@@ -30,5 +34,7 @@ const parts = splitStem(question.stem);
       ))
     }
   </p>
+  <QuestionFigure image={question.image} />
+  <AnswerSpace lines={space} />
   <Explanation text={question.explanation} />
 </div>

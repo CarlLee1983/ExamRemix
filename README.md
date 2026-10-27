@@ -47,11 +47,19 @@ EXAMREMIX_DATA_DIR=data pnpm dev
 pnpm check:bank [資料目錄]    # 沒給參數時依序取 EXAMREMIX_DATA_DIR、examples
 ```
 
-檢查資料目錄裡的題庫檔與試卷檔：檔名是否合格（只能用小寫英數字與連字號，如 `sample-math.yaml`）、格式是否符合 schema，以及三條跨檔規則：題目 ID 不可在題庫檔之間重複、試卷只能引用存在的題目、試卷只能引用已確認的題目（未確認但沒被試卷引用的題目沒問題）。每個問題輸出一行（檔案、欄位或題目 ID、說明），最後一行是摘要；有問題以狀態碼 1 結束，沒有問題以 0 結束，資料目錄或 `bank/`、`papers/` 不存在時也非零結束。`pnpm build` 會跑同一套跨檔檢查，有任何問題就失敗並列出全部問題。agent 匯入或產生題目後應先跑這個指令，修到沒有問題為止。
+檢查資料目錄裡的題庫檔與試卷檔：檔名是否合格（只能用小寫英數字與連字號，如 `sample-math.yaml`）、格式是否符合 schema，以及跨檔規則：題目 ID 不可在題庫檔之間重複；題目的附圖（`image.src`）必須存在於 `bank/` 底下；新題（`derivedFrom`）的衍生規則（見下）；試卷只能引用存在的題目；試卷只能引用已確認的題目（未確認但沒被試卷引用的題目沒問題）。
+
+衍生規則，逐一檢查新題的每個原題：原題必須存在；必須已確認；本身必須是原題（有 `source`，新題只能衍生自原題，不能衍生自新題）；題型、科目、年級、單元都要與新題一致（單元連「沒有」也要一致，一個原題回報一次並列出不一致的欄位）；衍生自多個原題時，這些原題彼此的四個欄位也要一致。每個問題輸出一行（檔案、欄位或題目 ID、說明），最後一行是摘要；有問題以狀態碼 1 結束，沒有問題以 0 結束，資料目錄或 `bank/`、`papers/` 不存在時也非零結束。`pnpm build` 會跑同一套跨檔檢查，有任何問題就失敗並列出全部問題。agent 匯入或產生題目後應先跑這個指令，修到沒有問題為止。
+
+```sh
+pnpm list:questions [資料目錄] [過濾條件]
+```
+
+列出題庫裡的題目，每題一行，欄位以 tab 分隔：題目 ID、題型、科目、年級、單元（沒有則 `-`）、`confirmed` 或 `unconfirmed`、題幹（換行壓成空格）。過濾條件都選填、彼此 AND，同一個旗標重複給值則是 OR：`--confirmed`、`--unconfirmed`、`--subject <科目>`、`--grade <年級>`、`--unit <單元>`、`--type <題型>`、`--id <題目 ID>`，例如 `pnpm list:questions --unconfirmed --type choice --grade 3`。沒有符合的題目時沒有輸出、狀態碼仍是 0；資料目錄不存在或旗標錯誤以 2 結束。格式不合 schema 的題庫檔會跳過並在 stderr 提醒先跑 `pnpm check:bank`。
 
 ### 題型
 
-每題都有共用欄位（`no`、`type`、`subject`、`grade`、選填的 `unit`、`stem`、`explanation`、`confirmed`，以及原題的 `source` 或新題的 `derivedFrom` 擇一），再加上各題型自己的欄位：
+每題都有共用欄位（`no`、`type`、`subject`、`grade`、選填的 `unit`、`stem`、`explanation`、`confirmed`、選填的 `image` 與 `space`，以及原題的 `source` 或新題的 `derivedFrom` 擇一），再加上各題型自己的欄位：
 
 | `type` | 欄位 | 說明 |
 | --- | --- | --- |
@@ -60,11 +68,11 @@ pnpm check:bank [資料目錄]    # 沒給參數時依序取 EXAMREMIX_DATA_DIR�
 | `fill-blank` | `answer`（字串陣列，每個空格一個答案，不可為空字串） | 題幹用連續三個半形底線 `___` 標記一個空格 |
 | `char-to-zhuyin` | 只有 `stem`，沒有 `answer` | 題幹中的注音標注就是要考的字（至少一個）：試卷上該字加底線，後面留注音作答格，寬度依注音組數 |
 | `zhuyin-to-char` | 只有 `stem`，沒有 `answer` | 題幹中的注音標注就是要考的字（至少一個）：試卷上該字換成空白作答格（每字一格），注音以 ruby 顯示在格子上方 |
-| `make-sentence` | `answer`（範例句子，非空字串） | `stem` 寫說明與詞語；題幹下方留預設行數的作答行（見 `SentenceLines.astro` 的 `SENTENCE_LINES`），答案卷在行上以紅字顯示範例句子 |
+| `make-sentence` | `answer`（範例句子，非空字串） | `stem` 寫說明與詞語；題幹下方留預設行數的作答行（預設 2 行，見 `src/domain/answer-space.ts`），答案卷在行上以紅字顯示範例句子 |
 | `imitate-sentence` | `example`（例句，非空字串）、`answer`（範例句子，非空字串） | 題幹下方另起一行顯示「例句：…」，再留同造句的作答行 |
-| `horizontal-calc` | `answer`（字串或數字，可含數學式） | `stem` 寫算式與結尾的等號，例如 `$36 + 48 =$`；題幹後接一條答案底線，下方留計算區（見 `HorizontalCalcQuestion.astro` 的 `CALC_LINES`），答案卷在底線上以紅字顯示答案 |
-| `vertical-calc` | `operands`（2 個以上非負數字，字串或數字，只含數字與最多一個小數點）、`operator`（`+`、`-`、`×`）、`answer`（數字，字串或數字） | `stem` 寫說明（如「用直式計算。」）；運算元排成直式，每個數字一格：加減法依小數點對齊，乘法靠右對齊；運算子在最後一個運算元列的最左欄，其下一條橫線，再留答案列（見 `VerticalCalcQuestion.astro` 的 `VERTICAL_ROWS`），答案卷在答案列以紅字顯示。題庫檢查會以精確運算核對 `answer`（以數值比較，`12.50` 等於 `12.5`），減法結果不可為負 |
-| `word-problem` | `answer`（答句，不含「答：」前綴，可含數學式） | 題幹下方是標有「算式：」的框線計算區（見 `WordProblemQuestion.astro` 的 `CALC_AREA_LINES`），再接「答：」與一條橫線；答案卷在橫線上以紅字顯示答句 |
+| `horizontal-calc` | `answer`（字串或數字，可含數學式） | `stem` 寫算式與結尾的等號，例如 `$36 + 48 =$`；題幹後接一條答案底線，下方留計算區（預設 2 行，見 `src/domain/answer-space.ts`），答案卷在底線上以紅字顯示答案 |
+| `vertical-calc` | `operands`（2 個以上非負數字，字串或數字，只含數字與最多一個小數點）、`operator`（`+`、`-`、`×`）、`answer`（數字，字串或數字） | `stem` 寫說明（如「用直式計算。」）；運算元排成直式，每個數字一格：加減法依小數點對齊，乘法靠右對齊；運算子在最後一個運算元列的最左欄，其下一條橫線，再留答案列（預設 1 列，見 `src/domain/answer-space.ts`），答案卷在答案列以紅字顯示。題庫檢查會以精確運算核對 `answer`（以數值比較，`12.50` 等於 `12.5`），減法結果不可為負 |
+| `word-problem` | `answer`（答句，不含「答：」前綴，可含數學式） | 題幹下方是標有「算式：」的框線計算區（預設 4 行，見 `src/domain/answer-space.ts`），再接「答：」與一條橫線；答案卷在橫線上以紅字顯示答句 |
 
 填空題的空格數必須等於 `answer` 的長度，且至少一個空格，答案依空格出現的順序排列，例如：
 
@@ -108,6 +116,20 @@ pnpm check:bank [資料目錄]    # 沒給參數時依序取 EXAMREMIX_DATA_DIR�
   operator: "+"
   answer: "7.35"
 ```
+
+### 附圖與作答空間
+
+任一題型都可以附圖：`image: { src: "sample-math/39.svg", alt: "替代文字" }`。`src` 是相對於 `bank/` 的路徑，圖片檔與題庫檔放在一起（建議每個題庫檔一個同名子目錄），副檔名限 png、jpg、jpeg、gif、svg、webp（不分大小寫）；不可是絕對路徑、不可含 `..` 或反斜線。圖片顯示在題幹之後，試卷與答案卷都有，建置時由 `/bank-images/` 端點原樣輸出，不需要網路。引用的圖片不存在時，題庫檢查會指出題庫檔、題目與圖片路徑。
+
+每個題型有預設作答空間，單位是行；題目可以用 `space`（0 以上的整數）覆寫，預設值與意義集中在 `src/domain/answer-space.ts`：
+
+| 題型 | 預設 | `space` 的意義 |
+| --- | --- | --- |
+| `make-sentence`、`imitate-sentence` | 2 | 作答行數；至少 1，不可為 0 |
+| `horizontal-calc` | 2 | 計算區的高度 |
+| `word-problem` | 4 | 算式計算區的高度 |
+| `vertical-calc` | 1 | 橫線下方的列數，答案在最後一列；至少 1，不可為 0 |
+| 其他題型 | 0 | 題目下方額外留白的高度，0 時不留 |
 
 ### 測試
 

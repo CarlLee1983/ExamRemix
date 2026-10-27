@@ -41,7 +41,7 @@ const schemaProblems = [...contents.problems, ...banks.problems, ...papers.probl
 const lines =
   schemaProblems.length > 0
     ? schemaProblems
-    : checkBank({ banks: banks.loaded, papers: papers.loaded }).map(formatProblem);
+    : checkBank({ banks: banks.loaded, papers: papers.loaded, images: contents.images }).map(formatProblem);
 
 if (lines.length === 0) {
   console.log(`題庫檢查通過：${banks.loaded.length} 個題庫檔、${papers.loaded.length} 份試卷檔，沒有問題`);

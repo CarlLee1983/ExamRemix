@@ -578,3 +578,31 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 38
+  - no: 39
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "下圖長方形的長是 9 公分、寬是 4 公分，周長是多少公分？"
+    image:
+      src: sample-math/39.svg
+      alt: 長 9 公分、寬 4 公分的長方形
+    answer: "長方形的周長是 26 公分。"
+    explanation: "$(9 + 4) \\times 2 = 26$，周長是 26 公分。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 39
+  - no: 40
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 生活應用
+    stem: "小美買了 3 枝鉛筆，每枝 12 元，又買了 2 本筆記本，每本 35 元。她付了 200 元，老闆應該找她多少元？"
+    space: 8
+    answer: "老闆應該找她 94 元。"
+    explanation: "鉛筆 $12 \\times 3 = 36$ 元，筆記本 $35 \\times 2 = 70$ 元，共 $36 + 70 = 106$ 元，$200 - 106 = 94$。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級數學小考
+      number: 40

@@ -67,6 +67,14 @@ describe('pnpm check:bank', () => {
     expect(output).toContain('YAML 格式錯誤');
   });
 
+  it('引用不存在的圖片：結束狀態 1，指出題庫檔、題目與圖片路徑', () => {
+    const { status, output } = run('tests/fixtures/missing-image');
+    expect(status).toBe(1);
+    expect(output).toContain('bank/pic.yaml');
+    expect(output).toContain('pic-01');
+    expect(output).toContain('pic/missing.png');
+  });
+
   it('資料目錄不存在：非零結束並說明路徑', () => {
     const missing = join('tests', 'fixtures', 'no-such-dir');
     const { status, output } = run(missing);

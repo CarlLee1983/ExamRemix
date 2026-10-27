@@ -21,7 +21,7 @@ questions:
     subject: 國語
     grade: 3
     unit: 字詞
-    stem: "「小貓輕輕地走過來」這句話中，哪一個詞語是在形容走路的樣子？"
+    stem: "「小貓[輕輕|ㄑㄧㄥ ㄑㄧㄥ]地走過來」這句話中，哪一個詞語是在形容走路的樣子？"
     options:
       - "小貓"
       - "輕輕地"
@@ -101,3 +101,97 @@ questions:
     source:
       originalPaper: 虛構三年級國語小考
       number: 7
+  - no: 8
+    type: char-to-zhuyin
+    subject: 國語
+    grade: 3
+    unit: 字音
+    stem: "小明和媽媽到[公園|ㄍㄨㄥ ㄩㄢˊ]散步，看見一朵美麗的[花|ㄏㄨㄚ]。"
+    explanation: "「公園」唸ㄍㄨㄥ ㄩㄢˊ，「花」唸ㄏㄨㄚ。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 8
+  - no: 9
+    type: char-to-zhuyin
+    subject: 國語
+    grade: 3
+    unit: 字音
+    stem: "[圖書館|ㄊㄨˊ ㄕㄨ ㄍㄨㄢˇ]裡很安靜，大家都在看書。"
+    explanation: "「圖書館」唸ㄊㄨˊ ㄕㄨ ㄍㄨㄢˇ。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 9
+  - no: 10
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    unit: 字形
+    stem: "星期天，我和[爸爸|ㄅㄚˋ ˙ㄅㄚ]到[公園|ㄍㄨㄥ ㄩㄢˊ]放風箏。"
+    explanation: "ㄅㄚˋ ˙ㄅㄚ 寫成「爸爸」，ㄍㄨㄥ ㄩㄢˊ 寫成「公園」。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 10
+  - no: 11
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    unit: 字形
+    stem: "弟弟最喜歡吃[蘋果|ㄆㄧㄥˊ ㄍㄨㄛˇ]。"
+    explanation: "ㄆㄧㄥˊ ㄍㄨㄛˇ 寫成「蘋果」。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 11
+  - no: 12
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    unit: 造句
+    stem: "用「雖然……但是……」造句。"
+    answer: "雖然今天下大雨，但是我還是準時到校。"
+    explanation: "句子要有轉折：前半句說一件事，後半句說相反或不受影響的結果。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 12
+  - no: 13
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    unit: 造句
+    stem: "用「一邊……一邊……」造句。"
+    answer: "妹妹一邊[唱歌|ㄔㄤˋ ㄍㄜ]，一邊洗手。"
+    explanation: "兩件事同時進行，兩個「一邊」後面各接一個動作。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 13
+  - no: 14
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    unit: 造句
+    stem: "照樣造句。"
+    example: "月亮像一個大銀盤掛在天上。"
+    answer: "太陽像一顆大火球掛在天上。"
+    explanation: "仿照例句，用「像」把一個東西比作另一個東西。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 14
+  - no: 15
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    unit: 造句
+    stem: "照樣造句。"
+    example: "小鳥在樹上快樂地唱歌。"
+    answer: "小狗在草地上開心地奔跑。"
+    explanation: "句型是「誰＋在哪裡＋怎樣地＋做什麼」。"
+    confirmed: true
+    source:
+      originalPaper: 虛構三年級國語小考
+      number: 15

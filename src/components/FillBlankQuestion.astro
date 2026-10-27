@@ -1,7 +1,9 @@
 ---
 import { blankWidthEm, splitStem } from '../domain/blank';
+import { plainText, parseZhuyin } from '../domain/zhuyin';
 import type { FillBlankQuestion } from '../domain/schema';
 import Explanation from './Explanation.astro';
+import RichText from './RichText.astro';
 
 interface Props {
   /** 試卷內的連續題號 */
@@ -20,9 +22,9 @@ const parts = splitStem(question.stem);
     {
       parts.map((part, i) => (
         <>
-          {part}
+          <RichText text={part} />
           {i < question.answer.length && (
-            <span class="blank" style={`--blank-width: ${blankWidthEm(question.answer[i]!)}em`}><span class="blank-answer">{question.answer[i]}</span></span>
+            <span class="blank" style={`--blank-width: ${blankWidthEm(plainText(parseZhuyin(question.answer[i]!).segments))}em`}><span class="blank-answer"><RichText text={question.answer[i]!} /></span></span>
           )}
         </>
       ))

@@ -1,0 +1,24 @@
+---
+import type { ImitateSentenceQuestion } from '../domain/schema';
+import Explanation from './Explanation.astro';
+import RichText from './RichText.astro';
+import SentenceLines from './SentenceLines.astro';
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: ImitateSentenceQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-imitate-sentence" data-question-type="imitate-sentence">
+  <p class="stem">
+    <span class="number">{number}.</span>
+    <RichText text={question.stem} />
+  </p>
+  <p class="example"><span class="example-label">例句：</span><RichText text={question.example} /></p>
+  <SentenceLines answer={question.answer} />
+  <Explanation text={question.explanation} />
+</div>

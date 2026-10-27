@@ -1,0 +1,18 @@
+---
+import RichText from './RichText.astro';
+
+// 造句類題型的預設作答行數；行高是 paper.css 的 --sentence-line-height。單題覆寫尚未支援。
+const SENTENCE_LINES = 2;
+
+interface Props {
+  /** 答案卷時顯示在作答行上的範例句子 */
+  answer: string;
+}
+
+const { answer } = Astro.props;
+---
+
+<div class="sentence-lines">
+  {Array.from({ length: SENTENCE_LINES }, () => <div class="sentence-line" />)}
+  <p class="sentence-answer"><RichText text={answer} /></p>
+</div>

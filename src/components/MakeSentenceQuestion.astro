@@ -1,0 +1,23 @@
+---
+import type { MakeSentenceQuestion } from '../domain/schema';
+import Explanation from './Explanation.astro';
+import RichText from './RichText.astro';
+import SentenceLines from './SentenceLines.astro';
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: MakeSentenceQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-make-sentence" data-question-type="make-sentence">
+  <p class="stem">
+    <span class="number">{number}.</span>
+    <RichText text={question.stem} />
+  </p>
+  <SentenceLines answer={question.answer} />
+  <Explanation text={question.explanation} />
+</div>

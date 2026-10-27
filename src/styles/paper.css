@@ -3,6 +3,10 @@
 :root {
   --answer-color: #f00;
   --question-indent: 12mm;
+  /* 造句類題型的作答行高；行數在 SentenceLines.astro */
+  --sentence-line-height: 2.4em;
+  /* 國字注音作答格每組注音的寬度 */
+  --zhuyin-syllable-width: 3.6em;
 }
 
 @page {
@@ -131,6 +135,72 @@ body {
   visibility: hidden;
 }
 
+/* 國字注音：被考的字加底線，旁邊的作答格寬度依注音組數（--syllables）；
+   注音寫國字：每個字一格，注音是格子上方的 ruby。答案疊在格內，不佔版面，兩種模式格子大小不變 */
+.target-char {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.zhuyin-cell,
+.char-cell {
+  position: relative;
+  display: inline-block;
+  height: 1.6em;
+  border: 1px solid #000;
+  vertical-align: text-bottom;
+}
+
+.zhuyin-cell {
+  width: calc(var(--syllables) * var(--zhuyin-syllable-width));
+  margin: 0 0.25em;
+}
+
+.char-cell {
+  width: 1.6em;
+  margin: 0 0.1em;
+}
+
+.cell-answer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  color: var(--answer-color);
+  visibility: hidden;
+}
+
+.zhuyin-cell .cell-answer {
+  font-size: 0.8em;
+}
+
+/* 造句與照樣造句：例句、作答行與解析同縮排；範例句子疊在作答行上，行高與作答行相同，換行時仍落在行上 */
+.example {
+  margin: 1mm 0 0;
+  padding-left: var(--question-indent);
+}
+
+.sentence-lines {
+  position: relative;
+  margin: 1mm 0 0 var(--question-indent);
+}
+
+.sentence-line {
+  height: var(--sentence-line-height);
+  border-bottom: 1px solid #000;
+}
+
+.sentence-answer {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  line-height: var(--sentence-line-height);
+  color: var(--answer-color);
+  visibility: hidden;
+}
+
 /* 解析在每題下方，只在答案卷顯示；試卷時不佔空間 */
 .explanation {
   display: none;
@@ -144,7 +214,9 @@ body {
 }
 
 html[data-mode='answer'] .answer,
-html[data-mode='answer'] .blank-answer {
+html[data-mode='answer'] .blank-answer,
+html[data-mode='answer'] .cell-answer,
+html[data-mode='answer'] .sentence-answer {
   visibility: visible;
 }
 

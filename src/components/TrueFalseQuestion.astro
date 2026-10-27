@@ -2,6 +2,7 @@
 import type { TrueFalseQuestion } from '../domain/schema';
 import AnswerBracket from './AnswerBracket.astro';
 import Explanation from './Explanation.astro';
+import RichText from './RichText.astro';
 
 interface Props {
   /** 試卷內的連續題號 */
@@ -16,7 +17,7 @@ const { number, question } = Astro.props;
   <p class="stem">
     {/* 括號、題號之間刻意不留空白字元，理由同選擇題 */}
     <AnswerBracket answer={question.answer ? '○' : '✕'} /><span class="number">{number}.</span>
-    {question.stem}
+    <RichText text={question.stem} />
   </p>
   <Explanation text={question.explanation} />
 </div>

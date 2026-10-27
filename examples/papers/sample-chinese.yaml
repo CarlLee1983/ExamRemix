@@ -16,3 +16,19 @@ sections:
     questions:
       - sample-chinese-06
       - sample-chinese-07
+  - title: 四、國字注音
+    questions:
+      - sample-chinese-08
+      - sample-chinese-09
+  - title: 五、注音寫國字
+    questions:
+      - sample-chinese-10
+      - sample-chinese-11
+  - title: 六、造句
+    questions:
+      - sample-chinese-12
+      - sample-chinese-13
+  - title: 七、照樣造句
+    questions:
+      - sample-chinese-14
+      - sample-chinese-15

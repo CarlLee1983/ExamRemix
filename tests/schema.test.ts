@@ -185,6 +185,132 @@ describe('填空題 schema', () => {
   });
 });
 
+const zhuyinSource = { originalPaper: '虛構三年級國語小考', number: 8 };
+const validCharToZhuyin = {
+  no: 8,
+  type: 'char-to-zhuyin',
+  subject: '國語',
+  grade: 3,
+  stem: '我在[公園|ㄍㄨㄥ ㄩㄢˊ]看見一朵[花|ㄏㄨㄚ]。',
+  explanation: '公園、花的注音。',
+  source: zhuyinSource,
+};
+const validZhuyinToChar = { ...validCharToZhuyin, type: 'zhuyin-to-char', stem: '我在[公園|ㄍㄨㄥ ㄩㄢˊ]玩。' };
+const validMakeSentence = {
+  no: 9,
+  type: 'make-sentence',
+  subject: '國語',
+  grade: 3,
+  stem: "用「雖然……但是……」造句。",
+  answer: '雖然下雨了，但是我還是去上學。',
+  explanation: '要有轉折。',
+  source: zhuyinSource,
+};
+const validImitateSentence = {
+  ...validMakeSentence,
+  type: 'imitate-sentence',
+  stem: '照樣造句。',
+  example: '月亮像一個大銀盤。',
+  answer: '太陽像一顆大火球。',
+};
+
+describe('國字注音／注音寫國字 schema', () => {
+  it.each([validCharToZhuyin, validZhuyinToChar])('接受題幹有標注的 $type', (q) => {
+    expect(questionSchema.safeParse(q).success).toBe(true);
+  });
+
+  it.each([validCharToZhuyin, validZhuyinToChar])('$type 題幹沒有標注時指出 stem 並說明', (q) => {
+    const bad = { ...q, stem: '我在公園玩。[1]' };
+    expect(issuePaths(questionSchema, bad)).toEqual(['stem']);
+    const r = questionSchema.safeParse(bad);
+    expect(r.error!.issues[0]!.message).toContain('題幹至少要有一個注音標注');
+  });
+
+  it('標注格式錯誤時只回報格式錯誤，不重複回報缺標注', () => {
+    const r = questionSchema.safeParse({ ...validCharToZhuyin, stem: '[公園|ㄍㄨㄥ]' });
+    expect(r.error!.issues.map((i) => i.path.join('.'))).toEqual(['stem']);
+    expect(r.error!.issues[0]!.message).toBe('注音標注「[公園|ㄍㄨㄥ]」的注音組數（1）必須等於字數（2）');
+  });
+
+  it('不接受 answer 欄位（答案就是標注本身）', () => {
+    expect(issuePaths(questionSchema, { ...validCharToZhuyin, answer: 'ㄏㄨㄚ' })).toContain('');
+  });
+});
+
+describe('造句／照樣造句 schema', () => {
+  it('接受合法的造句與照樣造句', () => {
+    expect(questionSchema.safeParse(validMakeSentence).success).toBe(true);
+    expect(questionSchema.safeParse(validImitateSentence).success).toBe(true);
+  });
+
+  it('造句 answer 為空字串或缺少時指出 answer', () => {
+    expect(issuePaths(questionSchema, { ...validMakeSentence, answer: '' })).toEqual(['answer']);
+    const { answer, ...rest } = validMakeSentence;
+    expect(issuePaths(questionSchema, rest)).toEqual(['answer']);
+  });
+
+  it('照樣造句缺 example 或 example 為空字串時指出 example', () => {
+    const { example, ...rest } = validImitateSentence;
+    expect(issuePaths(questionSchema, rest)).toEqual(['example']);
+    expect(issuePaths(questionSchema, { ...validImitateSentence, example: '' })).toEqual(['example']);
+  });
+
+  it('照樣造句 answer 為空字串時指出 answer', () => {
+    expect(issuePaths(questionSchema, { ...validImitateSentence, answer: '' })).toEqual(['answer']);
+  });
+
+  it('造句不接受 example 欄位', () => {
+    expect(issuePaths(questionSchema, { ...validMakeSentence, example: '例句' })).toContain('');
+  });
+
+  it('example 與 answer 也驗證注音標注', () => {
+    expect(
+      issuePaths(questionSchema, { ...validImitateSentence, example: '[月|ㄩㄝˋ ㄌ]' }),
+    ).toEqual(['example']);
+    expect(issuePaths(questionSchema, { ...validMakeSentence, answer: '[月|hua]' })).toEqual(['answer']);
+  });
+});
+
+describe('文字欄位的注音標注驗證', () => {
+  const badMark = '[公園|ㄍㄨㄥ]';
+  const countMessage = '注音標注「[公園|ㄍㄨㄥ]」的注音組數（1）必須等於字數（2）';
+
+  it('合法標注可用在既有題型的所有文字欄位', () => {
+    const ok = '[花|ㄏㄨㄚ]';
+    expect(
+      questionSchema.safeParse({ ...validChoice, stem: ok, options: [ok, '[草|ㄘㄠˇ]'], explanation: ok })
+        .success,
+    ).toBe(true);
+    expect(questionSchema.safeParse({ ...validFillBlank, answer: ['[花|ㄏㄨㄚ]', '1000'] }).success).toBe(true);
+  });
+
+  it('選擇題：stem、options.N、explanation 的錯誤 path 指向該欄位', () => {
+    expect(issuePaths(questionSchema, { ...validChoice, stem: badMark })).toEqual(['stem']);
+    expect(issuePaths(questionSchema, { ...validChoice, options: ['10', badMark, '14'] })).toEqual([
+      'options.1',
+    ]);
+    const r = questionSchema.safeParse({ ...validChoice, explanation: badMark });
+    expect(r.error!.issues.map((i) => i.path.join('.'))).toEqual(['explanation']);
+    expect(r.error!.issues[0]!.message).toBe(countMessage);
+  });
+
+  it('是非題：stem 與 explanation', () => {
+    expect(issuePaths(questionSchema, { ...validTrueFalse, stem: badMark })).toEqual(['stem']);
+    expect(issuePaths(questionSchema, { ...validTrueFalse, explanation: badMark })).toEqual(['explanation']);
+  });
+
+  it('填空題：stem、answer.N、explanation', () => {
+    expect(issuePaths(questionSchema, { ...validFillBlank, stem: `${badMark}___ ___` })).toContain('stem');
+    expect(issuePaths(questionSchema, { ...validFillBlank, answer: ['300', badMark] })).toEqual(['answer.1']);
+    expect(issuePaths(questionSchema, { ...validFillBlank, explanation: badMark })).toEqual(['explanation']);
+  });
+
+  it('同一個欄位有多個錯誤時各自回報', () => {
+    const r = questionSchema.safeParse({ ...validChoice, stem: '[a|b][c|d]' });
+    expect(r.error!.issues.map((i) => i.path.join('.'))).toEqual(['stem', 'stem']);
+  });
+});
+
 describe('題庫檔 schema', () => {
   it('接受合法的題庫檔', () => {
     expect(bankFileSchema.safeParse({ questions: [validChoice] }).success).toBe(true);

@@ -1,11 +1,16 @@
 ---
 // 「題型 → 元件」的唯一對應。新增題型要動的地方：
 // schema.ts 的題型 schema 與 questionSchema 聯集、這個檔的 switch 與模板分支、新的題型元件、
-// paper.css 的樣式、範例題庫與試卷、schema 與 e2e 測試。漏接 switch 時 default 分支的型別檢查會報錯。
+// paper.css 的樣式、範例題庫與試卷、README 的題型表、schema 與 e2e 測試。漏接 switch 時 default 分支的型別檢查會報錯。
+// 題型元件輸出任何題目文字都要經過 RichText，才能在文字上加注音。
 import type { Question } from '../domain/schema';
+import CharToZhuyinQuestion from './CharToZhuyinQuestion.astro';
 import ChoiceQuestion from './ChoiceQuestion.astro';
 import FillBlankQuestion from './FillBlankQuestion.astro';
+import ImitateSentenceQuestion from './ImitateSentenceQuestion.astro';
+import MakeSentenceQuestion from './MakeSentenceQuestion.astro';
 import TrueFalseQuestion from './TrueFalseQuestion.astro';
+import ZhuyinToCharQuestion from './ZhuyinToCharQuestion.astro';
 
 interface Props {
   /** 試卷內的連續題號 */
@@ -24,6 +29,10 @@ switch (question.type) {
   case 'choice':
   case 'true-false':
   case 'fill-blank':
+  case 'char-to-zhuyin':
+  case 'zhuyin-to-char':
+  case 'make-sentence':
+  case 'imitate-sentence':
     break;
   default:
     unreachable(question);
@@ -33,3 +42,7 @@ switch (question.type) {
 {question.type === 'choice' && <ChoiceQuestion number={number} question={question} />}
 {question.type === 'true-false' && <TrueFalseQuestion number={number} question={question} />}
 {question.type === 'fill-blank' && <FillBlankQuestion number={number} question={question} />}
+{question.type === 'char-to-zhuyin' && <CharToZhuyinQuestion number={number} question={question} />}
+{question.type === 'zhuyin-to-char' && <ZhuyinToCharQuestion number={number} question={question} />}
+{question.type === 'make-sentence' && <MakeSentenceQuestion number={number} question={question} />}
+{question.type === 'imitate-sentence' && <ImitateSentenceQuestion number={number} question={question} />}

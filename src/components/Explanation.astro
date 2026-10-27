@@ -1,4 +1,6 @@
 ---
+import RichText from './RichText.astro';
+
 interface Props {
   /** 解析文字，只在答案卷顯示 */
   text: string;
@@ -7,4 +9,4 @@ interface Props {
 const { text } = Astro.props;
 ---
 
-<p class="explanation"><span class="explanation-label">解析：</span>{text}</p>
+<p class="explanation"><span class="explanation-label">解析：</span><RichText {text} /></p>

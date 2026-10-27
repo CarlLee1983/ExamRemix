@@ -1,17 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
+import { expectedAnswerColor } from './helpers';
 
 const PAPER = '/papers/sample-math/';
-/** --answer-color 解析後的實際計算色：用暫時元素套 color: var(--answer-color) 取得 */
-const expectedAnswerColor = (page: Page) =>
-  page.evaluate(() => {
-    const probe = document.createElement('span');
-    probe.style.color = 'var(--answer-color)';
-    document.body.append(probe);
-    const color = getComputedStyle(probe).color;
-    probe.remove();
-    return color;
-  });
-
 // 範例試卷 sample-math 的各題型題數
 const CHOICE_COUNT = 21;
 const TRUE_FALSE_COUNT = 3;

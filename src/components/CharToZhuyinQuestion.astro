@@ -1,0 +1,33 @@
+---
+import type { CharToZhuyinQuestion } from '../domain/schema';
+import { parseZhuyin } from '../domain/zhuyin';
+import Explanation from './Explanation.astro';
+
+interface Props {
+  /** 試卷內的連續題號 */
+  number: number;
+  question: CharToZhuyinQuestion;
+}
+
+const { number, question } = Astro.props;
+const { segments } = parseZhuyin(question.stem);
+---
+
+<div class="question question-char-to-zhuyin" data-question-type="char-to-zhuyin">
+  <p class="stem">
+    {/* 被考的字與作答格、作答格與前後文字之間不留空白字元，答案卷切換時位置才不會動 */}
+    <span class="number">{number}.</span>
+    {
+      segments.map((segment) =>
+        segment.kind === 'text' ? (
+          segment.text
+        ) : (
+          <>
+            <span class="target-char">{segment.chars.join('')}</span><span class="zhuyin-cell" style={`--syllables: ${segment.zhuyin.length}`}><span class="cell-answer">{segment.zhuyin.join(' ')}</span></span>
+          </>
+        ),
+      )
+    }
+  </p>
+  <Explanation text={question.explanation} />
+</div>

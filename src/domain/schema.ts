@@ -2,6 +2,7 @@
 // 只依賴 astro/zod，不碰 Astro 執行環境，讓 Vitest 與 agent 都能直接呼叫（ADR 0002）。
 import { z } from 'astro/zod';
 import { countBlanks, hasOverlongUnderscores } from './blank.ts';
+import { hasAnnotation, parseZhuyin } from './zhuyin.ts';
 
 export const SUBJECTS = ['國語', '數學'] as const;
 
@@ -13,14 +14,39 @@ export function deriveQuestionId(bankName: string, no: number): string {
   return `${bankName}-${String(no).padStart(2, '0')}`;
 }
 
+/**
+ * 可含注音標注（`[字|注音]`）的非空文字。所有文字欄位共用，格式錯誤時 path 指向該欄位。
+ */
+const richText = z
+  .string()
+  .min(1)
+  .superRefine((text, ctx) => {
+    for (const message of parseZhuyin(text).errors) ctx.addIssue({ code: 'custom', message });
+  });
+
+/** 國字注音與注音寫國字的題幹：標注就是要考的字，至少要有一個。 */
+const zhuyinTargetStem = z
+  .string()
+  .min(1)
+  .superRefine((text, ctx) => {
+    const { segments, errors } = parseZhuyin(text);
+    for (const message of errors) ctx.addIssue({ code: 'custom', message });
+    if (errors.length === 0 && !hasAnnotation(segments)) {
+      ctx.addIssue({
+        code: 'custom',
+        message: '題幹至少要有一個注音標注，例如 [公園|ㄍㄨㄥ ㄩㄢˊ]，標注就是要考的字',
+      });
+    }
+  });
+
 // 所有題型共用的欄位；新題型以 extend 加上自己的欄位。
 const questionBase = z.strictObject({
   no: z.number().int().positive(),
   subject: subjectSchema,
   grade: gradeSchema,
   unit: z.string().min(1).optional(),
-  stem: z.string().min(1),
-  explanation: z.string().min(1),
+  stem: richText,
+  explanation: richText,
   confirmed: z.boolean().default(false),
   // 原題記錄出處，新題記錄衍生自哪些題目；兩者擇一（見 questionSchema）
   source: z
@@ -35,7 +61,7 @@ const questionBase = z.strictObject({
 export const choiceQuestionSchema = questionBase
   .extend({
     type: z.literal('choice'),
-    options: z.array(z.string().min(1)).min(2).max(6),
+    options: z.array(richText).min(2).max(6),
     /** 1 起算的選項編號 */
     answer: z.number().int().min(1),
   })
@@ -57,8 +83,9 @@ export const fillBlankQuestionSchema = questionBase
       .array(
         // YAML 的 answer: [300] 會讀成數字，轉成字串；其他型別一律拒絕
         z
-          .union([z.string().min(1), z.number()], { error: '每個答案必須是非空字串或數字' })
-          .transform(String),
+          .union([z.string(), z.number()], { error: '每個答案必須是非空字串或數字' })
+          .transform(String)
+          .pipe(richText),
       )
       .min(1),
   })
@@ -83,9 +110,42 @@ export const fillBlankQuestionSchema = questionBase
     }
   });
 
+// 國字注音與注音寫國字：資料形狀相同，答案就是題幹中的標注，所以沒有 answer 欄位
+export const charToZhuyinQuestionSchema = questionBase.extend({
+  type: z.literal('char-to-zhuyin'),
+  stem: zhuyinTargetStem,
+});
+
+export const zhuyinToCharQuestionSchema = questionBase.extend({
+  type: z.literal('zhuyin-to-char'),
+  stem: zhuyinTargetStem,
+});
+
+export const makeSentenceQuestionSchema = questionBase.extend({
+  type: z.literal('make-sentence'),
+  /** 範例句子 */
+  answer: richText,
+});
+
+export const imitateSentenceQuestionSchema = questionBase.extend({
+  type: z.literal('imitate-sentence'),
+  /** 題幹下方顯示的例句 */
+  example: richText,
+  /** 範例句子 */
+  answer: richText,
+});
+
 // 題型的鑑別聯集；之後的 ticket 在這裡加題型。
 export const questionSchema = z
-  .discriminatedUnion('type', [choiceQuestionSchema, trueFalseQuestionSchema, fillBlankQuestionSchema])
+  .discriminatedUnion('type', [
+    choiceQuestionSchema,
+    trueFalseQuestionSchema,
+    fillBlankQuestionSchema,
+    charToZhuyinQuestionSchema,
+    zhuyinToCharQuestionSchema,
+    makeSentenceQuestionSchema,
+    imitateSentenceQuestionSchema,
+  ])
   .superRefine((q, ctx) => {
     const hasSource = q.source !== undefined;
     const hasDerived = q.derivedFrom !== undefined;
@@ -140,5 +200,9 @@ export type Question = z.infer<typeof questionSchema>;
 export type ChoiceQuestion = z.infer<typeof choiceQuestionSchema>;
 export type TrueFalseQuestion = z.infer<typeof trueFalseQuestionSchema>;
 export type FillBlankQuestion = z.infer<typeof fillBlankQuestionSchema>;
+export type CharToZhuyinQuestion = z.infer<typeof charToZhuyinQuestionSchema>;
+export type ZhuyinToCharQuestion = z.infer<typeof zhuyinToCharQuestionSchema>;
+export type MakeSentenceQuestion = z.infer<typeof makeSentenceQuestionSchema>;
+export type ImitateSentenceQuestion = z.infer<typeof imitateSentenceQuestionSchema>;
 export type BankFile = z.infer<typeof bankFileSchema>;
 export type PaperFile = z.infer<typeof paperFileSchema>;

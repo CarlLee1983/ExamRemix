@@ -1,10 +1,11 @@
 ---
 import Question from '../../components/Question.astro';
+import { doubtedNumbers, firstNumbers } from '../../domain/paper-numbers.ts';
 import { loadChecked } from '../../lib/load-bank.ts';
 import '../../styles/paper.css';
 
 export async function getStaticPaths() {
-  // 載入時已跑過跨檔檢查：引用的題目 ID 一定存在且已確認
+  // 載入時已跑過跨檔檢查：引用的題目 ID 一定存在且已確認；引用到有疑點的題目只是警告，照常產生頁面
   const { papers, questions } = await loadChecked();
 
   return papers.map((paper) => ({
@@ -21,13 +22,9 @@ export async function getStaticPaths() {
 
 const { paper, sections } = Astro.props;
 
-// 題號在試卷內連續編號：每個大題的起始題號 = 前面各大題的題數總和 + 1
-let nextNumber = 1;
-const firstNumbers = sections.map((section) => {
-  const first = nextNumber;
-  nextNumber += section.questions.length;
-  return first;
-});
+const numbers = firstNumbers(sections);
+// 有疑點的題目在這份試卷裡的題號，給螢幕上的頂端提示用
+const doubted = doubtedNumbers(sections);
 ---
 
 <!doctype html>
@@ -39,6 +36,13 @@ const firstNumbers = sections.map((section) => {
   </head>
   <body>
     <button type="button" class="mode-toggle" id="mode-toggle" aria-pressed="false" hidden>顯示答案卷</button>
+    {
+      doubted.length > 0 && (
+        <p class="doubt-notice" role="note">
+          這份試卷有 {doubted.length} 題有疑點：{doubted.map((n) => `第 ${n} 題`).join('、')}
+        </p>
+      )
+    }
     <main class="paper">
       <header class="paper-head">
         <h1>{paper.title}</h1>
@@ -56,7 +60,7 @@ const firstNumbers = sections.map((section) => {
               {section.points !== undefined && <span class="points">（{section.points} 分）</span>}
             </h2>
             {section.questions.map((question, i) => (
-              <Question number={firstNumbers[s]! + i} question={question} />
+              <Question number={numbers[s]! + i} question={question} />
             ))}
           </section>
         ))

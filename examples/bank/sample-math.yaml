@@ -30,6 +30,7 @@ questions:
     answer: 2
     explanation: "6 × 7 = 42。"
     confirmed: true
+    doubt: 範例疑點：原卷這題被筆跡蓋住，題幹依上下文推定
     source:
       originalPaper: 虛構三年級數學小考
       number: 2

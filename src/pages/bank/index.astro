@@ -1,8 +1,9 @@
 ---
 // 題庫瀏覽頁：列出題庫所有題目（含未確認），每題顯示 ID、屬性、出處與答案卷版面的題目（答案與解析都可見）。
-// 篩選在前端以 data 屬性進行，條件可寫進網址（?confirmed=false），頁面仍是純靜態、唯讀。
+// 篩選在前端以 data 屬性進行，條件可寫進網址（?confirmed=false、?doubt=true），頁面仍是純靜態、唯讀。
 import Question from '../../components/Question.astro';
 import { SUBJECTS } from '../../domain/schema';
+import { hasDoubt } from '../../domain/doubt.ts';
 import { NO_UNIT_LABEL, unitLabel } from '../../domain/unit';
 import { TYPE_LABELS } from '../../domain/type-labels';
 import { loadChecked } from '../../lib/load-bank.ts';
@@ -35,6 +36,14 @@ const filters = [
     options: [
       { value: 'true', text: '已確認' },
       { value: 'false', text: '未確認' },
+    ],
+  },
+  {
+    key: 'doubt',
+    label: '疑點',
+    options: [
+      { value: 'true', text: '有疑點' },
+      { value: 'false', text: '無疑點' },
     ],
   },
 ];
@@ -77,6 +86,7 @@ const filters = [
               data-unit={unitLabel(question.unit)}
               data-type={question.type}
               data-confirmed={String(question.confirmed)}
+              data-doubt={String(hasDoubt(question))}
             >
               <header class="bank-item-head">
                 <code class="question-id">{id}</code>
@@ -86,6 +96,7 @@ const filters = [
                   <li class="meta-unit">{question.unit}</li>
                   <li>{TYPE_LABELS[question.type]}</li>
                   <li class={question.confirmed ? 'status-confirmed' : 'status-unconfirmed'}>{question.confirmed ? '已確認' : '未確認'}</li>
+                  {hasDoubt(question) && <li class="status-doubt">有疑點：{question.doubt}</li>}
                   <li>
                     {question.source
                       ? `出處：${question.source.originalPaper} 第 ${question.source.number} 題`

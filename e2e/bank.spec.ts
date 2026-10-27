@@ -2,9 +2,11 @@ import { expect, test, type Page } from '@playwright/test';
 
 const BANK = '/bank/';
 
-// 範例資料已知：sample-math 40 題、sample-chinese 16 題，共 56 題；未確認的只有 sample-math-22 與 sample-chinese-16
+// 範例資料已知：sample-math 40 題、sample-chinese 16 題，共 56 題；未確認的只有 sample-math-22 與 sample-chinese-16；
+// 有疑點的只有 sample-math-02
 const TOTAL = 56;
 const UNCONFIRMED = ['sample-chinese-16', 'sample-math-22'];
+const DOUBTED = 'sample-math-02';
 
 const items = (page: Page) => page.locator('.bank-item:visible');
 const ids = (page: Page) => items(page).locator('.question-id').allTextContents();
@@ -25,7 +27,7 @@ test.describe('題庫瀏覽頁', () => {
   });
 
   test('篩選條件預設都是全部', async ({ page }) => {
-    for (const label of ['科目', '年級', '單元', '題型', '確認狀態']) {
+    for (const label of ['科目', '年級', '單元', '題型', '確認狀態', '疑點']) {
       await expect(page.getByLabel(label)).toHaveValue('');
       await expect(page.getByLabel(label).locator('option').first()).toHaveText('全部');
     }
@@ -101,6 +103,33 @@ test.describe('題庫瀏覽頁', () => {
     await expect(item.locator('.meta')).toContainText('未確認');
     await expect(item.locator('.explanation')).toBeVisible();
     await expect(item.locator('.answer')).toBeVisible();
+  });
+
+  test('疑點選有疑點：只剩有疑點的題目；選無疑點則排除它', async ({ page }) => {
+    await filter(page, '疑點', '有疑點');
+    expect(await ids(page)).toEqual([DOUBTED]);
+    await expect(page.locator('#count')).toHaveText(`共 ${TOTAL} 題，顯示 1 題`);
+    await filter(page, '疑點', '無疑點');
+    await expect(items(page)).toHaveCount(TOTAL - 1);
+    expect(await ids(page)).not.toContain(DOUBTED);
+  });
+
+  test('疑點篩選寫進網址，帶 ?doubt=true 開啟時已套用', async ({ page }) => {
+    await filter(page, '疑點', '有疑點');
+    await expect(page).toHaveURL(/\?doubt=true$/);
+    await page.goto('/bank/?doubt=true');
+    await expect(page.getByLabel('疑點')).toHaveValue('true');
+    expect(await ids(page)).toEqual([DOUBTED]);
+    await page.goto('/bank/?doubt=false');
+    await expect(items(page)).toHaveCount(TOTAL - 1);
+  });
+
+  test('有疑點的題目顯示有疑點與描述，沒有疑點的題目不顯示', async ({ page }) => {
+    const doubt = page.locator(`.bank-item[data-id="${DOUBTED}"] .meta .status-doubt`);
+    await expect(doubt).toBeVisible();
+    await expect(doubt).toContainText('有疑點');
+    await expect(doubt).toContainText('題幹依上下文推定');
+    await expect(page.locator('.bank-item[data-id="sample-math-01"] .status-doubt')).toHaveCount(0);
   });
 
   test('ID 是可選取的文字', async ({ page }) => {

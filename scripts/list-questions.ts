@@ -5,6 +5,7 @@
 //   --confirmed  --unconfirmed  --doubt  --no-doubt  --subject <科目>  --grade <年級>  --unit <單元>  --type <題型>  --id <題目 ID>
 // schema 不過的題庫檔跳過並在 stderr 提醒執行 check:bank。沒有符合的題目仍以 0 結束；資料目錄不存在或旗標錯誤以 2 結束。
 import { parseArgs } from 'node:util';
+import { hasDoubt } from '../src/domain/doubt.ts';
 import { formatProblem } from '../src/domain/problem.ts';
 import { bankFileSchema, deriveQuestionId } from '../src/domain/schema.ts';
 import { unitLabel } from '../src/domain/unit.ts';
@@ -61,8 +62,8 @@ for (const { name, file, raw } of contents.banks) {
     if (
       (values.confirmed && !q.confirmed) ||
       (values.unconfirmed && q.confirmed) ||
-      (values.doubt && !q.doubt) ||
-      (values['no-doubt'] && q.doubt) ||
+      (values.doubt && !hasDoubt(q)) ||
+      (values['no-doubt'] && hasDoubt(q)) ||
       !matches(values.subject, q.subject) ||
       !matches(values.grade, String(q.grade)) ||
       !matches(values.unit, unitLabel(q.unit)) ||
@@ -72,7 +73,7 @@ for (const { name, file, raw } of contents.banks) {
       continue;
     }
     const status = q.confirmed ? 'confirmed' : 'unconfirmed';
-    const doubt = q.doubt ? 'doubt' : '-';
+    const doubt = hasDoubt(q) ? 'doubt' : '-';
     console.log([id, q.type, q.subject, q.grade, unitLabel(q.unit), status, doubt, q.stem.replace(/\s+/g, ' ').trim()].join('\t'));
   }
 }

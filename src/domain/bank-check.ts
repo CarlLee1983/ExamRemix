@@ -1,5 +1,6 @@
 // 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在且已確認的題目、疑點。
 // 純函式，輸入是已通過 schema 的題庫檔與試卷檔，不讀檔、不依賴 Astro（ADR 0002）。
+import { hasDoubt } from './doubt.ts';
 import { fileNameProblem } from './file-name.ts';
 import type { Problem } from './problem.ts';
 import { deriveQuestionId, type BankFile, type PaperFile, type Question } from './schema.ts';
@@ -120,7 +121,7 @@ export function checkBank(input: {
         }
         originals.push([originalId, original]);
         if (!original.confirmed) report(`新題 ${id} 衍生自未確認的原題 ${originalId}（請先核對原題並把 confirmed 改為 true）`);
-        if (original.doubt) report(`新題 ${id} 衍生自有疑點的原題 ${originalId}：${original.doubt}（請先解除原題的疑點，或改從其他原題衍生）`);
+        if (hasDoubt(original)) report(`新題 ${id} 衍生自有疑點的原題 ${originalId}：${original.doubt}（請先解除原題的疑點，或改從其他原題衍生）`);
         if (original.derivedFrom) report(`新題 ${id} 衍生自 ${originalId}，但它也是新題；新題只能衍生自原題`);
         const diff = mismatches(question, original, '新題', '原題');
         if (diff.length > 0) report(`新題 ${id} 與原題 ${originalId} 的${diff.join('、')}不一致`);
@@ -153,7 +154,7 @@ export function checkBank(input: {
           });
         }
         // 已組好的試卷引用到有疑點的題目只提出警告，不讓建置停擺
-        if (question?.doubt) {
+        if (question && hasDoubt(question)) {
           addWarning({
             files: [paper.file],
             questionId: id,

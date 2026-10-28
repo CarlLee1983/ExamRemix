@@ -1,8 +1,7 @@
-/* 試卷頁樣式：螢幕上以白色 A4 紙張預覽，列印時交給 @page。 */
+/* 試卷頁樣式：螢幕上以白色 A4 紙張預覽，列印時交給 @page。螢幕底色 --ground 在 tokens.css，使用此檔的頁面要一併載入；工具列在 paper-toolbar.css。 */
 /* 答案與解析的強調色、選項與解析的縮排 */
 :root {
   --answer-color: #f00;
-  --doubt-color: #b45309;
   --question-indent: 12mm;
   /* 造句類題型的作答行高；行數在 SentenceLines.astro */
   --sentence-line-height: 2.4em;
@@ -34,7 +33,7 @@
 
 body {
   margin: 0;
-  background: #e5e7eb;
+  background: var(--ground);
   color: #000;
   font-family: 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
   font-size: 12pt;
@@ -424,36 +423,6 @@ html[data-mode='answer'] .explanation {
   display: block;
 }
 
-.mode-toggle[hidden] {
-  display: none;
-}
-
-.mode-toggle {
-  display: block;
-  margin: 8mm auto 0;
-  padding: 2mm 5mm;
-  font: inherit;
-  font-size: 11pt;
-  cursor: pointer;
-}
-
-/* 疑點提示只在螢幕上看，列印時隱藏 */
-.doubt-notice {
-  max-width: 210mm;
-  margin: 8mm auto 0;
-  padding: 2mm 5mm;
-  border: 1px solid var(--doubt-color);
-  color: var(--doubt-color);
-  font-size: 11pt;
-}
-
-/* 標籤固定不變，按下狀態只能靠外觀看出來 */
-.mode-toggle[aria-pressed='true'] {
-  background: #333;
-  color: #fff;
-  border-color: #333;
-}
-
 .number {
   margin-right: 1.5mm;
 }
@@ -468,11 +437,6 @@ html[data-mode='answer'] .explanation {
 }
 
 @media print {
-  .mode-toggle,
-  .doubt-notice {
-    display: none;
-  }
-
   body {
     background: none;
   }

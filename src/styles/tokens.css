@@ -1,0 +1,68 @@
+/* 設計 token：站內導覽頁與試卷頁工具列只讀這裡的值，不寫死色碼。
+   視覺處理「晴空」：白與淺藍、海軍藍字、藍色主動作；國語珊瑚、數學青綠的淺底標籤。
+   A4 試卷本體的樣式在 paper.css，答案紅色是它的 --answer-color，不在這裡。
+   例外是 --answer-on-tint：題庫卡把「解析：」放在淺底上，#f00 在淺底只有 3.7 的對比，所以螢幕上改用較深的紅（5.1）。 */
+:root {
+  /* 題庫卡淺底上的答案紅（見檔頭說明） */
+  --answer-on-tint: #d01c1c;
+
+  /* 字體與字級：14／16／20／40／88 五階 */
+  --font-text: 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, Menlo, monospace;
+  --fs-small: 14px;
+  --fs-body: 16px;
+  --fs-h3: 20px;
+  --fs-h1: 40px;
+  --fs-num: 88px;
+
+  /* 色彩角色 */
+  --ground: #f5f7fb;
+  --surface: #fff;
+  --surface-hover: #fafbfd;
+  --on-accent: #fff;
+  --hero-top: #e9effc;
+  --text: #14213d;
+  --muted: #4f5d78;
+  --line: #e4e9f2;
+  --line-strong: #cfd7e6;
+  --line-hover: #b4c0d6;
+  --chip-bg: #eef2f8;
+  --blue-50: #eef3fe;
+  --blue-100: #dde7fd;
+  --blue-600: #2453d6;
+  --blue-700: #1d43b4;
+  --blue-800: #19399a;
+  --focus: #2453d6;
+  --selection: #cddcff;
+
+  /* 狀態：複製成功的回饋 */
+  --ok-bg: #e3f5ea;
+  --ok-text: #17663a;
+
+  /* 科目：淺底深字（文字對底色對比：國語、數學、自然皆 ≥ 4.5，自然 7.7）；--mid 給題庫組成條的交替色段 */
+  --zh: #c2410c;
+  --zh-soft: #ffece3;
+  --zh-mid: #f7b79a;
+  --zh-text: #9a3412;
+  --ma: #0e7490;
+  --ma-soft: #e2f4f7;
+  --ma-mid: #8fd0dc;
+  --ma-text: #0b5c72;
+  --sci: #6d28d9;
+  --sci-soft: #f1ebfe;
+  --sci-mid: #c4b0f5;
+  --sci-text: #5b21b6;
+
+  /* 形狀與動態 */
+  --r-card: 18px;
+  --r-control: 12px;
+  --r-small: 10px;
+  --r-chip: 8px;
+  --elev: 0 1px 2px rgb(20 33 61 / 0.05), 0 8px 24px rgb(20 33 61 / 0.06);
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --icon-stroke: 2;
+
+  /* 外殼 */
+  --shell-height: 64px;
+  --shell-bg: rgb(255 255 255 / 0.92);
+}

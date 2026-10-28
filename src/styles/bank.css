@@ -1,0 +1,150 @@
+/* 題庫瀏覽：篩選列、單一清單、每題收合列與展開後的卡片。只讀 tokens.css；題目本身沿用 paper.css 的排版。 */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: end;
+  margin: 0 0 28px;
+  padding: 16px 20px;
+}
+
+.filters #count {
+  align-self: center;
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 題目卡：頂列（ID、標籤、複製）／題目區／淺底解析／出處 */
+.item-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* 家長要把 ID 複製進試卷檔，所以醒目且可選取 */
+.question-id {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  user-select: text;
+}
+
+.item-body > .question {
+  margin: 0;
+  padding: 18px 20px 0;
+}
+
+.item-body .explanation {
+  margin: 12px 20px 0;
+  padding: 10px 14px;
+  border-radius: var(--r-control);
+  background: var(--ground);
+  font-size: var(--fs-small);
+}
+
+.item-body .explanation-label {
+  color: var(--answer-on-tint);
+  font-weight: 700;
+}
+
+.item-body > .meta {
+  margin: 0;
+  padding: 12px 20px 20px;
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
+
+/* 題幹用 v4 卡片內的字級與粗細；A4 試卷頁不載入這個檔，不受影響 */
+.item-body .stem {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.item-body .options {
+  gap: 4px 28px;
+  font-size: var(--fs-body);
+}
+
+.item-body .answer {
+  font-weight: 700;
+}
+
+/* 一張卡片收所有收合列，展開才看到題目 */
+.bank-list {
+  overflow: hidden;
+}
+
+/* 分隔線畫在「前面已有可見項目」的列上，被篩選藏起來的列不會留下多餘的線 */
+.bank-item:not([hidden]) ~ .bank-item:not([hidden]) {
+  border-top: 1px solid var(--line);
+}
+
+.bank-item summary {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 20px;
+  list-style: none;
+  cursor: pointer;
+  transition: background-color 0.15s var(--ease);
+}
+
+.bank-item summary:hover {
+  background: var(--surface-hover);
+}
+
+.bank-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  color: var(--muted);
+  transition: transform 0.15s var(--ease);
+}
+
+.bank-item[open] .chevron {
+  transform: rotate(90deg);
+}
+
+.bank-item[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+
+/* 上有黏頂的外殼：Tab 到卡片裡的控制項時，留空間給它，不要被蓋住 */
+.bank-item,
+.bank-item :is(button, summary) {
+  scroll-margin-block: 88px 24px;
+}
+
+@media (max-width: 760px) {
+  .item-head,
+  .bank-item summary {
+    padding-inline: 16px;
+  }
+
+  .item-body > .question,
+  .item-body > .meta {
+    padding-inline: 16px;
+  }
+
+  .item-body .explanation {
+    margin-inline: 16px;
+  }
+
+  .filters #count {
+    margin-left: 0;
+  }
+}

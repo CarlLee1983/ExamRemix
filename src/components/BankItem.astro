@@ -1,0 +1,39 @@
+---
+// 題庫瀏覽頁的一題：收在 details 內，summary 有科目、ID、題型與單元，展開後才是完整卡片。
+// 篩選用的 data 屬性在外層元素上，由頁面的 script 讀取。
+import { unitLabel } from '../domain/unit';
+import { TYPE_LABELS } from '../domain/type-labels';
+import type { Question } from '../domain/schema';
+import BankBody from './BankBody.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  id: string;
+  question: Question;
+  usedIn: readonly string[];
+}
+
+const { id, question, usedIn } = Astro.props;
+---
+
+<details
+  class="bank-item"
+  data-id={id}
+  data-subject={question.subject}
+  data-grade={question.grade}
+  data-unit={unitLabel(question.unit)}
+  data-type={question.type}
+>
+  <summary class={`subj-${question.subject}`}>
+    <span class="chip subject">{question.subject}</span>
+    <code class="question-id">{id}</code>
+    <span class="summary-text muted">
+      {TYPE_LABELS[question.type]}
+      {question.unit !== undefined && `・${question.unit}`}
+    </span>
+    <Icon name="chevron-right" class="chevron" />
+  </summary>
+  <div class="item-body">
+    <BankBody question={question} usedIn={usedIn} />
+  </div>
+</details>

@@ -1,0 +1,35 @@
+---
+// 題庫瀏覽頁每題展開後的卡片：頂列（科目、年級・單元・題型、複製 ID）、答案卷版面的題目，以及出處或衍生自、用於哪些試卷。ID 在 summary，不重複顯示。
+import { TYPE_LABELS } from '../domain/type-labels';
+import type { Question as QuestionData } from '../domain/schema';
+import Icon from './Icon.astro';
+import Question from './Question.astro';
+
+interface Props {
+  question: QuestionData;
+  /** 用到這題的試卷標題；空陣列表示尚未用於試卷 */
+  usedIn: readonly string[];
+}
+
+const { question, usedIn } = Astro.props;
+---
+
+<div class={`item-head subj-${question.subject}`}>
+  <span class="chip subject">{question.subject}</span>
+  {/* 年級・單元・題型合成一個標籤；沒有單元時不留多餘的「・」 */}
+  <span class="chip meta-tags">{question.grade} 年級{question.unit !== undefined && <>・<span class="meta-unit">{question.unit}</span></>}・{TYPE_LABELS[question.type]}</span>
+  <span class="spacer"></span>
+  {/* 複製要 JS 才能運作，預設 hidden */}
+  <button type="button" class="btn quiet sm copy-id" hidden><Icon name="copy" /><span>複製 ID</span></button>
+</div>
+<Question number={question.no} question={question} />
+{/* 出處與用於寫在同一行，以「・」分隔 */}
+<p class="meta">
+  <span class="source">
+    {
+      question.source
+        ? `出處：${question.source.originalPaper}${question.source.section ? ` ${question.source.section}` : ''}${question.source.number !== undefined ? ` 第 ${question.source.number} 題` : ''}`
+        : `衍生自：${question.derivedFrom!.join('、')}`
+    }
+  </span>・<span class="used-in">{usedIn.length > 0 ? `用於：${usedIn.join('、')}` : '尚未用於試卷'}</span>
+</p>

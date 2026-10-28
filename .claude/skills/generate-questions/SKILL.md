@@ -52,4 +52,4 @@ pnpm check:bank <資料目錄>
 
 ## 6. 回報
 
-告訴家長：題庫檔路徑、新題 ID 與各自衍生自哪些原題、每題的答案、`check:bank` 的每一則警告，以及預覽方式 `EXAMREMIX_DATA_DIR=<資料目錄> pnpm dev` 後開 `/bank/`。家長發現哪題有錯，可以請 agent 記錄疑點（record-doubt skill）。
+告訴家長：題庫檔路徑、新題 ID 與各自衍生自哪些原題、每題的答案、`check:bank` 的每一則警告，以及預覽方式 `EXAMREMIX_DATA_DIR=<資料目錄> pnpm dev` 後開 `/bank/`。家長在網站上看到哪題有錯，開 GitHub issue（只寫題目 ID 與問題描述），由 agent 在本機用 record-doubt skill 處理。

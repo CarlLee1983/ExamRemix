@@ -1,21 +1,67 @@
 ---
-import '../styles/site.css';
+import PaperRow from '../components/PaperRow.astro';
+import { bankComposition } from '../domain/composition';
+import { paperRows } from '../domain/paper-usage';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { loadChecked } from '../lib/load-bank.ts';
+
+const { papers, entries } = await loadChecked();
+const rows = paperRows(papers);
+const composition = bankComposition(entries);
 ---
 
-<!doctype html>
-<html lang="zh-Hant-TW">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ExamRemix</title>
-  </head>
-  <body class="site-body">
-    <main class="site">
-      <h1>ExamRemix</h1>
-      <ul class="paper-list">
-        <li><a href="/bank/">題庫瀏覽</a><span class="paper-meta">依科目、年級、單元、題型與疑點篩選題目，核對答案與解析</span></li>
-        <li><a href="/papers/">試卷列表</a><span class="paper-meta">開啟試卷與答案卷，列印</span></li>
-      </ul>
-    </main>
-  </body>
-</html>
+<SiteLayout title="ExamRemix" current="home">
+  <section class="hero" slot="hero">
+    <div class="hero-in">
+      <div class="greet">
+        {/* 日期要在瀏覽器端產生（建置時間不等於瀏覽時間），沒有 JS 時不顯示 */}
+        <p class="date" id="today" hidden></p>
+        <h1 class="display">總覽</h1>
+        <p class="sum"><b>{rows.length} 份試卷</b>可以列印。</p>
+      </div>
+      <section class="card stat" aria-labelledby="papers-stat-title">
+        <h2 id="papers-stat-title">
+          <span class="stat-num">{rows.length}</span>
+          <span class="stat-label">份試卷可列印</span>
+        </h2>
+        <a class="btn secondary" href="#papers">看試卷</a>
+      </section>
+    </div>
+  </section>
+  <section class="block" id="papers" aria-labelledby="papers-title">
+    <h2 class="block-head" id="papers-title">試卷</h2>
+    <ul class="paper-list">{rows.map((row) => <PaperRow row={row} />)}</ul>
+  </section>
+  <section class="block card" id="composition" aria-labelledby="composition-title">
+    <div class="block-head">
+      <h2 id="composition-title">題庫組成</h2>
+      <span class="muted">共 {entries.length} 題</span>
+    </div>
+    <div class="mix">
+      {
+        composition.map((c) => {
+          const detail = c.types.map((t) => `${t.label} ${t.count}`);
+          return (
+            <div class={`mix-subject subj-${c.subject}`} data-subject={c.subject}>
+              <div class="mix-head">
+                <span class="chip subject">{c.subject}</span>
+                <strong>{c.count} 題</strong>
+              </div>
+              <div class="mix-bar" role="img" aria-label={`${c.subject}：${detail.join('、')}`}>
+                {c.types.map((t) => <span style={`flex: ${t.count}`} title={`${t.label} ${t.count} 題`}></span>)}
+              </div>
+              <div class="muted">{detail.join('・')}</div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
+  <script is:inline>
+    // 問候日期：例如「10 月 27 日　星期一」
+    const today = document.getElementById('today');
+    const now = new Date();
+    today.textContent = `${now.getMonth() + 1} 月 ${now.getDate()} 日　${now.toLocaleDateString('zh-TW', { weekday: 'long' })}`;
+    today.hidden = false;
+  </script>
+</SiteLayout>

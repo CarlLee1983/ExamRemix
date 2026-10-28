@@ -1,0 +1,29 @@
+---
+// 首頁與試卷列表共用的試卷塊：科目標籤、題數・大題數、標題連結，以及列印試卷與答案卷的連結（?print= 由試卷頁處理）。
+import type { PaperRow } from '../domain/paper-usage';
+import Icon from './Icon.astro';
+
+interface Props {
+  row: PaperRow;
+  /** 試卷列表多顯示年級 */
+  withGrade?: boolean;
+}
+
+const { row, withGrade = false } = Astro.props;
+const titleId = `paper-${row.id}`;
+const href = `/papers/${row.id}/`;
+const meta = `${withGrade ? `${row.grade} 年級・` : ''}${row.count} 題・${row.sections} 大題`;
+---
+
+<li class={`card paper-tile subj-${row.subject}`}>
+  <div class="row">
+    <span class="chip subject">{row.subject}</span>
+    <span class="muted">{meta}</span>
+  </div>
+  <a class="paper-title" id={titleId} href={href}>{row.title}</a>
+  <div class="print-links">
+    {/* 連結文字只有「列印試卷」「列印答案卷」，所屬試卷靠 aria-describedby 補上 */}
+    <a class="btn primary" href={`${href}?print=paper`} aria-describedby={titleId}><Icon name="print" />列印試卷</a>
+    <a class="btn outline" href={`${href}?print=answer`} aria-describedby={titleId}><Icon name="print" />列印答案卷</a>
+  </div>
+</li>

@@ -2,8 +2,6 @@ import { expect, test, type Page } from '@playwright/test';
 import { expectedAnswerColor } from './helpers';
 
 const PAPER = '/papers/sample-math/';
-// 範例試卷 sample-chinese 沒有引用有疑點的題目
-const PAPER_WITHOUT_DOUBT = '/papers/sample-chinese/';
 // 範例試卷 sample-math 的各題型題數
 const CHOICE_COUNT = 21;
 const TRUE_FALSE_COUNT = 3;
@@ -84,26 +82,14 @@ test.describe('試卷頁', () => {
   });
 });
 
-test.describe('疑點提示', () => {
-  const notice = (page: Page) => page.locator('.doubt-notice');
-
-  test('引用有疑點題目的試卷頁頂端提示題數與題號', async ({ page }) => {
+test.describe('試卷頁不顯示疑點', () => {
+  // sample-math 引用了帶疑點資料的題目（sample-math-02），網站仍然完全不顯示
+  test('沒有疑點提示，頁面上也找不到「疑點」', async ({ page }) => {
     await page.goto(PAPER);
-    await expect(notice(page)).toBeVisible();
-    await expect(notice(page)).toContainText('這份試卷有 1 題有疑點');
-    await expect(notice(page)).toContainText('第 2 題');
-  });
-
-  test('列印時隱藏疑點提示', async ({ page }) => {
-    await page.goto(PAPER);
-    await page.emulateMedia({ media: 'print' });
-    await expect(notice(page)).toBeHidden();
-  });
-
-  test('沒有疑點的試卷不顯示提示', async ({ page }) => {
-    await page.goto(PAPER_WITHOUT_DOUBT);
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-    await expect(notice(page)).toHaveCount(0);
+    await expect(page.locator('.doubt-notice')).toHaveCount(0);
+    await expect(page.getByRole('note')).toHaveCount(0);
+    expect(await page.locator('body').innerText()).not.toContain('疑點');
   });
 });
 
@@ -133,11 +119,16 @@ test.describe('答案卷切換', () => {
         const s = getComputedStyle(el);
         return `${s.backgroundColor} ${s.color}`;
       });
-    const before = await look();
+    // 游標移開再量：hover 與轉場都會改變瞬間的顏色；poll 等轉場結束
+    const settle = async () => {
+      await page.mouse.move(0, 0);
+      return look();
+    };
+    const before = await settle();
     await toggle(page).click();
-    expect(await look()).not.toBe(before);
+    await expect.poll(settle).not.toBe(before);
     await toggle(page).click();
-    expect(await look()).toBe(before);
+    await expect.poll(settle).toBe(before);
   });
 
   test('切換成答案卷：答案填在作答括號，解析在題目下方', async ({ page }) => {

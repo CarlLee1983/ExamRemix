@@ -138,7 +138,7 @@ test('題庫可篩選自然與新題型，大題來源不產生虛構小題號',
     ['sample-science-04', '三、植物圖片（每格 1 分，共 2 分）'],
     ['sample-science-05', '四、觀察方法'],
   ]) {
-    const source = page.locator(`.bank-item[data-id="${id}"] .meta li`).last();
+    const source = page.locator(`.bank-item[data-id="${id}"] .meta .source`);
     await expect(source).toHaveText(`出處：虛構三年級自然練習 ${section}`);
     await expect(source).not.toContainText('undefined');
     await expect(source).not.toContainText(/第\s*\d+\s*題/);

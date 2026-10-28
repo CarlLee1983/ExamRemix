@@ -1,0 +1,278 @@
+/* 站內導覽頁與試卷頁工具列共用的基本元件：按鈕、標籤、下拉、圖示、焦點。只讀 tokens.css。 */
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--selection);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+/* 元件自己設的 display 會蓋過瀏覽器預設的 [hidden]；「JS 才能用」的控制項靠它在沒有 JS 時維持隱藏 */
+[hidden] {
+  display: none !important;
+}
+
+.icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* 按鈕：四個層級（primary／secondary／outline／quiet）× 兩種尺寸（40／32px）；同一組動作（一張卡片、一條工具列）只放一個 primary */
+.btn {
+  --h: 40px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  height: var(--h);
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: var(--r-control);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.15s var(--ease),
+    border-color 0.15s var(--ease),
+    box-shadow 0.15s var(--ease),
+    transform 0.1s var(--ease);
+}
+
+.btn.sm {
+  --h: 32px;
+  gap: 6px;
+  padding: 0 12px;
+  border-radius: var(--r-small);
+  font-size: var(--fs-small);
+}
+
+.btn.sm .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn.primary {
+  background: var(--blue-600);
+  color: var(--on-accent);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.18),
+    0 1px 2px rgb(29 67 180 / 0.35),
+    0 4px 12px rgb(36 83 214 / 0.22);
+}
+
+.btn.primary:hover {
+  background: var(--blue-700);
+}
+
+.btn.primary:active {
+  background: var(--blue-800);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.2);
+}
+
+.btn.secondary {
+  border-color: var(--blue-100);
+  background: var(--blue-50);
+  color: var(--blue-700);
+}
+
+.btn.secondary:hover {
+  background: var(--blue-100);
+}
+
+.btn.outline {
+  border-color: var(--line-strong);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 2px rgb(20 33 61 / 0.05);
+}
+
+.btn.outline:hover {
+  border-color: var(--line-hover);
+  background: var(--surface-hover);
+}
+
+.btn.quiet {
+  background: transparent;
+  color: var(--muted);
+}
+
+.btn.quiet:hover {
+  background: var(--chip-bg);
+  color: var(--text);
+}
+
+/* 複製成功的回饋：轉綠色 */
+.btn.done,
+.btn.done:hover {
+  border-color: transparent;
+  background: var(--ok-bg);
+  color: var(--ok-text);
+  box-shadow: none;
+}
+
+/* 開關鈕（試卷頁的顯示答案卷）：標籤固定不變，按下時填色並露出勾，看得出目前是答案卷 */
+.btn[aria-pressed='true'],
+.btn[aria-pressed='true']:hover {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--on-accent);
+}
+
+.btn .when-pressed {
+  display: none;
+}
+
+.btn[aria-pressed='true'] .when-pressed {
+  display: inline;
+}
+
+/* 標籤：高 26px、圓角 8px（與按鈕的圓角區隔）；預設是淺灰底，科目有色 */
+.chip {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--r-chip);
+  background: var(--chip-bg);
+  color: var(--muted);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.chip.meta-tags {
+  display: inline-block;
+  line-height: 26px;
+}
+
+.chip.subject {
+  background: var(--sc-soft);
+  color: var(--sc-text);
+  font-weight: 700;
+}
+
+/* 科目色：套在容器上，標籤與組成條都讀 --sc-* */
+.subj-國語 {
+  --sc: var(--zh);
+  --sc-soft: var(--zh-soft);
+  --sc-text: var(--zh-text);
+  --sc-mid: var(--zh-mid);
+}
+
+.subj-數學 {
+  --sc: var(--ma);
+  --sc-soft: var(--ma-soft);
+  --sc-text: var(--ma-text);
+  --sc-mid: var(--ma-mid);
+}
+
+.subj-自然 {
+  --sc: var(--sci);
+  --sc-soft: var(--sci-soft);
+  --sc-text: var(--sci-text);
+  --sc-mid: var(--sci-mid);
+}
+
+/* 表單：標籤在上、自訂箭頭的下拉；有條件時轉藍底。類別不叫 .field，那是 paper.css 試卷抬頭的填寫欄 */
+.form-field {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.select {
+  height: 36px;
+  padding: 0 34px 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-small);
+  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234f5d78' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;
+  color: var(--text);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  appearance: none;
+  cursor: pointer;
+  transition:
+    border-color 0.15s var(--ease),
+    background-color 0.15s var(--ease);
+}
+
+.select:hover {
+  border-color: var(--line-hover);
+}
+
+.select.active {
+  border-color: var(--blue-600);
+  background-color: var(--blue-50);
+  color: var(--blue-700);
+}
+
+/* 只給讀屏軟體看 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

@@ -109,6 +109,12 @@ describe('pnpm check:bank', () => {
     expect(stdout.trim().split('\n').at(-1)).toContain('0 個錯誤、0 個警告');
   });
 
+  it('\\[ 跳脫的方括號在題幹、選項、答案與解析都通過', () => {
+    const { status, stdout } = run('tests/fixtures/escaped-bracket');
+    expect(status).toBe(0);
+    expect(stdout.trim().split('\n').at(-1)).toContain('0 個錯誤、0 個警告');
+  });
+
   it('資料目錄不存在：非零結束並說明路徑', () => {
     const missing = join('tests', 'fixtures', 'no-such-dir');
     const { status, output } = run(missing);

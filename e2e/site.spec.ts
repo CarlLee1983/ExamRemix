@@ -54,10 +54,10 @@ test.describe('首頁：總覽', () => {
 
   test('題庫組成條：每個科目顯示題數與各題型題數，色段寬度依題數', async ({ page }) => {
     const mix = page.locator('#composition');
-    await expect(mix).toContainText('共 66 題');
+    await expect(mix).toContainText('共 67 題');
     const subjects = mix.locator('.mix-subject');
     await expect(subjects).toHaveCount(4);
-    for (const [subject, count] of [['國語', 16], ['數學', 40], ['社會', 5], ['自然', 5]] as const) {
+    for (const [subject, count] of [['國語', 16], ['數學', 40], ['社會', 6], ['自然', 5]] as const) {
       const block = mix.locator(`.mix-subject[data-subject="${subject}"]`);
       await expect(block).toContainText(`${count} 題`);
       const bar = block.locator('.mix-bar');

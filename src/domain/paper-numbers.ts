@@ -1,5 +1,4 @@
-// 試卷內的題號：跨大題連續編號，從 1 開始。純函式，試卷頁與疑點提示共用。
-import { hasDoubt } from './doubt.ts';
+// 試卷內的題號：跨大題連續編號，從 1 開始。純函式。
 
 interface NumberedSection<T> {
   questions: readonly T[];
@@ -13,12 +12,4 @@ export function firstNumbers(sections: readonly NumberedSection<unknown>[]): num
     next += section.questions.length;
     return first;
   });
-}
-
-/** 有疑點的題目在試卷裡的題號，依出現順序。 */
-export function doubtedNumbers(sections: readonly NumberedSection<{ doubt?: string }>[]): number[] {
-  const firsts = firstNumbers(sections);
-  return sections.flatMap((section, s) =>
-    section.questions.flatMap((question, i) => (hasDoubt(question) ? [firsts[s]! + i] : [])),
-  );
 }

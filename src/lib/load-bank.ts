@@ -28,7 +28,7 @@ async function load() {
   if (report.lines.length > 0) console.warn(`題庫檢查發現 ${report.summary}：\n${details}`);
 
   const questions = buildQuestionIndex(bankInputs) as ReadonlyMap<string, Question>;
-  // 題庫瀏覽頁用：所有題目（含有疑點），依 ID 排序
+  // 題庫瀏覽頁用：所有題目，依 ID 排序
   const entries = [...questions]
     .map(([id, question]) => ({ id, question }))
     .sort((a, b) => compareIds(a.id, b.id));

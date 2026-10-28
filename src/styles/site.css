@@ -132,7 +132,7 @@
 
 .hero-in {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px 220px;
+  grid-template-columns: minmax(0, 1fr) 280px;
   gap: 20px;
   align-items: stretch;
   padding-block: 44px 40px;
@@ -165,7 +165,7 @@
   padding: 22px 22px 20px;
 }
 
-/* 標題把數字與說明包在一起，讀屏軟體會連著讀「2 有疑點的題目」；畫面上數字在上、說明在下 */
+/* 標題把數字與說明包在一起，讀屏軟體會連著讀「3 份試卷可列印」；畫面上數字在上、說明在下 */
 .stat h2 {
   display: flex;
   flex-direction: column;
@@ -191,15 +191,6 @@
   letter-spacing: -0.03em;
   line-height: 0.9;
   font-variant-numeric: tabular-nums;
-}
-
-/* 沒有疑點時取代大數字，字級同高以維持卡片等高 */
-.stat-num.all-clear {
-  display: flex;
-  align-items: flex-end;
-  min-height: 79px;
-  font-size: var(--fs-h1);
-  letter-spacing: -0.02em;
 }
 
 /* 首頁與試卷列表的區塊：標題在卡片上方 */
@@ -315,7 +306,7 @@
   }
 
   .hero-in {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     padding-block: 32px 24px;
   }
 
@@ -329,11 +320,6 @@
 
   .stat-num {
     font-size: 56px;
-  }
-
-  .stat-num.all-clear {
-    min-height: 50px;
-    font-size: var(--fs-h3);
   }
 
   .paper-list {

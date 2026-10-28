@@ -1,13 +1,11 @@
 ---
-import Icon from '../components/Icon.astro';
 import PaperRow from '../components/PaperRow.astro';
 import { bankComposition } from '../domain/composition';
-import { countDoubted, paperRows } from '../domain/paper-usage';
+import { paperRows } from '../domain/paper-usage';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { loadChecked } from '../lib/load-bank.ts';
 
 const { papers, entries } = await loadChecked();
-const doubted = countDoubted(entries);
 const rows = paperRows(papers);
 const composition = bankComposition(entries);
 ---
@@ -19,27 +17,8 @@ const composition = bankComposition(entries);
         {/* 日期要在瀏覽器端產生（建置時間不等於瀏覽時間），沒有 JS 時不顯示 */}
         <p class="date" id="today" hidden></p>
         <h1 class="display">總覽</h1>
-        <p class="sum">
-          {doubted > 0 ? <><b>{doubted} 題</b>有疑點，</> : '題庫目前沒有疑點，'}<b>{rows.length} 份試卷</b>可以列印。
-        </p>
+        <p class="sum"><b>{rows.length} 份試卷</b>可以列印。</p>
       </div>
-      <section class="card stat" aria-labelledby="doubt-title">
-        <h2 id="doubt-title">
-          {doubted > 0 ? <span class="stat-num pending-count">{doubted}</span> : <span class="stat-num all-clear">沒有疑點</span>}
-          <span class="stat-label">有疑點的題目</span>
-        </h2>
-        {
-          doubted > 0 ? (
-            <a class="btn primary" href="/bank/?doubt=true">
-              查看疑點<Icon name="chevron-right" />
-            </a>
-          ) : (
-            <a class="btn secondary" href="/bank/">
-              查看題庫<Icon name="chevron-right" />
-            </a>
-          )
-        }
-      </section>
       <section class="card stat" aria-labelledby="papers-stat-title">
         <h2 id="papers-stat-title">
           <span class="stat-num">{rows.length}</span>

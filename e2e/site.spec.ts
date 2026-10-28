@@ -1,5 +1,4 @@
 import { expect, test } from '@playwright/test';
-import { FIXTURE_URL } from './helpers';
 
 const PAPERS = [
   { id: 'sample-chinese', title: '三年級國語試卷（範例）', subject: '國語', meta: '15 題・7 大題' },
@@ -32,11 +31,12 @@ test.describe('首頁：總覽', () => {
     await page.goto('/');
   });
 
-  test('疑點卡片顯示題數，「查看疑點」連到疑點清單', async ({ page }) => {
+  test('h1 是「總覽」，只有一張統計卡「份試卷可列印」，「看試卷」連到試卷區塊', async ({ page }) => {
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('總覽');
-    await expect(page.getByRole('heading', { level: 2, name: '有疑點的題目' })).toBeVisible();
-    await expect(page.locator('.pending-count')).toHaveText('2');
-    await expect(page.getByRole('link', { name: '查看疑點' })).toHaveAttribute('href', '/bank/?doubt=true');
+    await expect(page.locator('.stat')).toHaveCount(1);
+    await expect(page.getByRole('heading', { level: 2, name: '份試卷可列印' })).toContainText(String(PAPERS.length));
+    await expect(page.getByRole('link', { name: '看試卷' })).toHaveAttribute('href', '#papers');
+    await expect(page.locator('.greet .sum')).toHaveText(`${PAPERS.length} 份試卷可以列印。`);
   });
 
   test('每份試卷一列：標題連結、科目・題數、試卷與答案卷的列印連結', async ({ page }) => {
@@ -104,15 +104,31 @@ test.describe('首頁：沒有 JavaScript', () => {
   });
 });
 
-test.describe('首頁：沒有疑點', () => {
-  test('寫「沒有疑點」，次要連結到題庫，沒有「查看疑點」', async ({ page }) => {
-    await page.goto(`${FIXTURE_URL}/`);
-    await expect(page.getByText('沒有疑點', { exact: true })).toBeVisible();
-    await expect(page.locator('.pending-count')).toHaveCount(0);
-    await expect(page.getByRole('link', { name: '查看疑點' })).toHaveCount(0);
-    const link = page.getByRole('link', { name: '查看題庫' });
-    await expect(link).toHaveAttribute('href', '/bank/');
-    await expect(link).not.toHaveClass(/primary/);
+test.describe('網站不顯示疑點', () => {
+  // lede 的 issue 說明是唯一允許的相關文字，它不含「疑點」二字
+  for (const path of ['/', '/bank/', '/papers/', '/papers/sample-math/', '/papers/sample-chinese/']) {
+    test(`${path} 找不到「疑點」，也沒有疑點相關元素`, async ({ page }) => {
+      await page.goto(path);
+      expect(await page.locator('body').innerText()).not.toContain('疑點');
+      await expect(page.locator('.chip.doubt, .status-doubt, .doubt-notice, .doubt-item, [data-doubt]')).toHaveCount(0);
+      await expect(page.getByRole('link', { name: /疑點/ })).toHaveCount(0);
+      await expect(page.locator('a[href*="doubt"]')).toHaveCount(0);
+    });
+  }
+
+  test('題庫沒有疑點篩選，lede 仍是開 GitHub issue 的說明', async ({ page }) => {
+    await page.goto('/bank/');
+    await expect(page.locator('#filters select')).toHaveCount(4);
+    await expect(page.locator('#filters select[name="doubt"]')).toHaveCount(0);
+    await expect(page.locator('.lede')).toContainText('GitHub issue');
+  });
+
+  test('題庫展開一題也看不到疑點（含範例資料裡帶 doubt 的題目）', async ({ page }) => {
+    await page.goto('/bank/');
+    for (const id of ['sample-math-02', 'sample-math-22']) {
+      await page.locator(`details.bank-item[data-id="${id}"] summary`).click();
+    }
+    expect(await page.locator('body').innerText()).not.toContain('疑點');
   });
 });
 

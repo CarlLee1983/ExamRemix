@@ -1,9 +1,8 @@
 ---
-// 題庫瀏覽頁：列出題庫所有題目（含有疑點），分「有疑點」「沒有疑點」兩區，題目以答案卷版面顯示（答案與解析都可見）。
-// 篩選在前端以 data 屬性進行，條件可寫進網址（?doubt=true），頁面仍是純靜態、唯讀；發現問題時開 GitHub issue，在本機由 agent 處理。
+// 題庫瀏覽頁：單一清單列出題庫所有題目（依 ID 排序），每題收合，展開後以答案卷版面顯示（答案與解析都可見）。
+// 篩選在前端以 data 屬性進行，條件可寫進網址（?subject=數學），頁面仍是純靜態、唯讀；發現問題時開 GitHub issue，在本機由 agent 處理。
 import BankItem from '../../components/BankItem.astro';
 import Icon from '../../components/Icon.astro';
-import { hasDoubt } from '../../domain/doubt';
 import { paperTitlesByQuestion } from '../../domain/paper-usage';
 import { SUBJECTS } from '../../domain/schema';
 import { NO_UNIT_LABEL } from '../../domain/unit';
@@ -15,9 +14,7 @@ import '../../styles/bank.css';
 
 const { papers, entries } = await loadChecked();
 
-// 兩區各自維持 entries 的 ID 排序；用於哪些試卷在建置期算好
-const doubted = entries.filter((e) => hasDoubt(e.question));
-const plain = entries.filter((e) => !hasDoubt(e.question));
+// entries 已依 ID 排序；用於哪些試卷在建置期算好
 const usage = paperTitlesByQuestion(papers);
 
 // 沒有單元的題目以 NO_UNIT_LABEL 作為篩選值（與列出題目指令共用）
@@ -38,14 +35,6 @@ const filters = [
     options: [...units.map((u) => ({ value: u, text: u })), ...(hasNoUnit ? [{ value: NO_UNIT_LABEL, text: '（無單元）' }] : [])],
   },
   { key: 'type', label: '題型', options: types.map((t) => ({ value: t, text: TYPE_LABELS[t] })) },
-  {
-    key: 'doubt',
-    label: '疑點',
-    options: [
-      { value: 'true', text: '有疑點' },
-      { value: 'false', text: '無疑點' },
-    ],
-  },
 ];
 ---
 
@@ -68,27 +57,8 @@ const filters = [
     <button type="button" class="btn quiet sm" id="clear-filters" hidden><Icon name="x" />清除條件</button>
     <span class="muted" id="count" role="status"></span>
   </form>
-  <div id="items">
-    {
-      doubted.length > 0 && (
-        <section class="bank-section" id="doubt-section" aria-labelledby="doubt-heading">
-          <h2 class="sec-title" id="doubt-heading">有疑點 <span class="section-count">{doubted.length} 題</span></h2>
-          <div class="doubt-list">
-            {doubted.map(({ id, question }) => <BankItem id={id} question={question} usedIn={usage.get(id) ?? []} />)}
-          </div>
-        </section>
-      )
-    }
-    {
-      plain.length > 0 && (
-        <section class="bank-section" id="plain-section" aria-labelledby="plain-heading">
-          <h2 class="sec-title" id="plain-heading">沒有疑點 <span class="section-count">{plain.length} 題</span></h2>
-          <div class="card plain-list">
-            {plain.map(({ id, question }) => <BankItem id={id} question={question} usedIn={usage.get(id) ?? []} />)}
-          </div>
-        </section>
-      )
-    }
+  <div class="card bank-list" id="items">
+    {entries.map(({ id, question }) => <BankItem id={id} question={question} usedIn={usage.get(id) ?? []} />)}
   </div>
   {/* 複製 ID 的結果，給讀屏軟體用；畫面上看不到 */}
   <p class="sr-only" id="announce" role="status"></p>
@@ -97,7 +67,6 @@ const filters = [
     // 需要 JS 的控制項（篩選列、複製鈕）預設 hidden，在這裡才顯示。
     const form = document.getElementById('filters');
     const items = [...document.querySelectorAll('.bank-item')];
-    const sections = [...document.querySelectorAll('.bank-section')];
     const count = document.getElementById('count');
     const clear = document.getElementById('clear-filters');
     const selects = [...form.querySelectorAll('select')];
@@ -118,12 +87,6 @@ const filters = [
         const match = selects.every((s) => s.value === '' || item.dataset[s.name] === s.value);
         item.hidden = !match;
         if (match) shown += 1;
-      }
-      // 區塊標題顯示篩選後的題數；沒有符合題目的區塊整個隱藏
-      for (const section of sections) {
-        const visible = section.querySelectorAll('.bank-item:not([hidden])').length;
-        section.querySelector('.section-count').textContent = `${visible} 題`;
-        section.hidden = visible === 0;
       }
       // 有條件的下拉轉藍底，一眼看出哪些條件正在生效
       for (const s of selects) s.classList.toggle('active', s.value !== '');

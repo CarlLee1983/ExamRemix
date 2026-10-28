@@ -1,36 +1,21 @@
 import { expect, test, type Page } from '@playwright/test';
-import { copiedTexts, EXAMPLE_DOUBTED as DOUBTED, EXAMPLE_TOTAL as TOTAL, expectSorted, FIXTURE_URL, stubClipboard } from './helpers';
+import { copiedTexts, EXAMPLE_TOTAL as TOTAL, FIXTURE_URL, stubClipboard } from './helpers';
 
 const BANK = '/bank/';
 
-const doubtSection = (page: Page) => page.locator('#doubt-section');
-const plainSection = (page: Page) => page.locator('#plain-section');
-const ids = (section: ReturnType<typeof doubtSection>) => section.locator('.bank-item:visible .question-id').allTextContents();
+/** 展開一題並回傳它的 details；題目預設都收合 */
+const expand = async (page: Page, id: string) => {
+  const item = page.locator(`details.bank-item[data-id="${id}"]`);
+  await item.locator('summary').click();
+  return item;
+};
 
-test.describe('題庫：有疑點與沒有疑點兩區', () => {
+test.describe('題庫：每題收合，展開才是完整卡片', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(BANK);
   });
 
-  test('有疑點在前、沒有疑點在後，兩區各自依 ID 排序，標題顯示題數', async ({ page }) => {
-    const headings = page.locator('#items h2');
-    await expect(headings).toHaveText([/^有疑點\s*2 題$/, new RegExp(`^沒有疑點\\s*${TOTAL - 2} 題$`)]);
-    expect(await ids(doubtSection(page))).toEqual(DOUBTED);
-    const plain = await ids(plainSection(page));
-    expect(plain).toHaveLength(TOTAL - 2);
-    expectSorted(plain);
-  });
-
-  test('有疑點的題目完整展開：題幹、答案、解析與疑點都看得到', async ({ page }) => {
-    const card = page.locator('.bank-item[data-id="sample-math-22"]');
-    await expect(card.locator('.stem')).toBeVisible();
-    await expect(card.locator('.answer')).toBeVisible();
-    await expect(card.locator('.explanation')).toBeVisible();
-    await expect(card.locator('.chip.doubt')).toHaveText('有疑點');
-    await expect(card.locator('.status-doubt')).toBeVisible();
-  });
-
-  test('沒有疑點的題目收在 details 內，summary 有 ID、題型、單元，展開才看得到題目', async ({ page }) => {
+  test('每題收在 details 內，summary 有 ID、題型、單元，展開才看得到題目', async ({ page }) => {
     const item = page.locator('details.bank-item[data-id="sample-math-01"]');
     await expect(item).not.toHaveAttribute('open', '');
     await expect(item.locator('summary')).toContainText('sample-math-01');
@@ -39,27 +24,25 @@ test.describe('題庫：有疑點與沒有疑點兩區', () => {
     await expect(item.locator('.stem')).toBeHidden();
     await item.locator('summary').click();
     await expect(item.locator('.stem')).toContainText('3 × 4 等於多少？');
-    await expect(item.locator('.chip.doubt')).toHaveCount(0);
+    await expect(item.locator('.answer')).toBeVisible();
+    await expect(item.locator('.explanation')).toBeVisible();
   });
 
-  test('篩選後區塊標題的題數跟著變，空的區塊隱藏', async ({ page }) => {
-    await page.getByLabel('科目').selectOption({ label: '數學' });
-    await expect(page.locator('#doubt-section h2')).toHaveText(/2 題/);
-    await page.locator('#filters').getByLabel('疑點').selectOption({ label: '有疑點' });
-    await expect(plainSection(page)).toBeHidden();
-    await page.locator('#filters').getByLabel('疑點').selectOption({ label: '無疑點' });
-    await expect(doubtSection(page)).toBeHidden();
-    await expect(plainSection(page)).toBeVisible();
+  test('原本帶疑點的題目也一樣收合，展開後和其他題沒有差別', async ({ page }) => {
+    const item = page.locator('details.bank-item[data-id="sample-math-22"]');
+    await expect(item).not.toHaveAttribute('open', '');
+    await item.locator('summary').click();
+    await expect(item.locator('.stem')).toBeVisible();
+    await expect(item.locator('.item-head')).toHaveText(/數學.*3 年級・乘法・選擇題/);
   });
 
   test('每題顯示「用於：」的試卷標題；沒被引用的寫「尚未用於試卷」', async ({ page }) => {
-    await expect(page.locator('.bank-item[data-id="sample-math-22"] .used-in')).toHaveText('尚未用於試卷');
-    const used = page.locator('.bank-item[data-id="sample-math-02"] .used-in');
-    await expect(used).toHaveText('用於：三年級數學試卷（範例）');
+    await expect((await expand(page, 'sample-math-22')).locator('.used-in')).toHaveText('尚未用於試卷');
+    await expect((await expand(page, 'sample-math-02')).locator('.used-in')).toHaveText('用於：三年級數學試卷（範例）');
   });
 
   test('出處與衍生自仍然顯示', async ({ page }) => {
-    await expect(page.locator('.bank-item[data-id="sample-math-22"] .meta')).toContainText('出處：虛構三年級數學小考 第 22 題');
+    await expect((await expand(page, 'sample-math-22')).locator('.meta')).toContainText('出處：虛構三年級數學小考 第 22 題');
   });
 
   test('網站唯讀：沒有勾選框', async ({ page }) => {
@@ -84,7 +67,7 @@ test.describe('題庫：清除條件', () => {
   });
 
   test('帶條件的網址開啟時就有清除條件', async ({ page }) => {
-    await page.goto('/bank/?doubt=true');
+    await page.goto('/bank/?subject=%E6%95%B8%E5%AD%B8');
     await expect(page.getByRole('button', { name: '清除條件' })).toBeVisible();
   });
 });
@@ -105,29 +88,27 @@ test.describe('題庫：沒有單元的題目', () => {
 });
 
 test.describe('題庫：複製 ID', () => {
-  test('複製 ID 把題目 ID 寫進剪貼簿（有疑點的卡片與沒有疑點的展開後都有）', async ({ page }) => {
+  test('複製 ID 把題目 ID 寫進剪貼簿（展開後的卡片）', async ({ page }) => {
     await stubClipboard(page);
     await page.goto(BANK);
-    await page.locator('.bank-item[data-id="sample-math-22"]').getByRole('button', { name: '複製 ID' }).click();
+    await (await expand(page, 'sample-math-22')).getByRole('button', { name: '複製 ID' }).click();
     expect(await copiedTexts(page)).toEqual(['sample-math-22']);
 
-    const item = page.locator('details.bank-item[data-id="sample-math-01"]');
-    await item.locator('summary').click();
-    await item.getByRole('button', { name: '複製 ID' }).click();
+    await (await expand(page, 'sample-math-01')).getByRole('button', { name: '複製 ID' }).click();
     expect(await copiedTexts(page)).toEqual(['sample-math-22', 'sample-math-01']);
   });
 
   test('複製成功時讀屏用的狀態區也有文字', async ({ page }) => {
     await stubClipboard(page);
     await page.goto(BANK);
-    await page.locator('.bank-item[data-id="sample-math-22"] .copy-id').click();
+    await (await expand(page, 'sample-math-22')).locator('.copy-id').click();
     await expect(page.locator('#announce')).toHaveText('已複製 sample-math-22');
   });
 
   test('複製失敗：按鈕訊息維持超過 2 秒、選取該 ID、狀態區說明', async ({ page }) => {
     await stubClipboard(page, { fail: true });
     await page.goto(BANK);
-    const button = page.locator('.bank-item[data-id="sample-math-22"] .copy-id');
+    const button = (await expand(page, 'sample-math-22')).locator('.copy-id');
     await button.click();
     await expect(button).toContainText('無法複製');
     await page.waitForTimeout(2200);
@@ -136,7 +117,7 @@ test.describe('題庫：複製 ID', () => {
     await expect(page.locator('#announce')).toContainText('無法複製');
   });
 
-  test('沒有疑點的題目複製失敗：選取 summary 裡的 ID，details 維持展開', async ({ page }) => {
+  test('複製失敗：選取 summary 裡的 ID，details 維持展開', async ({ page }) => {
     await stubClipboard(page, { fail: true });
     await page.goto(BANK);
     const item = page.locator('details.bank-item[data-id="sample-math-01"]');
@@ -149,7 +130,7 @@ test.describe('題庫：複製 ID', () => {
   test('按下後按鈕短暫回饋「已複製」', async ({ page }) => {
     await stubClipboard(page);
     await page.goto(BANK);
-    const button = page.locator('.bank-item[data-id="sample-math-22"]').locator('.copy-id');
+    const button = (await expand(page, 'sample-math-22')).locator('.copy-id');
     await button.click();
     await expect(button).toContainText('已複製');
     // 成功回饋轉綠色（--ok-bg），標籤還原時一併還原

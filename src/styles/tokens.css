@@ -35,10 +35,7 @@
   --focus: #2453d6;
   --selection: #cddcff;
 
-  /* 狀態：有疑點用琥珀底、深字，加一個狀態點 */
-  --warn-bg: #fff1d6;
-  --warn-text: #7a4a00;
-  --warn-dot: #d97706;
+  /* 狀態：複製成功的回饋 */
   --ok-bg: #e3f5ea;
   --ok-text: #17663a;
 

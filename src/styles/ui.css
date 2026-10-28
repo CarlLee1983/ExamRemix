@@ -158,7 +158,7 @@ select {
   display: inline;
 }
 
-/* 標籤：高 26px、圓角 8px（與按鈕的圓角區隔）；預設是淺灰底，科目與疑點各有色 */
+/* 標籤：高 26px、圓角 8px（與按鈕的圓角區隔）；預設是淺灰底，科目有色 */
 .chip {
   display: inline-flex;
   gap: 4px;
@@ -183,21 +183,6 @@ select {
   background: var(--sc-soft);
   color: var(--sc-text);
   font-weight: 700;
-}
-
-.chip.doubt {
-  background: var(--warn-bg);
-  color: var(--warn-text);
-  font-weight: 700;
-}
-
-.chip.doubt::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  margin-right: 2px;
-  border-radius: 50%;
-  background: var(--warn-dot);
 }
 
 /* 科目色：套在容器上，標籤與組成條都讀 --sc-* */

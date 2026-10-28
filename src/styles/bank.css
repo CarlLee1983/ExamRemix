@@ -1,4 +1,4 @@
-/* 題庫瀏覽：篩選列、有疑點／沒有疑點兩區、每題卡片。只讀 tokens.css；題目本身沿用 paper.css 的排版。 */
+/* 題庫瀏覽：篩選列、單一清單、每題收合列與展開後的卡片。只讀 tokens.css；題目本身沿用 paper.css 的排版。 */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -12,34 +12,6 @@
   align-self: center;
   margin-left: auto;
   font-variant-numeric: tabular-nums;
-}
-
-.bank-section + .bank-section {
-  margin-top: 40px;
-}
-
-.content .sec-title {
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  margin: 0 0 14px;
-}
-
-.section-count {
-  color: var(--muted);
-  font-size: var(--fs-small);
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-.doubt-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.doubt-item {
-  overflow: hidden;
 }
 
 /* 題目卡：頂列（ID、標籤、複製）／題目區／淺底解析／出處 */
@@ -59,15 +31,6 @@
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   user-select: text;
-}
-
-.item-body > .status-doubt {
-  margin: 0;
-  padding: 10px 20px;
-  background: var(--warn-bg);
-  color: var(--warn-text);
-  font-size: var(--fs-small);
-  font-weight: 700;
 }
 
 .item-body > .question {
@@ -111,17 +74,17 @@
   font-weight: 700;
 }
 
-/* 沒有疑點：一張卡片收所有精簡列，展開才看到題目 */
-.plain-list {
+/* 一張卡片收所有收合列，展開才看到題目 */
+.bank-list {
   overflow: hidden;
 }
 
 /* 分隔線畫在「前面已有可見項目」的列上，被篩選藏起來的列不會留下多餘的線 */
-.plain-item:not([hidden]) ~ .plain-item:not([hidden]) {
+.bank-item:not([hidden]) ~ .bank-item:not([hidden]) {
   border-top: 1px solid var(--line);
 }
 
-.plain-item summary {
+.bank-item summary {
   display: flex;
   gap: 14px;
   align-items: center;
@@ -131,11 +94,11 @@
   transition: background-color 0.15s var(--ease);
 }
 
-.plain-item summary:hover {
+.bank-item summary:hover {
   background: var(--surface-hover);
 }
 
-.plain-item summary::-webkit-details-marker {
+.bank-item summary::-webkit-details-marker {
   display: none;
 }
 
@@ -152,8 +115,12 @@
   transition: transform 0.15s var(--ease);
 }
 
-.plain-item[open] .chevron {
+.bank-item[open] .chevron {
   transform: rotate(90deg);
+}
+
+.bank-item[open] > summary {
+  border-bottom: 1px solid var(--line);
 }
 
 /* 上有黏頂的外殼：Tab 到卡片裡的控制項時，留空間給它，不要被蓋住 */
@@ -164,11 +131,10 @@
 
 @media (max-width: 760px) {
   .item-head,
-  .plain-item summary {
+  .bank-item summary {
     padding-inline: 16px;
   }
 
-  .item-body > .status-doubt,
   .item-body > .question,
   .item-body > .meta {
     padding-inline: 16px;

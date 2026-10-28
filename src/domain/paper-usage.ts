@@ -1,5 +1,4 @@
-// 首頁、試卷列表與題庫瀏覽共用的建置期計算：試卷列資料、題目用於哪些試卷、有疑點的題數。
-import { hasDoubt } from './doubt.ts';
+// 首頁、試卷列表與題庫瀏覽共用的建置期計算：試卷列資料、題目用於哪些試卷。
 import { compareIds } from './schema.ts';
 
 interface PaperLike {
@@ -45,9 +44,4 @@ export function paperTitlesByQuestion(papers: readonly PaperLike[]): Map<string,
     }
   }
   return usage;
-}
-
-/** 有疑點的題數。 */
-export function countDoubted(entries: readonly { question: { doubt?: string } }[]): number {
-  return entries.filter((entry) => hasDoubt(entry.question)).length;
 }

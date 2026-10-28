@@ -42,12 +42,11 @@ export const stubPrint = (page: Page) =>
 
 export const printCalls = (page: Page) => page.evaluate(() => (window as unknown as { __prints: string[] }).__prints);
 
-/** 範例資料已知：數學 40 題、國語 16 題、自然 5 題，共 61 題；有疑點的只有 sample-math-02（範例試卷引用它）與 sample-math-22 */
+/** 範例資料已知：數學 40 題、國語 16 題、自然 5 題，共 61 題 */
 export const EXAMPLE_TOTAL = 61;
-export const EXAMPLE_DOUBTED = ['sample-math-02', 'sample-math-22'];
 
-/** 題庫頁每一區內依 ID 排序（字串順序，與 compareIds 一致） */
+/** 題庫頁清單依 ID 排序（字串順序，與 compareIds 一致） */
 export const expectSorted = (ids: string[]) => expect(ids).toEqual([...ids].sort());
 
-/** 第二個預覽伺服器（見 playwright.config.ts），讀 tests/fixtures/no-unit：沒有有疑點的題目，其中一題沒有單元 */
+/** 第二個預覽伺服器（見 playwright.config.ts），讀 tests/fixtures/no-unit：其中一題沒有單元 */
 export const FIXTURE_URL = 'http://localhost:4400';

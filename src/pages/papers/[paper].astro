@@ -1,7 +1,7 @@
 ---
 import Icon from '../../components/Icon.astro';
 import Question from '../../components/Question.astro';
-import { doubtedNumbers, firstNumbers } from '../../domain/paper-numbers.ts';
+import { firstNumbers } from '../../domain/paper-numbers.ts';
 import { loadChecked } from '../../lib/load-bank.ts';
 import '../../styles/tokens.css';
 import '../../styles/ui.css';
@@ -9,7 +9,7 @@ import '../../styles/paper.css';
 import '../../styles/paper-toolbar.css';
 
 export async function getStaticPaths() {
-  // 載入時已跑過跨檔檢查：引用的題目 ID 一定存在；引用到有疑點的題目只是警告，照常產生頁面
+  // 載入時已跑過跨檔檢查：引用的題目 ID 一定存在
   const { papers, questions } = await loadChecked();
 
   return papers.map((paper) => ({
@@ -27,8 +27,6 @@ export async function getStaticPaths() {
 const { paper, sections } = Astro.props;
 
 const numbers = firstNumbers(sections);
-// 有疑點的題目在這份試卷裡的題號，給螢幕上的頂端提示用
-const doubted = doubtedNumbers(sections);
 ---
 
 <!doctype html>
@@ -47,13 +45,6 @@ const doubted = doubtedNumbers(sections);
       <button type="button" class="btn primary" id="print-button" hidden><Icon name="print" />列印</button>
     </header>
     <div class="paper-scroll">
-      {
-        doubted.length > 0 && (
-          <p class="doubt-notice" role="note">
-            這份試卷有 {doubted.length} 題有疑點：{doubted.map((n) => `第 ${n} 題`).join('、')}
-          </p>
-        )
-      }
       <main class="paper">
         <header class="paper-head">
           <h1>{paper.title}</h1>

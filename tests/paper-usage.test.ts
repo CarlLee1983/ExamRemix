@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { countDoubted, paperRows, paperTitlesByQuestion } from '../src/domain/paper-usage.ts';
+import { paperRows, paperTitlesByQuestion } from '../src/domain/paper-usage.ts';
 
 function paper(id: string, title: string, sections: string[][]) {
   return { id, data: { title, subject: '數學', grade: 3, sections: sections.map((questions, i) => ({ title: `第 ${i + 1} 大題`, questions })) } };
@@ -28,13 +28,5 @@ describe('paperTitlesByQuestion', () => {
 
   it('同一份試卷重複引用同一題，標題只記一次', () => {
     expect(paperTitlesByQuestion([paper('a-paper', 'A 卷', [['q-1'], ['q-1']])]).get('q-1')).toEqual(['A 卷']);
-  });
-});
-
-describe('countDoubted', () => {
-  it('只數有疑點的題目', () => {
-    const entries = [undefined, '答案存疑', '題幹不清', undefined].map((doubt) => ({ question: { doubt } }));
-    expect(countDoubted(entries)).toBe(2);
-    expect(countDoubted([])).toBe(0);
   });
 });

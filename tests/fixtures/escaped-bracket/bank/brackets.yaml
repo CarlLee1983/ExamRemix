@@ -1,0 +1,25 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: "圈選 \\[is|are]，價格是 \\$5，哪一個正確？"
+    options:
+      - "\\[is|are]"
+      - "[公園|ㄍㄨㄥ ㄩㄢˊ]"
+    answer: 1
+    explanation: "寫成 \\[A|B] 才是字面的方括號。"
+    source:
+      originalPaper: 虛構小考
+      number: 1
+  - no: 2
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: "把 \\[A|B] 填進 ___ 裡。"
+    answer:
+      - "\\[A|B]"
+    explanation: "答案是 \\[A|B]。"
+    source:
+      originalPaper: 虛構小考
+      number: 2

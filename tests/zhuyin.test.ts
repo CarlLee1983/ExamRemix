@@ -149,3 +149,37 @@ describe('plainText / hasAnnotation', () => {
     expect(hasAnnotation(parseZhuyin('花[1]').segments)).toBe(false);
   });
 });
+
+describe('\\[ 跳脫', () => {
+  it('\\[ 是字面的 [，後面的 [A|B] 內容不當成注音', () => {
+    expect(parseZhuyin('圈選 \\[is|are]')).toEqual({
+      segments: [{ kind: 'text', text: '圈選 [is|are]' }],
+      errors: [],
+    });
+  });
+
+  it('跳脫的方括號旁邊的真標注照常解析', () => {
+    expect(parseZhuyin('\\[A|B]與[花|ㄏㄨㄚ]').segments).toEqual([
+      { kind: 'text', text: '[A|B]與' },
+      { kind: 'ruby', chars: [{ char: '花', zhuyin: 'ㄏㄨㄚ' }] },
+    ]);
+  });
+
+  it('單獨的 ] 本來就是一般文字，不需要 \\]', () => {
+    expect(parseZhuyin('\\[A|B] 與 C]').segments).toEqual([{ kind: 'text', text: '[A|B] 與 C]' }]);
+  });
+
+  it('未跳脫的 [A|B] 仍依注音規則報錯', () => {
+    expect(parseZhuyin('圈選 [is|are]').errors.length).toBeGreaterThan(0);
+  });
+
+  it('標注裡的 \\[ 不算新標注的開頭：照標注內容回報非法注音，而不是未閉合', () => {
+    expect(parseZhuyin('[花|ㄏ\\[ㄨ]').errors).toEqual([
+      '注音標注「[花|ㄏ\\[ㄨ]」含非法注音「ㄏ\\[ㄨ」，只能由注音符號（ㄅ–ㄩ）組成，輕聲 ˙ 放最前面，其他聲調（ˊ ˇ ˋ）最多一個且放最後',
+    ]);
+  });
+
+  it('沒有跟著 [ 的反斜線原樣保留', () => {
+    expect(parseZhuyin('a\\b').segments).toEqual([{ kind: 'text', text: 'a\\b' }]);
+  });
+});

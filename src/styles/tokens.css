@@ -39,7 +39,7 @@
   --ok-bg: #e3f5ea;
   --ok-text: #17663a;
 
-  /* 科目：淺底深字（文字對底色對比：國語、數學、自然皆 ≥ 4.5，自然 7.7）；--mid 給題庫組成條的交替色段 */
+  /* 科目：淺底深字（文字對底色對比：皆 ≥ 4.5，由 tests/subject-colors.test.ts 檢查）；--mid 給題庫組成條的交替色段 */
   --zh: #c2410c;
   --zh-soft: #ffece3;
   --zh-mid: #f7b79a;
@@ -48,6 +48,10 @@
   --ma-soft: #e2f4f7;
   --ma-mid: #8fd0dc;
   --ma-text: #0b5c72;
+  --soc: #be185d;
+  --soc-soft: #fdf2f8;
+  --soc-mid: #f9a8d4;
+  --soc-text: #9d174d;
   --sci: #6d28d9;
   --sci-soft: #f1ebfe;
   --sci-mid: #c4b0f5;

@@ -93,7 +93,7 @@ describe('選擇題 schema', () => {
   });
 
   it('未知科目時指出 subject', () => {
-    expect(issuePaths(questionSchema, { ...validChoice, subject: '社會' })).toEqual(['subject']);
+    expect(issuePaths(questionSchema, { ...validChoice, subject: '英語' })).toEqual(['subject']);
   });
 });
 

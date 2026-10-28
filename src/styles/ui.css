@@ -200,6 +200,13 @@ select {
   --sc-mid: var(--ma-mid);
 }
 
+.subj-社會 {
+  --sc: var(--soc);
+  --sc-soft: var(--soc-soft);
+  --sc-text: var(--soc-text);
+  --sc-mid: var(--soc-mid);
+}
+
 .subj-自然 {
   --sc: var(--sci);
   --sc-soft: var(--sci-soft);

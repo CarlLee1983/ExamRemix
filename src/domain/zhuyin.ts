@@ -1,5 +1,5 @@
 // 注音標注：文字中的 `[字|注音]` 把注音標在字上，多字寫成 `[公園|ㄍㄨㄥ ㄩㄢˊ]`，
-// 注音以半形空白分隔、組數必須等於字數。沒有 `|` 的 `[...]` 一律是一般文字。
+// 注音以半形空白分隔、組數必須等於字數。沒有 `|` 的 `[...]` 一律是一般文字；要寫出不被當成標注的 `[`，寫成 `\[`。
 // 用 [ ] 而不是 { }，是為了不和之後數學式的 LaTeX 衝突。
 // 純函式，不依賴 Astro；schema 與 RichText 元件都讀這個檔，標注寫法的定義集中在此。
 
@@ -64,14 +64,20 @@ export function parseZhuyin(text: string): ParseResult {
 
   let i = 0;
   while (i < text.length) {
+    if (text.startsWith('\\[', i)) {
+      // \[ 是字面的 [，不開始注音標注；單獨的 ] 本來就是一般文字，所以不需要 \]
+      plain += '[';
+      i += 2;
+      continue;
+    }
     if (text[i] !== '[') {
       plain += text[i];
       i += 1;
       continue;
     }
-    // 找這個 [ 之後第一個 ] 或 [，決定它是標注、一般文字，還是未閉合
+    // 找這個 [ 之後第一個 ] 或沒被跳脫的 [，決定它是標注、一般文字，還是未閉合
     const rest = text.slice(i + 1);
-    const next = rest.search(/[\][]/);
+    const next = rest.search(/[\]]|(?<!\\)\[/);
     const closed = next >= 0 && rest[next] === ']';
     const body = next >= 0 ? rest.slice(0, next) : rest;
 

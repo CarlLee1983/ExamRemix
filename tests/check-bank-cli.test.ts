@@ -103,6 +103,12 @@ describe('pnpm check:bank', () => {
     expect(output).toContain('confirmed');
   });
 
+  it('社會題目與試卷是合法科目：結束狀態 0，沒有錯誤', () => {
+    const { status, stdout } = run('tests/fixtures/social-subject');
+    expect(status).toBe(0);
+    expect(stdout.trim().split('\n').at(-1)).toContain('0 個錯誤、0 個警告');
+  });
+
   it('資料目錄不存在：非零結束並說明路徑', () => {
     const missing = join('tests', 'fixtures', 'no-such-dir');
     const { status, output } = run(missing);

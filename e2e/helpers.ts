@@ -42,8 +42,8 @@ export const stubPrint = (page: Page) =>
 
 export const printCalls = (page: Page) => page.evaluate(() => (window as unknown as { __prints: string[] }).__prints);
 
-/** 範例資料已知：數學 40 題、國語 16 題、自然 5 題，共 61 題 */
-export const EXAMPLE_TOTAL = 61;
+/** 範例資料已知：數學 40 題、國語 16 題、社會 5 題、自然 5 題，共 66 題 */
+export const EXAMPLE_TOTAL = 66;
 
 /** 題庫頁清單依 ID 排序（字串順序，與 compareIds 一致） */
 export const expectSorted = (ids: string[]) => expect(ids).toEqual([...ids].sort());

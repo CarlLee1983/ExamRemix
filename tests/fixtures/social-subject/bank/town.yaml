@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: "垃圾要依照分類丟進正確的回收桶。"
+    answer: true
+    explanation: "分類回收可以讓資源再利用。"
+    source:
+      originalPaper: 虛構社會小考
+      number: 1

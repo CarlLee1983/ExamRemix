@@ -39,9 +39,14 @@ test.describe('題庫瀏覽頁', () => {
     expect(math.every((id) => id.startsWith('sample-math-'))).toBe(true);
   });
 
+  test('科目篩選社會：只列出社會題', async ({ page }) => {
+    await filter(page, '科目', '社會');
+    expect(await ids(page)).toEqual(['sample-social-01', 'sample-social-02', 'sample-social-03', 'sample-social-04', 'sample-social-05']);
+  });
+
   test('年級與單元的選項只含資料裡實際出現的值，單元篩選有效', async ({ page }) => {
     await expect(page.getByLabel('年級').locator('option')).toHaveText(['全部', '3 年級']);
-    await expect(page.getByLabel('科目').locator('option')).toHaveText(['全部', '國語', '數學', '自然']);
+    await expect(page.getByLabel('科目').locator('option')).toHaveText(['全部', '國語', '數學', '社會', '自然']);
     const units = await page.getByLabel('單元').locator('option').allTextContents();
     expect(units[0]).toBe('全部');
     expect(units).toEqual(expect.arrayContaining(['乘法', '字音', '造句']));

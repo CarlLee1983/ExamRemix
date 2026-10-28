@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { bankComposition } from '../src/domain/composition.ts';
+import type { SUBJECTS } from '../src/domain/schema.ts';
 
-const entry = (subject: '國語' | '數學' | '自然', type: 'choice' | 'true-false' | 'word-problem') => ({ question: { subject, type } });
+const entry = (subject: (typeof SUBJECTS)[number], type: 'choice' | 'true-false' | 'word-problem') => ({ question: { subject, type } });
 
 describe('bankComposition', () => {
   it('依科目順序統計題數與各題型題數，題型依既定順序', () => {

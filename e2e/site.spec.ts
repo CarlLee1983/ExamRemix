@@ -54,10 +54,10 @@ test.describe('首頁：總覽', () => {
 
   test('題庫組成條：每個科目顯示題數與各題型題數，色段寬度依題數', async ({ page }) => {
     const mix = page.locator('#composition');
-    await expect(mix).toContainText('共 61 題');
+    await expect(mix).toContainText('共 66 題');
     const subjects = mix.locator('.mix-subject');
-    await expect(subjects).toHaveCount(3);
-    for (const [subject, count] of [['國語', 16], ['數學', 40], ['自然', 5]] as const) {
+    await expect(subjects).toHaveCount(4);
+    for (const [subject, count] of [['國語', 16], ['數學', 40], ['社會', 5], ['自然', 5]] as const) {
       const block = mix.locator(`.mix-subject[data-subject="${subject}"]`);
       await expect(block).toContainText(`${count} 題`);
       const bar = block.locator('.mix-bar');
@@ -67,6 +67,13 @@ test.describe('首頁：總覽', () => {
       expect(flex.reduce((a, b) => a + b, 0)).toBe(count);
     }
     await expect(mix.locator('.mix-subject[data-subject="數學"] .mix-bar')).toHaveAttribute('aria-label', /選擇題 22/);
+  });
+
+  test('社會的組成條色段有科目色底，不是透明', async ({ page }) => {
+    const spans = page.locator('#composition .mix-subject[data-subject="社會"] .mix-bar span');
+    // 色票內容由 tests/subject-colors.test.ts 檢查；這裡只確認實際套上了底色
+    await expect(spans.first()).not.toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
+    await expect(spans.nth(1)).not.toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
   });
 
   test('問候日期在瀏覽器端產生', async ({ page }) => {

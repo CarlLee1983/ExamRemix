@@ -1,0 +1,71 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 社區生活
+    stem: "社區裡的哪一個地方，可以讓居民借書、看報紙？"
+    options:
+      - "郵局"
+      - "圖書館"
+      - "消防隊"
+      - "市場"
+    answer: 2
+    explanation: "圖書館提供書籍和報紙，讓居民借閱。"
+    source:
+      originalPaper: 虛構三年級社會小考
+      number: 1
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 班級生活
+    stem: "班上要選出一位值日生，下面哪一種做法最公平？"
+    options:
+      - "由老師的好朋友當"
+      - "大家輪流，每個人都有機會"
+      - "只讓成績最好的人當"
+      - "誰先搶到誰當"
+    answer: 2
+    explanation: "輪流讓每位同學都有機會，才是公平的做法。"
+    source:
+      originalPaper: 虛構三年級社會小考
+      number: 2
+  - no: 3
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 社區生活
+    stem: "社區[公園|ㄍㄨㄥ ㄩㄢˊ]裡的垃圾桶滿出來了，可以請哪一個單位來清理？"
+    options:
+      - "學校"
+      - "醫院"
+      - "清潔隊"
+      - "銀行"
+    answer: 3
+    explanation: "清潔隊負責收運垃圾、維護環境整潔。"
+    source:
+      originalPaper: 虛構三年級社會小考
+      number: 3
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    unit: 班級生活
+    stem: "班級的公約是大家一起討論後訂出來，所有同學都要遵守。"
+    answer: true
+    explanation: "班級公約由全班討論訂定，每個人都有遵守的責任。"
+    source:
+      originalPaper: 虛構三年級社會小考
+      number: 4
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    unit: 社區生活
+    stem: "社區裡的活動只有大人才可以參加。"
+    answer: false
+    explanation: "許多社區活動，例如市集和環保志工，小朋友也可以參加。"
+    source:
+      originalPaper: 虛構三年級社會小考
+      number: 5

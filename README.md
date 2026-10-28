@@ -93,7 +93,7 @@ pnpm list:questions [資料目錄] [過濾條件]
 
 ### 題型
 
-每題都有共用欄位（`no`、`type`、`subject`、`grade`、選填的 `unit`、`stem`、`explanation`、選填的 `doubt`、`image` 與 `space`，以及原題的 `source` 或新題的 `derivedFrom` 擇一），`subject` 支援國語、數學、自然；`grade` 為 1 至 6。`no` 是檔內不重複的正整數，用來組成題目 ID；`stem`、`explanation` 都是非空文字；`doubt` 是一句說明哪裡可疑的非空文字，沒有疑點就省略。每題至多一個 `unit`，同一份原卷的不同題可以屬於不同單元，無法確定時省略。再加上各題型自己的欄位：
+每題都有共用欄位（`no`、`type`、`subject`、`grade`、選填的 `unit`、`stem`、`explanation`、選填的 `doubt`、`image` 與 `space`，以及原題的 `source` 或新題的 `derivedFrom` 擇一），`subject` 支援國語、數學、社會、自然；`grade` 為 1 至 6。`no` 是檔內不重複的正整數，用來組成題目 ID；`stem`、`explanation` 都是非空文字；`doubt` 是一句說明哪裡可疑的非空文字，沒有疑點就省略。每題至多一個 `unit`，同一份原卷的不同題可以屬於不同單元，無法確定時省略。再加上各題型自己的欄位：
 
 | `type` | 欄位 | 說明 |
 | --- | --- | --- |

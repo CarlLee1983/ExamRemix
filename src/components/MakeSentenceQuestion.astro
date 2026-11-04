@@ -17,7 +17,7 @@ const { number, question } = Astro.props;
 
 <div class="question question-make-sentence" data-question-type="make-sentence">
   <p class="stem">
-    <span class="number">{number}.</span>
+    <span class="number" lang="zh-Hant-TW">{number}.</span>
     <RichText text={question.stem} />
   </p>
   <QuestionFigure image={question.image} />

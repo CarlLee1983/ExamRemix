@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 
 const PAPERS = [
   { id: 'sample-chinese', title: '三年級國語試卷（範例）', subject: '國語', meta: '15 題・7 大題' },
+  { id: 'sample-english', title: '三年級英語練習（虛構範例）', subject: '英語', meta: '5 題・4 大題' },
   { id: 'sample-math', title: '三年級數學試卷（範例）', subject: '數學', meta: '39 題・9 大題' },
   { id: 'sample-science', title: '三年級自然練習（虛構範例）', subject: '自然', meta: '5 題・2 大題' },
   { id: 'sample-social', title: '三年級社會題組練習（虛構範例）', subject: '社會', meta: '4 題・3 大題' },
@@ -55,10 +56,10 @@ test.describe('首頁：總覽', () => {
 
   test('題庫組成條：每個科目顯示題數與各題型題數，色段寬度依題數', async ({ page }) => {
     const mix = page.locator('#composition');
-    await expect(mix).toContainText('共 69 題');
+    await expect(mix).toContainText('共 74 題');
     const subjects = mix.locator('.mix-subject');
-    await expect(subjects).toHaveCount(4);
-    for (const [subject, count] of [['國語', 16], ['數學', 40], ['社會', 8], ['自然', 5]] as const) {
+    await expect(subjects).toHaveCount(5);
+    for (const [subject, count] of [['國語', 16], ['英語', 5], ['數學', 40], ['社會', 8], ['自然', 5]] as const) {
       const block = mix.locator(`.mix-subject[data-subject="${subject}"]`);
       await expect(block).toContainText(`${count} 題`);
       const bar = block.locator('.mix-bar');

@@ -1,0 +1,58 @@
+groups:
+  - no: 1
+    paragraphs: ["Mia has a red book. She reads it in the park."]
+    members: [2, 3]
+    source: { originalPaper: 自編三年級英語練習, section: 閱讀 }
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 英語
+    grade: 3
+    unit: 字母
+    stem: "Copy the letters: ___ and ___."
+    answer: ["WWWWWWWW", "MMMMMMMM"]
+    explanation: "Copy eight capital Ws and eight capital Ms."
+    source: { originalPaper: 自編三年級英語練習, number: 1 }
+  - no: 2
+    type: choice
+    subject: 英語
+    grade: 3
+    unit: 閱讀
+    stem: "[圈選|ㄑㄩㄢ ㄒㄩㄢˇ] \\[is|are]: The book ___ red."
+    options: ["is", "are"]
+    answer: 1
+    explanation: "The book is red."
+    source: { originalPaper: 自編三年級英語練習, section: 閱讀, number: 2 }
+  - no: 3
+    type: true-false
+    subject: 英語
+    grade: 3
+    unit: 閱讀
+    stem: "Mia reads in the park."
+    answer: true
+    explanation: "She reads the book in the park."
+    source: { originalPaper: 自編三年級英語練習, section: 閱讀, number: 3 }
+  - no: 4
+    type: word-problem
+    subject: 英語
+    grade: 3
+    unit: 數量
+    stem: "I have two pens. You give me one pen. How many pens do I have now?"
+    answer: "Three pens."
+    explanation: "Two plus one is three."
+    space: 1
+    source: { originalPaper: 自編三年級英語練習, number: 4 }
+  - no: 5
+    type: matching
+    subject: 英語
+    grade: 3
+    unit: 詞語
+    stem: "Match each word to its meaning."
+    left:
+      - { content: "book", answer: "B" }
+      - { content: "park", answer: "A" }
+    right:
+      - { code: "A", content: "a place with trees and grass" }
+      - { code: "B", content: "something we read" }
+    explanation: "A book is something we read. A park has trees and grass."
+    source: { originalPaper: 自編三年級英語練習, number: 5 }

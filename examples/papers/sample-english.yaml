@@ -1,0 +1,13 @@
+title: 三年級英語練習（虛構範例）
+subject: 英語
+grade: 3
+sections:
+  - title: 一、字母填寫
+    points: 20
+    questions: [sample-english-01]
+  - title: 二、閱讀判斷
+    questions: [sample-english-02, sample-english-03]
+  - title: 三、閱讀應用
+    questions: [sample-english-04]
+  - title: 四、詞語配對
+    questions: [sample-english-05]

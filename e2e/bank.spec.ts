@@ -61,7 +61,7 @@ test.describe('題庫瀏覽頁', () => {
 
   test('年級與單元的選項只含資料裡實際出現的值，單元篩選有效', async ({ page }) => {
     await expect(page.getByLabel('年級').locator('option')).toHaveText(['全部', '3 年級']);
-    await expect(page.getByLabel('科目').locator('option')).toHaveText(['全部', '國語', '數學', '社會', '自然']);
+    await expect(page.getByLabel('科目').locator('option')).toHaveText(['全部', '國語', '英語', '數學', '社會', '自然']);
     const units = await page.getByLabel('單元').locator('option').allTextContents();
     expect(units[0]).toBe('全部');
     expect(units).toEqual(expect.arrayContaining(['乘法', '字音', '造句']));
@@ -161,6 +161,7 @@ test.describe('題庫瀏覽頁', () => {
 test.describe('試卷列表', () => {
   const PAPERS = [
     { id: 'sample-chinese', title: '三年級國語試卷（範例）', subject: '國語', questions: 15 },
+    { id: 'sample-english', title: '三年級英語練習（虛構範例）', subject: '英語', questions: 5 },
     { id: 'sample-math', title: '三年級數學試卷（範例）', subject: '數學', questions: 39 },
     { id: 'sample-science', title: '三年級自然練習（虛構範例）', subject: '自然', questions: 5 },
     { id: 'sample-social', title: '三年級社會題組練習（虛構範例）', subject: '社會', questions: 4 },

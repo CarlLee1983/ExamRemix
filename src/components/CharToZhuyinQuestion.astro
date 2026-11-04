@@ -20,14 +20,14 @@ const { segments } = parseZhuyin(question.stem);
 <div class="question question-char-to-zhuyin" data-question-type="char-to-zhuyin">
   <p class="stem">
     {/* 被考的字與作答格、作答格與前後文字之間不留空白字元，答案卷切換時位置才不會動 */}
-    <span class="number">{number}.</span>
+    <span class="number" lang="zh-Hant-TW">{number}.</span>
     {
       segments.map((segment) =>
         segment.kind === 'text' ? (
           segment.text
         ) : (
           <>
-            <span class="target-char">{segment.chars.map(({ char }) => char).join('')}</span><span class="zhuyin-cell" style={`--syllables: ${segment.chars.length}`}><span class="cell-answer">{segment.chars.map(({ zhuyin }) => zhuyin).join(' ')}</span></span>
+            <span class="target-char" lang="zh-Hant-TW">{segment.chars.map(({ char }) => char).join('')}</span><span class="zhuyin-cell" lang="zh-Hant-TW" style={`--syllables: ${segment.chars.length}`}><span class="cell-answer">{segment.chars.map(({ zhuyin }) => zhuyin).join(' ')}</span></span>
           </>
         ),
       )

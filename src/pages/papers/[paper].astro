@@ -1,5 +1,6 @@
 ---
 import Icon from '../../components/Icon.astro';
+import { questionLanguage } from '../../domain/question-language';
 import GroupMaterial from '../../components/GroupMaterial.astro';
 import Question from '../../components/Question.astro';
 import { firstNumbers } from '../../domain/paper-numbers.ts';
@@ -65,7 +66,7 @@ const numbers = firstNumbers(sections);
               </h2>
               {section.questions.map((question, i) => (
                 <>
-                  {section.materials[i] && <GroupMaterial membership={section.materials[i]} />}
+                  {section.materials[i] && <GroupMaterial membership={section.materials[i]} language={questionLanguage(question.subject)} />}
                   <Question number={numbers[s]! + i} question={question} />
                 </>
               ))}

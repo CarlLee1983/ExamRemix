@@ -21,15 +21,16 @@ export function hasOverlongUnderscores(stem: string): boolean {
 
 /**
  * 空格底線的寬度（單位 em）：半形字元 0.6em、其餘（全形）1em，再加 1em 左右留白。
+ * 英語的半形字元保留 1em，容納拉丁字型的 W／M；其他科目沿用原估算。
  * 寬度刻意依答案字數決定，試卷與答案卷同寬，所以試卷上看得出答案有幾個字，這是已知的取捨。
  */
-export function blankWidthEm(answer: string): number {
+export function blankWidthEm(answer: string, language?: 'en'): number {
   let width = 1;
-  for (const char of answer) width += char.codePointAt(0)! <= 0x7f ? 0.6 : 1;
+  for (const char of answer) width += char.codePointAt(0)! <= 0x7f && language !== 'en' ? 0.6 : 1;
   return Math.round(width * 100) / 100;
 }
 
 /** 答案文字（可含注音標注與數學式）的空格底線寬度；填空題與橫式計算共用。 */
-export function answerBlankWidthEm(answer: string): number {
-  return blankWidthEm(richPlainText(parseRichText(answer).segments));
+export function answerBlankWidthEm(answer: string, language?: 'en'): number {
+  return blankWidthEm(richPlainText(parseRichText(answer).segments), language);
 }

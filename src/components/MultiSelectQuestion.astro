@@ -17,7 +17,7 @@ const { number, question } = Astro.props;
 ---
 
 <div class="question question-multi-select" data-question-type="multi-select">
-  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <p class="stem"><span class="number" lang="zh-Hant-TW">{number}.</span><RichText text={question.stem} /></p>
   <QuestionFigure image={question.image} />
   <ol class="check-options">
     {question.options.map((option, i) => (

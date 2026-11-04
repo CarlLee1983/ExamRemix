@@ -50,8 +50,8 @@ test('配對題以兩欄黑點保留連線空間，答案卷在左側原位置�
 test('題庫可篩選配對題，圖文與答案完整顯示，首頁只計一題', async ({ page }) => {
   await page.goto('/bank/');
   await page.getByLabel('題型').selectOption({ label: '配對題' });
-  const item = page.locator('.bank-item:visible');
-  await expect(item).toHaveCount(1);
+  await expect(page.locator('.bank-item:visible')).toHaveCount(2);
+  const item = page.locator('.bank-item[data-id="sample-social-08"]');
   await expect(item.locator('.question-id')).toHaveText('sample-social-08');
   await item.locator('summary').click();
   await expect(item.locator('.matching-left .answer:visible')).toHaveCount(3);

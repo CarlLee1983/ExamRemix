@@ -16,7 +16,7 @@ const { number, question } = Astro.props;
 ---
 
 <div class="question question-matching" data-question-type="matching">
-  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <p class="stem"><span class="number" lang="zh-Hant-TW">{number}.</span><RichText text={question.stem} /></p>
   <QuestionFigure image={question.image} />
   <div class="matching-board">
     <ol class="matching-column matching-left" aria-label="左側題目">

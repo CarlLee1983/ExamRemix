@@ -17,11 +17,11 @@ const { number, question } = Astro.props;
 
 <div class="question question-imitate-sentence" data-question-type="imitate-sentence">
   <p class="stem">
-    <span class="number">{number}.</span>
+    <span class="number" lang="zh-Hant-TW">{number}.</span>
     <RichText text={question.stem} />
   </p>
   <QuestionFigure image={question.image} />
-  <p class="example"><span class="example-label">例句：</span><RichText text={question.example} /></p>
+  <p class="example"><span class="example-label" lang="zh-Hant-TW">例句：</span><RichText text={question.example} /></p>
   <SentenceLines answer={question.answer} lines={answerSpace(question)} />
   <Explanation text={question.explanation} />
 </div>

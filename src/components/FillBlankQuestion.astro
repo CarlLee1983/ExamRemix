@@ -1,4 +1,5 @@
 ---
+import { questionLanguage } from '../domain/question-language';
 import { answerSpace } from '../domain/answer-space';
 import { answerBlankWidthEm, splitStem } from '../domain/blank';
 import type { FillBlankQuestion } from '../domain/schema';
@@ -21,13 +22,13 @@ const parts = splitStem(question.stem);
 <div class="question question-fill-blank" data-question-type="fill-blank">
   <p class="stem">
     {/* 空格與前後文字之間不留空白字元，答案卷切換時底線位置才不會動 */}
-    <span class="number">{number}.</span>
+    <span class="number" lang="zh-Hant-TW">{number}.</span>
     {
       parts.map((part, i) => (
         <>
           <RichText text={part} />
           {i < question.answer.length && (
-            <span class="blank" style={`--blank-width: ${answerBlankWidthEm(question.answer[i]!)}em`}><span class="blank-answer"><RichText text={question.answer[i]!} /></span></span>
+            <span class="blank" style={`--blank-width: ${answerBlankWidthEm(question.answer[i]!, questionLanguage(question.subject))}em`}><span class="blank-answer"><RichText text={question.answer[i]!} /></span></span>
           )}
         </>
       ))

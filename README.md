@@ -384,3 +384,7 @@ pnpm test:e2e      # Playwright：以範例資料建置後測試首頁、題庫�
 ## 隱私
 
 原卷照片 / PDF 放在 `inputs/`，已被 `.gitignore` 排除，不會推上 GitHub。
+
+## 正式部署決策
+
+正式網址採用 `https://examremix.gravito.dev/`，託管、發布及回復方式見[部署決策與操作契約](docs/deployment.md)。本機程式／正式資料整合及發布流程仍待完成；此文件不表示網站已上線。

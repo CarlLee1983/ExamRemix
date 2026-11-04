@@ -1,5 +1,6 @@
 // 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在的題目、疑點（ADR 0003）。
 // 純函式，輸入是已通過 schema 的題庫檔與試卷檔，不讀檔、不依賴 Astro（ADR 0002）。
+import { effectiveDoubt, groupMembership } from './question-groups.ts';
 import { hasDoubt } from './doubt.ts';
 import { fileNameProblem } from './file-name.ts';
 import type { Problem } from './problem.ts';
@@ -103,6 +104,11 @@ export function checkBank(input: {
 
   const images = new Set(input.images);
   for (const bank of banks) {
+    for (const group of bank.data.groups ?? []) {
+      if (group.image && !images.has(group.image.src)) {
+        addError({ files: [bank.file], message: `題組 ${bank.name}#${group.no} 找不到附圖 ${group.image.src}（圖片要放在 bank/ 底下，路徑相對於 bank/）` });
+      }
+    }
     for (const question of bank.data.questions) {
       for (const src of imageReferences(question)) {
         if (images.has(src)) continue;
@@ -117,6 +123,7 @@ export function checkBank(input: {
   }
 
   const index = buildQuestionIndex(banks);
+  const membership = groupMembership(banks);
 
   // 衍生規則：新題只能衍生自沒有疑點的原題，且題型、科目、年級、單元都與原題一致
   for (const bank of banks) {
@@ -152,17 +159,29 @@ export function checkBank(input: {
   }
 
   for (const paper of papers) {
-    for (const section of paper.data.sections) {
-      for (const id of section.questions) {
+    const groupPositions = new Map<string, { section: number; index: number }>();
+    for (const [sectionIndex, section] of paper.data.sections.entries()) {
+      for (const [questionIndex, id] of section.questions.entries()) {
+        const group = membership.get(id);
+        if (group) {
+          const previous = groupPositions.get(group.id);
+          if (previous && previous.section !== sectionIndex) {
+            addError({ files: [paper.file], questionId: id, message: `題組 ${group.id} 的題目必須在同一大題` });
+          } else if (previous && previous.index !== questionIndex - 1) {
+            addError({ files: [paper.file], questionId: id, message: `題組 ${group.id} 的題目必須連續排列` });
+          }
+          groupPositions.set(group.id, { section: sectionIndex, index: questionIndex });
+        }
+
         const question = index.get(id);
         if (!question) {
           addError({ files: [paper.file], questionId: id, message: `試卷引用了不存在的題目 ID ${id}` });
-        } else if (hasDoubt(question)) {
+        } else if (effectiveDoubt(question, membership.get(id)) !== undefined) {
           // 已組好的試卷引用到有疑點的題目只提出警告，不讓建置停擺
           addWarning({
             files: [paper.file],
             questionId: id,
-            message: `試卷引用了有疑點的題目 ${id}：${question.doubt}`,
+            message: `試卷引用了有疑點的題目 ${id}：${effectiveDoubt(question, membership.get(id))}`,
           });
         }
       }

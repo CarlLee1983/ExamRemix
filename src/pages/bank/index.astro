@@ -58,7 +58,7 @@ const filters = [
     <span class="muted" id="count" role="status"></span>
   </form>
   <div class="card bank-list" id="items">
-    {entries.map(({ id, question }) => <BankItem id={id} question={question} usedIn={usage.get(id) ?? []} />)}
+    {entries.map(({ id, question, group }) => <BankItem id={id} question={question} group={group} usedIn={usage.get(id) ?? []} />)}
   </div>
   {/* 複製 ID 的結果，給讀屏軟體用；畫面上看不到 */}
   <p class="sr-only" id="announce" role="status"></p>

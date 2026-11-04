@@ -1,3 +1,9 @@
+groups:
+  - no: 1
+    paragraphs:
+      - "社區準備舉辦親子環境日，小朋友和大人一起參加。大家先到圖書館查資料，再到公園整理環境。"
+    members: [1, 3, 5]
+    source: { originalPaper: 虛構三年級社會小考, section: 社區生活 }
 questions:
   - no: 1
     type: choice

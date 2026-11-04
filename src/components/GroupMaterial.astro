@@ -1,0 +1,17 @@
+---
+import type { GroupMembership } from '../domain/question-groups';
+import QuestionFigure from './QuestionFigure.astro';
+import RichText from './RichText.astro';
+
+interface Props {
+  membership: GroupMembership;
+}
+
+const { membership } = Astro.props;
+---
+
+<div class="question-material" data-group-id={membership.id}>
+  <p class="material-label">共用材料</p>
+  {membership.group.paragraphs.map((paragraph) => <p class="material-paragraph"><RichText text={paragraph} /></p>)}
+  <QuestionFigure image={membership.group.image} />
+</div>

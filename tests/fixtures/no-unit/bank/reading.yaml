@@ -1,0 +1,59 @@
+groups:
+  - no: 1
+    paragraphs:
+      - "小安和小文在[公園|ㄍㄨㄥ ㄩㄢˊ]一起種了 $2$ 棵樹。"
+      - "兩人輪流澆水。"
+    image: { src: "reading/tree.svg", alt: "樹的示意圖" }
+    members: [1, 2, 3]
+    source: { originalPaper: "自編閱讀練習", section: "閱讀" }
+  - no: 2
+    paragraphs: ["星期天，大家整理社區環境。"]
+    members: [4]
+questions:
+  - no: 1
+    type: choice
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: "孩子們在哪裡？"
+    options: ["公園", "學校"]
+    answer: 1
+    explanation: "短文寫在公園。"
+    source: { originalPaper: "自編閱讀練習", number: 1 }
+  - no: 2
+    type: true-false
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: "兩人輪流澆水。"
+    answer: true
+    explanation: "兩人輪流照顧樹。"
+    source: { originalPaper: "自編閱讀練習", number: 2 }
+  - no: 3
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: "兩人種了___棵樹。"
+    answer: ["2"]
+    explanation: "材料寫了2棵樹。"
+    source: { originalPaper: "自編閱讀練習", number: 3 }
+  - no: 4
+    type: choice
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: "大家星期幾整理環境？"
+    options: ["星期天", "星期一"]
+    answer: 1
+    explanation: "大家星期天整理環境。"
+    source: { originalPaper: "自編閱讀練習", number: 4 }
+  - no: 5
+    type: true-false
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: "整理環境是愛護社區的做法。"
+    answer: true
+    explanation: "保持環境整潔是愛護社區。"
+    source: { originalPaper: "自編閱讀練習", number: 5 }

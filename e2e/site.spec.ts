@@ -4,6 +4,7 @@ const PAPERS = [
   { id: 'sample-chinese', title: '三年級國語試卷（範例）', subject: '國語', meta: '15 題・7 大題' },
   { id: 'sample-math', title: '三年級數學試卷（範例）', subject: '數學', meta: '39 題・9 大題' },
   { id: 'sample-science', title: '三年級自然練習（虛構範例）', subject: '自然', meta: '5 題・2 大題' },
+  { id: 'sample-social', title: '三年級社會題組練習（虛構範例）', subject: '社會', meta: '2 題・1 大題' },
 ];
 
 test.describe('共用外殼', () => {

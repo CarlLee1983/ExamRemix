@@ -325,10 +325,21 @@ export const questionSchema = z
     }
   });
 
+/** 共用閱讀材料；題號指向同一題庫檔內的小題，可在試卷中個別選用。 */
+export const questionGroupSchema = z.strictObject({
+  no: z.number().int().positive(),
+  paragraphs: z.array(richText.refine((paragraph) => paragraph.trim().length > 0, '閱讀材料不可只有空白')).min(1),
+  image: imageSchema.optional(),
+  members: z.array(z.number().int().positive()).min(1),
+  source: sourceSchema.optional(),
+  doubt: nonEmptyText.optional(),
+});
+
 /** 題庫檔：一個檔案是一份原卷，或一次產生的新題。 */
 export const bankFileSchema = z
   .strictObject({
     questions: z.array(questionSchema).min(1),
+    groups: z.array(questionGroupSchema).optional(),
   })
   .superRefine((file, ctx) => {
     // 檔內 no 不可重複，否則題目 ID 會撞名；跨檔的 ID 重複是另一層檢查
@@ -342,6 +353,36 @@ export const bankFileSchema = z
         });
       }
       seen.add(q.no);
+    });
+
+    const groupNumbers = new Set<number>();
+    const grouped = new Set<number>();
+    const questions = new Map(file.questions.map((q) => [q.no, q]));
+    file.groups?.forEach((group, i) => {
+      if (groupNumbers.has(group.no)) {
+        ctx.addIssue({ code: 'custom', path: ['groups', i, 'no'], message: `題組 no ${group.no} 在同一個題庫檔內重複` });
+      }
+      groupNumbers.add(group.no);
+      let subject: string | undefined;
+      let grade: number | undefined;
+      group.members.forEach((no, j) => {
+        const path = ['groups', i, 'members', j];
+        if (grouped.has(no)) ctx.addIssue({ code: 'custom', path, message: `題目 ${no} 不可重複屬於題組` });
+        grouped.add(no);
+        const question = questions.get(no);
+        if (!question) {
+          ctx.addIssue({ code: 'custom', path, message: `題組成員 ${no} 不在本題庫檔內` });
+          return;
+        }
+        if (group.source && (!question.source || question.source.originalPaper !== group.source.originalPaper)) {
+          ctx.addIssue({ code: 'custom', path, message: '原題組成員須為同一原卷的原題' });
+        }
+        subject ??= question.subject;
+        grade ??= question.grade;
+        if (question.subject !== subject || question.grade !== grade) {
+          ctx.addIssue({ code: 'custom', path, message: '同一題組成員的科目與年級必須一致' });
+        }
+      });
     });
   });
 
@@ -361,6 +402,7 @@ export const paperFileSchema = z.strictObject({
   sections: z.array(sectionSchema).min(1),
 });
 
+export type QuestionGroup = z.infer<typeof questionGroupSchema>;
 export type Question = z.infer<typeof questionSchema>;
 export type ChoiceQuestion = z.infer<typeof choiceQuestionSchema>;
 export type MultiSelectQuestion = z.infer<typeof multiSelectQuestionSchema>;

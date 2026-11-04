@@ -59,3 +59,18 @@ test('題庫展開個別組員仍顯示完整共用材料', async ({ page }) => 
     await expect(item.getByRole('img', { name: '樹的示意圖' })).toBeVisible();
   }
 });
+
+test('衍生題組建置後呈現新材料與新答案，原材料不混入試卷', async ({ page }) => {
+  await page.goto(`${FIXTURE_URL}/papers/derived-reading/`);
+  const material = page.locator('.question-material');
+  await expect(material).toHaveCount(1);
+  await expect(material).toHaveAttribute('data-group-id', 'derived-reading#2');
+  await expect(material.locator('.material-paragraph')).toHaveText('小文星期天在圖書館借了三本書。');
+  await expect(page.locator('.paper')).not.toContainText('小安');
+  await expect(page.locator('.question')).toHaveCount(2);
+  await expect(page.locator('.answer:visible, .explanation:visible')).toHaveCount(0);
+  await page.getByRole('button', { name: '顯示答案卷' }).click();
+  await expect(page.locator('.question').nth(0).locator('.answer')).toHaveText('✕');
+  await expect(page.locator('.question').nth(1).locator('.answer')).toHaveText('2');
+  await expect(page.locator('.explanation:visible')).toHaveCount(2);
+});

@@ -386,6 +386,11 @@ export const questionGroupSchema = z.strictObject({
   members: z.array(z.number().int().positive()).min(1),
   source: sourceSchema.optional(),
   doubt: nonEmptyText.optional(),
+  /** 單一原題組 ID；組內新題仍各自記錄對應原題 ID。 */
+  derivedFrom: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*#[1-9]\d*$/, '原題組 ID 格式為「題庫檔名#正整數」').optional(),
+}).refine((group) => group.source === undefined || group.derivedFrom === undefined, {
+  path: ['derivedFrom'],
+  message: '原題組（source）與新題組（derivedFrom）不可同時存在',
 });
 
 /** 題庫檔：一個檔案是一份原卷，或一次產生的新題。 */
@@ -429,6 +434,9 @@ export const bankFileSchema = z
         }
         if (group.source && (!question.source || question.source.originalPaper !== group.source.originalPaper)) {
           ctx.addIssue({ code: 'custom', path, message: '原題組成員須為同一原卷的原題' });
+        }
+        if (group.derivedFrom && !question.derivedFrom) {
+          ctx.addIssue({ code: 'custom', path, message: '新題組成員須為新題' });
         }
         subject ??= question.subject;
         grade ??= question.grade;

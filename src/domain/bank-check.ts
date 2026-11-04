@@ -1,10 +1,9 @@
 // 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在的題目、疑點（ADR 0003）。
 // 純函式，輸入是已通過 schema 的題庫檔與試卷檔，不讀檔、不依賴 Astro（ADR 0002）。
 import { effectiveDoubt, groupMembership } from './question-groups.ts';
-import { hasDoubt } from './doubt.ts';
 import { fileNameProblem } from './file-name.ts';
 import type { Problem } from './problem.ts';
-import { deriveQuestionId, type BankFile, type PaperFile, type Question, type VisualText } from './schema.ts';
+import { deriveQuestionId, type BankFile, type PaperFile, type Question, type QuestionGroup, type VisualText } from './schema.ts';
 
 /** 題庫檔：name 是題庫檔名（不含副檔名，用來組題目 ID），file 是相對於資料根目錄的路徑。 */
 export interface BankInput {
@@ -128,6 +127,34 @@ export function checkBank(input: {
 
   const index = buildQuestionIndex(banks);
   const membership = groupMembership(banks);
+  const groups = new Map<string, { bankName: string; group: QuestionGroup }>();
+  for (const bank of banks) {
+    for (const group of bank.data.groups ?? []) groups.set(`${bank.name}#${group.no}`, { bankName: bank.name, group });
+  }
+  for (const bank of banks) {
+    for (const group of bank.data.groups ?? []) {
+      if (!group.derivedFrom) continue;
+      const report = (message: string) => addError({ files: [bank.file], message: `新題組 ${bank.name}#${group.no} ${message}` });
+      const original = groups.get(group.derivedFrom);
+      if (!original) {
+        report(`衍生自不存在的原題組 ${group.derivedFrom}`);
+        continue;
+      }
+      if (original.group.derivedFrom) report(`衍生自 ${group.derivedFrom}，但它也是新題組`);
+      if (original.group.doubt !== undefined) report(`衍生自的原題組 ${group.derivedFrom} 有疑點：${original.group.doubt}`);
+      if (group.members.length !== original.group.members.length) report(`與原題組 ${group.derivedFrom} 的小題數不一致`);
+      group.members.forEach((no, i) => {
+        const originalNo = original.group.members[i];
+        if (originalNo === undefined) return;
+        const id = deriveQuestionId(bank.name, no);
+        const expected = deriveQuestionId(original.bankName, originalNo);
+        const question = index.get(id);
+        if (question?.derivedFrom?.length !== 1 || question.derivedFrom[0] !== expected) {
+          report(`的成員 ${id} 須只衍生自對應的 ${expected}`);
+        }
+      });
+    }
+  }
 
   // 衍生規則：新題只能衍生自沒有疑點的原題，且題型、科目、年級、單元都與原題一致
   for (const bank of banks) {
@@ -143,7 +170,12 @@ export function checkBank(input: {
           continue;
         }
         originals.push([originalId, original]);
-        if (hasDoubt(original)) report(`新題 ${id} 衍生自有疑點的原題 ${originalId}：${original.doubt}（請先解除原題的疑點，或改從其他原題衍生）`);
+        const originalGroup = membership.get(originalId);
+        if (originalGroup && membership.get(id)?.group.derivedFrom !== originalGroup.id) {
+          report(`新題 ${id} 衍生自題組成員 ${originalId}，必須與整個原題組一一對應`);
+        }
+        const doubt = effectiveDoubt(original, originalGroup);
+        if (doubt !== undefined) report(`新題 ${id} 衍生自有疑點的原題 ${originalId}：${doubt}（請先解除原題的疑點，或改從其他原題衍生）`);
         if (original.derivedFrom) report(`新題 ${id} 衍生自 ${originalId}，但它也是新題；新題只能衍生自原題`);
         const diff = mismatches(question, original, '新題', '原題');
         if (diff.length > 0) report(`新題 ${id} 與原題 ${originalId} 的${diff.join('、')}不一致`);

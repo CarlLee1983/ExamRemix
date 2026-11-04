@@ -70,7 +70,8 @@
   font-size: var(--fs-body);
 }
 
-.item-body .answer {
+.item-body .answer,
+.item-body .classification-measure {
   font-weight: 700;
 }
 

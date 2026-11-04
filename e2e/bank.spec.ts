@@ -41,7 +41,7 @@ test.describe('題庫瀏覽頁', () => {
 
   test('科目篩選社會：只列出社會題', async ({ page }) => {
     await filter(page, '科目', '社會');
-    expect(await ids(page)).toEqual(['sample-social-01', 'sample-social-02', 'sample-social-03', 'sample-social-04', 'sample-social-05', 'sample-social-06']);
+    expect(await ids(page)).toEqual(['sample-social-01', 'sample-social-02', 'sample-social-03', 'sample-social-04', 'sample-social-05', 'sample-social-06', 'sample-social-07']);
   });
 
   test('\\[ 跳脫的方括號原樣顯示為 [是|否]，不產生注音', async ({ page }) => {
@@ -163,7 +163,7 @@ test.describe('試卷列表', () => {
     { id: 'sample-chinese', title: '三年級國語試卷（範例）', subject: '國語', questions: 15 },
     { id: 'sample-math', title: '三年級數學試卷（範例）', subject: '數學', questions: 39 },
     { id: 'sample-science', title: '三年級自然練習（虛構範例）', subject: '自然', questions: 5 },
-    { id: 'sample-social', title: '三年級社會題組練習（虛構範例）', subject: '社會', questions: 2 },
+    { id: 'sample-social', title: '三年級社會題組練習（虛構範例）', subject: '社會', questions: 3 },
   ];
 
   test('列出範例試卷，顯示科目、年級與題數', async ({ page }) => {

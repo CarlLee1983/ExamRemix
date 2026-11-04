@@ -148,6 +148,35 @@ export const multiSelectQuestionSchema = questionBase
     });
   });
 
+const classificationText = richText.refine((text) => text.trim().length > 0, '分類內容不可只有空白');
+
+/** 各敘述的 answer 是從 1 起算的類別編號；整組敘述屬於同一道題。 */
+export const classificationQuestionSchema = questionBase.extend({
+  type: z.literal('classification'),
+  categories: z.array(z.strictObject({
+    name: classificationText,
+    /** 作答符號是原樣顯示的識別文字，不解析注音或數學式。 */
+    symbol: nonEmptyText.refine((symbol) => symbol.trim().length > 0, '作答符號不可只有空白'),
+  })).min(2),
+  statements: z.array(z.strictObject({ text: classificationText, answer: z.number().int().positive() })).min(1),
+}).superRefine((q, ctx) => {
+  for (const field of ['name', 'symbol'] as const) {
+    const seen = new Set<string>();
+    q.categories.forEach((category, index) => {
+      const value = category[field].trim().normalize('NFC');
+      if (seen.has(value)) {
+        ctx.addIssue({ code: 'custom', path: ['categories', index, field], message: field === 'name' ? '類別名稱不可重複' : '作答符號不可重複' });
+      }
+      seen.add(value);
+    });
+  }
+  q.statements.forEach((statement, index) => {
+    if (statement.answer > q.categories.length) {
+      ctx.addIssue({ code: 'custom', path: ['statements', index, 'answer'], message: '答案必須落在類別編號範圍內' });
+    }
+  });
+});
+
 /** 標示空格位置與大小相對於整張圖，以百分比表示；答案與空格一起保存。 */
 const diagramLabelSchema = z
   .strictObject({
@@ -299,6 +328,7 @@ export const questionSchema = z
   .discriminatedUnion('type', [
     choiceQuestionSchema,
     multiSelectQuestionSchema,
+    classificationQuestionSchema,
     diagramLabelQuestionSchema,
     tableFillQuestionSchema,
     trueFalseQuestionSchema,
@@ -405,6 +435,7 @@ export const paperFileSchema = z.strictObject({
 export type QuestionGroup = z.infer<typeof questionGroupSchema>;
 export type Question = z.infer<typeof questionSchema>;
 export type ChoiceQuestion = z.infer<typeof choiceQuestionSchema>;
+export type ClassificationQuestion = z.infer<typeof classificationQuestionSchema>;
 export type MultiSelectQuestion = z.infer<typeof multiSelectQuestionSchema>;
 export type DiagramLabelQuestion = z.infer<typeof diagramLabelQuestionSchema>;
 export type TableFillQuestion = z.infer<typeof tableFillQuestionSchema>;

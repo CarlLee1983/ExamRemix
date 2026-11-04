@@ -86,3 +86,20 @@ questions:
     source:
       originalPaper: 虛構三年級社會小考
       number: 6
+  - no: 7
+    type: classification
+    subject: 社會
+    grade: 3
+    unit: 生活場域
+    stem: "請依活動所屬的生活場域，在括號中填入對應符號。"
+    categories:
+      - { name: "[家庭|ㄐㄧㄚ ㄊㄧㄥˊ]生活", symbol: "△" }
+      - { name: "學校生活", symbol: "○" }
+      - { name: "社區生活", symbol: "□" }
+    statements:
+      - { text: "和家人一起整理客廳。", answer: 1 }
+      - { text: "參加班會，和同學討論班級公約。", answer: 2 }
+      - { text: "和鄰居一起參加社區清潔活動，整理大家共同使用的公園，並將收集的垃圾分類後交給清潔隊。", answer: 3 }
+      - { text: "晚餐後和家人分享今天的生活。", answer: 1 }
+    explanation: "整理家務及家人分享屬於家庭生活；班會屬於學校生活；維護社區公園屬於社區生活。"
+    source: { originalPaper: "虛構三年級社會小考", section: "生活場域分類", number: 7 }

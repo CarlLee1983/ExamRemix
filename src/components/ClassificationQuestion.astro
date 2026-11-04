@@ -1,0 +1,38 @@
+---
+import { answerSpace } from '../domain/answer-space';
+import type { ClassificationQuestion } from '../domain/schema';
+import AnswerSpace from './AnswerSpace.astro';
+import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
+import RichText from './RichText.astro';
+
+interface Props {
+  number: number;
+  question: ClassificationQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-classification" data-question-type="classification">
+  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <QuestionFigure image={question.image} />
+  <ul class="classification-categories">
+    {question.categories.map((category) => (
+      <li><span class="classification-category-symbol">{category.symbol}</span>：<RichText text={category.name} /></li>
+    ))}
+  </ul>
+  <ul class="classification-statements">
+    {question.statements.map((statement) => (
+      <li>
+        <span class="classification-slot">（<span class="classification-symbol">
+          {/* 所有類別符號共同決定格寬，避免用格寬洩漏答案；隱藏的副本不交給讀屏。 */}
+          {question.categories.map((category) => <span class="classification-measure" aria-hidden="true">{category.symbol}</span>)}
+          <span class="answer">{question.categories[statement.answer - 1]!.symbol}</span>
+        </span>）</span><span><RichText text={statement.text} /></span>
+      </li>
+    ))}
+  </ul>
+  <AnswerSpace lines={answerSpace(question)} />
+  <Explanation text={question.explanation} />
+</div>

@@ -20,7 +20,7 @@ const space = answerSpace(question);
 <div class="question question-true-false" data-question-type="true-false">
   <p class="stem">
     {/* 括號、題號之間刻意不留空白字元，理由同選擇題 */}
-    <AnswerBracket answer={question.answer ? '○' : '✕'} /><span class="number">{number}.</span>
+    <AnswerBracket answer={question.answer ? '○' : '✕'} /><span class="number" lang="zh-Hant-TW">{number}.</span>
     <RichText text={question.stem} />
   </p>
   <QuestionFigure image={question.image} />

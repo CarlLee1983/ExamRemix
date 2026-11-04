@@ -16,7 +16,7 @@ const { number, question } = Astro.props;
 ---
 
 <div class="question question-table-fill" data-question-type="table-fill">
-  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <p class="stem"><span class="number" lang="zh-Hant-TW">{number}.</span><RichText text={question.stem} /></p>
   <QuestionFigure image={question.image} />
   <table class="answer-table">
     <thead><tr><th aria-hidden="true"></th>{question.columns.map((column) => <th scope="col"><VisualText content={column} /></th>)}</tr></thead>

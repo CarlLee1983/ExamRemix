@@ -15,7 +15,7 @@ const { number, question } = Astro.props;
 ---
 
 <div class="question question-diagram-label" data-question-type="diagram-label">
-  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <p class="stem"><span class="number" lang="zh-Hant-TW">{number}.</span><RichText text={question.stem} /></p>
   <figure class="diagram-figure">
     <div class="diagram-frame">
       <img src={imageUrl(question.image.src)} alt={question.image.alt} />

@@ -586,3 +586,15 @@ html[data-mode='answer'] .explanation {
     box-shadow: none;
   }
 }
+
+/* 語言只在內容入口設定，讓 KaTeX 等有自己字型的內容維持原樣。 */
+.question-content:lang(en),
+.material-paragraph:lang(en) {
+  font-family: var(--font-english);
+}
+
+/* 題號、作答括號與中文標籤保留原字型，英語題的中文注音亦同。 */
+.question-content [lang|='zh'],
+.material-paragraph [lang|='zh'] {
+  font-family: var(--font-text);
+}

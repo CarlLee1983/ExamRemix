@@ -8,6 +8,7 @@
 
   /* 字體與字級：14／16／20／40／88 五階 */
   --font-text: 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  --font-english: Arial, 'Helvetica Neue', var(--font-text);
   --font-mono: 'SF Mono', ui-monospace, Menlo, monospace;
   --fs-small: 14px;
   --fs-body: 16px;
@@ -44,6 +45,10 @@
   --zh-soft: #ffece3;
   --zh-mid: #f7b79a;
   --zh-text: #9a3412;
+  --en: #15803d;
+  --en-soft: #edf9ef;
+  --en-mid: #a7dcb5;
+  --en-text: #166534;
   --ma: #0e7490;
   --ma-soft: #e2f4f7;
   --ma-mid: #8fd0dc;

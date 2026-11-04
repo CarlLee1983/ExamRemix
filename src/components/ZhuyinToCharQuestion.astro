@@ -20,13 +20,13 @@ const { segments } = parseZhuyin(question.stem);
 <div class="question question-zhuyin-to-char" data-question-type="zhuyin-to-char">
   <p class="stem">
     {/* 每個被考的字一個作答格，注音是格子上方的 ruby；格子之間不留空白字元 */}
-    <span class="number">{number}.</span>
+    <span class="number" lang="zh-Hant-TW">{number}.</span>
     {
       segments.map((segment) =>
         segment.kind === 'text'
           ? segment.text
           : segment.chars.map(({ char, zhuyin }) => (
-              <ruby><span class="char-cell"><span class="cell-answer">{char}</span></span><rp>(</rp><rt>{zhuyin}</rt><rp>)</rp></ruby>
+              <ruby lang="zh-Hant-TW"><span class="char-cell"><span class="cell-answer">{char}</span></span><rp>(</rp><rt>{zhuyin}</rt><rp>)</rp></ruby>
             )),
       )
     }

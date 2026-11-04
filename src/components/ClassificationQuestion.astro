@@ -15,7 +15,7 @@ const { number, question } = Astro.props;
 ---
 
 <div class="question question-classification" data-question-type="classification">
-  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <p class="stem"><span class="number" lang="zh-Hant-TW">{number}.</span><RichText text={question.stem} /></p>
   <QuestionFigure image={question.image} />
   <ul class="classification-categories">
     {question.categories.map((category) => (
@@ -25,11 +25,11 @@ const { number, question } = Astro.props;
   <ul class="classification-statements">
     {question.statements.map((statement) => (
       <li>
-        <span class="classification-slot">（<span class="classification-symbol">
+        <span class="classification-slot"><span lang="zh-Hant-TW">（</span><span class="classification-symbol">
           {/* 所有類別符號共同決定格寬，避免用格寬洩漏答案；隱藏的副本不交給讀屏。 */}
           {question.categories.map((category) => <span class="classification-measure" aria-hidden="true">{category.symbol}</span>)}
           <span class="answer">{question.categories[statement.answer - 1]!.symbol}</span>
-        </span>）</span><span><RichText text={statement.text} /></span>
+        </span><span lang="zh-Hant-TW">）</span></span><span><RichText text={statement.text} /></span>
       </li>
     ))}
   </ul>

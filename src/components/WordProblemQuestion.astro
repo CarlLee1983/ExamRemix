@@ -19,11 +19,11 @@ const space = answerSpace(question);
 
 <div class="question question-word-problem" data-question-type="word-problem">
   <p class="stem">
-    <span class="number">{number}.</span>
+    <span class="number" lang="zh-Hant-TW">{number}.</span>
     <RichText text={question.stem} />
   </p>
   <QuestionFigure image={question.image} />
-  <div class="calc-box" data-space={space} style={`--calc-lines: ${space}`}><span class="calc-box-label">算式：</span></div>
-  <p class="answer-sentence"><span class="answer-label">答：</span><span class="answer-line"><span class="answer-line-text"><RichText text={question.answer} /></span></span></p>
+  <div class="calc-box" data-space={space} style={`--calc-lines: ${space}`}><span class="calc-box-label" lang="zh-Hant-TW">算式：</span></div>
+  <p class="answer-sentence"><span class="answer-label" lang="zh-Hant-TW">答：</span><span class="answer-line"><span class="answer-line-text"><RichText text={question.answer} /></span></span></p>
   <Explanation text={question.explanation} />
 </div>

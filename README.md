@@ -93,7 +93,7 @@ pnpm list:questions [資料目錄] [過濾條件]
 
 ### 題型
 
-每題都有共用欄位（`no`、`type`、`subject`、`grade`、選填的 `unit`、`stem`、`explanation`、選填的 `doubt`、`image` 與 `space`，以及原題的 `source` 或新題的 `derivedFrom` 擇一），`subject` 支援國語、數學、社會、自然；`grade` 為 1 至 6。`no` 是檔內不重複的正整數，用來組成題目 ID；`stem`、`explanation` 都是非空文字；`doubt` 是一句說明哪裡可疑的非空文字，沒有疑點就省略。每題至多一個 `unit`，同一份原卷的不同題可以屬於不同單元，無法確定時省略。再加上各題型自己的欄位：
+每題都有共用欄位（`no`、`type`、`subject`、`grade`、選填的 `unit`、`stem`、`explanation`、選填的 `doubt`、`image` 與 `space`，以及原題的 `source` 或新題的 `derivedFrom` 擇一），`subject` 支援國語、英語、數學、社會、自然；`grade` 為 1 至 6。`no` 是檔內不重複的正整數，用來組成題目 ID；`stem`、`explanation` 都是非空文字；`doubt` 是一句說明哪裡可疑的非空文字，沒有疑點就省略。每題至多一個 `unit`，同一份原卷的不同題可以屬於不同單元，無法確定時省略。再加上各題型自己的欄位：
 
 | `type` | 欄位 | 說明 |
 | --- | --- | --- |
@@ -176,6 +176,14 @@ questions:
 ```
 
 試卷上空格渲染成底線，寬度依該空格答案的字數決定，不會印出 `___`；答案卷把答案以紅字填在底線上，底線寬度不變。
+
+### 英語題
+
+科目為 `英語` 的題目內容與共用材料標示 `lang="en"`，以 Arial、Helvetica Neue 與既有中文字型備援呈現；採系統字型，無需連線載入。題號、中文標籤、全形作答括號、試卷抬頭與姓名／日期／配分等外框仍沿用中文。其他科目的字型不變，英語內容裡的中文也可照常用 `[圈選|ㄑㄩㄢ ㄒㄩㄢˇ]` 標注音。
+
+要印出 `[is|are]`，寫成 `\\[is|are]` 跳脫左方括號；未跳脫的語法仍按注音規則檢查。英文填空沿用 `___`，英語半形字元各保留 1em，加上原有留白，以容納大寫 W／M；其他科目的空格估算不變。
+
+自編範例見 `examples/bank/sample-english.yaml` 與 `examples/papers/sample-english.yaml`，包含填空、混合題型題組、中文注音及方括號跳脫。
 
 ### 配對題
 

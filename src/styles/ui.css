@@ -193,6 +193,13 @@ select {
   --sc-mid: var(--zh-mid);
 }
 
+.subj-英語 {
+  --sc: var(--en);
+  --sc-soft: var(--en-soft);
+  --sc-text: var(--en-text);
+  --sc-mid: var(--en-mid);
+}
+
 .subj-數學 {
   --sc: var(--ma);
   --sc-soft: var(--ma-soft);

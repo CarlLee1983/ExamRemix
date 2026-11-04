@@ -33,7 +33,7 @@
   user-select: text;
 }
 
-.item-body > .question {
+.item-body > .question-content > .question {
   margin: 0;
   padding: 18px 20px 0;
 }
@@ -137,7 +137,7 @@
     padding-inline: 16px;
   }
 
-  .item-body > .question,
+  .item-body > .question-content > .question,
   .item-body > .meta {
     padding-inline: 16px;
   }

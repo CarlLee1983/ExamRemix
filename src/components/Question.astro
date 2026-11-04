@@ -11,6 +11,7 @@
 // 不是一段文字，沒有注音或數學式可處理，所以直接輸出數字，也不要「修」掉。
 // ClassificationQuestion 的作答符號與 MatchingQuestion 的代號是原樣顯示的識別文字；內容仍經過 RichText／VisualText。
 import type { Question } from '../domain/schema';
+import { questionLanguage } from '../domain/question-language';
 import CharToZhuyinQuestion from './CharToZhuyinQuestion.astro';
 import ChoiceQuestion from './ChoiceQuestion.astro';
 import ClassificationQuestion from './ClassificationQuestion.astro';
@@ -62,6 +63,7 @@ switch (question.type) {
 }
 ---
 
+<div class="question-content" lang={questionLanguage(question.subject)}>
 {question.type === 'choice' && <ChoiceQuestion number={number} question={question} />}
 {question.type === 'matching' && <MatchingQuestion number={number} question={question} />}
 {question.type === 'classification' && <ClassificationQuestion number={number} question={question} />}
@@ -77,3 +79,4 @@ switch (question.type) {
 {question.type === 'horizontal-calc' && <HorizontalCalcQuestion number={number} question={question} />}
 {question.type === 'vertical-calc' && <VerticalCalcQuestion number={number} question={question} />}
 {question.type === 'word-problem' && <WordProblemQuestion number={number} question={question} />}
+</div>

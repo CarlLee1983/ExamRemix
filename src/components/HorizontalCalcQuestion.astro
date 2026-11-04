@@ -1,4 +1,5 @@
 ---
+import { questionLanguage } from '../domain/question-language';
 import { answerSpace } from '../domain/answer-space';
 import { answerBlankWidthEm } from '../domain/blank';
 import type { HorizontalCalcQuestion } from '../domain/schema';
@@ -16,13 +17,13 @@ interface Props {
 
 const { number, question } = Astro.props;
 const space = answerSpace(question);
-const blankWidth = answerBlankWidthEm(question.answer);
+const blankWidth = answerBlankWidthEm(question.answer, questionLanguage(question.subject));
 ---
 
 <div class="question question-horizontal-calc" data-question-type="horizontal-calc">
   <p class="stem">
     {/* 算式、底線之間不留空白字元，答案卷切換時底線位置才不會動（理由同填空題） */}
-    <span class="number">{number}.</span>
+    <span class="number" lang="zh-Hant-TW">{number}.</span>
     <RichText text={question.stem} /><span class="blank" style={`--blank-width: ${blankWidth}em`}><span class="blank-answer"><RichText text={question.answer} /></span></span>
   </p>
   <QuestionFigure image={question.image} />

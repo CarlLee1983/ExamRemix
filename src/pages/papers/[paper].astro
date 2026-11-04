@@ -1,7 +1,9 @@
 ---
 import Icon from '../../components/Icon.astro';
+import GroupMaterial from '../../components/GroupMaterial.astro';
 import Question from '../../components/Question.astro';
 import { firstNumbers } from '../../domain/paper-numbers.ts';
+import { resolvePaperGroups } from '../../domain/question-groups.ts';
 import { loadChecked } from '../../lib/load-bank.ts';
 import '../../styles/tokens.css';
 import '../../styles/ui.css';
@@ -10,13 +12,13 @@ import '../../styles/paper-toolbar.css';
 
 export async function getStaticPaths() {
   // 載入時已跑過跨檔檢查：引用的題目 ID 一定存在
-  const { papers, questions } = await loadChecked();
+  const { papers, questions, membership } = await loadChecked();
 
   return papers.map((paper) => ({
     params: { paper: paper.id },
     props: {
       paper: paper.data,
-      sections: paper.data.sections.map((section) => ({
+      sections: resolvePaperGroups(paper.data.sections, membership).map((section) => ({
         ...section,
         questions: section.questions.map((id) => questions.get(id)!),
       })),
@@ -62,7 +64,10 @@ const numbers = firstNumbers(sections);
                 {section.points !== undefined && <span class="points">（{section.points} 分）</span>}
               </h2>
               {section.questions.map((question, i) => (
-                <Question number={numbers[s]! + i} question={question} />
+                <>
+                  {section.materials[i] && <GroupMaterial membership={section.materials[i]} />}
+                  <Question number={numbers[s]! + i} question={question} />
+                </>
               ))}
             </section>
           ))

@@ -5,8 +5,8 @@
 //   --doubt  --no-doubt  --subject <科目>  --grade <年級>  --unit <單元>  --type <題型>  --id <題目 ID>
 // schema 不過的題庫檔跳過並在 stderr 提醒執行 check:bank。沒有符合的題目仍以 0 結束；資料目錄不存在或旗標錯誤以 2 結束。
 import { parseArgs } from 'node:util';
-import { hasDoubt } from '../src/domain/doubt.ts';
 import { formatProblem } from '../src/domain/problem.ts';
+import { effectiveDoubt, groupMembership } from '../src/domain/question-groups.ts';
 import { bankFileSchema, deriveQuestionId } from '../src/domain/schema.ts';
 import { unitLabel } from '../src/domain/unit.ts';
 import { readDataDir, resolveDataDir } from '../src/lib/data-dir.ts';
@@ -55,11 +55,13 @@ for (const { name, file, raw } of contents.banks) {
     console.error(`${file}：schema 檢查未通過，已跳過；請執行 pnpm check:bank 檢查`);
     continue;
   }
+  const membership = groupMembership([{ name, data: parsed.data }]);
   for (const q of parsed.data.questions) {
     const id = deriveQuestionId(name, q.no);
+    const hasDoubt = effectiveDoubt(q, membership.get(id)) !== undefined;
     if (
-      (values.doubt && !hasDoubt(q)) ||
-      (values['no-doubt'] && hasDoubt(q)) ||
+      (values.doubt && !hasDoubt) ||
+      (values['no-doubt'] && hasDoubt) ||
       !matches(values.subject, q.subject) ||
       !matches(values.grade, String(q.grade)) ||
       !matches(values.unit, unitLabel(q.unit)) ||
@@ -68,7 +70,7 @@ for (const { name, file, raw } of contents.banks) {
     ) {
       continue;
     }
-    const doubt = hasDoubt(q) ? 'doubt' : '-';
+    const doubt = hasDoubt ? 'doubt' : '-';
     console.log([id, q.type, q.subject, q.grade, unitLabel(q.unit), doubt, q.stem.replace(/\s+/g, ' ').trim()].join('\t'));
   }
 }

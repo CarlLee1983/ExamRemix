@@ -3,6 +3,7 @@
 // 篩選用的 data 屬性在外層元素上，由頁面的 script 讀取。
 import { unitLabel } from '../domain/unit';
 import { TYPE_LABELS } from '../domain/type-labels';
+import type { GroupMembership } from '../domain/question-groups';
 import type { Question } from '../domain/schema';
 import BankBody from './BankBody.astro';
 import Icon from './Icon.astro';
@@ -11,9 +12,10 @@ interface Props {
   id: string;
   question: Question;
   usedIn: readonly string[];
+  group?: GroupMembership | undefined;
 }
 
-const { id, question, usedIn } = Astro.props;
+const { id, question, usedIn, group } = Astro.props;
 ---
 
 <details
@@ -34,6 +36,6 @@ const { id, question, usedIn } = Astro.props;
     <Icon name="chevron-right" class="chevron" />
   </summary>
   <div class="item-body">
-    <BankBody question={question} usedIn={usedIn} />
+    <BankBody question={question} usedIn={usedIn} group={group} />
   </div>
 </details>

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { basename } from 'node:path';
 import { listImages, resolveDataDir } from './data-dir.ts';
 import { buildQuestionIndex, checkBank } from '../domain/bank-check.ts';
+import { groupMembership } from '../domain/question-groups.ts';
 import { reportProblems } from '../domain/problem.ts';
 import { compareIds, type Question } from '../domain/schema.ts';
 
@@ -28,12 +29,13 @@ async function load() {
   if (report.lines.length > 0) console.warn(`題庫檢查發現 ${report.summary}：\n${details}`);
 
   const questions = buildQuestionIndex(bankInputs) as ReadonlyMap<string, Question>;
+  const membership = groupMembership(bankInputs);
   // 題庫瀏覽頁用：所有題目，依 ID 排序
   const entries = [...questions]
-    .map(([id, question]) => ({ id, question }))
+    .map(([id, question]) => ({ id, question, group: membership.get(id) }))
     .sort((a, b) => compareIds(a.id, b.id));
 
-  return { papers, questions, entries };
+  return { papers, questions, entries, membership };
 }
 
 let loaded: ReturnType<typeof load> | undefined;

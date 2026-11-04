@@ -104,6 +104,26 @@ body {
   break-inside: avoid;
 }
 
+/* 可容納時讓材料與第一題同頁；過長的材料仍可跨頁。 */
+.question-material {
+  margin: 3mm 0;
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+.material-label {
+  font-weight: 700;
+  margin: 0 0 1mm;
+  break-after: avoid;
+}
+
+.material-paragraph {
+  margin: 0 0 1mm;
+  white-space: pre-wrap;
+  orphans: 2;
+  widows: 2;
+}
+
 .stem {
   margin: 0;
 }

@@ -9,7 +9,7 @@
 // 由元件自己渲染成作答格，刻意不經過 RichText（交給它會把考題的注音直接顯示出來），不要「修」掉。
 // 另一個例外是 VerticalCalcQuestion 的運算元與答案：schema 限定它們是純數字，元件要一個數字一格排進直式的格子，
 // 不是一段文字，沒有注音或數學式可處理，所以直接輸出數字，也不要「修」掉。
-// ClassificationQuestion 的作答符號同樣是原樣顯示的識別文字；類別名稱與敘述仍經過 RichText。
+// ClassificationQuestion 的作答符號與 MatchingQuestion 的代號是原樣顯示的識別文字；內容仍經過 RichText／VisualText。
 import type { Question } from '../domain/schema';
 import CharToZhuyinQuestion from './CharToZhuyinQuestion.astro';
 import ChoiceQuestion from './ChoiceQuestion.astro';
@@ -20,6 +20,7 @@ import HorizontalCalcQuestion from './HorizontalCalcQuestion.astro';
 import ImitateSentenceQuestion from './ImitateSentenceQuestion.astro';
 import MakeSentenceQuestion from './MakeSentenceQuestion.astro';
 import MultiSelectQuestion from './MultiSelectQuestion.astro';
+import MatchingQuestion from './MatchingQuestion.astro';
 import TableFillQuestion from './TableFillQuestion.astro';
 import TrueFalseQuestion from './TrueFalseQuestion.astro';
 import VerticalCalcQuestion from './VerticalCalcQuestion.astro';
@@ -43,6 +44,7 @@ switch (question.type) {
   case 'choice':
   case 'multi-select':
   case 'classification':
+  case 'matching':
   case 'diagram-label':
   case 'table-fill':
   case 'true-false':
@@ -61,6 +63,7 @@ switch (question.type) {
 ---
 
 {question.type === 'choice' && <ChoiceQuestion number={number} question={question} />}
+{question.type === 'matching' && <MatchingQuestion number={number} question={question} />}
 {question.type === 'classification' && <ClassificationQuestion number={number} question={question} />}
 {question.type === 'multi-select' && <MultiSelectQuestion number={number} question={question} />}
 {question.type === 'diagram-label' && <DiagramLabelQuestion number={number} question={question} />}

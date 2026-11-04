@@ -148,6 +148,28 @@ export const multiSelectQuestionSchema = questionBase
     });
   });
 
+/** 代號是原樣顯示的識別文字；引用與宣告使用同一套正規化。 */
+const matchingCode = z.string().trim().min(1, '代號不可為空白').transform((code) => code.normalize('NFC'));
+
+export const matchingQuestionSchema = questionBase.extend({
+  type: z.literal('matching'),
+  left: z.array(z.strictObject({ content: visualTextSchema, answer: matchingCode })).min(1),
+  right: z.array(z.strictObject({ code: matchingCode, content: visualTextSchema })).min(1),
+}).superRefine((q, ctx) => {
+  const codes = new Set<string>();
+  q.right.forEach((item, index) => {
+    if (codes.has(item.code)) {
+      ctx.addIssue({ code: 'custom', path: ['right', index, 'code'], message: `代號不可重複：${item.code}` });
+    }
+    codes.add(item.code);
+  });
+  q.left.forEach((item, index) => {
+    if (!codes.has(item.answer)) {
+      ctx.addIssue({ code: 'custom', path: ['left', index, 'answer'], message: `答案指向不存在的代號 ${item.answer}` });
+    }
+  });
+});
+
 const classificationText = richText.refine((text) => text.trim().length > 0, '分類內容不可只有空白');
 
 /** 各敘述的 answer 是從 1 起算的類別編號；整組敘述屬於同一道題。 */
@@ -328,6 +350,7 @@ export const questionSchema = z
   .discriminatedUnion('type', [
     choiceQuestionSchema,
     multiSelectQuestionSchema,
+    matchingQuestionSchema,
     classificationQuestionSchema,
     diagramLabelQuestionSchema,
     tableFillQuestionSchema,
@@ -436,6 +459,7 @@ export type QuestionGroup = z.infer<typeof questionGroupSchema>;
 export type Question = z.infer<typeof questionSchema>;
 export type ChoiceQuestion = z.infer<typeof choiceQuestionSchema>;
 export type ClassificationQuestion = z.infer<typeof classificationQuestionSchema>;
+export type MatchingQuestion = z.infer<typeof matchingQuestionSchema>;
 export type MultiSelectQuestion = z.infer<typeof multiSelectQuestionSchema>;
 export type DiagramLabelQuestion = z.infer<typeof diagramLabelQuestionSchema>;
 export type TableFillQuestion = z.infer<typeof tableFillQuestionSchema>;

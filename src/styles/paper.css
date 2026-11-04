@@ -389,6 +389,81 @@ body {
   visibility: hidden;
 }
 
+/* 兩欄之間留出連線走廊；答案只在左項旁顯示代號，不繪製連線。 */
+.question-matching {
+  break-inside: auto;
+}
+
+.question-matching .stem {
+  break-after: avoid;
+}
+
+.matching-board {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: clamp(6mm, 5vw, 16mm);
+  margin: 2mm 0 0;
+  break-inside: avoid;
+}
+
+.matching-column {
+  display: grid;
+  align-content: start;
+  gap: 4mm;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.matching-column li {
+  display: grid;
+  align-items: center;
+  gap: 1.5mm;
+  break-inside: avoid;
+}
+
+.matching-left li {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.matching-right li {
+  grid-template-columns: auto auto minmax(0, 1fr);
+}
+
+.matching-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* 量測保留全池代號需要的空間；長代號可換行，避免擠掉內容與黑點。 */
+.matching-answer-slot {
+  display: inline-grid;
+  position: relative;
+  min-width: 1em;
+  max-width: 5em;
+  text-align: center;
+}
+
+.matching-code,
+.matching-answer-slot {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.matching-code {
+  max-width: 5em;
+}
+
+.matching-measure {
+  grid-area: 1 / 1;
+  visibility: hidden;
+}
+
+.matching-endpoint {
+  font-size: 0.7em;
+  line-height: 1;
+}
+
 .check-options {
   margin: 1mm 0 0;
   padding: 0 0 0 var(--question-indent);

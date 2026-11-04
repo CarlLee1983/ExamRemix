@@ -6,3 +6,5 @@ sections:
     questions: [sample-social-01, sample-social-05]
   - title: 二、生活場域分類
     questions: [sample-social-07]
+  - title: 三、場所配對
+    questions: [sample-social-08]

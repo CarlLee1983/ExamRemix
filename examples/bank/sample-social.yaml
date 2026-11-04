@@ -103,3 +103,25 @@ questions:
       - { text: "晚餐後和家人分享今天的生活。", answer: 1 }
     explanation: "整理家務及家人分享屬於家庭生活；班會屬於學校生活；維護社區公園屬於社區生活。"
     source: { originalPaper: "虛構三年級社會小考", section: "生活場域分類", number: 7 }
+  - no: 8
+    type: matching
+    subject: 社會
+    grade: 3
+    unit: 社區生活
+    stem: "把左邊的活動與右邊適合的場所連起來；同一場所可以使用多次，也可能不使用。"
+    left:
+      - { content: "寄信給遠方的親友。", answer: "甲" }
+      - { content: "借閱圖書。", answer: "乙" }
+      - { content: "在館內閱讀報紙。", answer: "乙" }
+    right:
+      - code: "甲"
+        content:
+          image: { src: "sample-social/post-office.svg", alt: "郵局建築示意圖" }
+      - { code: "乙", content: "[圖書館|ㄊㄨˊ ㄕㄨ ㄍㄨㄢˇ]" }
+      - code: "丙"
+        content:
+          text: "公園"
+          image: { src: "sample-social/park.svg", alt: "有樹木與長椅的公園" }
+      - { code: "丁", content: "診所" }
+    explanation: "寄信要到郵局，借閱圖書與閱讀館內報紙都可在圖書館進行。"
+    source: { originalPaper: "虛構三年級社會小考", section: "社區場所配對", number: 8 }

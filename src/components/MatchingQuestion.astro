@@ -1,0 +1,47 @@
+---
+import { answerSpace } from '../domain/answer-space';
+import type { MatchingQuestion } from '../domain/schema';
+import AnswerSpace from './AnswerSpace.astro';
+import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
+import RichText from './RichText.astro';
+import VisualText from './VisualText.astro';
+
+interface Props {
+  number: number;
+  question: MatchingQuestion;
+}
+
+const { number, question } = Astro.props;
+---
+
+<div class="question question-matching" data-question-type="matching">
+  <p class="stem"><span class="number">{number}.</span><RichText text={question.stem} /></p>
+  <QuestionFigure image={question.image} />
+  <div class="matching-board">
+    <ol class="matching-column matching-left" aria-label="左側題目">
+      {question.left.map((item) => (
+        <li>
+          <span class="matching-answer-slot">
+            {/* 各格依全池代號預留相同空間，避免格寬洩漏正解。 */}
+            {question.right.map((option) => <span class="matching-measure" aria-hidden="true">{option.code}</span>)}
+            <span class="answer">{item.answer}</span>
+          </span>
+          <span class="matching-content"><VisualText content={item.content} /></span>
+          <span class="matching-endpoint" aria-hidden="true">●</span>
+        </li>
+      ))}
+    </ol>
+    <ol class="matching-column matching-right" aria-label="答案池">
+      {question.right.map((item) => (
+        <li>
+          <span class="matching-endpoint" aria-hidden="true">●</span>
+          <span class="matching-code">{item.code}</span>
+          <span class="matching-content"><VisualText content={item.content} /></span>
+        </li>
+      ))}
+    </ol>
+  </div>
+  <AnswerSpace lines={answerSpace(question)} />
+  <Explanation text={question.explanation} />
+</div>

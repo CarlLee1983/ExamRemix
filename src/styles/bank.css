@@ -71,7 +71,8 @@
 }
 
 .item-body .answer,
-.item-body .classification-measure {
+.item-body .classification-measure,
+.item-body .matching-measure {
   font-weight: 700;
 }
 

@@ -7,14 +7,14 @@ test('範例試卷選用部分混合題型，試卷與答案卷的材料各印�
   const questions = page.locator('.question');
   await expect(material).toHaveCount(1);
   await expect(material).toContainText('社區準備舉辦親子環境日');
-  await expect(questions).toHaveCount(3);
+  await expect(questions).toHaveCount(4);
   expect(await material.evaluate((el) => Boolean(el.compareDocumentPosition(document.querySelector('.question')!) & Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
   for (const mode of ['paper', 'answer'] as const) {
     if (mode === 'answer') await page.getByRole('button', { name: '顯示答案卷' }).click();
     await page.emulateMedia({ media: 'print' });
     await expect(material).toHaveCount(1);
     await expect(material).toBeVisible();
-    await expect(page.locator('.explanation:visible')).toHaveCount(mode === 'answer' ? 3 : 0);
+    await expect(page.locator('.explanation:visible')).toHaveCount(mode === 'answer' ? 4 : 0);
     await page.emulateMedia({ media: 'screen' });
   }
 });

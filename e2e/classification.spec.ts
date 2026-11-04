@@ -4,7 +4,7 @@ import { answerToggle, FIXTURE_URL } from './helpers';
 test('分類題列出類別與每個敘述，整題只占一個題號，答案填回原作答位置', async ({ page }) => {
   await page.goto('/papers/sample-social/');
   const question = page.locator('[data-question-type="classification"]');
-  await expect(page.locator('.question')).toHaveCount(3);
+  await expect(page.locator('.question')).toHaveCount(4);
   await expect(question.locator('.number')).toHaveText('3.');
   await expect(question.locator('.classification-categories li')).toHaveCount(3);
   await expect(question.locator('.classification-categories')).toContainText('學校生活');
@@ -43,7 +43,7 @@ test('題庫可依分類題篩選，展開顯示內容，首頁將多個敘述�
   await expect(item.locator('.classification-statements .answer:visible')).toHaveCount(4);
   await page.goto('/');
   const social = page.locator('#composition .mix-subject[data-subject="社會"]');
-  await expect(social).toContainText('7 題');
+  await expect(social).toContainText('8 題');
   await expect(social.locator('.mix-bar')).toHaveAttribute('aria-label', /分類題 1/);
 });
 

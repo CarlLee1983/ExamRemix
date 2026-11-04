@@ -5,6 +5,7 @@ export const TYPE_LABELS: Record<Question['type'], string> = {
   choice: '選擇題',
   'multi-select': '勾選題',
   classification: '分類題',
+  matching: '配對題',
   'diagram-label': '圖示標示題',
   'table-fill': '表格填答題',
   'true-false': '是非題',

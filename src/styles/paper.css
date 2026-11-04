@@ -346,6 +346,49 @@ body {
   margin: 0 auto;
 }
 
+/* 類別提示與敘述分開；每個敘述的括號保留足夠寬度容納任何類別符號。 */
+.classification-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm 5mm;
+  list-style: none;
+  margin: 2mm 0 2mm var(--question-indent);
+  padding: 0;
+}
+
+.classification-statements {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.classification-statements li {
+  display: flex;
+  align-items: baseline;
+  gap: 1mm;
+  margin: 1mm 0;
+  break-inside: avoid;
+}
+
+.classification-slot {
+  display: inline-flex;
+  align-items: baseline;
+  flex-shrink: 0;
+  white-space: pre;
+}
+
+.classification-symbol {
+  display: inline-grid;
+  position: relative;
+  min-width: 1em;
+  text-align: center;
+}
+
+.classification-measure {
+  grid-area: 1 / 1;
+  visibility: hidden;
+}
+
 .check-options {
   margin: 1mm 0 0;
   padding: 0 0 0 var(--question-indent);

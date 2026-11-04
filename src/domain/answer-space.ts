@@ -10,6 +10,7 @@ import type { Question } from './schema.ts';
 export const DEFAULT_SPACE: Record<Question['type'], number> = {
   choice: 0,
   'multi-select': 0,
+  classification: 0,
   'diagram-label': 0,
   'table-fill': 0,
   'true-false': 0,

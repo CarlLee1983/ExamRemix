@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: classification
+    subject: 社會
+    grade: 3
+    unit: 分類
+    stem: "依數量分類。"
+    categories:
+      - { name: "小於三", symbol: "[A|B]" }
+      - { name: "至少三", symbol: "<b>iiiiiiiiii</b>" }
+    statements:
+      - { text: "$1+1$ 的結果。", answer: 1 }
+      - { text: "$2+1$ 的結果。", answer: 2 }
+    explanation: "$1+1=2$ 小於三；$2+1=3$ 至少三。"
+    source: { originalPaper: "虛構分類測試", number: 1 }

@@ -2,6 +2,8 @@
 
 對應 [#47](https://github.com/CarlLee1983/ExamRemix/issues/47)，決策見 [ADR 0006](adr/0006-exam-scope-and-paper-eligibility.md)，用語見 [GLOSSARY](../GLOSSARY.md)。本票交付資料邊界、遷移／回復原則及後續實作驗收，不修改正式 YAML、不實作遷移器或抽題器、不新增正式題目。
 
+#48 後續已選定的五科題量、配分與抽題規則集中於[完整卷配置與抽題契約](paper-composition-contract.md)；本文件的可用容量不等於符合該配置的完整卷能力。兩份契約的程式補強均尚未實作。
+
 使用者已確認：每題只屬於一個考試範圍；首版只啟用三年級上學期期中五科；不保留不合格舊試卷的公開網址及列印。題目預設可用、有效疑點與題組材料規則仍沿用 [ADR 0003](adr/0003-questions-usable-by-default-with-doubts.md)／[ADR 0004](adr/0004-question-groups-share-material.md)，但既有試卷只警告仍輸出的規則由 ADR 0006 取代。
 
 ## 範圍屬於題目，單元與來源保持原義

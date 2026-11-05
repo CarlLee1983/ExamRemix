@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小芳在家跟奶奶學整理菜葉，也能在家庭生活中學習新技能。
+    answer: true
+    explanation: 家庭也是學習與成長的場所。
+    derivedFrom:
+      - g3-social-midterm-2020-02-06
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只有在學校上課才算學習，在家學習照顧自己完全不算。
+    answer: false
+    explanation: 家庭生活中的自我照顧也屬於學習。
+    derivedFrom:
+      - g3-social-midterm-2020-02-06
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 爸爸教小杰整理衣物，能幫助他培養生活能力。
+    answer: true
+    explanation: 家人的指導可以促進孩子學習與成長。
+    derivedFrom:
+      - g3-social-midterm-2020-02-06
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家庭只能提供住的地方，完全沒有教導孩子生活能力的功能。
+    answer: false
+    explanation: 家庭除了提供生活照顧，也具有教養和學習功能。
+    derivedFrom:
+      - g3-social-midterm-2020-02-06
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 和家人一起學習分類回收，也是家庭生活中的學習。
+    answer: true
+    explanation: 日常家庭活動能培養生活知識與能力。
+    derivedFrom:
+      - g3-social-midterm-2020-02-06
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小慧從家人身上學到禮貌待人，但這與她的成長完全沒有關係。
+    answer: false
+    explanation: 家庭中的人際互動能幫助孩子學習待人處事。
+    derivedFrom:
+      - g3-social-midterm-2020-02-06
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 弟弟在家練習自己穿衣服，表示家庭也能提供學習機會。
+    answer: true
+    explanation: 自理能力可在家庭生活中逐步學習。
+    derivedFrom:
+      - g3-social-midterm-2020-02-06
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 學校能幫助孩子成長，因此家人就不可能對孩子的學習有任何幫助。
+    answer: false
+    explanation: 學校與家庭都可以提供學習和成長的支持。
+    derivedFrom:
+      - g3-social-midterm-2020-02-06
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家人陪小宇閱讀並討論故事，能讓他在家中獲得學習經驗。
+    answer: true
+    explanation: 家庭陪伴閱讀也是支持孩子學習的方式。
+    derivedFrom:
+      - g3-social-midterm-2020-02-06

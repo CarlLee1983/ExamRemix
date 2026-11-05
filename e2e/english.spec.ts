@@ -5,7 +5,7 @@ test('英語內容與材料標示英文並用英文字型，中文外框與其�
   await page.goto('/papers/sample-english/');
   const chineseFont = await page.locator('.paper-head').evaluate(el => getComputedStyle(el).fontFamily);
   await expect(page.locator('.stem:lang(en)')).toHaveCount(5);
-  for (const selector of ['.stem', '.options', '.explanation', '.answer-line-text', '.matching-left .answer', '.material-paragraph']) {
+  for (const selector of ['.stem', '.options', '.explanation', '.answer-line-text', '.matching-left .answer', '.matching-code', '.material-paragraph']) {
     for (const element of await page.locator(selector).all()) {
       expect(await element.evaluate(el => el.matches(':lang(en)'))).toBe(true);
       expect(await element.evaluate(el => getComputedStyle(el).fontFamily)).toMatch(/^Arial/);

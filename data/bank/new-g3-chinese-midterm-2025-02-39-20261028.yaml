@@ -1,0 +1,351 @@
+questions:
+  - no: 1
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照例子的寫法，寫一個和歌唱有關的短語，保留「最……的……」。
+    example: （送上）最（美）的（祝福）
+    answer: （唱出）最（甜）的（歌聲）
+    explanation: 範例答案依照「動作＋最＋形容詞＋的＋名詞」排列，動作與後面的事物搭配合理。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-39
+  - no: 2
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 仿寫一個描寫花園的短語，依序寫出動作、「最」、形容詞和名詞。
+    example: （挑選）最（厚）的（外套）
+    answer: （種出）最（美）的（花朵）
+    explanation: 範例答案依照「動作＋最＋形容詞＋的＋名詞」排列，動作與後面的事物搭配合理。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-39
+  - no: 3
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 依照例子的三個括號，寫出準備食物時可以做的事，保留「最……的……」。
+    example: （打開）最（大）的（箱子）
+    answer: （挑出）最（甜）的（蘋果）
+    explanation: 範例答案依照「動作＋最＋形容詞＋的＋名詞」排列，動作與後面的事物搭配合理。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-39
+  - no: 4
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 寫一個與運動有關的短語，詞語排列方式要和例子相同。
+    example: （穿上）最（暖）的（毛衣）
+    answer: （邁開）最（大）的（步伐）
+    explanation: 範例答案依照「動作＋最＋形容詞＋的＋名詞」排列，動作與後面的事物搭配合理。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-39
+  - no: 5
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照例子寫出選擇交通工具的短語，保留動作和「最……的……」。
+    example: （留下）最（美）的（回憶）
+    answer: （搭乘）最（快）的（火車）
+    explanation: 範例答案依照「動作＋最＋形容詞＋的＋名詞」排列，動作與後面的事物搭配合理。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-39
+  - no: 6
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 仿寫一個和閱讀有關的短語，要有動作及「最……的……」。
+    example: （摘下）最（紅）的（果實）
+    answer: （翻開）最（新）的（圖書）
+    explanation: 範例答案依照「動作＋最＋形容詞＋的＋名詞」排列，動作與後面的事物搭配合理。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-39
+  - no: 7
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 依照例子的結構，寫一個描寫整理教室的短語。
+    example: （畫出）最（圓）的（月亮）
+    answer: （擦亮）最（髒）的（玻璃）
+    explanation: 範例答案依照「動作＋最＋形容詞＋的＋名詞」排列，動作與後面的事物搭配合理。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-39
+  - no: 8
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 想像自己在海邊，照例子寫一個含有「最……的……」的動作短語。
+    example: （說出）最（真）的（心願）
+    answer: （撿起）最（白）的（貝殼）
+    explanation: 範例答案依照「動作＋最＋形容詞＋的＋名詞」排列，動作與後面的事物搭配合理。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-39
+  - no: 9
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 依照例子，寫一個和送禮有關的短語，三個括號的詞語都要重新想。
+    example: （走過）最（長）的（吊橋）
+    answer: （送出）最（美）的（禮盒）
+    explanation: 範例答案依照「動作＋最＋形容詞＋的＋名詞」排列，動作與後面的事物搭配合理。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-39
+  - no: 10
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫出「景物＋動作＋對象」的短語，描寫白天的自然景色。
+    example: （月光）（照）（窗臺）
+    answer: （陽光）（曬）（草地）
+    explanation: 範例答案依照「景物＋動作＋對象」排列，描寫景物對周圍事物產生的動作。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-40
+  - no: 11
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 依照例子的三部分結構，寫出風吹過某處的景象。
+    example: （雨水）（打）（窗戶）
+    answer: （強風）（吹）（風車）
+    explanation: 範例答案依照「景物＋動作＋對象」排列，描寫景物對周圍事物產生的動作。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-40
+  - no: 12
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 仿寫「景物＋動作＋對象」的短語，寫一個雨天的畫面。
+    example: （白雪）（蓋）（山頭）
+    answer: （雨滴）（敲）（屋頂）
+    explanation: 範例答案依照「景物＋動作＋對象」排列，描寫景物對周圍事物產生的動作。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-40
+  - no: 13
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照例子的寫法，寫一個海邊的景物對某物產生動作的短語。
+    example: （晨霧）（遮）（山路）
+    answer: （海浪）（拍）（岩石）
+    explanation: 範例答案依照「景物＋動作＋對象」排列，描寫景物對周圍事物產生的動作。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-40
+  - no: 14
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 依照「景物＋動作＋對象」的順序，寫出秋天的自然景象。
+    example: （溪水）（繞）（村莊）
+    answer: （秋風）（掃）（落葉）
+    explanation: 範例答案依照「景物＋動作＋對象」排列，描寫景物對周圍事物產生的動作。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-40
+  - no: 15
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 參考例子的結構，用冬天的自然景物寫一個短語。
+    example: （海風）（吹）（草帽）
+    answer: （冰雪）（封）（湖面）
+    explanation: 範例答案依照「景物＋動作＋對象」排列，描寫景物對周圍事物產生的動作。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-40
+  - no: 16
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫三部分的短語，描寫水流經過某個地方的情形。
+    example: （夕陽）（染）（天空）
+    answer: （河水）（沖）（沙岸）
+    explanation: 範例答案依照「景物＋動作＋對象」排列，描寫景物對周圍事物產生的動作。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-40
+  - no: 17
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 仿照例子，寫出一個夜晚景物影響周圍景色的短語。
+    example: （晚霞）（映）（湖面）
+    answer: （月光）（灑）（庭院）
+    explanation: 範例答案依照「景物＋動作＋對象」排列，描寫景物對周圍事物產生的動作。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-40
+  - no: 18
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照例子寫一種動物的動作，要有疊字的詞和身體部位。
+    example: （青蛙）（輕輕）（伸出）（舌頭）。
+    answer: （小狗）（輕輕）（舔舔）（鼻子）。
+    explanation: 範例答案依照「主體＋疊字副詞＋動作＋身體部位」排列，動作符合主體的身體特徵。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-41
+  - no: 19
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 依照「主體＋疊字副詞＋動作＋身體部位」的順序，寫出剛睡醒的樣子。
+    example: （白鵝）（緩緩）（伸長）（脖子）。
+    answer: （弟弟）（慢慢）（張開）（眼睛）。
+    explanation: 範例答案依照「主體＋疊字副詞＋動作＋身體部位」排列，動作符合主體的身體特徵。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-41
+  - no: 20
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 仿照例子寫出小動物休息時的動作，第二個括號要用疊字的詞。
+    example: （小貓）（輕輕）（抬起）（前腳）。
+    answer: （小兔）（靜靜）（閉上）（眼睛）。
+    explanation: 範例答案依照「主體＋疊字副詞＋動作＋身體部位」排列，動作符合主體的身體特徵。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-41
+  - no: 21
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫出一種動物吃東西時的動作，要寫到牠的身體部位和疊字的詞。
+    example: （蝴蝶）（輕輕）（拍動）（翅膀）。
+    answer: （倉鼠）（慢慢）（鼓起）（臉頰）。
+    explanation: 範例答案依照「主體＋疊字副詞＋動作＋身體部位」排列，動作符合主體的身體特徵。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-41
+  - no: 22
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 依照例子的四部分結構，描寫一個人準備發問時的動作。
+    example: （烏龜）（慢慢）（縮回）（腦袋）。
+    answer: （同學）（緩緩）（舉起）（手臂）。
+    explanation: 範例答案依照「主體＋疊字副詞＋動作＋身體部位」排列，動作符合主體的身體特徵。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-41
+  - no: 23
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照例子描寫運動前的動作，須使用疊字副詞並寫出身體部位。
+    example: （小馬）（高高）（抬起）（前腳）。
+    answer: （哥哥）（慢慢）（轉動）（手腕）。
+    explanation: 範例答案依照「主體＋疊字副詞＋動作＋身體部位」排列，動作符合主體的身體特徵。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-41
+  - no: 24
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 仿寫一個水中動物的動作，保留疊字副詞和身體部位。
+    example: （小雞）（慢慢）（張開）（嘴巴）。
+    answer: （海龜）（緩緩）（划動）（前肢）。
+    explanation: 範例答案依照「主體＋疊字副詞＋動作＋身體部位」排列，動作符合主體的身體特徵。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-41
+  - no: 25
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 依照例子的順序，寫一個人觀察東西時的動作，第二部分要用疊字副詞。
+    example: （小羊）（輕輕）（晃動）（耳朵）。
+    answer: （奶奶）（慢慢）（抬起）（頭）。
+    explanation: 範例答案依照「主體＋疊字副詞＋動作＋身體部位」排列，動作符合主體的身體特徵。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-41
+  - no: 26
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫四部分的短語，描寫動物站立時的動作，須有疊字的詞與身體部位。
+    example: （小猴）（輕輕）（抓抓）（腦袋）。
+    answer: （長頸鹿）（慢慢）（轉動）（脖子）。
+    explanation: 範例答案依照「主體＋疊字副詞＋動作＋身體部位」排列，動作符合主體的身體特徵。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-41
+  - no: 27
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 仿照例子，用「雖然……可是……」寫出遇到困難仍努力的情形。
+    example: 雖然（風很大），可是（小樹仍站得直直的）。
+    answer: 雖然（這首歌很難唱），可是（妹妹每天都認真練習）。
+    explanation: 範例答案保留「雖然……可是……」，後半句和前半句形成合理的轉折。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-42
+  - no: 28
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫一句話，利用「雖然……可是……」表現食物味道與喜好的轉折。
+    example: 雖然（山路很陡），可是（我們還是爬上山頂）。
+    answer: 雖然（這碗湯有點苦），可是（我仍然很喜歡喝）。
+    explanation: 範例答案保留「雖然……可是……」，後半句和前半句形成合理的轉折。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-42
+  - no: 29
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 依照例子，用「雖然……可是……」寫出天氣不佳時仍完成的活動。
+    example: 雖然（弟弟年紀小），可是（他已經會自己整理書包）。
+    answer: 雖然（天氣很冷），可是（我們還是到操場跑步）。
+    explanation: 範例答案保留「雖然……可是……」，後半句和前半句形成合理的轉折。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-42
+  - no: 30
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 仿寫一個「雖然……可是……」句子，表現外表和實際情形不同。
+    example: 雖然（故事很短），可是（讀起來很有趣）。
+    answer: 雖然（這個箱子很小），可是（裡面的東西很重）。
+    explanation: 範例答案保留「雖然……可是……」，後半句和前半句形成合理的轉折。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-42
+  - no: 31
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照例子寫出「雖然……可是……」的轉折句，描寫有人願意幫忙的情形。
+    example: 雖然（這支鉛筆很舊），可是（還能寫出清楚的字）。
+    answer: 雖然（哥哥正在看書），可是（他還是停下來幫我找橡皮擦）。
+    explanation: 範例答案保留「雖然……可是……」，後半句和前半句形成合理的轉折。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-42
+  - no: 32
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 用例子的轉折句式，寫出比賽結果與心情不完全相同的情形。
+    example: 雖然（小花長在牆角），可是（依然開得十分美麗）。
+    answer: 雖然（我們沒有贏得比賽），可是（大家仍然玩得很開心）。
+    explanation: 範例答案保留「雖然……可是……」，後半句和前半句形成合理的轉折。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-42
+  - no: 33
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣用「雖然……可是……」寫出物品的缺點和可取之處。
+    example: 雖然（車站離家很遠），可是（搭公車一下子就到了）。
+    answer: 雖然（這雙鞋的顏色不好看），可是（穿起來很舒服）。
+    explanation: 範例答案保留「雖然……可是……」，後半句和前半句形成合理的轉折。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-42
+  - no: 34
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 參考例子，用「雖然……可是……」描寫等待後仍感到值得的事情。
+    example: 雖然（姐姐怕黑），可是（她仍勇敢地走過沒有路燈的小路）。
+    answer: 雖然（我們排隊等了很久），可是（吃到熱熱的包子就很滿足）。
+    explanation: 範例答案保留「雖然……可是……」，後半句和前半句形成合理的轉折。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-42
+  - no: 35
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 仿照例子，寫出「雖然……可是……」的句子，描寫出乎意料的能力。
+    example: 雖然（爸爸很忙），可是（他每天都陪我讀一本書）。
+    answer: 雖然（爺爺不會游泳），可是（他很會划船）。
+    explanation: 範例答案保留「雖然……可是……」，後半句和前半句形成合理的轉折。此為範例；其他符合題目要求、結構相同且語意自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-42

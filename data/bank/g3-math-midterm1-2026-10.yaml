@@ -1,0 +1,411 @@
+# 原卷大題對照：no 1–7 一、選擇題；no 8–14 二、做做看（第 2 題 6 小題、第 3 題）；
+# no 15–29 三、填填看；no 30–35 四、比比看；no 36–40 五、用直式算算看；no 41–46 六、應用題。
+# source.number 是題目在整份原卷中的出現順序（原卷各大題重新編號，無法只用一個整數表示）。
+questions:
+  # 一、選擇題
+  - no: 1
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "估估看，「$599 \\times 4$」的答案大約是多少？"
+    options: ["2400", "1600", "2000", "3600"]
+    answer: 1
+    explanation: "599 很接近 600，$600 \\times 4 = 2400$，所以答案大約是 2400。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 1 }
+  - no: 2
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "2050 讀作？"
+    options: ["二千零五", "二千零五十", "二千五百", "二千五零"]
+    answer: 2
+    explanation: "2050 是 2 個千、0 個百、5 個十、0 個一，百位是 0 要讀「零」，個位的 0 不讀，讀作二千零五十。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 2 }
+  - no: 3
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "從數線上刻度 7 的位置，往左移動 3 格，會移動到刻度幾的位置？"
+    image:
+      src: g3-math-midterm1-2026-10/03.svg
+      alt: 刻度 0 到 10 的數線
+    options: ["2", "3", "4", "5"]
+    answer: 3
+    explanation: "往左移動數會變小，$7 - 3 = 4$，移動到刻度 4。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 3 }
+  - no: 4
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: "樂樂買一件 649 元的上衣和一件 790 元的褲子，一共要付多少元？"
+    options: ["1399", "1439", "141", "1349"]
+    answer: 2
+    explanation: "$649 + 790 = 1439$，一共要付 1439 元。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 4 }
+  - no: 5
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: "紅彩帶長 45 毫米，黃彩帶長 6 公分 2 毫米，藍彩帶長 5 公分 7 毫米，哪一條彩帶最短？"
+    options: ["一樣長", "藍彩帶", "黃彩帶", "紅彩帶"]
+    answer: 4
+    explanation: "都換成毫米：黃彩帶 62 毫米、藍彩帶 57 毫米、紅彩帶 45 毫米，紅彩帶最短。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 5 }
+  - no: 6
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: "邁斯每天都要走 5000 步，早上已經走了 3671 步，他還要走幾步才夠？"
+    options: ["1329", "8671", "1301", "2329"]
+    answer: 1
+    explanation: "$5000 - 3671 = 1329$，還要走 1329 步。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 6 }
+  - no: 7
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "一枝鉛筆 35 元，買 3 枝鉛筆要多少元？"
+    options: ["135 元", "75 元", "105 元", "95 元"]
+    answer: 3
+    explanation: "$35 \\times 3 = 105$，要 105 元。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 7 }
+
+  # 二、做做看（第 1 題「用尺從黑點畫出 45 毫米的線」是作圖題，未匯入）
+  - no: 8
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: "估估看，$618 + 507$ 大約是多少？"
+    options: ["1100", "1200", "1300"]
+    answer: 1
+    explanation: "取概數到百位：618 約 600、507 約 500，$600 + 500 = 1100$。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 9 }
+  - no: 9
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: "估估看，$1003 - 498$ 大約是多少？"
+    options: ["400", "500", "600"]
+    answer: 2
+    explanation: "1003 約 1000、498 約 500，$1000 - 500 = 500$。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 10 }
+  - no: 10
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: "估估看，$4996 + 2005$ 大約是多少？"
+    options: ["7000", "6000", "8000"]
+    answer: 1
+    explanation: "4996 約 5000、2005 約 2000，$5000 + 2000 = 7000$。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 11 }
+  - no: 11
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: "估估看，$3001 - 1985$ 大約是多少？"
+    options: ["1000", "900", "800"]
+    answer: 1
+    explanation: "3001 約 3000、1985 約 2000，$3000 - 2000 = 1000$。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 12 }
+  - no: 12
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "估估看，$81 \\times 4$ 大約是多少？"
+    options: ["240", "360", "320"]
+    answer: 3
+    explanation: "81 約 80，$80 \\times 4 = 320$。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 13 }
+  - no: 13
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "估估看，$296 \\times 7$ 大約是多少？"
+    options: ["1800", "1400", "2100"]
+    answer: 3
+    explanation: "296 約 300，$300 \\times 7 = 2100$。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 14 }
+  - no: 14
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: "白板筆的長度是 10 公分 3 毫米，彩色筆的長度是 71 毫米，哪一枝筆比較長？"
+    options: ["白板筆", "彩色筆"]
+    answer: 1
+    explanation: "10 公分 3 毫米 = 103 毫米，103 毫米比 71 毫米長，白板筆比較長。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 15 }
+
+  # 三、填填看
+  - no: 15
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "「八千零六十一」用數字記成 ___。"
+    answer: ["8061"]
+    explanation: "8 個千、0 個百、6 個十、1 個一，記成 8061。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 16 }
+  - no: 16
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "3021 是 ___ 個千、___ 個百、___ 個十和 ___ 個一合起來。"
+    answer: ["3", "0", "2", "1"]
+    explanation: "3021 的千位是 3、百位是 0、十位是 2、個位是 1。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 17 }
+  - no: 17
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "4 個千、15 個十和 7 個一合起來是 ___。"
+    answer: ["4157"]
+    explanation: "15 個十是 150，$4000 + 150 + 7 = 4157$。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 18 }
+  - no: 18
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "用 2、0、5、9 排成的四位數中，最大的數是 ___，最小的數是 ___。"
+    answer: ["9520", "2059"]
+    explanation: "最大：數字由大到小排，9520。最小：0 不能放千位，千位放 2，其餘由小到大，2059。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 19 }
+  - no: 19
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "按照順序填填看：5305 → 5205 → ___ → 5005 → ___"
+    answer: ["5105", "4905"]
+    explanation: "每次少 100：5205 − 100 = 5105，5005 − 100 = 4905。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 20 }
+  - no: 20
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "15 張 100 元合起來是 ___ 元。"
+    answer: ["1500"]
+    explanation: "15 個百是 1500，共 1500 元。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 21 }
+  - no: 21
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "媽媽的錢包裡有 5 張 1000 元、11 張 100 元、3 個 10 元和 2 個 1 元，媽媽的錢包裡有 ___ 元。"
+    answer: ["6132"]
+    explanation: "$5000 + 1100 + 30 + 2 = 6132$，共 6132 元。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 22 }
+  - no: 22
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: "62 個 1 毫米合起來是 ___ 毫米，也就是 ___ 公分 ___ 毫米。"
+    answer: ["62", "6", "2"]
+    explanation: "1 公分 = 10 毫米，62 毫米 = 60 毫米 + 2 毫米 = 6 公分 2 毫米。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 23 }
+  - no: 23
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: "一把尺長 15 公分，也就是 ___ 毫米。"
+    answer: ["150"]
+    explanation: "1 公分 = 10 毫米，$15 \\times 10 = 150$ 毫米。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 24 }
+  - no: 24
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "妙妙有 300 元，豆豆的錢是妙妙的 2 倍，豆豆有 ___ 元。"
+    answer: ["600"]
+    explanation: "$300 \\times 2 = 600$，豆豆有 600 元。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 25 }
+
+  # 四、比比看（原卷在□裡填入 >、< 或 =）
+  - no: 25
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "比比看，填入 >、< 或 =：8203 ___ 8302"
+    answer: ["<"]
+    explanation: "千位都是 8，百位 2 < 3，所以 8203 < 8302。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 26 }
+  - no: 26
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "比比看，填入 >、< 或 =：6185 ___ 6195"
+    answer: ["<"]
+    explanation: "千位、百位相同，十位 8 < 9，所以 6185 < 6195。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 27 }
+  - no: 27
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "比比看，填入 >、< 或 =：7104 ___ 七千零四"
+    answer: [">"]
+    explanation: "七千零四是 7004，百位 1 > 0，所以 7104 > 7004。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 28 }
+  - no: 28
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: "比比看，填入 >、< 或 =：三千二百 ___ 3020"
+    answer: [">"]
+    explanation: "三千二百是 3200，百位 2 > 0，所以 3200 > 3020。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 29 }
+  - no: 29
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: "比比看，填入 >、< 或 =：9 公分 ___ 90 毫米"
+    answer: ["="]
+    explanation: "9 公分 = 90 毫米，兩邊一樣長。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 30 }
+  - no: 30
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: "比比看，填入 >、< 或 =：72 毫米 ___ 27 公分"
+    answer: ["<"]
+    explanation: "27 公分 = 270 毫米，72 毫米 < 270 毫米。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 31 }
+
+  # 五、用直式算算看
+  - no: 31
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: "用直式算算看：$1321 + 709 =$"
+    operands: ["1321", "709"]
+    operator: "+"
+    answer: "2030"
+    explanation: "個位 1 + 9 = 10，進 1；十位 2 + 0 + 1 = 3；百位 3 + 7 = 10，進 1；千位 1 + 1 = 2，得 2030。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 32 }
+  - no: 32
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: "用直式算算看：$900 - 385 =$"
+    operands: ["900", "385"]
+    operator: "-"
+    answer: "515"
+    explanation: "個位、十位都是 0，要連續向百位借：$900 - 385 = 515$。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 33 }
+  - no: 33
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "用直式算算看：$805 \\times 3 =$"
+    operands: ["805", "3"]
+    operator: "×"
+    answer: "2415"
+    explanation: "$5 \\times 3 = 15$，寫 5 進 1；$0 \\times 3 + 1 = 1$；$8 \\times 3 = 24$，得 2415。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 34 }
+  - no: 34
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: "用直式算算看：23 毫米 + 45 毫米 = ___ 公分 ___ 毫米"
+    space: 4
+    answer: ["6", "8"]
+    explanation: "$23 + 45 = 68$，68 毫米 = 6 公分 8 毫米。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 35 }
+  - no: 35
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: "用直式算算看：9 公分 5 毫米 − 3 公分 6 毫米 = ___ 公分 ___ 毫米"
+    space: 4
+    answer: ["5", "9"]
+    explanation: "都換成毫米：$95 - 36 = 59$，59 毫米 = 5 公分 9 毫米。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 36 }
+
+  # 六、應用題：先記錄問題，再用直式算算看（原卷的「先算／再算」引導欄併入解析）
+  - no: 36
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: "一條繩子剪掉 12 公分 5 毫米後，還剩下 18 毫米，這條繩子原來長幾公分幾毫米？"
+    answer: "這條繩子原來長 14 公分 3 毫米。"
+    explanation: "12 公分 5 毫米 = 125 毫米，$125 + 18 = 143$ 毫米 = 14 公分 3 毫米。（原卷另要求先填 18 毫米 = 1 公分 8 毫米。）"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 37 }
+  - no: 37
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "兒童新樂園一日樂 Fun 券門票每張是 200 元，小美買了 4 張，總共要付多少元？"
+    answer: "總共要付 800 元。"
+    explanation: "$200 \\times 4 = 800$，總共 800 元。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 38 }
+  - no: 38
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "一瓶豆漿 39 元，豆豆家每天都會喝 5 瓶，一個星期要花多少元？"
+    space: 6
+    answer: "一個星期要花 1365 元。"
+    explanation: "先算一天：$39 \\times 5 = 195$ 元；一個星期 7 天：$195 \\times 7 = 1365$ 元。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 39 }
+  - no: 39
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: "美術館昨天的參觀人數是 1347 個人，今天的參觀人數是 2000 個人，今天參觀的人數比昨天多幾個人？"
+    answer: "今天比昨天多 653 個人。"
+    explanation: "$2000 - 1347 = 653$，多 653 個人。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 40 }
+  - no: 40
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "公園外圍一圈是 605 公尺，腳踏車繞著公園騎 5 圈是多少公尺？"
+    answer: "騎 5 圈是 3025 公尺。"
+    explanation: "$605 \\times 5 = 3025$，共 3025 公尺。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 41 }
+  - no: 41
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: "小明今年 6 歲，哥哥的年齡是小明的 2 倍，媽媽的年齡是哥哥的 4 倍，媽媽今年幾歲？"
+    space: 6
+    answer: "媽媽今年 48 歲。"
+    explanation: "先算哥哥：$6 \\times 2 = 12$ 歲；再算媽媽：$12 \\times 4 = 48$ 歲。"
+    source: { originalPaper: 115學年度上學期三年級數學期中評量, number: 42 }

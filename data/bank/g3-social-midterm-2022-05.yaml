@@ -1,0 +1,50 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 我們可以利用銀行、郵局或存錢筒來儲蓄。
+    answer: true
+    explanation: 把錢存入銀行、郵局的儲蓄帳戶，或放進存錢筒留待日後使用，都是儲蓄的方式。
+    source:
+      originalPaper: 111學年度第一學期三年級社會領域期中評量
+      section: 【家庭經濟】一、是非題
+      number: 3
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家庭休閒活動是和同學一起進行的活動。
+    answer: false
+    explanation: 家庭休閒活動以家人共同參與為重點；只說和同學一起，不能作為家庭休閒活動的定義。
+    source:
+      originalPaper: 111學年度第一學期三年級社會領域期中評量
+      section: 【家庭休閒活動】一、是非題
+      number: 3
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家庭休閒活動需要全家人一起討論決定。
+    answer: true
+    explanation: 家人一起討論活動內容，可以了解成員的興趣、時間與需要，安排適合大家參與的家庭休閒活動。
+    source:
+      originalPaper: 111學年度第一學期三年級社會領域期中評量
+      section: 【家庭休閒活動】一、是非題
+      number: 4
+  - no: 4
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下面選項，何者屬於「機構」？
+    options:
+      - 公園
+      - 消防局
+      - 大賣場
+      - 籃球場
+    answer: 2
+    explanation: 消防局是提供消防與救災等公共服務的機構；公園與籃球場是活動場所，大賣場是商業購物場所。
+    source:
+      originalPaper: 111學年度第一學期三年級社會領域期中評量
+      section: 【認識社區及地圖】一、選擇題
+      number: 5

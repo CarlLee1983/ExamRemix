@@ -1,0 +1,225 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 紅繩長 48 毫米，黃繩長 5 公分 6 毫米，藍繩長 6 公分 3 毫米，哪一條最長？
+    options:
+      - 三條一樣長
+      - 藍繩
+      - 紅繩
+      - 黃繩
+    answer: 2
+    explanation: 換成毫米後依序為 48、56、63 毫米，因此藍繩最長。反向核對：5×10＋6＝56，6×10＋3＝63。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-05
+  - no: 2
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 甲紙條長 72 毫米，乙紙條長 6 公分 8 毫米，丙紙條長 7 公分 5 毫米，哪一條最短？
+    options:
+      - 甲紙條
+      - 丙紙條
+      - 三條一樣長
+      - 乙紙條
+    answer: 4
+    explanation: 換成毫米後依序為 72、68、75 毫米，因此乙紙條最短。反向核對：6×10＋8＝68，7×10＋5＝75。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-05
+  - no: 3
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 白緞帶長 94 毫米，綠緞帶長 8 公分 6 毫米，紫緞帶長 9 公分 1 毫米，哪一條最長？
+    options:
+      - 三條一樣長
+      - 紫緞帶
+      - 綠緞帶
+      - 白緞帶
+    answer: 4
+    explanation: 換成毫米後依序為 94、86、91 毫米，因此白緞帶最長。反向核對：8×10＋6＝86，9×10＋1＝91。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-05
+  - no: 4
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 甲鐵絲長 36 毫米，乙鐵絲長 4 公分 3 毫米，丙鐵絲長 3 公分 9 毫米，哪一條最短？
+    options:
+      - 丙鐵絲
+      - 乙鐵絲
+      - 甲鐵絲
+      - 三條一樣長
+    answer: 3
+    explanation: 換成毫米後依序為 36、43、39 毫米，因此甲鐵絲最短。反向核對：4×10＋3＝43，3×10＋9＝39。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-05
+  - no: 5
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 紅毛線長 85 毫米，黃毛線長 9 公分 2 毫米，藍毛線長 8 公分 8 毫米，哪一條最長？
+    options:
+      - 紅毛線
+      - 黃毛線
+      - 藍毛線
+      - 三條一樣長
+    answer: 2
+    explanation: 換成毫米後依序為 85、92、88 毫米，因此黃毛線最長。反向核對：9×10＋2＝92，8×10＋8＝88。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-05
+  - no: 6
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 甲木條長 126 毫米，乙木條長 11 公分 9 毫米，丙木條長 12 公分 3 毫米，哪一條最短？
+    options:
+      - 乙木條
+      - 甲木條
+      - 丙木條
+      - 三條一樣長
+    answer: 1
+    explanation: 換成毫米後依序為 126、119、123 毫米，因此乙木條最短。反向核對：11×10＋9＝119，12×10＋3＝123。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-05
+  - no: 7
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 白繩長 67 毫米，黑繩長 7 公分 1 毫米，灰繩長 6 公分 9 毫米，哪一條最短？
+    options:
+      - 黑繩
+      - 白繩
+      - 灰繩
+      - 三條一樣長
+    answer: 2
+    explanation: 換成毫米後依序為 67、71、69 毫米，因此白繩最短。反向核對：7×10＋1＝71，6×10＋9＝69。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-05
+  - no: 8
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 粉紅紙條長 54 毫米，橘色紙條長 4 公分 9 毫米，棕色紙條長 5 公分 8 毫米，哪一條最長？
+    options:
+      - 粉紅紙條
+      - 棕色紙條
+      - 三條一樣長
+      - 橘色紙條
+    answer: 2
+    explanation: 換成毫米後依序為 54、49、58 毫米，因此棕色紙條最長。反向核對：4×10＋9＝49，5×10＋8＝58。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-05
+  - no: 9
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 鉛筆長 14 公分 6 毫米，原子筆長 138 毫米，哪一個比較短？
+    options:
+      - 鉛筆
+      - 原子筆
+    answer: 2
+    explanation: 鉛筆長 146 毫米，原子筆長 138 毫米，所以原子筆比較短。驗算：14×10＋6＝146 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-14
+  - no: 10
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 鐵釘長 4 公分 7 毫米，螺絲長 53 毫米，哪一個比較長？
+    options:
+      - 鐵釘
+      - 螺絲
+    answer: 2
+    explanation: 鐵釘長 47 毫米，螺絲長 53 毫米，所以螺絲比較長。驗算：4×10＋7＝47 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-14
+  - no: 11
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 橡皮擦長 3 公分 8 毫米，粉筆長 46 毫米，哪一個比較短？
+    options:
+      - 橡皮擦
+      - 粉筆
+    answer: 1
+    explanation: 橡皮擦長 38 毫米，粉筆長 46 毫米，所以橡皮擦比較短。驗算：3×10＋8＝38 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-14
+  - no: 12
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 蠟筆長 9 公分 2 毫米，彩色筆長 118 毫米，哪一個比較長？
+    options:
+      - 彩色筆
+      - 蠟筆
+    answer: 1
+    explanation: 蠟筆長 92 毫米，彩色筆長 118 毫米，所以彩色筆比較長。驗算：9×10＋2＝92 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-14
+  - no: 13
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 紅繩長 12 公分 7 毫米，藍繩長 115 毫米，哪一個比較短？
+    options:
+      - 紅繩
+      - 藍繩
+    answer: 2
+    explanation: 紅繩長 127 毫米，藍繩長 115 毫米，所以藍繩比較短。驗算：12×10＋7＝127 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-14
+  - no: 14
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 甲木條長 18 公分 4 毫米，乙木條長 197 毫米，哪一個比較短？
+    options:
+      - 甲木條
+      - 乙木條
+    answer: 1
+    explanation: 甲木條長 184 毫米，乙木條長 197 毫米，所以甲木條比較短。驗算：18×10＋4＝184 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-14
+  - no: 15
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 白緞帶長 7 公分 3 毫米，紫緞帶長 68 毫米，哪一個比較長？
+    options:
+      - 紫緞帶
+      - 白緞帶
+    answer: 2
+    explanation: 白緞帶長 73 毫米，紫緞帶長 68 毫米，所以白緞帶比較長。驗算：7×10＋3＝73 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-14
+  - no: 16
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 甲紙條長 5 公分 5 毫米，乙紙條長 62 毫米，哪一個比較長？
+    options:
+      - 乙紙條
+      - 甲紙條
+    answer: 1
+    explanation: 甲紙條長 55 毫米，乙紙條長 62 毫米，所以乙紙條比較長。驗算：5×10＋5＝55 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-14

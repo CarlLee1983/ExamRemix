@@ -1,0 +1,118 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ this?
+    options:
+      - What’s
+      - what’s
+      - What
+    answer: 1
+    explanation: 句首須大寫；What’s = What is。「這是什麼？」使用 What’s。
+    derivedFrom:
+      - original-english-11
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ that?
+    options:
+      - what’s
+      - What’s
+      - What
+    answer: 2
+    explanation: 句首須大寫；What’s = What is。「那是什麼？」使用 What’s。
+    derivedFrom:
+      - original-english-11
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ in the bag?
+    options:
+      - what’s
+      - What
+      - What’s
+    answer: 3
+    explanation: 句首須大寫；What’s = What is。「袋子裡是什麼？」使用 What’s。
+    derivedFrom:
+      - original-english-11
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ on the desk?
+    options:
+      - What’s
+      - what’s
+      - What
+    answer: 1
+    explanation: 句首須大寫；What’s = What is。「桌上是什麼？」使用 What’s。
+    derivedFrom:
+      - original-english-11
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ on the chair?
+    options:
+      - what’s
+      - What’s
+      - What
+    answer: 2
+    explanation: 句首須大寫；What’s = What is。「椅子上是什麼？」使用 What’s。
+    derivedFrom:
+      - original-english-11
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ in the box?
+    options:
+      - what’s
+      - What
+      - What’s
+    answer: 3
+    explanation: 句首須大寫；What’s = What is。「盒子裡是什麼？」使用 What’s。
+    derivedFrom:
+      - original-english-11
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ under the table?
+    options:
+      - What’s
+      - what’s
+      - What
+    answer: 1
+    explanation: 句首須大寫；What’s = What is。「桌子下是什麼？」使用 What’s。
+    derivedFrom:
+      - original-english-11
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ your number?
+    options:
+      - what’s
+      - What’s
+      - What
+    answer: 2
+    explanation: 句首須大寫；What’s = What is。「你的號碼是什麼？」使用 What’s。
+    derivedFrom:
+      - original-english-11
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ in your hand?
+    options:
+      - what’s
+      - What
+      - What’s
+    answer: 3
+    explanation: 句首須大寫；What’s = What is。「你手裡是什麼？」使用 What’s。
+    derivedFrom:
+      - original-english-11

@@ -92,6 +92,11 @@ describe('選擇題 schema', () => {
     expect(questionSchema.safeParse({ ...validChoice, subject: '自然' }).success).toBe(true);
   });
 
+  it('接受英語讀寫題', () => {
+    const english = { ...validChoice, subject: '英語', unit: '問候', stem: '選出合適的回應：Hello!', options: ['Hi!', 'Goodbye.'], answer: 1, explanation: 'Hi! 可以回應 Hello!。' };
+    expect(bankFileSchema.safeParse({ questions: [english] }).success).toBe(true);
+  });
+
   it('未知科目時指出 subject', () => {
     expect(issuePaths(questionSchema, { ...validChoice, subject: '健康' })).toEqual(['subject']);
   });
@@ -137,6 +142,22 @@ const validFillBlank = {
 };
 
 describe('填空題 schema', () => {
+  it('英語四線格保留一般填空的空格與答案順序', () => {
+    const english = {
+      ...validFillBlank,
+      subject: '英語',
+      writingGuide: 'four-line',
+      stem: 'Aa ___ Cc\nDd ___ Ff',
+      answer: ['Bb', 'Ee'],
+    };
+    expect(questionSchema.safeParse(english).success).toBe(true);
+    expect(issuePaths(questionSchema, { ...english, subject: '數學' })).toContain('writingGuide');
+    expect(issuePaths(questionSchema, { ...english, writingGuide: 'other' })).toContain('writingGuide');
+    expect(issuePaths(questionSchema, { ...english, answer: ['Bb', '1'] })).toContain('answer.1');
+    expect(issuePaths(questionSchema, { ...english, answer: ['Bb'] })).toContain('answer');
+    expect(questionSchema.safeParse(validFillBlank).success).toBe(true);
+  });
+
   it('接受一個空格與多個空格', () => {
     expect(questionSchema.safeParse(validFillBlank).success).toBe(true);
     const single = { ...validFillBlank, stem: '5 × 8 = ___', answer: ['40'] };
@@ -378,6 +399,10 @@ describe('試卷檔 schema', () => {
 
   it('接受自然試卷', () => {
     expect(paperFileSchema.safeParse({ ...validPaper, subject: '自然' }).success).toBe(true);
+  });
+
+  it('接受英語試卷', () => {
+    expect(paperFileSchema.safeParse({ ...validPaper, subject: '英語' }).success).toBe(true);
   });
 
   it('沒有大題時失敗', () => {

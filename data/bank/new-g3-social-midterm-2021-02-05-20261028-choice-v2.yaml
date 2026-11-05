@@ -1,0 +1,16 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 班級的自治活動
+    stem: 候選人說「選我當班長，我只幫投票給我的人」。這項承諾有什麼問題？
+    options:
+      - 班長一定不能提出任何承諾
+      - 班長應服務班級，不能只服務支持自己的人
+      - 班長只需要比較禮物價錢
+      - 沒有支持他的人都應離開班級
+    answer: 2
+    explanation: 班長的服務對象是班級成員，不能以投票選擇差別對待。
+    derivedFrom:
+      - g3-social-midterm-2021-02-05

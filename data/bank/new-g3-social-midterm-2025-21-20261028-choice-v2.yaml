@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 參觀文化活動時，我不知道某個儀式的意義，也不知道能否拍照。哪個做法最合適？
+    options:
+      - 先詢問解說人員，了解意義與參與規範
+      - 先大聲嘲笑再說
+      - 認定沒見過就沒有價值
+      - 不管現場規定，想拍就拍
+    answer: 1
+    explanation: 了解文化意義與規範有助尊重差異，不能以自己的熟悉程度判斷價值。
+    derivedFrom:
+      - g3-social-midterm-2025-21

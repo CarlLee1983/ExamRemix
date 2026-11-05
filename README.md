@@ -2,6 +2,12 @@
 
 把手機拍的原卷照片或 PDF 交給 AI agent 分析，只保留題目（去除已作答的筆跡），存成結構化題庫；再由 AI 參考原題產生同題型的新題，最後在本機純靜態網頁上依題型排版，輸出 A4 可列印的試卷。
 
+## 目前能力與後續契約
+
+本輪整合基底（[#56](https://github.com/CarlLee1983/ExamRemix/issues/56)）保留既有題型、題組、英語四線格／個人問答、一對一配對及 A4 列印，並帶入正式資料建置。以下描述的 CLI、頁面與「只支援 A4」是目前程式行為。
+
+[#55 工程規格](https://github.com/CarlLee1983/ExamRemix/issues/55)所定的可靠入庫、範圍／容量、舊卷停用、固定完整卷／重抽、正式入口、國語直排／SVG 注音與 A3 列印，以及正式發布／回復仍由後續子票完成。已合併的[新題契約](docs/question-generation-contract.md)、[範圍契約](docs/exam-scope-contract.md)、[組卷契約](docs/paper-composition-contract.md)與已接受原型是驗收依據，不代表目前程式已提供這些能力。現有題數及歷史練習卷不代表可組出幾份符合新配置的完整卷；不增加逐題確認流程。
+
 ## 功能目標
 
 - **匯入**：在 Claude Code 等 AI agent 中分析照片 / PDF，區分印刷題目與手寫作答，只保留題目
@@ -13,7 +19,7 @@
 | 面向 | 決定 |
 | --- | --- |
 | AI 執行方式 | 在本機的 AI agent（Claude Code）內執行，不在網頁呼叫 API |
-| 網頁 | 純靜態網站，僅本機使用 |
+| 網頁 | 純靜態網站，可本機使用或部署至靜態託管 |
 | 題庫格式 | YAML（建置時以 schema 檢查後轉成 JSON） |
 | 數學式 | LaTeX 子集，以 KaTeX 渲染；直式計算等以結構化資料表示 |
 | 紙張 | 只支援 A4，以 CSS `@page` 控制 |
@@ -73,7 +79,7 @@ repo 內附四個專案 skill（`.claude/skills/`），在 Claude Code 裡直接
 EXAMREMIX_DATA_DIR=data pnpm dev
 ```
 
-建議把真實資料放在 repo 根目錄的 `data/`，它已被 `.gitignore` 排除（見 ADR 0001）。題庫檔或試卷檔格式有誤時，建置會失敗並指出檔案與欄位。
+正式題庫放在 repo 根目錄的 `data/bank/`，試卷放在 `data/papers/`，兩者納入 Git（見 ADR 0001）。正式預覽用 `pnpm dev:data`，部署用 `pnpm build:deploy`；兩個指令固定讀 `data/`，不受外部 `EXAMREMIX_DATA_DIR` 影響，缺少資料目錄時失敗。`examples/` 保留供開發與自動測試使用。題庫檔或試卷檔格式有誤時，建置會失敗並指出檔案與欄位。
 
 ### 題庫檢查
 
@@ -104,7 +110,8 @@ pnpm list:questions [資料目錄] [過濾條件]
 | `diagram-label` | 必填 `image`、`labels`（至少一個 `{ x, y, width, height, answer }`） | 在圖上原空格作答；座標與寬高均為圖片百分比，`x`、`y` 為空格左上角的水平、垂直位置（0 至 100）；寬高大於 0，空格須完整在圖片內 |
 | `table-fill` | `columns`（至少一個文字或圖文欄標題）、`rows`（至少一列 `{ label, answers }`） | `label` 是非空文字列標題；各列 `answers` 長度須等於欄數，在對應儲存格作答 |
 | `true-false` | `answer`（`true` 或 `false`） | 留一個作答括號；答案卷填 ○（true）或 ✕（false） |
-| `fill-blank` | `answer`（字串陣列，每個空格一個答案，不可為空字串） | 題幹用連續三個半形底線 `___` 標記一個空格 |
+| `fill-blank` | `answer`（字串陣列，每個空格一個答案）、英語可選 `writingGuide: four-line` | 題幹用 `___` 標記空格 |
+| `personal-response` | `writingGuide: four-line`、選填 `sampleAnswer` | 英語個人問答；範例不是唯一答案 |
 | `char-to-zhuyin` | 只有 `stem`，沒有 `answer` | 題幹中的注音標注就是要考的字（至少一個）：試卷上該字加底線，後面留注音作答格，寬度依注音組數 |
 | `zhuyin-to-char` | 只有 `stem`，沒有 `answer` | 題幹中的注音標注就是要考的字（至少一個）：試卷上該字換成空白作答格（每字一格），注音以 ruby 顯示在格子上方 |
 | `make-sentence` | `answer`（範例句子，非空字串） | `stem` 寫說明與詞語；題幹下方留預設行數的作答行（預設 2 行，見 `src/domain/answer-space.ts`），答案卷在行上以紅字顯示範例句子 |
@@ -177,6 +184,36 @@ questions:
 
 試卷上空格渲染成底線，寬度依該空格答案的字數決定，不會印出 `___`；答案卷把答案以紅字填在底線上，底線寬度不變。
 
+英語填空題如需練習字母或單字書寫，可選填 `writingGuide: four-line`，將每個空格印成四線格；未填時仍是一般底線。四線格答案限英文字母及詞間空格，題幹中的換行會保留。答案卷的電腦字型供核對字母內容，筆畫與位置仍須依書寫要求判斷。每題的大小寫順序與評分方式仍應寫在題幹或大題標題，讓讀題的人能看見。
+
+英語個人問答使用 `personal-response`、必填 `writingGuide: four-line`，不填固定 `answer`。每題預設留一組全寬四線格；選填 `space` 可指定組數，至少一組。答案卷顯示「依個人情況作答」，選填的 `sampleAnswer` 會標示為範例，允許數字、姓名與標點，不能當成唯一正解。題目不儲存學生的個人回答。
+
+舊版程式不認得這個題型；如需回復舊版，先移除新題型的試卷引用與題庫資料，再回復程式。
+
+```yaml
+- no: 1
+  type: personal-response
+  subject: 英語
+  grade: 3
+  writingGuide: four-line
+  stem: "What is your name?"
+  sampleAnswer: "My name is Amy."
+  explanation: "依自己的姓名回答。"
+  source: { originalPaper: "三年級英語練習", number: 1 }
+```
+
+```yaml
+- no: 1
+  type: fill-blank
+  subject: 英語
+  grade: 3
+  writingGuide: four-line
+  stem: "依字母順序寫出大小寫：Aa ___ Cc"
+  answer: ["Bb"]
+  explanation: "Aa、Bb、Cc 依字母順序排列。"
+  source: { originalPaper: "三年級英語練習", number: 1 }
+```
+
 ### 英語題
 
 科目為 `英語` 的題目內容與共用材料標示 `lang="en"`，以 Arial、Helvetica Neue 與既有中文字型備援呈現；採系統字型，無需連線載入。題號、中文標籤、全形作答括號、試卷抬頭與姓名／日期／配分等外框仍沿用中文。其他科目的字型不變，英語內容裡的中文也可照常用 `[圈選|ㄑㄩㄢ ㄒㄩㄢˇ]` 標注音。
@@ -188,6 +225,8 @@ questions:
 ### 配對題
 
 `left` 保存各左側題目的 `content` 與答案代號 `answer`，`right` 是共用答案池，每個項目有 `code` 與 `content`。兩側各至少一項，數量可以不同；同一代號可以被多次引用，答案池也可以有未使用的項目。整道配對題只占一個題號。
+
+固定一對一連線時加上 `mode: one-to-one`：兩欄須有相同的 2 至 10 項，每個答案代號恰好使用一次，同欄文字或圖片不可重複。題目仍使用相同的 `left[{content, answer}]` 與 `right[{code, content}]` 格式；試卷保留編號與連線板，答案卷另列配對答案。未指定 `mode` 時沿用一般答案池規則。
 
 `content` 沿用選項格式：可直接寫支援注音與數學式的文字，或以 `{ text?, image? }` 提供文字、圖片或兩者；圖片沿用題庫內的相對路徑及替代文字規則。兩欄與題目本身的附圖都會由 `check:bank` 檢查是否存在，包含未使用的答案池項目。
 
@@ -285,7 +324,7 @@ questions:
 
 ### 題組衍生
 
-新題組以單一字串 `derivedFrom: "原題庫檔名#題組號"` 記錄原題組，並保存新材料與全部新題；材料的 `source` 與 `derivedFrom` 不能同時存在。原題組仍可省略材料 `source`，但其成員都必須是原題。原題組必須存在、本身不是新題組，且材料與所有成員都沒有疑點。
+新題組以單一字串 `derivedFrom: "原題庫檔名#題組號"` 記錄原題組，並保存新材料與全部新題；材料的 `source` 與 `derivedFrom` 不能同時存在。原題組仍可省略材料 `source`，但其成員都必須是原題。原題組必須存在、本身不是新題組，且材料與所有成員都沒有疑點或圖片。有圖的配對原題也不可衍生新題。
 
 新舊題組的 `members` 數量須相同，依順序逐題對應：新題的 `derivedFrom` 陣列只能包含對應的一個原題 ID。每題的題型、科目、年級、單元（含省略單元）沿用現有衍生規則；整組可以混合題型與單元。不能只衍生部分小題、調錯成員對應、混入別組來源，或在未宣告衍生來源的題組內藏入個別衍生題。完成整組衍生後，試卷仍可節選新題組的部分成員。
 
@@ -383,8 +422,8 @@ pnpm test:e2e      # Playwright：以範例資料建置後測試首頁、題庫�
 
 ## 隱私
 
-原卷照片 / PDF 放在 `inputs/`，已被 `.gitignore` 排除，不會推上 GitHub。
+原卷照片 / PDF 放在 `inputs/`，已被 `.gitignore` 排除，不會推上 GitHub。正式題庫、附圖與試卷納入 Git，部署會提供答案、解析、來源及圖片（ADR 0001）；封存及操作紀錄不公開。
 
 ## 正式部署決策
 
-正式網址採用 `https://examremix.gravito.dev/`，託管、發布及回復方式見[部署決策與操作契約](docs/deployment.md)。本機程式／正式資料整合及發布流程仍待完成；此文件不表示網站已上線。
+正式網址採用 `https://examremix.gravito.dev/`。目前已整合正式資料載入、`dev:data`、`build:deploy` 及驗證 CI；託管、手動發布與指定版本回復以[部署決策與操作契約](docs/deployment.md)為準。發布 workflow、帳號／網域設定與上線驗收仍待完成，這份基底不是已上線版本。

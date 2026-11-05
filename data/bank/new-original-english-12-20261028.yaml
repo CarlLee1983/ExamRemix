@@ -1,0 +1,118 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am fine.
+    options:
+      - I’m
+      - I
+      - My
+    answer: 2
+    explanation: 第一人稱主詞 I 搭配 am；I’m 已包含 am，My 是所有格，不能直接接 am。
+    derivedFrom:
+      - original-english-12
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am good.
+    options:
+      - I’m
+      - My
+      - I
+    answer: 3
+    explanation: 第一人稱主詞 I 搭配 am；I’m 已包含 am，My 是所有格，不能直接接 am。
+    derivedFrom:
+      - original-english-12
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am happy.
+    options:
+      - I
+      - I’m
+      - My
+    answer: 1
+    explanation: 第一人稱主詞 I 搭配 am；I’m 已包含 am，My 是所有格，不能直接接 am。
+    derivedFrom:
+      - original-english-12
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am sad.
+    options:
+      - I’m
+      - I
+      - My
+    answer: 2
+    explanation: 第一人稱主詞 I 搭配 am；I’m 已包含 am，My 是所有格，不能直接接 am。
+    derivedFrom:
+      - original-english-12
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am six years old.
+    options:
+      - I’m
+      - My
+      - I
+    answer: 3
+    explanation: 第一人稱主詞 I 搭配 am；I’m 已包含 am，My 是所有格，不能直接接 am。
+    derivedFrom:
+      - original-english-12
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am seven years old.
+    options:
+      - I
+      - I’m
+      - My
+    answer: 1
+    explanation: 第一人稱主詞 I 搭配 am；I’m 已包含 am，My 是所有格，不能直接接 am。
+    derivedFrom:
+      - original-english-12
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am a boy.
+    options:
+      - I’m
+      - I
+      - My
+    answer: 2
+    explanation: 第一人稱主詞 I 搭配 am；I’m 已包含 am，My 是所有格，不能直接接 am。
+    derivedFrom:
+      - original-english-12
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am a girl.
+    options:
+      - I’m
+      - My
+      - I
+    answer: 3
+    explanation: 第一人稱主詞 I 搭配 am；I’m 已包含 am，My 是所有格，不能直接接 am。
+    derivedFrom:
+      - original-english-12
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am a student.
+    options:
+      - I
+      - I’m
+      - My
+    answer: 1
+    explanation: 第一人稱主詞 I 搭配 am；I’m 已包含 am，My 是所有格，不能直接接 am。
+    derivedFrom:
+      - original-english-12

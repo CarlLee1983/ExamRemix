@@ -1,0 +1,10 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 放學後是我的自由時間，只因為我先到公共遊戲區，就可以規定整個下午不准其他人使用那裡的遊具。
+    answer: false
+    explanation: 課餘時間可以安排自己想做的活動，但仍須尊重他人。先到公共遊戲區，不表示可以把共用遊具占成自己整個下午專用；使用時應遵守共用與輪候的規則。題目不是指輪到自己使用某一次遊具，而是單憑先到就排除其他人的使用。
+    derivedFrom:
+      - g3-social-midterm-2020-02-07

@@ -1,0 +1,50 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 我要先完成比較重要和緊急的事，再去做想做的事。
+    answer: true
+    explanation: 當事情有輕重緩急時，先處理重要且緊急的事，再安排想做的事，有助避免耽誤必須完成的工作。
+    source:
+      originalPaper: 113學年度第一學期三年級社會科期中學業評量試卷（一）
+      section: 一、是非題：每題2分共20分
+      number: 2
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 「一寸光陰一寸金」是在說明時間的寶貴，像金錢一樣重要。
+    answer: true
+    explanation: 這句話用金錢比喻時間的珍貴，提醒人珍惜時間；不是在計算時間與金錢的實際價格。
+    source:
+      originalPaper: 113學年度第一學期三年級社會科期中學業評量試卷（一）
+      section: 一、是非題：每題2分共20分
+      number: 3
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 「祖母」在閩南語族群中稱為「阿嬤」。
+    answer: true
+    explanation: 教育部臺灣台語常用詞辭典的「阿媽」可稱父親的母親，異用字包括「阿嬤」，因此原題稱祖母為阿嬤是正確的。
+    source:
+      originalPaper: 113學年度第一學期三年級社會科期中學業評量試卷（一）
+      section: 一、是非題：每題2分共20分
+      number: 10
+  - no: 5
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下列哪一項是做課堂筆記時可以使用的方法？
+    options:
+      - 使用符號、圖像快速記錄
+      - 整頁課文用螢光筆畫記
+      - 畫下與課文無關的圖畫
+      - 不重要的內容塗黑
+    answer: 1
+    explanation: 用符號或圖像能簡要記錄內容；整頁畫記無法凸顯重點，無關圖畫或塗黑內容也不能有效記錄課堂資訊。
+    source:
+      originalPaper: 113學年度第一學期三年級社會科期中學業評量試卷（一）
+      section: 二、選擇題：每題2分共20分
+      number: 7

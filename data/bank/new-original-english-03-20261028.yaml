@@ -1,0 +1,100 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: INK ___
+    answer:
+      - ink
+    explanation: 依題意將大寫轉為小寫，保留字母順序：INK → ink。
+    derivedFrom:
+      - original-english-03
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: JET ___
+    answer:
+      - jet
+    explanation: 依題意將大寫轉為小寫，保留字母順序：JET → jet。
+    derivedFrom:
+      - original-english-03
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: KITE ___
+    answer:
+      - kite
+    explanation: 依題意將大寫轉為小寫，保留字母順序：KITE → kite。
+    derivedFrom:
+      - original-english-03
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: LION ___
+    answer:
+      - lion
+    explanation: 依題意將大寫轉為小寫，保留字母順序：LION → lion。
+    derivedFrom:
+      - original-english-03
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: MILK ___
+    answer:
+      - milk
+    explanation: 依題意將大寫轉為小寫，保留字母順序：MILK → milk。
+    derivedFrom:
+      - original-english-03
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: NOSE ___
+    answer:
+      - nose
+    explanation: 依題意將大寫轉為小寫，保留字母順序：NOSE → nose。
+    derivedFrom:
+      - original-english-03
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: OTTER ___
+    answer:
+      - otter
+    explanation: 依題意將大寫轉為小寫，保留字母順序：OTTER → otter。
+    derivedFrom:
+      - original-english-03
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: PEN ___
+    answer:
+      - pen
+    explanation: 依題意將大寫轉為小寫，保留字母順序：PEN → pen。
+    derivedFrom:
+      - original-english-03
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: RAT ___
+    answer:
+      - rat
+    explanation: 依題意將大寫轉為小寫，保留字母順序：RAT → rat。
+    derivedFrom:
+      - original-english-03

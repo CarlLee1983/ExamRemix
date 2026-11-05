@@ -1,0 +1,42 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 植物的葉子上的葉脈只能輸送水份不能輸送養份。
+    answer: false
+    explanation: 葉脈含有輸送組織，既能輸送水分，也能輸送葉片製造的養分，所以「只能輸送水份不能輸送養份」錯誤。保留原題「水份／養份」寫法；不要求孩子學會組織的專有名稱。官方答案×，獨立核算一致。
+    source:
+      originalPaper: 111學年度第一學期第一次評量三年級自然科評量試卷
+      section: 一、是非題(對的畫○，錯的打×)每題二分共二十八分
+      number: 4
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 沙子、樹看得見是物質，空氣看不見，不是物質。
+    answer: false
+    explanation: 看得見或看不見不能用來判斷是否為物質。空氣雖然看不見，仍占有空間並有重量，所以空氣也是物質。官方答案×，獨立核算一致。
+    source:
+      originalPaper: 111學年度第一學期第一次評量三年級自然科評量試卷
+      section: 一、是非題(對的畫○，錯的打×)每題二分共二十八分
+      number: 6
+  - no: 3
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 測量樹胸圍要找出離地多少公分的樹幹位置？
+    options:
+      - 110公分
+      - 120公分
+      - 130公分
+      - 140公分
+    answer: 3
+    explanation: 樹胸圍指在離地1.3公尺，也就是130公分的位置，量測樹幹一圈的長度。因此四項中選③。這是在問量測高度，並不是說每一棵樹的胸圍都長130公分。官方答案③，獨立核算一致。
+    source:
+      originalPaper: 111學年度第一學期第一次評量三年級自然科評量試卷
+      section: 二、選出正確的答案（選擇題）每題二分共二十二分
+      number: 10

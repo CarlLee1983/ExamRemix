@@ -10,6 +10,7 @@ export const TYPE_LABELS: Record<Question['type'], string> = {
   'table-fill': '表格填答題',
   'true-false': '是非題',
   'fill-blank': '填空題',
+  'personal-response': '個人問答',
   'char-to-zhuyin': '國字注音',
   'zhuyin-to-char': '注音寫國字',
   'make-sentence': '造句',

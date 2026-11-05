@@ -1,0 +1,87 @@
+# 原件 URL：https://www.maiyajiaoan.com/wiki/24723.html（取件 2026-10-29 19:25 +0800）
+# page.html SHA-256: de6375bdc20e084769523722a45a3fbab78f945c3133c3504a577f5762380996
+# full-page.png SHA-256: 262c04dee06e099ac36787932ece9c77c9893f95d24633e6eb57b88f7bc08f6c
+# 隔離候選題庫：只收 可用題；HOLD / HOLD_NEAR 題見 ../../REPORT.md。無官方答案，答案皆依原題獨立推核。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 指北針的盤面具有磁性。
+    answer: false
+    explanation: 指北針裡有磁性的是中間那支會轉動的磁針，盤面只是印著方位刻度的底板，本身沒有磁性。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 109學年度第1學期三年級自然領域期中評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 6
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 懸吊長條形磁鐵，當磁鐵靜止時，S極會指向北方。
+    answer: false
+    explanation: 懸吊的長條形磁鐵靜止時，指向北方的是N極，S極指向南方。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 109學年度第1學期三年級自然領域期中評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 7
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 有些物體受到力的作用後，會恢復原本的形狀，是因為它具有彈性。
+    answer: true
+    explanation: 物體受力變形後能恢復原狀的性質叫做彈性，例如橡皮筋、彈簧。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 109學年度第1學期三年級自然領域期中評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 8
+  - no: 4
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 榕樹有一條條從樹枝上垂下來的構造，是榕樹的莖。
+    answer: false
+    explanation: 榕樹從樹枝垂下的一條條構造是氣生根，屬於根，不是莖。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 109學年度第1學期三年級自然領域期中評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 15
+  - no: 5
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列哪一個植物的根不是軸根？
+    options:
+      - 小白菜
+      - 空心菜
+      - 水稻
+      - 青江菜
+    answer: 3
+    explanation: 小白菜、空心菜、青江菜都有一條明顯的主根，是軸根；水稻的根是許多細長的根，沒有明顯主根，屬於鬚根。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 109學年度第1學期三年級自然領域期中評量試卷
+      section: 二、選擇題：每題3分，共30分
+      number: 8
+  - no: 6
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 哪一種物品受到力的作用後無法恢復原狀？
+    options:
+      - 紙杯
+      - 皮球
+      - 橡皮筋
+      - 彈簧
+    answer: 1
+    explanation: 皮球、橡皮筋、彈簧受力變形後都會恢復原狀；紙杯被壓扁或捏皺後不會自己回復，所以選紙杯。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 109學年度第1學期三年級自然領域期中評量試卷
+      section: 二、選擇題：每題3分，共30分
+      number: 10

@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 老師已查資料確認，甲、乙是兩種不同的植物，兩者都有心形葉。小華只因另一片葉子也是心形，就能確定它一定來自甲植物。
+    answer: false
+    explanation: 不同種類的植物可能共有同一種葉形；只看心形這一個特徵，無法排除乙或其他可能，還要比對更多特徵。
+    derivedFrom:
+      - g3-science-midterm-2024-02-01

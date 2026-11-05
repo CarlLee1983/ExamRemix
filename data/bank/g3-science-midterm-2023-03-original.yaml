@@ -1,0 +1,13 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 因為鉛筆很輕，所以拿鉛筆時不會用到力。
+    answer: false
+    explanation: 鉛筆雖然輕，仍有重量；用手拿住它時，手仍需要施力支撐它。所需的力很小，不等於完全沒有用力。
+    source:
+      originalPaper: 112學年度上學期三年級自然領域期中評量試卷
+      section: 一、是非題：(每題2分，共30分)
+      number: 10

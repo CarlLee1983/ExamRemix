@@ -1,0 +1,81 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下列哪一項不屬於畫心智圖的步驟項目？
+    options:
+      - 使用計算機
+      - 找關鍵字
+      - 擴散連結
+      - 確定主題
+    answer: 1
+    explanation: 心智圖先確定主題，找出關鍵字並建立擴散連結；使用計算機不是畫心智圖的步驟。
+    source:
+      originalPaper: 111學年度第一學期三年級社會科期中定期評量試卷
+      section: 二、選擇題：(每個答案2分，共40分)
+      number: 3
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下列哪項是校園外的大教室？
+    options:
+      - 市立圖書館
+      - 游泳池
+      - 阿嬤的菜園
+      - 以上皆是
+    answer: 4
+    explanation: 圖書館能閱讀學習，游泳池能學習游泳，菜園能觀察植物，三者都能成為校園外的學習場所。
+    source:
+      originalPaper: 111學年度第一學期三年級社會科期中定期評量試卷
+      section: 二、選擇題：(每個答案2分，共40分)
+      number: 10
+  - no: 4
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 分配打掃工作時，下列哪一項符合「公平原則」？
+    options:
+      - 成績好的人先選
+      - 工作份量大致相同
+      - 只做自己喜歡的工作
+      - 困難的部分給別人做
+    answer: 2
+    explanation: 分工時讓大家的工作份量大致相同，能避免少數人承擔過多工作；成績或個人喜好不應成為推卸工作的理由。
+    source:
+      originalPaper: 111學年度第一學期三年級社會科期中定期評量試卷
+      section: 二、選擇題：(每個答案2分，共40分)
+      number: 16
+  - no: 5
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 埃及部分學校的學生需要搭船上學，這是因為受到什麼因素影響？
+    options:
+      - 居住環境
+      - 生活習慣
+      - 宗教習俗
+      - 經濟條件
+    answer: 1
+    explanation: 題目所述搭船上學，反映水域等居住環境對交通方式的影響；不是由宗教習俗或一般生活習慣決定。
+    source:
+      originalPaper: 111學年度第一學期三年級社會科期中定期評量試卷
+      section: 二、選擇題：(每個答案2分，共40分)
+      number: 17
+  - no: 6
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 校園或公園的生態池要大家一起維護，請問下列哪一種方式是不適當的行為？
+    options:
+      - 請勿抓魚
+      - 餵食生態池的生物
+      - 請勿傾倒廢水到池中
+      - 請勿踩生態池的石頭
+    answer: 2
+    explanation: 任意餵食可能改變生態池生物的習性並影響水質；不抓魚、不倒廢水及不踩池中石頭，有助保護環境與安全。
+    source:
+      originalPaper: 111學年度第一學期三年級社會科期中定期評量試卷
+      section: 二、選擇題：(每個答案2分，共40分)
+      number: 20

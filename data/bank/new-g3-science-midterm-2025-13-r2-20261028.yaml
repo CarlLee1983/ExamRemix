@@ -1,0 +1,31 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 正在滾動的球被手接住而停下，這能說明什麼？
+    options:
+      - 受力能使運動中的物體停止
+      - 只有靜止物體才會受力
+      - 球停止代表它沒有受到力
+      - 力只能改變顏色而不能改變運動
+    answer: 1
+    explanation: 手對滾動球施力使它停止，屬於運動狀態改變。
+    derivedFrom:
+      - g3-science-midterm-2025-13
+  - no: 2
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 玩具車直線前進時，側面受到輕推而轉向；車身沒有明顯變形。這次最明顯的改變是什麼？
+    options:
+      - 運動方向改變
+      - 車身形狀明顯改變
+      - 運動速度一定變成零
+      - 車子移動的方向完全不變
+    answer: 1
+    explanation: 題目明列輕推後轉向，顯示受力能改變運動方向，不一定同時出現明顯變形。
+    derivedFrom:
+      - g3-science-midterm-2025-13

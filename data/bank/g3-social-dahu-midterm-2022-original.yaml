@@ -1,0 +1,17 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 我們應該怎麼稱呼媽媽的弟弟呢？
+    options:
+      - 堂弟
+      - 叔叔
+      - 伯伯
+      - 舅舅
+    answer: 4
+    explanation: 媽媽的弟弟是母親的兄弟，一般稱為舅舅。答案依題意獨立推核，未取得官方答案。
+    source:
+      originalPaper: 宜蘭縣大湖國小111學年度第一學期社會科期中考試卷
+      section: 二、選擇題30%
+      number: 1

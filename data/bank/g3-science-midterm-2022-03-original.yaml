@@ -1,0 +1,83 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 使用指北針測量方位，指北端必須對準盤面的「南」字。
+    answer: false
+    explanation: 讀取指北針時，應讓磁針的指北端和盤面的北方標記相對應，不是對準「南」字；如此才能依盤面判讀其他方向。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 6
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 腳踏車輪胎充飽氣比沒氣時騎起來輕鬆。
+    answer: true
+    explanation: 充氣能讓輪胎維持適當外形並支撐車重。沒氣的輪胎會扁塌，騎乘較費力；這是充氣輪胎在日常生活中的作用。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 8
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 風向袋的顏色大多是紅白相間，是為了方便從遠方就能觀察到風力的強弱。
+    answer: true
+    explanation: 紅白相間的配色較醒目，便於從遠處看清風向袋，再依風向袋被吹起、伸展的情形判斷風力強弱；不是紅白顏色本身代表風力數值。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 12
+  - no: 4
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 不同植物的種子顏色、大小都有可能會不一樣。
+    answer: true
+    explanation: 不同植物的種子可能有不同的顏色和大小。這題只說可能不同，沒有說所有不同植物的種子每個特徵都一定不同。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 15
+  - no: 5
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 下面哪一種物品的設計和空氣特性有關係？
+    options:
+      - 氣泡袋
+      - 象棋
+      - 卡牌
+      - 扯鈴
+    answer: 1
+    explanation: 氣泡袋利用氣泡內的空氣提供緩衝，保護物品。象棋、卡牌及扯鈴的主要設計功能不靠這種空氣緩衝特性。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中評量試卷
+      section: 二、選擇題：每題2分，共20分
+      number: 4
+  - no: 6
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 想要知道風向，不能使用哪一個方法？
+    options:
+      - 觀察小草飄動的方向
+      - 觀察同學跑的方向
+      - 觀察國旗飄動的方向
+      - 觀察鯉魚旗飄動的方向
+    answer: 2
+    explanation: 小草、國旗與鯉魚旗會受風吹動，可作為觀察風向的線索；同學可自行選擇跑步方向，跑向何處不能可靠表示風吹向哪裡。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中評量試卷
+      section: 二、選擇題：每題2分，共20分
+      number: 7

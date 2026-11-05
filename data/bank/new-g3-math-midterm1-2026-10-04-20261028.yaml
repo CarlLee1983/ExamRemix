@@ -1,0 +1,689 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 商店裡一個書包賣 876 元，一件雨衣賣 458 元，買這兩樣商品共要付多少元？
+    options:
+      - "418"
+      - "1234"
+      - "1434"
+      - "1334"
+    answer: 4
+    explanation: 876＋458＝1334，共付 1334 元。驗算：1334－458＝876。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-04
+  - no: 2
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 商店裡一雙球鞋賣 925 元，一頂安全帽賣 680 元，買這兩樣商品共要付多少元？
+    options:
+      - "1505"
+      - "1705"
+      - "1605"
+      - "245"
+    answer: 3
+    explanation: 925＋680＝1605，共付 1605 元。驗算：1605－680＝925。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-04
+  - no: 3
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 商店裡一臺電風扇賣 789 元，一盞檯燈賣 568 元，買這兩樣商品共要付多少元？
+    options:
+      - "221"
+      - "1257"
+      - "1357"
+      - "1457"
+    answer: 3
+    explanation: 789＋568＝1357，共付 1357 元。驗算：1357－568＝789。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-04
+  - no: 4
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 商店裡一張書桌賣 2680 元，一張椅子賣 735 元，買這兩樣商品共要付多少元？
+    options:
+      - "3515"
+      - "3415"
+      - "1945"
+      - "3315"
+    answer: 2
+    explanation: 2680＋735＝3415，共付 3415 元。驗算：3415－735＝2680。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-04
+  - no: 5
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 商店裡一套積木賣 648 元，一輛玩具車賣 375 元，買這兩樣商品共要付多少元？
+    options:
+      - "923"
+      - "1123"
+      - "273"
+      - "1023"
+    answer: 4
+    explanation: 648＋375＝1023，共付 1023 元。驗算：1023－375＝648。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-04
+  - no: 6
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 商店裡一臺烤麵包機賣 1390 元，一個水壺賣 485 元，買這兩樣商品共要付多少元？
+    options:
+      - "1875"
+      - "905"
+      - "1775"
+      - "1975"
+    answer: 1
+    explanation: 1390＋485＝1875，共付 1875 元。驗算：1875－485＝1390。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-04
+  - no: 7
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 商店裡一件外套賣 1599 元，一條圍巾賣 369 元，買這兩樣商品共要付多少元？
+    options:
+      - "2068"
+      - "1230"
+      - "1968"
+      - "1868"
+    answer: 3
+    explanation: 1599＋369＝1968，共付 1968 元。驗算：1968－369＝1599。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-04
+  - no: 8
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 商店裡一個旅行袋賣 756 元，一個背包賣 899 元，買這兩樣商品共要付多少元？
+    options:
+      - "1555"
+      - "1755"
+      - "143"
+      - "1655"
+    answer: 4
+    explanation: 756＋899＝1655，共付 1655 元。驗算：1655－899＝756。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-04
+  - no: 9
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 圖書館預計募集 6000 本書，已募集 3748 本，還要募集幾本書？
+    options:
+      - "2252"
+      - "2152"
+      - "2352"
+      - "9748"
+    answer: 1
+    explanation: 6000－3748＝2252。驗算：2252＋3748＝6000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-06
+  - no: 10
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 運動會準備 4000 瓶水，已發出 2567 瓶，還有幾瓶水沒發出？
+    options:
+      - "1333"
+      - "1533"
+      - "1433"
+      - "6567"
+    answer: 3
+    explanation: 4000－2567＝1433。驗算：1433＋2567＝4000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-06
+  - no: 11
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 農場要裝箱 7000 顆橘子，已裝好 4689 顆，還有幾顆橘子沒裝箱？
+    options:
+      - "2411"
+      - "2311"
+      - "11689"
+      - "2211"
+    answer: 2
+    explanation: 7000－4689＝2311。驗算：2311＋4689＝7000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-06
+  - no: 12
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 工廠要製作 8000 個紙盒，已完成 5926 個，還要製作幾個紙盒？
+    options:
+      - "2074"
+      - "13926"
+      - "1974"
+      - "2174"
+    answer: 1
+    explanation: 8000－5926＝2074。驗算：2074＋5926＝8000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-06
+  - no: 13
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 學校要印 3000 張通知單，已印好 1789 張，還要印幾張通知單？
+    options:
+      - "1311"
+      - "1211"
+      - "1111"
+      - "4789"
+    answer: 2
+    explanation: 3000－1789＝1211。驗算：1211＋1789＝3000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-06
+  - no: 14
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 園遊會準備 5000 張摸彩券，已發出 2876 張，還剩幾張摸彩券？
+    options:
+      - "2124"
+      - "2224"
+      - "2024"
+      - "7876"
+    answer: 1
+    explanation: 5000－2876＝2124。驗算：2124＋2876＝5000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-06
+  - no: 15
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 社區預計種 2000 棵樹，已種了 1368 棵，還要種幾棵樹？
+    options:
+      - "732"
+      - "632"
+      - "532"
+      - "3368"
+    answer: 2
+    explanation: 2000－1368＝632。驗算：632＋1368＝2000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-06
+  - no: 16
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 果園要採收 9000 顆蘋果，已採收 6875 顆，還要採收幾顆蘋果？
+    options:
+      - "2225"
+      - "2125"
+      - "15875"
+      - "2025"
+    answer: 2
+    explanation: 9000－6875＝2125。驗算：2125＋6875＝9000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-06
+  - no: 17
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：426 + 368 大約是多少？
+    options:
+      - "700"
+      - "900"
+      - "800"
+    answer: 3
+    explanation: 426 約為 400，368 約為 400，400 + 400＝800。驗算：800－400＝400。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-08
+  - no: 18
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：582 + 734 大約是多少？
+    options:
+      - "1400"
+      - "1300"
+      - "1200"
+    answer: 2
+    explanation: 582 約為 600，734 約為 700，600 + 700＝1300。驗算：1300－700＝600。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-08
+  - no: 19
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：863 + 218 大約是多少？
+    options:
+      - "1000"
+      - "1200"
+      - "1100"
+    answer: 3
+    explanation: 863 約為 900，218 約為 200，900 + 200＝1100。驗算：1100－200＝900。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-08
+  - no: 20
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：347 + 589 大約是多少？
+    options:
+      - "1000"
+      - "900"
+      - "800"
+    answer: 2
+    explanation: 347 約為 300，589 約為 600，300 + 600＝900。驗算：900－600＝300。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-08
+  - no: 21
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：765 + 672 大約是多少？
+    options:
+      - "1400"
+      - "1500"
+      - "1600"
+    answer: 2
+    explanation: 765 約為 800，672 約為 700，800 + 700＝1500。驗算：1500－700＝800。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-08
+  - no: 22
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：916 + 481 大約是多少？
+    options:
+      - "1300"
+      - "1500"
+      - "1400"
+    answer: 3
+    explanation: 916 約為 900，481 約為 500，900 + 500＝1400。驗算：1400－500＝900。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-08
+  - no: 23
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：254 + 638 大約是多少？
+    options:
+      - "900"
+      - "1000"
+      - "800"
+    answer: 1
+    explanation: 254 約為 300，638 約為 600，300 + 600＝900。驗算：900－600＝300。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-08
+  - no: 24
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：693 + 825 大約是多少？
+    options:
+      - "1400"
+      - "1500"
+      - "1600"
+    answer: 2
+    explanation: 693 約為 700，825 約為 800，700 + 800＝1500。驗算：1500－800＝700。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-08
+  - no: 25
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：1206 − 397 大約是多少？
+    options:
+      - "800"
+      - "700"
+      - "900"
+    answer: 1
+    explanation: 1206 約為 1200，397 約為 400，1200 − 400＝800。驗算：800＋400＝1200。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-09
+  - no: 26
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：1403 − 601 大約是多少？
+    options:
+      - "900"
+      - "800"
+      - "700"
+    answer: 2
+    explanation: 1403 約為 1400，601 約為 600，1400 − 600＝800。驗算：800＋600＝1400。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-09
+  - no: 27
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：1608 − 894 大約是多少？
+    options:
+      - "700"
+      - "800"
+      - "600"
+    answer: 1
+    explanation: 1608 約為 1600，894 約為 900，1600 − 900＝700。驗算：700＋900＝1600。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-09
+  - no: 28
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：1804 − 1098 大約是多少？
+    options:
+      - "700"
+      - "600"
+      - "800"
+    answer: 1
+    explanation: 1804 約為 1800，1098 約為 1100，1800 − 1100＝700。驗算：700＋1100＝1800。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-09
+  - no: 29
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：2007 − 1196 大約是多少？
+    options:
+      - "800"
+      - "700"
+      - "900"
+    answer: 1
+    explanation: 2007 約為 2000，1196 約為 1200，2000 − 1200＝800。驗算：800＋1200＝2000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-09
+  - no: 30
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：2302 − 1497 大約是多少？
+    options:
+      - "900"
+      - "800"
+      - "700"
+    answer: 2
+    explanation: 2302 約為 2300，1497 約為 1500，2300 − 1500＝800。驗算：800＋1500＝2300。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-09
+  - no: 31
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：2506 − 1798 大約是多少？
+    options:
+      - "600"
+      - "700"
+      - "800"
+    answer: 2
+    explanation: 2506 約為 2500，1798 約為 1800，2500 − 1800＝700。驗算：700＋1800＝2500。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-09
+  - no: 32
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到百位，再估算：2704 − 1895 大約是多少？
+    options:
+      - "700"
+      - "900"
+      - "800"
+    answer: 3
+    explanation: 2704 約為 2700，1895 約為 1900，2700 − 1900＝800。驗算：800＋1900＝2700。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-09
+  - no: 33
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：2994 + 4007 大約是多少？
+    options:
+      - "8000"
+      - "6000"
+      - "7000"
+    answer: 3
+    explanation: 2994 約為 3000，4007 約為 4000，3000 + 4000＝7000。驗算：7000－4000＝3000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-10
+  - no: 34
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：5998 + 1006 大約是多少？
+    options:
+      - "6000"
+      - "7000"
+      - "8000"
+    answer: 2
+    explanation: 5998 約為 6000，1006 約為 1000，6000 + 1000＝7000。驗算：7000－1000＝6000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-10
+  - no: 35
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：1997 + 3008 大約是多少？
+    options:
+      - "5000"
+      - "4000"
+      - "6000"
+    answer: 1
+    explanation: 1997 約為 2000，3008 約為 3000，2000 + 3000＝5000。驗算：5000－3000＝2000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-10
+  - no: 36
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：6996 + 2004 大約是多少？
+    options:
+      - "10000"
+      - "9000"
+      - "8000"
+    answer: 2
+    explanation: 6996 約為 7000，2004 約為 2000，7000 + 2000＝9000。驗算：9000－2000＝7000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-10
+  - no: 37
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：3993 + 4009 大約是多少？
+    options:
+      - "9000"
+      - "7000"
+      - "8000"
+    answer: 3
+    explanation: 3993 約為 4000，4009 約為 4000，4000 + 4000＝8000。驗算：8000－4000＝4000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-10
+  - no: 38
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：4997 + 1008 大約是多少？
+    options:
+      - "5000"
+      - "7000"
+      - "6000"
+    answer: 3
+    explanation: 4997 約為 5000，1008 約為 1000，5000 + 1000＝6000。驗算：6000－1000＝5000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-10
+  - no: 39
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：1992 + 2006 大約是多少？
+    options:
+      - "3000"
+      - "4000"
+      - "5000"
+    answer: 2
+    explanation: 1992 約為 2000，2006 約為 2000，2000 + 2000＝4000。驗算：4000－2000＝2000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-10
+  - no: 40
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：5994 + 3007 大約是多少？
+    options:
+      - "8000"
+      - "9000"
+      - "10000"
+    answer: 2
+    explanation: 5994 約為 6000，3007 約為 3000，6000 + 3000＝9000。驗算：9000－3000＝6000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-10
+  - no: 41
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：4003 − 1988 大約是多少？
+    options:
+      - "1000"
+      - "3000"
+      - "2000"
+    answer: 3
+    explanation: 4003 約為 4000，1988 約為 2000，4000 − 2000＝2000。驗算：2000＋2000＝4000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-11
+  - no: 42
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：6004 − 2987 大約是多少？
+    options:
+      - "3000"
+      - "2000"
+      - "4000"
+    answer: 1
+    explanation: 6004 約為 6000，2987 約為 3000，6000 − 3000＝3000。驗算：3000＋3000＝6000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-11
+  - no: 43
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：7002 − 3984 大約是多少？
+    options:
+      - "3000"
+      - "4000"
+      - "2000"
+    answer: 1
+    explanation: 7002 約為 7000，3984 約為 4000，7000 − 4000＝3000。驗算：3000＋4000＝7000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-11
+  - no: 44
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：8006 − 4986 大約是多少？
+    options:
+      - "4000"
+      - "3000"
+      - "2000"
+    answer: 2
+    explanation: 8006 約為 8000，4986 約為 5000，8000 − 5000＝3000。驗算：3000＋5000＝8000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-11
+  - no: 45
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：5008 − 1979 大約是多少？
+    options:
+      - "3000"
+      - "4000"
+      - "2000"
+    answer: 1
+    explanation: 5008 約為 5000，1979 約為 2000，5000 − 2000＝3000。驗算：3000＋2000＝5000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-11
+  - no: 46
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：9003 − 6978 大約是多少？
+    options:
+      - "1000"
+      - "2000"
+      - "3000"
+    answer: 2
+    explanation: 9003 約為 9000，6978 約為 7000，9000 − 7000＝2000。驗算：2000＋7000＝9000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-11
+  - no: 47
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：6007 − 3982 大約是多少？
+    options:
+      - "2000"
+      - "3000"
+      - "1000"
+    answer: 1
+    explanation: 6007 約為 6000，3982 約為 4000，6000 − 4000＝2000。驗算：2000＋4000＝6000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-11
+  - no: 48
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 先把兩個數四捨五入取概數到千位，再估算：8009 − 5989 大約是多少？
+    options:
+      - "2000"
+      - "1000"
+      - "3000"
+    answer: 1
+    explanation: 8009 約為 8000，5989 約為 6000，8000 − 6000＝2000。驗算：2000＋6000＝8000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-11

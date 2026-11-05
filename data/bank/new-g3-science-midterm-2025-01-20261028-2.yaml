@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 比較兩株植物有多少葉片能照到陽光時，只要葉片總數相同，就可認定照到陽光的葉片數一定相同，不必看葉片有沒有互相遮住。
+    answer: false
+    explanation: 葉片總數相同，排列與遮蔽情況仍可能不同；不能以總數取代實際受光情況。
+    derivedFrom:
+      - g3-science-midterm-2025-01

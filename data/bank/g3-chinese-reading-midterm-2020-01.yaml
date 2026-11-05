@@ -1,0 +1,80 @@
+groups:
+  - no: 1
+    paragraphs:
+      - 有一隻鹿又熱又渴，跑到河邊喝水。牠看見自己倒映在水中的影子，對自己頭上大大的角很滿意，對自己細長的腳卻不滿意。
+      - 這時，一隻獅子來到河邊，向牠撲來。鹿立刻用最快的速度逃走。在平坦的草原上，牠很容易就和獅子保持著安全的距離。但是一進入樹林裡，牠的角就被樹枝卡住了。獅子很快的追上牠，把牠捉住。
+      - 鹿大叫：「天啊！我真笨，我的腳救了我的命，我卻嫌它醜，反而是漂亮的角害了我。」
+    members:
+      - 1
+      - 2
+      - 3
+      - 4
+    source:
+      originalPaper: 109學年度上學期三年級國語期中評量試卷
+      section: 九、閱讀測驗(每格1分，共5分)
+questions:
+  - no: 1
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: 讀了這篇文章，請寫出故事中的主角是___和___。
+    explanation: 全文主要敘述鹿和獅子的追逐；第一段出現鹿，第二段出現獅子。原題有兩格，故填鹿與獅子，交換順序亦可。
+    source:
+      originalPaper: 109學年度上學期三年級國語期中評量試卷
+      section: 九、閱讀測驗(每格1分，共5分)
+      number: 1
+    type: fill-blank
+    answer:
+      - 鹿
+      - 獅子
+  - no: 2
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: 鹿站在水邊看著自己的倒影，牠喜歡的是
+    explanation: 第一段明說牠對頭上大大的角很滿意，對細長的腳卻不滿意；故唯一符合文意的是自己的角。
+    source:
+      originalPaper: 109學年度上學期三年級國語期中評量試卷
+      section: 九、閱讀測驗(每格1分，共5分)
+      number: 2
+    type: choice
+    options:
+      - 自己美麗的臉
+      - 自己的腳
+      - 自己的角
+      - 獅子
+    answer: 3
+  - no: 3
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: 為什麼獅子可以捉到鹿？
+    explanation: 第二段明說鹿在草原上能保持安全距離，一進樹林，角被樹枝卡住，獅子才追上牠。因此不是跑慢、跌倒或休息。
+    source:
+      originalPaper: 109學年度上學期三年級國語期中評量試卷
+      section: 九、閱讀測驗(每格1分，共5分)
+      number: 3
+    type: choice
+    options:
+      - 鹿跑得太慢
+      - 鹿在樹林裡跌倒了
+      - 鹿跑累了，休息時被捉到
+      - 鹿的角被樹枝卡住了
+    answer: 4
+  - no: 4
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: 這個故事要告訴我們什麼道理？
+    explanation: 最後一段以鹿的悔悟點明：牠嫌醜的腳幫助逃命，漂亮的角反而害牠被捉。四個選項中唯有「好看的東西不一定有用」符合這個對比；第四項只是事件情境，不是故事主旨。
+    source:
+      originalPaper: 109學年度上學期三年級國語期中評量試卷
+      section: 九、閱讀測驗(每格1分，共5分)
+      number: 4
+    type: choice
+    options:
+      - 美麗的東西才有用
+      - 好看的東西不一定有用
+      - 長得細的腳跑得慢
+      - 不要在樹林裡跑步
+    answer: 2

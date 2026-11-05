@@ -1,0 +1,16 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 看到一段莖共有六片葉，卻沒記錄葉子分別長在哪些節上，能不能只靠總葉數判定是對生？
+    options:
+      - 可以，六片葉一定是對生
+      - 可以，偶數片葉一定是對生
+      - 不能，還要觀察每個節的葉數及排列
+      - 可以，只要葉片都是綠色就算對生
+    answer: 3
+    explanation: 總葉數不足以判斷葉序；對生須同節兩片葉相對，需要保留節的位置及排列資訊。
+    derivedFrom:
+      - g3-science-midterm-2025-08

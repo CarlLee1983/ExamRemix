@@ -1,0 +1,37 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列關於植物「根」的敘述，何者正確？
+    options:
+      - 根能固定植物
+      - 根能吸收陽光
+      - 根的主要功能是製造養分
+      - 軸根在土壤的淺層生長
+    answer: 1
+    explanation: 根能固定植物並吸收水分與養分；吸收陽光及製造養分主要是葉的功能。軸根通常有明顯主根向下生長。原題「鬚根可以深入土壤」有多解風險，衍生題改為明確錯誤的敘述，答案為①。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷（修訂選項版）
+      section: 2026-10-29 人工修訂；原題 g3-science-midterm-2023-06-original-14
+  - no: 2
+    type: table-fill
+    subject: 自然
+    grade: 3
+    unit: 植物與物質溶解
+    stem: 根據食鹽、二砂和粗粒黑胡椒的顏色，在空格中填入正確的代號。甲．黃褐色　乙．黑色　丙．白色。
+    columns:
+      - 食鹽
+      - 二砂
+      - 粗粒黑胡椒
+    rows:
+      - label: 顏色
+        answers:
+          - 丙
+          - 甲
+          - 乙
+    explanation: 食鹽通常為白色，二砂為黃褐色，粗粒黑胡椒為黑色，依序填丙、甲、乙。本衍生題僅比較顏色，移除原題混淆氣味與甜味的部分。
+    source:
+      originalPaper: 112學年度第一學期自然科三年級期中考定期評量卷（僅保留顏色比較的修訂版）
+      section: 2026-10-29 人工修訂；原題 g3-science-midterm-2023-zhongshan-extra-01

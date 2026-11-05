@@ -77,6 +77,19 @@ describe('pnpm check:bank', () => {
     expect(output).toContain('pic/missing.png');
   });
 
+  it('從題組成員單題衍生會被跨檔檢查拒絕', () => {
+    const { status, output } = run('tests/fixtures/grouped-derived');
+    expect(status).toBe(1);
+    expect(output).toContain('new-01');
+    expect(output).toContain('題組成員 original-01');
+  });
+
+  it('完整衍生題組通過跨檔檢查', () => {
+    const { status, output } = run('tests/fixtures/no-unit');
+    expect(status).toBe(0);
+    expect(output).toContain('0 個錯誤、0 個警告');
+  });
+
   it('只有疑點警告：結束狀態 0，列出警告與摘要', () => {
     const { status, stdout } = run('tests/fixtures/doubt-warning');
     expect(status).toBe(0);

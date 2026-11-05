@@ -1,0 +1,16 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 推動玩具車時，車子開始往前走，同時輪胎被手指壓得稍微凹下。這次施力可觀察到哪兩種結果？
+    options:
+      - 只有形狀改變，運動狀態不變
+      - 運動狀態與形狀都改變
+      - 只有運動狀態改變，形狀不變
+      - 形狀與運動狀態都不改變
+    answer: 2
+    explanation: 車子開始移動是運動狀態改變，輪胎凹下是形狀改變，兩種效果可同時發生。
+    derivedFrom:
+      - g3-science-midterm-2025-02-11

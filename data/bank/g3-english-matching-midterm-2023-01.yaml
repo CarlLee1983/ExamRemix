@@ -1,0 +1,110 @@
+questions:
+  - 'no': 1
+    type: matching
+    subject: 英語
+    grade: 3
+    stem: A. Look & Match 將單字連到正確的圖片上。
+    left:
+      - content: bag
+        answer: "3"
+      - content: cat
+        answer: "4"
+      - content: egg
+        answer: "1"
+      - content: lion
+        answer: "5"
+      - content: duck
+        answer: "2"
+    right:
+      - code: "1"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/01-right-1.png
+            alt: 一顆蛋
+      - code: "2"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/01-right-2.png
+            alt: 一隻鴨子
+      - code: "3"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/01-right-3.png
+            alt: 一個有兩條提把的袋子
+      - code: "4"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/01-right-4.png
+            alt: 一隻貓
+      - code: "5"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/01-right-5.png
+            alt: 一隻有鬃毛的獅子
+    explanation: 依單字與圖形意義獨立推核（非官方答案）：bag 對應右欄第3圖（一個有兩條提把的袋子）；cat 對應右欄第4圖（一隻貓）；egg
+      對應右欄第1圖（一顆蛋）；lion 對應右欄第5圖（一隻有鬃毛的獅子）；duck 對應右欄第2圖（一隻鴨子）。
+    source:
+      originalPaper: 基隆市深美國民小學112學年度第一學期三年級期中英語評量卷
+      section: 'IX. Look & Match 將單字連到正確的圖片上。
+
+        3-Ⅱ-2 能辨識課堂中所學的字詞。
+
+        表現優異：10題；表現良好：7-9題；已經做到：5-6題；還要加油：3-4題；努力改進：2題以下。
+
+        A'
+    mode: one-to-one
+  - 'no': 2
+    type: matching
+    subject: 英語
+    grade: 3
+    stem: B. Look & Match 將單字連到正確的圖片上。
+    left:
+      - content: fish
+        answer: "4"
+      - content: octopus
+        answer: "3"
+      - content: net
+        answer: "1"
+      - content: fan
+        answer: "5"
+      - content: jam
+        answer: "2"
+    right:
+      - code: "1"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/02-right-1.png
+            alt: 一個有長柄的捕網
+      - code: "2"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/02-right-2.png
+            alt: 一罐標籤上畫著草莓的果醬
+      - code: "3"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/02-right-3.png
+            alt: 一隻有多條觸腕的章魚
+      - code: "4"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/02-right-4.png
+            alt: 一條魚
+      - code: "5"
+        content:
+          image:
+            src: g3-english-matching-midterm-2023-01/02-right-5.png
+            alt: 一臺有圓形護網和底座的電風扇
+    explanation: 依單字與圖形意義獨立推核（非官方答案）：fish 對應右欄第4圖（一條魚）；octopus
+      對應右欄第3圖（一隻有多條觸腕的章魚）；net 對應右欄第1圖（一個有長柄的捕網）；fan 對應右欄第5圖（一臺有圓形護網和底座的電風扇）；jam
+      對應右欄第2圖（一罐標籤上畫著草莓的果醬）。
+    source:
+      originalPaper: 基隆市深美國民小學112學年度第一學期三年級期中英語評量卷
+      section: 'IX. Look & Match 將單字連到正確的圖片上。
+
+        3-Ⅱ-2 能辨識課堂中所學的字詞。
+
+        表現優異：10題；表現良好：7-9題；已經做到：5-6題；還要加油：3-4題；努力改進：2題以下。
+
+        B'
+    mode: one-to-one

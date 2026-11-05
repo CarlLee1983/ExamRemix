@@ -1,0 +1,55 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: 請看圖片，選出最符合圖片的句子。
+    image:
+      src: g3-english-visual-midterm-2022-01/01.png
+      alt: 人物皺眉、雙手交叉，頭旁有表示生氣的符號。
+    options:
+      - I’m sad.
+      - I’m happy.
+      - I’m angry.
+    answer: 3
+    explanation: 依原圖與選項獨立推核，非官方答案：皺眉與怒氣符號表示生氣，三個選項中只有I’m angry.相符，選③。
+    source:
+      originalPaper: 111學年度第一學期第一次定期評量三年級語文領域英語試題卷
+      section: 八、Look and Choose 請看圖片，選出最符合圖片的句子：（每題2分，共10分）
+      number: 1
+  - no: 2
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: 請看圖片，選出最符合圖片的句子。
+    image:
+      src: g3-english-visual-midterm-2022-01/02.png
+      alt: 人物微笑並流口水，頭上想像泡泡內有漢堡。
+    options:
+      - I’m thirsty.
+      - I’m hungry.
+      - I’m sad.
+    answer: 2
+    explanation: 依原圖與選項獨立推核，非官方答案：想著漢堡並流口水，表示肚子餓，三個選項中I’m hungry.相符，選②。
+    source:
+      originalPaper: 111學年度第一學期第一次定期評量三年級語文領域英語試題卷
+      section: 八、Look and Choose 請看圖片，選出最符合圖片的句子：（每題2分，共10分）
+      number: 4
+  - no: 3
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: 請看圖片，選出最符合圖片的句子。
+    image:
+      src: g3-english-visual-midterm-2022-01/03.png
+      alt: 球場上一人跌坐地上抱膝，旁邊持球的人露出關心表情與待填的說話泡泡。
+    options:
+      - This is for you.
+      - Are you OK?
+      - How old are you?
+    answer: 2
+    explanation: 依原圖與選項獨立推核，非官方答案：圖中有人跌倒，旁人關心對方是否安好，Are you OK?符合場景；其餘是送禮與詢問年齡，不合場景，選②。
+    source:
+      originalPaper: 111學年度第一學期第一次定期評量三年級語文領域英語試題卷
+      section: 八、Look and Choose 請看圖片，選出最符合圖片的句子：（每題2分，共10分）
+      number: 5

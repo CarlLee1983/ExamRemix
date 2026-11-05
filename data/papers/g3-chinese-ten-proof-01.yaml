@@ -1,0 +1,74 @@
+title: 三年級國語期中練習 01
+subject: 國語
+grade: 3
+sections:
+  - title: 一、國字注音
+    questions:
+      - g3-chinese-midterm-2025-02-01
+      - g3-chinese-midterm-2025-02-02
+      - g3-chinese-midterm-2025-02-03
+      - g3-chinese-midterm-2025-02-04
+      - g3-chinese-midterm-2025-02-05
+      - g3-chinese-midterm-2025-02-06
+      - g3-chinese-midterm-2025-02-07
+  - title: 二、改錯字
+    questions:
+      - g3-chinese-midterm-2020-02-01
+      - g3-chinese-midterm-2025-02-09
+      - g3-chinese-midterm-2025-02-10
+      - g3-chinese-midterm-2025-02-11
+      - g3-chinese-midterm-2025-02-12
+      - g3-chinese-midterm-2025-02-13
+      - g3-chinese-midterm-2025-02-14
+      - g3-chinese-midterm-2025-02-15
+  - title: 三、部首與造詞
+    questions:
+      - g3-chinese-midterm-2025-02-16
+      - g3-chinese-midterm-2025-02-17
+      - g3-chinese-midterm-2025-02-18
+      - g3-chinese-midterm-2025-02-19
+  - title: 四、選字填空
+    questions:
+      - g3-chinese-midterm-2025-02-20
+      - g3-chinese-midterm-2025-02-21
+      - g3-chinese-midterm-2025-02-22
+      - g3-chinese-midterm-2025-02-23
+      - g3-chinese-midterm-2025-02-24
+      - g3-chinese-midterm-2025-02-25
+      - g3-chinese-midterm-2025-02-26
+  - title: 五、詞語反義
+    questions:
+      - g3-chinese-midterm-2025-02-27
+  - title: 六、選字與選詞
+    questions:
+      - g3-chinese-midterm-2025-02-28
+      - g3-chinese-midterm-2025-02-29
+      - g3-chinese-midterm-2025-02-30
+      - g3-chinese-midterm-2025-02-31
+      - g3-chinese-midterm-2025-02-32
+      - g3-chinese-midterm-2025-02-33
+  - title: 七、選擇題
+    questions:
+      - g3-chinese-midterm-2025-02-34
+      - g3-chinese-midterm-2025-02-35
+      - g3-chinese-midterm-2025-02-36
+      - g3-chinese-midterm-2025-02-38
+      - g3-chinese-midterm-2023-02-08
+  - title: 八、照樣寫短語與句子
+    questions:
+      - g3-chinese-midterm-2025-02-39
+      - g3-chinese-midterm-2025-02-40
+      - g3-chinese-midterm-2025-02-41
+      - g3-chinese-midterm-2025-02-42
+  - title: 九、造句
+    questions:
+      - g3-chinese-midterm-2025-02-43
+      - g3-chinese-midterm-2025-02-44
+  - title: 十、三段排序（依起因→經過→結果，選出正確排列）
+    questions:
+      - g3-chinese-ordering-midterm-2025-01-01
+  - title: 十一、閱讀短文，回答問題（選擇）
+    questions:
+      - new-g3-chinese-reading-2023-02-01-20261028-2-01
+      - new-g3-chinese-reading-2023-02-01-20261028-2-02
+      - new-g3-chinese-reading-2023-02-01-20261028-2-03

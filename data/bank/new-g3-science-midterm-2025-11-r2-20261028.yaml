@@ -1,0 +1,16 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 同一顆球由同一位置踢出，第一次朝球門左側前進，第二次朝右側前進。若兩次踢球方向不同，哪項最能解釋球前進方向的差別？
+    options:
+      - 球的顏色決定前進方向
+      - 球只要受力就只能朝左
+      - 球只要受力就會朝相同方向前進
+      - 施力方向會影響球前進的方向
+    answer: 4
+    explanation: 對球施力的方向能影響球的運動方向，不是球或球門的顏色決定。
+    derivedFrom:
+      - g3-science-midterm-2025-11

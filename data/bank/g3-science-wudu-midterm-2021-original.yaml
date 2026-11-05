@@ -1,0 +1,13 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 菩提樹的葉子尾端尖尖長長的，是為了讓雨水容易滑落，避免葉片積水。
+    answer: true
+    explanation: 菩提樹的長尾葉尖有助雨水沿葉尖滑落，減少葉片積水；這裡說的是菩提樹的葉形功能，不推論所有尖葉植物的原因都相同。答案依資料獨立推核，未取得官方答案。
+    source:
+      originalPaper: 基隆市五堵國民小學110學年度第一學期期中評量三年級自然與生活科技領域試卷
+      section: 一、是非題：(每題二分，共二十二分)
+      number: 8

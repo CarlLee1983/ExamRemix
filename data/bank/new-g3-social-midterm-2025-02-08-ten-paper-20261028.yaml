@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家裡迎接新生的妹妹，家庭成員的組成就有了變化。
+    answer: true
+    explanation: 新生兒加入會增加家庭成員。
+    derivedFrom:
+      - g3-social-midterm-2025-02-08
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 爸爸出差兩天，就表示他不再是家中的成員。
+    answer: false
+    explanation: 暫時出差不會因此失去家庭成員身分。
+    derivedFrom:
+      - g3-social-midterm-2025-02-08
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 親人過世可能讓家庭成員的組成產生變化。
+    answer: true
+    explanation: 死亡是可能改變家庭組成的原因。
+    derivedFrom:
+      - g3-social-midterm-2025-02-08
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家庭成員的組成從出生到長大一定完全不會改變。
+    answer: false
+    explanation: 出生、結婚或死亡等都可能使家庭組成改變。
+    derivedFrom:
+      - g3-social-midterm-2025-02-08
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 阿姨結婚後有了新的家庭關係，說明結婚可能帶來家庭組成的變化。
+    answer: true
+    explanation: 結婚會建立新的家庭關係，可能改變家庭組成。
+    derivedFrom:
+      - g3-social-midterm-2025-02-08
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 哥哥到外地參加三天營隊，就和家人沒有親屬關係了。
+    answer: false
+    explanation: 短期外出不會使原有親屬關係消失。
+    derivedFrom:
+      - g3-social-midterm-2025-02-08
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 爸媽離婚後，孩子可能改由其中一位家長共同生活和照顧，家庭組成可能改變。
+    answer: true
+    explanation: 離婚可能改變共同生活的家庭組成與照顧安排。
+    derivedFrom:
+      - g3-social-midterm-2025-02-08
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 媽媽再婚後，小萱開始和媽媽、新爸爸及新爸爸的孩子共同生活，家庭成員的組成仍和再婚前完全一樣。
+    answer: false
+    explanation: 再婚及新的共同生活安排，可能使家庭加入新的成員，不能認為組成完全未變。
+    derivedFrom:
+      - g3-social-midterm-2025-02-08
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家人的工作地點改變，不一定代表家庭成員的組成也會改變。
+    answer: true
+    explanation: 工作地點變動與家庭成員身分的改變是不同的事情。
+    derivedFrom:
+      - g3-social-midterm-2025-02-08

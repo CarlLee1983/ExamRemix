@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物與磁鐵
+    stem: 玩磁鐵小車遊戲時，兩輛車各固定一支普通雙極條形磁鐵。兩支磁鐵沒有標示N、S極，相對的甲、乙兩端靠近時互相排斥，也沒有和已知磁極比較。只根據這個現象，就能確定甲、乙兩端都是N極。
+    answer: false
+    explanation: 互相排斥只能確定甲、乙是同名磁極；甲、乙可能都是N極，也可能都是S極。兩種情況都符合相斥的觀察，沒有已知磁極作對照，不能確定是哪一種。
+    derivedFrom:
+      - g3-science-midterm-2020-15

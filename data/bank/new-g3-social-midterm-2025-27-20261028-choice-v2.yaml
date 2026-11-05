@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 小芸覺得分配工作太難，提出把自己的全部工作加給一位組員，自己什麼都不做。哪個改善方向較合理？
+    options:
+      - 只要自己輕鬆就一定是公平分工
+      - 共同檢視各人能力與負擔，調整後每人都有適當貢獻
+      - 不准被加工作的人說明負擔
+      - 把所有工作全交給最不敢拒絕的人
+    answer: 2
+    explanation: 協調分工應兼顧能力與合理負擔，不是把責任全部推給別人。
+    derivedFrom:
+      - g3-social-midterm-2025-27

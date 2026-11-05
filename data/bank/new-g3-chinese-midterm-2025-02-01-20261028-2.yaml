@@ -1,0 +1,1380 @@
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：同學們在操___（ㄔㄤˇ）上跑步。
+    answer:
+      - 場
+    explanation: 「操場」是學校供運動、集合的地方；此處ㄔㄤˇ寫作「場」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-01
+  - no: 2
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：這朵花有五片花___（ㄅㄢˋ）。
+    answer:
+      - 瓣
+    explanation: 「花瓣」是花朵的組成部分；此處ㄅㄢˋ寫作「瓣」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-01
+  - no: 3
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：媽媽把曬乾的衣___（ㄈㄨˊ）收進房間。
+    answer:
+      - 服
+    explanation: 「衣服」是穿在身上的用品；此處ㄈㄨˊ寫作「服」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-01
+  - no: 4
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：我把作業寫在筆記___（ㄅㄣˇ）上。
+    answer:
+      - 本
+    explanation: 「筆記本」是用來記錄的本子；此處ㄅㄣˇ寫作「本」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-01
+  - no: 5
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：爺爺坐在椅___（˙ㄗ）上看報紙。
+    answer:
+      - 子
+    explanation: 「椅子」是供人坐的家具；此處˙ㄗ寫作「子」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-01
+  - no: 6
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：花園裡有一隻蝴___（ㄉㄧㄝˊ）停在花上。
+    answer:
+      - 蝶
+    explanation: 「蝴蝶」是一種有翅膀的昆蟲；此處ㄉㄧㄝˊ寫作「蝶」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-01
+  - no: 7
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：老師提醒我們保持安___（ㄐㄧㄥˋ），不要說話。
+    answer:
+      - 靜
+    explanation: 「安靜」表示沒有吵雜的聲音；此處ㄐㄧㄥˋ寫作「靜」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-01
+  - no: 8
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：白色的雲___（ㄉㄨㄛˇ）飄過山頂。
+    answer:
+      - 朵
+    explanation: 「雲朵」指一團團的雲；此處ㄉㄨㄛˇ寫作「朵」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-01
+  - no: 9
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄏㄨㄛˇ）車沿著鐵軌前進。
+    answer:
+      - 火
+    explanation: 在鐵軌上行駛的是「火車」，ㄏㄨㄛˇ寫作「火」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-02
+  - no: 10
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄕㄨˋ）木的根伸進泥土裡。
+    answer:
+      - 樹
+    explanation: 有根、幹和枝葉的植物是「樹木」，ㄕㄨˋ寫作「樹」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-02
+  - no: 11
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄩˇ）傘可以幫我們擋雨。
+    answer:
+      - 雨
+    explanation: 擋雨的用具是「雨傘」，ㄩˇ寫作「雨」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-02
+  - no: 12
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄏㄞˇ）水又鹹又苦，不能直接喝。
+    answer:
+      - 海
+    explanation: 大海裡的水是「海水」，ㄏㄞˇ寫作「海」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-02
+  - no: 13
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄘㄠˇ）地上開了幾朵小花。
+    answer:
+      - 草
+    explanation: 長滿草的地面是「草地」，ㄘㄠˇ寫作「草」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-02
+  - no: 14
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄕㄡˇ）套可以讓雙手保暖。
+    answer:
+      - 手
+    explanation: 套在手上的保暖用品是「手套」，ㄕㄡˇ寫作「手」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-02
+  - no: 15
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄒㄩㄝˇ）人站在白白的雪地上。
+    answer:
+      - 雪
+    explanation: 用雪堆成的人形是「雪人」，ㄒㄩㄝˇ寫作「雪」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-02
+  - no: 16
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄔㄨㄢˊ）長站在船上指揮大家。
+    answer:
+      - 船
+    explanation: 負責指揮船隻的人是「船長」，ㄔㄨㄢˊ寫作「船」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-02
+  - no: 17
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄆㄧˊ）球被弟弟踢進球門。
+    answer:
+      - 皮
+    explanation: 可以踢、拍的球是「皮球」，ㄆㄧˊ寫作「皮」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-02
+  - no: 18
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「推」的注音：推（注音：___）開厚重的門。
+    answer:
+      - ㄊㄨㄟ
+    explanation: 用力使門向外移動是「推開」，這裡的「推」讀ㄊㄨㄟ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-03
+  - no: 19
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「追」的注音：追（注音：___）著球跑。
+    answer:
+      - ㄓㄨㄟ
+    explanation: 跟在球後面跑是「追」，這裡的「追」讀ㄓㄨㄟ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-03
+  - no: 20
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「搬」的注音：搬（注音：___）起地上的箱子。
+    answer:
+      - ㄅㄢ
+    explanation: 把箱子移到別處是「搬」，這裡的「搬」讀ㄅㄢ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-03
+  - no: 21
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「抬」的注音：抬（注音：___）頭看星星。
+    answer:
+      - ㄊㄞˊ
+    explanation: 把頭向上仰是「抬頭」，這裡的「抬」讀ㄊㄞˊ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-03
+  - no: 22
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「猜」的注音：猜（注音：___）一個有趣的謎語。
+    answer:
+      - ㄘㄞ
+    explanation: 試著想出謎底是「猜」，這裡的「猜」讀ㄘㄞ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-03
+  - no: 23
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「撿」的注音：撿（注音：___）起路邊的垃圾。
+    answer:
+      - ㄐㄧㄢˇ
+    explanation: 把地上的東西拿起來是「撿起」，這裡的「撿」讀ㄐㄧㄢˇ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-03
+  - no: 24
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「躲」的注音：躲（注音：___）在大樹後面。
+    answer:
+      - ㄉㄨㄛˇ
+    explanation: 藏在別人看不到的地方是「躲」，這裡的「躲」讀ㄉㄨㄛˇ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-03
+  - no: 25
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「抱」的注音：抱（注音：___）著心愛的玩偶。
+    answer:
+      - ㄅㄠˋ
+    explanation: 用手臂圍住玩偶是「抱著」，這裡的「抱」讀ㄅㄠˋ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-03
+  - no: 26
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：清（注音：___）晨（注音：___）。
+    answer:
+      - ㄑㄧㄥ
+      - ㄔㄣˊ
+    explanation: 「清晨」指天剛亮的時候；清讀ㄑㄧㄥ，晨讀ㄔㄣˊ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-04
+  - no: 27
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：勇（注音：___）敢（注音：___）。
+    answer:
+      - ㄩㄥˇ
+      - ㄍㄢˇ
+    explanation: 「勇敢」指有勇氣面對困難；勇讀ㄩㄥˇ，敢讀ㄍㄢˇ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-04
+  - no: 28
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：溫（注音：___）暖（注音：___）。
+    answer:
+      - ㄨㄣ
+      - ㄋㄨㄢˇ
+    explanation: 「溫暖」指不冷不熱、使人舒服；溫讀ㄨㄣ，暖讀ㄋㄨㄢˇ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-04
+  - no: 29
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：森（注音：___）林（注音：___）。
+    answer:
+      - ㄙㄣ
+      - ㄌㄧㄣˊ
+    explanation: 「森林」指生長許多樹木的地方；森讀ㄙㄣ，林讀ㄌㄧㄣˊ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-04
+  - no: 30
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：整（注音：___）理（注音：___）。
+    answer:
+      - ㄓㄥˇ
+      - ㄌㄧˇ
+    explanation: 「整理」指把東西收拾得有條理；整讀ㄓㄥˇ，理讀ㄌㄧˇ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-04
+  - no: 31
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：聲（注音：___）音（注音：___）。
+    answer:
+      - ㄕㄥ
+      - ㄧㄣ
+    explanation: 「聲音」指耳朵能聽見的聲響；聲讀ㄕㄥ，音讀ㄧㄣ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-04
+  - no: 32
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：感（注音：___）謝（注音：___）。
+    answer:
+      - ㄍㄢˇ
+      - ㄒㄧㄝˋ
+    explanation: 「感謝」指對別人的幫助表示謝意；感讀ㄍㄢˇ，謝讀ㄒㄧㄝˋ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-04
+  - no: 33
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：光（注音：___）明（注音：___）。
+    answer:
+      - ㄍㄨㄤ
+      - ㄇㄧㄥˊ
+    explanation: 「光明」指明亮、有光的情形；光讀ㄍㄨㄤ，明讀ㄇㄧㄥˊ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-04
+  - no: 34
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：努（注音：___）力（注音：___）。
+    answer:
+      - ㄋㄨˇ
+      - ㄌㄧˋ
+    explanation: 「努力」指盡力去做一件事；努讀ㄋㄨˇ，力讀ㄌㄧˋ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-04
+  - no: 35
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：樹枝上有一隻麻___（ㄑㄩㄝˋ）正在唱歌。
+    answer:
+      - 雀
+    explanation: 「麻雀」是一種常見的小鳥；此處ㄑㄩㄝˋ寫作「雀」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-05
+  - no: 36
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：太陽下山後，天色漸漸變得昏___（ㄢˋ）。
+    answer:
+      - 暗
+    explanation: 「昏暗」表示光線不足；此處ㄢˋ寫作「暗」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-05
+  - no: 37
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：客人來了，我們要有禮___（ㄇㄠˋ）地打招呼。
+    answer:
+      - 貌
+    explanation: 「禮貌」是待人應有的禮節；此處ㄇㄠˋ寫作「貌」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-05
+  - no: 38
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：小狗用鼻___（˙ㄗ）聞一聞食物。
+    answer:
+      - 子
+    explanation: 「鼻子」是聞氣味的器官；此處˙ㄗ寫作「子」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-05
+  - no: 39
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：過馬路前，先看清楚紅綠___（ㄉㄥ）。
+    answer:
+      - 燈
+    explanation: 「紅綠燈」是指示車輛和行人通行的號誌；此處ㄉㄥ寫作「燈」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-05
+  - no: 40
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：爸爸帶我到書___（ㄐㄩˊ）買字典。
+    answer:
+      - 局
+    explanation: 「書局」是販賣書籍的店；此處ㄐㄩˊ寫作「局」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-05
+  - no: 41
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：新鮮的空___（ㄑㄧˋ）讓人覺得舒服。
+    answer:
+      - 氣
+    explanation: 「空氣」是我們呼吸所需的氣體；此處ㄑㄧˋ寫作「氣」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-05
+  - no: 42
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：大家分工合___（ㄗㄨㄛˋ），很快就打掃完教室。
+    answer:
+      - 作
+    explanation: 「合作」是共同做事；此處ㄗㄨㄛˋ寫作「作」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-05
+  - no: 43
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：搭車時要注意安___（ㄑㄩㄢˊ），坐好並繫上安全帶。
+    answer:
+      - 全
+    explanation: 「安全」表示沒有危險；此處ㄑㄩㄢˊ寫作「全」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-05
+  - no: 44
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：下雨後，天上出現一道彩___（ㄏㄨㄥˊ）。
+    answer:
+      - 虹
+    explanation: 「彩虹」是雨後天空中有多種顏色的圓弧；此處ㄏㄨㄥˊ寫作「虹」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-06
+  - no: 45
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：媽媽把稻___（ㄇㄧˇ）洗淨，準備煮飯。
+    answer:
+      - 米
+    explanation: 「稻米」是稻穀去殼後的米粒，可煮成飯；此處ㄇㄧˇ寫作「米」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-06
+  - no: 46
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：弟弟最喜歡聽故___（ㄕˋ）。
+    answer:
+      - 事
+    explanation: 「故事」是敘述人物和事件的內容；此處ㄕˋ寫作「事」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-06
+  - no: 47
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：我們沿著河___（ㄌㄧㄡˊ）往下游走。
+    answer:
+      - 流
+    explanation: 「河流」是地面上流動的水道；此處ㄌㄧㄡˊ寫作「流」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-06
+  - no: 48
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：小貓的腳印留在泥___（ㄊㄨˇ）上。
+    answer:
+      - 土
+    explanation: 「泥土」是地面的土壤；此處ㄊㄨˇ寫作「土」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-06
+  - no: 49
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：小朋友在沙___（ㄊㄢ）上堆城堡。
+    answer:
+      - 灘
+    explanation: 「沙灘」是水邊鋪滿沙的地方；此處ㄊㄢ寫作「灘」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-06
+  - no: 50
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：請把用過的紙拿去回___（ㄕㄡ）。
+    answer:
+      - 收
+    explanation: 「回收」是收回可再利用的物品；此處ㄕㄡ寫作「收」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-06
+  - no: 51
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：我們到圖書___（ㄍㄨㄢˇ）借書。
+    answer:
+      - 館
+    explanation: 「圖書館」是收藏書籍供人閱讀、借閱的地方；此處ㄍㄨㄢˇ寫作「館」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-06
+  - no: 52
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：放學後，我要練習彈鋼___（ㄑㄧㄣˊ）。
+    answer:
+      - 琴
+    explanation: 「鋼琴」是有黑白琴鍵的樂器；此處ㄑㄧㄣˊ寫作「琴」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-06
+  - no: 53
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字，每格一字：媽媽把菜放進___（ㄅㄧㄥ）___（ㄒㄧㄤ）。
+    answer:
+      - 冰
+      - 箱
+    explanation: 冰箱能低溫保存食物。依句意應填「冰箱」，冰讀ㄅㄧㄥ，箱讀ㄒㄧㄤ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-07
+  - no: 54
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字，每格一字：我坐在餐桌旁吃___（ㄗㄠˇ）___（ㄘㄢ）。
+    answer:
+      - 早
+      - 餐
+    explanation: 早餐是早晨吃的一餐。依句意應填「早餐」，早讀ㄗㄠˇ，餐讀ㄘㄢ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-07
+  - no: 55
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字，每格一字：睡前，弟弟到浴室用牙刷___（ㄕㄨㄚ）___（ㄧㄚˊ）。
+    answer:
+      - 刷
+      - 牙
+    explanation: 用牙刷清潔牙齒是刷牙。依句意應填「刷牙」，刷讀ㄕㄨㄚ，牙讀ㄧㄚˊ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-07
+  - no: 56
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字，每格一字：郵差把信放進門口的___（ㄒㄧㄣˋ）___（ㄒㄧㄤ）。
+    answer:
+      - 信
+      - 箱
+    explanation: 信箱是收信的箱子。依句意應填「信箱」，信讀ㄒㄧㄣˋ，箱讀ㄒㄧㄤ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-07
+  - no: 57
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字，每格一字：小鳥張開一雙___（ㄔˋ）___（ㄅㄤˇ）。
+    answer:
+      - 翅
+      - 膀
+    explanation: 翅膀是鳥飛行的器官。依句意應填「翅膀」，翅讀ㄔˋ，膀讀ㄅㄤˇ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-07
+  - no: 58
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字，每格一字：奶奶在廚房用鍋子___（ㄓㄨˇ）___（ㄈㄢˋ）。
+    answer:
+      - 煮
+      - 飯
+    explanation: 把米加水煮熟是煮飯。依句意應填「煮飯」，煮讀ㄓㄨˇ，飯讀ㄈㄢˋ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-07
+  - no: 59
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字，每格一字：弟弟吃完東西，到洗手臺用肥皂___（ㄒㄧˇ）___（ㄕㄡˇ）。
+    answer:
+      - 洗
+      - 手
+    explanation: 用水和肥皂清潔雙手是洗手。依句意應填「洗手」，洗讀ㄒㄧˇ，手讀ㄕㄡˇ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-07
+  - no: 60
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字，每格一字：我用剪刀和色紙做了一張___（ㄎㄚˇ）___（ㄆㄧㄢˋ）。
+    answer:
+      - 卡
+      - 片
+    explanation: 卡片可寫上祝福送人。依句意應填「卡片」，卡讀ㄎㄚˇ，片讀ㄆㄧㄢˋ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-07
+  - no: 61
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字，每格一字：早上起床後，我把棉被摺好，開始收拾___（ㄈㄤˊ）___（ㄐㄧㄢ）。
+    answer:
+      - 房
+      - 間
+    explanation: 房間是屋內隔開的空間。依句意應填「房間」，房讀ㄈㄤˊ，間讀ㄐㄧㄢ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-07
+  - no: 62
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的3個錯字，按出現順序填寫正確的字：___、___、___。上學前，我先吃完早反，再穿好制復，戴上帽子到操埸集合。
+    answer:
+      - 飯
+      - 服
+      - 場
+    explanation: 「反」改成「飯」，「復」改成「服」，「埸」改成「場」。正確詞語依序是早飯、制服、操場。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-08
+  - no: 63
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的3個錯字，按出現順序填寫正確的字：___、___、___。弟弟在公圓裡跌到，我趕快把他夫起來。
+    answer:
+      - 園
+      - 倒
+      - 扶
+    explanation: 「圓」改成「園」，「到」改成「倒」，「夫」改成「扶」。遊玩的地方是公園；失去平衡是跌倒；用手幫助站起來是扶起來。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-08
+  - no: 64
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的3個錯字，按出現順序填寫正確的字：___、___、___。媽媽提著藍子，到市埸買青采。
+    answer:
+      - 籃
+      - 場
+      - 菜
+    explanation: 「藍」改成「籃」，「埸」改成「場」，「采」改成「菜」。裝東西用籃子；買菜的地方是市場；食用的蔬菜是青菜。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-08
+  - no: 65
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的3個錯字，按出現順序填寫正確的字：___、___、___。小貓躺在沙發上睡教，尾吧垂在地板上，看起來很舒福。
+    answer:
+      - 覺
+      - 巴
+      - 服
+    explanation: 「教」改成「覺」，「吧」改成「巴」，「福」改成「服」。正確詞語依序是睡覺、尾巴、舒服。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-08
+  - no: 66
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的3個錯字，按出現順序填寫正確的字：___、___、___。妹妹把畫像掛在牆璧上，開新地請大家欣常。
+    answer:
+      - 壁
+      - 心
+      - 賞
+    explanation: 「璧」改成「壁」，「新」改成「心」，「常」改成「賞」。牆壁是屋內的壁面；高興是開心；觀看美好事物是欣賞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-08
+  - no: 67
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的3個錯字，按出現順序填寫正確的字：___、___、___。下課後，值日生打少教室，把垃級倒進桶裡，再把工具收回原味。
+    answer:
+      - 掃
+      - 圾
+      - 位
+    explanation: 「少」改成「掃」，「級」改成「圾」，「味」改成「位」。正確詞語依序是打掃、垃圾、原位。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-08
+  - no: 68
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的3個錯字，按出現順序填寫正確的字：___、___、___。小安背著書包搭公車，準被到學校參加升旗典理，一路上都很興份。
+    answer:
+      - 備
+      - 禮
+      - 奮
+    explanation: 「被」改成「備」，「理」改成「禮」，「份」改成「奮」。正確詞語依序是準備、典禮、興奮。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-08
+  - no: 69
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的3個錯字，按出現順序填寫正確的字：___、___、___。春天到了，花朵慢慢勝開，蜜蜂忙著採密，蝴蝶在空中飛午。
+    answer:
+      - 盛
+      - 蜜
+      - 舞
+    explanation: 「勝」改成「盛」，「密」改成「蜜」，「午」改成「舞」。花朵盛開；蜜蜂採蜜；蝴蝶飛舞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-08
+  - no: 70
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。今天的天汽很晴朗，我們決定去郊外散不。
+    answer:
+      - 氣
+      - 步
+    explanation: 「汽」改成「氣」，「不」改成「步」。正確詞語是天氣、散步。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-09
+  - no: 71
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。老師在黑版上寫字，同學們認真地抄進作業薄。
+    answer:
+      - 板
+      - 簿
+    explanation: 「版」改成「板」，「薄」改成「簿」。寫字的板子是黑板；記錄作業的本子是作業簿。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-09
+  - no: 72
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。弟弟緊緊握住棉線，看著風箏越飛越高，最候變成遠芳的一個小點。
+    answer:
+      - 後
+      - 方
+    explanation: 「候」改成「後」，「芳」改成「方」。事情的末尾是最後；很遠的地方是遠方。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-09
+  - no: 73
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。客人按了門玲，媽媽立刻前去應們。
+    answer:
+      - 鈴
+      - 門
+    explanation: 「玲」改成「鈴」，「們」改成「門」。正確詞語是門鈴、應門。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-09
+  - no: 74
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。我把一封信裝進信封，貼上郵漂，再投進郵茼。
+    answer:
+      - 票
+      - 筒
+    explanation: 「漂」改成「票」，「茼」改成「筒」。寄信用郵票；投信的設備是郵筒。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-09
+  - no: 75
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。放學的鐘聲一響，同學們背起書包，依序離開教是，走向校們。
+    answer:
+      - 室
+      - 門
+    explanation: 「是」改成「室」，「們」改成「門」。上課的房間是教室；學校的出入口是校門。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-09
+  - no: 76
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。爸爸在陽臺種了幾盆花，會依植物的需要，適量澆永、施巴。
+    answer:
+      - 水
+      - 肥
+    explanation: 「永」改成「水」，「巴」改成「肥」。照顧植物時，應依需要適量澆水、施肥。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-09
+  - no: 77
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。運動後要補充水分，口喝時可以喝白開永。
+    answer:
+      - 渴
+      - 水
+    explanation: 「喝」改成「渴」，「永」改成「水」。想喝水是口渴；煮開的水是白開水。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-09
+  - no: 78
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。我們在操場上舉行拔河比塞，大家都為自己的班級加由。
+    answer:
+      - 賽
+      - 油
+    explanation: 「塞」改成「賽」，「由」改成「油」。競爭勝負是比賽；鼓勵別人是加油。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-09
+  - no: 79
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。小狗聽見主人的呼換，立刻搖著尾巴跑過來，樣子十分可爰。
+    answer:
+      - 喚
+      - 愛
+    explanation: 「換」改成「喚」，「爰」改成「愛」。叫別人過來是呼喚；討人喜愛是可愛。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-10
+  - no: 80
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。農夫帶著鋤頭到田裡工做，辛苦地照固稻田。
+    answer:
+      - 作
+      - 顧
+    explanation: 「做」改成「作」，「固」改成「顧」。正確詞語是工作、照顧。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-10
+  - no: 81
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。我把借來的圖書歸還給圖書館，並向館圓說聲謝射。
+    answer:
+      - 員
+      - 謝
+    explanation: 「圓」改成「員」，「射」改成「謝」。在圖書館工作的是館員；感謝別人要說謝謝。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-10
+  - no: 82
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。清晨，太洋從山後升起，照亮了整坐村莊。
+    answer:
+      - 陽
+      - 座
+    explanation: 「洋」改成「陽」，「坐」改成「座」。天空的發光天體是太陽；村莊的量詞用座。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-10
+  - no: 83
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。走進教室前，請先把鞋底的泥沙清乾靜，再把雨傘收好，免得弄溼地版。
+    answer:
+      - 淨
+      - 板
+    explanation: 「靜」改成「淨」，「版」改成「板」。沒有髒東西是乾淨；地面鋪設的是地板。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-10
+  - no: 84
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。這條小路兩旁種滿竹子，微風吹過時，可以聽見葉子沙沙的聲因，讓人感到平近。
+    answer:
+      - 音
+      - 靜
+    explanation: 「因」改成「音」，「近」改成「靜」。耳朵聽到的是聲音；沒有煩躁的心情是平靜。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-10
+  - no: 85
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。老師請我們觀查毛毛蟲，記下牠每天的變化，並在課堂上報高。
+    answer:
+      - 察
+      - 告
+    explanation: 「查」改成「察」，「高」改成「告」。仔細觀看是觀察；向大家說明是報告。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-10
+  - no: 86
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。弟弟一邊聽音樂，一邊用雙手打拍子，臉上露出快樂的笑容，表演時毫不緊章，充滿自幸。
+    answer:
+      - 張
+      - 信
+    explanation: 「章」改成「張」，「幸」改成「信」。心情不安是緊張；相信自己是自信。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-10
+  - no: 87
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。河邊的柳樹清楚地倒印在水中，像一幅美麗的圖化。
+    answer:
+      - 映
+      - 畫
+    explanation: 「印」改成「映」，「化」改成「畫」。「清楚地倒映在水中」表示影像映現在水面上，「倒映」在此是動詞；繪成的作品是圖畫。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-11
+  - no: 88
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。我們走到十字路口，停下腳步，等綠燈亮了才穿越馬露，這樣比較安荃。
+    answer:
+      - 路
+      - 全
+    explanation: 「露」改成「路」，「荃」改成「全」。車輛行駛的是馬路；沒有危險是安全。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-11
+  - no: 89
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。放學後，小志留在學校參加社團活働，練習吹奏笛子，培養興去。
+    answer:
+      - 動
+      - 趣
+    explanation: 「働」改成「動」，「去」改成「趣」。正確詞語是活動、興趣。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-11
+  - no: 90
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。弟弟打翻了牛奶，連忙拿布把桌面擦乾竟，再向媽媽道歉，承認自己的錯物。
+    answer:
+      - 淨
+      - 誤
+    explanation: 「竟」改成「淨」，「物」改成「誤」。沒有髒污是乾淨；不正確之處是錯誤。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-11
+  - no: 91
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。秋風吹來，黃葉落到地上，金色的小路吸引許多遊各前來拍照，景色十分美利。
+    answer:
+      - 客
+      - 麗
+    explanation: 「各」改成「客」，「利」改成「麗」。前來遊覽的人是遊客；好看的景色是美麗。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-11
+  - no: 92
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。我在抽屜裡找到一張老照騙，才想起去年到海邊旅遊的回意。
+    answer:
+      - 片
+      - 憶
+    explanation: 「騙」改成「片」，「意」改成「憶」。拍下的影像是照片；想起過去的事是回憶。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-11
+  - no: 93
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。天空突然下起大雨，我們躲進亭子避語，等雨停了才繼續前進，沒有因此放氣。
+    answer:
+      - 雨
+      - 棄
+    explanation: 「語」改成「雨」，「氣」改成「棄」。躲雨是避雨；停止繼續努力是放棄。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-11
+  - no: 94
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。阿姨送我一本厚厚的故事書，我一口氣讀完，連飯都忘了吃，讓媽媽十分驚牙，也很佩伏。
+    answer:
+      - 訝
+      - 服
+    explanation: 「牙」改成「訝」，「伏」改成「服」。感到意外是驚訝；敬重別人的表現是佩服。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-11
+  - no: 95
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。老師鼓勵大家上臺發言，分享自己的想法，練習清礎地表達意見，不用害休。
+    answer:
+      - 楚
+      - 羞
+    explanation: 「礎」改成「楚」，「休」改成「羞」。明白易懂是清楚；難為情是害羞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-11
+  - no: 96
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。我用放大鏡觀察螞蟻搬食物，發現牠們會互相合做，把餅乾搬回巢穴，真有力亮。
+    answer:
+      - 作
+      - 量
+    explanation: 「做」改成「作」，「亮」改成「量」。共同做事是合作；做事所用的力是力量。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-12
+  - no: 97
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。媽媽把熱湯端上餐卓，提醒大家小心，不要燙到舌投。
+    answer:
+      - 桌
+      - 頭
+    explanation: 「卓」改成「桌」，「投」改成「頭」。吃飯用餐桌；口中的器官是舌頭。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-12
+  - no: 98
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。爸爸修好了壞掉的電風扇，涼風重新吹進屋內，大家都覺得很涼決，也很感激爸爸的幫亡。
+    answer:
+      - 快
+      - 忙
+    explanation: 「決」改成「快」，「亡」改成「忙」。舒適清涼是涼快；提供協助是幫忙。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-12
+  - no: 99
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。小華把撿到的錢交給警茶，大家都稱讚他很誠時。
+    answer:
+      - 察
+      - 實
+    explanation: 「茶」改成「察」，「時」改成「實」。維護治安的人是警察；不說謊是誠實。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-12
+  - no: 100
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。小兔子的耳朵長長的，毛摸起來又細又軟，讓人忍不住想輕輕撫模，動作也要溫和，以免讓牠受京。
+    answer:
+      - 摸
+      - 驚
+    explanation: 「模」改成「摸」，「京」改成「驚」。用手輕輕接觸是撫摸；受到驚嚇是受驚。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-12
+  - no: 101
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。學校舉辦運動會，選手們在跑道上奮力向前，觀眾大聲吶喊，現場氣分十分熱列。
+    answer:
+      - 氛
+      - 烈
+    explanation: 「分」改成「氛」，「列」改成「烈」。周圍的感覺是氣氛；情緒高昂是熱烈。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-12
+  - no: 102
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。我把不要的紙箱壓扁，放進資源回收區，為保護環竟盡一分心力，希望地球更健慷。
+    answer:
+      - 境
+      - 康
+    explanation: 「竟」改成「境」，「慷」改成「康」。生活周圍是環境；身體或地球狀態良好可用健康形容。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-12
+  - no: 103
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。颱風來了，風雨越來越大，我們關好門窗，留在屋裡，並隨時注意新聞消習，不隨便出們。
+    answer:
+      - 息
+      - 門
+    explanation: 「習」改成「息」，「們」改成「門」。新聞提供消息；到屋外去是出門。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-12
+  - no: 104
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的2個錯字，按出現順序填寫正確的字：___、___。同學不小心跌倒了，我馬上扶他到保健是，請護士阿姨檢查他的傷口，並替他包札。
+    answer:
+      - 室
+      - 紮
+    explanation: 「是」改成「室」，「札」改成「紮」。照護學生的地方是保健室；用紗布裹住傷口是包紮。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-12
+  - no: 105
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。請在上課前把鉛筆消尖，才方便寫字。
+    answer:
+      - 削
+    explanation: 「消」改成「削」。用刀具去掉外層是削尖。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-13
+  - no: 106
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。爸爸從書架上拿出一本字典，幫我查生宇。
+    answer:
+      - 字
+    explanation: 「宇」改成「字」。不認識的字是生字。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-13
+  - no: 107
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。弟弟在跑道上努力奔跑，終於到達終典。
+    answer:
+      - 點
+    explanation: 「典」改成「點」。比賽結束的位置是終點。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-13
+  - no: 108
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。晚餐後，我們全家一起收時碗筷。
+    answer:
+      - 拾
+    explanation: 「時」改成「拾」。整理物品是收拾。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-13
+  - no: 109
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。這座公園有一條長長的溜滑提，孩子們都很喜歡。
+    answer:
+      - 梯
+    explanation: 「提」改成「梯」。供人滑下的遊具是溜滑梯。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-13
+  - no: 110
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。請保持走廊安靜，不要大聲宣嘩。
+    answer:
+      - 喧
+    explanation: 「宣」改成「喧」。大聲吵鬧是喧嘩。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-13
+  - no: 111
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。小狗在門口汪汪叫，像是在歡迎主人回嫁。
+    answer:
+      - 家
+    explanation: 「嫁」改成「家」。回到住的地方是回家。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-13
+  - no: 112
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。看到地上的香蕉皮，我小心地繞過去，以免滑到。
+    answer:
+      - 倒
+    explanation: 「到」改成「倒」。因地面滑而失去平衡是滑倒。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-13
+  - no: 113
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。我把找到的樹葉夾在書裡，做成一枚書千。
+    answer:
+      - 籤
+    explanation: 「千」改成「籤」。夾在書頁間作記號的是書籤。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-13
+  - no: 114
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。操場上的同學正在跳繩，大家輪流數次術。
+    answer:
+      - 數
+    explanation: 「術」改成「數」。動作發生多少回是次數。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-14
+  - no: 115
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。烏雲散開了，陽光又從雲縫中照設下來。
+    answer:
+      - 射
+    explanation: 「設」改成「射」。光線照過來是照射。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-14
+  - no: 116
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。我們種下的小苗長出兩片嫩業。
+    answer:
+      - 葉
+    explanation: 「業」改成「葉」。剛長出的柔嫩葉片是嫩葉。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-14
+  - no: 117
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。妹妹終於學會騎腳踏車，高興得手舞足蹈，還大聲歡乎。
+    answer:
+      - 呼
+    explanation: 「乎」改成「呼」。高興地喊叫是歡呼。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-14
+  - no: 118
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。媽媽提醒我們不要在走廊追逐，要小心行走，免得發生危鹹。
+    answer:
+      - 險
+    explanation: 「鹹」改成「險」。可能造成傷害的情況是危險。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-14
+  - no: 119
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。春天到了，校園裡的花朵吸引許多蜜蜂前來採蜜，傳來嗡嗡的聲嚮。
+    answer:
+      - 響
+    explanation: 「嚮」改成「響」。聽到的聲音是聲響。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-14
+  - no: 120
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。老師用紅筆在作業本上寫下評語，鼓勵我繼續進不。
+    answer:
+      - 步
+    explanation: 「不」改成「步」。比以前更好是進步。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-14
+  - no: 121
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。大家一起把教室布置得很漂亮，迎接即將到來的校慶活勳。
+    answer:
+      - 動
+    explanation: 「勳」改成「動」。有目的的行動是活動。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-14
+  - no: 122
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。哥哥把斷掉的繩子重新接好，再打一個牢固的結，讓我們可以安心使月。
+    answer:
+      - 用
+    explanation: 「月」改成「用」。拿來運用是使用。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-14
+  - no: 123
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。我每天按時刷牙，保持口腔清潔，也定期找牙醫檢查牙齒健糠。
+    answer:
+      - 康
+    explanation: 「糠」改成「康」。身體狀況良好是健康。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-15
+  - no: 124
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。小鳥在窗外唱歌，好像在提醒我美好的一天已經開使。
+    answer:
+      - 始
+    explanation: 「使」改成「始」。事情起頭是開始。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-15
+  - no: 125
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。同學遇到困難時，我們應該伸出援手，互相幫忙，讓友誼更加深后。
+    answer:
+      - 厚
+    explanation: 「后」改成「厚」。感情濃厚可說深厚。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-15
+  - no: 126
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。參觀動物園時，我們要遵守規定，不可隨意餵食動物，才不會造成傷客。
+    answer:
+      - 害
+    explanation: 「客」改成「害」。使身體受到損傷是傷害。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-15
+  - no: 127
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。跑步前先做暖身操，可以減少運動受傷的機會，也讓肌肉慢慢放鬆，做好準被。
+    answer:
+      - 備
+    explanation: 「被」改成「備」。事先安排好是準備。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-15
+  - no: 128
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。弟弟把拼圖全部拼好後，開心地請大家看他的作平。
+    answer:
+      - 品
+    explanation: 「平」改成「品」。完成的創作是作品。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-15
+  - no: 129
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。放學途中，我看見一位老爺爺提著重物，便主動上前協助，希望能減輕他的負旦。
+    answer:
+      - 擔
+    explanation: 「旦」改成「擔」。承受的責任或重量是負擔。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-15
+  - no: 130
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。老師說，做事要有耐心，遇到困難也不要輕易放棄，只要多加練習，就會越來越熟連。
+    answer:
+      - 練
+    explanation: 「連」改成「練」。做得熟悉、順手是熟練。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-15
+  - no: 131
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的1個錯字，按出現順序填寫正確的字：___。我們在校門口排隊等候，準備一起搭車去參觀博物館，每個人都很期侍。
+    answer:
+      - 待
+    explanation: 「侍」改成「待」。盼望事情發生是期待。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-15

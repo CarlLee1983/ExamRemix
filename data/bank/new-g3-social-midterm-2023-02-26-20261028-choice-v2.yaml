@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 小美抄完同學答案，卻無法說明為什麼。下一步最能幫助真正理解的是什麼？
+    options:
+      - 自己重看內容，試做並請教仍不懂的地方
+      - 把抄來的答案再描得漂亮
+      - 只把分數寫高一點
+      - 認定抄完就一定全部理解
+    answer: 1
+    explanation: 學習需檢查自己是否理解，重看、試做與請教比表面完成更有幫助。
+    derivedFrom:
+      - g3-social-midterm-2023-02-26

@@ -1,0 +1,81 @@
+questions:
+  - no: 1
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 學校舉行義賣，第一天收入 2468 元，第二天收入 4000 元。第二天比第一天多收入多少元？
+    answer: 多 1532 元。
+    explanation: 比較相差多少，用較大的數減較小的數：$4000 - 2468 = 1532$，相差 1532 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-39
+  - no: 2
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 農場上午採收 1756 顆番茄，下午採收 3000 顆。下午比上午多採收幾顆番茄？
+    answer: 多 1244 顆。
+    explanation: 比較相差多少，用較大的數減較小的數：$3000 - 1756 = 1244$，相差 1244 顆。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-39
+  - no: 3
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 印刷廠昨天印了 3687 張海報，今天印了 5000 張。今天比昨天多印幾張海報？
+    answer: 多 1313 張。
+    explanation: 比較相差多少，用較大的數減較小的數：$5000 - 3687 = 1313$，相差 1313 張。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-39
+  - no: 4
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 公園週六有 4859 人入園，週日有 6000 人入園。週日比週六多幾人入園？
+    answer: 多 1141 人。
+    explanation: 比較相差多少，用較大的數減較小的數：$6000 - 4859 = 1141$，相差 1141 人。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-39
+  - no: 5
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 陶瓷工廠上月燒製 7638 個瓷碗，本月燒製 9000 個。本月比上月多燒製幾個瓷碗？
+    answer: 多 1362 個。
+    explanation: 比較相差多少，用較大的數減較小的數：$9000 - 7638 = 1362$，相差 1362 個。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-39
+  - no: 6
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 果汁工廠昨天裝了 5278 瓶果汁，今天裝了 7000 瓶。今天比昨天多裝幾瓶果汁？
+    answer: 多 1722 瓶。
+    explanation: 比較相差多少，用較大的數減較小的數：$7000 - 5278 = 1722$，相差 1722 瓶。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-39
+  - no: 7
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 資源回收站上週收集 6879 個鋁罐，本週收集 8000 個。本週比上週多收集幾個鋁罐？
+    answer: 多 1121 個。
+    explanation: 比較相差多少，用較大的數減較小的數：$8000 - 6879 = 1121$，相差 1121 個。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-39
+  - no: 8
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 展覽上午發出 3548 張入場券，下午發出 6000 張。下午比上午多發出幾張入場券？
+    answer: 多 2452 張。
+    explanation: 比較相差多少，用較大的數減較小的數：$6000 - 3548 = 2452$，相差 2452 張。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-39

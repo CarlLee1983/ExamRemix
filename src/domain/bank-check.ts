@@ -141,6 +141,11 @@ export function checkBank(input: {
         continue;
       }
       if (original.group.derivedFrom) report(`衍生自 ${group.derivedFrom}，但它也是新題組`);
+      if (original.group.image) report(`衍生自有圖片的題組 ${group.derivedFrom}`);
+      for (const no of original.group.members) {
+        const originalQuestion = index.get(deriveQuestionId(original.bankName, no));
+        if (originalQuestion && imageReferences(originalQuestion).length > 0) report(`的原題組成員 ${deriveQuestionId(original.bankName, no)} 有圖片`);
+      }
       if (original.group.doubt !== undefined) report(`衍生自的原題組 ${group.derivedFrom} 有疑點：${original.group.doubt}`);
       if (group.members.length !== original.group.members.length) report(`與原題組 ${group.derivedFrom} 的小題數不一致`);
       group.members.forEach((no, i) => {
@@ -176,6 +181,9 @@ export function checkBank(input: {
         }
         const doubt = effectiveDoubt(original, originalGroup);
         if (doubt !== undefined) report(`新題 ${id} 衍生自有疑點的原題 ${originalId}：${doubt}（請先解除原題的疑點，或改從其他原題衍生）`);
+        if (original.type === 'matching' && imageReferences(original).length > 0) {
+          report(`新題 ${id} 衍生自有圖片的配對原題 ${originalId}，目前不可由圖題衍生`);
+        }
         if (original.derivedFrom) report(`新題 ${id} 衍生自 ${originalId}，但它也是新題；新題只能衍生自原題`);
         const diff = mismatches(question, original, '新題', '原題');
         if (diff.length > 0) report(`新題 ${id} 與原題 ${originalId} 的${diff.join('、')}不一致`);

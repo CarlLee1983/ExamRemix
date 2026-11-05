@@ -1,0 +1,1079 @@
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。林：___部；造詞：___。
+    answer:
+      - 木
+      - 森林
+    explanation: 「林」屬木部；「森林」是包含「林」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-16
+  - no: 2
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。森：___部；造詞：___。
+    answer:
+      - 木
+      - 森林
+    explanation: 「森」屬木部；「森林」是包含「森」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-16
+  - no: 3
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。枝：___部；造詞：___。
+    answer:
+      - 木
+      - 樹枝
+    explanation: 「枝」屬木部；「樹枝」是包含「枝」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-16
+  - no: 4
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。村：___部；造詞：___。
+    answer:
+      - 木
+      - 村莊
+    explanation: 「村」屬木部；「村莊」是包含「村」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-16
+  - no: 5
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。松：___部；造詞：___。
+    answer:
+      - 木
+      - 松樹
+    explanation: 「松」屬木部；「松樹」是包含「松」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-16
+  - no: 6
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。柏：___部；造詞：___。
+    answer:
+      - 木
+      - 柏樹
+    explanation: 「柏」屬木部；「柏樹」是包含「柏」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-16
+  - no: 7
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。梅：___部；造詞：___。
+    answer:
+      - 木
+      - 梅花
+    explanation: 「梅」屬木部；「梅花」是包含「梅」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-16
+  - no: 8
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。桃：___部；造詞：___。
+    answer:
+      - 木
+      - 桃子
+    explanation: 「桃」屬木部；「桃子」是包含「桃」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-16
+  - no: 9
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。校：___部；造詞：___。
+    answer:
+      - 木
+      - 學校
+    explanation: 「校」屬木部；「學校」是包含「校」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-16
+  - no: 10
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。河：___部；造詞：___。
+    answer:
+      - 水
+      - 河流
+    explanation: 「河」屬水部；「河流」是包含「河」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-17
+  - no: 11
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。海：___部；造詞：___。
+    answer:
+      - 水
+      - 海水
+    explanation: 「海」屬水部；「海水」是包含「海」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-17
+  - no: 12
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。湖：___部；造詞：___。
+    answer:
+      - 水
+      - 湖水
+    explanation: 「湖」屬水部；「湖水」是包含「湖」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-17
+  - no: 13
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。洋：___部；造詞：___。
+    answer:
+      - 水
+      - 海洋
+    explanation: 「洋」屬水部；「海洋」是包含「洋」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-17
+  - no: 14
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。波：___部；造詞：___。
+    answer:
+      - 水
+      - 波浪
+    explanation: 「波」屬水部；「波浪」是包含「波」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-17
+  - no: 15
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。浪：___部；造詞：___。
+    answer:
+      - 水
+      - 海浪
+    explanation: 「浪」屬水部；「海浪」是包含「浪」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-17
+  - no: 16
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。流：___部；造詞：___。
+    answer:
+      - 水
+      - 流水
+    explanation: 「流」屬水部；「流水」是包含「流」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-17
+  - no: 17
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。池：___部；造詞：___。
+    answer:
+      - 水
+      - 池塘
+    explanation: 「池」屬水部；「池塘」是包含「池」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-17
+  - no: 18
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。清：___部；造詞：___。
+    answer:
+      - 水
+      - 清水
+    explanation: 「清」屬水部；「清水」是包含「清」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-17
+  - no: 19
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。草：___部；造詞：___。
+    answer:
+      - 艸
+      - 草地
+    explanation: 「草」屬艸部；「草地」是包含「草」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-18
+  - no: 20
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。花：___部；造詞：___。
+    answer:
+      - 艸
+      - 花朵
+    explanation: 「花」屬艸部；「花朵」是包含「花」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-18
+  - no: 21
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。苗：___部；造詞：___。
+    answer:
+      - 艸
+      - 樹苗
+    explanation: 「苗」屬艸部；「樹苗」是包含「苗」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-18
+  - no: 22
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。芽：___部；造詞：___。
+    answer:
+      - 艸
+      - 發芽
+    explanation: 「芽」屬艸部；「發芽」是包含「芽」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-18
+  - no: 23
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。葉：___部；造詞：___。
+    answer:
+      - 艸
+      - 樹葉
+    explanation: 「葉」屬艸部；「樹葉」是包含「葉」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-18
+  - no: 24
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。茶：___部；造詞：___。
+    answer:
+      - 艸
+      - 茶葉
+    explanation: 「茶」屬艸部；「茶葉」是包含「茶」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-18
+  - no: 25
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。菜：___部；造詞：___。
+    answer:
+      - 艸
+      - 青菜
+    explanation: 「菜」屬艸部；「青菜」是包含「菜」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-18
+  - no: 26
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。藍：___部；造詞：___。
+    answer:
+      - 艸
+      - 藍色
+    explanation: 「藍」屬艸部；「藍色」是包含「藍」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-18
+  - no: 27
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。蓮：___部；造詞：___。
+    answer:
+      - 艸
+      - 蓮花
+    explanation: 「蓮」屬艸部；「蓮花」是包含「蓮」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-18
+  - no: 28
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。說：___部；造詞：___。
+    answer:
+      - 言
+      - 說話
+    explanation: 「說」屬言部；「說話」是包含「說」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-19
+  - no: 29
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。話：___部；造詞：___。
+    answer:
+      - 言
+      - 電話
+    explanation: 「話」屬言部；「電話」是包含「話」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-19
+  - no: 30
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。語：___部；造詞：___。
+    answer:
+      - 言
+      - 語言
+    explanation: 「語」屬言部；「語言」是包含「語」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-19
+  - no: 31
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。讀：___部；造詞：___。
+    answer:
+      - 言
+      - 閱讀
+    explanation: 「讀」屬言部；「閱讀」是包含「讀」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-19
+  - no: 32
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。請：___部；造詞：___。
+    answer:
+      - 言
+      - 請問
+    explanation: 「請」屬言部；「請問」是包含「請」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-19
+  - no: 33
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。謝：___部；造詞：___。
+    answer:
+      - 言
+      - 謝謝
+    explanation: 「謝」屬言部；「謝謝」是包含「謝」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-19
+  - no: 34
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。記：___部；造詞：___。
+    answer:
+      - 言
+      - 日記
+    explanation: 「記」屬言部；「日記」是包含「記」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-19
+  - no: 35
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。認：___部；造詞：___。
+    answer:
+      - 言
+      - 認真
+    explanation: 「認」屬言部；「認真」是包含「認」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-19
+  - no: 36
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。課：___部；造詞：___。
+    answer:
+      - 言
+      - 上課
+    explanation: 「課」屬言部；「上課」是包含「課」的常用詞。造詞為示例，答案不唯一；其他包含指定字且詞義正確的詞語也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-19
+  - no: 37
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。老師把練習題寫在黑___（板／版）上，請大家先仔___（系／細）閱讀。
+    answer:
+      - 板
+      - 細
+    explanation: 教室裡書寫用的是「黑板」；認真細心地閱讀是「仔細閱讀」。版是印刷的版，系不能組成仔細。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-20
+  - no: 38
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我把借來的書放回書___（架／駕），並向圖書館員道___（射／謝）。
+    answer:
+      - 架
+      - 謝
+    explanation: 擺書的設備是「書架」；表達感謝是「道謝」。駕用於駕駛，射用於射箭。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-20
+  - no: 39
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。連下幾天大雨，河___（永／水）漲高了，大家暫時不能過___（喬／橋）。
+    answer:
+      - 水
+      - 橋
+    explanation: 河裡流的是「河水」；跨越河流的建築是「橋」。永、喬放入都不能表示句中的事物。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-20
+  - no: 40
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。小狗聽到腳___（步／布）聲，立刻搖著尾___（巴／吧）跑來迎接主人。
+    answer:
+      - 步
+      - 巴
+    explanation: 走路發出的是「腳步聲」；動物身體後方的部分是「尾巴」。布是布料，吧是語氣詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-20
+  - no: 41
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。弟弟用彩___（色／包）筆，把天空畫成___（籃／藍）色。
+    answer:
+      - 色
+      - 藍
+    explanation: 畫圖用「彩色筆」；晴朗天空常見的顏色是「藍色」。籃指盛東西的用具。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-20
+  - no: 42
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。整理房間時，我把玩___（俱／具）收進箱子，再用抹布擦乾___（淨／靜）桌面。
+    answer:
+      - 具
+      - 淨
+    explanation: 供遊戲用的是「玩具」；沒有髒汙是「乾淨」。俱表示都，靜表示安靜。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-20
+  - no: 43
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。奶奶把剛洗好的衣___（報／服）晾在陽臺，讓太___（揚／陽）曬乾。
+    answer:
+      - 服
+      - 陽
+    explanation: 穿在身上的是「衣服」；能照射光熱的是「太陽」。報、揚都不合詞義。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-20
+  - no: 44
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我們在車___（站／占）排隊，等候開往動物___（圓／園）的公車。
+    answer:
+      - 站
+      - 園
+    explanation: 乘車等候的地方是「車站」；飼養並展示動物的場所是「動物園」。占、圓不合此處詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-20
+  - no: 45
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。桌上的牛奶已經過___（棋／期），媽媽提醒我注意食物的新___（仙／鮮）程度。
+    answer:
+      - 期
+      - 鮮
+    explanation: 超過期限是「過期」；食物未變質是「新鮮」。棋指棋子，仙指仙人。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-20
+  - no: 46
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。早晨，我拉開窗___（廉／簾），看見小鳥停在樹___（枝／支）上。
+    answer:
+      - 簾
+      - 枝
+    explanation: 遮在窗前的布是「窗簾」；樹木分出的部分是「樹枝」。廉、支不能組成此處的詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-21
+  - no: 47
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。下雨了，弟弟穿上雨___（依／衣），小心避開地上的水___（抗／坑）。
+    answer:
+      - 衣
+      - 坑
+    explanation: 防雨的衣物是「雨衣」；地面凹陷積水處是「水坑」。依、抗都不合句意。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-21
+  - no: 48
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。媽媽從冰___（箱／相）取出水果，切好後放進盤___（子／仔）裡。
+    answer:
+      - 箱
+      - 子
+    explanation: 冷藏食物的家電是「冰箱」；盛食物的器皿是「盤子」。相、仔不能組成這兩個詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-21
+  - no: 49
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。書店門口掛著招___（牌／排），玻璃門上還貼著營___（業／葉）時間。
+    answer:
+      - 牌
+      - 業
+    explanation: 商店標示名稱的是「招牌」；開店做生意是「營業」。排、葉均不合此處詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-21
+  - no: 50
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。奶奶戴上眼___（鏡／境），坐在椅___（子／仔）上讀報紙。
+    answer:
+      - 鏡
+      - 子
+    explanation: 幫助看清楚的用品是「眼鏡」；可坐的家具是「椅子」。境表示地方或情況，仔不合椅子的寫法。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-21
+  - no: 51
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。爸爸打開電___（扇／煽），讓涼風吹進客___（聽／廳）。
+    answer:
+      - 扇
+      - 廳
+    explanation: 送風的電器是「電扇」；家中接待客人的空間是「客廳」。煽、聽的意思都不合。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-21
+  - no: 52
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我把信___（封／風）貼上郵___（票／漂），再投進郵筒。
+    answer:
+      - 封
+      - 票
+    explanation: 裝信的紙袋是「信封」；寄信貼的是「郵票」。風、漂不能表示這兩種用品。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-21
+  - no: 53
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。廚師把麵___（紛／粉）倒進盆裡，用湯___（匙／題）慢慢攪拌。
+    answer:
+      - 粉
+      - 匙
+    explanation: 做麵食的原料是「麵粉」；攪拌或舀湯的工具是「湯匙」。紛、題都不合詞義。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-21
+  - no: 54
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。雷聲突然響起，小貓嚇得發___（抖／料），躲到沙___（發／髮）底下。
+    answer:
+      - 抖
+      - 發
+    explanation: 害怕而身體顫動是「發抖」；可坐臥的家具是「沙發」。料、髮不合這兩個詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-22
+  - no: 55
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。操場上的旗子隨風飄___（楊／揚），同學們整齊地排___（隊／對）升旗。
+    answer:
+      - 揚
+      - 隊
+    explanation: 旗子隨風擺動是「飄揚」；依序站成行列是「排隊」。楊是樹名，對不合排隊的寫法。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-22
+  - no: 56
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。水壺沒蓋好，清水沿著桌___（編／邊）流下，滴到地___（板／版）上。
+    answer:
+      - 邊
+      - 板
+    explanation: 桌子的邊緣是「桌邊」；室內腳下的地面是「地板」。編、版不合這裡的詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-22
+  - no: 57
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。風吹過竹___（淋／林），竹葉互相碰___（撞／狀），發出沙沙的聲音。
+    answer:
+      - 林
+      - 撞
+    explanation: 許多竹子生長的地方是「竹林」；物體相碰是「碰撞」。淋表示水灑落，狀指形狀或情況。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-22
+  - no: 58
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。小船在湖面上輕輕搖___（恍／晃），船夫握緊船___（獎／槳），慢慢划向岸邊。
+    answer:
+      - 晃
+      - 槳
+    explanation: 船身來回擺動是「搖晃」；划船的工具是「船槳」。恍、獎的意思不合。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-22
+  - no: 59
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。毛毛蟲慢慢爬___（形／行），在葉___（片／遍）上留下一道痕跡。
+    answer:
+      - 行
+      - 片
+    explanation: 蟲往前移動是「爬行」；植物的葉可稱「葉片」。形指形狀，遍表示次數或到處。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-22
+  - no: 60
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。瀑___（步／布）從山壁流下，濺起的水___（株／珠）在陽光下閃亮。
+    answer:
+      - 布
+      - 珠
+    explanation: 從高處落下的水流是「瀑布」；小水滴稱「水珠」。步、株不合此處詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-22
+  - no: 61
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。弟弟把球往上___（抱／拋），球落下時正好掉進水___（捅／桶）裡，濺了他一身水。
+    answer:
+      - 拋
+      - 桶
+    explanation: 把球丟向空中是「拋」；裝水的容器是「水桶」。抱是摟住，捅表示用棍棒等戳刺。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-22
+  - no: 62
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。火車駛進隧___（道／到），窗外一下子變得漆___（默／黑）。
+    answer:
+      - 道
+      - 黑
+    explanation: 穿過山體的通路是「隧道」；十分黑暗是「漆黑」。到、默無法組成這兩個詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-22
+  - no: 63
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。美術老師展示一___（副／幅）山水畫，請大家觀___（察／查）畫中的遠山。
+    answer:
+      - 幅
+      - 察
+    explanation: 圖畫用「幅」計算；仔細看景物是「觀察」。副不作此處畫作的量詞，查不合觀察的寫法。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-23
+  - no: 64
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我買了一___（隻／雙）新鞋，左腳和右腳各一隻，穿起來十分舒___（報／服）。
+    answer:
+      - 雙
+      - 服
+    explanation: 題目明確說明左右腳各一隻，合起來是一對新鞋，因此用「雙」計算；穿著感覺輕鬆合適是「舒服」。隻不能表示這一對鞋，報不合詞義。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-23
+  - no: 65
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。桌上擺著一___（速／束）鮮花，旁邊還有一___（章／張）生日卡片。
+    answer:
+      - 束
+      - 張
+    explanation: 綁成一把的花用「束」計算；卡片用「張」計算。速、章均不適合作此處量詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-23
+  - no: 66
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。這___（坐／座）山很高，登山前要準___（備／被）足夠的飲水。
+    answer:
+      - 座
+      - 備
+    explanation: 山用「座」計算；事先把物品備好是「準備」。坐表示坐下，被不合準備的寫法。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-23
+  - no: 67
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。爺爺用一___（跟／根）竹竿，輕輕撥開擋___（露／路）的樹枝。
+    answer:
+      - 根
+      - 路
+    explanation: 細長的竹竿用「根」計算；阻礙通行是「擋路」。跟、露不合句意。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-23
+  - no: 68
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我讀完一___（篇／偏）故事，才明白誠___（實／時）的重要。
+    answer:
+      - 篇
+      - 實
+    explanation: 完整文章用「篇」計算；不說謊是「誠實」。偏、時都不合此處詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-23
+  - no: 69
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。媽媽煮了一___（蝸／鍋）熱湯，香味從廚房傳出，讓人很想品___（常／嘗）。
+    answer:
+      - 鍋
+      - 嘗
+    explanation: 以鍋子盛煮的湯用「鍋」計算；試吃味道是「品嘗」。蝸是動物，常表示經常。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-23
+  - no: 70
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。哥哥用一___（把／巴）剪刀，把色紙剪成各種形___（壯／狀）。
+    answer:
+      - 把
+      - 狀
+    explanation: 剪刀用「把」計算；物體的外形是「形狀」。巴、壯不能組成此處的詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-23
+  - no: 71
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。牆上掛著一___（麵／面）鏡子，照得出我們的笑___（容／溶）。
+    answer:
+      - 面
+      - 容
+    explanation: 鏡子用「面」計算；微笑的表情是「笑容」。麵是食物，溶指物質溶解。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-23
+  - no: 72
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。第一次上臺說話，我心裡有點緊___（張／章），老師微笑著鼓___（勵／厲）我。
+    answer:
+      - 張
+      - 勵
+    explanation: 心情不安是「緊張」；給人信心是「鼓勵」。章、厲都不能組成這兩個詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-24
+  - no: 73
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。妹妹找不到心愛的玩偶，急得流下眼___（淚／類），我陪她四處尋___（找／我）。
+    answer:
+      - 淚
+      - 找
+    explanation: 哭泣流出的是「眼淚」；到處搜尋是「尋找」。類、我放入都不合詞義。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-24
+  - no: 74
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。比賽獲勝後，全班高___（與／興）地拍手，為選手歡___（呼／乎）。
+    answer:
+      - 興
+      - 呼
+    explanation: 感到快樂是「高興」；大聲表示喜悅是「歡呼」。與、乎均不合此處詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-24
+  - no: 75
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。小狗受了傷，妹妹很難___（遇／過），趕緊請大人幫忙治___（瞭／療）傷口。
+    answer:
+      - 過
+      - 療
+    explanation: 心情悲傷是「難過」；醫治傷口是「治療」。遇不合難過，瞭用於瞭望等詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-24
+  - no: 76
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。哥哥耐___（必／心）地教我騎車，還扶著車子，讓我不再害___（怕／拍）。
+    answer:
+      - 心
+      - 怕
+    explanation: 願意慢慢教是有「耐心」；感到恐懼是「害怕」。必、拍不合此處詞義。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-24
+  - no: 77
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。看到好友搬到外地，我依依不___（捨／拾），約好以後常寫___（信／言）聯絡。
+    answer:
+      - 捨
+      - 信
+    explanation: 不忍分離是「依依不捨」；用書信聯絡是「寫信」。拾表示撿起，不能組成依依不捨；言不合這裡寫信的搭配。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-24
+  - no: 78
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。表演結束後，我鬆了一口___（氣／汽），感謝同學們熱___（晴／情）的掌聲。
+    answer:
+      - 氣
+      - 情
+    explanation: 放心時說「鬆了一口氣」；充滿熱心與感情是「熱情」。汽指水蒸氣，晴指天氣。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-24
+  - no: 79
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我打破花瓶，心裡很慚___（槐／愧），便主動向媽媽道___（嫌／歉）。
+    answer:
+      - 愧
+      - 歉
+    explanation: 因做錯事而不好意思是「慚愧」；認錯請人原諒是「道歉」。槐是樹名，嫌指厭惡。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-24
+  - no: 80
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。新同學有些害___（羞／差），我們主動邀___（請／清）他一起玩。
+    answer:
+      - 羞
+      - 請
+    explanation: 感到不好意思是「害羞」；請人參與是「邀請」。差、清不能組成此處詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-24
+  - no: 81
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。消防員發現火警，立___（刻／克）趕到現場，勇敢地搶___（球／救）受困的人。
+    answer:
+      - 刻
+      - 救
+    explanation: 馬上行動是「立刻」；解救危險中的人是「搶救」。克、球不合這兩個詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-25
+  - no: 82
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。過馬路時要遵___（手／守）交通規則，先確認安___（全／金）再通行。
+    answer:
+      - 守
+      - 全
+    explanation: 按規則行事是「遵守」；沒有危險是「安全」。手、金不合詞義。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-25
+  - no: 83
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。大雨使道路中___（斷／段），司機決定改走另一條路，避開危___（臉／險）。
+    answer:
+      - 斷
+      - 險
+    explanation: 道路無法通行是「中斷」；可能造成傷害的情況是「危險」。段表示一部分，臉是身體部位。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-25
+  - no: 84
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。地震時，老師指___（揮／輝）大家保護頭部，等搖晃停止再依序離___（關／開）教室。
+    answer:
+      - 揮
+      - 開
+    explanation: 帶領大家行動是「指揮」；從教室出去是「離開」。輝表示光彩，關不能組成離開。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-25
+  - no: 85
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。發現有人落水，我先大聲呼___（球／救），請附近的大人協___（助／住）處理。
+    answer:
+      - 救
+      - 助
+    explanation: 向人求援是「呼救」；幫忙處理是「協助」。球、住均不合這裡的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-25
+  - no: 86
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。出門前要檢___（查／茶）瓦斯是否關好，才能預___（防／訪）意外發生。
+    answer:
+      - 查
+      - 防
+    explanation: 查看設備狀況是「檢查」；事先防止是「預防」。茶是飲用的茶或茶葉，不能組成檢查；訪指拜訪，不能組成預防。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-25
+  - no: 87
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。濃煙從屋裡冒出，鄰居趕___（緊／紫）報警，並提___（星／醒）大家遠離現場。
+    answer:
+      - 緊
+      - 醒
+    explanation: 立刻行動是「趕緊」；告訴別人留意是「提醒」。紫是顏色，星指星星。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-25
+  - no: 88
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。登山時若迷___（露／路），應留在安全處等___（侍／待）救援。
+    answer:
+      - 路
+      - 待
+    explanation: 找不到方向是「迷路」；等候是「等待」。露指露水等，侍表示服侍。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-25
+  - no: 89
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。弟弟跌倒後，我先扶他到路___（旁／房）坐下，再請老師幫忙處___（理／里）傷口。
+    answer:
+      - 旁
+      - 理
+    explanation: 路的側邊是「路旁」；採取方法解決問題是「處理」。房指房屋，不能表示路的側邊；里不能組成處理。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-25
+  - no: 90
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。每天放學後，我會先完___（城／成）作業，再練___（席／習）吹直笛。
+    answer:
+      - 成
+      - 習
+    explanation: 把事情做好是「完成」；反覆學習是「練習」。城指城牆或城市，席指座位等。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-26
+  - no: 91
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。老師提醒我們珍___（惜／借）水資源，洗手後要把水龍頭關___（紫／緊）。
+    answer:
+      - 惜
+      - 緊
+    explanation: 重視而不浪費是「珍惜」；把水龍頭確實關好是「關緊」。借、紫都不合句意。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-26
+  - no: 92
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。週末我們全家到公園散___（布／步），一邊走一邊欣___（賞／常）花草。
+    answer:
+      - 步
+      - 賞
+    explanation: 悠閒地走路是「散步」；觀賞美好事物是「欣賞」。布、常不能組成此處詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-26
+  - no: 93
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。弟弟養成早睡早___（起／記）的好習慣，每天都能準___（詩／時）到校。
+    answer:
+      - 起
+      - 時
+    explanation: 早晨起床是「早起」；按規定時間到達是「準時」。記、詩都不合此處詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-26
+  - no: 94
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我們分___（工／功）合作打掃教室，很快就把環___（鏡／境）整理乾淨。
+    answer:
+      - 工
+      - 境
+    explanation: 分配工作是「分工」；周圍的地方與情況是「環境」。功、鏡均不合詞義。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-26
+  - no: 95
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我把零用錢存___（進／近）撲滿，打算買一本自己喜___（觀／歡）的故事書。
+    answer:
+      - 進
+      - 歡
+    explanation: 錢放入撲滿是「存進」；感到喜愛是「喜歡」。近表示距離短，觀表示看。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-26
+  - no: 96
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。種子發芽後，我每天記___（錄／綠）它的高度，觀察它的生___（長／常）。
+    answer:
+      - 錄
+      - 長
+    explanation: 把觀察結果寫下是「記錄」；植物逐漸長大是「生長」。綠是顏色，常表示經常。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-26
+  - no: 97
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。吃飯前先洗___（守／手），才能減少細菌進入身___（體／休）。
+    answer:
+      - 手
+      - 體
+    explanation: 用餐前洗乾淨的是「手」；人的軀體是「身體」。守、休都不合句意。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-26
+  - no: 98
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我到圖書館借___（閱／悅）科學書，回家後和家人分___（享／亨）新知識。
+    answer:
+      - 閱
+      - 享
+    explanation: 借書閱讀是「借閱」；把所得與別人共同擁有是「分享」。悅表示喜悅，亨不合分享的寫法。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-26

@@ -1,0 +1,12 @@
+title: 三年級數學排版預覽
+subject: 數學
+grade: 3
+sections:
+  - title: 一、選擇題
+    questions: [g3-math-midterm1-2026-10-03]
+  - title: 二、填填看
+    questions: [g3-math-midterm1-2026-10-18]
+  - title: 三、用直式算算看
+    questions: [g3-math-midterm1-2026-10-33]
+  - title: 四、應用題
+    questions: [g3-math-midterm1-2026-10-41]

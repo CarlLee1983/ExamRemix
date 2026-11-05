@@ -1,0 +1,26 @@
+# 官方空白卷，無官方解答；下列答案均獨立推核，尚待review。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 使用天平比較物體重量時，比較低的那邊表示重量比較輕。
+    answer: false
+    explanation: 使用天平比較重量時，較重的一端會較低，較輕的一端會較高。
+    source:
+      originalPaper: 高雄市永安國小113學年度上學期三年級自然與生活科技領域期中評量
+      section: 一、是非題：每題2分、共22分
+      number: 9
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 空氣流動會產生風，空氣流動愈快，風愈強。
+    answer: true
+    explanation: 風是流動的空氣；空氣流動的速度愈大，風速愈大，所稱風力也愈強。
+    source:
+      originalPaper: 高雄市永安國小113學年度上學期三年級自然與生活科技領域期中評量
+      section: 一、是非題：每題2分、共22分
+      number: 10

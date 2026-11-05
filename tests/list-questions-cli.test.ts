@@ -64,6 +64,20 @@ describe('pnpm list:questions', () => {
     expect(lines).toEqual([]);
   });
 
+  it('題組材料有疑點時，成員不會列入無疑點結果', () => {
+    expect(run('tests/fixtures/no-unit', '--id', 'reading-local-04', '--no-doubt').rows).toEqual([]);
+    expect(run('tests/fixtures/no-unit', '--id', 'reading-local-04', '--doubt').rows.map((r) => r[5])).toEqual(['doubt']);
+    expect(run('tests/fixtures/no-unit', '--id', 'reading-local-03', '--no-doubt').rows).toHaveLength(1);
+  });
+
+  it('可依配對題型篩選，仍輸出原有七欄', () => {
+    const { status, rows } = run('tests/fixtures/no-unit', '--type', 'matching', '--unit', '配對練習');
+    expect(status).toBe(0);
+    expect(rows).toHaveLength(1);
+    expect(rows[0]?.slice(0, 6)).toEqual(['matching-local-01', 'matching', '英語', '3', '配對練習', '-']);
+    expect(rows[0]).toHaveLength(7);
+  });
+
   it('--grade 與 --unit 過濾；沒有單元的題目以 - 顯示', () => {
     const { rows } = run('examples', '--grade', '3', '--unit', '乘法');
     expect(rows.length).toBeGreaterThan(0);

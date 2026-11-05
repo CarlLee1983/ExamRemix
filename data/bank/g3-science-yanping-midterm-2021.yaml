@@ -1,0 +1,20 @@
+# 來源為StudyArk公開原卷兩頁JPEG，無官方答案；answer均為獨立推核待審。
+# 僅省略作答括號、選項標號與斷行，完整中文題幹/選項保留。
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與磁鐵
+    stem: 我們可以利用什麼來表示力的大小？
+    options:
+      - 線段的長度
+      - 箭頭
+      - 線段的顏色
+      - 接觸物體的點
+    answer: 1
+    explanation: 表示力的圖示中，用線段長度表示力的大小，箭頭表示方向；顏色與作用點不表示力的大小。
+    source:
+      originalPaper: 臺北市大同區延平國民小學110學年度第一學期三年級期中評量試卷科目自然科
+      section: 二、選擇題(每題2分，共20分)
+      number: 4

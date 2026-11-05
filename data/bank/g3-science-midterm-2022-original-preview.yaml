@@ -1,0 +1,37 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 台灣欒樹一年四季都長得一樣，沒有任何變化。
+    answer: false
+    explanation: 台灣欒樹會隨季節展葉、開花、結果，外觀與顏色會改變，並非四季都一樣。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中學業評量試卷
+      section: 一、是非題：(每題2分，共30分)
+      number: 5
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 每種植物的花朵晒乾後都可泡成花茶飲用。
+    answer: false
+    explanation: 並非每種植物的花都能食用，有些花含有毒成分，不能只經晒乾就當花茶飲用。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中學業評量試卷
+      section: 一、是非題：(每題2分，共30分)
+      number: 8
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣和水
+    stem: 只有大自然會產生風，無法利用人為或機械的方式製造出風。
+    answer: false
+    explanation: 搧扇子或使用電風扇，都可以使空氣流動而產生風，所以人為或機械也能製造風。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中學業評量試卷
+      section: 一、是非題：(每題2分，共30分)
+      number: 14

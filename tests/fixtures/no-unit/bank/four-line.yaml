@@ -1,0 +1,64 @@
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 英語
+    grade: 3
+    unit: 書寫
+    writingGuide: four-line
+    stem: "請把小寫改成大寫：bag ___"
+    answer: ["BAG"]
+    explanation: "bag 的大寫是 BAG。"
+    source: { originalPaper: "測試用英語書寫", number: 1 }
+  - no: 2
+    type: fill-blank
+    subject: 英語
+    grade: 3
+    unit: 書寫
+    writingGuide: four-line
+    stem: |-
+      依字母順序填寫大小寫。
+      Aa ___ Cc
+      Dd ___ ___
+    answer: ["Bb", "Ee", "Ff"]
+    explanation: "依字母順序應填 Bb、Ee、Ff。"
+    source: { originalPaper: "測試用英語書寫", number: 2 }
+  - no: 3
+    type: fill-blank
+    subject: 英語
+    grade: 3
+    unit: 書寫
+    writingGuide: four-line
+    stem: "把 JUMP 改成小寫：___"
+    answer: ["jump"]
+    explanation: "JUMP 的小寫是 jump。"
+    source: { originalPaper: "測試用英語書寫", number: 3 }
+  - no: 4
+    type: fill-blank
+    subject: 英語
+    grade: 3
+    unit: 書寫
+    writingGuide: four-line
+    stem: "把 watermelon 改成大寫：___"
+    answer: ["WATERMELON"]
+    explanation: "watermelon 的大寫是 WATERMELON。"
+    source: { originalPaper: "測試用英語書寫", number: 4 }
+  - no: 5
+    type: fill-blank
+    subject: 英語
+    grade: 3
+    unit: 書寫
+    writingGuide: four-line
+    stem: "把這個長單字改成大寫：___"
+    answer: ["SUPERCALIFRAGILISTICEXPIALIDOCIOUS"]
+    explanation: "答案是同一個單字的大寫。"
+    source: { originalPaper: "測試用英語書寫", number: 5 }
+  - no: 6
+    type: fill-blank
+    subject: 英語
+    grade: 3
+    unit: 書寫
+    writingGuide: four-line
+    stem: "把問候語寫入空格：___"
+    answer: ["How are you this morning"]
+    explanation: "答案依指定內容書寫。"
+    source: { originalPaper: "測試用英語書寫", number: 6 }

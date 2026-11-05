@@ -1,0 +1,21 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 水的特性
+    stem: 封住注射筒出口，筒內有水也有一小團空氣，輕壓時活塞能前進一些，就能證明筒內的水很容易被壓縮。
+    answer: false
+    explanation: 筒內混有空氣，活塞前進可能主要是空氣被壓縮；不能把混合情況當成水容易壓縮的證據。
+    derivedFrom:
+      - g3-science-midterm-2024-02-05
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 水的特性
+    stem: 注射筒裡裝水，出口保持開啟，推活塞時水從出口流出；這種活塞能前進的情況，不能用來證明水的體積被壓小了。
+    answer: true
+    explanation: 出口開啟時水可流出，筒內水量減少不等於同一份水被壓縮。
+    derivedFrom:
+      - g3-science-midterm-2024-02-05

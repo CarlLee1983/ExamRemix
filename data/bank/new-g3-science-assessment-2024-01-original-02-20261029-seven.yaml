@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: 同學想檢查「果實越大，種子一定越多」這個說法。他記下幾個果實的大小和果皮顏色，卻沒有記下各自的種子數。只根據這份紀錄，就能比較這幾個果實誰的種子比較多。
+    answer: false
+    explanation: 要比較種子多少，需要各果實的種子數紀錄。果實大小和果皮顏色不能代替種子數；這份資料缺少要比較的項目，還不能檢查大小與種子多少的關係。
+    derivedFrom:
+      - g3-science-assessment-2024-01-original-02

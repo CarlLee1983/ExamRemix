@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 小文說「這條校規訂得很早，所以一定不合理，立刻廢除就好」。哪個修正較恰當？
+    options:
+      - 所有老規定都一定不合理
+      - 所有新規定都永遠不必檢查
+      - 應檢視是否符合現在需要，不能只用訂定年代判斷
+      - 既然年代久遠，就不需要知道規定內容
+    answer: 3
+    explanation: 規範可能隨情況調整，但合理性應看內容與現況，不能只用新舊年代下結論。
+    derivedFrom:
+      - g3-social-midterm-2023-02-24

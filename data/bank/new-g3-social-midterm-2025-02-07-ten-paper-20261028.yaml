@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小文在家遭受暴力傷害，可以向信任的老師說明，也可向113保護專線求助。
+    answer: true
+    explanation: 遭受家庭暴力應尋求協助，可信任的師長及113都是求助管道。
+    derivedFrom:
+      - g3-social-midterm-2025-02-07
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只要傷害自己的人是家人，就不能向外求助。
+    answer: false
+    explanation: 家人也不能以暴力傷害彼此，遇到傷害可以求助。
+    derivedFrom:
+      - g3-social-midterm-2025-02-07
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小芸擔心家中的暴力情況，可以請可信任的大人陪她尋求保護。
+    answer: true
+    explanation: 請可信任的大人協助，是面對家庭暴力的求助方式。
+    derivedFrom:
+      - g3-social-midterm-2025-02-07
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家庭暴力是家裡的事情，孩子遭到傷害也只能保密忍耐。
+    answer: false
+    explanation: 受到傷害不應被迫保密忍耐，可以向外尋求保護。
+    derivedFrom:
+      - g3-social-midterm-2025-02-07
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 113保護專線可以提供家庭暴力相關的求助協助。
+    answer: true
+    explanation: 113是家庭暴力等保護問題的求助管道。
+    derivedFrom:
+      - g3-social-midterm-2025-02-07
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小安被家人暴力傷害後，為了維護家人面子，就不應讓信任的老師知道。
+    answer: false
+    explanation: 保護自己很重要，可以向可信任的老師說明並尋求協助。
+    derivedFrom:
+      - g3-social-midterm-2025-02-07
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家中有人用暴力傷害孩子時，孩子不需要獨自承擔，可以找可信任的師長幫忙。
+    answer: true
+    explanation: 遭受家庭暴力時，應尋求可信任成人的協助。
+    derivedFrom:
+      - g3-social-midterm-2025-02-07
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只有成年人遇到家庭暴力時，才可以使用113保護專線求助。
+    answer: false
+    explanation: 孩子遇到家庭暴力也可透過113尋求協助。
+    derivedFrom:
+      - g3-social-midterm-2025-02-07
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小晴告訴老師自己在家受到暴力傷害，是為了尋求安全與保護。
+    answer: true
+    explanation: 向可信任的老師揭露傷害並求助，是保護自己的行動。
+    derivedFrom:
+      - g3-social-midterm-2025-02-07

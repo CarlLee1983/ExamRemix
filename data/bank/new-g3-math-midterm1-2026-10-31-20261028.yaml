@@ -1,0 +1,225 @@
+questions:
+  - no: 1
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$1847 + 675 =$
+    operands:
+      - "1847"
+      - "675"
+    operator: +
+    answer: "2522"
+    explanation: 個位對齊，從個位依序相加，滿十向左進一。$1847 + 675 = 2522$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-31
+  - no: 2
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$2639 + 584 =$
+    operands:
+      - "2639"
+      - "584"
+    operator: +
+    answer: "3223"
+    explanation: 個位對齊，從個位依序相加，滿十向左進一。$2639 + 584 = 3223$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-31
+  - no: 3
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$3576 + 748 =$
+    operands:
+      - "3576"
+      - "748"
+    operator: +
+    answer: "4324"
+    explanation: 個位對齊，從個位依序相加，滿十向左進一。$3576 + 748 = 4324$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-31
+  - no: 4
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$4285 + 937 =$
+    operands:
+      - "4285"
+      - "937"
+    operator: +
+    answer: "5222"
+    explanation: 個位對齊，從個位依序相加，滿十向左進一。$4285 + 937 = 5222$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-31
+  - no: 5
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$5168 + 856 =$
+    operands:
+      - "5168"
+      - "856"
+    operator: +
+    answer: "6024"
+    explanation: 個位對齊，從個位依序相加，滿十向左進一。$5168 + 856 = 6024$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-31
+  - no: 6
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$6347 + 769 =$
+    operands:
+      - "6347"
+      - "769"
+    operator: +
+    answer: "7116"
+    explanation: 個位對齊，從個位依序相加，滿十向左進一。$6347 + 769 = 7116$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-31
+  - no: 7
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$7259 + 688 =$
+    operands:
+      - "7259"
+      - "688"
+    operator: +
+    answer: "7947"
+    explanation: 個位對齊，從個位依序相加，滿十向左進一。$7259 + 688 = 7947$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-31
+  - no: 8
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$8465 + 927 =$
+    operands:
+      - "8465"
+      - "927"
+    operator: +
+    answer: "9392"
+    explanation: 個位對齊，從個位依序相加，滿十向左進一。$8465 + 927 = 9392$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-31
+  - no: 9
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$700 - 248 =$
+    operands:
+      - "700"
+      - "248"
+    operator: "-"
+    answer: "452"
+    explanation: 個位對齊，遇到不夠減時向左借位；中間的 0 要連續借位。$700 - 248 = 452$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-32
+  - no: 10
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$600 - 176 =$
+    operands:
+      - "600"
+      - "176"
+    operator: "-"
+    answer: "424"
+    explanation: 個位對齊，遇到不夠減時向左借位；中間的 0 要連續借位。$600 - 176 = 424$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-32
+  - no: 11
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$500 - 293 =$
+    operands:
+      - "500"
+      - "293"
+    operator: "-"
+    answer: "207"
+    explanation: 個位對齊，遇到不夠減時向左借位；中間的 0 要連續借位。$500 - 293 = 207$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-32
+  - no: 12
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$400 - 157 =$
+    operands:
+      - "400"
+      - "157"
+    operator: "-"
+    answer: "243"
+    explanation: 個位對齊，遇到不夠減時向左借位；中間的 0 要連續借位。$400 - 157 = 243$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-32
+  - no: 13
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$1000 - 468 =$
+    operands:
+      - "1000"
+      - "468"
+    operator: "-"
+    answer: "532"
+    explanation: 個位對齊，遇到不夠減時向左借位；中間的 0 要連續借位。$1000 - 468 = 532$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-32
+  - no: 14
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$2000 - 736 =$
+    operands:
+      - "2000"
+      - "736"
+    operator: "-"
+    answer: "1264"
+    explanation: 個位對齊，遇到不夠減時向左借位；中間的 0 要連續借位。$2000 - 736 = 1264$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-32
+  - no: 15
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$3000 - 1857 =$
+    operands:
+      - "3000"
+      - "1857"
+    operator: "-"
+    answer: "1143"
+    explanation: 個位對齊，遇到不夠減時向左借位；中間的 0 要連續借位。$3000 - 1857 = 1143$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-32
+  - no: 16
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 四位數的加減
+    stem: 用直式算算看：$4000 - 2678 =$
+    operands:
+      - "4000"
+      - "2678"
+    operator: "-"
+    answer: "1322"
+    explanation: 個位對齊，遇到不夠減時向左借位；中間的 0 要連續借位。$4000 - 2678 = 1322$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-32

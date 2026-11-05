@@ -1,0 +1,22 @@
+# 原件 URL：https://www.maiyajiaoan.com/wiki/24517.html（第三方公開預覽，非校方原件，無官方答案）
+# page.html SHA-256: 916f0b53f6cf002982d7110f16da7e2e04297a0dae01388acb0521366575a728
+# full-page.png SHA-256: 8864a73d38a90a7705ff97ab4bd08368cbb93a132a9aa395e5366ed395c57e43
+# 隔離候選題庫：只收「可用」題；HOLD / HOLD_NEAR 見 ../../REPORT.md。答案皆依原題獨立推核，非官方答案。
+# 圖片由 sources/siwei-112/images/b44aa919...webp（971x1376）裁切第三大題第4小題的兩張橡皮筋圖。
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 兩條相同的橡皮筋分別被手指拉開，如圖所示。哪一條橡皮筋受到較大的力？
+    options: [左圖的橡皮筋, 右圖的橡皮筋, 兩條一樣大, 無法判斷]
+    answer: 1
+    explanation: 橡皮筋被拉得越長，形狀改變越大，表示受到的力越大。左圖的橡皮筋被拉得比右圖長，所以左圖受力較大。答案依原題獨立推核，非官方答案。
+    image:
+      src: g3-science-midterm-2023-siwei-original/01.png
+      alt: 左右兩張圖都是雙手手指撐著一條橡皮筋，左圖兩手分得較開、橡皮筋被拉得較長，右圖兩手靠得較近、橡皮筋較短
+    source:
+      originalPaper: 臺中市北屯區四維國民小學112學年度第一學期三年級自然領域第一次定期評量試卷
+      section: 三、應用題(共54分)
+      number: 4

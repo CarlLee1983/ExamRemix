@@ -1,0 +1,80 @@
+# 原件 URL：https://www.maiyajiaoan.com/wiki/25913.html
+# page.html SHA-256: 51f7917ec027e4629a16187f58f0a11ca83f1a6e85f6a11f6965846ef563a93f
+# 來源：新北市中和區興南國民小學 109 學年度第一學期期中定期評量試題（康軒版）
+# 無官方答案，答案皆依原題獨立推核。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 有些植物的莖表面有突起的刺，要小心觀察以免被刺傷。
+    answer: true
+    explanation: 許多植物（如玫瑰、九重葛等）的莖上有尖銳的刺，具有保護自身的功能，觀察時需特別小心避免被刺傷。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 新北市中和區興南國民小學一O九學年度第一學期期中定期評量試題
+      section: 一、是非題
+      number: 2
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 磁鐵可以吸引迴紋針，但如果迴紋針掉進水杯中，磁鐵隔著杯子和水就無法吸起迴紋針。
+    answer: false
+    explanation: 磁鐵的磁力具有穿透性，能隔著水和玻璃杯等非磁性物質吸引內部的鐵製迴紋針。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 新北市中和區興南國民小學一O九學年度第一學期期中定期評量試題
+      section: 一、是非題
+      number: 7
+  - no: 3
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 如果想要把象棋固定在鐵製的棋盤上，我們可以在象棋的底部加裝什麼物品？
+    options:
+      - 鐵片
+      - 鐵粉
+      - 磁鐵
+      - 迴紋針
+    answer: 3
+    explanation: 棋盤本身是鐵製品，在象棋底部加裝磁鐵，即可利用磁鐵吸引鐵的特性將棋子穩固吸附在棋盤上。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 新北市中和區興南國民小學一O九學年度第一學期期中定期評量試題
+      section: 二、選擇題
+      number: 2
+  - no: 4
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 玩完磁鐵後，你建議如何保存磁鐵才是最好的方法？
+    options:
+      - 放在高溫的環境
+      - 不同磁極相吸在一起
+      - 時常敲擊、震動
+      - 相同磁極相吸在一起
+    answer: 2
+    explanation: 磁鐵保存時應將異名極（不同磁極）相吸在一起，或加上鐵片形成閉合迴路，並避免高溫、敲擊震動，才能防止磁力減弱。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 新北市中和區興南國民小學一O九學年度第一學期期中定期評量試題
+      section: 二、選擇題
+      number: 3
+  - no: 5
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 磁鐵可以將紙製圖卡固定在黑板上，表示黑板含有什麼材質？
+    options:
+      - 木材
+      - 塑膠
+      - 鋁
+      - 鐵
+    answer: 4
+    explanation: 磁鐵能將圖卡吸附在黑板上，是因為黑板內部含有鐵的成分，能被磁鐵吸引。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 新北市中和區興南國民小學一O九學年度第一學期期中定期評量試題
+      section: 二、選擇題
+      number: 6

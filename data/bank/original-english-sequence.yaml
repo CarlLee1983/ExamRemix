@@ -1,0 +1,64 @@
+questions:
+  - no: 1
+    type: fill-blank
+    writingGuide: four-line
+    subject: 英語
+    grade: 3
+    stem: >-
+      依字母順序填寫 A 到 O 的大小寫字母，先大寫再小寫。
+
+      A a B ___ C c D ___ E e F f ___ ___ H h I ___ ___ j K ___ L l ___ m ___ n
+      O o
+    answer:
+      - b
+      - d
+      - G
+      - g
+      - i
+      - J
+      - k
+      - M
+      - N
+    explanation: 完整順序是 A a B b C c D d E e F f G g H h I i J j K k L l M m N n O
+      o；依空格出現順序填 b、d、G、g、i、J、k、M、N。
+    source:
+      originalPaper: 114學年度第一學期第一次定期評量三年級英語試題卷（附紅字答案版）
+      section: F. Read and Write（依字母順序填寫大小寫字母，先大寫再小寫）（每答2分，共18分）
+  - no: 2
+    type: fill-blank
+    writingGuide: four-line
+    subject: 英語
+    grade: 3
+    stem: |-
+      依字母順序補寫 A 到 J 的大寫字母。
+      A ___ C ___ E ___ ___ H I J
+    answer:
+      - B
+      - D
+      - F
+      - G
+    explanation: 完整順序是 A B C D E F G H I J；依空格出現順序填 B、D、F、G。
+    source:
+      originalPaper: 114學年度上學期三年級英語科期中評量（無答案版）
+      section: 六、Read and Write 依照字母順序，寫出大小寫字母（10%）
+      number: 1
+  - no: 3
+    type: fill-blank
+    writingGuide: four-line
+    subject: 英語
+    grade: 3
+    stem: |-
+      依字母順序補寫 e 到 n 的小寫字母。
+      e ___ ___ h ___ j k ___ ___ ___
+    answer:
+      - f
+      - g
+      - i
+      - l
+      - m
+      - n
+    explanation: 完整順序是 e f g h i j k l m n；依空格出現順序填 f、g、i、l、m、n。
+    source:
+      originalPaper: 114學年度上學期三年級英語科期中評量（無答案版）
+      section: 六、Read and Write 依照字母順序，寫出大小寫字母（10%）
+      number: 2

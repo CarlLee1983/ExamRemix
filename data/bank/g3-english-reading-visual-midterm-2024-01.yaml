@@ -1,0 +1,18 @@
+questions:
+  - no: 4
+    type: true-false
+    subject: 英語
+    grade: 3
+    stem: 圖文相符畫○，不符畫✕。
+    image:
+      src: g3-english-reading-visual-midterm-2024-01/04.png
+      alt: 公車上女孩說Hello!，男孩回答You’re welcome.。
+    answer: false
+    explanation: 依可見圖文獨立推核，非官方答案：Hello!是打招呼，You’re welcome.是回應感謝的用語，這組對話不相符，應畫✕。
+    source:
+      originalPaper: 113學年度第一學期三年級英語領域期中評量卷
+      section: |-
+        VIII. Look, Read and Mark 圖文相符畫○，不符畫✕。
+        3-Ⅱ-3 能看懂課堂中所學的句子。
+        表現優異：5題；表現良好：4題；已經做到：3題；還要加油：2題；努力改進：1題以下。
+      number: 4

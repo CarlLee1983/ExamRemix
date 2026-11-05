@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 老師把同一支雙極條形磁鐵兩端的N、S紙標籤對調，沒有翻轉磁鐵，也沒有加熱或重新充磁。只因紙標籤交換，實際N極就會變成S極。
+    answer: false
+    explanation: 紙標籤是人加上的記號，貼錯或交換只會使標示不符實際，不會自行改變磁鐵的實際磁極。
+    derivedFrom:
+      - g3-science-midterm-2025-03

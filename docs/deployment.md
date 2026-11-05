@@ -1,6 +1,16 @@
 # gravito.dev 部署與版本回復決策
 
-對應 [#50](https://github.com/CarlLee1983/ExamRemix/issues/50)，決策基底為 `34cdbf1e12adac5c825648359ee0cff561275307`。本票交付部署方式、必要操作及驗收邊界，不建立 Worker、設定憑證、改 DNS 或發布網站。
+對應 [#50](https://github.com/CarlLee1983/ExamRemix/issues/50)，決策基底為 `34cdbf1e12adac5c825648359ee0cff561275307`。本文件記錄部署方式、必要操作及驗收邊界；#50 未建立 Worker、設定憑證、改 DNS 或發布網站。#56 的本機整合現況見下節，未完成項仍由 #55 子票承接。
+
+## #56 整合基底現況
+
+本輪已在獨立工作區整合既有正式題庫、附圖、試卷、資料公開政策及載入／建置命令，並保留原主工作區、既有整合工作區與原型。`pnpm dev:data` 明確讀正式資料；`pnpm build:deploy` 固定讀 `data/`，先檢查再建置，缺失或錯誤不回退範例。開發及測試仍預設使用 `examples/`。
+
+已整合的 CI 只執行驗證，不持有發布 token 或部署步驟；其瀏覽器測試建置範例及 fixture。正式資料檢查與 `build:deploy` 須另循下方順序執行，測試結束後最後重建正式 `dist/`。後續 #71 承接受控發布及完整產物流程。
+
+這份基底尚未完成 #46–#49 所定的可靠入庫、範圍／資格、完整卷／重抽及正式 UI／列印；也未建立發布 workflow、Wrangler 設定或線上資源。現有歷史卷與原始題數不算新契約的完整卷驗收。交付工作區仍可含待提交變更；只有程式與資料均納入可取得的乾淨 Git SHA，且後續工程與驗收完成後，才可進入正式發布。此處不授予提交、推送或部署權限。
+
+下列「證據與缺口」保留 #50 在 2026-11-04 的固定版本觀察，其中「遠端基底沒有命令／資料」描述當時來源，不是本輪整合工作區的能力清單。託管、域名、手動批准、產物綁定及回復規則仍採本文件同一份契約。
 
 ## 決策與目前狀態
 
@@ -8,7 +18,7 @@
 
 選擇此方式是為了沿用 CarlMath／CarlWonder 的託管慣例、維持靜態網站及獨立網域，避免新增後端或搬動現有服務。Cloudflare Pages 也能提供靜態網站，但會多一套與兩個現有站不同的發布設定；GitHub Pages 的專案子路徑不符合目前根路徑連結契約。網站不保存訪客作答，不增加資料庫或線上 AI 金鑰。
 
-以下是設計決策及未來操作契約，不代表已有發布 workflow 或已完成線上驗收。正式程式、資料及發布設定都仍須由後續工程整合。
+以下是設計決策及未來操作契約，不代表已有發布 workflow 或已完成線上驗收。#56 僅帶入既有程式／資料基底；新增功能及發布設定仍須由後續工程完成。
 
 ## 證據與缺口
 
@@ -55,10 +65,10 @@ Cloudflare 現行權限文件指出：修改 Custom Domain／route 還需要 aff
 ## 保留整合成果與正式資料建置
 
 1. 保留主工作區、本機整合 worktree、題庫／來源備份與 `.scratch/entry-design/`。現有 323 單元／CLI、179 瀏覽器與正式資料檢查紀錄只是先前整合版本的證據，不能冒充新 SHA 的驗收。
-2. 在隔離 worktree 比對已接受整合與最新 main，分批納入程式、正式 `data/bank/`、附圖與 `data/papers/`，同時帶入已接受的資料公開政策調整。不要整目錄複製 `.scratch`、`inputs`、封存或快取。現行 main 的 ADR 0001／README 仍說資料排除；發布前須合併本機已接受的政策調整並消除矛盾。本文件不直接覆寫該 ADR 或代替資料整合。
+2. 在隔離 worktree 比對已接受整合與最新 main，分批納入程式、正式 `data/bank/`、附圖與 `data/papers/`，同時帶入已接受的資料公開政策調整。不要整目錄複製 `.scratch`、`inputs`、封存或快取。本輪基底的 ADR 0001／README 已同步為正式題庫可公開、原卷留本機；後續同步 main 時保留這項已接受政策，不回復舊的全量排除規則。
 3. #46–#48 的可靠入庫、範圍／資格、配額／互斥／重抽，以及 #49 的正式 UI／SVG 注音與列印整合仍需完成。原型快照與情境開關不可當成正式組卷結果。
 4. 發布版本必須是可取得的乾淨 Git SHA，程式與正式資料同版。以乾淨 checkout 核對資料、圖片及試卷都存在；不能從未提交本機工作區發布，也不能把本機絕對路徑當 CI 資料來源。
-5. 正式建置命令契約為 `pnpm build:deploy`：固定 `EXAMREMIX_DATA_DIR=data`，先檢查正式資料再建置；資料缺失或檢查錯誤時非零退出，不回退 examples。此命令只存在待整合成果，後續整合後才能執行下列完整流程。
+5. 正式建置命令契約為 `pnpm build:deploy`：固定 `EXAMREMIX_DATA_DIR=data`，先檢查正式資料再建置；資料缺失或檢查錯誤時非零退出，不回退 examples。此命令已帶入 #56 整合基底；驗證時可執行下列流程，結果必須對應實際內容版本。
 
 在同一 checkout 依序執行，避免 Astro 共用暫存衝突：
 
@@ -72,13 +82,13 @@ pnpm test:e2e
 pnpm build:deploy
 ```
 
-Node／pnpm 沿用版本設定（本機待整合 CI 設定為 Node 24.21.0、packageManager 為 pnpm 12.0.0）。e2e 會以 examples／fixture 覆寫 dist，因此正式建置必須放最後。只打包並發布此時的 `dist/`，不上傳整個工作區、dist-fixture、來源原卷或測試資料。另檢查部署產物大小／檔案數是否符合選定方案限制。
+Node／pnpm 沿用版本設定（整合基底的 CI 設定為 Node 24.21.0、packageManager 為 pnpm 12.0.0）。e2e 會以 examples／fixture 覆寫 dist，因此正式建置必須放最後。只打包並發布此時的 `dist/`，不上傳整個工作區、dist-fixture、來源原卷或測試資料。另檢查部署產物大小／檔案數是否符合選定方案限制。
 
 ## CI 與發布順序
 
 後續工程應維持以下唯一發布路徑，本票不新增會對外寫入的 workflow：
 
-1. 先整合本機 CI；main push／PR 執行既有驗證命令，不持有發布 token、不自動部署。production 的發布 workflow 只提供 `workflow_dispatch`；拒絕非 `refs/heads/main` 的觸發。checkout 使用該 run 固定的 Git SHA，不能在途中改抓另一個 main tip。
+1. #56 已帶入本機 CI；main push／PR 執行既有驗證命令，不持有發布 token、不自動部署。後續擴展正式產物 gates 時保留此界線。production 的發布 workflow 只提供 `workflow_dispatch`；拒絕非 `refs/heads/main` 的觸發。checkout 使用該 run 固定的 Git SHA，不能在途中改抓另一個 main tip。
 2. 發布預設關閉：`CLOUDFLARE_DEPLOY_ENABLED` 必須明確為 `true`，並受 production environment 的維護者審批保護。GitHub environment 的可用保護功能須先確認；若缺少要求的審批功能，不啟用發布 workflow，回到維護者決定替代的明確批准途徑。不得自行退化成 push 即上線。
 3. 同一 SHA 執行前述完整 gates，正式 build 後驗證首頁／各科完整卷、答案與 A4/A3；將 dist 保存為該 run 的 immutable artifact，計算 SHA256。發布步驟使用同一份產物，不重新 build 或下載未綁定 SHA 的其他 run 產物。
 4. 在該 run 記錄 Git SHA、工具版本、產物摘要、資料／題庫版本、目標 account／Worker／hostname、平台 version ID／deployment ID、前一個**已驗收** version ID，以及前後 smoke 結果。沿用 Actions artifact／run 及平台 deployment 記錄，不新增另一套進度系統。
@@ -113,9 +123,9 @@ Node／pnpm 沿用版本設定（本機待整合 CI 設定為 Node 24.21.0、pac
 
 ## 本票交付與後續入口
 
-本票完成的是已確認正式網址、具來源的託管／發布／回復方案及上述操作契約。正式資料整合、發布 workflow／Wrangler 設定、Cloudflare 身分／權限確認、網域建立、首次上線與回復演練均待後續工程與 DevOps 工作；使用者啟動本票不等於授權這些外部變更。部署前應以當次版本及環境重新驗收，不沿用其他專案、原型或舊整合的成功紀錄。
+本票完成的是已確認正式網址、具來源的託管／發布／回復方案及上述操作契約。正式資料基底已由 #56 帶入；分類／候選驗收、發布 workflow／Wrangler 設定、Cloudflare 身分／權限確認、網域建立、首次上線與回復演練仍待後續工程與 DevOps 工作；使用者啟動本票不等於授權這些外部變更。部署前應以當次版本及環境重新驗收，不沿用其他專案、原型或舊整合的成功紀錄。
 
-現有本機一般部署說明曾描述 `build:deploy` 等整合成果；本文件明確區分遠端基底與待整合能力，後續合併時應整併為本文件的一份部署說明，避免保留兩份互相矛盾的流程。
+本文件已整併既有本機建置能力與 #50 部署／回復契約；README 只保留入口。上方整合現況、歷史證據與未來操作契約分開記錄，避免將本機建置成功解讀為已發布。
 
 ## 平台來源
 

@@ -1,0 +1,100 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: ANT ___
+    answer:
+      - ant
+    explanation: 依題意將大寫轉為小寫，保留字母順序：ANT → ant。
+    derivedFrom:
+      - original-english-02
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: BAG ___
+    answer:
+      - bag
+    explanation: 依題意將大寫轉為小寫，保留字母順序：BAG → bag。
+    derivedFrom:
+      - original-english-02
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: BUS ___
+    answer:
+      - bus
+    explanation: 依題意將大寫轉為小寫，保留字母順序：BUS → bus。
+    derivedFrom:
+      - original-english-02
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: CUP ___
+    answer:
+      - cup
+    explanation: 依題意將大寫轉為小寫，保留字母順序：CUP → cup。
+    derivedFrom:
+      - original-english-02
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: DESK ___
+    answer:
+      - desk
+    explanation: 依題意將大寫轉為小寫，保留字母順序：DESK → desk。
+    derivedFrom:
+      - original-english-02
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: EGG ___
+    answer:
+      - egg
+    explanation: 依題意將大寫轉為小寫，保留字母順序：EGG → egg。
+    derivedFrom:
+      - original-english-02
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: FISH ___
+    answer:
+      - fish
+    explanation: 依題意將大寫轉為小寫，保留字母順序：FISH → fish。
+    derivedFrom:
+      - original-english-02
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: GOAT ___
+    answer:
+      - goat
+    explanation: 依題意將大寫轉為小寫，保留字母順序：GOAT → goat。
+    derivedFrom:
+      - original-english-02
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: HAND ___
+    answer:
+      - hand
+    explanation: 依題意將大寫轉為小寫，保留字母順序：HAND → hand。
+    derivedFrom:
+      - original-english-02

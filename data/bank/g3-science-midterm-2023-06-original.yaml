@@ -1,0 +1,263 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 一年四季都可以看到不同的植物在開花。
+    answer: true
+    explanation: 不同植物的花期不一樣，在臺灣一年四季都可以找到開花的植物。這不表示每一種植物都全年開花。答案依原題獨立推核，未取得官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、是非題（每題2分，共24分）
+      number: 7
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 植物的莖可以支撐植物的身體。
+    answer: true
+    explanation: 莖可以支撐植物的身體，並連接根與葉。不同植物的莖有不同的外形和支撐方式；本題沒有說所有莖都能獨立直立。答案依原題獨立推核，未取得官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 三、自然科學題組／（四）下列關於植物「莖」的敘述，正確的打✓，錯誤的打×（每格1分，共7分）
+      number: 1
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 物體受力時，有些物體形狀會改變，有些不會。
+    answer: true
+    explanation: 物體受力時，有些物體（如海綿、黏土、皮球）容易發生形狀改變，有些堅硬的物體（如木桌、硬幣、水泥牆）受力時形狀則不易看出改變。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、是非題（每題2分，共24分）
+      number: 1
+  - no: 4
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 動物會移動，是生物，植物不會移動，是非生物。
+    answer: false
+    explanation: 植物具有生長、繁殖、行光合作用等生命特徵，雖然不能自主行走移動，但仍然屬於生物。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、是非題（每題2分，共24分）
+      number: 2
+  - no: 5
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 磁鐵的兩個磁極，分別稱為 W 極和 S 極。
+    answer: false
+    explanation: 磁鐵能指南北，指北的一端稱為 N 極（North），指南的一端稱為 S 極（South），並沒有稱為 W 極的磁極。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、是非題（每題2分，共24分）
+      number: 4
+  - no: 6
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 圓形磁鐵一定比長條形磁鐵的磁力強。
+    answer: false
+    explanation: 磁鐵磁力的大小與其製造材質、磁鐵體積及充磁強度有關，不能單純從磁鐵的外形（圓形或長條形）來斷定磁力強弱。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、是非題（每題2分，共24分）
+      number: 5
+  - no: 7
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 植物的枝條會向外、向上生長，儘量讓葉子都能爭取到陽光。
+    answer: true
+    explanation: 植物生長時枝條開展伸長，使葉片能錯開排列，避免彼此遮蔽，儘量爭取更多的陽光進行光合作用。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、是非題（每題2分，共24分）
+      number: 6
+  - no: 8
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 水可以使物體移動、傳送動力。
+    answer: true
+    explanation: 水流具有力量，流動的水可以推動水車轉動或使玩具船順流移動，因此水可以傳送動力使物體移動。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、是非題（每題2分，共24分）
+      number: 9
+  - no: 9
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 有些房屋和家具是用植物的莖做成的。
+    answer: true
+    explanation: 許多木本植物的莖質地堅硬粗大，經砍伐加工成木材後，可以用來建造房屋結構或製作桌、椅、床等家具。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、是非題（每題2分，共24分）
+      number: 11
+  - no: 10
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 磁鐵無法吸引下列哪種物品？
+    options:
+      - 鐵絲
+      - 十元硬幣
+      - 迴紋針
+      - 剪刀
+    answer: 2
+    explanation: 新台幣十元硬幣主要為銅鎳合金（不含鐵），無法被磁鐵吸引；鐵絲、鐵質迴紋針與鋼剪刀均含有鐵成分，可被磁鐵吸引。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、選擇題（每題2分，共32分）
+      number: 2
+  - no: 11
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 蒲公英可以在空中飄揚，是因為受到了哪種力的作用？
+    options:
+      - 水力
+      - 磁力
+      - 風力
+      - 彈力
+    answer: 3
+    explanation: 蒲公英的瘦果帶有白色冠毛，空氣流動產生的風力能吹動冠毛，使種子在空中隨風飄揚傳播。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、選擇題（每題2分，共32分）
+      number: 3
+  - no: 12
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列哪一種植物的果實像氣球，可以隨風飄揚傳播？
+    options:
+      - 鳳仙花
+      - 牽牛花
+      - 臺灣欒樹
+      - 蒲公英
+    answer: 3
+    explanation: 臺灣欒樹成熟後的蒴果膨大如氣囊或小氣球，質輕且具膜質果皮，可以隨風滾動或飄揚傳播。鳳仙花果實成熟裂開彈出種子，蒲公英飄揚的是帶冠毛的瘦果而非氣球狀果實。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、選擇題（每題2分，共32分）
+      number: 4
+  - no: 13
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 葉子形狀比較寬大，請問有什麼功能？
+    options:
+      - 吸收水分
+      - 增加陽光的照射
+      - 固定植物
+      - 輸送養分
+    answer: 2
+    explanation: 寬大的葉片擁有較大的表面積，能接受更多的日光照射以進行光合作用。吸收水分主要由根部負責，固定植物為根的功能，輸送養分主要由莖的維管束執行。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、選擇題（每題2分，共32分）
+      number: 7
+  - no: 14
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列關於植物「根」的敘述，何者正確？
+    options:
+      - 根能固定植物
+      - 根能吸收陽光
+      - 鬚根可以深入土壤
+      - 軸根在土壤的淺層生長
+    answer: 1
+    explanation: 根具有將植物牢牢固定在土壤中的重要功能。根生長在土中無法吸收陽光；通常軸根有一條明顯的主根深入土中深層，而鬚根則叢生分布於土壤淺層。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、選擇題（每題2分，共32分）
+      number: 8
+    doubt: 單選多解：鬚根可以深入土壤，不能以通常分布較淺判錯。
+  - no: 15
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: A磁鐵可以吸引5支小鐵釘，B磁鐵可以吸引4支迴紋針，C磁鐵可以吸引3支小別針，請問哪一個磁鐵的磁力最大？
+    options:
+      - A磁鐵
+      - B磁鐵
+      - C磁鐵
+      - 無法判斷
+    answer: 4
+    explanation: 比較磁鐵磁力大小時，必須保持被吸引物品的材質、大小、重量一致（控制變因）。本題中三種物品分別為小鐵釘、迴紋針與小別針，規格重量不同，不能只依吸引支數多寡比較，因此無法判斷。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、選擇題（每題2分，共32分）
+      number: 9
+  - no: 16
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列哪種植物的葉子可以適應較寒冷或風大的環境？
+    options:
+      - 細長的葉子
+      - 寬大的葉子
+      - 鮮豔的葉子
+      - 味道重的葉子
+    answer: 1
+    explanation: 細長或針狀的葉子（如松樹、柏樹）受風阻力小且表面積較小，能減少低溫強風時的水分蒸散，較能適應寒冷或強風的高山環境。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、選擇題（每題2分，共32分）
+      number: 11
+  - no: 17
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 植物哪個部位通常生長在泥土裡，不容易看見？
+    options:
+      - 根
+      - 莖
+      - 葉
+      - 花
+    answer: 1
+    explanation: 植物的「根」多數生長在土壤泥土內部，負責吸收水分無機鹽與固定植株，平時在地面上不易直接看見。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、選擇題（每題2分，共32分）
+      number: 14
+  - no: 18
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列關於植物「莖」的敘述，何者錯誤？
+    options:
+      - 地錦是爬牆高手，又稱爬牆虎
+      - 地錦的莖有許多小吸盤，可以吸附牆面往上爬
+      - 玫瑰莖上的刺，可以保護玫瑰不被動物侵害
+      - 動物很愛攀爬九芎，九芎又稱為猴愛爬
+    answer: 4
+    explanation: 九芎樹幹樹皮非常光滑，連猴子爬上去都容易滑下來，因此民間又稱為「猴不爬」，選項敘述成「猴愛爬」為錯誤。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 112學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、選擇題（每題2分，共32分）
+      number: 15

@@ -1,0 +1,15 @@
+# 校方空白試卷，並無官方解答；answer由本輪獨立推核，待review。
+# p4九5，省略輔助注音與作答括號，中文題幹照錄。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與磁鐵
+    stem: 磁鐵如果被水沾溼，就沒有吸力了。
+    answer: false
+    explanation: 沾水不會使磁鐵立刻失去磁性，磁鐵也能在水中作用；長時間受水侵蝕可能造成鏽蝕，是另一種情況。
+    source:
+      originalPaper: 基隆市深美國小113學年度三年級第1學期自然領域期中評量試卷
+      section: 九、勾選題(10)：下列關於磁鐵的敘述，正確的打ˇ，錯誤的打x。
+      number: 5

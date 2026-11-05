@@ -1,0 +1,577 @@
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 47 個 1 毫米合起來是 ___ 毫米，也就是 ___ 公分 ___ 毫米。
+    answer:
+      - "47"
+      - "4"
+      - "7"
+    explanation: 每 10 毫米換成 1 公分；47 毫米分成 40 毫米與 7 毫米，合為 4 公分 7 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-22
+  - no: 2
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 93 個 1 毫米合起來是 ___ 毫米，也就是 ___ 公分 ___ 毫米。
+    answer:
+      - "93"
+      - "9"
+      - "3"
+    explanation: 每 10 毫米換成 1 公分；93 毫米分成 90 毫米與 3 毫米，合為 9 公分 3 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-22
+  - no: 3
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 58 個 1 毫米合起來是 ___ 毫米，也就是 ___ 公分 ___ 毫米。
+    answer:
+      - "58"
+      - "5"
+      - "8"
+    explanation: 每 10 毫米換成 1 公分；58 毫米分成 50 毫米與 8 毫米，合為 5 公分 8 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-22
+  - no: 4
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 76 個 1 毫米合起來是 ___ 毫米，也就是 ___ 公分 ___ 毫米。
+    answer:
+      - "76"
+      - "7"
+      - "6"
+    explanation: 每 10 毫米換成 1 公分；76 毫米分成 70 毫米與 6 毫米，合為 7 公分 6 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-22
+  - no: 5
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 39 個 1 毫米合起來是 ___ 毫米，也就是 ___ 公分 ___ 毫米。
+    answer:
+      - "39"
+      - "3"
+      - "9"
+    explanation: 每 10 毫米換成 1 公分；39 毫米分成 30 毫米與 9 毫米，合為 3 公分 9 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-22
+  - no: 6
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 73 個 1 毫米合起來是 ___ 毫米，也就是 ___ 公分 ___ 毫米。
+    answer:
+      - "73"
+      - "7"
+      - "3"
+    explanation: 每 10 毫米換成 1 公分；73 毫米分成 70 毫米與 3 毫米，合為 7 公分 3 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-22
+  - no: 7
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 27 個 1 毫米合起來是 ___ 毫米，也就是 ___ 公分 ___ 毫米。
+    answer:
+      - "27"
+      - "2"
+      - "7"
+    explanation: 每 10 毫米換成 1 公分；27 毫米分成 20 毫米與 7 毫米，合為 2 公分 7 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-22
+  - no: 8
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 61 個 1 毫米合起來是 ___ 毫米，也就是 ___ 公分 ___ 毫米。
+    answer:
+      - "61"
+      - "6"
+      - "1"
+    explanation: 每 10 毫米換成 1 公分；61 毫米分成 60 毫米與 1 毫米，合為 6 公分 1 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-22
+  - no: 9
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一段緞帶長 24 公分，也就是 ___ 毫米。
+    answer:
+      - "240"
+    explanation: 1 公分等於 10 毫米，所以 24 公分是 240 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-23
+  - no: 10
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一張書籤長 13 公分，也就是 ___ 毫米。
+    answer:
+      - "130"
+    explanation: 1 公分等於 10 毫米，所以 13 公分是 130 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-23
+  - no: 11
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一根筷子長 22 公分，也就是 ___ 毫米。
+    answer:
+      - "220"
+    explanation: 1 公分等於 10 毫米，所以 22 公分是 220 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-23
+  - no: 12
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一枝鉛筆長 18 公分，也就是 ___ 毫米。
+    answer:
+      - "180"
+    explanation: 1 公分等於 10 毫米，所以 18 公分是 180 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-23
+  - no: 13
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一枝牙刷長 16 公分，也就是 ___ 毫米。
+    answer:
+      - "160"
+    explanation: 1 公分等於 10 毫米，所以 16 公分是 160 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-23
+  - no: 14
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一根積木條長 11 公分，也就是 ___ 毫米。
+    answer:
+      - "110"
+    explanation: 1 公分等於 10 毫米，所以 11 公分是 110 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-23
+  - no: 15
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一段紙條長 29 公分，也就是 ___ 毫米。
+    answer:
+      - "290"
+    explanation: 1 公分等於 10 毫米，所以 29 公分是 290 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-23
+  - no: 16
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一根吸管長 21 公分，也就是 ___ 毫米。
+    answer:
+      - "210"
+    explanation: 1 公分等於 10 毫米，所以 21 公分是 210 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-23
+  - no: 17
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：14 公分 ___ 140 毫米。
+    answer:
+      - =
+    explanation: 1 公分＝10 毫米，兩邊都是 140 毫米，所以一樣長。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-29
+  - no: 18
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：230 毫米 ___ 23 公分。
+    answer:
+      - =
+    explanation: 1 公分＝10 毫米，兩邊都是 230 毫米，所以一樣長。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-29
+  - no: 19
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：19 公分 ___ 190 毫米。
+    answer:
+      - =
+    explanation: 1 公分＝10 毫米，兩邊都是 190 毫米，所以一樣長。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-29
+  - no: 20
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：310 毫米 ___ 31 公分。
+    answer:
+      - =
+    explanation: 1 公分＝10 毫米，兩邊都是 310 毫米，所以一樣長。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-29
+  - no: 21
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：26 公分 ___ 260 毫米。
+    answer:
+      - =
+    explanation: 1 公分＝10 毫米，兩邊都是 260 毫米，所以一樣長。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-29
+  - no: 22
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：420 毫米 ___ 42 公分。
+    answer:
+      - =
+    explanation: 1 公分＝10 毫米，兩邊都是 420 毫米，所以一樣長。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-29
+  - no: 23
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：37 公分 ___ 370 毫米。
+    answer:
+      - =
+    explanation: 1 公分＝10 毫米，兩邊都是 370 毫米，所以一樣長。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-29
+  - no: 24
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：460 毫米 ___ 46 公分。
+    answer:
+      - =
+    explanation: 1 公分＝10 毫米，兩邊都是 460 毫米，所以一樣長。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-29
+  - no: 25
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：64 毫米 ___ 16 公分。
+    answer:
+      - <
+    explanation: 統一為毫米：左邊 64 毫米，右邊 160 毫米，所以填 <。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-30
+  - no: 26
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：17 公分 ___ 165 毫米。
+    answer:
+      - ">"
+    explanation: 統一為毫米：左邊 170 毫米，右邊 165 毫米，所以填 >。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-30
+  - no: 27
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：83 毫米 ___ 12 公分。
+    answer:
+      - <
+    explanation: 統一為毫米：左邊 83 毫米，右邊 120 毫米，所以填 <。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-30
+  - no: 28
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：28 公分 ___ 286 毫米。
+    answer:
+      - <
+    explanation: 統一為毫米：左邊 280 毫米，右邊 286 毫米，所以填 <。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-30
+  - no: 29
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：96 毫米 ___ 14 公分。
+    answer:
+      - <
+    explanation: 統一為毫米：左邊 96 毫米，右邊 140 毫米，所以填 <。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-30
+  - no: 30
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：33 公分 ___ 327 毫米。
+    answer:
+      - ">"
+    explanation: 統一為毫米：左邊 330 毫米，右邊 327 毫米，所以填 >。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-30
+  - no: 31
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：57 毫米 ___ 18 公分。
+    answer:
+      - <
+    explanation: 統一為毫米：左邊 57 毫米，右邊 180 毫米，所以填 <。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-30
+  - no: 32
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 比比看，填入 >、< 或 =：41 公分 ___ 419 毫米。
+    answer:
+      - <
+    explanation: 統一為毫米：左邊 410 毫米，右邊 419 毫米，所以填 <。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-30
+  - no: 33
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：24 毫米 + 39 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "6"
+      - "3"
+    explanation: 24＋39＝63 毫米；每 10 毫米換成 1 公分，因此是 6 公分 3 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-34
+    space: 4
+  - no: 34
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：48 毫米 + 35 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "8"
+      - "3"
+    explanation: 48＋35＝83 毫米；每 10 毫米換成 1 公分，因此是 8 公分 3 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-34
+    space: 4
+  - no: 35
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：57 毫米 + 34 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "9"
+      - "1"
+    explanation: 57＋34＝91 毫米；每 10 毫米換成 1 公分，因此是 9 公分 1 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-34
+    space: 4
+  - no: 36
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：32 毫米 + 49 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "8"
+      - "1"
+    explanation: 32＋49＝81 毫米；每 10 毫米換成 1 公分，因此是 8 公分 1 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-34
+    space: 4
+  - no: 37
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：65 毫米 + 28 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "9"
+      - "3"
+    explanation: 65＋28＝93 毫米；每 10 毫米換成 1 公分，因此是 9 公分 3 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-34
+    space: 4
+  - no: 38
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：46 毫米 + 29 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "7"
+      - "5"
+    explanation: 46＋29＝75 毫米；每 10 毫米換成 1 公分，因此是 7 公分 5 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-34
+    space: 4
+  - no: 39
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：29 毫米 + 38 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "6"
+      - "7"
+    explanation: 29＋38＝67 毫米；每 10 毫米換成 1 公分，因此是 6 公分 7 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-34
+    space: 4
+  - no: 40
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：38 毫米 + 47 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "8"
+      - "5"
+    explanation: 38＋47＝85 毫米；每 10 毫米換成 1 公分，因此是 8 公分 5 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-34
+    space: 4
+  - no: 41
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：9 公分 3 毫米 − 4 公分 8 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "4"
+      - "5"
+    explanation: 先換毫米：93−48＝45 毫米，再換成 4 公分 5 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-35
+    space: 4
+  - no: 42
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：8 公分 4 毫米 − 2 公分 9 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "5"
+      - "5"
+    explanation: 先換毫米：84−29＝55 毫米，再換成 5 公分 5 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-35
+    space: 4
+  - no: 43
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：7 公分 2 毫米 − 3 公分 5 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "3"
+      - "7"
+    explanation: 先換毫米：72−35＝37 毫米，再換成 3 公分 7 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-35
+    space: 4
+  - no: 44
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：9 公分 1 毫米 − 5 公分 6 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "3"
+      - "5"
+    explanation: 先換毫米：91−56＝35 毫米，再換成 3 公分 5 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-35
+    space: 4
+  - no: 45
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：6 公分 3 毫米 − 2 公分 7 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "3"
+      - "6"
+    explanation: 先換毫米：63−27＝36 毫米，再換成 3 公分 6 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-35
+    space: 4
+  - no: 46
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：8 公分 1 毫米 − 4 公分 7 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "3"
+      - "4"
+    explanation: 先換毫米：81−47＝34 毫米，再換成 3 公分 4 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-35
+    space: 4
+  - no: 47
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：7 公分 4 毫米 − 1 公分 8 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "5"
+      - "6"
+    explanation: 先換毫米：74−18＝56 毫米，再換成 5 公分 6 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-35
+    space: 4
+  - no: 48
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 用直式算算看：9 公分 2 毫米 − 3 公分 9 毫米 = ___ 公分 ___ 毫米。
+    answer:
+      - "5"
+      - "3"
+    explanation: 先換毫米：92−39＝53 毫米，再換成 5 公分 3 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-35
+    space: 4

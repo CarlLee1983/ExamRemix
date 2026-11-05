@@ -1,0 +1,10 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: "新問題"
+    options: ["甲", "乙"]
+    answer: 1
+    explanation: "示例解析"
+    derivedFrom: [original-01]

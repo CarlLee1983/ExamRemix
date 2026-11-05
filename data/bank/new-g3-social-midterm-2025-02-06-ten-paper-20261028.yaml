@@ -1,0 +1,73 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 同學的名字和我不同，我就可以故意念錯來逗大家笑。
+    answer: false
+    explanation: 故意念錯姓名取笑他人是不尊重的行為。
+    derivedFrom:
+      - g3-social-midterm-2025-02-06
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 不會念新同學的名字時，可以有禮貌地詢問正確念法。
+    answer: true
+    explanation: 詢問並使用正確姓名，是尊重對方的表現。
+    derivedFrom:
+      - g3-social-midterm-2025-02-06
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只有我的名字值得珍惜，別人的名字可以隨意拿來開玩笑。
+    answer: false
+    explanation: 每個人的姓名都應受到尊重。
+    derivedFrom:
+      - g3-social-midterm-2025-02-06
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 同學希望大家叫他的本名，我應尊重他的意願。
+    answer: true
+    explanation: 依對方意願使用姓名，能表達尊重。
+    derivedFrom:
+      - g3-social-midterm-2025-02-06
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 因為朋友的名字很少見，我可以未經同意把它改成自己喜歡的名字。
+    answer: false
+    explanation: 不能因姓名少見就任意改稱，應尊重對方姓名。
+    derivedFrom:
+      - g3-social-midterm-2025-02-06
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 寫生日卡給同學時，確認名字有沒有寫對，是重視對方的表現。
+    answer: true
+    explanation: 正確書寫姓名可表達尊重與用心。
+    derivedFrom:
+      - g3-social-midterm-2025-02-06
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 聽見別人取笑同學的姓名，我跟著取笑，也算是珍惜姓名。
+    answer: false
+    explanation: 珍惜姓名也包含尊重別人，不能跟著嘲笑。
+    derivedFrom:
+      - g3-social-midterm-2025-02-06
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 向新朋友介紹彼此時，清楚說出對方希望使用的姓名，能表達尊重。
+    answer: true
+    explanation: 尊重對方的姓名與稱呼意願，有助友善互動。
+    derivedFrom:
+      - g3-social-midterm-2025-02-06

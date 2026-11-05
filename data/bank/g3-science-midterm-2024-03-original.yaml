@@ -1,0 +1,13 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 植物的葉子製造養分和提供養分給植物生長。
+    answer: true
+    explanation: 葉片能利用陽光製造植物生長所需的養分。根主要吸收水分，莖主要支撐並輸送水分和養分，不能把葉的製造養分功能與根、莖的功能混為一談。
+    source:
+      originalPaper: 113學年度上學期三年級自然領域期中評量試卷
+      section: 一、是非題：每題2分，共20分
+      number: 3

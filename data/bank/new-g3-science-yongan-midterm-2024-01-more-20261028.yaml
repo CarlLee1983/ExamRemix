@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 已調好的等臂天平，左盤放一個積木，右盤放兩個積木，放穩後右盤較低。只憑這個結果，就能確定右盤的每一個積木都比左盤那一個重。
+    answer: false
+    explanation: 右盤較低，只能知道右盤兩個積木合起來比左盤一個重，不能知道右盤每一個各有多重。若要比較單個積木，需分開測量。
+    derivedFrom:
+      - g3-science-yongan-midterm-2024-01

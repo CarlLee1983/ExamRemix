@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 把空氣砲杯底的小洞用膠帶完全封住，確認杯子其他地方也沒有破洞。輕拍杯口時，空氣仍能穿過膠帶，從原來的小洞噴出吹倒紙偶。
+    answer: false
+    explanation: 原洞口被完整封住後，空氣無法像原來一樣由這個洞口流出；不能再把從該洞噴出的氣流當成吹倒紙偶的原因。
+    derivedFrom:
+      - g3-science-midterm-2024-02-07

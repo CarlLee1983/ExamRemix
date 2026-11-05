@@ -1,0 +1,10 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 訂立班級公約時，應讓每個人都有表達意見的機會；但暫時沒有補充意見的同學，不必被強迫發言。
+    answer: true
+    explanation: 保障發言機會，是讓有想法的人能表達，不等於規定每個人一定得說一段話。暫時沒有補充意見時，可以先仔細聆聽；不強迫發言也不等於剝奪他的發言機會。
+    derivedFrom:
+      - g3-social-midterm-2025-31

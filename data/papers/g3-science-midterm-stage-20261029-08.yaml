@@ -1,0 +1,37 @@
+title: 三上自然期中階段性混合來源練習卷（第八卷）
+subject: 自然
+grade: 3
+sections:
+  - title: 一、是非題
+    questions:
+      - g3-science-midterm-2020-yongan-original-01
+      - g3-science-midterm-2023-01
+      - g3-science-midterm-2023-04
+      - g3-science-midterm-2020-shoushan-original-04
+      - g3-science-midterm-2019-houde-original-02
+      - g3-science-midterm-2019-houde-original-03
+      - g3-science-midterm-2019-houde-original-04
+      - g3-science-midterm-2023-12
+      - g3-science-midterm-2020-yongan-original-02
+      - g3-science-midterm-2020-shoushan-original-02
+      - g3-science-midterm-2023-07
+      - g3-science-midterm-2023-11
+  - title: 二、選擇題
+    questions:
+      - g3-science-midterm-2020-yongan-original-04
+      - g3-science-midterm-2020-yongan-original-05
+      - g3-science-midterm-2019-houde-original-05
+      - g3-science-midterm-2019-houde-original-06
+      - g3-science-midterm-2019-houde-original-07
+      - g3-science-midterm-2020-yongan-original-07
+      - g3-science-midterm-2020-yongan-original-08
+      - g3-science-midterm-2020-shoushan-original-06
+      - g3-science-midterm-2019-houde-original-08
+      - g3-science-midterm-2021-yongan-original-01
+  - title: 三、勾選題
+    questions:
+      - g3-science-midterm-2021-yongan-original-03
+      - g3-science-midterm-2021-yongan-original-04
+  - title: 四、表格題
+    questions:
+      - g3-science-midterm-correction-20261029-02

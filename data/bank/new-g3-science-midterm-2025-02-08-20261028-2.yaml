@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 兩個注射筒用塑膠管相連，筒和管內充滿水並排除氣泡，接口不漏水；推一端活塞使另一端活塞移動，即使水沒有噴出，也可觀察到水傳送動力。
+    answer: true
+    explanation: 力可透過相連筒管中的水傳到另一端活塞，不必讓水噴出才算傳送動力。
+    derivedFrom:
+      - g3-science-midterm-2025-02-08

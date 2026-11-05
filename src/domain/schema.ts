@@ -153,6 +153,8 @@ const matchingCode = z.string().trim().min(1, '代號不可為空白').transform
 
 export const matchingQuestionSchema = questionBase.extend({
   type: z.literal('matching'),
+  /** 固定的一對一連線；未指定時使用可重複引用的答案池。 */
+  mode: z.literal('one-to-one').optional(),
   left: z.array(z.strictObject({ content: visualTextSchema, answer: matchingCode })).min(1),
   right: z.array(z.strictObject({ code: matchingCode, content: visualTextSchema })).min(1),
 }).superRefine((q, ctx) => {
@@ -168,6 +170,34 @@ export const matchingQuestionSchema = questionBase.extend({
       ctx.addIssue({ code: 'custom', path: ['left', index, 'answer'], message: `答案指向不存在的代號 ${item.answer}` });
     }
   });
+  if (q.mode === 'one-to-one') {
+    if (q.left.length < 2 || q.left.length > 10) ctx.addIssue({ code: 'custom', path: ['left'], message: '一對一配對須有 2 至 10 個項目' });
+    if (q.right.length !== q.left.length) ctx.addIssue({ code: 'custom', path: ['right'], message: '左右欄的項目數必須相同' });
+    const used = new Set<string>();
+    q.left.forEach((item, i) => {
+      if (used.has(item.answer)) ctx.addIssue({ code: 'custom', path: ['left', i, 'answer'], message: '右欄項目不可重複配對' });
+      used.add(item.answer);
+    });
+    for (const side of ['left', 'right'] as const) {
+      const texts = new Set<string>();
+      const images = new Set<string>();
+      q[side].forEach((item, i) => {
+        const content = item.content;
+        const text = typeof content === 'string' ? content : content.text;
+        const image = typeof content === 'string' ? undefined : content.image?.src;
+        if (text !== undefined) {
+          const visibleText = text.replace(/[\t\n\f\r ]+/g, ' ').trim();
+          if (visibleText.length === 0) ctx.addIssue({ code: 'custom', path: [side, i, 'content'], message: '配對文字不可只有空白' });
+          if (texts.has(visibleText)) ctx.addIssue({ code: 'custom', path: [side, i, 'content'], message: '同一欄不可有相同文字' });
+          texts.add(visibleText);
+        }
+        if (image !== undefined) {
+          if (images.has(image)) ctx.addIssue({ code: 'custom', path: [side, i, 'content'], message: '同一欄不可重用相同圖片' });
+          images.add(image);
+        }
+      });
+    }
+  }
 });
 
 const classificationText = richText.refine((text) => text.trim().length > 0, '分類內容不可只有空白');
@@ -245,12 +275,24 @@ export const trueFalseQuestionSchema = questionBase.extend({
 export const fillBlankQuestionSchema = questionBase
   .extend({
     type: z.literal('fill-blank'),
+    /** 英文書寫時以四線格取代一般底線。 */
+    writingGuide: z.literal('four-line').optional(),
     /** 每個空格一個答案，依題幹中空格出現的順序 */
     answer: z
       .array(blankAnswer)
       .min(1),
   })
   .superRefine((q, ctx) => {
+    if (q.writingGuide === 'four-line') {
+      if (q.subject !== '英語') {
+        ctx.addIssue({ code: 'custom', path: ['writingGuide'], message: '四線格目前只支援英語填空題' });
+      }
+      q.answer.forEach((answer, index) => {
+        if (!/^[A-Za-z]+(?: [A-Za-z]+)*$/.test(answer)) {
+          ctx.addIssue({ code: 'custom', path: ['answer', index], message: '四線格答案只能包含英文字母與詞間空格' });
+        }
+      });
+    }
     if (hasOverlongUnderscores(q.stem)) {
       ctx.addIssue({
         code: 'custom',
@@ -290,6 +332,20 @@ function requireAnswerRow(message: string) {
 }
 
 const sentenceSpaceMessage = '造句類題型至少要有一行作答行，space 不可為 0';
+
+/** 依學生自己的情況回答，範例不是固定答案。 */
+export const personalResponseQuestionSchema = questionBase
+  .extend({
+    type: z.literal('personal-response'),
+    writingGuide: z.literal('four-line'),
+    sampleAnswer: richText.refine((text) => text.trim().length > 0, '範例不可只有空白').optional(),
+  })
+  .superRefine((q, ctx) => {
+    if (q.subject !== '英語') {
+      ctx.addIssue({ code: 'custom', path: ['subject'], message: '個人問答目前只支援英語' });
+    }
+  })
+  .superRefine(requireAnswerRow('個人問答至少要有一組四線格，space 不可為 0'));
 
 export const makeSentenceQuestionSchema = questionBase
   .extend({
@@ -356,6 +412,7 @@ export const questionSchema = z
     tableFillQuestionSchema,
     trueFalseQuestionSchema,
     fillBlankQuestionSchema,
+    personalResponseQuestionSchema,
     charToZhuyinQuestionSchema,
     zhuyinToCharQuestionSchema,
     makeSentenceQuestionSchema,
@@ -474,6 +531,7 @@ export type TableFillQuestion = z.infer<typeof tableFillQuestionSchema>;
 export type VisualText = z.infer<typeof visualTextSchema>;
 export type TrueFalseQuestion = z.infer<typeof trueFalseQuestionSchema>;
 export type FillBlankQuestion = z.infer<typeof fillBlankQuestionSchema>;
+export type PersonalResponseQuestion = z.infer<typeof personalResponseQuestionSchema>;
 export type CharToZhuyinQuestion = z.infer<typeof charToZhuyinQuestionSchema>;
 export type ZhuyinToCharQuestion = z.infer<typeof zhuyinToCharQuestionSchema>;
 export type MakeSentenceQuestion = z.infer<typeof makeSentenceQuestionSchema>;

@@ -1,0 +1,631 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 小樹慢慢長大了。句中「長大」的「長」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「長」短
+      - 「長」久
+      - 「長」期
+      - 成「長」
+    answer: 4
+    explanation: 句中「長大」的「長」讀ㄓㄤˇ；「成長」的「長」也讀ㄓㄤˇ。其餘選項「長久」、「長短」、「長期」的「長」都讀ㄔㄤˊ，因此只有第4個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-34
+  - no: 2
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 教室裡傳來優美的音樂。句中「音樂」的「樂」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「樂」器
+      - 「樂」園
+      - 快「樂」
+      - 歡「樂」
+    answer: 1
+    explanation: 句中「音樂」的「樂」讀ㄩㄝˋ；「樂器」的「樂」也讀ㄩㄝˋ。其餘選項「快樂」、「歡樂」、「樂園」的「樂」都讀ㄌㄜˋ，因此只有第1個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-34
+  - no: 3
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 媽媽到銀行存錢。句中「銀行」的「行」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「行」人
+      - 「行」業
+      - 「行」動
+      - 「行」走
+    answer: 2
+    explanation: 句中「銀行」的「行」讀ㄏㄤˊ；「行業」的「行」也讀ㄏㄤˊ。其餘選項「行動」、「行走」、「行人」的「行」都讀ㄒㄧㄥˊ，因此只有第2個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-34
+  - no: 4
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 這個西瓜的重量是三公斤。句中「重量」的「重」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「重」新
+      - 「重」疊
+      - 「重」要
+      - 「重」複
+    answer: 3
+    explanation: 句中「重量」的「重」讀ㄓㄨㄥˋ；「重要」的「重」也讀ㄓㄨㄥˋ。其餘選項「重新」、「重複」、「重疊」的「重」都讀ㄔㄨㄥˊ，因此只有第3個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-34
+  - no: 5
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 我們把種子放進泥土裡。句中「種子」的「種」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「種」類
+      - 「種」植
+      - 「種」田
+      - 栽「種」
+    answer: 1
+    explanation: 句中「種子」的「種」讀ㄓㄨㄥˇ；「種類」的「種」也讀ㄓㄨㄥˇ。其餘選項「種田」、「種植」、「栽種」的「種」都讀ㄓㄨㄥˋ，因此只有第1個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-34
+  - no: 6
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 開窗可以讓空氣流通。句中「空氣」的「空」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「空」位
+      - 「空」白
+      - 「空」地
+      - 天「空」
+    answer: 4
+    explanation: 句中「空氣」的「空」讀ㄎㄨㄥ；「天空」的「空」也讀ㄎㄨㄥ。其餘選項「空地」、「空白」、「空位」的「空」都讀ㄎㄨㄥˋ，因此只有第4個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-34
+  - no: 7
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 全班都為得獎的消息感到高興。句中「高興」的「興」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「興」奮
+      - 「興」趣
+      - 「興」建
+      - 「興」盛
+    answer: 2
+    explanation: 句中「高興」的「興」讀ㄒㄧㄥˋ；「興趣」的「興」也讀ㄒㄧㄥˋ。其餘選項「興建」、「興奮」、「興盛」的「興」都讀ㄒㄧㄥ，因此只有第2個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-34
+  - no: 8
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 孩子對新玩具的構造十分好奇。句中「好奇」的「好」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 良「好」
+      - 「好」客
+      - 美「好」
+      - 「好」看
+    answer: 2
+    explanation: 句中「好奇」的「好」讀ㄏㄠˋ；「好客」的「好」也讀ㄏㄠˋ。其餘選項「好看」、「美好」、「良好」的「好」都讀ㄏㄠˇ，因此只有第2個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-34
+  - no: 9
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 登山前，爸爸把背包整理好了。句中「背包」的「背」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「背」負
+      - 「背」部
+      - 「背」影
+      - 「背」面
+    answer: 1
+    explanation: 句中「背包」的「背」讀ㄅㄟ；「背負」的「背」也讀ㄅㄟ。其餘選項「背部」、「背面」、「背影」的「背」都讀ㄅㄟˋ，因此只有第1個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-34
+  - no: 10
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 請把紅色和藍色的積木分開。句中「分開」的「分」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 本「分」
+      - 「分」外
+      - 身「分」
+      - 「分」別
+    answer: 4
+    explanation: 句中「分開」的「分」讀ㄈㄣ；「分別」的「分」也讀ㄈㄣ。其餘選項「身分」、「本分」、「分外」的「分」都讀ㄈㄣˋ，因此只有第4個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-35
+  - no: 11
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 這位少年每天搭公車上學。句中「少年」的「少」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 減「少」
+      - 「少」許
+      - 「少」量
+      - 「少」女
+    answer: 4
+    explanation: 句中「少年」的「少」讀ㄕㄠˋ；「少女」的「少」也讀ㄕㄠˋ。其餘選項「少量」、「少許」、「減少」的「少」都讀ㄕㄠˇ，因此只有第4個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-35
+  - no: 12
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 我相信他會遵守約定。句中「相信」的「相」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「相」同
+      - 「相」片
+      - 「相」貌
+      - 照「相」
+    answer: 1
+    explanation: 句中「相信」的「相」讀ㄒㄧㄤ；「相同」的「相」也讀ㄒㄧㄤ。其餘選項「相片」、「相貌」、「照相」的「相」都讀ㄒㄧㄤˋ，因此只有第1個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-35
+  - no: 13
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 大家捐出物資，幫助受災難影響的人。句中「災難」的「難」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 苦「難」
+      - 「難」題
+      - 困「難」
+      - 「難」過
+    answer: 1
+    explanation: 句中「災難」的「難」讀ㄋㄢˋ；「苦難」的「難」也讀ㄋㄢˋ。其餘選項「難過」、「難題」、「困難」的「難」都讀ㄋㄢˊ，因此只有第1個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-35
+  - no: 14
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 雨停以後，天空比剛才更亮了。句中「更亮」的「更」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「更」改
+      - 經過練習，他跑得「更」快了。
+      - 「更」衣
+      - 「更」換
+    answer: 2
+    explanation: 句中「更亮」的「更」讀ㄍㄥˋ；「更快」的「更」也讀ㄍㄥˋ。其餘選項「更衣」、「更換」、「更改」的「更」都讀ㄍㄥ，因此只有第2個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-35
+  - no: 15
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 天氣惡劣，船隻暫停出海。句中「惡劣」的「惡」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 憎「惡」
+      - 可「惡」
+      - 凶「惡」
+      - 厭「惡」
+    answer: 3
+    explanation: 句中「惡劣」的「惡」讀ㄜˋ；「凶惡」的「惡」也讀ㄜˋ。其餘選項「可惡」、「厭惡」、「憎惡」的「惡」都讀ㄨˋ，因此只有第3個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-35
+  - no: 16
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 老師請我回答這個問題。句中「回答」的「答」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「答」應
+      - 羞「答」答
+      - 問「答」
+      - 滴「答」
+    answer: 3
+    explanation: 句中「回答」的「答」讀ㄉㄚˊ；「問答」的「答」也讀ㄉㄚˊ。其餘選項「答應」、「滴答」、「羞答答」的「答」都讀ㄉㄚ，因此只有第3個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-35
+  - no: 17
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 我們應該愛護公物。句中「應該」的「應」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「應」當
+      - 回「應」
+      - 反「應」
+      - 「應」用
+    answer: 1
+    explanation: 句中「應該」的「應」讀ㄧㄥ；「應當」的「應」也讀ㄧㄥ。其餘選項「回應」、「反應」、「應用」的「應」都讀ㄧㄥˋ，因此只有第1個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-35
+  - no: 18
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 弟弟把紙箱當作玩具屋。句中「當作」的「當」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「當」年
+      - 「當」鋪
+      - 「當」心
+      - 「當」時
+    answer: 2
+    explanation: 句中「當作」的「當」讀ㄉㄤˋ；「當鋪」的「當」也讀ㄉㄤˋ。其餘選項「當年」、「當時」、「當心」的「當」都讀ㄉㄤ，因此只有第2個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-35
+  - no: 19
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 這是工人存放工具的處所。句中「處所」的「處」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「處」理
+      - 「處」罰
+      - 相「處」
+      - 住「處」
+    answer: 4
+    explanation: 句中「處所」的「處」讀ㄔㄨˋ；「住處」的「處」也讀ㄔㄨˋ。其餘選項「處理」、「處罰」、「相處」的「處」都讀ㄔㄨˇ，因此只有第4個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-36
+  - no: 20
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 工人使用工具切割木板。句中「切割」的「切」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「切」斷
+      - 一「切」
+      - 急「切」
+      - 親「切」
+    answer: 1
+    explanation: 句中「切割」的「切」讀ㄑㄧㄝ；「切斷」的「切」也讀ㄑㄧㄝ。其餘選項「親切」、「一切」、「急切」的「切」都讀ㄑㄧㄝˋ，因此只有第1個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-36
+  - no: 21
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 姐姐正在閱讀一位畫家的傳記。句中「傳記」的「傳」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「傳」送
+      - 「傳」達
+      - 「傳」說
+      - 自「傳」
+    answer: 4
+    explanation: 句中「傳記」的「傳」讀ㄓㄨㄢˋ；「自傳」的「傳」也讀ㄓㄨㄢˋ。其餘選項「傳達」、「傳說」、「傳送」的「傳」都讀ㄔㄨㄢˊ，因此只有第4個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-36
+  - no: 22
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 管理員輪流看守這座倉庫。句中「看守」的「看」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「看」見
+      - 觀「看」
+      - 「看」門
+      - 「看」法
+    answer: 3
+    explanation: 句中「看守」的「看」讀ㄎㄢ；「看門」的「看」也讀ㄎㄢ。其餘選項「看見」、「觀看」、「看法」的「看」都讀ㄎㄢˋ，因此只有第3個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-36
+  - no: 23
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 展覽館裡陳列著古老的子彈。句中「子彈」的「彈」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「彈」簧
+      - 「彈」力
+      - 炸「彈」
+      - 「彈」性
+    answer: 3
+    explanation: 句中「子彈」的「彈」讀ㄉㄢˋ；「炸彈」的「彈」也讀ㄉㄢˋ。其餘選項「彈簧」、「彈力」、「彈性」的「彈」都讀ㄊㄢˊ，因此只有第3個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-36
+  - no: 24
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 體操選手雙手撐地，做出倒立動作。句中「倒立」的「倒」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 跌「倒」
+      - 「倒」退
+      - 打「倒」
+      - 「倒」塌
+    answer: 2
+    explanation: 句中「倒立」的「倒」讀ㄉㄠˋ；「倒退」的「倒」也讀ㄉㄠˋ。其餘選項「跌倒」、「倒塌」、「打倒」的「倒」都讀ㄉㄠˇ，因此只有第2個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-36
+  - no: 25
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 星期一早上，全校舉行朝會。句中「朝會」的「朝」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「朝」陽
+      - 「朝」拜
+      - 「朝」代
+      - 「朝」廷
+    answer: 1
+    explanation: 句中「朝會」的「朝」讀ㄓㄠ；「朝陽」的「朝」也讀ㄓㄠ。其餘選項「朝廷」、「朝代」、「朝拜」的「朝」都讀ㄔㄠˊ，因此只有第1個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-36
+  - no: 26
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 這隻調皮的小貓把毛線滾到床底下。句中「調皮」的「調」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「調」整
+      - 「調」職
+      - 「調」查
+      - 「調」動
+    answer: 1
+    explanation: 句中「調皮」的「調」讀ㄊㄧㄠˊ；「調整」的「調」也讀ㄊㄧㄠˊ。其餘選項「調查」、「調動」、「調職」的「調」都讀ㄉㄧㄠˋ，因此只有第1個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-36
+  - no: 27
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 風從門板的縫隙吹進屋裡。句中「縫隙」的「縫」，與下列哪個選項標出的字讀音相同？
+    options:
+      - 「縫」紉
+      - 「縫」合
+      - 「縫」製
+      - 裂「縫」
+    answer: 4
+    explanation: 句中「縫隙」的「縫」讀ㄈㄥˋ；「裂縫」的「縫」也讀ㄈㄥˋ。其餘選項「縫合」、「縫紉」、「縫製」的「縫」都讀ㄈㄥˊ，因此只有第4個選項相同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-36
+  - no: 28
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 這道題還沒弄懂，請你□說一次，讓我重新聽清楚。空格中應填入哪個字或詞語？
+    options:
+      - 在
+      - 再
+      - 都
+      - 才
+    answer: 2
+    explanation: 「再」表示又一次，符合重新聽一次。「在」表示位置或動作進行；「才」有限定、剛剛等意思；「都」表示全部，均不合此處重複一次的要求。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-38
+  - no: 29
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 我昨天一直找不到借書證，直到今天早上□找到，並不是昨天就找到了。空格中應填入哪個字或詞語？
+    options:
+      - 才
+      - 都
+      - 就
+      - 又
+    answer: 1
+    explanation: 「直到……才……」表示經過等待，到今天早上方才找到；「就」表示較早或隨即，與一直找不到的語意不合；「都」沒有相配的全部對象；「又」表示再次，與首次找到的情境不合。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-38
+  - no: 30
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: □下著大雨，消防員還是出門救人，沒有因為天氣不好而退縮。這句話要表達天氣是不利條件，卻沒有阻止救人的轉折關係，空格中應填入哪個字或詞語？
+    options:
+      - 不但
+      - 雖然
+      - 因為
+      - 如果
+    answer: 2
+    explanation: 「雖然……還是……」表達逆著不利條件仍然行動。「因為」表原因；「如果」表假設，與已在下雨不符；「不但」需要遞進的配對，均不合這裡的轉折關係。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-38
+  - no: 31
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 小球滾進池塘的原因是弟弟沒接住球。這句話也可以說成：「□弟弟沒接住球，所以小球滾進池塘。」空格中應填入哪個字或詞語？
+    options:
+      - 因為
+      - 如果
+      - 但是
+      - 雖然
+    answer: 1
+    explanation: 原句明說沒接住是原因，因此用「因為……所以……」；雖然表轉折、如果表假設、但是也表轉折，均未表達指定的因果關係。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-38
+  - no: 32
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 老師還不確定明天的天氣，先說：「□明天下雨，戶外教學就改在室內進行。」空格中應填入哪個字或詞語？
+    options:
+      - 雖然
+      - 如果
+      - 而且
+      - 因為
+    answer: 2
+    explanation: 尚未確定是否下雨，先提出一種可能條件，應用「如果……就……」。因為把條件當成事實；雖然表轉折；而且表遞進，均不合。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-38
+  - no: 33
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 天空剛才還很晴朗，沒想到一聲雷響後，□下起大雨，大家都來不及收衣服。空格中應填入哪個字或詞語？
+    options:
+      - 漸漸
+      - 慢慢
+      - 忽然
+      - 逐漸
+    answer: 3
+    explanation: 雷響後出乎意料、來不及反應地開始下雨，用「忽然」。逐漸、慢慢、漸漸都表示隨時間緩緩改變，與此處突發的情境不同。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-38
+  - no: 34
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 弟弟問了同一個問題十次，姐姐仍不著急，每次都慢慢教他。姐姐真有□。空格中應填入哪個字或詞語？
+    options:
+      - 關心
+      - 虛心
+      - 粗心
+      - 耐心
+    answer: 4
+    explanation: 反覆教導而不著急，表示有「耐心」。粗心是疏忽；虛心是謙虛接受意見；關心表示掛念，但不能說「有關心」，均不合這句的用法及情境。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-38
+  - no: 35
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 哥哥很□文具，每次用完都收好，讓鉛筆和橡皮擦能用很久。空格中應填入哪個字或詞語？
+    options:
+      - 破壞
+      - 浪費
+      - 愛惜
+      - 丟棄
+    answer: 3
+    explanation: 珍重使用、用後收好以延長壽命是「愛惜」；浪費是未充分利用，破壞是使物品損壞，丟棄是扔掉，均與句中行動相反。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-38
+  - no: 36
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 上課不遲到、過馬路等綠燈，都是□規則的表現。空格中應填入哪個字或詞語？
+    options:
+      - 發明
+      - 猜測
+      - 違反
+      - 遵守
+    answer: 4
+    explanation: 依照既有規則行動是「遵守」；違反是做出與規則相反的事，發明是創造新事物，猜測是推想未知情況，均不合。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-38
+  - no: 37
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 媽媽問□「你明天要帶什麼□」我回答□「水壺和雨衣□」四個□依序應填哪組標點？前一句是真正詢問物品的問句，後一句是平靜的回答；兩處說話者之後都要引出原話。
+    options:
+      - ：。：？
+      - ，。：？
+      - ：？：。
+      - 、？、。
+    answer: 3
+    explanation: 兩處引出原話用冒號；媽媽提出問題，句末用問號；我的回答是陳述，句末用句號。其餘組合沒有正確引出原話，或把問句與回答的句末符號顛倒。
+    derivedFrom:
+      - g3-chinese-midterm-2023-02-08
+  - no: 38
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 書包裡有鉛筆□橡皮擦□尺和課本□這些都是上課要用的物品□四個□依序應填哪組標點？名詞項目之間用列舉符號；前後是兩個完整、平靜的陳述句。
+    options:
+      - 、、？，
+      - ：；。。
+      - 、、。。
+      - ，，？？
+    answer: 3
+    explanation: 鉛筆、橡皮擦、尺是並列名詞，前兩格用頓號；兩個完整陳述句各以句號結尾。其他選項混用問號、冒號、分號，或沒有使用題目要求的列舉符號。
+    derivedFrom:
+      - g3-chinese-midterm-2023-02-08
+  - no: 39
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 弟弟大喊□「救命啊□」聽見求救聲□大家立刻跑過去□四個□依序應填哪組標點？求救聲帶著強烈驚恐，後面平靜敘述大家的動作，中間只作短暫停頓。
+    options:
+      - ：？，。
+      - ：！，。
+      - ，？：！
+      - 、！；？
+    answer: 2
+    explanation: 引出大喊的原話用冒號；強烈的求救語氣用驚嘆號；後句前後動作間短暫停頓用逗號；敘述結束用句號。其他組合誤用問號、冒號或分號，或未引出原話。
+    derivedFrom:
+      - g3-chinese-midterm-2023-02-08
+  - no: 40
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 老師說□「請翻開課本□先讀第一段□再回答問題□」四個□依序應填哪組標點？老師語氣平和，交代三個先後進行的動作，小句間稍作停頓；整段原話在最後結束。
+    options:
+      - ：，，。
+      - ？、、！
+      - ：。。？
+      - ，；：？
+    answer: 1
+    explanation: 引出老師原話用冒號；三個完整動作小句間用逗號停頓；平和指示在最後用句號。其餘選項使用問號、強烈驚嘆號或把連續的指示任意分開，不合題意。
+    derivedFrom:
+      - g3-chinese-midterm-2023-02-08
+  - no: 41
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 我們需要三樣材料□紙□膠水和剪刀□材料備齊後□就能開始做紙屋了。四個□依序應填哪組標點？第一格引出材料清單，第二格分隔並列名詞；清單列完先結束第一句，下一句在「後」字稍作停頓。
+    options:
+      - ，：；。
+      - ？、！：
+      - ：；，？
+      - ：、。，
+    answer: 4
+    explanation: 引出清單用冒號，列舉紙與膠水用頓號；第一句結束用句號；第二句時間條件後短暫停頓用逗號。其他組合沒有依清單、句末及條件小句的功能填寫。
+    derivedFrom:
+      - g3-chinese-midterm-2023-02-08
+  - no: 42
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 我讀完□小王子□後□把書放回書架□四個□依序應填哪組標點？「小王子」是整本書的書名，要用書名號；讀完之後接著放書，中間稍作停頓，末尾是平靜陳述。
+    options:
+      - 「」，？
+      - （）；，
+      - 〈〉：！
+      - 《》，。
+    answer: 4
+    explanation: 整本書名使用雙書名號《》；時間小句後短暫停頓用逗號；完整陳述用句號結尾。引號、篇名號及括號均不是指定的整本書書名號，其他句末符號也不合。
+    derivedFrom:
+      - g3-chinese-midterm-2023-02-08
+  - no: 43
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 奶奶□您好□謝謝您寄來的餅乾□我和妹妹都很喜歡□四個□依序應填哪組標點？稱呼後稍作停頓；問候要表達熱情，用感嘆語氣；後面兩句則平靜地道謝和敘述。
+    options:
+      - 、。？！
+      - ，！。。
+      - ：？！，
+      - ；！？？
+    answer: 2
+    explanation: 稱呼奶奶後用逗號；熱情問候用驚嘆號；平靜道謝和陳述各用句號。其他選項誤把問候、道謝或敘述當成疑問，或使用不合稱呼停頓的符號。
+    derivedFrom:
+      - g3-chinese-midterm-2023-02-08
+  - no: 44
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 你喜歡蘋果□還是香蕉□請選一種□告訴我你的理由□四個□依序應填哪組標點？前半是完整的二選一問句，兩個選項小句間稍作停頓；後半平和地交代兩個連續動作，再結束全句。
+    options:
+      - ？。，！
+      - ；？，！
+      - ，？，。
+      - 、！：？
+    answer: 3
+    explanation: 問句中兩個選項小句間用逗號，完整問句後用問號；「選一種」和「告訴理由」兩個動作間用逗號；平和指示最後用句號。其他選項提早結束問句、誤用感嘆或未按平和指示收尾。
+    derivedFrom:
+      - g3-chinese-midterm-2023-02-08
+  - no: 45
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 小花拿著掃把□把教室掃乾淨□小青拿著抹布□把窗戶擦明亮□四個□依序應填哪組標點？兩組並列人物的活動要用分號區分，每組內兩個動作只稍作停頓，最後平靜結束陳述。
+    options:
+      - ：，、？
+      - ；，；！
+      - ，；，。
+      - 、：，。
+    answer: 3
+    explanation: 每組人物的動作之間用逗號；兩組並列活動之間用分號；陳述句最後用句號。其餘組合把分號放在動作內、誤用冒號或句末符號，皆不合。
+    derivedFrom:
+      - g3-chinese-midterm-2023-02-08

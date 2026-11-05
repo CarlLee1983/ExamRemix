@@ -1,0 +1,1009 @@
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 「七千零四十二」用數字記成 ___。
+    answer:
+      - "7042"
+    explanation: 依千、百、十、個位記錄；百位沒有數量時補 0，所以是 7042。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-15
+  - no: 2
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 「九千零二十六」用數字記成 ___。
+    answer:
+      - "9026"
+    explanation: 依千、百、十、個位記錄；百位沒有數量時補 0，所以是 9026。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-15
+  - no: 3
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 「四千零五十九」用數字記成 ___。
+    answer:
+      - "4059"
+    explanation: 依千、百、十、個位記錄；百位沒有數量時補 0，所以是 4059。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-15
+  - no: 4
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 「六千零三十七」用數字記成 ___。
+    answer:
+      - "6037"
+    explanation: 依千、百、十、個位記錄；百位沒有數量時補 0，所以是 6037。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-15
+  - no: 5
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 「二千零七十四」用數字記成 ___。
+    answer:
+      - "2074"
+    explanation: 依千、百、十、個位記錄；百位沒有數量時補 0，所以是 2074。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-15
+  - no: 6
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 「五千零八十三」用數字記成 ___。
+    answer:
+      - "5083"
+    explanation: 依千、百、十、個位記錄；百位沒有數量時補 0，所以是 5083。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-15
+  - no: 7
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 「三千零六十八」用數字記成 ___。
+    answer:
+      - "3068"
+    explanation: 依千、百、十、個位記錄；百位沒有數量時補 0，所以是 3068。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-15
+  - no: 8
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 「八千零九十四」用數字記成 ___。
+    answer:
+      - "8094"
+    explanation: 依千、百、十、個位記錄；百位沒有數量時補 0，所以是 8094。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-15
+  - no: 9
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 5076 是 ___ 個千、___ 個百、___ 個十和 ___ 個一合起來。
+    answer:
+      - "5"
+      - "0"
+      - "7"
+      - "6"
+    explanation: 依位值分解為 5 個千、0 個百、7 個十和 6 個一。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-16
+  - no: 10
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 8204 是 ___ 個千、___ 個百、___ 個十和 ___ 個一合起來。
+    answer:
+      - "8"
+      - "2"
+      - "0"
+      - "4"
+    explanation: 依位值分解為 8 個千、2 個百、0 個十和 4 個一。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-16
+  - no: 11
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 4039 是 ___ 個千、___ 個百、___ 個十和 ___ 個一合起來。
+    answer:
+      - "4"
+      - "0"
+      - "3"
+      - "9"
+    explanation: 依位值分解為 4 個千、0 個百、3 個十和 9 個一。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-16
+  - no: 12
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 9702 是 ___ 個千、___ 個百、___ 個十和 ___ 個一合起來。
+    answer:
+      - "9"
+      - "7"
+      - "0"
+      - "2"
+    explanation: 依位值分解為 9 個千、7 個百、0 個十和 2 個一。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-16
+  - no: 13
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 2065 是 ___ 個千、___ 個百、___ 個十和 ___ 個一合起來。
+    answer:
+      - "2"
+      - "0"
+      - "6"
+      - "5"
+    explanation: 依位值分解為 2 個千、0 個百、6 個十和 5 個一。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-16
+  - no: 14
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 6903 是 ___ 個千、___ 個百、___ 個十和 ___ 個一合起來。
+    answer:
+      - "6"
+      - "9"
+      - "0"
+      - "3"
+    explanation: 依位值分解為 6 個千、9 個百、0 個十和 3 個一。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-16
+  - no: 15
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 7048 是 ___ 個千、___ 個百、___ 個十和 ___ 個一合起來。
+    answer:
+      - "7"
+      - "0"
+      - "4"
+      - "8"
+    explanation: 依位值分解為 7 個千、0 個百、4 個十和 8 個一。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-16
+  - no: 16
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 3506 是 ___ 個千、___ 個百、___ 個十和 ___ 個一合起來。
+    answer:
+      - "3"
+      - "5"
+      - "0"
+      - "6"
+    explanation: 依位值分解為 3 個千、5 個百、0 個十和 6 個一。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-16
+  - no: 17
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 2 個千、18 個十和 9 個一合起來是 ___。
+    answer:
+      - "2189"
+    explanation: 18 個十是 180，2000＋180＋9＝2189。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-17
+  - no: 18
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 5 個千、24 個十和 6 個一合起來是 ___。
+    answer:
+      - "5246"
+    explanation: 24 個十是 240，5000＋240＋6＝5246。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-17
+  - no: 19
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 7 個千、16 個十和 3 個一合起來是 ___。
+    answer:
+      - "7163"
+    explanation: 16 個十是 160，7000＋160＋3＝7163。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-17
+  - no: 20
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 3 個千、27 個十和 8 個一合起來是 ___。
+    answer:
+      - "3278"
+    explanation: 27 個十是 270，3000＋270＋8＝3278。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-17
+  - no: 21
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 6 個千、19 個十和 4 個一合起來是 ___。
+    answer:
+      - "6194"
+    explanation: 19 個十是 190，6000＋190＋4＝6194。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-17
+  - no: 22
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 8 個千、32 個十和 5 個一合起來是 ___。
+    answer:
+      - "8325"
+    explanation: 32 個十是 320，8000＋320＋5＝8325。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-17
+  - no: 23
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 4 個千、26 個十和 1 個一合起來是 ___。
+    answer:
+      - "4261"
+    explanation: 26 個十是 260，4000＋260＋1＝4261。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-17
+  - no: 24
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 1 個千、38 個十和 7 個一合起來是 ___。
+    answer:
+      - "1387"
+    explanation: 38 個十是 380，1000＋380＋7＝1387。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-17
+  - no: 25
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 用 1、0、7、4 這四個數字各用一次排成四位數，最大的數是 ___，最小的數是 ___。
+    answer:
+      - "7410"
+      - "1047"
+    explanation: 最大依數字由大到小排為 7410；最小的千位放最小非零數字，再將其餘由小到大排為 1047。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-18
+  - no: 26
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 用 6、2、0、3 這四個數字各用一次排成四位數，最大的數是 ___，最小的數是 ___。
+    answer:
+      - "6320"
+      - "2036"
+    explanation: 最大依數字由大到小排為 6320；最小的千位放最小非零數字，再將其餘由小到大排為 2036。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-18
+  - no: 27
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 用 0、9、4、3 這四個數字各用一次排成四位數，最大的數是 ___，最小的數是 ___。
+    answer:
+      - "9430"
+      - "3049"
+    explanation: 最大依數字由大到小排為 9430；最小的千位放最小非零數字，再將其餘由小到大排為 3049。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-18
+  - no: 28
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 用 8、0、2、5 這四個數字各用一次排成四位數，最大的數是 ___，最小的數是 ___。
+    answer:
+      - "8520"
+      - "2058"
+    explanation: 最大依數字由大到小排為 8520；最小的千位放最小非零數字，再將其餘由小到大排為 2058。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-18
+  - no: 29
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 用 9、1、6、0 這四個數字各用一次排成四位數，最大的數是 ___，最小的數是 ___。
+    answer:
+      - "9610"
+      - "1069"
+    explanation: 最大依數字由大到小排為 9610；最小的千位放最小非零數字，再將其餘由小到大排為 1069。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-18
+  - no: 30
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 用 4、7、0、5 這四個數字各用一次排成四位數，最大的數是 ___，最小的數是 ___。
+    answer:
+      - "7540"
+      - "4057"
+    explanation: 最大依數字由大到小排為 7540；最小的千位放最小非零數字，再將其餘由小到大排為 4057。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-18
+  - no: 31
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 用 0、8、7、2 這四個數字各用一次排成四位數，最大的數是 ___，最小的數是 ___。
+    answer:
+      - "8720"
+      - "2078"
+    explanation: 最大依數字由大到小排為 8720；最小的千位放最小非零數字，再將其餘由小到大排為 2078。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-18
+  - no: 32
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 用 5、3、6、0 這四個數字各用一次排成四位數，最大的數是 ___，最小的數是 ___。
+    answer:
+      - "6530"
+      - "3056"
+    explanation: 最大依數字由大到小排為 6530；最小的千位放最小非零數字，再將其餘由小到大排為 3056。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-18
+  - no: 33
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 每次減少 100，依規則填數：6812 → 6712 → ___ → 6512 → ___。
+    answer:
+      - "6612"
+      - "6412"
+    explanation: 相鄰兩數固定減少 100，因此空格依序為 6612、6412。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-19
+  - no: 34
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 每次增加 100，依規則填數：3947 → 4047 → ___ → 4247 → ___。
+    answer:
+      - "4147"
+      - "4347"
+    explanation: 相鄰兩數固定增加 100，因此空格依序為 4147、4347。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-19
+  - no: 35
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 每次減少 100，依規則填數：8206 → 8106 → ___ → 7906 → ___。
+    answer:
+      - "8006"
+      - "7806"
+    explanation: 相鄰兩數固定減少 100，因此空格依序為 8006、7806。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-19
+  - no: 36
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 每次增加 100，依規則填數：5473 → 5573 → ___ → 5773 → ___。
+    answer:
+      - "5673"
+      - "5873"
+    explanation: 相鄰兩數固定增加 100，因此空格依序為 5673、5873。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-19
+  - no: 37
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 每次減少 100，依規則填數：7029 → 6929 → ___ → 6729 → ___。
+    answer:
+      - "6829"
+      - "6629"
+    explanation: 相鄰兩數固定減少 100，因此空格依序為 6829、6629。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-19
+  - no: 38
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 每次增加 100，依規則填數：2684 → 2784 → ___ → 2984 → ___。
+    answer:
+      - "2884"
+      - "3084"
+    explanation: 相鄰兩數固定增加 100，因此空格依序為 2884、3084。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-19
+  - no: 39
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 每次減少 100，依規則填數：9136 → 9036 → ___ → 8836 → ___。
+    answer:
+      - "8936"
+      - "8736"
+    explanation: 相鄰兩數固定減少 100，因此空格依序為 8936、8736。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-19
+  - no: 40
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 每次增加 100，依規則填數：4368 → 4468 → ___ → 4668 → ___。
+    answer:
+      - "4568"
+      - "4768"
+    explanation: 相鄰兩數固定增加 100，因此空格依序為 4568、4768。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-19
+  - no: 41
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 義賣攤收了 17 張 100 元，合起來是 ___ 元。
+    answer:
+      - "1700"
+    explanation: 17 個百是 1700，所以共 1700 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-20
+  - no: 42
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 班級存錢筒裡有 26 張 100 元，合起來是 ___ 元。
+    answer:
+      - "2600"
+    explanation: 26 個百是 2600，所以共 2600 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-20
+  - no: 43
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 旅行基金存入 34 張 100 元，合起來是 ___ 元。
+    answer:
+      - "3400"
+    explanation: 34 個百是 3400，所以共 3400 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-20
+  - no: 44
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 文具店結帳時收到 42 張 100 元，合起來是 ___ 元。
+    answer:
+      - "4200"
+    explanation: 42 個百是 4200，所以共 4200 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-20
+  - no: 45
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 圖書採購袋裝著 58 張 100 元，合起來是 ___ 元。
+    answer:
+      - "5800"
+    explanation: 58 個百是 5800，所以共 5800 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-20
+  - no: 46
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 園遊會換回 63 張 100 元，合起來是 ___ 元。
+    answer:
+      - "6300"
+    explanation: 63 個百是 6300，所以共 6300 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-20
+  - no: 47
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 班費信封裡放著 71 張 100 元，合起來是 ___ 元。
+    answer:
+      - "7100"
+    explanation: 71 個百是 7100，所以共 7100 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-20
+  - no: 48
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 體育用品店收進 89 張 100 元，合起來是 ___ 元。
+    answer:
+      - "8900"
+    explanation: 89 個百是 8900，所以共 8900 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-20
+  - no: 49
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 義賣攤收了 2 張 1000 元、13 張 100 元、4 個 10 元和 8 個 1 元，合計 ___ 元。
+    answer:
+      - "3348"
+    explanation: 各面額的金額相加：2000＋1300＋40＋8＝3348 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-21
+  - no: 50
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 班級存錢筒裡有 4 張 1000 元、16 張 100 元、7 個 10 元和 3 個 1 元，合計 ___ 元。
+    answer:
+      - "5673"
+    explanation: 各面額的金額相加：4000＋1600＋70＋3＝5673 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-21
+  - no: 51
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 旅行基金存入 6 張 1000 元、12 張 100 元、5 個 10 元和 9 個 1 元，合計 ___ 元。
+    answer:
+      - "7259"
+    explanation: 各面額的金額相加：6000＋1200＋50＋9＝7259 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-21
+  - no: 52
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 文具店結帳時收到 3 張 1000 元、18 張 100 元、2 個 10 元和 6 個 1 元，合計 ___ 元。
+    answer:
+      - "4826"
+    explanation: 各面額的金額相加：3000＋1800＋20＋6＝4826 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-21
+  - no: 53
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 圖書採購袋裝著 5 張 1000 元、21 張 100 元、8 個 10 元和 4 個 1 元，合計 ___ 元。
+    answer:
+      - "7184"
+    explanation: 各面額的金額相加：5000＋2100＋80＋4＝7184 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-21
+  - no: 54
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 園遊會換回 1 張 1000 元、25 張 100 元、6 個 10 元和 7 個 1 元，合計 ___ 元。
+    answer:
+      - "3567"
+    explanation: 各面額的金額相加：1000＋2500＋60＋7＝3567 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-21
+  - no: 55
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 班費信封裡放著 7 張 1000 元、14 張 100 元、9 個 10 元和 1 個 1 元，合計 ___ 元。
+    answer:
+      - "8491"
+    explanation: 各面額的金額相加：7000＋1400＋90＋1＝8491 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-21
+  - no: 56
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 體育用品店收進 2 張 1000 元、32 張 100 元、3 個 10 元和 5 個 1 元，合計 ___ 元。
+    answer:
+      - "5235"
+    explanation: 各面額的金額相加：2000＋3200＋30＋5＝5235 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-21
+  - no: 57
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：4718 ___ 4817。
+    answer:
+      - <
+    explanation: 從最高位逐位比較，兩數相差 99，所以 4718 < 4817。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-25
+  - no: 58
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：6534 ___ 6435。
+    answer:
+      - ">"
+    explanation: 從最高位逐位比較，兩數相差 99，所以 6534 > 6435。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-25
+  - no: 59
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：9286 ___ 9186。
+    answer:
+      - ">"
+    explanation: 從最高位逐位比較，兩數相差 100，所以 9286 > 9186。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-25
+  - no: 60
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：3629 ___ 3729。
+    answer:
+      - <
+    explanation: 從最高位逐位比較，兩數相差 100，所以 3629 < 3729。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-25
+  - no: 61
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：8451 ___ 8351。
+    answer:
+      - ">"
+    explanation: 從最高位逐位比較，兩數相差 100，所以 8451 > 8351。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-25
+  - no: 62
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：5932 ___ 5832。
+    answer:
+      - ">"
+    explanation: 從最高位逐位比較，兩數相差 100，所以 5932 > 5832。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-25
+  - no: 63
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：7164 ___ 7264。
+    answer:
+      - <
+    explanation: 從最高位逐位比較，兩數相差 100，所以 7164 < 7264。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-25
+  - no: 64
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：2847 ___ 2947。
+    answer:
+      - <
+    explanation: 從最高位逐位比較，兩數相差 100，所以 2847 < 2947。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-25
+  - no: 65
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：4658 ___ 4678。
+    answer:
+      - <
+    explanation: 從最高位逐位比較，兩數相差 20，所以 4658 < 4678。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-26
+  - no: 66
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：7836 ___ 7816。
+    answer:
+      - ">"
+    explanation: 從最高位逐位比較，兩數相差 20，所以 7836 > 7816。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-26
+  - no: 67
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：9324 ___ 9374。
+    answer:
+      - <
+    explanation: 從最高位逐位比較，兩數相差 50，所以 9324 < 9374。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-26
+  - no: 68
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：2519 ___ 2539。
+    answer:
+      - <
+    explanation: 從最高位逐位比較，兩數相差 20，所以 2519 < 2539。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-26
+  - no: 69
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：6487 ___ 6447。
+    answer:
+      - ">"
+    explanation: 從最高位逐位比較，兩數相差 40，所以 6487 > 6447。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-26
+  - no: 70
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：5273 ___ 5293。
+    answer:
+      - <
+    explanation: 從最高位逐位比較，兩數相差 20，所以 5273 < 5293。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-26
+  - no: 71
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：8962 ___ 8912。
+    answer:
+      - ">"
+    explanation: 從最高位逐位比較，兩數相差 50，所以 8962 > 8912。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-26
+  - no: 72
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：3146 ___ 3166。
+    answer:
+      - <
+    explanation: 從最高位逐位比較，兩數相差 20，所以 3146 < 3166。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-26
+  - no: 73
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：5207 ___ 五千零二十七。
+    answer:
+      - ">"
+    explanation: 五千零二十七記成 5027；比較位值可知 5207 > 5027。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-27
+  - no: 74
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：3079 ___ 三千七百零九。
+    answer:
+      - <
+    explanation: 三千七百零九記成 3709；比較位值可知 3079 < 3709。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-27
+  - no: 75
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：8604 ___ 八千零六十四。
+    answer:
+      - ">"
+    explanation: 八千零六十四記成 8064；比較位值可知 8604 > 8064。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-27
+  - no: 76
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：9043 ___ 九千四百零三。
+    answer:
+      - <
+    explanation: 九千四百零三記成 9403；比較位值可知 9043 < 9403。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-27
+  - no: 77
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：6082 ___ 六千零二十八。
+    answer:
+      - ">"
+    explanation: 六千零二十八記成 6028；比較位值可知 6082 > 6028。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-27
+  - no: 78
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：7095 ___ 七千九百零五。
+    answer:
+      - <
+    explanation: 七千九百零五記成 7905；比較位值可知 7095 < 7905。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-27
+  - no: 79
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：4018 ___ 四千零八十一。
+    answer:
+      - <
+    explanation: 四千零八十一記成 4081；比較位值可知 4018 < 4081。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-27
+  - no: 80
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：2036 ___ 二千零六十三。
+    answer:
+      - <
+    explanation: 二千零六十三記成 2063；比較位值可知 2036 < 2063。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-27
+  - no: 81
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：四千三百 ___ 4030。
+    answer:
+      - ">"
+    explanation: 四千三百是 4300，比較位值可知 4300 > 4030。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-28
+  - no: 82
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：二千零八十 ___ 2800。
+    answer:
+      - <
+    explanation: 二千零八十是 2080，比較位值可知 2080 < 2800。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-28
+  - no: 83
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：七千六百 ___ 7060。
+    answer:
+      - ">"
+    explanation: 七千六百是 7600，比較位值可知 7600 > 7060。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-28
+  - no: 84
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：九千零五十 ___ 9500。
+    answer:
+      - <
+    explanation: 九千零五十是 9050，比較位值可知 9050 < 9500。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-28
+  - no: 85
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：六千八百 ___ 6080。
+    answer:
+      - ">"
+    explanation: 六千八百是 6800，比較位值可知 6800 > 6080。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-28
+  - no: 86
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：三千零四十 ___ 3400。
+    answer:
+      - <
+    explanation: 三千零四十是 3040，比較位值可知 3040 < 3400。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-28
+  - no: 87
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：五千七百 ___ 5070。
+    answer:
+      - ">"
+    explanation: 五千七百是 5700，比較位值可知 5700 > 5070。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-28
+  - no: 88
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 比比看，填入 >、< 或 =：八千零二十 ___ 8200。
+    answer:
+      - <
+    explanation: 八千零二十是 8020，比較位值可知 8020 < 8200。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-28

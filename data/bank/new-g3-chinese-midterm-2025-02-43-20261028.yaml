@@ -1,0 +1,28 @@
+questions:
+  - no: 1
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句，寫出「連續幾天沒給盆栽澆水」造成的結果。
+    answer: 由於我連續幾天沒給盆栽澆水，因此盆栽的葉子枯萎了。
+    explanation: 範例答案以缺水為原因、葉子枯萎為結果。可寫其他合理結果；只要使用指定句式、包含題目情境、因果合理且句意完整，均可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-43
+  - no: 2
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句，寫出「聽到火警演習的警報聲」後立刻採取的安全行動。
+    answer: 我們一聽到火警演習的警報聲，就依照老師的指示離開教室。
+    explanation: 範例答案先寫聽到警報，再寫立刻依指示行動。其他使用指定句式、包含演習警報情境、行動安全且語意完整的句子也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-44
+  - no: 3
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「除了……還有……」造句，介紹鉛筆盒裡兩種不同的文具。
+    answer: 我的鉛筆盒裡除了有鉛筆，還有橡皮擦。
+    explanation: 範例答案補充列舉兩種文具。只要使用「除了……還有……」、兩種物品不同且都是可放入鉛筆盒的文具、句意完整，其他合理句子也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-20

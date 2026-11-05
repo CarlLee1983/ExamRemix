@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 物質
+    stem: 一塊石頭碎成許多小石子後，外形和數量改變了，這些小石子仍然是物質。
+    answer: true
+    explanation: 石頭碎裂只改變外形、大小和塊數，小石子仍占有空間、具有重量，仍屬於物質。
+    derivedFrom:
+      - g3-science-midterm-2024-02-08

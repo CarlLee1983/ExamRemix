@@ -1,0 +1,18 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 物質溶解
+    stem: 水量相同但水溫不同的4杯水，哪一杯可以溶解的食鹽最少？
+    options:
+      - 20℃
+      - 40℃
+      - 60℃
+      - 80℃
+    answer: 1
+    explanation: 在水量相同且充分溶解的條件下，食鹽在20℃水中的溶解量比題目其他溫度少；食鹽的溶解量隨溫度上升而增加，但變化比砂糖小。答案依原題獨立推核，未取得官方答案。
+    source:
+      originalPaper: 112學年度第一學期期中定期評量三年級自然科試題
+      section: 二、選擇題（每題2分，共20分）
+      number: 6

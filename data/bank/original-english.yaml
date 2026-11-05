@@ -1,0 +1,214 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: ban ___
+    answer:
+      - BAN
+    explanation: 依題意將小寫轉為大寫，保留字母順序：ban → BAN。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: E. Write (16%)（將小寫字母改成大寫，大寫改成小寫字母）
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: JELLY ___
+    answer:
+      - jelly
+    explanation: 依題意將大寫轉為小寫，保留字母順序：JELLY → jelly。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: E. Write (16%)（將小寫字母改成大寫，大寫改成小寫字母）
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: DUCK ___
+    answer:
+      - duck
+    explanation: 依題意將大寫轉為小寫，保留字母順序：DUCK → duck。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: E. Write (16%)（將小寫字母改成大寫，大寫改成小寫字母）
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: EQUIP ___
+    answer:
+      - equip
+    explanation: 依題意將大寫轉為小寫，保留字母順序：EQUIP → equip。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: E. Write (16%)（將小寫字母改成大寫，大寫改成小寫字母）
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 勾出正確的字母順序。
+    options:
+      - F E G
+      - E F G
+      - G F E
+    answer: 2
+    explanation: 依字母表順序應為 E F G，選項2正確。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: F. Choose the Right Order (12%)（勾出正確的字母順序）
+      number: 1
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 勾出正確的字母順序。
+    options:
+      - O L N M
+      - L N M O
+      - L M N O
+    answer: 3
+    explanation: 依字母表順序應為 L M N O，選項3正確。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: F. Choose the Right Order (12%)（勾出正確的字母順序）
+      number: 2
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 勾出正確的字母順序。
+    options:
+      - b c d
+      - d c b
+      - c b d
+    answer: 1
+    explanation: 依字母表順序應為 b c d，選項1正確。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: F. Choose the Right Order (12%)（勾出正確的字母順序）
+      number: 3
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 勾出正確的字母順序。
+    options:
+      - q p r
+      - p q r
+      - r q p
+    answer: 2
+    explanation: 依字母表順序應為 p q r，選項2正確。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: F. Choose the Right Order (12%)（勾出正確的字母順序）
+      number: 4
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 勾出正確的字母順序。
+    options:
+      - u v w x
+      - v u w x
+      - x w v u
+    answer: 1
+    explanation: 依字母表順序應為 u v w x，選項1正確。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: F. Choose the Right Order (12%)（勾出正確的字母順序）
+      number: 5
+  - no: 10
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 勾出正確的字母順序。
+    options:
+      - l i j k
+      - i j l k
+      - i j k l
+    answer: 3
+    explanation: 依字母表順序應為 i j k l，選項3正確。
+    source:
+      originalPaper: 花蓮縣花蓮市明義國民小學111學年度第一學期三年級英語科期中定期評量試卷
+      section: F. Choose the Right Order (12%)（勾出正確的字母順序）
+      number: 6
+  - no: 11
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ your name?
+    options:
+      - what’s
+      - What
+      - What’s
+    answer: 3
+    explanation: 句首須大寫；What’s 是 What is 的縮寫，What’s your name? 用來詢問姓名。
+    source:
+      originalPaper: 臺中市南屯區大墩國民小學114學年度第一學期第一次定期評量三年級語文領域英語試題卷
+      section: H. Read and Choose（選出適當的答案）（每題2分，共12分）
+      number: 1
+  - no: 12
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ am OK.
+    options:
+      - I
+      - I’m
+      - My
+    answer: 1
+    explanation: am 的主詞使用 I；I am OK. 表示我很好。
+    source:
+      originalPaper: 臺中市南屯區大墩國民小學114學年度第一學期第一次定期評量三年級語文領域英語試題卷
+      section: H. Read and Choose（選出適當的答案）（每題2分，共12分）
+      number: 2
+  - no: 13
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ name is Teddy.
+    options:
+      - my
+      - My
+      - I
+    answer: 2
+    explanation: 句首使用大寫 My；My name is Teddy. 表示我的名字是 Teddy。
+    source:
+      originalPaper: 臺中市南屯區大墩國民小學114學年度第一學期第一次定期評量三年級語文領域英語試題卷
+      section: H. Read and Choose（選出適當的答案）（每題2分，共12分）
+      number: 3
+  - no: 14
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: How are you ___
+    options:
+      - .
+      - ","
+      - "?"
+    answer: 3
+    explanation: How are you 是問句，句尾使用問號。
+    source:
+      originalPaper: 臺中市南屯區大墩國民小學114學年度第一學期第一次定期評量三年級語文領域英語試題卷
+      section: H. Read and Choose（選出適當的答案）（每題2分，共12分）
+      number: 5
+  - no: 15
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: "A: You’re welcome ___"
+    options:
+      - .
+      - ","
+      - "?"
+    answer: 1
+    explanation: You’re welcome 是完整的禮貌回應陳述句，句尾使用句點。
+    source:
+      originalPaper: 臺中市南屯區大墩國民小學114學年度第一學期第一次定期評量三年級語文領域英語試題卷
+      section: H. Read and Choose（選出適當的答案）（每題2分，共12分）
+      number: 6

@@ -16,6 +16,7 @@ export const DEFAULT_SPACE: Record<Question['type'], number> = {
   'table-fill': 0,
   'true-false': 0,
   'fill-blank': 0,
+  'personal-response': 1,
   'char-to-zhuyin': 0,
   'zhuyin-to-char': 0,
   'make-sentence': 2,

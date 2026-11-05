@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 把切下的帶葉枝條插入紅色水中，過一段時間看到葉脈染紅；這能作為莖可輸送水的證據，但不能用來斷定完整植物不需要根。
+    answer: true
+    explanation: 枝條的實驗可顯示莖輸送水分；因為實驗對象沒有完整根部，不能據此否定完整植物根的作用。
+    derivedFrom:
+      - g3-science-midterm-2025-02-05

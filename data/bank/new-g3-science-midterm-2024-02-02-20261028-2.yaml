@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 觀察校園樹木時，若不想品嚐樹皮，就應把樹皮整片剝下來，這才是認識莖的必要方法。
+    answer: false
+    explanation: 可用觀察、拍照或適當觸摸等方式認識樹皮，不必剝除整片樹皮傷害植物。
+    derivedFrom:
+      - g3-science-midterm-2024-02-02

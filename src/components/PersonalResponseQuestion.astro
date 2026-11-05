@@ -1,0 +1,25 @@
+---
+import { answerSpace } from '../domain/answer-space';
+import type { PersonalResponseQuestion } from '../domain/schema';
+import Explanation from './Explanation.astro';
+import QuestionFigure from './QuestionFigure.astro';
+import RichText from './RichText.astro';
+
+interface Props {
+  number: number;
+  question: PersonalResponseQuestion;
+}
+
+const { number, question } = Astro.props;
+const lines = answerSpace(question);
+---
+
+<div class="question question-personal-response" data-question-type="personal-response">
+  <p class="stem"><span class="number" lang="zh-Hant-TW">{number}.</span><RichText text={question.stem} /></p>
+  <QuestionFigure image={question.image} />
+  <div class="personal-writing-lines" data-space={lines} aria-hidden="true">
+    {Array.from({ length: lines }, () => <div class="personal-writing-line"><span class="writing-guide"><span></span><span></span><span></span><span></span></span></div>)}
+  </div>
+  <p class="personal-answer">依個人情況作答。{question.sampleAnswer && <> 範例：<RichText text={question.sampleAnswer} /></>}</p>
+  <Explanation text={question.explanation} />
+</div>

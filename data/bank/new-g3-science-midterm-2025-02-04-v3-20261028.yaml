@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 連續觀察同一段莖，確認每個節原先都有兩片相對的葉子。後來其中一片葉被蟲吃掉，只憑這片葉消失，就應把這段莖原來的葉序由對生改記成互生。
+    answer: false
+    explanation: 原先每節兩片相對生長，已可記為對生；後來葉片受損或消失，不會改變原先觀察到的長葉排列。應另記錄葉片損失，不能把損失後的片數當成原本葉序。
+    derivedFrom:
+      - g3-science-midterm-2025-02-04

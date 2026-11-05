@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 觀察同一株植物的一朵雄花和另一朵雌花，把兩朵花看到的構造合併列在一起，就可以判定這兩朵花各自都是完全花。
+    answer: false
+    explanation: 完全花要看同一朵花是否同時具有花萼、花瓣、雄蕊和雌蕊，不能把不同花的構造合併判斷。
+    derivedFrom:
+      - g3-science-midterm-2025-02-02

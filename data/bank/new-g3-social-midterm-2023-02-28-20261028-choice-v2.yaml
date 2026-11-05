@@ -1,0 +1,29 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 介紹學校創校年代時，兩篇網路文章寫得不同。哪個做法較可靠？
+    options:
+      - 只挑字比較大的文章
+      - 隨機選一個年代當作確定答案
+      - 查校史資料並詢問熟悉校史的師長交叉確認
+      - 把兩個年代相加就當創校年
+    answer: 3
+    explanation: 查閱相關校史並向師長確認，可處理來源不一致的問題。
+    derivedFrom:
+      - g3-social-midterm-2023-02-28
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 小組已找到校史文件，還想了解早期校園生活的親身經驗，誰最適合接受這項訪談？
+    options:
+      - 從未聽過這所學校的路人
+      - 只知道商店價格的遊客
+      - 曾在當時學校任教且願意分享的老師
+      - 剛路過且未曾進校的人
+    answer: 3
+    explanation: 有相關經驗的人能提供親身觀察，與文件資料相互補充。
+    derivedFrom:
+      - g3-social-midterm-2023-02-28

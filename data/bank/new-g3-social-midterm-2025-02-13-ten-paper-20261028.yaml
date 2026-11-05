@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 沒有節慶時，小潔也可以打電話問候住在外地的外婆。
+    answer: true
+    explanation: 平日問候也是維繫親情的方式。
+    derivedFrom:
+      - g3-social-midterm-2025-02-13
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 親人之間只要過年見一次面，其他時間就完全不需要關心彼此。
+    answer: false
+    explanation: 平日也應關心親人，不只在節慶往來。
+    derivedFrom:
+      - g3-social-midterm-2025-02-13
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小翔和家人約好週末視訊，分享學校近況，可以保持情感交流。
+    answer: true
+    explanation: 透過視訊分享近況，也能維持親人互動。
+    derivedFrom:
+      - g3-social-midterm-2025-02-13
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 沒有喜事時去關心親人的生活，是完全沒有意義的事。
+    answer: false
+    explanation: 平日關心能了解親人的需要並增進感情。
+    derivedFrom:
+      - g3-social-midterm-2025-02-13
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 得知舅舅最近身體不舒服，小芬在合適的時間問候他，是關心親人的表現。
+    answer: true
+    explanation: 關心親人的身體和近況，不必等到喜事才進行。
+    derivedFrom:
+      - g3-social-midterm-2025-02-13
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 阿姨搬到別的城市後，我們就不能再用任何方式與她聯絡。
+    answer: false
+    explanation: 住得遠也可透過電話、訊息或視訊保持聯繫。
+    derivedFrom:
+      - g3-social-midterm-2025-02-13
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 拜訪親人前先約好時間，可以兼顧關心與對方的生活安排。
+    answer: true
+    explanation: 適時往來並尊重作息，有助良好互動。
+    derivedFrom:
+      - g3-social-midterm-2025-02-13
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 親人分享日常生活時，我們都不必理會，只有婚禮邀請才值得回應。
+    answer: false
+    explanation: 平日交流和回應也能維繫親情。
+    derivedFrom:
+      - g3-social-midterm-2025-02-13
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小安寄卡片給外公，分享最近開心的事，也是親人間往來的一種方式。
+    answer: true
+    explanation: 卡片可以傳達關心並分享生活。
+    derivedFrom:
+      - g3-social-midterm-2025-02-13

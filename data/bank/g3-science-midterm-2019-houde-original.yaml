@@ -1,0 +1,122 @@
+# 原卷來源：https://www.maiyajiaoan.com/wiki/24442.html（麥芽教案公開預覽，第三方轉載，非校方原件）
+# 取件時間：2026-10-29 19:24:52 +0800
+# page.html SHA-256: 68056d81fb47b0f946b99374c49c7df39a3d02822b6f67fde75def425cb00c3a
+# full-page.png SHA-256: 33fc6c95f4b93772f8766b97646351e490f57e4f36de0d8892a314a047bd145d
+# 原卷無官方答案；答案與解析皆為獨立推核。僅收可用題，HOLD 題見 ../../REPORT.md。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "同一種植物上，每一片葉子的大小都不太相同，所以有些桂花葉的邊緣是平滑完整，有些是鋸齒狀。"
+    answer: false
+    explanation: "同一種植物的葉緣特徵通常是一致的，葉片大小不同不會讓葉緣在平滑與鋸齒之間改變，桂花葉的葉緣是固定的特徵，所以敘述是錯的。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "108學年度第1學期自然科期中定期評量 三年級"
+      section: "一、是非題(每題2分，共40分)"
+      number: 1
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "植物通常會開花，開花後會結果實，無花果卻是一種不會開花就能結果實的植物。"
+    answer: false
+    explanation: "無花果也會開花，只是花很小、藏在膨大的花托（我們吃的部分）裡面，不容易看見，並不是沒有開花就結果實，所以敘述是錯的。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "108學年度第1學期自然科期中定期評量 三年級"
+      section: "一、是非題(每題2分，共40分)"
+      number: 5
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "「芽」是長在節附近的小小突起物，將來可以生長發育成葉、枝條或花。"
+    answer: true
+    explanation: "芽通常長在節附近，生長後可以發育成葉、枝條或花，所以敘述是對的。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "108學年度第1學期自然科期中定期評量 三年級"
+      section: "一、是非題(每題2分，共40分)"
+      number: 7
+  - no: 4
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "大部分的植物，雄蕊的數量通常比雌蕊來得多。"
+    answer: true
+    explanation: "多數花的雌蕊只有一個或少數幾個，雄蕊常有好幾個，所以大部分植物雄蕊比雌蕊多，敘述是對的。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "108學年度第1學期自然科期中定期評量 三年級"
+      section: "一、是非題(每題2分，共40分)"
+      number: 9
+  - no: 5
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "下列哪一項葉子的外形，較不適合作為植物分類的依據？"
+    options:
+      - 形狀
+      - 大小
+      - 紋路
+      - 邊緣
+    answer: 2
+    explanation: "同一種植物的葉子大小會因生長情形不同而有差異，不能用來分辨植物種類；形狀、紋路（葉脈）、邊緣則是同種植物比較穩定的特徵，較適合分類。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "108學年度第1學期自然科期中定期評量 三年級"
+      section: "二、選擇題(每題2分，共40分)"
+      number: 3
+  - no: 6
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "植物的根可以分成軸根和鬚根，下列哪一種植物的根是軸根？"
+    options:
+      - 蔥
+      - 棕葉狗尾草
+      - 莧菜
+      - 蒜
+    answer: 3
+    explanation: "莧菜有一條粗粗的主根，旁邊再長出細根，是軸根；蔥、棕葉狗尾草、蒜的根都是許多粗細相近的細根，屬於鬚根。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "108學年度第1學期自然科期中定期評量 三年級"
+      section: "二、選擇題(每題2分，共40分)"
+      number: 4
+  - no: 7
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "秋天楓葉變紅的原因是什麼？"
+    options:
+      - 天氣忽冷忽熱
+      - 葉子太多了
+      - 陽光太強
+      - 天氣轉涼
+    answer: 4
+    explanation: "秋天天氣轉涼，葉子中的色素改變，楓葉才會變紅；葉子多寡、陽光太強或氣溫忽冷忽熱都不是主要原因。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "108學年度第1學期自然科期中定期評量 三年級"
+      section: "二、選擇題(每題2分，共40分)"
+      number: 5
+  - no: 8
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: "螺絲起子的前端可以吸起鐵製的螺絲釘，這表示螺絲起子的前端可能含有什麼成分？"
+    options:
+      - 磁鐵
+      - 鐵粉
+      - 鐵片
+      - 鋁粉
+    answer: 1
+    explanation: "能吸起鐵製螺絲釘，表示前端有磁性，可能含有磁鐵；鐵粉、鐵片本身會被磁鐵吸引，卻不會吸起別的鐵製品，鋁不會被磁鐵吸引。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "108學年度第1學期自然科期中定期評量 三年級"
+      section: "二、選擇題(每題2分，共40分)"
+      number: 20

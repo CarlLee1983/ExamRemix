@@ -1,0 +1,15 @@
+# 校方官方解答卷，PDF第1頁一3；僅省略輔助注音、作答括號及答案符號。
+# 待獨立科學及語意審查，未入正式 data/，不代表已接受。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物與磁鐵
+    stem: 磁鐵較大，磁力不一定較強。
+    answer: true
+    explanation: 不能只憑磁鐵大小判定磁力強弱；磁鐵的材質等條件也會影響磁力。
+    source:
+      originalPaper: 臺北市中山區中山國民小學109學年度第一學期自然科三年級期中考定期評量(解答)卷
+      section: 一、對的畫○，錯的打×：每格2分，共16分
+      number: 3

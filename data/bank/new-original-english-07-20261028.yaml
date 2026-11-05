@@ -1,0 +1,118 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - m l n
+      - n m l
+      - l m n
+    answer: 3
+    explanation: 依字母表由前到後，這些字母應排列為 l → m → n，選項3正確；字母不一定連續。
+    derivedFrom:
+      - original-english-07
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - m n o
+      - n m o
+      - o n m
+    answer: 1
+    explanation: 依字母表由前到後，這些字母應排列為 m → n → o，選項1正確；字母不一定連續。
+    derivedFrom:
+      - original-english-07
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - o n p
+      - n o p
+      - p o n
+    answer: 2
+    explanation: 依字母表由前到後，這些字母應排列為 n → o → p，選項2正確；字母不一定連續。
+    derivedFrom:
+      - original-english-07
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - p o q
+      - q p o
+      - o p q
+    answer: 3
+    explanation: 依字母表由前到後，這些字母應排列為 o → p → q，選項3正確；字母不一定連續。
+    derivedFrom:
+      - original-english-07
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - q r s
+      - r q s
+      - s r q
+    answer: 1
+    explanation: 依字母表由前到後，這些字母應排列為 q → r → s，選項1正確；字母不一定連續。
+    derivedFrom:
+      - original-english-07
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - s r t
+      - r s t
+      - t s r
+    answer: 2
+    explanation: 依字母表由前到後，這些字母應排列為 r → s → t，選項2正確；字母不一定連續。
+    derivedFrom:
+      - original-english-07
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - t s u
+      - u t s
+      - s t u
+    answer: 3
+    explanation: 依字母表由前到後，這些字母應排列為 s → t → u，選項3正確；字母不一定連續。
+    derivedFrom:
+      - original-english-07
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - t u v
+      - u t v
+      - v u t
+    answer: 1
+    explanation: 依字母表由前到後，這些字母應排列為 t → u → v，選項1正確；字母不一定連續。
+    derivedFrom:
+      - original-english-07
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - v u w
+      - u v w
+      - w v u
+    answer: 2
+    explanation: 依字母表由前到後，這些字母應排列為 u → v → w，選項2正確；字母不一定連續。
+    derivedFrom:
+      - original-english-07

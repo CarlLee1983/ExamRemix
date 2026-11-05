@@ -1,0 +1,16 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 家庭經濟
+    stem: 小文說「有儲蓄就一定買得起世界上所有東西」，哪項修正合理？
+    options:
+      - 存一元就一定能買任何物品
+      - 有儲蓄就可以不付帳
+      - 儲蓄代表家庭從此不必工作
+      - 儲蓄可累積資金，但仍要看金額與需要
+    answer: 4
+    explanation: 儲蓄有助累積資金，不等於金額無限，也仍需安排用途。
+    derivedFrom:
+      - g3-social-midterm-2021-02-09

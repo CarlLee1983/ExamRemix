@@ -1,0 +1,65 @@
+questions:
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下列哪一種行為不安全，甚至可能傷害到其他人？
+    options:
+      - 上下樓梯小心慢走
+      - 到操場跑步
+      - 在教室裡打球
+      - 到圖書館看書
+    answer: 3
+    explanation: 教室有桌椅與其他同學，打球可能撞到人或物；其餘為在適合地點進行的正常行為。
+    source:
+      originalPaper: 112學年度第一學期第一次評量三年級社會科評量試卷
+      section: 二、選擇題：（每題2分）
+      number: 2
+  - no: 3
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 維護校園安全是誰的責任？
+    options:
+      - 老師
+      - 校長及主任
+      - 班級幹部
+      - 全體師生
+    answer: 4
+    explanation: 安全需要所有師生共同維護，老師、校長主任或幹部都只是其中一部分。
+    source:
+      originalPaper: 112學年度第一學期第一次評量三年級社會科評量試卷
+      section: 二、選擇題：（每題2分）
+      number: 3
+  - no: 4
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 為了讓大家都有安全的校園生活，下列哪一項敘述錯誤？
+    options:
+      - 靠右走的方式上下樓梯
+      - 維護校園安全，人人有責
+      - 獨自一人去偏遠的廁所
+      - 看見水溝蓋壞了，立刻告訴師長和同學
+    answer: 3
+    explanation: 獨自前往偏遠廁所缺少他人照應，應避免；靠右通行、共同維護安全和損壞通報均為安全做法。
+    source:
+      originalPaper: 112學年度第一學期第一次評量三年級社會科評量試卷
+      section: 二、選擇題：（每題2分）
+      number: 6
+  - no: 6
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 一個幸福的家庭，應該具備什麼條件？
+    options:
+      - 家裡有很多兄弟姊妹
+      - 去住很大的飯店
+      - 家人彼此接納與愛護
+      - 家人很會吵架
+    answer: 3
+    explanation: 家人彼此接納與愛護能支持幸福關係；人口多或住大飯店本身不能保證幸福，經常吵架也不是條件。
+    source:
+      originalPaper: 112學年度第一學期第一次評量三年級社會科評量試卷
+      section: 二、選擇題：（每題2分）
+      number: 20

@@ -1,0 +1,25 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與磁鐵
+    stem: U形磁鐵只會和U形的磁鐵互相吸引。
+    answer: false
+    explanation: 磁鐵是否相吸主要取決於相對的磁極，不是形狀是否相同。U形磁鐵的磁極也能與不同形狀磁鐵的異極互相吸引，因此「只會和U形」錯誤。答案依原題與科學資料獨立推核，非官方答案。
+    source:
+      originalPaper: 113學年度三年級第1學期自然領域期中評量試卷
+      section: 九、勾選題(10)：下列關於磁鐵的敘述，正確的打ˇ，錯誤的打x。
+      number: 3
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與磁鐵
+    stem: 通常磁鐵隔著較薄的物品，仍然具有磁力。
+    answer: true
+    explanation: 一般磁鐵隔著薄紙或薄塑膠等物品，仍可對另一側的鐵製品產生吸引作用，所以原題的「通常」成立。不能把它擴張成任何材質、任何厚度或任何距離都一定能吸動。答案依原題與科學資料獨立推核，非官方答案。
+    source:
+      originalPaper: 113學年度三年級第1學期自然領域期中評量試卷
+      section: 九、勾選題(10)：下列關於磁鐵的敘述，正確的打ˇ，錯誤的打x。
+      number: 4

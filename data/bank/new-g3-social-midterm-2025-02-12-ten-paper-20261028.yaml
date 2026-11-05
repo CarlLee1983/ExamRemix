@@ -1,0 +1,73 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小羽想買一本較貴的圖鑑，先訂出每週存錢的金額，再慢慢累積，是有計畫的儲蓄。
+    answer: true
+    explanation: 設定目標並逐步存錢，有助達成購買計畫。
+    derivedFrom:
+      - g3-social-midterm-2025-02-12
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 想買價格較高的球鞋，只要一直想著它，完全不存錢也算完成儲蓄計畫。
+    answer: false
+    explanation: 儲蓄需要實際累積金錢，不能只有想法。
+    derivedFrom:
+      - g3-social-midterm-2025-02-12
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小新買腳踏車前，先看看已有多少存款，再規劃還要存多少錢，是有計畫的做法。
+    answer: true
+    explanation: 了解目標金額與現有存款，能規劃儲蓄。
+    derivedFrom:
+      - g3-social-midterm-2025-02-12
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 存錢買背包時，不管自己還差多少錢就花光存款，也不會影響原來的購買計畫。
+    answer: false
+    explanation: 花光存款會減少累積的金額，影響原定計畫。
+    derivedFrom:
+      - g3-social-midterm-2025-02-12
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小琪把每次零用錢的一部分留下，累積到足夠時再買畫具，是儲蓄的做法。
+    answer: true
+    explanation: 固定留下部分金錢可逐步累積目標金額。
+    derivedFrom:
+      - g3-social-midterm-2025-02-12
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 訂了買球拍的儲蓄目標後，就不需要再注意每週有沒有照計畫存錢。
+    answer: false
+    explanation: 儲蓄計畫需要持續實行並檢查進度。
+    derivedFrom:
+      - g3-social-midterm-2025-02-12
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 想買的物品超出目前存款時，可以先存錢，等金額足夠再購買。
+    answer: true
+    explanation: 延後購買並有計畫累積金錢，是合理的儲蓄方式。
+    derivedFrom:
+      - g3-social-midterm-2025-02-12
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 為了存錢買相機，應把家人交代代付午餐的錢也私自存起來。
+    answer: false
+    explanation: 應使用可自行安排的金錢儲蓄，不能挪用指定用途的款項。
+    derivedFrom:
+      - g3-social-midterm-2025-02-12

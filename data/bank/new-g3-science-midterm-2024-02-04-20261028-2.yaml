@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 水的特性
+    stem: 比較兩個注射筒裡的水是否容易被壓縮時，一筒水染紅、另一筒不染色；若只看到紅水的位置比較清楚，就能判定紅水比較容易被壓縮。
+    answer: false
+    explanation: 位置看得清楚不表示體積縮小較多；應在相同條件下比較實際體積的變化。
+    derivedFrom:
+      - g3-science-midterm-2024-02-04

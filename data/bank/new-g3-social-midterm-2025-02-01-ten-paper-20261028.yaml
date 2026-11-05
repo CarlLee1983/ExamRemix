@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 買早餐時，小欣有禮貌地稱呼年長的店員「阿姨」，可以表達親切。
+    answer: true
+    explanation: 親屬稱呼也可用在合宜的人際互動中，表示親切。
+    derivedFrom:
+      - g3-social-midterm-2025-02-01
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 鄰居不是我的親戚，所以用「叔叔」稱呼他一定是失禮的。
+    answer: false
+    explanation: 合宜地借用親屬稱呼，可表達禮貌和親切，不限真正的親戚。
+    derivedFrom:
+      - g3-social-midterm-2025-02-01
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 社區的長輩喜歡大家叫他「陳爺爺」，小安這樣稱呼他，有助親切互動。
+    answer: true
+    explanation: 依對方接受的方式稱呼，可拉近彼此距離。
+    derivedFrom:
+      - g3-social-midterm-2025-02-01
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 我稱呼鄰居「伯伯」，就表示他一定是爸爸的哥哥。
+    answer: false
+    explanation: 伯伯也可用來稱呼沒有親屬關係的長輩。
+    derivedFrom:
+      - g3-social-midterm-2025-02-01
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 向經常照顧自己的鄰居說「阿姨，謝謝您」，可以傳達親切與感謝。
+    answer: true
+    explanation: 借用親屬稱呼配合有禮貌的語句，能表達親近。
+    derivedFrom:
+      - g3-social-midterm-2025-02-01
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只有有血緣關係的人，才可以用親屬稱呼表達親切。
+    answer: false
+    explanation: 人們也會借用親屬稱呼稱呼非親屬。
+    derivedFrom:
+      - g3-social-midterm-2025-02-01
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 和熟識的修車店老闆打招呼時，稱呼他「叔叔」，可能比直接喊「喂」更親切。
+    answer: true
+    explanation: 合宜的稱呼有助表達禮貌及親切感。
+    derivedFrom:
+      - g3-social-midterm-2025-02-01
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小宇平常親切地叫早餐店女老闆「阿姨」；爸爸的妹妹來作客時，若依親屬關係稱呼，則應叫她「姑姑」。
+    answer: true
+    explanation: 對非親屬可以借用親屬稱呼表達親切；實際親屬關係中，爸爸的妹妹是姑姑。
+    derivedFrom:
+      - g3-social-midterm-2025-02-01
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 老師說大家口中的「林媽媽」是熱心的家長志工，這個稱呼可以表達大家對她的親近。
+    answer: true
+    explanation: 借用媽媽等親屬稱呼，可表達親切，不表示每個人都是她的孩子。
+    derivedFrom:
+      - g3-social-midterm-2025-02-01

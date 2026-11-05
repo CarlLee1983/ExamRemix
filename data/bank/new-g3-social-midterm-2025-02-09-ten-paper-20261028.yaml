@@ -1,0 +1,73 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班會討論遠足地點，小禾先聽完同學的理由，再提出自己的想法。
+    answer: true
+    explanation: 尊重他人的發言，也可積極表達自己的意見。
+    derivedFrom:
+      - g3-social-midterm-2025-02-09
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 我不喜歡同學的提議，就可以在他說話時不停大叫，讓他說不下去。
+    answer: false
+    explanation: 不同意也應尊重發言，用合宜方式提出意見。
+    derivedFrom:
+      - g3-social-midterm-2025-02-09
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班會中，同學說活動地點「不方便」，卻沒說原因；小萱先禮貌詢問是交通還是場地問題，再提出建議。
+    answer: true
+    explanation: 先釐清對方的意思與需要，能減少誤解，讓回應更切合討論。
+    derivedFrom:
+      - g3-social-midterm-2025-02-09
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 為了讓班會快點結束，每個人都不該表達自己的意見。
+    answer: false
+    explanation: 班會需要同學參與討論，適當表達意見。
+    derivedFrom:
+      - g3-social-midterm-2025-02-09
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 輪到小宏發言時，他清楚說出建議，讓同學了解他的想法。
+    answer: true
+    explanation: 清楚表達有助大家討論與理解不同意見。
+    derivedFrom:
+      - g3-social-midterm-2025-02-09
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只聽好朋友的建議、故意不聽其他人的發言，就是公平的班會討論。
+    answer: false
+    explanation: 討論時應尊重每個人的發言，不能只聽朋友。
+    derivedFrom:
+      - g3-social-midterm-2025-02-09
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班會討論活動時，一組希望有運動機會，另一組擔心雨天無法進行；大家可以討論是否有同時能運動又能避雨的場地。
+    answer: true
+    explanation: 找出不同意見背後的需要，再討論兼顧需要的辦法，有助合作解決問題。
+    derivedFrom:
+      - g3-social-midterm-2025-02-09
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只要我的聲音最大，就能代表全班的意見，不用再聽別人說話。
+    answer: false
+    explanation: 聲音大小不能代表全班意見，仍應傾聽與討論。
+    derivedFrom:
+      - g3-social-midterm-2025-02-09

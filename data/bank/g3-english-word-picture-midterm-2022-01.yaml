@@ -1,0 +1,67 @@
+questions:
+  - no: 1
+    type: diagram-label
+    subject: 英語
+    grade: 3
+    stem: |-
+      Look and Write 看圖寫出正確單字。請從單字銀行領取單字喔！
+      單字銀行：angry, ant, sad, seven, three, fish, one, dad, ox, kid
+    image:
+      src: g3-english-word-picture-midterm-2022-01/01.png
+      alt: 有角、四腳及尾巴的牛形動物；下方為空白書寫格線。
+    labels:
+      - x: 13.5678
+        y: 68.2216
+        width: 70.8543
+        height: 18.3673
+        answer: ox
+    space: 0
+    explanation: 依原圖及原單字銀行獨立推核，非官方答案：牛形動物對應ox；其餘九字不符。請在原四線格寫出此小寫單字。
+    source:
+      originalPaper: 111學年度第一學期三年級英語期中評量【筆試卷】
+      section: "Part 1: Look and Write 看圖寫出正確單字。請從單字銀行領取單字喔！"
+      number: 1
+  - no: 2
+    type: diagram-label
+    subject: 英語
+    grade: 3
+    stem: |-
+      Look and Write 看圖寫出正確單字。請從單字銀行領取單字喔！
+      單字銀行：angry, ant, sad, seven, three, fish, one, dad, ox, kid
+    image:
+      src: g3-english-word-picture-midterm-2022-01/02.png
+      alt: 有觸角、分節身體的昆蟲
+    labels:
+      - x: 11.6279
+        y: 69.3878
+        width: 74.4186
+        height: 17.2012
+        answer: ant
+    space: 0
+    explanation: 依原圖及原單字銀行獨立推核，非官方答案：圖示螞蟻對應ant；其餘九字不符。請在原四線格寫出此小寫單字。
+    source:
+      originalPaper: 111學年度第一學期三年級英語期中評量【筆試卷】
+      section: "Part 1: Look and Write 看圖寫出正確單字。請從單字銀行領取單字喔！"
+      number: 2
+  - no: 3
+    type: diagram-label
+    subject: 英語
+    grade: 3
+    stem: |-
+      Look and Write 看圖寫出正確單字。請從單字銀行領取單字喔！
+      單字銀行：angry, ant, sad, seven, three, fish, one, dad, ox, kid
+    image:
+      src: g3-english-word-picture-midterm-2022-01/03.png
+      alt: 數字1形狀的氣球
+    labels:
+      - x: 3.0303
+        y: 72.7763
+        width: 85.3535
+        height: 14.2857
+        answer: one
+    space: 0
+    explanation: 依原圖及原單字銀行獨立推核，非官方答案：數字1的英文為one；其餘九字不符。請在原四線格寫出此小寫單字。
+    source:
+      originalPaper: 111學年度第一學期三年級英語期中評量【筆試卷】
+      section: "Part 1: Look and Write 看圖寫出正確單字。請從單字銀行領取單字喔！"
+      number: 8

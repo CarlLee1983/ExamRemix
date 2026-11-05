@@ -1,0 +1,31 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 打開橘子後，原本沒有橘子味的房間出現橘子香味，哪個解釋較合理？
+    options:
+      - 乾淨空氣本來一直有橘子味
+      - 橘子的氣味物質散布到空氣中
+      - 橘子的顏色使空氣本身產生相同氣味
+      - 只要有空氣就一定有橘子味
+    answer: 2
+    explanation: 氣味來自橘子釋出的物質，並不是乾淨空氣原本具有固定橘子味。
+    derivedFrom:
+      - g3-science-midterm-2024-02-14
+  - no: 2
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 把沒有蓋子的空透明瓶直立放入水中，使瓶口保持朝上並讓水能流入，瓶內原有的空氣排出時形成氣泡。這項觀察支持哪個說法？
+    options:
+      - 瓶內原本完全沒有任何東西
+      - 看似空的瓶內原本有空氣
+      - 水一接觸瓶子就會自行產生大量空氣
+      - 瓶內原本只裝著水，沒有空氣
+    answer: 2
+    explanation: 看似空的瓶內仍有空氣；水進入時排出空氣形成氣泡，可作為空氣存在的證據。
+    derivedFrom:
+      - g3-science-midterm-2024-02-14

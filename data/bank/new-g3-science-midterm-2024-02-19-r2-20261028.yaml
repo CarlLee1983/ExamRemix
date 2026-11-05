@@ -1,0 +1,16 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 種在斜坡上的植物根系被大水連同周圍泥土沖走後，植株更容易倒下。哪項解釋符合植物部位的功能？
+    options:
+      - 根與土壤的連結減少，固定作用變差
+      - 葉片少了吸收土壤水分的功能
+      - 花瓣不再能抓住泥土
+      - 種子不再能支撐整棵植株
+    answer: 1
+    explanation: 根能固定植物；根及周圍土壤流失會使植株較不穩定，不能把固定土壤當成花瓣的功能。
+    derivedFrom:
+      - g3-science-midterm-2024-02-19

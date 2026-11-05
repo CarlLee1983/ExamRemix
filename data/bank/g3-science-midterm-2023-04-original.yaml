@@ -1,0 +1,81 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    stem: 小祐常常騎著心愛的腳踏車出去玩，請問腳踏車屬於下列哪一種？
+    options:
+      - 生物
+      - 非生物
+      - 植物
+      - 動物
+    answer: 2
+    explanation: 腳踏車是人製造的物品，不具生物的生長、營養利用與繁殖等生命現象，屬於非生物。能被人騎動不表示它是生物，故選②；植物和動物則都是生物。
+    source:
+      originalPaper: 112學年度上學期第一次定期評量三年級自然科試卷
+      section: 二、單選題(每題2分，共36分)
+      number: 2
+  - no: 2
+    type: choice
+    subject: 自然
+    grade: 3
+    stem: 磁鐵能吸引較多鐵製品的部位是什麼？
+    options:
+      - 磁力
+      - 磁極
+      - 磁點
+      - 磁波
+    answer: 2
+    explanation: 磁鐵上吸引鐵製品較強的部位稱為磁極。磁力是作用力的名稱，不是這個部位的名稱；「磁點」「磁波」也不是題目所問的部位，故選②。
+    source:
+      originalPaper: 112學年度上學期第一次定期評量三年級自然科試卷
+      section: 二、單選題(每題2分，共36分)
+      number: 8
+  - no: 3
+    type: choice
+    subject: 自然
+    grade: 3
+    stem: 下列哪一種方法可以比較不同磁鐵的磁力大小？
+    options:
+      - 比較磁鐵的顏色
+      - 比較磁鐵的形狀
+      - 將磁鐵放入水中，看哪一塊先沉下去
+      - 比較磁鐵可以吸起的迴紋針數量
+    answer: 4
+    explanation: 在四種方法中，觀察磁鐵能吸起的迴紋針數量，可以比較吸引能力，故選④。顏色、形狀不能直接代表磁力，沉入水中的先後也不是測磁力的方法。實際操作應使用相同規格的迴紋針並保持測試方式一致；這是比較方法的要求，不是另加一份實驗結果。
+    source:
+      originalPaper: 112學年度上學期第一次定期評量三年級自然科試卷
+      section: 二、單選題(每題2分，共36分)
+      number: 9
+  - no: 4
+    type: choice
+    subject: 自然
+    grade: 3
+    stem: 月橘的一朵花有幾個雌蕊？
+    options:
+      - 0個
+      - 1個
+      - 2個
+      - 很多個
+    answer: 2
+    explanation: 月橘的花具有一個由合生心皮形成的複雌蕊，因此選②。子房分成數室，不代表有相同數量、彼此分離的雌蕊；也不能把多枚雄蕊的數目當作雌蕊數目。
+    source:
+      originalPaper: 112學年度上學期第一次定期評量三年級自然科試卷
+      section: 二、單選題(每題2分，共36分)
+      number: 11
+  - no: 5
+    type: choice
+    subject: 自然
+    grade: 3
+    stem: 銓銓買了一個磁鐵，想試試看它的磁力大小，下面哪一個東西沒辦法用磁鐵吸起來？
+    options:
+      - 迴紋針
+      - 鐵尺
+      - 鐵釘
+      - 衛生紙
+    answer: 4
+    explanation: 一般教室磁鐵能吸引鐵製的迴紋針、鐵尺與鐵釘，衛生紙不屬於可被這種磁鐵吸起的鐵製品，故選④。題目的實際作答是辨認不能吸起的材料，並沒有提供或要求比較磁力大小的測量結果。
+    source:
+      originalPaper: 112學年度上學期第一次定期評量三年級自然科試卷
+      section: 二、單選題(每題2分，共36分)
+      number: 12

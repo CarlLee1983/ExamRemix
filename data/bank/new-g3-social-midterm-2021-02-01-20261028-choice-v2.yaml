@@ -1,0 +1,16 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 班級的自治活動
+    stem: 班長說要讓大家投票，卻只准自己的三位朋友領票，其他人都不能投。這項決定的主要問題是什麼？
+    options:
+      - 沒有讓班級成員公平參與
+      - 投票箱不是紅色
+      - 朋友的座號不連續
+      - 沒有先比較大家的身高
+    answer: 1
+    explanation: 民主決策需要公平參與，不能只讓特定朋友投票。
+    derivedFrom:
+      - g3-social-midterm-2021-02-01

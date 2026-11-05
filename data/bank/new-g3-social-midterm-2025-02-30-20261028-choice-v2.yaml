@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 陌生人叫得出我的姓名，說家人託他接我走；家人事前沒告知。哪個判斷正確？
+    options:
+      - 知道姓名不代表身分已確認，應請老師聯絡家人查證
+      - 知道姓名就一定可以直接跟走
+      - 只要送禮物就不必確認
+      - 為免麻煩老師應自行搭他的車
+    answer: 1
+    explanation: 陌生人可能知道姓名，仍需由可信任大人確認接送安排。
+    derivedFrom:
+      - g3-social-midterm-2025-02-30

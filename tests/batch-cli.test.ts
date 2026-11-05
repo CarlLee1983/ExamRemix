@@ -1,7 +1,7 @@
 import { spawn, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { existsSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
+import { hostname, tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { afterEach, expect, it } from 'vitest';
 import { parse, stringify } from 'yaml';
@@ -54,6 +54,7 @@ it('完整發布與同批重跑只有一份新檔，容量不重複增加，原�
   const published = cli('publish', f.requestPath);
   expect(published.status, published.output).toBe(0);
   expect(JSON.parse(published.stdout)).toMatchObject({ state: 'published', ids: ['new-one-01'], added: 1 });
+  expect(cli('inspect',f.data).status).toBe(0);
   expect(readFileSync(join(f.data, 'bank/new-one.yaml'), 'utf8')).toBe(f.candidate);
   expect(cli('publish', f.requestPath)).toEqual(published);
   expect(readdirSync(join(f.data, 'bank')).sort()).toEqual(['new-one.yaml', 'original.yaml']);
@@ -190,6 +191,7 @@ it.each(['doubt','image','scope','original','duplicate','pending','group','verdi
     expect(r.status,r.output).toBe(1);
     expect(existsSync(join(f.data,'bank/new-one.yaml'))).toBe(false);
     expect(readFileSync(join(f.data,'bank/original.yaml'),'utf8')).toBe(before);
+    if (failure==='scope') expect(JSON.parse(cli('inspect',f.data).stdout).pending).toEqual([]);
   });
 
 it('兩個 writer 競爭時只有持鎖者可發布，另一個拒絕且不產生新檔', async () => {
@@ -207,31 +209,33 @@ it('兩個 writer 競爭時只有持鎖者可發布，另一個拒絕且不產�
   } finally { if(child.exitCode===null)child.kill('SIGKILL'); }
 });
 
-it('完整混合題型題組一次發布；缺成員或錯誤順序拒絕', () => {
-  for (const variant of ['complete','missing','order']) {
-    const f=fixture();
-    const source=parse(f.source);
-    source.groups=[{no:1,paragraphs:['合成材料：三加四等於七。'],members:[1,2]}];
-    source.questions.push({...source.questions[0],no:2,type:'choice',stem:'三加四的結果是？',options:['七','八'],answer:1});
-    writeFileSync(join(f.data,'bank/original.yaml'),stringify(source));
-    const candidate=parse(f.candidate);
-    candidate.groups=[{no:1,paragraphs:['合成材料：五加二等於七。'],members:variant==='order'?[2,1]:[1,2],derivedFrom:'original#1'}];
-    if (variant!=='missing') candidate.questions.push({...candidate.questions[0],no:2,type:'choice',stem:'五加二的結果是？',options:['七','八'],answer:1,derivedFrom:['original-02']});
-    const content=stringify(candidate);
-    writeFileSync(f.candidatePath,content);
-    Object.assign(f.request,{candidateHash:hash(content),targetHash:JSON.parse(cli('inspect',f.data).stdout).targetHash,
-      sourceIds:['original-01','original-02'],quantity:{count:1,unit:'groups'},
-      evidence:['new-one-01','new-one-02','new-one#1'].map(id=>({...f.request.evidence[0],id}))});
-    writeFileSync(f.requestPath,JSON.stringify(f.request));
-    const r=cli('publish',f.requestPath);
-    if (variant==='complete') {
-      expect(r.status,r.output).toBe(0);
-      expect(JSON.parse(r.stdout)).toMatchObject({ids:['new-one-01','new-one-02'],groups:['new-one#1'],added:2});
-      expect(readFileSync(join(f.data,'bank/new-one.yaml'),'utf8')).toBe(content);
-    } else {
-      expect(r.status,r.output).toBe(1);
-      expect(existsSync(join(f.data,'bank/new-one.yaml'))).toBe(false);
-    }
+it.each(['complete','missing','order','count','image'])('完整混合題型題組 %s：整批發布或拒絕', variant => {
+  const f=fixture();
+  const source=parse(f.source);
+  source.groups=[{no:1,paragraphs:['合成材料：三加四等於七。'],members:[1,2]}];
+  source.questions.push({...source.questions[0],no:2,type:'choice',stem:'三加四的結果是？',options:['七','八'],answer:1});
+  writeFileSync(join(f.data,'bank/original.yaml'),stringify(source));
+  const candidate=parse(f.candidate);
+  candidate.groups=[{no:1,paragraphs:['合成材料：五加二等於七。'],members:variant==='order'?[2,1]:[1,2],derivedFrom:'original#1'}];
+  if (variant==='image') {
+    writeFileSync(join(f.data,'bank/extra.svg'),'<svg/>');
+    candidate.groups[0].image={src:'extra.svg',alt:'合成附圖'};
+  }
+  if (variant!=='missing') candidate.questions.push({...candidate.questions[0],no:2,type:'choice',stem:'五加二的結果是？',options:['七','八'],answer:1,derivedFrom:['original-02']});
+  const content=stringify(candidate);
+  writeFileSync(f.candidatePath,content);
+  Object.assign(f.request,{candidateHash:hash(content),targetHash:JSON.parse(cli('inspect',f.data).stdout).targetHash,
+    sourceIds:['original-01','original-02'],quantity:{count:variant==='count'?2:1,unit:'groups'},
+    evidence:['new-one-01','new-one-02','new-one#1'].map(id=>({...f.request.evidence[0],id}))});
+  writeFileSync(f.requestPath,JSON.stringify(f.request));
+  const r=cli('publish',f.requestPath);
+  if (variant==='complete') {
+    expect(r.status,r.output).toBe(0);
+    expect(JSON.parse(r.stdout)).toMatchObject({ids:['new-one-01','new-one-02'],groups:['new-one#1'],added:2});
+    expect(readFileSync(join(f.data,'bank/new-one.yaml'),'utf8')).toBe(content);
+  } else {
+    expect(r.status,r.output).toBe(1);
+    expect(existsSync(join(f.data,'bank/new-one.yaml'))).toBe(false);
   }
 });
 
@@ -254,7 +258,7 @@ it('受管修改持鎖時，容量查詢與另一 writer 均被拒絕，完成�
   const exited=new Promise<number|null>(res=>child.once('exit',res));
   let err='';child.stderr.on('data',d=>{err+=d;});
   try {
-    await new Promise<void>((res,rej)=>{child.stdout.once('data',()=>res());child.once('error',rej);});
+    await new Promise<void>((res,rej)=>{child.stdout.once('data',()=>res());child.once('error',rej);child.once('exit',code=>rej(new Error(`寫入者在就緒前結束：${code} ${err}`)));});
     const reader=spawnSync(process.execPath,['scripts/list-questions.ts',f.data,'--eligible'],{encoding:'utf8'});
     expect(reader.status).not.toBe(0);
     expect(reader.stderr).toContain('忙碌');
@@ -317,6 +321,253 @@ it('失敗的受管修改保留維護標記，讀者不能讀取混合版本', (
   expect(cli('inspect',f.data).output).toContain('持久維護標記');
   expect(cli('publish',f.requestPath).output).toContain('其他操作');
   expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+});
+
+it('建置在內容同步後仍持有讀鎖，並拒絕另一個發布者', async () => {
+  const f=fixture();
+  const bin=JSON.parse(readFileSync('node_modules/astro/package.json','utf8')).bin.astro;
+  const child=spawn(process.execPath,[resolve('node_modules/astro',bin),'build','--outDir',join(f.work,'dist')],{
+    env:{...process.env,EXAMREMIX_DATA_DIR:f.data},stdio:['ignore','pipe','pipe'],
+  });
+  const exited=new Promise<number|null>(ok=>child.once('exit',ok));
+  let output='',errors='',paused=false;
+  child.stderr.on('data',data=>{errors+=data;});
+  try {
+    await new Promise<void>((ok,fail)=>{
+      child.once('error',fail);
+      child.once('exit',code=>{if(!paused)fail(new Error(`建置在暫停前結束 ${code}: ${errors}`));});
+      child.stdout.on('data',data=>{
+        output+=data;
+        if (!paused && output.includes('Synced content')) {
+          if (!child.kill('SIGSTOP')) return fail(new Error('無法暫停自有建置行程'));
+          paused=true;ok();
+        }
+      });
+    });
+    const blocked=cli('publish',f.requestPath);
+    expect(blocked.status,blocked.output).toBe(1);
+    expect(blocked.output).toContain('忙碌');
+    expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+    child.kill('SIGCONT');
+    expect(await exited,errors).toBe(0);
+    expect(output).toContain('Complete!');
+  } finally {
+    if (child.exitCode===null) {child.kill('SIGCONT');child.kill('SIGKILL');await exited;}
+  }
+},30000);
+
+it('受管讀取支援明示與預設目錄，錯誤參數拒絕執行', () => {
+  const f=fixture();
+  const reader=join(f.work,'read.mjs');
+  writeFileSync(reader,"console.log(process.env.EXAMREMIX_DATA_DIR);");
+  for (const root of [[f.data],[]]) {
+    const r=spawnSync(process.execPath,['scripts/bank-access.ts','read',...root,'--',process.execPath,reader],{encoding:'utf8',env:{...process.env,EXAMREMIX_DATA_DIR:''}});
+    expect(r.status,r.stderr).toBe(0);
+    expect(r.stdout.trim()).toBe(realpathSync(root[0]??resolve('examples')));
+  }
+  for (const args of [[],['other',f.data,'--',process.execPath,reader],['read',f.data,'--']]) {
+    const r=spawnSync(process.execPath,['scripts/bank-access.ts',...args],{encoding:'utf8'});
+    expect(r.status,r.stderr).toBe(2);
+    expect(r.stderr).toContain('用法');
+  }
+});
+
+it.each(['self','supervisor'])('前景 %s 被訊號中斷不能被當成成功，維護標記須保留', target => {
+  const f=fixture();
+  const r=spawnSync(process.execPath,['scripts/bank-access.ts','write',f.data,'--expected',f.request.targetHash,'--',process.execPath,'-e',`process.kill(process.${target==='self'?'pid':'ppid'},'SIGTERM')`],{encoding:'utf8'});
+  expect(r.status).toBe(1);
+  if (target==='self') expect(r.stderr).toContain('受管指令失敗');
+  expect(cli('inspect',f.data).output).toContain('持久維護標記');
+});
+
+const brokenReferencePaper={title:'合成錯誤引用',subject:'數學',grade:3,examScope:{semester:1,stage:'midterm'},
+  sections:[{title:'是非',questions:['missing-01']}]};
+
+it('批次 CLI 多餘參數及非新題命名拒絕發布', () => {
+  const f=fixture();
+  expect(cli('publish',f.requestPath,'unexpected').status).toBe(1);
+  f.request.target='plain.yaml';f.request.evidence[0]!.id='plain-01';
+  writeFileSync(f.requestPath,JSON.stringify(f.request));
+  expect(cli('publish',f.requestPath).status).toBe(1);
+  expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+});
+
+it('受管修改即使腳本正常結束，完整跨檔檢查錯誤仍保留維護標記', () => {
+  const f=fixture();
+  const code=`require('node:fs').writeFileSync(${JSON.stringify(join(f.data,'papers/broken.yaml'))},${JSON.stringify(stringify(brokenReferencePaper))})`;
+  const r=spawnSync(process.execPath,['scripts/bank-access.ts','write',f.data,'--expected',f.request.targetHash,'--',process.execPath,'-e',code],{encoding:'utf8'});
+  expect(r.status,r.stdout+r.stderr).toBe(1);
+  expect(r.stderr).toContain('missing-01');
+  expect(cli('inspect',f.data).output).toContain('持久維護標記');
+});
+
+it('資料根目錄內的候選不因未被掃描就允許發布', () => {
+  const f=fixture();
+  const inside=join(f.data,'candidate.yaml');writeFileSync(inside,f.candidate);
+  f.request.candidate=inside;writeFileSync(f.requestPath,JSON.stringify(f.request));
+  const r=cli('publish',f.requestPath);
+  expect(r.status,r.output).toBe(1);
+  expect(r.output).toContain('資料根目錄外');
+  expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+});
+
+it.each(['doubt','image','count'])('候選的 %s 不能以其他合格條件抵銷', failure => {
+  const f=fixture();const candidate=parse(f.candidate);
+  if(failure==='doubt')candidate.questions[0].doubt='待核對';
+  if(failure==='image') {
+    writeFileSync(join(f.data,'bank/extra.svg'),'<svg/>');
+    candidate.questions[0].image={src:'extra.svg',alt:'合成附圖'};
+  }
+  if(failure==='count')f.request.quantity.count=2;
+  const content=stringify(candidate);writeFileSync(f.candidatePath,content);
+  f.request.candidateHash=hash(content);f.request.targetHash=JSON.parse(cli('inspect',f.data).stdout).targetHash;
+  writeFileSync(f.requestPath,JSON.stringify(f.request));
+  expect(cli('publish',f.requestPath).status).toBe(1);
+  expect(existsSync(join(f.data,'bank/new-one.yaml'))).toBe(false);
+});
+
+it('既有警告完整保留於發布結果，不能當作錯誤或遺失', () => {
+  const f=fixture();const source=parse(f.source);
+  source.questions.push({...source.questions[0],no:2,stem:'合成待核對題',doubt:'待核對'});
+  writeFileSync(join(f.data,'bank/original.yaml'),stringify(source));
+  writeFileSync(join(f.data,'papers/warning.yaml'),stringify({...brokenReferencePaper,title:'既有警告',sections:[{title:'是非',questions:['original-02']}]}));
+  f.request.targetHash=JSON.parse(cli('inspect',f.data).stdout).targetHash;
+  writeFileSync(f.requestPath,JSON.stringify(f.request));
+  const result=cli('publish',f.requestPath);
+  expect(result.status,result.output).toBe(0);
+  expect(JSON.parse(result.stdout).warnings.join('\n')).toContain('original-02');
+  expect(JSON.parse(result.stdout).warnings.join('\n')).toContain('待核對');
+});
+
+it('發布後新增跨檔錯誤會撤回本批；其他錯誤未修復前維護狀態持續保留', () => {
+  const f=fixture();
+  const r=injected(f,`const link=fs.linkSync;fs.linkSync=(a,b)=>{const r=link(a,b);if(String(b).endsWith('/new-one.yaml'))fs.writeFileSync(${JSON.stringify(join(f.data,'papers/broken.yaml'))},${JSON.stringify(stringify(brokenReferencePaper))});return r;};`);
+  expect(r.status,r.stderr).toBe(1);
+  expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+  expect(cli('inspect',f.data).output).toContain('持久維護標記');
+  expect(cli('publish',f.requestPath).status).toBe(1);
+  expect(cli('inspect',f.data).output).toContain('持久維護標記');
+});
+
+it('已發布批次重跑仍須拒絕目標中的新增跨檔錯誤', () => {
+  const f=fixture();expect(cli('publish',f.requestPath).status).toBe(0);
+  writeFileSync(join(f.data,'papers/broken.yaml'),stringify(brokenReferencePaper));
+  const r=cli('publish',f.requestPath);
+  expect(r.status,r.output).toBe(1);
+  expect(r.output).toContain('完整性檢查失敗');
+  expect(readFileSync(join(f.data,'bank/new-one.yaml'),'utf8')).toBe(f.candidate);
+});
+
+it('其他題庫引用本批時也不能撤回自有新檔', () => {
+  const f=fixture();const other=parse(f.candidate);
+  other.questions[0].derivedFrom=['new-one-01'];other.questions[0].stem='合成外部引用';
+  const r=injected(f,`const link=fs.linkSync;fs.linkSync=(a,b)=>{const r=link(a,b);if(String(b).endsWith('/new-one.yaml'))fs.writeFileSync(${JSON.stringify(join(f.data,'bank/other.yaml'))},${JSON.stringify(stringify(other))});return r;};`);
+  expect(r.status,r.stderr).toBe(1);expect(r.stderr).toContain('引用');
+  expect(readFileSync(join(f.data,'bank/new-one.yaml'),'utf8')).toBe(f.candidate);
+  expect(readFileSync(join(f.data,'bank/other.yaml'),'utf8')).toBe(stringify(other));
+});
+
+it.each(['batchId','fingerprint'])('恢復時維護意圖的 %s 不符就停止且不改寫紀錄', field => {
+  const f=fixture();
+  expect(injected(f,`const link=fs.linkSync;fs.linkSync=(a,b)=>{if(String(b).endsWith('/new-one.yaml'))process.kill(process.pid,'SIGKILL');return link(a,b);};`).signal).toBe('SIGKILL');
+  const marker=`${f.data}.examremix-operations/maintenance.json`;
+  const intent=JSON.parse(readFileSync(marker,'utf8'));intent[field]=field==='batchId'?'other-batch':'0'.repeat(64);
+  const bytes=JSON.stringify(intent);writeFileSync(marker,bytes);
+  expect(cli('publish',f.requestPath).status).toBe(1);
+  expect(readFileSync(marker,'utf8')).toBe(bytes);
+  expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+});
+
+it('發布後目錄同步 EIO 保留錯誤證據及所有權，重跑辨認原檔', () => {
+  const f=fixture();
+  const r=injected(f,`let linked=false,failed=false;const link=fs.linkSync;fs.linkSync=(a,b)=>{const r=link(a,b);if(String(b).endsWith('/new-one.yaml'))linked=true;return r;};const sync=fs.fsyncSync;fs.fsyncSync=(fd)=>{if(linked&&!failed&&fs.fstatSync(fd).isDirectory()){failed=true;throw new Error('post-link EIO');}return sync(fd);};`);
+  expect(r.status,r.stderr).toBe(1);
+  expect(readFileSync(`${f.data}.examremix-operations/batches/batch-one/record.json`,'utf8')).toContain('post-link EIO');
+  expect(readFileSync(join(f.data,'bank/new-one.yaml'),'utf8')).toBe(f.candidate);
+  const resumed=cli('publish',f.requestPath);
+  expect(resumed.status,resumed.output).toBe(0);
+  expect(JSON.parse(resumed.stdout)).toMatchObject({state:'published',ids:['new-one-01'],added:1});
+});
+
+it('撤回檔在中斷後被修改時，恢復須停止並保留維護標記', () => {
+  const f=fixture();
+  const r=injected(f,`let linked=false,failed=false;const link=fs.linkSync;fs.linkSync=(a,b)=>{const r=link(a,b);if(String(b).endsWith('/new-one.yaml'))linked=true;return r;};const read=fs.readFileSync;fs.readFileSync=(p,...a)=>{if(linked&&!failed&&String(p).endsWith('/new-one.yaml')){failed=true;throw new Error('post-check failure');}return read(p,...a);};const rename=fs.renameSync;fs.renameSync=(a,b)=>{const r=rename(a,b);if(String(b).endsWith('.withdrawn'))process.kill(process.pid,'SIGKILL');return r;};`);
+  expect(r.signal,r.stderr).toBe('SIGKILL');
+  const quarantine=join(f.data,'.batch-batch-one.withdrawn');
+  writeFileSync(quarantine,'modified evidence');
+  const resumed=cli('publish',f.requestPath);
+  expect(resumed.status,resumed.output).toBe(1);
+  expect(resumed.output).toContain('撤回衝突');
+  expect(readFileSync(quarantine,'utf8')).toBe('modified evidence');
+  expect(cli('inspect',f.data).output).toContain('持久維護標記');
+});
+
+it('其他 host 的鎖與錯誤繼承 token 不可被認領；不存在的舊 lease 可重新取得', () => {
+  const f=fixture();
+  const inherited=spawnSync(process.execPath,['scripts/bank-batch.ts','inspect',f.data],{encoding:'utf8',env:{...process.env,EXAMREMIX_BANK_LEASE:'stale-token'}});
+  expect(inherited.status,inherited.stderr).toBe(0);
+  const lock=`${f.data}.examremix-operations/lock`;
+  for (const owner of [
+    {host:'another-host',pid:2147483647,token:'foreign'},
+    {host:'another-host',pid:process.pid,token:'foreign'},
+    {host:hostname(),pid:process.pid,token:'owner-token'},
+  ]) {
+    const bytes=JSON.stringify(owner);writeFileSync(lock,bytes);
+    const r=spawnSync(process.execPath,['scripts/bank-batch.ts','inspect',f.data],{encoding:'utf8',env:{...process.env,EXAMREMIX_BANK_LEASE:'foreign'}});
+    expect(r.status,r.stdout+r.stderr).toBe(1);
+    expect(readFileSync(lock,'utf8')).toBe(bytes);
+    rmSync(lock);
+  }
+});
+
+it('鎖的父行程已死但同群組子行程仍活著時，不能回收鎖', async () => {
+  const f=fixture();
+  const leader=spawn(process.execPath,['-e',"const {spawn}=require('node:child_process');const child=spawn(process.execPath,['-e','setTimeout(()=>{},30000)'],{stdio:'ignore'});child.unref();"],{detached:true,stdio:'ignore'});
+  try {
+    expect(await new Promise<number|null>(ok=>leader.once('exit',ok))).toBe(0);
+    const lock=`${f.data}.examremix-operations/lock`;
+    const bytes=JSON.stringify({host:hostname(),pid:leader.pid,group:leader.pid,token:'orphan'});
+    writeFileSync(lock,bytes);
+    const result=cli('inspect',f.data);
+    expect(result.status,result.output).toBe(1);
+    expect(result.output).toContain('忙碌');
+    expect(readFileSync(lock,'utf8')).toBe(bytes);
+    expect(readFileSync(join(f.data,'bank/original.yaml'),'utf8')).toBe(f.source);
+  } finally {
+    if (leader.pid) {try {process.kill(-leader.pid,'SIGKILL');}catch(error){if((error as NodeJS.ErrnoException).code!=='ESRCH')throw error;}}
+  }
+});
+
+it.each(['blank','zero-attempt'])('缺少有效品質證據 %s 時整批拒絕', failure => {
+  const f=fixture();
+  if (failure==='blank') f.request.evidence[0]!.independentCheck='  ';
+  else f.request.evidence[0]!.attempt=0;
+  writeFileSync(f.requestPath,JSON.stringify(f.request));
+  const result=cli('publish',f.requestPath);
+  expect(result.status,result.output).toBe(1);
+  expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+});
+
+it('不同請求指紋能新增不同批次，同批內容衝突不改寫原紀錄', () => {
+  const f=fixture();
+  expect(cli('publish',f.requestPath).status).toBe(0);
+  const firstRecord=`${f.data}.examremix-operations/batches/batch-one/record.json`;
+  const originalRecord=readFileSync(firstRecord,'utf8');
+  const candidate=f.candidate.replace('五加二','六加一').replace('5+2=7；7-2=5','6+1=7；7-1=6');
+  writeFileSync(f.candidatePath,candidate);
+  f.request.candidateHash=hash(candidate);
+  writeFileSync(f.requestPath,JSON.stringify(f.request));
+  expect(cli('publish',f.requestPath).status).toBe(1);
+  expect(readFileSync(firstRecord,'utf8')).toBe(originalRecord);
+  const view=JSON.parse(cli('inspect',f.data).stdout);
+  Object.assign(f.request,{batchId:'batch-two',target:'new-two.yaml',targetHash:view.targetHash,pendingHash:view.pendingHash,
+    evidence:f.request.evidence.map(e=>({...e,id:'new-two-01',solution:'6+1=7',independentCheck:'7-1=6'}))});
+  writeFileSync(f.requestPath,JSON.stringify(f.request));
+  const result=cli('publish',f.requestPath);
+  expect(result.status,result.output).toBe(0);
+  expect(JSON.parse(result.stdout)).toMatchObject({batchId:'batch-two',ids:['new-two-01'],added:1});
+  expect(readFileSync(join(f.data,'bank/new-two.yaml'),'utf8')).toBe(candidate);
+  expect(readdirSync(join(f.data,'bank')).sort()).toEqual(['new-one.yaml','new-two.yaml','original.yaml']);
 });
 
 it('同指紋換 batchId 回傳既有 ID，不新增後綴', () => {

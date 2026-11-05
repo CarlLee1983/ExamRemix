@@ -178,26 +178,37 @@ function clearMaintenance(lease: BankLease) {
   syncDirectory(lease.control);
 }
 
-/** Only automatic withdrawal after failed post-validation; no user rollback command. */
-function withdraw(lease: BankLease, record: RecordData) {
+/** Shared withdrawal for failed publication and explicit user rollback. */
+function withdrawalView(lease: BankLease, record: RecordData) {
   const r=record.request;
   const path=join(lease.root,'bank',r.target);
   const quarantine=join(lease.root,`.batch-${r.batchId}.withdrawn`);
   const present=existsSync(path);
-  if (present ? hash(readFileSync(path))!==r.candidateHash : !record.withdrawal || !existsSync(quarantine) || hash(readFileSync(quarantine))!==r.candidateHash) throw new Error('撤回衝突：自有檔已變動或遺失');
+  if (present && record.result?.state==='reverted') throw new Error(`撤回衝突：已回復的目的檔重新出現：${path}`);
+  if (present ? hash(readFileSync(path))!==r.candidateHash : !record.withdrawal || !existsSync(quarantine) || hash(readFileSync(quarantine))!==r.candidateHash) throw new Error(`撤回衝突：自有檔已變動或遺失：${present ? path : quarantine}`);
+  if (present && existsSync(quarantine)) throw new Error(`撤回位置已有內容；停止：${quarantine}`);
   const raw=readDataDir(lease.root);
-  if (raw.problems.length) throw new Error('撤回衝突：無法判定其他檔案引用');
+  if (raw.problems.length) throw new Error(`撤回衝突：無法判定其他檔案引用：${raw.problems.map(p=>`${p.files}: ${p.message}`).join('；')}`);
   const data=bankFileSchema.parse(parse(record.candidate));
   const name=basename(r.target,'.yaml');
   const ids=data.questions.map(q=>deriveQuestionId(name,q.no));
   const groups=(data.groups??[]).map(g=>`${name}#${g.no}`);
   const owned=new Set([...ids,...groups]);
-  const references=(value: unknown): boolean => typeof value==='string' ? owned.has(value)
-    : Array.isArray(value) ? value.some(references)
-    : value !== null && typeof value==='object' && Object.values(value).some(references);
-  if ([...raw.banks.filter(b=>b.name!==name),...raw.papers].some(f=>references(f.raw))) throw new Error('撤回衝突：本批已被其他題庫／試卷引用');
+  const references=(value: unknown, location: string): string[] => {
+    if (typeof value==='string') return owned.has(value) ? [`${location} → ${value}`] : [];
+    if (Array.isArray(value)) return value.flatMap((v,i)=>references(v,`${location}[${i}]`));
+    return value !== null && typeof value==='object'
+      ? Object.entries(value).flatMap(([key,v])=>references(v,`${location}.${key}`)) : [];
+  };
+  const conflicts=[...raw.banks.filter(b=>b.name!==name),...raw.papers].flatMap(f=>references(f.raw,f.path));
+  if (conflicts.length) throw new Error(`撤回衝突：本批已被其他題庫／試卷引用：\n${conflicts.join('\n')}`);
+  return {path,quarantine,present,ids,groups};
+}
+
+function withdraw(lease: BankLease, record: RecordData) {
+  const r=record.request;
+  const {path,quarantine,present,ids,groups}=withdrawalView(lease,record);
   if (present) {
-    if (existsSync(quarantine)) throw new Error('撤回位置已有內容；停止');
     record.withdrawal=true;
     saveRecord(lease.control,record);
     renameSync(path,quarantine);
@@ -249,12 +260,14 @@ export function publishBatch(requestPath: string): Result {
     if (present && !durableOwner) throw new Error('目的檔已存在且不屬於本批；停止');
     if (present && hash(readFileSync(destination))!==r.candidateHash) throw new Error('目的檔內容衝突；不可覆寫或改名');
     if (record.result?.state==='reverted') {
-      if (present) throw new Error('已撤回批次的目的檔重新出現；停止');
       if (ownsMaintenance) {
-        if (checkBank(snapshot(lease.root)).some(p=>p.severity==='error')) throw new Error('已撤回但目標仍有其他錯誤');
-        clearMaintenance(lease);
+        withdraw(lease,record);
+        ownsMaintenance=false;
+      } else {
+        withdrawalView(lease,record);
+        checkManagedRoot(lease.root);
       }
-      return record.result;
+      return record.result!;
     }
     if (record.withdrawal) {
       if (!ownsMaintenance) throw new Error('撤回意圖存在但維護標記遺失；停止');
@@ -307,5 +320,35 @@ export function publishBatch(requestPath: string): Result {
       try { saveRecord(lease.control,record); } catch { /* durable intent remains authoritative */ }
     }
     throw error;
+  } finally { restoreEnv(previous); lease.release(); }
+}
+
+
+export function rollbackBatch(root: string, batchId: string): Result {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(batchId)) throw new Error('批次識別不合格');
+  const lease=acquireBank(resolve(root),'write',true);
+  const previous=process.env.EXAMREMIX_BANK_LEASE;
+  process.env.EXAMREMIX_BANK_LEASE=lease.token;
+  try {
+    const path=recordPath(lease.control,batchId);
+    if (!existsSync(path)) throw new Error(`沒有批次紀錄：${batchId}`);
+    const record=readRecord(path);
+    const r=record.request;
+    if (r.dataDir!==lease.root || r.batchId!==batchId || fileNameProblem(r.target) || !r.target.startsWith('new-')) throw new Error('批次紀錄所有權衝突');
+    if (!record.result && !record.withdrawal) throw new Error('批次尚未完成發布；請先以原請求恢復');
+    const marker=join(lease.control,'maintenance.json');
+    if (existsSync(marker)) {
+      const intent=JSON.parse(readFileSync(marker,'utf8'));
+      if (intent.batchId!==batchId || intent.fingerprint!==record.fingerprint) throw new Error('其他操作尚待恢復；維護標記保留');
+    } else {
+      withdrawalView(lease,record);
+      if (record.result?.state==='reverted') {
+        checkManagedRoot(lease.root);
+        return record.result;
+      }
+      durableWrite(marker,JSON.stringify({batchId,fingerprint:record.fingerprint}));
+    }
+    withdraw(lease,record);
+    return record.result!;
   } finally { restoreEnv(previous); lease.release(); }
 }

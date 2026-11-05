@@ -89,10 +89,10 @@ it('非本批已持久化擁有的同內容目的檔也拒絕認領', () => {
   expect(r.output).toContain('目的');
 });
 
-function injected(f: ReturnType<typeof fixture>, code: string) {
+function injected(f: ReturnType<typeof fixture>, code: string, args = ['publish',f.requestPath]) {
   const preload=join(f.work,'inject.mjs');
   writeFileSync(preload,`import fs from 'node:fs'; import {syncBuiltinESMExports} from 'node:module';\n${code}\nsyncBuiltinESMExports();`);
-  return spawnSync(process.execPath,['--import',preload,'scripts/bank-batch.ts','publish',f.requestPath],{encoding:'utf8'});
+  return spawnSync(process.execPath,['--import',preload,'scripts/bank-batch.ts',...args],{encoding:'utf8'});
 }
 
 it.each(['write','sync-file','sync-dir','before-link','after-link','before-result','after-result'])(
@@ -568,6 +568,10 @@ it('不同請求指紋能新增不同批次，同批內容衝突不改寫原紀�
   expect(JSON.parse(result.stdout)).toMatchObject({batchId:'batch-two',ids:['new-two-01'],added:1});
   expect(readFileSync(join(f.data,'bank/new-two.yaml'),'utf8')).toBe(candidate);
   expect(readdirSync(join(f.data,'bank')).sort()).toEqual(['new-one.yaml','new-two.yaml','original.yaml']);
+  expect(cli('rollback',f.data,'batch-one').status).toBe(0);
+  expect(readFileSync(join(f.data,'bank/new-two.yaml'),'utf8')).toBe(candidate);
+  expect(cli('publish',f.requestPath)).toEqual(result);
+  expect(readdirSync(join(f.data,'bank')).sort()).toEqual(['new-two.yaml','original.yaml']);
 });
 
 it('同指紋換 batchId 回傳既有 ID，不新增後綴', () => {
@@ -576,4 +580,170 @@ it('同指紋換 batchId 回傳既有 ID，不新增後綴', () => {
   f.request.batchId='batch-two';
   writeFileSync(f.requestPath,JSON.stringify(f.request));
   expect(cli('publish',f.requestPath)).toEqual(first);
+});
+
+it('使用者回復已發布批次可重跑，發布同指紋不重發，容量歸還且保留證據', () => {
+  const f=fixture();
+  expect(cli('publish',f.requestPath).status).toBe(0);
+  const result=cli('rollback',f.data,f.request.batchId);
+  expect(result.status,result.output).toBe(0);
+  expect(JSON.parse(result.stdout)).toMatchObject({state:'reverted',ids:['new-one-01'],added:0});
+  expect(cli('rollback',f.data,f.request.batchId)).toEqual(result);
+  expect(cli('publish',f.requestPath)).toEqual(result);
+  f.request.batchId='same-fingerprint';
+  writeFileSync(f.requestPath,JSON.stringify(f.request));
+  expect(cli('publish',f.requestPath)).toEqual(result);
+  expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+  expect(readFileSync(join(f.data,'bank/original.yaml'),'utf8')).toBe(f.source);
+  expect(readFileSync(join(f.data,'.batch-batch-one.withdrawn'),'utf8')).toBe(f.candidate);
+  const checked=spawnSync(process.execPath,['scripts/check-bank.ts',f.data],{encoding:'utf8'});
+  expect(checked.status,checked.stderr).toBe(0);
+  expect(checked.stdout).toContain('數學：1 題');
+});
+
+it.each(['modified','paper','bank','reappeared'])(
+  '使用者回復遇 %s 衝突列出檔案及 ID，保留所有內容', kind => {
+    const f=fixture();
+    expect(cli('publish',f.requestPath).status).toBe(0);
+    const target=join(f.data,'bank/new-one.yaml');
+    let conflict=target;
+    if (kind==='modified') writeFileSync(target,f.candidate.replace('五加二','六加一'));
+    else if (kind==='reappeared') {
+      expect(cli('rollback',f.data,'batch-one').status).toBe(0);
+      writeFileSync(target,f.candidate);
+    } else {
+      conflict=join(f.data,kind==='paper' ? 'papers/consumer.yaml' : 'bank/consumer.yaml');
+      const data=kind==='paper' ? {title:'引用卷',sections:[{questions:['new-one-01']}]}
+        : {questions:[{no:1,derivedFrom:['new-one-01']}]};
+      writeFileSync(conflict,stringify(data));
+    }
+    const before=readFileSync(target,'utf8');
+    const other=readFileSync(conflict,'utf8');
+    const result=cli('rollback',f.data,'batch-one');
+    expect(result.status,result.output).toBe(1);
+    expect(result.output).toContain(realpathSync(conflict));
+    if (['paper','bank'].includes(kind)) expect(result.output).toContain('new-one-01');
+    expect(readFileSync(target,'utf8')).toBe(before);
+    expect(readFileSync(conflict,'utf8')).toBe(other);
+    expect(readFileSync(join(f.data,'bank/original.yaml'),'utf8')).toBe(f.source);
+  });
+
+
+it.each(['intent-before','intent-after','move-before','move-after','sync-bank','sync-root','result-before','result-after','clear-before','clear-after'])(
+  '回復在 %s 中斷後能重跑且不重新發布，其他內容不變', point => {
+    const f=fixture();
+    expect(cli('publish',f.requestPath).status).toBe(0);
+    const code=`
+      const rename=fs.renameSync, sync=fs.fsyncSync, open=fs.openSync, unlink=fs.unlinkSync;
+      const paths=new Map(); let moved=false;
+      fs.openSync=(p,...a)=>{const fd=open(p,...a);paths.set(fd,String(p));return fd;};
+      fs.renameSync=(a,b)=>{
+        const record=String(b).endsWith('/record.json') ? JSON.parse(fs.readFileSync(a,'utf8')).data : null;
+        const intent=record?.withdrawal && record?.result?.state==='published';
+        const result=record?.result?.state==='reverted';
+        const move=String(b).endsWith('.withdrawn');
+        if ((${JSON.stringify(point)}==='intent-before' && intent)||(${JSON.stringify(point)}==='result-before' && result)||(${JSON.stringify(point)}==='move-before' && move)) process.kill(process.pid,'SIGKILL');
+        const r=rename(a,b); if(move)moved=true;
+        if ((${JSON.stringify(point)}==='intent-after' && intent)||(${JSON.stringify(point)}==='result-after' && result)||(${JSON.stringify(point)}==='move-after' && move)) process.kill(process.pid,'SIGKILL');
+        return r;
+      };
+      fs.fsyncSync=fd=>{if(moved && ((${JSON.stringify(point)}==='sync-bank' && paths.get(fd)?.endsWith('/bank')) || (${JSON.stringify(point)}==='sync-root' && paths.get(fd)===${JSON.stringify(realpathSync(f.data))})))process.kill(process.pid,'SIGKILL');return sync(fd);};
+      fs.unlinkSync=p=>{if(String(p).endsWith('/maintenance.json') && ${JSON.stringify(point)}==='clear-before')process.kill(process.pid,'SIGKILL');const r=unlink(p);if(String(p).endsWith('/maintenance.json') && ${JSON.stringify(point)}==='clear-after')process.kill(process.pid,'SIGKILL');return r;};
+    `;
+    const stopped=injected(f,code,['rollback',f.data,'batch-one']);
+    expect(stopped.signal,stopped.stderr).toBe('SIGKILL');
+    if(point!=='clear-after') expect(cli('inspect',f.data).output).toContain('持久維護標記');
+    const result=point==='intent-before' ? cli('rollback',f.data,'batch-one') : cli('publish',f.requestPath);
+    expect(result.status,result.output).toBe(0);
+    expect(JSON.parse(result.stdout)).toMatchObject({state:'reverted',added:0});
+    expect(cli('rollback',f.data,'batch-one')).toEqual(result);
+    expect(cli('publish',f.requestPath)).toEqual(result);
+    expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+    expect(readFileSync(join(f.data,'bank/original.yaml'),'utf8')).toBe(f.source);
+    expect(readFileSync(join(f.data,'.batch-batch-one.withdrawn'),'utf8')).toBe(f.candidate);
+    expect(cli('inspect',f.data).status).toBe(0);
+  });
+
+it('回復後紀錄已寫入但撤回證據遭修改，兩個恢復入口都拒絕成功', () => {
+  const f=fixture();
+  expect(cli('publish',f.requestPath).status).toBe(0);
+  expect(cli('rollback',f.data,'batch-one').status).toBe(0);
+  const evidence=join(f.data,'.batch-batch-one.withdrawn');
+  writeFileSync(evidence,'modified evidence');
+  for(const args of [['rollback',f.data,'batch-one'],['publish',f.requestPath]]) {
+    const result=cli(...args);
+    expect(result.status,result.output).toBe(1);
+    expect(result.output).toContain('撤回衝突');
+  }
+  expect(readFileSync(evidence,'utf8')).toBe('modified evidence');
+  expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
+});
+
+it('題組引用列出材料 ID 與引用位置，移除引用後整批回復', () => {
+  const f=fixture();
+  const source=parse(f.source);
+  source.groups=[{no:1,paragraphs:['三加四等於七。'],members:[1]}];
+  writeFileSync(join(f.data,'bank/original.yaml'),stringify(source));
+  const candidate=parse(f.candidate);
+  candidate.groups=[{no:1,paragraphs:['五加二等於七。'],members:[1],derivedFrom:'original#1'}];
+  const content=stringify(candidate);
+  writeFileSync(f.candidatePath,content);
+  Object.assign(f.request,{candidateHash:hash(content),targetHash:JSON.parse(cli('inspect',f.data).stdout).targetHash,
+    quantity:{count:1,unit:'groups'},evidence:['new-one-01','new-one#1'].map(id=>({...f.request.evidence[0],id}))});
+  writeFileSync(f.requestPath,JSON.stringify(f.request));
+  expect(cli('publish',f.requestPath).status).toBe(0);
+  const consumer=join(f.data,'bank/consumer.yaml');
+  writeFileSync(consumer,stringify({questions:[],groups:[{no:1,derivedFrom:'new-one#1'}]}));
+  const blocked=cli('rollback',f.data,'batch-one');
+  expect(blocked.status,blocked.output).toBe(1);
+  expect(blocked.output).toContain(`${realpathSync(consumer)}.groups[0].derivedFrom → new-one#1`);
+  expect(readFileSync(join(f.data,'bank/new-one.yaml'),'utf8')).toBe(content);
+  rmSync(consumer);
+  const result=cli('rollback',f.data,'batch-one');
+  expect(result.status,result.output).toBe(0);
+  expect(JSON.parse(result.stdout)).toMatchObject({state:'reverted',groups:['new-one#1'],ids:['new-one-01'],added:0});
+  expect(readFileSync(join(f.data,'bank/original.yaml'),'utf8')).toBe(stringify(source));
+});
+
+it.each(['unknown','invalid-id','unfinished','damaged-record','foreign-maintenance','busy','missing-file','archive-conflict'])(
+  '回復拒絕 %s，保留批次與其他內容', kind => {
+    const f=fixture();
+    const control=`${f.data}.examremix-operations`;
+    if(kind!=='unfinished') expect(cli('publish',f.requestPath).status).toBe(0);
+    else {
+      expect(injected(f,`const link=fs.linkSync;fs.linkSync=(a,b)=>{if(String(b).endsWith('/new-one.yaml'))process.kill(process.pid,'SIGKILL');return link(a,b);};`).signal).toBe('SIGKILL');
+    }
+    const target=join(f.data,'bank/new-one.yaml');
+    if(kind==='damaged-record')writeFileSync(join(control,'batches/batch-one/record.json'),'{}');
+    if(kind==='foreign-maintenance')writeFileSync(join(control,'maintenance.json'),'{"batchId":"other","fingerprint":"other"}');
+    if(kind==='busy')writeFileSync(join(control,'lock'),JSON.stringify({host:hostname(),pid:process.pid,token:'other'}));
+    if(kind==='missing-file')rmSync(target);
+    if(kind==='archive-conflict')writeFileSync(join(f.data,'.batch-batch-one.withdrawn'),'other content');
+    const before=existsSync(target) ? readFileSync(target,'utf8') : undefined;
+    const result=cli('rollback',f.data,kind==='unknown' ? 'unknown' : kind==='invalid-id' ? '../batch-one' : 'batch-one');
+    expect(result.status,result.output).toBe(1);
+    expect(existsSync(target)).toBe(before!==undefined);
+    if(before!==undefined)expect(readFileSync(target,'utf8')).toBe(before);
+    expect(readFileSync(join(f.data,'bank/original.yaml'),'utf8')).toBe(f.source);
+    if(kind==='foreign-maintenance')expect(readFileSync(join(control,'maintenance.json'),'utf8')).toBe('{"batchId":"other","fingerprint":"other"}');
+    if(kind==='archive-conflict')expect(readFileSync(join(f.data,'.batch-batch-one.withdrawn'),'utf8')).toBe('other content');
+  });
+
+it('回復移檔後同步失敗與殘留資料錯誤都維持拒讀，修復後才完成', () => {
+  const f=fixture();
+  expect(cli('publish',f.requestPath).status).toBe(0);
+  const failed=injected(f,`let moved=false;const rename=fs.renameSync;fs.renameSync=(a,b)=>{const r=rename(a,b);if(String(b).endsWith('.withdrawn'))moved=true;return r;};const sync=fs.fsyncSync;fs.fsyncSync=fd=>{if(moved){const e=new Error('injected rollback EIO');e.code='EIO';throw e;}return sync(fd);};`,['rollback',f.data,'batch-one']);
+  expect(failed.status,failed.stderr).toBe(1);
+  expect(failed.stderr).toContain('EIO');
+  expect(cli('inspect',f.data).output).toContain('持久維護標記');
+  const broken=join(f.data,'papers/broken.yaml');
+  writeFileSync(broken,'title: broken\n');
+  const retry=cli('rollback',f.data,'batch-one');
+  expect(retry.status,retry.output).toBe(1);
+  expect(cli('inspect',f.data).output).toContain('持久維護標記');
+  rmSync(broken);
+  expect(cli('rollback',f.data,'batch-one').status).toBe(0);
+  expect(cli('inspect',f.data).status).toBe(0);
+  expect(readFileSync(join(f.data,'bank/original.yaml'),'utf8')).toBe(f.source);
+  expect(readdirSync(join(f.data,'bank'))).toEqual(['original.yaml']);
 });

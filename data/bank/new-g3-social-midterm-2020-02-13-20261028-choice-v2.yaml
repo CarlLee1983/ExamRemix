@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 圖書館約定故事書放故事區、自然圖鑑放自然區。志工發現自然圖鑑混在故事區，最適當的處理是什麼？
+    options:
+      - 只因封面好看就留在故事區
+      - 確認書籍類別後放回自然區
+      - 把找不到位置的書全部藏起來
+      - 隨意改掉圖書館所有分類規則
+    answer: 2
+    explanation: 志工整理館內書籍時應依既定分類，讓讀者容易找到需要的書。
+    derivedFrom:
+      - g3-social-midterm-2020-02-13

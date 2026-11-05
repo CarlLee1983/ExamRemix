@@ -32,3 +32,6 @@ sections:
     questions:
       - sample-chinese-14
       - sample-chinese-15
+examScope:
+  semester: 1
+  stage: midterm

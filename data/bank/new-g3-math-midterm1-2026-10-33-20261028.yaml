@@ -1,0 +1,113 @@
+questions:
+  - no: 1
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 用直式算算看：$607 \times 4 =$
+    operands:
+      - "607"
+      - "4"
+    operator: ×
+    answer: "2428"
+    explanation: 從個位開始乘，十位的 0 也要乘，再加上進位。$607 \times 4 = 2428$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-33
+  - no: 2
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 用直式算算看：$508 \times 7 =$
+    operands:
+      - "508"
+      - "7"
+    operator: ×
+    answer: "3556"
+    explanation: 從個位開始乘，十位的 0 也要乘，再加上進位。$508 \times 7 = 3556$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-33
+  - no: 3
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 用直式算算看：$406 \times 8 =$
+    operands:
+      - "406"
+      - "8"
+    operator: ×
+    answer: "3248"
+    explanation: 從個位開始乘，十位的 0 也要乘，再加上進位。$406 \times 8 = 3248$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-33
+  - no: 4
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 用直式算算看：$709 \times 5 =$
+    operands:
+      - "709"
+      - "5"
+    operator: ×
+    answer: "3545"
+    explanation: 從個位開始乘，十位的 0 也要乘，再加上進位。$709 \times 5 = 3545$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-33
+  - no: 5
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 用直式算算看：$306 \times 9 =$
+    operands:
+      - "306"
+      - "9"
+    operator: ×
+    answer: "2754"
+    explanation: 從個位開始乘，十位的 0 也要乘，再加上進位。$306 \times 9 = 2754$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-33
+  - no: 6
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 用直式算算看：$208 \times 6 =$
+    operands:
+      - "208"
+      - "6"
+    operator: ×
+    answer: "1248"
+    explanation: 從個位開始乘，十位的 0 也要乘，再加上進位。$208 \times 6 = 1248$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-33
+  - no: 7
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 用直式算算看：$903 \times 4 =$
+    operands:
+      - "903"
+      - "4"
+    operator: ×
+    answer: "3612"
+    explanation: 從個位開始乘，十位的 0 也要乘，再加上進位。$903 \times 4 = 3612$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-33
+  - no: 8
+    type: vertical-calc
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 用直式算算看：$807 \times 7 =$
+    operands:
+      - "807"
+      - "7"
+    operator: ×
+    answer: "5649"
+    explanation: 從個位開始乘，十位的 0 也要乘，再加上進位。$807 \times 7 = 5649$。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-33

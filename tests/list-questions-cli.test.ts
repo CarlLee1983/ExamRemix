@@ -1,5 +1,7 @@
 // 列出題目指令：實際以子行程執行 pnpm list:questions，驗證輸出與結束狀態。
 import { spawnSync } from 'node:child_process';
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
@@ -29,7 +31,7 @@ describe('pnpm list:questions', () => {
 
   it('過濾條件以 AND 組合：科目、題型與疑點', () => {
     const { rows } = run('examples', '--subject', '數學', '--type', 'choice', '--doubt');
-    expect(rows.map((r) => r[0])).toEqual(['sample-math-02', 'sample-math-22']);
+    expect(rows.map((r) => r[0])).toEqual(['sample-math-22']);
     expect(new Set(rows.map((r) => r[5]))).toEqual(new Set(['doubt']));
   });
 
@@ -62,6 +64,20 @@ describe('pnpm list:questions', () => {
     const { status, lines } = run('tests/fixtures/doubt-warning', '--doubt', '--no-doubt');
     expect(status).toBe(0);
     expect(lines).toEqual([]);
+  });
+
+  it('題組材料有疑點時，成員不會列入無疑點結果', () => {
+    expect(run('tests/fixtures/no-unit', '--id', 'reading-local-04', '--no-doubt').rows).toEqual([]);
+    expect(run('tests/fixtures/no-unit', '--id', 'reading-local-04', '--doubt').rows.map((r) => r[5])).toEqual(['doubt']);
+    expect(run('tests/fixtures/no-unit', '--id', 'reading-local-03', '--no-doubt').rows).toHaveLength(1);
+  });
+
+  it('可依配對題型篩選，仍輸出原有七欄', () => {
+    const { status, rows } = run('tests/fixtures/no-unit', '--type', 'matching', '--unit', '配對練習');
+    expect(status).toBe(0);
+    expect(rows).toHaveLength(1);
+    expect(rows[0]?.slice(0, 6)).toEqual(['matching-local-01', 'matching', '英語', '3', '配對練習', '-']);
+    expect(rows[0]).toHaveLength(7);
   });
 
   it('--grade 與 --unit 過濾；沒有單元的題目以 - 顯示', () => {
@@ -121,4 +137,60 @@ describe('pnpm list:questions', () => {
     expect(status).toBe(2);
     expect(stderr).toContain(missing);
   });
+});
+
+it('考試範圍旗標嚴格驗證且未知資料不被當作期中', () => {
+  expect(run('tests/fixtures/no-unit','--semester','3').status).toBe(2);
+  expect(run('tests/fixtures/no-unit','--stage','第一次評量').status).toBe(2);
+  const unknown=run('tests/fixtures/no-unit','--semester','1','--stage','midterm','--id','unclassified-01');
+  expect(unknown.status).toBe(0);
+  expect(unknown.rows).toEqual([]);
+});
+
+it('範圍篩選可盤點疑點資料，只有 --eligible 才排除不合格題', () => {
+  const diagnostic=run('examples','--semester','1','--stage','midterm','--doubt');
+  expect(diagnostic.status).toBe(0);
+  expect(diagnostic.rows.map(r=>r[0])).toEqual(['sample-math-22']);
+  const eligible=run('examples','--semester','1','--stage','midterm','--eligible','--id','sample-math-22');
+  expect(eligible.status).toBe(0);
+  expect(eligible.rows).toEqual([]);
+});
+
+it('重複學期為 OR，單獨學期條件不能放入其他學期的題目', () => {
+  const repeated=run('examples','--semester','1','--semester','2','--id','sample-math-01');
+  expect(repeated.status).toBe(0);
+  expect(repeated.rows.map(r=>r[0])).toEqual(['sample-math-01']);
+  const other=run('examples','--semester','2','--id','sample-math-01');
+  expect(other.status).toBe(0);
+  expect(other.rows).toEqual([]);
+});
+
+it.each(['bad-data','bad-yaml','cross-file-problems'])('範圍查詢遇 %s 必須失敗，不能把壞快照回報成0題', dir => {
+  for(const flags of [['--eligible'],['--semester','1'],['--stage','midterm']]){
+    const result=run(`tests/fixtures/${dir}`,...flags);
+    expect(result.status,`${dir}: ${flags.join(' ')}`).toBe(2);
+    expect(result.rows).toEqual([]);
+    expect(result.stderr).not.toBe('');
+  }
+});
+
+it('範圍查詢允許既有警告，仍以有效疑點排除題目', () => {
+  const result=run('tests/fixtures/doubt-warning','--semester','1');
+  expect(result.status).toBe(0);
+  expect(result.rows).toEqual([]);
+});
+
+
+it.each(['bank','yaml','paper'])('只有單一損毀 %s 的快照仍須拒絕，不能靠其他錯誤代擋', kind => {
+  const root=mkdtempSync(join(tmpdir(),'examremix-query-invalid-'));
+  mkdirSync(join(root,'bank'));mkdirSync(join(root,'papers'));
+  const valid={questions:[{no:1,type:'choice',subject:'數學',grade:3,examScope:{semester:1,stage:'midterm'},stem:'1+1？',options:['2','3'],answer:1,explanation:'1+1=2',source:{originalPaper:'合成',number:1}}]};
+  try {
+    writeFileSync(join(root,'bank/sample.yaml'),kind==='yaml'?'questions: [':JSON.stringify(kind==='bank'?{questions:[{no:1}]}:valid));
+    if(kind==='paper')writeFileSync(join(root,'papers/broken.yaml'),JSON.stringify({title:1}));
+    const result=run(root,'--eligible');
+    expect(result.status).toBe(2);
+    expect(result.rows).toEqual([]);
+    expect(result.stderr).toContain('資料載入／驗證失敗');
+  } finally {rmSync(root,{recursive:true,force:true});}
 });

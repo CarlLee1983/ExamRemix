@@ -1,0 +1,715 @@
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①迅速、②溫暖、③安靜、④黑暗、⑤寬闊、⑥整齊中選出意思相反的詞語，填代號。「吵鬧」的相反詞：___；「明亮」的相反詞：___；「緩慢」的相反詞：___；「狹窄」的相反詞：___。
+    answer:
+      - ③
+      - ④
+      - ①
+      - ⑤
+    explanation: 吵鬧的相反詞是「安靜」（③）；明亮的相反詞是「黑暗」（④）；緩慢的相反詞是「迅速」（①）；狹窄的相反詞是「寬闊」（⑤）。其餘兩個選項均不是題中四個詞語的相反詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-27
+  - no: 2
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①美麗、②成功、③清楚、④謙虛、⑤後退、⑥節省中選出意思相反的詞語，填代號。「前進」的相反詞：___；「浪費」的相反詞：___；「失敗」的相反詞：___；「驕傲」的相反詞：___。
+    answer:
+      - ⑤
+      - ⑥
+      - ②
+      - ④
+    explanation: 前進的相反詞是「後退」（⑤）；浪費的相反詞是「節省」（⑥）；失敗的相反詞是「成功」（②）；驕傲的相反詞是「謙虛」（④）。其餘兩個選項均不是題中四個詞語的相反詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-27
+  - no: 3
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①減少、②安全、③認真、④清醒、⑤柔軟、⑥遠處中選出意思相反的詞語，填代號。「危險」的相反詞：___；「昏迷」的相反詞：___；「增加」的相反詞：___；「近處」的相反詞：___。
+    answer:
+      - ②
+      - ④
+      - ①
+      - ⑥
+    explanation: 危險的相反詞是「安全」（②）；昏迷的相反詞是「清醒」（④）；增加的相反詞是「減少」（①）；近處的相反詞是「遠處」（⑥）。其餘兩個選項均不是題中四個詞語的相反詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-27
+  - no: 4
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①開始、②真實、③平坦、④輕鬆、⑤堅硬、⑥整潔中選出意思相反的詞語，填代號。「虛假」的相反詞：___；「柔軟」的相反詞：___；「沉重」的相反詞：___；「結束」的相反詞：___。
+    answer:
+      - ②
+      - ⑤
+      - ④
+      - ①
+    explanation: 虛假的相反詞是「真實」（②）；柔軟的相反詞是「堅硬」（⑤）；沉重的相反詞是「輕鬆」（④）；結束的相反詞是「開始」（①）。其餘兩個選項均不是題中四個詞語的相反詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-27
+  - no: 5
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①複雜、②新鮮、③冷淡、④誠實、⑤勇氣、⑥上升中選出意思相反的詞語，填代號。「腐爛」的相反詞：___；「簡單」的相反詞：___；「熱情」的相反詞：___；「下降」的相反詞：___。
+    answer:
+      - ②
+      - ①
+      - ③
+      - ⑥
+    explanation: 腐爛的相反詞是「新鮮」（②）；簡單的相反詞是「複雜」（①）；熱情的相反詞是「冷淡」（③）；下降的相反詞是「上升」（⑥）。其餘兩個選項均不是題中四個詞語的相反詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-27
+  - no: 6
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①方形、②低矮、③清楚、④善良、⑤規矩、⑥出口中選出意思相反的詞語，填代號。「入口」的相反詞：___；「模糊」的相反詞：___；「凶惡」的相反詞：___；「高大」的相反詞：___。
+    answer:
+      - ⑥
+      - ③
+      - ④
+      - ②
+    explanation: 入口的相反詞是「出口」（⑥）；模糊的相反詞是「清楚」（③）；凶惡的相反詞是「善良」（④）；高大的相反詞是「低矮」（②）。其餘兩個選項均不是題中四個詞語的相反詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-27
+  - no: 7
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①乾燥、②團結、③勤勞、④健康、⑤富有、⑥自然中選出意思相反的詞語，填代號。「潮溼」的相反詞：___；「貧窮」的相反詞：___；「分裂」的相反詞：___；「懶惰」的相反詞：___。
+    answer:
+      - ①
+      - ⑤
+      - ②
+      - ③
+    explanation: 潮溼的相反詞是「乾燥」（①）；貧窮的相反詞是「富有」（⑤）；分裂的相反詞是「團結」（②）；懶惰的相反詞是「勤勞」（③）。其餘兩個選項均不是題中四個詞語的相反詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-27
+  - no: 8
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①接受、②飽滿、③真誠、④完整、⑤失去、⑥內部中選出意思相反的詞語，填代號。「殘缺」的相反詞：___；「拒絕」的相反詞：___；「外部」的相反詞：___；「得到」的相反詞：___。
+    answer:
+      - ④
+      - ①
+      - ⑥
+      - ⑤
+    explanation: 殘缺的相反詞是「完整」（④）；拒絕的相反詞是「接受」（①）；外部的相反詞是「內部」（⑥）；得到的相反詞是「失去」（⑤）。其餘兩個選項均不是題中四個詞語的相反詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-27
+  - no: 9
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①晴、②睛、③清、④情選出適合的字，填代號（代號可以重複）。雨停了，天氣轉___，我和爸爸到河邊看___澈的河水。
+    answer:
+      - ①
+      - ③
+    explanation: 依序組成「轉晴」、「清澈」。「睛」指眼睛；「情」指感情，不能組成題中的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28
+  - no: 10
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①抱、②泡、③飽、④跑選出適合的字，填代號（代號可以重複）。吃___午餐後，我吹出一串彩色的肥皂___。
+    answer:
+      - ③
+      - ②
+    explanation: 依序組成「吃飽」、「肥皂泡」。「抱」是用手臂圍住；「跑」是快速移動，均不合詞義。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28
+  - no: 11
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①橋、②驕、③嬌、④轎選出適合的字，填代號（代號可以重複）。這座木___讓人越過小溪；修好它的工人沒有因此___傲。
+    answer:
+      - ①
+      - ②
+    explanation: 依序組成「木橋」、「驕傲」。「嬌」常見於嬌小；「轎」常見於轎車，不能組成題中的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28
+  - no: 12
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①在、②再、③才、④材選出適合的字，填代號（代號可以重複）。老師說：「請___念一次，把不會的字記___本子上。」
+    answer:
+      - ②
+      - ①
+    explanation: 依序組成「再念一次」、「記在本子上」。「再」表示又一次；「在」表示位置。「才」、「材」放入這兩處都不合句意。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28
+  - no: 13
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①做、②昨、③坐、④座選出適合的字，填代號（代號可以重複）。妹妹先___下來，再拿起積木___一棟小房子。
+    answer:
+      - ③
+      - ①
+    explanation: 依序填「坐下來」的坐、「做一棟小房子」的做。「昨」表示昨天，不能組成句中的詞語；「座」是名詞或量詞，不能代替坐下的坐或製作的做。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28
+  - no: 14
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①園、②圓、③原、④員選出適合的字，填代號（代號可以重複）。果___裡長著一顆顆又大又___的西瓜。
+    answer:
+      - ①
+      - ②
+    explanation: 依序組成「果園」、「又大又圓」。「原」常見於草原；「員」指人員，不能組成這裡的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28
+  - no: 15
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①喝、②渴、③揭、④竭選出適合的字，填代號（代號可以重複）。走了很久，我口___了，想___一杯水。
+    answer:
+      - ②
+      - ①
+    explanation: 依序組成「口渴」、「喝水」。「揭」是掀開或公布；「竭」是用盡，兩者都不合句意。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28
+  - no: 16
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①低、②底、③抵、④紙選出適合的字，填代號（代號可以重複）。畫家拿出白___，畫下樹___下休息的小貓。
+    answer:
+      - ④
+      - ②
+    explanation: 依序組成「白紙」、「樹底下」。「低」形容高度小；「抵」是抵達或抵擋，不能組成這裡的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28
+  - no: 17
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①站、②戰、③佔、④貼選出適合的字，填代號（代號可以重複）。乘客在車___排隊，海報上畫著一艘___艦。
+    answer:
+      - ①
+      - ②
+    explanation: 依序組成「車站」、「戰艦」。各空格須配合前後的字組成正確詞語；另外兩個字不能組成這兩個詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-29
+  - no: 18
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①陪、②倍、③培、④賠選出適合的字，填代號（代號可以重複）。爸爸___我練習游泳，今天游的距離是昨天的兩___。
+    answer:
+      - ①
+      - ②
+    explanation: 依序組成「陪我」、「兩倍」。各空格須配合前後的字組成正確詞語；另外兩個字不能組成這兩個詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-29
+  - no: 19
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①檢、②撿、③臉、④險選出適合的字，填代號（代號可以重複）。出門前___查書包；在公園___起地上的垃圾。
+    answer:
+      - ①
+      - ②
+    explanation: 依序組成「檢查」、「撿起」。各空格須配合前後的字組成正確詞語；另外兩個字不能組成這兩個詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-29
+  - no: 20
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①辨、②辯、③瓣、④辦選出適合的字，填代號（代號可以重複）。把花___夾在書裡；先___好借書手續。
+    answer:
+      - ③
+      - ④
+    explanation: 依序組成「花瓣」、「辦好」。各空格須配合前後的字組成正確詞語；另外兩個字不能組成這兩個詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-29
+  - no: 21
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①伸、②神、③申、④紳選出適合的字，填代號（代號可以重複）。___出雙手接球；聚精會___地聽故事。
+    answer:
+      - ①
+      - ②
+    explanation: 依序組成「伸出」、「聚精會神」。各空格須配合前後的字組成正確詞語；另外兩個字不能組成這兩個詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-29
+  - no: 22
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①迷、②謎、③米、④咪選出適合的字，填代號（代號可以重複）。沿途做好記號，以免___路；猜中燈籠上的字___。
+    answer:
+      - ①
+      - ②
+    explanation: 依序組成「迷路」、「字謎」。各空格須配合前後的字組成正確詞語；另外兩個字不能組成這兩個詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-29
+  - no: 23
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①植、②值、③直、④殖選出適合的字，填代號（代號可以重複）。在花盆裡種___薄荷；用尺畫一條___線。
+    answer:
+      - ①
+      - ③
+    explanation: 依序組成「種植」、「直線」。各空格須配合前後的字組成正確詞語；另外兩個字不能組成這兩個詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-29
+  - no: 24
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①密、②蜜、③秘、④必選出適合的字，填代號（代號可以重複）。養蜂人收集蜂___；樹林裡的枝葉十分茂___。
+    answer:
+      - ②
+      - ①
+    explanation: 依序組成「蜂蜜」、「茂密」。各空格須配合前後的字組成正確詞語；另外兩個字不能組成這兩個詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-29
+  - no: 25
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①進、②近、③盡、④津選出適合的字，填代號（代號可以重複）。排隊走___教室；靠___窗邊看風景。
+    answer:
+      - ①
+      - ②
+    explanation: 依序組成「走進」、「靠近」。各空格須配合前後的字組成正確詞語；另外兩個字不能組成這兩個詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-29
+  - no: 26
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①晴、②清、③情、④睛選出適合的字，填代號（代號可以重複）。今天天氣___朗，我心___很好。走過小溪時，看見___澈的水面映著天空，忍不住睜大眼___仔細欣賞。
+    answer:
+      - ①
+      - ③
+      - ②
+      - ④
+    explanation: 依序組成「晴朗」、「心情」、「清澈」、「眼睛」。逐格依詞義辨別形近或音近的字；本題未使用的字不能組成對應詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-30
+  - no: 27
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①包、②抱、③飽、④泡選出適合的字，填代號（代號可以重複）。出門野餐時，我帶了一___餅乾。弟弟___著皮球跟在後面，吃___以後，大家一起吹肥皂___。
+    answer:
+      - ①
+      - ②
+      - ③
+      - ④
+    explanation: 依序組成「一包餅乾」、「抱著」、「吃飽」、「肥皂泡」。逐格依詞義辨別形近或音近的字；本題未使用的字不能組成對應詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-30
+  - no: 28
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①青、②清、③請、④情選出適合的字，填代號（代號可以重複）。春天到了，山坡上的___草長高了。老師___大家愛護環境，先___理步道上的紙屑，我們帶著愉快的心___回家。
+    answer:
+      - ①
+      - ③
+      - ②
+      - ④
+    explanation: 依序組成「青草」、「請大家」、「清理」、「心情」。逐格依詞義辨別形近或音近的字；本題未使用的字不能組成對應詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-30
+  - no: 29
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①住、②柱、③注、④主選出適合的字，填代號（代號可以重複）。屋___請工人修理房子。工人___意到門前的___子裂開了，提醒___在屋裡的人先搬出去。
+    answer:
+      - ④
+      - ③
+      - ②
+      - ①
+    explanation: 依序組成「屋主」、「注意」、「柱子」、「住在屋裡」。逐格依詞義辨別形近或音近的字；本題未使用的字不能組成對應詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-30
+  - no: 30
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①河、②荷、③何、④和選出適合的字，填代號（代號可以重複）。夏天，我們沿著___邊散步，看見池裡開滿___花。妹妹問：「為___花瓣會浮在水面上？」媽媽___氣地回答她的問題。
+    answer:
+      - ①
+      - ②
+      - ③
+      - ④
+    explanation: 依序組成「河邊」、「荷花」、「為何」、「和氣」。逐格依詞義辨別形近或音近的字；本題未使用的字不能組成對應詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-30
+  - no: 31
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①時、②持、③寺、④待選出適合的字，填代號（代號可以重複）。我們準___到古___參觀。老師提醒大家保___安靜，並在門口等___導覽員。
+    answer:
+      - ①
+      - ③
+      - ②
+      - ④
+    explanation: 依序組成「準時」、「古寺」、「保持」、「等待」。逐格依詞義辨別形近或音近的字；本題未使用的字不能組成對應詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-30
+  - no: 32
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①坡、②波、③披、④破選出適合的字，填代號（代號可以重複）。風吹過水面，泛起___紋。小羊在山___上走動，牧羊人___著外套，檢查圍欄有沒有___洞。
+    answer:
+      - ②
+      - ①
+      - ③
+      - ④
+    explanation: 依序組成「波紋」、「山坡」、「披著外套」、「破洞」。逐格依詞義辨別形近或音近的字；本題未使用的字不能組成對應詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-30
+  - no: 33
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①棵、②課、③顆、④科選出適合的字，填代號（代號可以重複）。自然___的老師帶我們認識一___老樹，又發給每人一___種子，請大家記錄它的生長，學習___學觀察。
+    answer:
+      - ②
+      - ①
+      - ③
+      - ④
+    explanation: 依序組成「自然課」、「一棵老樹」、「一顆種子」、「科學」。逐格依詞義辨別形近或音近的字；本題未使用的字不能組成對應詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-30
+  - no: 34
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①記、②紀、③己、④已選出適合的字，填代號（代號可以重複）。我___經學會整理房間，把自___的書放回書架，還在日___本上___下今天完成的事情。
+    answer:
+      - ④
+      - ③
+      - ①
+      - ①
+    explanation: 依序組成「已經」、「自己」、「日記本」、「記下」。逐格依詞義辨別形近或音近的字；本題未使用的字不能組成對應詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-30
+  - no: 35
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①晴、②睛、③清、④情選出適合的字，填代號（代號可以重複）。天氣放___後，小朋友睜大眼___，觀察___澈水池裡的小魚。
+    answer:
+      - ①
+      - ②
+      - ③
+    explanation: 依序組成「放晴」、「眼睛」、「清澈」。依句意逐格選字；其餘字不能組成各空格前後指定的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-31
+  - no: 36
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①抱、②跑、③泡、④飽選出適合的字，填代號（代號可以重複）。弟弟___著布偶走進院子，看見小狗___過草地，碰破了空中的肥皂___。
+    answer:
+      - ①
+      - ②
+      - ③
+    explanation: 依序組成「抱著」、「跑過」、「肥皂泡」。依句意逐格選字；其餘字不能組成各空格前後指定的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-31
+  - no: 37
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①橋、②轎、③驕、④嬌選出適合的字，填代號（代號可以重複）。___車開過大___，妹妹指著窗外___小的鳥兒，開心地笑了。
+    answer:
+      - ②
+      - ①
+      - ④
+    explanation: 依序組成「轎車」、「大橋」、「嬌小」。依句意逐格選字；其餘字不能組成各空格前後指定的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-31
+  - no: 38
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①陪、②培、③倍、④賠選出適合的字，填代號（代號可以重複）。園丁細心栽___樹苗，我___他澆水，希望明年樹苗的高度能長到現在的兩___。
+    answer:
+      - ②
+      - ①
+      - ③
+    explanation: 依序組成「栽培」、「陪他」、「兩倍」。依句意逐格選字；其餘字不能組成各空格前後指定的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-31
+  - no: 39
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①密、②蜜、③秘、④必選出適合的字，填代號（代號可以重複）。花園裡，蜜蜂忙著採集花___；樹上有茂___的葉子，樹洞裡還藏著小松鼠的祕___基地。
+    answer:
+      - ②
+      - ①
+      - ①
+    explanation: 依序組成「花蜜」、「茂密」、「祕密基地」。依句意逐格選字；其餘字不能組成各空格前後指定的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-31
+  - no: 40
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①植、②值、③直、④殖選出適合的字，填代號（代號可以重複）。園丁把樹苗種___在步道旁，綁上竹竿讓它筆___生長。他說每棵樹都很有價___，要好好照顧。
+    answer:
+      - ①
+      - ③
+      - ②
+    explanation: 依序組成「種植」、「筆直」、「價值」。依句意逐格選字；其餘字不能組成各空格前後指定的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-31
+  - no: 41
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①進、②近、③盡、④津選出適合的字，填代號（代號可以重複）。遊客走___展覽館，靠___玻璃觀察昆蟲標本，並且___量放低說話的聲音。
+    answer:
+      - ①
+      - ②
+      - ③
+    explanation: 依序組成「走進」、「靠近」、「盡量」。依句意逐格選字；其餘字不能組成各空格前後指定的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-31
+  - no: 42
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①座、②坐、③做、④昨選出適合的字，填代號（代號可以重複）。木工師傅___在椅子上，用木頭___了一___小橋模型。
+    answer:
+      - ②
+      - ③
+      - ①
+    explanation: 依序填「坐在」的坐、「做了一座模型」的做、「一座小橋」的座。「昨」表示昨天，放入三處均不合；其他三字也不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-31
+  - no: 43
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①辨、②辯、③瓣、④辦選出適合的字，填代號（代號可以重複）。我們觀察花___的形狀，學習分___不同的花朵；回教室後，再___一場花卉展覽。
+    answer:
+      - ③
+      - ①
+      - ④
+    explanation: 依序組成「花瓣」、「分辨」、「辦一場展覽」。依句意逐格選字；其餘字不能組成各空格前後指定的詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-31
+  - no: 44
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①趕快、②慌張、③緊密選出適合的詞語，填代號。公車快開走了，我們___上車吧！弟弟找不到車票，急得十分___。
+    answer:
+      - ①
+      - ②
+    explanation: 催促加快動作用「趕快」；著急而不知所措用「慌張」。「緊密」形容連接或關係密切，兩處皆不合。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-32
+  - no: 45
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①仔細、②細節、③細小選出適合的詞語，填代號。這張圖上的字很___，要靠近才看得清楚。請你___檢查答案，別漏掉任何一題。
+    answer:
+      - ③
+      - ①
+    explanation: 字的大小小，用「細小」；詳加檢查用「仔細」。「細節」是指細小的部分，不能放入兩處作形容詞或副詞。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-32
+  - no: 46
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①安置、②安慰、③安心選出適合的詞語，填代號。妹妹打破杯子，嚇得哭了，媽媽輕聲___她。聽見媽媽說不會責罵，妹妹才___地睡了。
+    answer:
+      - ②
+      - ③
+    explanation: 使難過的人心情平復是「安慰」；不再擔心是「安心」。「安置」是安排人或物的所在，不能表達溫言勸慰，也不能說安置地睡。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-32
+  - no: 47
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①發現、②發明、③發生選出適合的詞語，填代號。這次交通事故___在路口。警察調查後，___路旁的監視器拍到了經過。
+    answer:
+      - ③
+      - ①
+    explanation: 事故出現是「發生」；查到原本不知道的事情是「發現」。「發明」指創造新事物，兩處都不合。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-32
+  - no: 48
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①清楚、②清潔、③清涼選出適合的詞語，填代號。夏天喝一口冰水，感覺十分___。姐姐把上學路線說得很___，我一聽就明白。
+    answer:
+      - ③
+      - ①
+    explanation: 涼爽的感受是「清涼」；說明明白是「清楚」。「清潔」指乾淨，不能描述路線說明或冰水帶來的涼意。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-32
+  - no: 49
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①願望、②失望、③盼望選出適合的詞語，填代號。弟弟___著遠方的奶奶來過生日；直到晚上奶奶仍沒出現，他感到很___。
+    answer:
+      - ③
+      - ②
+    explanation: 殷切等待用「盼望」；期待落空的心情是「失望」。「願望」是心中希望實現的事，不能說願望著，也不合後句。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-32
+  - no: 50
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①增加、②參加、③加油選出適合的詞語，填代號。我報名___校內的跑步比賽。媽媽站在跑道邊，替正在比賽的我___。
+    answer:
+      - ②
+      - ③
+    explanation: 加入比賽用「參加」；給予鼓勵用「加油」。「增加」是變多，兩處均不合。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-32
+  - no: 51
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①熱鬧、②熱心、③熱量選出適合的詞語，填代號。隔壁的叔叔很___，常主動幫忙搬東西。園遊會來了許多人，操場上十分___。
+    answer:
+      - ②
+      - ①
+    explanation: 樂於主動幫助別人是「熱心」；人多而活躍是「熱鬧」。「熱量」是名詞，兩個空格均不合。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-32
+  - no: 52
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①陸續、②繼續、③繼承選出適合的詞語，填代號。鐘聲響了，同學們從不同地方___走進教室。老師喝了一口水，便___講完剛才沒說完的故事。
+    answer:
+      - ①
+      - ②
+    explanation: 前後先後進入用「陸續」；停頓後接著做用「繼續」。「繼承」是承接財產或傳統等，不能形容走進教室或接著講故事。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-32
+  - no: 53
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①拜訪、②參觀選出適合的詞語，填代號。過年時，我們到伯伯家___，向他問好。星期日，我們到科學博物館___，了解恐龍的知識。
+    answer:
+      - ①
+      - ②
+    explanation: 進入展覽場所觀看用「參觀」；到親友家探望用「拜訪」。依空格順序為「拜訪」、「參觀」，兩個詞語不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-33
+  - no: 54
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①整理、②修理選出適合的詞語，填代號。腳踏車的鏈條斷了，爸爸用工具把它___好。房間的書本散了一地，我把它們___好，依大小排回書架。
+    answer:
+      - ②
+      - ①
+    explanation: 使壞掉的物品恢復功能用「修理」；把散亂物品排整齊用「整理」。依空格順序為「修理」、「整理」，兩個詞語不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-33
+  - no: 55
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①發明、②發現選出適合的詞語，填代號。科學家經過多年研究，從無到有___一種前人不曾製造過的新機器，讓人們更快完成工作。探險隊在山洞裡___從未見過的動物，立刻拍照記錄。
+    answer:
+      - ①
+      - ②
+    explanation: 創造原本沒有的機器用「發明」；找到原本存在卻不知道的動物用「發現」。依空格順序為「發明」、「發現」，兩個詞語不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-33
+  - no: 56
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①複習、②預習選出適合的詞語，填代號。老師已經教完第二課，我今晚再___一次，免得忘記。明天要上第三課，我今晚先___，把不懂的地方圈起來。
+    answer:
+      - ①
+      - ②
+    explanation: 上課前先學習用「預習」；學過後再次溫習用「複習」。依空格順序為「複習」、「預習」，兩個詞語不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-33
+  - no: 57
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①道歉、②道謝選出適合的詞語，填代號。我不小心踩到同學的腳，立刻向他___，說聲對不起。叔叔幫我撿起掉落的車票，我連忙向他___，說聲謝謝。
+    answer:
+      - ①
+      - ②
+    explanation: 做錯事說對不起用「道歉」；受到幫助說謝謝用「道謝」。依空格順序為「道歉」、「道謝」，兩個詞語不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-33
+  - no: 58
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①收藏、②遮擋選出適合的詞語，填代號。屋簷能___雨水，讓門口不被淋溼。妹妹___郵票，把它們依年代放進集郵冊。
+    answer:
+      - ②
+      - ①
+    explanation: 擋住雨水、不讓它淋進來用「遮擋」；收集並珍藏郵票用「收藏」。屋簷不能收藏雨水；郵票放進集郵冊也不是遮擋郵票，兩者不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-33
+  - no: 59
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①借出、②歸還選出適合的詞語，填代號。讀完借來的書以後，我按時___給圖書館。圖書館把書___給讀者，讓大家帶回家閱讀。
+    answer:
+      - ②
+      - ①
+    explanation: 將自己的物品暫時供別人使用是「借出」；把借來的物品交回原主是「歸還」。依空格順序為「歸還」、「借出」，兩個詞語不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-33
+  - no: 60
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①請教、②通知選出適合的詞語，填代號。第一次遇到這種數學題，我向老師___解題的方法。學校透過廣播___全體學生明天停課，請大家留意這項消息。
+    answer:
+      - ①
+      - ②
+    explanation: 向他人求取知識或方法用「請教」；把已確定的消息告知應知悉的人用「通知」。學生是向老師求問方法，不是把方法通知老師；學校是公布停課，不是向學生請教，兩詞不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-33
+  - no: 61
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①欣賞、②測量選出適合的詞語，填代號。自然課上，我們用尺___葉子的長度，把公分數記錄下來。音樂會上，我們靜靜地___優美的旋律，享受聆聽的樂趣。
+    answer:
+      - ②
+      - ①
+    explanation: 用尺求出長度並記錄公分數用「測量」；帶著喜愛之情享受音樂用「欣賞」。欣賞不能得出長度數據，聆聽音樂的樂趣也不是測量，兩詞不能互換。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-33

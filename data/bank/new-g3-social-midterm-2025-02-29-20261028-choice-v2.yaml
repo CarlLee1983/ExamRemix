@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 主席已請小文發言，小芸想到反對意見。哪個做法能兼顧發言秩序與表達機會？
+    options:
+      - 立刻大叫讓小文無法繼續
+      - 只因意見不同就搶走小文資料
+      - 先聽小文說完，再舉手等主席安排
+      - 要求記錄把小文的話全部刪掉
+    answer: 3
+    explanation: 遵守主席安排並聆聽，不代表放棄表達，而是依序提出意見。
+    derivedFrom:
+      - g3-social-midterm-2025-02-29

@@ -1,0 +1,145 @@
+questions:
+  - no: 1
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句，寫出持續練習後學會一件事的經過。
+    answer: 由於我每天練習跳繩，因此現在能連續跳五十下。
+    explanation: 範例答案先用「由於」說明原因，再用「因此」接上合理的結果。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-43
+  - no: 2
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句，寫出忘記帶物品造成的不便。
+    answer: 由於我忘了帶水壺，因此必須向老師借杯子喝水。
+    explanation: 範例答案先用「由於」說明原因，再用「因此」接上合理的結果。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-43
+  - no: 3
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句，寫出大家合作完成工作的原因和結果。
+    answer: 由於大家一起打掃，因此教室很快就變乾淨了。
+    explanation: 範例答案先用「由於」說明原因，再用「因此」接上合理的結果。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-43
+  - no: 4
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句，寫出選擇搭公車的原因。
+    answer: 由於腳踏車壞了，因此爸爸今天搭公車去上班。
+    explanation: 範例答案先用「由於」說明原因，再用「因此」接上合理的結果。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-43
+  - no: 5
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句，說明一個人需要休息的原因。
+    answer: 由於妹妹感冒了，因此她今天留在家裡休息。
+    explanation: 範例答案先用「由於」說明原因，再用「因此」接上合理的結果。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-43
+  - no: 6
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句，寫出遵守圖書館規定帶來的好處。
+    answer: 由於大家都保持安靜，因此我們能專心看書。
+    explanation: 範例答案先用「由於」說明原因，再用「因此」接上合理的結果。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-43
+  - no: 7
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句，寫出整理物品之後的好處。
+    answer: 由於我把玩具分類收好，因此很快就找到了積木。
+    explanation: 範例答案先用「由於」說明原因，再用「因此」接上合理的結果。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-43
+  - no: 8
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句，說明改變戶外活動地點的原因。
+    answer: 由於草地上有許多積水，因此我們改到走廊玩遊戲。
+    explanation: 範例答案先用「由於」說明原因，再用「因此」接上合理的結果。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-43
+  - no: 9
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句，描寫聽到下課鐘聲後馬上做的事。
+    answer: 下課鐘聲一響，我就把課本收進抽屜。
+    explanation: 範例答案用「一……就……」表示前一件事發生，後一個動作或反應隨即出現。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-44
+  - no: 10
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句，描寫聞到食物香味後立刻出現的反應。
+    answer: 我一聞到烤地瓜的香味，就忍不住流口水。
+    explanation: 範例答案用「一……就……」表示前一件事發生，後一個動作或反應隨即出現。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-44
+  - no: 11
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句，寫出發現同學跌倒後立刻採取的行動。
+    answer: 我一看到同學跌倒，就趕快上前扶他起來。
+    explanation: 範例答案用「一……就……」表示前一件事發生，後一個動作或反應隨即出現。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-44
+  - no: 12
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句，描寫打開禮物時馬上出現的心情或動作。
+    answer: 妹妹一打開禮物，就開心地笑了。
+    explanation: 範例答案用「一……就……」表示前一件事發生，後一個動作或反應隨即出現。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-44
+  - no: 13
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句，寫出接到家人電話後立刻做的事。
+    answer: 我一接到奶奶的電話，就開心地向她問好。
+    explanation: 範例答案用「一……就……」表示前一件事發生，後一個動作或反應隨即出現。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-44
+  - no: 14
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句，描寫看見紅燈亮起時馬上採取的行動。
+    answer: 爸爸一看到紅燈亮起，就把車停在停止線前。
+    explanation: 範例答案用「一……就……」表示前一件事發生，後一個動作或反應隨即出現。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-44
+  - no: 15
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句，寫出到達海邊後立刻做的活動。
+    answer: 我們一到海邊，就拿出鏟子在沙灘上挖沙。
+    explanation: 範例答案用「一……就……」表示前一件事發生，後一個動作或反應隨即出現。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-44
+  - no: 16
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句，描寫發現開始下雨後立刻做的事。
+    answer: 我一發現開始下雨，就撐開雨傘。
+    explanation: 範例答案用「一……就……」表示前一件事發生，後一個動作或反應隨即出現。此為範例；其他符合題目情境、使用指定句式且語意完整自然的答案也可接受。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-44

@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物與磁鐵
+    stem: 分別測試甲、乙兩個磁鐵吸引同一支鐵製迴紋針：甲距離迴紋針1公分時能吸動，乙距離5公分時不能吸動。只憑這兩次不同距離的結果，就能確定甲的磁力比乙強。
+    answer: false
+    explanation: 距離會影響磁鐵對迴紋針的作用。兩次距離不同，不能只憑能否吸動判定哪個磁鐵較強；需用相同迴紋針、距離、擺放方向和方法，在相同表面重做比較。
+    derivedFrom:
+      - g3-science-csps-midterm-2020-01

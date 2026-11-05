@@ -1,0 +1,429 @@
+# 原卷：109學年度上學期三年級自然期中評量，共2頁，範圍翰林版第一單元至第二單元。
+# 原卷輔助注音未轉錄：掃描小字無法可靠逐字辨識，保留可清楚辨識的印刷中文字，不猜補注音。
+# 唯一來源是帶手寫作答的掃描卷；已排除手寫答案、批改及學生與學校資料，答案另行求解。
+# no1–15：一、是非題1–15；no16–30：二、選擇題1–15；no31：四、填填看1(2)。
+# source.originalPaper 記錄原大題與題組；source.number 為該大題或題組的原題號。
+# 未匯入四1(1)：印刷圖示無法可靠判定ㄆ與ㄇ接觸或分離，無法獨立確定答案；未依手寫作答猜測。
+# 未匯入：三1全題（6項連線）；四2全題（葉子外型分類表格）；五1–4（閱讀測驗）。
+# 圖31僅裁取印刷環形磁鐵圖及ㄅㄆㄇㄈㄉ代號，未包含下方手寫答句；供no31使用。
+questions:
+- 'no': 1
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 植物的身體可以分為根、莖、葉、花、果實和種子六個部分。
+  answer: true
+  explanation: 根、莖、葉、花、果實和種子，是本課認識植物身體時使用的六個主要部分。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 1
+- 'no': 2
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 校園中，所有植物的葉子大小、形狀都是相同的。
+  answer: false
+  explanation: 不同植物的葉子在大小、形狀、葉緣與葉脈等方面都可能不同，不能說全部相同。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 2
+- 'no': 3
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 完全花的構造包含花萼、花瓣、雄蕊、雌蕊四個部分。
+  answer: true
+  explanation: 同時具有花萼、花瓣、雄蕊和雌蕊四個部分的花，稱為完全花。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 3
+- 'no': 4
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 種子找到了適合生長的地方後，就可以發芽長成一棵新的植物。
+  answer: true
+  explanation: 種子在水分、空氣及溫度等條件合適時，可以發芽，繼續生長成新植物。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 4
+- 'no': 5
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 植物花朵的花瓣越大朵、色彩越鮮豔，氣味就一定會越香。
+  answer: false
+  explanation: 花瓣大小、顏色和氣味沒有這樣的必然關係；鮮豔或大朵的花不一定更香。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 5
+- 'no': 6
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 在山坡地上種植檳榔樹，對水土保持有很大的功用。
+  answer: false
+  explanation: 檳榔樹的根較淺，對深層土壤的固定能力有限，不能認為在山坡地種檳榔就能有很大的水土保持作用。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 6
+- 'no': 7
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 植物的用途很多，在食、衣、住、行等方面都能看到植物的利用。
+  answer: true
+  explanation: 植物可供應食物、衣物纖維、建材及交通設施用材，生活中有很多用途。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 7
+- 'no': 8
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 動物和人類不同，所以動物不會利用到植物。
+  answer: false
+  explanation: 動物會利用植物作為食物、棲息地或築巢材料，也與植物密切相關。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 8
+- 'no': 9
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 硬幣是金屬製成的，所以它可以被磁鐵吸附。
+  answer: false
+  explanation: 磁鐵不是能吸住所有金屬；硬幣能否被吸住取決於材質，不能只因為是金屬就判定可以。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 9
+- 'no': 10
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 每一個磁鐵都有兩個磁極，分別是N極和S極。
+  answer: true
+  explanation: 一般完整磁鐵具有北極N極與南極S極，兩端的磁性通常較強。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 10
+- 'no': 11
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 如果迴紋針散落一地，我們可以利用磁鐵把它們撿起來。
+  answer: true
+  explanation: 一般鐵製迴紋針能被磁鐵吸附，可以利用磁鐵把它們集中收拾。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 11
+- 'no': 12
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 看起來亮晶晶的金屬物品，一定會被磁鐵吸附。
+  answer: false
+  explanation: 外觀是否亮晶晶不能判斷能否被磁鐵吸附，要看材質是否具有可被磁鐵吸引的性質。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 12
+- 'no': 13
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 原本互相排斥的兩個磁鐵，只要把其中一個換邊、再互相靠近，兩個磁鐵就會互相吸引。
+  answer: true
+  explanation: 原本相對的是同名磁極，會互相排斥；把其中一個換邊後，改由異名磁極相對，就會互相吸引。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 13
+- 'no': 14
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 磁鐵加了鐵片，吸力就會增強，所以加上塑膠墊吸力也會增強。
+  answer: false
+  explanation: 鐵片與塑膠的材質不同，不能由加鐵片的效果推論加塑膠也一樣；塑膠墊不會因此增強磁鐵吸力。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 14
+- 'no': 15
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 利用磁鐵同極相斥、異極相吸的特性設計許多好玩的磁鐵遊戲。
+  answer: true
+  explanation: 磁鐵的同名磁極互相排斥，異名磁極互相吸引，可以運用這些特性設計遊戲。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（一、是非題）
+    number: 15
+- 'no': 16
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 下面哪一種植物的葉子最厚？
+  options:
+  - 蘆薈
+  - 香菜
+  - 薄荷
+  - 九層塔
+  answer: 1
+  explanation: 蘆薈的葉片肥厚，內部可儲存水分；其他選項的葉片相對較薄。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 1
+- 'no': 17
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 下面哪一個不是草本莖的特徵？
+  options:
+  - 通常細細長長
+  - 大多是褐色的
+  - 比較柔軟矮小
+  - 容易被風吹彎
+  answer: 2
+  explanation: 草本莖通常較柔軟，常呈綠色；褐色而堅硬較常見於木本莖，不是草本莖的一般特徵。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 2
+- 'no': 18
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 植物的花完成授粉，凋謝之後會長出什麼呢？
+  options:
+  - 果實
+  - 種子
+  - 葉子
+  - 花苞
+  answer: 1
+  explanation: 花完成授粉並受精後，子房可發育成果實，胚珠發育成種子；本題問花凋謝後外觀長出的部分，選果實。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 3
+- 'no': 19
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 花朵的哪一個部位是最醒目且具有鮮豔的顏色？
+  options:
+  - 雄蕊
+  - 雌蕊
+  - 花瓣
+  - 花萼
+  answer: 3
+  explanation: 許多花的花瓣顏色鮮豔、外形醒目，有助於吸引動物來訪。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 4
+- 'no': 20
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 下面哪一個是植物在我們生活中的用途？
+  options:
+  - 做成家具
+  - 人類食用
+  - 做成衣服
+  - 以上皆是
+  answer: 4
+  explanation: 植物可提供家具木材、食物及製衣纖維，所以三項都是植物的用途。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 5
+- 'no': 21
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 哪種食物不是利用植物製成的？
+  options:
+  - 麵粉
+  - 米飯
+  - 豆腐
+  - 雞蛋
+  answer: 4
+  explanation: 麵粉來自小麥、米飯來自稻米、豆腐來自黃豆；雞蛋由雞產下，並不是植物製品。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 6
+- 'no': 22
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 端午節時會拿來插在門口，用來驅蟲避邪的哪一種植物呢？
+  options:
+  - 稻草
+  - 香草
+  - 艾草
+  - 仙草
+  answer: 3
+  explanation: 端午節在門口插艾草是傳統習俗；艾草有特殊氣味，常被用於驅蟲相關用途。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 7
+- 'no': 23
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 下面哪種飲品不是利用植物的花做成的？
+  options:
+  - 茉莉花茶
+  - 蘋果茶
+  - 玫瑰花茶
+  - 菊花茶
+  answer: 2
+  explanation: 蘋果茶利用的是蘋果果實；其他三項名稱中的植物部位都是花。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 8
+- 'no': 24
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 磁鐵隔著下面哪種物品時，可能不會吸附鐵製品？
+  options:
+  - 墊板
+  - 字典
+  - 塑膠袋
+  - 圖畫紙
+  answer: 2
+  explanation: 磁鐵能隔著較薄的非磁性材料吸引鐵製品，但距離越遠吸力越弱；字典通常較厚，隔著它可能無法吸住鐵製品。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 9
+- 'no': 25
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 磁鐵的哪個部位磁力最強，可以吸附較多的迴紋針？
+  options:
+  - 兩端
+  - 中間
+  - 上面
+  - 下面
+  answer: 1
+  explanation: 一般條形磁鐵的兩端是磁極，磁力較強，通常可以吸住較多迴紋針。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 10
+- 'no': 26
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 將兩個磁鐵相同的磁極相互靠近時，會產生什麼現象呢？
+  options:
+  - 互相吸引
+  - 斷成兩半
+  - 互相排斥
+  - 原地不動
+  answer: 3
+  explanation: 磁鐵同名磁極互相排斥，異名磁極互相吸引。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 11
+- 'no': 27
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 磁性的卡片平時應該避免跟哪個物品放在一起呢？
+  options:
+  - 手機
+  - 硬幣
+  - 鑰匙
+  - 眼鏡
+  answer: 1
+  explanation: 磁條卡片應避免靠近具有磁性或可能影響磁條的物品；手機可能含有磁鐵，應與磁條卡片分開存放。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 12
+- 'no': 28
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 哪種方法可以增加磁鐵的吸力？
+  options:
+  - 塗上膠水
+  - 甩動磁鐵
+  - 加熱磁鐵
+  - 加上鐵片
+  answer: 4
+  explanation: 依本課實驗，在適當位置加上鐵片可以增強磁鐵吸附的效果；塗膠水、甩動或加熱都不是適當方法。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 13
+- 'no': 29
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 進行「漂浮的磁鐵」實驗時，如果在水盆的附近放有哪一種物品，可能會影響到實驗結果？
+  options:
+  - 金項鍊
+  - 釘書機
+  - 橡皮擦
+  - 彩色筆
+  answer: 2
+  explanation: 釘書機通常含有可被磁鐵吸引的鐵製部分，靠近時可能影響漂浮磁鐵；其餘選項通常不具這樣的磁性。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 14
+- 'no': 30
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 指北針是應用下列哪個的原理？
+  options:
+  - 空氣的特性
+  - 光的原理
+  - 磁鐵的特性
+  - 電的原理
+  answer: 3
+  explanation: 指北針的磁針是磁鐵，能受地球磁場影響而指示南北方向。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（二、選擇題）
+    number: 15
+- 'no': 31
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 植物與磁鐵
+  stem: 將環形磁鐵套入吸管中，原本的現象如下圖。把ㄅ換邊再套入吸管中，ㄅ和ㄆ靠近時會產生什麼現象呢？___。
+  image:
+    src: g3-science-midterm-2020/31.png
+    alt: 五個依序標示ㄅ、ㄆ、ㄇ、ㄈ、ㄉ的環形磁鐵套在吸管上；ㄅ與ㄆ之間有空隙
+  answer:
+  - 互相吸引
+  explanation: 原圖ㄅ與ㄆ之間有空隙，表示兩者原本互相排斥；把ㄅ換邊後，相對的磁極改為異名磁極，因此互相吸引。
+  source:
+    originalPaper: 109學年度上學期三年級自然期中評量（四、填填看（1））
+    number: 2

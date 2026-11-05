@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 升三年級後，小安看到社會課本，就說「有新科目，所以國語和數學一定都不用學了」。哪個修正正確？
+    options:
+      - 有社會課就不能有國語課
+      - 三年級只能上一種科目
+      - 課本增加表示不用做任何學習
+      - 增加新科目，不表示原有國語、數學就取消
+    answer: 4
+    explanation: 三年級增加社會等科目，國語與數學仍持續學習。
+    derivedFrom:
+      - g3-social-midterm-2020-02-15

@@ -1,0 +1,294 @@
+# 原卷答案未提供；答案為獨立解題，開放題答案為示例。僅為待複核候選。
+questions:
+  - no: 1
+    type: char-to-zhuyin
+    subject: 國語
+    grade: 3
+    stem: 準[備|ㄅㄟˋ]
+    explanation: 「準備」的備讀ㄅㄟˋ。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 1
+  - no: 2
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    stem: 北[極|ㄐㄧˊ]熊
+    explanation: 依注音與詞語寫「極」。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 2
+  - no: 3
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    stem: 聽[筒|ㄊㄨㄥˇ]
+    explanation: 電話的聽筒，筒讀ㄊㄨㄥˇ。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 3
+  - no: 4
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    stem: 籃[筐|ㄎㄨㄤ]
+    explanation: 可填「筐」構成籃筐；「框」亦讀ㄎㄨㄤ，籃框也可成詞。原卷未提供足夠語境區別。
+    doubt: 原印只提供「籃」及ㄎㄨㄤ，「筐／框」皆可成詞；此處以「筐」為示例，須核對預期答案。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 4
+  - no: 5
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    stem: 皮[膚|ㄈㄨ]
+    explanation: 皮膚的膚讀ㄈㄨ。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 5
+  - no: 6
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    stem: 近[視|ㄕˋ]眼
+    explanation: 近視眼的視讀ㄕˋ。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 6
+  - no: 7
+    type: char-to-zhuyin
+    subject: 國語
+    grade: 3
+    stem: "[曾|ㄘㄥˊ]經"
+    explanation: 表示以前有過的「曾經」，曾讀ㄘㄥˊ，不讀姓氏音ㄗㄥ。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 7
+  - no: 8
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    stem: "[肌|ㄐㄧ]肉"
+    explanation: 可填「肌」構成肌肉；「雞肉」也符合原印注音ㄐㄧ及已印的「肉」，無句子語境可區別。
+    doubt: 原印只提供ㄐㄧ及「肉」，「肌肉／雞肉」皆符合，答案欄以「肌」示例，須核對預期答案。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 8
+  - no: 9
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    stem: 病[毒|ㄉㄨˊ]
+    explanation: 病毒的毒讀ㄉㄨˊ。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 9
+  - no: 10
+    type: zhuyin-to-char
+    subject: 國語
+    grade: 3
+    stem: "[誤|ㄨˋ]會"
+    explanation: 誤會的誤讀ㄨˋ。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 一、寫國字或注音：每字1分，共10分
+      number: 10
+  - no: 11
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依出現順序改正錯字。___、___：他的一藥費用是一腕元
+    answer:
+      - 醫
+      - 萬
+    explanation: 依錯字出現順序訂正：「一藥」改成「醫藥」，「一腕元」改成「一萬元」。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 二、改錯字：每字2分，共8分
+      number: 1
+  - no: 12
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依出現順序改正錯字。___、___：警察呆護人民免於歹徒的攻急。
+    answer:
+      - 保
+      - 擊
+    explanation: 依錯字出現順序訂正：「呆護」應為「保護」，「攻急」應為「攻擊」。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 二、改錯字：每字2分，共8分
+      number: 4
+  - no: 13
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依出現順序改正錯字。___、___：今天第一結課是提育課。
+    answer:
+      - 節
+      - 體
+    explanation: 依錯字出現順序訂正：「第一結課」應為「第一節課」，「提育課」應為「體育課」。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 二、改錯字：每字2分，共8分
+      number: 5
+  - no: 14
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 夾（___）部
+    answer:
+      - 大
+    explanation: 教育部字典列「夾」為大部。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 三、寫部首 5分
+      number: 1
+  - no: 15
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 射（___）部
+    answer:
+      - 寸
+    explanation: 教育部字典列「射」為寸部。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 三、寫部首 5分
+      number: 2
+  - no: 16
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 命（___）部
+    answer:
+      - 口
+    explanation: 教育部字典列「命」為口部。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 三、寫部首 5分
+      number: 3
+  - no: 17
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 背（___）部
+    answer:
+      - 肉
+    explanation: 教育部字典列「背」為肉部。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 三、寫部首 5分
+      number: 4
+  - no: 18
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 屁（___）部
+    answer:
+      - 尸
+    explanation: 教育部字典列「屁」為尸部。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 三、寫部首 5分
+      number: 5
+  - no: 19
+    type: char-to-zhuyin
+    subject: 國語
+    grade: 3
+    stem: 高雄港是擁有得天「[獨|ㄉㄨˊ]」厚地形的優「[良|ㄌㄧㄤˊ]」港「[灣|ㄨㄢ]」，在世界的海運舞「[臺|ㄊㄞˊ]」上「[占|ㄓㄢˋ]」有一席之地。
+    doubt: 原卷此段未印寫注音指令，最近大題標題為「三、寫部首 5分」；char-to-zhuyin 題型依引號字與作答格推定，須確認實際作答要求。
+    explanation: 依序讀作ㄉㄨˊ、ㄌㄧㄤˊ、ㄨㄢ、ㄊㄞˊ、ㄓㄢˋ。「占有」的占讀ㄓㄢˋ。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 三、寫部首 5分
+  - no: 20
+    type: char-to-zhuyin
+    subject: 國語
+    grade: 3
+    stem: 我方軍隊在「[節節|ㄐㄧㄝˊ ㄐㄧㄝˊ]」敗「[退|ㄊㄨㄟˋ]」下，依然堅持到底，終於找到「[反|ㄈㄢˇ]」「[擊|ㄐㄧˊ]」時「[機|ㄐㄧ]」，一舉奪回失去的領地。
+    doubt: 原卷此段未印寫注音指令，最近大題標題為「三、寫部首 5分」；char-to-zhuyin 題型依引號字與作答格推定，須確認實際作答要求。
+    explanation: 原卷「節節」標為一個作答位置，其餘依序為退、反、擊、機；分別讀ㄐㄧㄝˊ ㄐㄧㄝˊ、ㄊㄨㄟˋ、ㄈㄢˇ、ㄐㄧˊ、ㄐㄧ。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 三、寫部首 5分
+      number: 2
+  - no: 21
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: |-
+      「理髮師」的「笑聲」好「響亮」。
+      ___的___好___。
+    answer:
+      - 小鳥
+      - 歌聲
+      - 清脆
+    explanation: 範例：小鳥的歌聲好清脆。依原例「人物／動物的聲音好形容詞」結構，其他語意合理的答案也可接受。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 六、我會照樣寫：每格3分，共18分
+      number: 1
+  - no: 22
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: |-
+      「陽光」般「溫暖」的「微笑」。
+      ___在___的___。
+    answer:
+      - 媽媽
+      - 孩子心中
+      - 地位
+    explanation: 依原印作答格式可填成「媽媽在孩子心中的地位」，語意合理；此範例僅符合「在」字格式，並不解決與原印「陽光般溫暖的微笑」例句結構不一致的問題，須核對原卷預期作答要求。
+    doubt: 原印例句用「般」，作答格式卻印「在」；已忠實保留「___在___的___」，範例僅示範可成立的短語，預期照樣寫結構仍待確認。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 六、我會照樣寫：每格3分，共18分
+      number: 2
+  - no: 23
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: |-
+      「五花八門」的「保命妙招」。
+      ___的___。
+    answer:
+      - 各式各樣
+      - 美味點心
+    explanation: 範例：各式各樣的美味點心。依「修飾語的名詞」結構，其他語意合理的答案也可接受。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 六、我會照樣寫：每格3分，共18分
+      number: 3
+  - no: 24
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 一動也不動
+    answer: 小貓躲在紙箱裡，一動也不動。
+    explanation: 範例答案：形容完全沒有動作。其他正確運用「一動也不動」、語意完整的句子也可接受。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 七、造句：每題5分，共10分
+      number: 1
+  - no: 25
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 越來越……也越來越……
+    answer: 天色越來越暗，風也越來越大。
+    explanation: 範例答案：用兩個「越來越」描述兩種程度逐漸改變的情形，並以「也」連接。其他結構正確、語意完整的句子也可接受。
+    source:
+      originalPaper: 111學年度上學期三年級語文領域（國語）期中評量試卷
+      section: 七、造句：每題5分，共10分
+      number: 2

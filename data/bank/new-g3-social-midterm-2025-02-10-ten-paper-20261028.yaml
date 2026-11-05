@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小齊發現遊具的螺絲鬆脫，先停止使用並告訴老師，是維護校園安全的做法。
+    answer: true
+    explanation: 設施損壞時應避免使用並通報老師。
+    derivedFrom:
+      - g3-social-midterm-2025-02-10
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 看見教室窗戶玻璃破裂，應先用手摸摸裂口，再決定要不要告訴老師。
+    answer: false
+    explanation: 不應觸碰破裂玻璃，應遠離並通報。
+    derivedFrom:
+      - g3-social-midterm-2025-02-10
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 樓梯扶手鬆動時，小文提醒同學不要靠上去，並立即通知老師。
+    answer: true
+    explanation: 遠離損壞設施並通報，有助避免受傷。
+    derivedFrom:
+      - g3-social-midterm-2025-02-10
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 校園水溝蓋已經破損，只要自己知道閃開，就完全不用告訴師長。
+    answer: false
+    explanation: 應通報損壞設施，讓學校處理並保護其他人。
+    derivedFrom:
+      - g3-social-midterm-2025-02-10
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小潔發現教室吊扇搖晃異常，立刻告訴老師並避開下方，是注意安全的行為。
+    answer: true
+    explanation: 發現設施異常應避開危險並通報。
+    derivedFrom:
+      - g3-social-midterm-2025-02-10
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 球架明顯歪斜，大家可以輪流攀爬，測試它到底牢不牢固。
+    answer: false
+    explanation: 不能以攀爬測試危險設施，應停止使用並通報。
+    derivedFrom:
+      - g3-social-midterm-2025-02-10
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 洗手臺水龍頭破損留下尖角，小哲請老師協助處理，能減少同學受傷的機會。
+    answer: true
+    explanation: 通報破損設施，有助學校排除危險。
+    derivedFrom:
+      - g3-social-midterm-2025-02-10
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 看到盪鞦韆的鏈條斷了一邊，趁老師還沒發現先玩一次，是安全的選擇。
+    answer: false
+    explanation: 損壞遊具不可繼續使用，應立即通知師長。
+    derivedFrom:
+      - g3-social-midterm-2025-02-10
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 走廊地磚翹起，小真不在附近追跑，並向老師說明位置，是正確的處理方式。
+    answer: true
+    explanation: 避開並清楚通報設施問題，有助維護校園安全。
+    derivedFrom:
+      - g3-social-midterm-2025-02-10

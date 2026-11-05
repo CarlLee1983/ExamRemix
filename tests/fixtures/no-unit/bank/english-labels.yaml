@@ -5,10 +5,13 @@ questions:
     grade: 3
     unit: 中文標示邊界
     stem: Classify the words.
-    categories: [{ name: Animal, symbol: A }, { name: Place, symbol: B }]
-    statements: [{ text: cat, answer: 1 }]
+    categories: [ { name: Animal, symbol: A }, { name: Place, symbol: B } ]
+    statements: [ { text: cat, answer: 1 } ]
     explanation: A cat is an animal.
     source: { originalPaper: 自編英語邊界, number: 1 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 2
     type: char-to-zhuyin
     subject: 英語
@@ -17,6 +20,9 @@ questions:
     stem: "Read [字|ㄗˋ]."
     explanation: Read the Chinese annotation.
     source: { originalPaper: 自編英語邊界, number: 2 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 3
     type: zhuyin-to-char
     subject: 英語
@@ -25,3 +31,6 @@ questions:
     stem: "Write [字|ㄗˋ]."
     explanation: Write the Chinese character.
     source: { originalPaper: 自編英語邊界, number: 3 }
+    examScope:
+      semester: 1
+      stage: midterm

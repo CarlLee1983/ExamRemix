@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 物質溶解
+    stem: 兩杯水的水溫和水量相同，分別加入重量相同的少量食鹽和砂糖，充分攪拌後都完全溶解，便停止加入。只靠這次結果，還不能判定哪一杯最多能溶解的量比較多。
+    answer: true
+    explanation: 這次只知道加入的少量食鹽和砂糖都能完全溶解，沒有測到各自最多能溶解多少。已經溶解的量相同，不表示最多能溶解的量也相同；需要繼續分次加入並充分攪拌，記錄不能再完全溶解前的總量，才能進一步比較。
+    derivedFrom:
+      - g3-science-midterm-2025-03-additional-original-01

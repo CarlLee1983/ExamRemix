@@ -1,0 +1,391 @@
+# 原卷：112學年度上學期三年級自然期中評量，共3頁。全題待家長確認。
+# 原卷的輔助注音未逐字轉錄。
+# no 1–13：一、是非題1–13；no 14–23：二、選擇題1–10；
+# no 24：七、花的構造；no 25–27：八、莖的種類1–3；no 28：九、辣椒的身體部位。
+# source.originalPaper 含原卷大題，source.number 為該大題原題號；無小題號的大題以1表示整題。
+# 未匯入：三1–3、四1–3、五1–4、六1–4為複選勾選題；十、十一、十二、十三為表格作答，現有題型不支援原作答形式。
+# 附圖21取自較清晰的答案卷插圖；22–24、28依原卷重繪 SVG，原 PNG 保留供核對。
+questions:
+- 'no': 1
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 大樹長得比較高，小草長得比較矮，它們的生長都需要陽光。
+  answer: true
+  explanation: 樹木和小草都是植物，生長都需要陽光。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 1
+- 'no': 2
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 用冰水沖泡蜂蜜比溫水沖泡更不容易沉澱在杯底。
+  answer: false
+  explanation: 溫水較有助於蜂蜜溶解、混合；冰水中的蜂蜜反而較不容易散開。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 2
+- 'no': 3
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 食鹽加入水中攪拌後就看不見顆粒，這時鹽和水均勻混合成了食鹽水。
+  answer: true
+  explanation: 食鹽溶解後，鹽仍在水中，只是看不見原來的顆粒，形成均勻的食鹽水。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 3
+- 'no': 4
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 樟樹的樹幹就是它的根，可以支撐樟樹生長。
+  answer: false
+  explanation: 樹幹是莖，不是根；莖可以支撐植物，根則通常在土中固定植物並吸收水分。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 4
+- 'no': 5
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 如果要用觸摸的方式觀察物質，要先確認物質是安全的。
+  answer: true
+  explanation: 不明物質可能傷害皮膚，確認安全後才可以用手觸摸。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 5
+- 'no': 6
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 雌蕊包含可以發育成果實的部位，也會產生花粉。
+  answer: false
+  explanation: 雌蕊的子房可發育成果實；花粉由雄蕊產生。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 6
+- 'no': 7
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 使用玻棒攪拌時，要朝同一個方向輕輕的攪動。
+  answer: true
+  explanation: 朝同一方向輕輕攪拌，可幫助物質和水混合，也避免碰撞容器。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 7
+- 'no': 8
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 藤蔓植物可以用莖或其他特殊構造，攀爬在物體上。
+  answer: true
+  explanation: 藤蔓植物能利用莖或卷鬚等構造攀附物體。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 8
+- 'no': 9
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 絲瓜的雄花缺少雌蕊，所以是不完全花。
+  answer: true
+  explanation: 完全花具有花萼、花瓣、雄蕊和雌蕊；絲瓜雄花缺少雌蕊，所以是不完全花。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 9
+- 'no': 10
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 在蛤蜊湯加入食鹽後，湯的顏色會變成黃色的。
+  answer: false
+  explanation: 食鹽是白色的，溶解後不會把湯變成黃色。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 10
+- 'no': 11
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 記錄物質溶解的匙數時，每次溶解完一匙，才能劃一筆。
+  answer: true
+  explanation: 確認加入的一匙已完全溶解，再記錄一筆，才能正確計算已溶解的匙數。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 11
+- 'no': 12
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 善用再生家具，可以減少樹木砍伐，也是珍惜植物資源的做法。
+  answer: true
+  explanation: 再利用家具能減少對新木材的需求，有助於節省植物資源。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 12
+- 'no': 13
+  type: true-false
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 植物的果實被動物吃下後，就不能讓種子傳播出去了。
+  answer: false
+  explanation: 有些種子被動物吞下後，仍能隨排泄物散布到別處，因此吃果實也可能幫助傳播種子。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（一、是非題）
+    number: 13
+- 'no': 14
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 在「物質溶解」的實驗中，不需要準備下列哪一個器材？
+  options:
+  - 量筒
+  - 注射筒
+  - 燒杯
+  - 量匙
+  answer: 2
+  explanation: 量筒用來量水，燒杯用來盛裝水與物質，量匙用來取定量物質；這個實驗不需要注射筒。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 1
+- 'no': 15
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 落地生根的葉子特別厚，對它自己有什麼特殊功能？
+  options:
+  - 儲存水分
+  - 快速流失水分
+  - 幫助吸收陽光
+  - 減少吸收陽光
+  answer: 1
+  explanation: 厚厚的葉子可以儲存水分，幫助植物在缺水時維持生長。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 2
+- 'no': 16
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 樹胸圍是指離地面多高處的樹幹粗細？（公分）
+  options:
+  - '30'
+  - '60'
+  - '100'
+  - '130'
+  answer: 4
+  explanation: 量樹胸圍時，在距離地面約130公分的位置，測量樹幹一圈的長度。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 3
+- 'no': 17
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 下列哪一個做法可以讓沉澱在杯底的砂糖繼續溶解？
+  options:
+  - 減少水量
+  - 增加水量
+  - 再加砂糖
+  - 以上都可以
+  answer: 2
+  explanation: 水中已無法繼續溶解砂糖時，增加水量能讓杯底的砂糖有機會繼續溶解。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 4
+- 'no': 18
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 薄荷的葉子有特殊的氣味，對它自己有什麼特殊功能？
+  options:
+  - 防禦
+  - 吸引
+  - 清潔
+  - 消毒
+  answer: 1
+  explanation: 薄荷葉的特殊氣味具有防禦作用，可減少一些動物的取食。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 5
+- 'no': 19
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 下列哪一個水溫可以溶解的砂糖最多？
+  options:
+  - 15°C
+  - 30°C
+  - 45°C
+  - 60°C
+  answer: 4
+  explanation: 在水量相同等條件一致時，較高溫的水通常能溶解較多砂糖，四個選項中60°C最高。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 6
+- 'no': 20
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 花朵通常具有哪些可以吸引動物來幫忙傳播花粉的方式？
+  options:
+  - 有香氣
+  - 有花蜜
+  - 有鮮豔的花瓣
+  - 以上都是
+  answer: 4
+  explanation: 花香、花蜜和鮮豔花瓣都可能吸引動物來訪，進而幫助傳粉。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 7
+- 'no': 21
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 菩提葉有一條長長的尾尖，具有什麼特殊功能？
+  options:
+  - 幫助吸收陽光
+  - 減少吸收陽光
+  - 幫助排水
+  - 幫助吸水
+  image:
+    src: g3-science-midterm-2023/21.png
+    alt: 菩提葉的外形與長尾尖
+  answer: 3
+  explanation: 長長的葉尖可以幫助葉面上的水流走。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 8
+- 'no': 22
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 讀取量筒中的水量時，下列哪一個做法是正確的？
+  options:
+  - 圖①
+  - 圖②
+  - 圖③
+  image:
+    src: g3-science-midterm-2023/22.svg
+    alt: 三種讀取量筒水量時的視線位置，依序為選項一至三
+  answer: 1
+  explanation: 讀取水量時，眼睛的視線應與水面凹面的最低處同高，避免由上或由下斜看造成誤差。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 9
+- 'no': 23
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 下列哪一個是一平匙的鹽？
+  options:
+  - 圖①
+  - 圖②
+  - 圖③
+  image:
+    src: g3-science-midterm-2023/23.svg
+    alt: 三支盛鹽量不同的量匙，依序為選項一至三
+  answer: 2
+  explanation: 一平匙是物質表面與量匙邊緣齊平；圖①不足，圖③堆高，圖②才是一平匙。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（二、選擇題）
+    number: 10
+- 'no': 24
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 下圖是花的一些構造，填入正確的代號。甲．花瓣　乙．花萼　丙．雌蕊　丁．雄蕊。圖中右側括號由上到下依序填：___、___、___、___。
+  image:
+    src: g3-science-midterm-2023/24.svg
+    alt: 花的四個構造標示，右側四個括號由上到下對應四條指示線
+  answer:
+  - 甲
+  - 丁
+  - 丙
+  - 乙
+  explanation: 最上方指向花瓣；第二條線指向帶花藥的雄蕊；第三條線指向中央雌蕊；最下方指向花朵基部的花萼。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（七、花的構造）
+    number: 1
+- 'no': 25
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 下列植物的莖是哪一種類型？填入正確的代號。甲．草本莖　乙．藤本莖　丙．木本莖。白千層：___。
+  answer:
+  - 丙
+  explanation: 白千層的莖堅硬、木質化，屬於木本莖。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（八、莖的種類）
+    number: 1
+- 'no': 26
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 下列植物的莖是哪一種類型？填入正確的代號。甲．草本莖　乙．藤本莖　丙．木本莖。爬牆虎：___。
+  answer:
+  - 乙
+  explanation: 爬牆虎會攀附在牆面等物體上，屬於藤本莖。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（八、莖的種類）
+    number: 2
+- 'no': 27
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 下列植物的莖是哪一種類型？填入正確的代號。甲．草本莖　乙．藤本莖　丙．木本莖。昭和草：___。
+  answer:
+  - 甲
+  explanation: 昭和草的莖較柔軟，屬於草本莖。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（八、莖的種類）
+    number: 3
+- 'no': 28
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 植物與物質溶解
+  stem: 下圖是辣椒的一些身體部位，填入正確的代號。甲．根　乙．莖　丙．葉　丁．花　戊．果實　己．種子。左側括號由上到下填：___、___；右側括號由上到下填：___、___、___。
+  image:
+    src: g3-science-midterm-2023/28.svg
+    alt: 辣椒植株的五個部位標示：左側兩個括號及右側三個括號
+  answer:
+  - 戊
+  - 己
+  - 丁
+  - 丙
+  - 乙
+  explanation: 左上指向辣椒果實，左下放大圖指向果實裡的種子；右上指向花，中間指向葉，右下指向支撐植株的莖。甲「根」沒有對應的作答括號。
+  source:
+    originalPaper: 112學年度上學期三年級自然期中評量（九、辣椒的身體部位）
+    number: 1

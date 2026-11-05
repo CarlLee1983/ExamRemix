@@ -1,3 +1,6 @@
+import { buildQuestionIndex } from './question-index.ts';
+export { buildQuestionIndex } from './question-index.ts';
+import { assessScopes } from './exam-scope.ts';
 // 題庫檢查模組的跨檔規則：題目 ID 不可重複、附圖要存在、新題的衍生規則、試卷只能引用存在的題目、疑點（ADR 0003）。
 // 純函式，輸入是已通過 schema 的題庫檔與試卷檔，不讀檔、不依賴 Astro（ADR 0002）。
 import { effectiveDoubt, groupMembership } from './question-groups.ts';
@@ -19,18 +22,6 @@ export interface PaperInput {
 }
 
 const byFile = (a: { file: string }, b: { file: string }) => (a.file < b.file ? -1 : a.file > b.file ? 1 : 0);
-
-/** 題目 ID → 題目。ID 重複時留下第一個；重複本身由 checkBank 回報。 */
-export function buildQuestionIndex(banks: readonly Pick<BankInput, 'name' | 'data'>[]): Map<string, Question> {
-  const index = new Map<string, Question>();
-  for (const bank of banks) {
-    for (const question of bank.data.questions) {
-      const id = deriveQuestionId(bank.name, question.no);
-      if (!index.has(id)) index.set(id, question);
-    }
-  }
-  return index;
-}
 
 // 新題必須與原題一致的欄位；單元以「含沒有」比較
 const INHERITED_FIELDS = [
@@ -141,6 +132,11 @@ export function checkBank(input: {
         continue;
       }
       if (original.group.derivedFrom) report(`衍生自 ${group.derivedFrom}，但它也是新題組`);
+      if (original.group.image) report(`衍生自有圖片的題組 ${group.derivedFrom}`);
+      for (const no of original.group.members) {
+        const originalQuestion = index.get(deriveQuestionId(original.bankName, no));
+        if (originalQuestion && imageReferences(originalQuestion).length > 0) report(`的原題組成員 ${deriveQuestionId(original.bankName, no)} 有圖片`);
+      }
       if (original.group.doubt !== undefined) report(`衍生自的原題組 ${group.derivedFrom} 有疑點：${original.group.doubt}`);
       if (group.members.length !== original.group.members.length) report(`與原題組 ${group.derivedFrom} 的小題數不一致`);
       group.members.forEach((no, i) => {
@@ -176,6 +172,9 @@ export function checkBank(input: {
         }
         const doubt = effectiveDoubt(original, originalGroup);
         if (doubt !== undefined) report(`新題 ${id} 衍生自有疑點的原題 ${originalId}：${doubt}（請先解除原題的疑點，或改從其他原題衍生）`);
+        if (original.type === 'matching' && imageReferences(original).length > 0) {
+          report(`新題 ${id} 衍生自有圖片的配對原題 ${originalId}，目前不可由圖題衍生`);
+        }
         if (original.derivedFrom) report(`新題 ${id} 衍生自 ${originalId}，但它也是新題；新題只能衍生自原題`);
         const diff = mismatches(question, original, '新題', '原題');
         if (diff.length > 0) report(`新題 ${id} 與原題 ${originalId} 的${diff.join('、')}不一致`);
@@ -224,5 +223,6 @@ export function checkBank(input: {
     }
   }
 
+  problems.push(...assessScopes(banks, papers).problems);
   return problems;
 }

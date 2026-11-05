@@ -8,7 +8,9 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "dev:data": "EXAMREMIX_DATA_DIR=data astro dev",
     "build": "astro build",
+    "build:deploy": "EXAMREMIX_DATA_DIR=data pnpm check:bank && EXAMREMIX_DATA_DIR=data astro build",
     "preview": "astro preview",
     "check": "astro check",
     "check:bank": "node scripts/check-bank.ts",

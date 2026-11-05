@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班上透過共同討論和選舉安排幹部，讓同學參與班務，是班級自治的表現。
+    answer: true
+    explanation: 班級自治重視同學共同參與與處理班務。
+    derivedFrom:
+      - g3-social-midterm-2025-02-14
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班級自治就是所有班務都由老師單方面決定，同學只要保持沉默。
+    answer: false
+    explanation: 班級自治包含同學表達意見及參與班務。
+    derivedFrom:
+      - g3-social-midterm-2025-02-14
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 選出班級幹部後，同學仍可共同討論班上的需要。
+    answer: true
+    explanation: 自治不是只交給幹部，其他同學也要參與。
+    derivedFrom:
+      - g3-social-midterm-2025-02-14
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只有老師指定的同學才能關心班務，其他人不能提出建議，這就是班級自治。
+    answer: false
+    explanation: 同學應有參與班務及提出建議的機會。
+    derivedFrom:
+      - g3-social-midterm-2025-02-14
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班級討論如何分配公共工作，同學提出想法並一起作決定，可以學習自治。
+    answer: true
+    explanation: 共同討論與處理班務，是自治的實踐。
+    derivedFrom:
+      - g3-social-midterm-2025-02-14
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 選幹部時，老師完全不讓同學參與，只挑自己喜歡的人，就是學生自治。
+    answer: false
+    explanation: 學生自治重視學生參與，不能以老師單獨指定取代。
+    derivedFrom:
+      - g3-social-midterm-2025-02-14
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 同學主動參與班級會議，關心共同事務，有助落實班級自治。
+    answer: true
+    explanation: 自治需要學生實際參與公共事務。
+    derivedFrom:
+      - g3-social-midterm-2025-02-14
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班級自治表示選出班長後，全班所有人的意見都不必再考慮。
+    answer: false
+    explanation: 幹部服務班級，仍應重視全班的意見。
+    derivedFrom:
+      - g3-social-midterm-2025-02-14
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班務討論時，老師可以引導同學思考，再讓大家練習共同處理問題。
+    answer: true
+    explanation: 老師引導、學生參與，有助學習班級自治。
+    derivedFrom:
+      - g3-social-midterm-2025-02-14

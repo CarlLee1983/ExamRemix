@@ -1,0 +1,100 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: cat ___
+    answer:
+      - CAT
+    explanation: 依題意將小寫轉為大寫，保留字母順序：cat → CAT。
+    derivedFrom:
+      - original-english-01
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: dog ___
+    answer:
+      - DOG
+    explanation: 依題意將小寫轉為大寫，保留字母順序：dog → DOG。
+    derivedFrom:
+      - original-english-01
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: fan ___
+    answer:
+      - FAN
+    explanation: 依題意將小寫轉為大寫，保留字母順序：fan → FAN。
+    derivedFrom:
+      - original-english-01
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: hat ___
+    answer:
+      - HAT
+    explanation: 依題意將小寫轉為大寫，保留字母順序：hat → HAT。
+    derivedFrom:
+      - original-english-01
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: jam ___
+    answer:
+      - JAM
+    explanation: 依題意將小寫轉為大寫，保留字母順序：jam → JAM。
+    derivedFrom:
+      - original-english-01
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: key ___
+    answer:
+      - KEY
+    explanation: 依題意將小寫轉為大寫，保留字母順序：key → KEY。
+    derivedFrom:
+      - original-english-01
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: leg ___
+    answer:
+      - LEG
+    explanation: 依題意將小寫轉為大寫，保留字母順序：leg → LEG。
+    derivedFrom:
+      - original-english-01
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: map ___
+    answer:
+      - MAP
+    explanation: 依題意將小寫轉為大寫，保留字母順序：map → MAP。
+    derivedFrom:
+      - original-english-01
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: net ___
+    answer:
+      - NET
+    explanation: 依題意將小寫轉為大寫，保留字母順序：net → NET。
+    derivedFrom:
+      - original-english-01

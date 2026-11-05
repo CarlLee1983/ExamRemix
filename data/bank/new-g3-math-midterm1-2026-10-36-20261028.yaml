@@ -1,0 +1,81 @@
+questions:
+  - no: 1
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一條紙帶做書籤用掉 8 公分 7 毫米後，還剩下 26 毫米。這條紙帶原來長幾公分幾毫米？
+    answer: 這條紙帶原來長 11 公分 3 毫米。
+    explanation: 8 公分 7 毫米 = 87 毫米。用掉的加剩下的：$87 + 26 = 113$ 毫米，也就是 11 公分 3 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-36
+  - no: 2
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一條棉線縫布偶用掉 15 公分 6 毫米後，還剩下 38 毫米。這條棉線原來長幾公分幾毫米？
+    answer: 這條棉線原來長 19 公分 4 毫米。
+    explanation: 15 公分 6 毫米 = 156 毫米。用掉的加剩下的：$156 + 38 = 194$ 毫米，也就是 19 公分 4 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-36
+  - no: 3
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一根細鐵絲彎模型用掉 23 公分 8 毫米後，還剩下 47 毫米。這根細鐵絲原來長幾公分幾毫米？
+    answer: 這根細鐵絲原來長 28 公分 5 毫米。
+    explanation: 23 公分 8 毫米 = 238 毫米。用掉的加剩下的：$238 + 47 = 285$ 毫米，也就是 28 公分 5 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-36
+  - no: 4
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一條皮繩編手環用掉 17 公分 9 毫米後，還剩下 35 毫米。這條皮繩原來長幾公分幾毫米？
+    answer: 這條皮繩原來長 21 公分 4 毫米。
+    explanation: 17 公分 9 毫米 = 179 毫米。用掉的加剩下的：$179 + 35 = 214$ 毫米，也就是 21 公分 4 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-36
+  - no: 5
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一條蕾絲帶裝飾卡片用掉 11 公分 4 毫米後，還剩下 29 毫米。這條蕾絲帶原來長幾公分幾毫米？
+    answer: 這條蕾絲帶原來長 14 公分 3 毫米。
+    explanation: 11 公分 4 毫米 = 114 毫米。用掉的加剩下的：$114 + 29 = 143$ 毫米，也就是 14 公分 3 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-36
+  - no: 6
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一條塑膠線串珠用掉 26 公分 5 毫米後，還剩下 56 毫米。這條塑膠線原來長幾公分幾毫米？
+    answer: 這條塑膠線原來長 32 公分 1 毫米。
+    explanation: 26 公分 5 毫米 = 265 毫米。用掉的加剩下的：$265 + 56 = 321$ 毫米，也就是 32 公分 1 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-36
+  - no: 7
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一條鋁箔帶包模型用掉 19 公分 3 毫米後，還剩下 48 毫米。這條鋁箔帶原來長幾公分幾毫米？
+    answer: 這條鋁箔帶原來長 24 公分 1 毫米。
+    explanation: 19 公分 3 毫米 = 193 毫米。用掉的加剩下的：$193 + 48 = 241$ 毫米，也就是 24 公分 1 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-36
+  - no: 8
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 公分與毫米
+    stem: 一條毛線做吊飾用掉 32 公分 7 毫米後，還剩下 65 毫米。這條毛線原來長幾公分幾毫米？
+    answer: 這條毛線原來長 39 公分 2 毫米。
+    explanation: 32 公分 7 毫米 = 327 毫米。用掉的加剩下的：$327 + 65 = 392$ 毫米，也就是 39 公分 2 毫米。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-36

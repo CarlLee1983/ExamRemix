@@ -1,0 +1,73 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班上兩件外套款式相同，在自己的外套內側標上姓名，可以幫助分辨主人。
+    answer: true
+    explanation: 姓名標記有助辨認外觀相同物品的歸屬。
+    derivedFrom:
+      - g3-social-midterm-2025-02-04
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 美勞袋上已經寫有主人的姓名，歸還時完全不用看姓名就能保證不會還錯。
+    answer: false
+    explanation: 歸還物品仍應核對姓名，避免交錯。
+    derivedFrom:
+      - g3-social-midterm-2025-02-04
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 老師要把全班的聯絡簿發還，查看封面姓名可以知道要交給誰。
+    answer: true
+    explanation: 姓名可用來辨識物品的主人。
+    derivedFrom:
+      - g3-social-midterm-2025-02-04
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只要全班都買同一款鉛筆盒，就不需要任何標記也一定分得出各自的鉛筆盒。
+    answer: false
+    explanation: 相同外觀容易混淆，可加姓名等標記。
+    derivedFrom:
+      - g3-social-midterm-2025-02-04
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小豪在自己的雨衣標籤上寫名字，方便下雨天收取時辨認。
+    answer: true
+    explanation: 姓名能幫助確認物品歸屬。
+    derivedFrom:
+      - g3-social-midterm-2025-02-04
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 把別人的習作封面姓名擦掉，再寫上自己的名字，是辨識自己物品的好方法。
+    answer: false
+    explanation: 應在自己的物品做記號，不能改寫別人物品的姓名。
+    derivedFrom:
+      - g3-social-midterm-2025-02-04
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 帶自己的跳繩到學校時，附上姓名標籤能減少和同學拿錯的情形。
+    answer: true
+    explanation: 加上姓名可協助分辨個人物品。
+    derivedFrom:
+      - g3-social-midterm-2025-02-04
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 找到一支標有「王小文」的直笛，只因為我也喜歡這種顏色，就能認定它是我的。
+    answer: false
+    explanation: 應依姓名等資訊確認主人，不能只憑喜好認領。
+    derivedFrom:
+      - g3-social-midterm-2025-02-04

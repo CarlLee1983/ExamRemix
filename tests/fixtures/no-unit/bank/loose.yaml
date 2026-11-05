@@ -9,6 +9,9 @@ questions:
     source:
       originalPaper: 虛構小考
       number: 1
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 2
     type: true-false
     subject: 數學
@@ -20,3 +23,6 @@ questions:
     source:
       originalPaper: 虛構小考
       number: 2
+    examScope:
+      semester: 1
+      stage: midterm

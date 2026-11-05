@@ -1,0 +1,595 @@
+# 來源：本機原卷 114-1-yongan-g3-chinese-midterm.pdf，共2頁。
+# 考試分類：國語、三上期中。此為考試範圍，非課程單元，故省略unit。
+# 原卷沒有官方答案；答案為獨立解題，造詞、短語、造句為範例答案。
+# 第一大題無小題號，按右欄上至下、再左欄上至下，共7組詞9空整理為01–07。
+# 頁1：一→01–07；二1–8→08–15；三1–4→16–19；四1–7→20–26；五→27；六1–4→28–31。
+# 頁2：六5–6→32–33；七1–5→34–38；八1–4→39–42；九1–2→43–44。
+# 未匯入：第2頁七6，附短文的段落排序閱讀題，專案不支援該題型。無需未附課文的其他題。
+# 完全重複：逐題比對既有 g3-chinese-midterm-2025.yaml 的21題，0題完全重複。
+# 附圖0張：原卷沒有需裁切的解題插圖；第一大題的作答表格以完整詞組填空保留。
+# 附加提示語僅用來還原作答方式；保留原印錯字、選字池、選項、原文中的「的」等用法。
+# 六1僅印①欺，其他代號漏印，保留原列且以doubt註明推定答案。
+# 字音及部首核驗：教育部字典（2026-10-28），非官方答案：
+# 黏 https://dict.mini.moe.edu.tw/SearchIndex/word_detail?dictSearchField=%E9%BB%8F&wordID=D0004128
+# 綁 https://dict.mini.moe.edu.tw/SearchIndex/word_detail?dictSearchField=%E7%B6%81&wordID=D0003310
+# 章 https://dict.mini.moe.edu.tw/SearchIndex/word_detail?dictSearchField=%E7%AB%A0&wordID=D0002965
+# 準 https://dict.variants.moe.edu.tw/dictView.jsp?ID=24610&powerMode=2
+# 平 https://dict.mini.moe.edu.tw/SearchIndex/word_detail?dictSearchField=%E5%B9%B3&wordID=D0004259
+# 答應 https://dict.concised.moe.edu.tw/dictView.jsp?ID=6711
+# 露出 https://dict.concised.moe.edu.tw/dictView.jsp?ID=13712
+# 露一手 https://dict.concised.moe.edu.tw/searchR.jsp?ID=-1&ID=173&ID=8&word=%E9%9C%B2
+# 應付 https://dict.concised.moe.edu.tw/dictView.jsp?ID=42578
+# 鬆 https://dict.mini.moe.edu.tw/SearchIndex/word_detail?wordID=D0002476
+# 字 https://dict.mini.moe.edu.tw/SearchIndex/word_detail?wordID=D0002284&dictSearchField=%E5%AD%97
+# 滴滴答答 https://dict.concised.moe.edu.tw/dictView.jsp?ID=8294
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：[富|ㄈㄨˋ]___（ㄍㄨㄟˋ）。
+    answer:
+      - 貴
+    explanation: 富貴指有錢且地位高，ㄍㄨㄟˋ寫作「貴」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 一、國字注音：9%
+  - no: 2
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄓˇ）[條|ㄊㄧㄠˊ]。
+    answer:
+      - 紙
+    explanation: 紙條是細長的紙片，ㄓˇ寫作「紙」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 一、國字注音：9%
+  - no: 3
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「黏」的注音：黏（注音：___）[土|ㄊㄨˇ]。
+    answer:
+      - ㄋㄧㄢˊ
+    explanation: 黏土的「黏」讀ㄋㄧㄢˊ，指有黏性的。已核對教育部國語小字典。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 一、國字注音：9%
+  - no: 4
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依序寫出注音：鬆（注音：___）綁（注音：___）。
+    answer:
+      - ㄙㄨㄥ
+      - ㄅㄤˇ
+    explanation: 鬆綁是解開綁住的繩索。鬆讀ㄙㄨㄥ，綁讀ㄅㄤˇ。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 一、國字注音：9%
+  - no: 5
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：[停|ㄊㄧㄥˊ]___（ㄌㄧㄡˊ）。
+    answer:
+      - 留
+    explanation: 停留指暫時留在某處，ㄌㄧㄡˊ寫作「留」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 一、國字注音：9%
+  - no: 6
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：[商|ㄕㄤ]___（ㄉㄧㄢˋ）。
+    answer:
+      - 店
+    explanation: 商店是販賣商品的店鋪，ㄉㄧㄢˋ寫作「店」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 一、國字注音：9%
+  - no: 7
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：___（ㄐㄧˋ）___（ㄉㄨˋ）。
+    answer:
+      - 季
+      - 度
+    explanation: "本題只提供注音，答案不唯一。範例答案為「季度」；「忌妒」也符合注音，兩組皆可接受，兩字須組成完整詞語。"
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 一、國字注音：9%
+  - no: 8
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的錯字，按出現順序填寫正確的字：___、___、___。曉華及忙衝出門口，狀到了爺爺，幸好他伏著欄杆才沒摔倒。
+    answer:
+      - 急
+      - 撞
+      - 扶
+    explanation: 「急忙」表示匆忙；碰到人是「撞到」；用手支持身體是「扶著」。依序將及、狀、伏改成急、撞、扶。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 二、改錯字：14%
+      number: 1
+  - no: 9
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的錯字，按出現順序填寫正確的字：___、___。尤於天候不佳，尸外教育活動決定延期舉辦。
+    answer:
+      - 由
+      - 戶
+    explanation: 表示原因應用「由於」；在室外舉辦的活動是「戶外教育」。尤改由，尸改戶。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 二、改錯字：14%
+      number: 2
+  - no: 10
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的錯字，按出現順序填寫正確的字：___、___。上課要嫥心，才能有收獲。
+    answer:
+      - 專
+      - 穫
+    explanation: 上課要「專心」；此處指學習所得，應用「收穫」。嫥改專，獲改穫。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 二、改錯字：14%
+      number: 3
+  - no: 11
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的錯字，按出現順序填寫正確的字：___、___。東北角海按的風景優美，非常謎人。
+    answer:
+      - 岸
+      - 迷
+    explanation: 海邊的陸地是「海岸」；令人陶醉是「迷人」。按改岸，謎改迷。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 二、改錯字：14%
+      number: 4
+  - no: 12
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的錯字，按出現順序填寫正確的字：___、___。獵人用弓躲出一箭，剌傷了老虎。
+    answer:
+      - 射
+      - 刺
+    explanation: 弓箭是「射出」的；以尖物傷到是「刺傷」。躲改射，剌改刺，注意剌與刺的字形不同。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 二、改錯字：14%
+      number: 5
+  - no: 13
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的錯字，按出現順序填寫正確的字：___。想學好乘法，一定要背熟九九乘法口決。
+    answer:
+      - 訣
+    explanation: 方便記憶的語句是「口訣」，決應改訣。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 二、改錯字：14%
+      number: 6
+  - no: 14
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的錯字，按出現順序填寫正確的字：___。爸爸心情很不好，一直在探氣。
+    answer:
+      - 嘆
+    explanation: 因憂愁而呼氣是「嘆氣」，探應改嘆。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 二、改錯字：14%
+      number: 7
+  - no: 15
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的錯字，按出現順序填寫正確的字：___。感冒病讀入侵身體，讓我感到很不舒服。
+    answer:
+      - 毒
+    explanation: 引起感染的是「病毒」，讀應改毒。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 二、改錯字：14%
+      number: 8
+  - no: 16
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。章：___部；造詞：___。
+    answer:
+      - 音
+      - 文章
+    explanation: 「章」屬音部；造詞範例為「文章」。部首已核對教育部字典，其他包含指定字且詞義正確的詞語也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 三、寫出部首再造詞：8%
+      number: 1
+  - no: 17
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。準：___部；造詞：___。
+    answer:
+      - 水
+      - 準備
+    explanation: 「準」屬水部；造詞範例為「準備」。部首已核對教育部字典，其他包含指定字且詞義正確的詞語也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 三、寫出部首再造詞：8%
+      number: 2
+  - no: 18
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。平：___部；造詞：___。
+    answer:
+      - 干
+      - 平安
+    explanation: 「平」屬干部；造詞範例為「平安」。部首已核對教育部字典，其他包含指定字且詞義正確的詞語也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 三、寫出部首再造詞：8%
+      number: 3
+  - no: 19
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出部首再造詞。字：___部；造詞：___。
+    answer:
+      - 子
+      - 字體
+    explanation: 「字」屬子部；造詞範例為「字體」。部首已核對教育部國語小字典，其他包含指定字且詞義正確的詞語也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 三、寫出部首再造詞：8%
+      number: 4
+  - no: 20
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我一直想不出這道選擇題的答___（案／暗），沒想到___（歪／外）打正著，後來被我猜對了。
+    answer:
+      - 案
+      - 歪
+    explanation: 正確詞語是「答案」、「歪打正著」，後者指無意中碰巧做對。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 四、圈圈看：14%
+      number: 1
+  - no: 21
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。放在商店玻璃櫥___（囪／窗）裡的雨___（傘／余）價格都不便宜呀！
+    answer:
+      - 窗
+      - 傘
+    explanation: 展示商品的地方是「櫥窗」；遮雨用具是「雨傘」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 四、圈圈看：14%
+      number: 2
+  - no: 22
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。飛機高空遇到___（亂／辭）流，機身___（晃／恍）動得很厲害，乘客們都嚇出一身冷汗。
+    answer:
+      - 亂
+      - 晃
+    explanation: 氣流不穩是「亂流」；機身搖動是「晃動」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 四、圈圈看：14%
+      number: 3
+  - no: 23
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。看你一___（副／幅）欲言又止的樣子，想必是遇到了難___（開／關）。
+    answer:
+      - 副
+      - 關
+    explanation: 形容人的表情、樣貌用「一副」；困難的關口是「難關」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 四、圈圈看：14%
+      number: 4
+  - no: 24
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。停電了，___（伯／怕）黑的妹妹一直___（摸／漠）著我的手。
+    answer:
+      - 怕
+      - 摸
+    explanation: 害怕黑暗是「怕黑」；用手接觸是「摸著」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 四、圈圈看：14%
+      number: 5
+  - no: 25
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。爸爸___（遇／偶）到事情能臨___（微／危）不亂，冷靜處理。
+    answer:
+      - 遇
+      - 危
+    explanation: 碰到事情是「遇到」；面對危險仍不慌亂是「臨危不亂」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 四、圈圈看：14%
+      number: 6
+  - no: 26
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字（將所選的字依序填入空格）。我和朋友___（總／聰）會___（立／利）用下課時間一起打籃球。
+    answer:
+      - 總
+      - 利
+    explanation: 「總會」表示常常會；把時間用來做事是「利用」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 四、圈圈看：14%
+      number: 7
+  - no: 27
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①應該、②必定、③通通、④傷害、⑤感動、⑥愛護選出意思相反的詞語，填代號。「部分」完成：___；「欺負」弱小：___；「未必」成功：___；「不該」提醒：___。
+    answer:
+      - ③
+      - ⑥
+      - ②
+      - ①
+    explanation: 部分與通通相反；欺負與愛護相反；未必與必定相反；不該與應該相反。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 五、選詞填寫，寫出意思「相反」的詞語：4%（填代號）
+  - no: 28
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 選用適合的字，填代號。①欺　②期　③局　④居。詐騙集團___心不良，用不正當的手段___騙他人錢財，真是可惡！
+    answer:
+      - ④
+      - ①
+    explanation: "應填「居心不良」、「欺騙」，依序為④、①。原卷只印①欺；同大題其他題目按排列順序編號，故依原順序補上②期、③局、④居。"
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 六、填入適合的字或詞：15%
+      number: 1
+  - no: 29
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①努、②怒、③乾、④朝選出適合的字，填代號。___力練習；早晨的___會時間。
+    answer:
+      - ①
+      - ④
+    explanation: 「努力」使用努；早晨集會是「朝會」，朝讀ㄓㄠ。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 六、填入適合的字或詞：15%
+      number: 2
+  - no: 30
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①失、②夫、③天、④矢選出適合的字，填代號。農___丟___了鋤頭，一直都沒找到，___望的坐在路邊，望著___空發呆。路過的人安慰他說：「不要難過，我正好多一把，可以借給你。」
+    answer:
+      - ②
+      - ①
+      - ①
+      - ③
+    explanation: 依序組成「農夫」、「丟失」、「失望」、「天空」。題目沒有規定代號不可重複，因此兩處都填①。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 六、填入適合的字或詞：15%
+      number: 3
+  - no: 31
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①科、②料、③抖、④枓選出適合的字，填代號。自然___學是一門深奧的學問，以拉[扯|ㄔㄜˇ][彈|ㄊㄢˊ][簧|ㄏㄨㄤˊ]產生___動為例，從不同物質材___產生不同波動現象，都有學不完的事物。
+    answer:
+      - ①
+      - ③
+      - ②
+    explanation: 依序組成「科學」、「抖動」、「材料」。注意選項的科、料、抖、枓字形相近，但意思不同。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 六、填入適合的字或詞：15%
+      number: 4
+  - no: 32
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①緊密、②緊張、③趕緊選出適合的詞語，填代號。比賽的時間就快到了，我們___準備吧！這場朗讀比賽，他準備得很充分，一點兒都不___。
+    answer:
+      - ③
+      - ②
+    explanation: 時間快到了，要「趕緊」準備；準備充分，所以不「緊張」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 六、填入適合的字或詞：15%
+      number: 5
+  - no: 33
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①不懷好意、②好聲好氣選出適合的詞語，填代號。媽媽___的勸導弟弟飲食要均衡，才會有健康的身體。明華___的對他笑了笑，心裡想著如何才能不聲不響的搶走他的東西。
+    answer:
+      - ②
+      - ①
+    explanation: 溫和勸導是「好聲好氣」；表面微笑卻打算搶走東西，是「不懷好意」。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 六、填入適合的字或詞：15%
+      number: 6
+  - no: 34
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 下列哪一個「答」，和「答」案的「答」讀音相同？
+    options:
+      - 這個問題請你回「答」。
+      - 這個寒假，爸爸「答」應要帶我去臺南玩。
+      - 我的水壺摔破了一個洞，滴滴「答答」的漏水了。
+      - 溼「答答」的雨傘不要放在沙發上。
+    answer: 1
+    explanation: 「答案」、「回答」的答讀ㄉㄚˊ；「答應」、擬聲的「滴滴答答」及「溼答答」的答讀ㄉㄚ。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 七、選擇題：6%
+      number: 1
+  - no: 35
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 哪個選項的注音與「露出」的「露」相同？
+    options:
+      - 吐「露」
+      - 「露」珠
+      - 「露」天
+      - 「露」一手
+    answer: 4
+    explanation: 教育部國語辭典中，「露出」、「露一手」的露讀ㄌㄡˋ；吐露、露珠、露天的露讀ㄌㄨˋ。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 七、選擇題：6%
+      number: 2
+  - no: 36
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 「做每件事情都要認真負責，不要隨便『應』付。」句中的「應」，和下列哪個選項「」中的字音相同？
+    options:
+      - 「應」當
+      - 「應」該
+      - 「應」用
+      - 「應」有盡有
+    answer: 3
+    explanation: 句中的「應付」是敷衍處理，應讀ㄧㄥˋ，和「應用」相同。「應當」、「應該」、「應有盡有」的應讀ㄧㄥ。此處不是「應付帳款」的ㄧㄥ。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 七、選擇題：6%
+      number: 3
+  - no: 37
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 「有大家的陪伴，真好□」空格中應該填入哪個標點符號？
+    options:
+      - 。
+      - ！
+      - 、
+      - ；
+    answer: 2
+    explanation: 若以強烈喜悅的語氣讚嘆，「真好」後可用驚嘆號；若以平緩語氣陳述，用句號也能成句。此處按感嘆語氣選②。
+    doubt: "句號①與驚嘆號②都能形成自然完整的句子；原題未限定語氣，無法判定唯一正確選項。"
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 七、選擇題：6%
+      number: 4
+  - no: 38
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 「今天有體育課，我忘記穿運動服，這下□怎麼辦？」空格中應該填入哪個字？
+    options:
+      - 會
+      - 該
+      - 是
+      - 但
+    answer: 2
+    explanation: 「該怎麼辦」表示面對情況時，不知道應當如何處理。其餘選項放入此處不合句意。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 七、選擇題：6%
+      number: 5
+  - no: 39
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫短語。
+    example: （拿出）最（好）的（表現）
+    answer: （發出）最（亮）的（光芒）
+    explanation: 範例答案：用動作、形容詞和名詞組成短語，保留「最……的……」結構。其他符合結構且語意通順的答案也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 八、照樣寫短語：24%
+      number: 1
+  - no: 40
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫短語。
+    example: （細雨）（灑）（輕舟）
+    answer: （微風）（吹）（樹梢）
+    explanation: 範例答案：依照「景物＋動作＋對象」的結構寫短語，詞語搭配須合理。其他符合結構且語意通順的答案也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 八、照樣寫短語：24%
+      number: 2
+  - no: 41
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫短語。
+    example: （大魚）（輕輕）（擺動）（尾巴）。
+    answer: （小鳥）（慢慢）（張開）（翅膀）。
+    explanation: 範例答案：依照「主體＋疊字副詞＋動作＋身體部位」的結構仿寫，詞語搭配須合理。其他符合結構且語意通順的答案也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 八、照樣寫短語：24%
+      number: 3
+  - no: 42
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫短語。
+    example: 雖然（他看著黑板），可是（怎麼也找不到題目）。
+    answer: 雖然（雨下得很大），可是（他還是準時到校）。
+    explanation: 範例答案：保留「雖然……可是……」的轉折關係，前後句意須合理。其他符合結構且語意通順的答案也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 八、照樣寫短語：24%
+      number: 4
+  - no: 43
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「由於……因此……」造句。
+    answer: 由於今天下大雨，因此運動會延期舉行。
+    explanation: 範例句先用「由於」說明原因，再用「因此」說明結果。其他符合因果關係、語意完整的句子也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 九、造句：6%
+      number: 1
+  - no: 44
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 用「一……就……」造句。
+    answer: 我一回到家，就開始寫功課。
+    explanation: 範例句用「一……就……」表示前一件事發生後，隨即進行後一件事。其他合理、完整的句子也可接受。
+    source:
+      originalPaper: 114學年度上學期三年級國語文領域期中評量試卷
+      section: 九、造句：6%
+      number: 2

@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 照樣寫「景物＋動作＋對象」的短語。請改用一種不同的天氣景物，不要使用例句的「雪花」或原題的「細雨」。
+    example: （雪花）（落滿）（屋頂）
+    answer: （陽光）（照亮）（山坡）
+    explanation: 範例以陽光為景物、照亮為動作、山坡為對象。其他更換景物、符合三部分結構且搭配合理的短語也可接受；不是唯一答案。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-40

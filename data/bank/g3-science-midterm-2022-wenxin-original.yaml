@@ -1,0 +1,29 @@
+# 原卷來源：https://www.maiyajiaoan.com/wiki/25407.html（麥芽教案公開預覽，第三方轉載，非校方原件）
+# page.html SHA-256: 92f3fbd818f4002a937035f8ef19e18a062fe8955259af8c667d43e996e61675
+# full-page.png SHA-256: 74886901e80708d00379eaba31f4f3950b713e158a49e029a18912e646c95cee
+# 隔離候選題庫：只收 可用題；HOLD / HOLD_NEAR 題見 ../../REPORT.md。無官方答案，答案皆依原題獨立推核。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 生物與非生物
+    stem: "非生物沒有生命，不需要特別保護。"
+    answer: false
+    explanation: "非生物雖然沒有生命，但水、土壤、空氣等是生物生存的環境，仍然需要愛護、保護。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "111學年度第1學期臺中市北屯區文心國小三年級自然科學領域第一次定期評量試卷"
+      section: "一、是非題：正確的寫○，錯誤的打×。（每題2分，共34分）"
+      number: 1
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: "我們可以藉由物體形狀改變的程度來判斷物體受力的大小。"
+    answer: true
+    explanation: "物體受力後形狀改變，受力越大，形狀改變的程度通常越大，因此可以從形狀改變的程度判斷力的大小。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "111學年度第1學期臺中市北屯區文心國小三年級自然科學領域第一次定期評量試卷"
+      section: "一、是非題：正確的寫○，錯誤的打×。（每題2分，共34分）"
+      number: 17

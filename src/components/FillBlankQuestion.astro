@@ -17,9 +17,10 @@ interface Props {
 const { number, question } = Astro.props;
 const space = answerSpace(question);
 const parts = splitStem(question.stem);
+const fourLine = question.writingGuide === 'four-line';
 ---
 
-<div class="question question-fill-blank" data-question-type="fill-blank">
+<div class:list={['question', 'question-fill-blank', { 'question-four-line': fourLine }]} data-question-type="fill-blank">
   <p class="stem">
     {/* 空格與前後文字之間不留空白字元，答案卷切換時底線位置才不會動 */}
     <span class="number" lang="zh-Hant-TW">{number}.</span>
@@ -28,7 +29,10 @@ const parts = splitStem(question.stem);
         <>
           <RichText text={part} />
           {i < question.answer.length && (
-            <span class="blank" style={`--blank-width: ${answerBlankWidthEm(question.answer[i]!, questionLanguage(question.subject))}em`}><span class="blank-answer"><RichText text={question.answer[i]!} /></span></span>
+            <span class:list={['blank', { 'blank-four-line': fourLine }]} style={`--blank-width: ${fourLine ? Math.max(2, question.answer[i]!.length * 1.75 + 0.25) : answerBlankWidthEm(question.answer[i]!, questionLanguage(question.subject))}em;${fourLine ? `--writing-font-cap: ${100 / (question.answer[i]!.length * 1.1)}cqw` : ''}`}>
+              {fourLine && <span class="writing-guide" aria-hidden="true"><span></span><span></span><span></span><span></span></span>}
+              <span class="blank-answer"><RichText text={question.answer[i]!} /></span>
+            </span>
           )}
         </>
       ))

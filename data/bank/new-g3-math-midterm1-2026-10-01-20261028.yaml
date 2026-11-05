@@ -1,0 +1,465 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：698 × 3 大約是多少？
+    options:
+      - "1800"
+      - "2400"
+      - "2100"
+      - "2700"
+    answer: 3
+    explanation: 698 約為 700，700 × 3＝2100。驗算：2100÷3＝700。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-01
+  - no: 2
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：503 × 7 大約是多少？
+    options:
+      - "4200"
+      - "2800"
+      - "3500"
+      - "4900"
+    answer: 3
+    explanation: 503 約為 500，500 × 7＝3500。驗算：3500÷7＝500。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-01
+  - no: 3
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：897 × 5 大約是多少？
+    options:
+      - "5500"
+      - "5000"
+      - "4500"
+      - "4000"
+    answer: 3
+    explanation: 897 約為 900，900 × 5＝4500。驗算：4500÷5＝900。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-01
+  - no: 4
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：602 × 8 大約是多少？
+    options:
+      - "4800"
+      - "4000"
+      - "6400"
+      - "5600"
+    answer: 1
+    explanation: 602 約為 600，600 × 8＝4800。驗算：4800÷8＝600。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-01
+  - no: 5
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：798 × 4 大約是多少？
+    options:
+      - "2800"
+      - "3200"
+      - "4000"
+      - "3600"
+    answer: 2
+    explanation: 798 約為 800，800 × 4＝3200。驗算：3200÷4＝800。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-01
+  - no: 6
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：301 × 9 大約是多少？
+    options:
+      - "2700"
+      - "3600"
+      - "1800"
+      - "4500"
+    answer: 1
+    explanation: 301 約為 300，300 × 9＝2700。驗算：2700÷9＝300。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-01
+  - no: 7
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：998 × 6 大約是多少？
+    options:
+      - "7200"
+      - "5400"
+      - "6600"
+      - "6000"
+    answer: 4
+    explanation: 998 約為 1000，1000 × 6＝6000。驗算：6000÷6＝1000。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-01
+  - no: 8
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：197 × 7 大約是多少？
+    options:
+      - "2100"
+      - "700"
+      - "1400"
+      - "2800"
+    answer: 3
+    explanation: 197 約為 200，200 × 7＝1400。驗算：1400÷7＝200。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-01
+  - no: 9
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 一本筆記本 28 元，買 6 本筆記本，一共要付多少元？
+    options:
+      - "168"
+      - "34"
+      - "158"
+      - "178"
+    answer: 1
+    explanation: 28×6＝168，共付 168 元。用 28＋28＋28＋28＋28＋28＝168 驗算。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-07
+  - no: 10
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 一包黏土 46 元，買 3 包黏土，一共要付多少元？
+    options:
+      - "49"
+      - "128"
+      - "138"
+      - "148"
+    answer: 3
+    explanation: 46×3＝138，共付 138 元。用 46＋46＋46＝138 驗算。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-07
+  - no: 11
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 一盒彩色筆 68 元，買 4 盒彩色筆，一共要付多少元？
+    options:
+      - "72"
+      - "262"
+      - "272"
+      - "282"
+    answer: 3
+    explanation: 68×4＝272，共付 272 元。用 68＋68＋68＋68＝272 驗算。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-07
+  - no: 12
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 一個麵包 32 元，買 7 個麵包，一共要付多少元？
+    options:
+      - "234"
+      - "224"
+      - "39"
+      - "214"
+    answer: 2
+    explanation: 32×7＝224，共付 224 元。用 32＋32＋32＋32＋32＋32＋32＝224 驗算。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-07
+  - no: 13
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 一份飯糰 45 元，買 5 份飯糰，一共要付多少元？
+    options:
+      - "225"
+      - "215"
+      - "235"
+      - "50"
+    answer: 1
+    explanation: 45×5＝225，共付 225 元。用 45＋45＋45＋45＋45＝225 驗算。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-07
+  - no: 14
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 一個資料夾 24 元，買 8 個資料夾，一共要付多少元？
+    options:
+      - "182"
+      - "32"
+      - "202"
+      - "192"
+    answer: 4
+    explanation: 24×8＝192，共付 192 元。用 24＋24＋24＋24＋24＋24＋24＋24＝192 驗算。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-07
+  - no: 15
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 一盒餅乾 76 元，買 3 盒餅乾，一共要付多少元？
+    options:
+      - "238"
+      - "79"
+      - "218"
+      - "228"
+    answer: 4
+    explanation: 76×3＝228，共付 228 元。用 76＋76＋76＝228 驗算。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-07
+  - no: 16
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 一條毛巾 58 元，買 6 條毛巾，一共要付多少元？
+    options:
+      - "338"
+      - "348"
+      - "64"
+      - "358"
+    answer: 2
+    explanation: 58×6＝348，共付 348 元。用 58＋58＋58＋58＋58＋58＝348 驗算。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-07
+  - no: 17
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到十位，再估算：72 × 5 大約是多少？
+    options:
+      - "400"
+      - "350"
+      - "300"
+    answer: 2
+    explanation: 72 約為 70，70 × 5＝350。驗算：350÷5＝70。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-12
+  - no: 18
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到十位，再估算：48 × 7 大約是多少？
+    options:
+      - "420"
+      - "350"
+      - "280"
+    answer: 2
+    explanation: 48 約為 50，50 × 7＝350。驗算：350÷7＝50。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-12
+  - no: 19
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到十位，再估算：93 × 3 大約是多少？
+    options:
+      - "240"
+      - "300"
+      - "270"
+    answer: 3
+    explanation: 93 約為 90，90 × 3＝270。驗算：270÷3＝90。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-12
+  - no: 20
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到十位，再估算：37 × 8 大約是多少？
+    options:
+      - "400"
+      - "320"
+      - "240"
+    answer: 2
+    explanation: 37 約為 40，40 × 8＝320。驗算：320÷8＝40。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-12
+  - no: 21
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到十位，再估算：62 × 6 大約是多少？
+    options:
+      - "300"
+      - "360"
+      - "420"
+    answer: 2
+    explanation: 62 約為 60，60 × 6＝360。驗算：360÷6＝60。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-12
+  - no: 22
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到十位，再估算：87 × 4 大約是多少？
+    options:
+      - "360"
+      - "320"
+      - "400"
+    answer: 1
+    explanation: 87 約為 90，90 × 4＝360。驗算：360÷4＝90。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-12
+  - no: 23
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到十位，再估算：23 × 9 大約是多少？
+    options:
+      - "90"
+      - "180"
+      - "270"
+    answer: 2
+    explanation: 23 約為 20，20 × 9＝180。驗算：180÷9＝20。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-12
+  - no: 24
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到十位，再估算：54 × 7 大約是多少？
+    options:
+      - "350"
+      - "280"
+      - "420"
+    answer: 1
+    explanation: 54 約為 50，50 × 7＝350。驗算：350÷7＝50。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-12
+  - no: 25
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：398 × 6 大約是多少？
+    options:
+      - "1800"
+      - "2400"
+      - "3000"
+    answer: 2
+    explanation: 398 約為 400，400 × 6＝2400。驗算：2400÷6＝400。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-13
+  - no: 26
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：497 × 8 大約是多少？
+    options:
+      - "4000"
+      - "3200"
+      - "4800"
+    answer: 1
+    explanation: 497 約為 500，500 × 8＝4000。驗算：4000÷8＝500。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-13
+  - no: 27
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：201 × 9 大約是多少？
+    options:
+      - "2700"
+      - "900"
+      - "1800"
+    answer: 3
+    explanation: 201 約為 200，200 × 9＝1800。驗算：1800÷9＝200。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-13
+  - no: 28
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：703 × 4 大約是多少？
+    options:
+      - "2400"
+      - "3200"
+      - "2800"
+    answer: 3
+    explanation: 703 約為 700，700 × 4＝2800。驗算：2800÷4＝700。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-13
+  - no: 29
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：598 × 7 大約是多少？
+    options:
+      - "4900"
+      - "3500"
+      - "4200"
+    answer: 3
+    explanation: 598 約為 600，600 × 7＝4200。驗算：4200÷7＝600。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-13
+  - no: 30
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：802 × 3 大約是多少？
+    options:
+      - "2400"
+      - "2700"
+      - "2100"
+    answer: 1
+    explanation: 802 約為 800，800 × 3＝2400。驗算：2400÷3＝800。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-13
+  - no: 31
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：102 × 8 大約是多少？
+    options:
+      - "1600"
+      - "0"
+      - "800"
+    answer: 3
+    explanation: 102 約為 100，100 × 8＝800。驗算：800÷8＝100。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-13
+  - no: 32
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 先把第一個數四捨五入取概數到百位，再估算：902 × 5 大約是多少？
+    options:
+      - "5000"
+      - "4000"
+      - "4500"
+    answer: 3
+    explanation: 902 約為 900，900 × 5＝4500。驗算：4500÷5＝900。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-13

@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 球已經離開手向上飛，表示手還在接觸球，持續把球向上推。
+    answer: false
+    explanation: 球離手後，手已不再接觸並推球；球繼續上升不能證明手仍持續推它。
+    derivedFrom:
+      - g3-science-midterm-2025-05

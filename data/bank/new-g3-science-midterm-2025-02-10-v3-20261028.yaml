@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 三個雙極條形磁鐵各選定一端，分別標成甲端、乙端、丙端，標記後不更換端點。一次只拿兩個磁鐵測試，其他磁鐵移遠；已知甲端和乙端相斥，乙端和丙端也相斥，則甲端和丙端靠近時也會相斥。
+    answer: true
+    explanation: 甲端與乙端相斥，表示兩端同名；乙端與丙端相斥，也表示同名。因此甲、乙、丙三端都是同名磁極，甲端與丙端靠近會相斥。
+    derivedFrom:
+      - g3-science-midterm-2025-02-10

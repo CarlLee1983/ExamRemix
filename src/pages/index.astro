@@ -5,7 +5,7 @@ import { paperRows } from '../domain/paper-usage';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { loadChecked } from '../lib/load-bank.ts';
 
-const { papers, entries } = await loadChecked();
+const { papers, entries, capacities } = await loadChecked();
 const rows = paperRows(papers);
 const composition = bankComposition(entries);
 ---
@@ -31,6 +31,11 @@ const composition = bankComposition(entries);
   <section class="block" id="papers" aria-labelledby="papers-title">
     <h2 class="block-head" id="papers-title">試卷</h2>
     <ul class="paper-list">{rows.map((row) => <PaperRow row={row} />)}</ul>
+  </section>
+  <section class="block card" id="capacities" aria-labelledby="capacities-title">
+    <h2 id="capacities-title">三年級上學期期中可選容量</h2>
+    <p>可選題數不代表完整卷能力；範圍未知或不符合使用條件的題目不計入。</p>
+    <ul>{capacities.map(c => <li data-scope-subject={c.scope.subject}>{c.scope.subject}：{c.count} 題、{c.groups} 完整題組。{c.state === 'empty' ? '沒有可用題目' : '完整卷規則尚未配置'}</li>)}</ul>
   </section>
   <section class="block card" id="composition" aria-labelledby="composition-title">
     <div class="block-head">

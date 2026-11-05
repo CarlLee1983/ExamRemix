@@ -1,0 +1,31 @@
+title: 三年級英語讀寫練習 1（保留原16題，另加圖文題）
+subject: 英語
+grade: 3
+sections:
+  - title: 一、大小寫轉換（小寫改大寫、大寫改小寫）
+    questions:
+      - original-english-01
+      - original-english-02
+      - original-english-03
+      - original-english-04
+  - title: 二、字母順序
+    questions:
+      - original-english-05
+      - original-english-06
+      - original-english-07
+      - original-english-08
+      - original-english-09
+      - original-english-10
+  - title: 三、句型與標點
+    questions:
+      - original-english-11
+      - original-english-12
+      - original-english-13
+      - original-english-14
+      - original-english-15
+  - title: 四、字母順序書寫
+    questions:
+      - original-english-sequence-01
+  - title: 五、看圖選出最符合的句子
+    questions:
+      - g3-english-visual-midterm-2022-01-01

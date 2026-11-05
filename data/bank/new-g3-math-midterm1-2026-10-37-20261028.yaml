@@ -1,0 +1,337 @@
+questions:
+  - no: 1
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每個運動水壺賣 400 元，學校買了 3 個，總共要付多少元？
+    answer: 總共要付 1200 元。
+    explanation: 有 3 個 400 元，$400 \times 3 = 1200$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-37
+  - no: 2
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每盒桌遊賣 500 元，學校買了 4 盒，總共要付多少元？
+    answer: 總共要付 2000 元。
+    explanation: 有 4 個 500 元，$500 \times 4 = 2000$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-37
+  - no: 3
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每件校服外套賣 600 元，學校買了 6 件，總共要付多少元？
+    answer: 總共要付 3600 元。
+    explanation: 有 6 個 600 元，$600 \times 6 = 3600$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-37
+  - no: 4
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每組積木組賣 700 元，學校買了 5 組，總共要付多少元？
+    answer: 總共要付 3500 元。
+    explanation: 有 5 個 700 元，$700 \times 5 = 3500$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-37
+  - no: 5
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每張露營椅賣 800 元，學校買了 4 張，總共要付多少元？
+    answer: 總共要付 3200 元。
+    explanation: 有 4 個 800 元，$800 \times 4 = 3200$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-37
+  - no: 6
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每盆植物盆栽賣 100 元，學校買了 7 盆，總共要付多少元？
+    answer: 總共要付 700 元。
+    explanation: 有 7 個 100 元，$100 \times 7 = 700$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-37
+  - no: 7
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每組溜冰護具賣 900 元，學校買了 3 組，總共要付多少元？
+    answer: 總共要付 2700 元。
+    explanation: 有 3 個 900 元，$900 \times 3 = 2700$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-37
+  - no: 8
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每包手作課材料包賣 200 元，學校買了 8 包，總共要付多少元？
+    answer: 總共要付 1600 元。
+    explanation: 有 8 個 200 元，$200 \times 8 = 1600$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-37
+  - no: 9
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 早餐店每個飯糰賣 27 元，志工隊每天買 4 個，連續買 6 天。總共要花多少元？
+    space: 6
+    answer: 總共要花 648 元。
+    explanation: 先算一批：$27 \times 4 = 108$ 元；再算全部：$108 \times 6 = 648$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-38
+  - no: 10
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 美術社每包色紙賣 16 元，每次活動用 5 包，辦了 8 次活動。總共要花多少元？
+    space: 6
+    answer: 總共要花 640 元。
+    explanation: 先算一批：$16 \times 5 = 80$ 元；再算全部：$80 \times 8 = 640$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-38
+  - no: 11
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 球隊每條毛巾賣 45 元，每組買 3 條，共有 9 組。總共要花多少元？
+    space: 6
+    answer: 總共要花 1215 元。
+    explanation: 先算一批：$45 \times 3 = 135$ 元；再算全部：$135 \times 9 = 1215$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-38
+  - no: 12
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 園藝社每袋培養土賣 32 元，每個花圃用 6 袋，共有 4 個花圃。總共要花多少元？
+    space: 6
+    answer: 總共要花 768 元。
+    explanation: 先算一批：$32 \times 6 = 192$ 元；再算全部：$192 \times 4 = 768$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-38
+  - no: 13
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 課後班每份點心賣 24 元，每天訂 7 份，連續訂 5 天。總共要花多少元？
+    space: 6
+    answer: 總共要花 840 元。
+    explanation: 先算一批：$24 \times 7 = 168$ 元；再算全部：$168 \times 5 = 840$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-38
+  - no: 14
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 手工課每串珠子賣 18 元，每班買 8 串，共有 6 班。總共要花多少元？
+    space: 6
+    answer: 總共要花 864 元。
+    explanation: 先算一批：$18 \times 8 = 144$ 元；再算全部：$144 \times 6 = 864$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-38
+  - no: 15
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 烘焙社每包麵粉賣 36 元，每次用 4 包，做了 9 次。總共要花多少元？
+    space: 6
+    answer: 總共要花 1296 元。
+    explanation: 先算一批：$36 \times 4 = 144$ 元；再算全部：$144 \times 9 = 1296$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-38
+  - no: 16
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 營隊每瓶果汁賣 29 元，每天買 6 瓶，連續買 7 天。總共要花多少元？
+    space: 6
+    answer: 總共要花 1218 元。
+    explanation: 先算一批：$29 \times 6 = 174$ 元；再算全部：$174 \times 7 = 1218$ 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-38
+  - no: 17
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 送貨員每趟行駛 507 公尺，今天跑了 6 趟。共行駛多少公尺？
+    answer: 共行駛 3042 公尺。
+    explanation: 每份 507，共有 6 份：$507 \times 6 = 3042$，共有 3042 公尺。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-40
+  - no: 18
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每卷電線長 309 公尺，工程隊買了 7 卷。共有多少公尺的電線？
+    answer: 共有 2163 公尺。
+    explanation: 每份 309，共有 7 份：$309 \times 7 = 2163$，共有 2163 公尺。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-40
+  - no: 19
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 印刷機每分鐘印 206 張紙，連續印了 8 分鐘。共印了多少張紙？
+    answer: 共印了 1648 張紙。
+    explanation: 每份 206，共有 8 份：$206 \times 8 = 1648$，共有 1648 張紙。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-40
+  - no: 20
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每箱螺絲有 403 顆，工廠運來 9 箱。共運來多少顆螺絲？
+    answer: 共運來 3627 顆螺絲。
+    explanation: 每份 403，共有 9 份：$403 \times 9 = 3627$，共有 3627 顆螺絲。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-40
+  - no: 21
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每捆竹籤有 602 枝，食品行買了 4 捆。共有多少枝竹籤？
+    answer: 共有 2408 枝竹籤。
+    explanation: 每份 602，共有 4 份：$602 \times 4 = 2408$，共有 2408 枝竹籤。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-40
+  - no: 22
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每袋稻種重 708 公克，農夫準備了 3 袋。共準備多少公克的稻種？
+    answer: 共準備 2124 公克稻種。
+    explanation: 每份 708，共有 3 份：$708 \times 3 = 2124$，共有 2124 公克稻種。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-40
+  - no: 23
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每列火車有 509 個座位，車站安排了 5 列相同的火車。共有多少個座位？
+    answer: 共有 2545 個座位。
+    explanation: 每份 509，共有 5 份：$509 \times 5 = 2545$，共有 2545 個座位。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-40
+  - no: 24
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 每盒拼圖有 604 片，活動室買了 8 盒相同的拼圖。共有多少片拼圖？
+    answer: 共有 4832 片拼圖。
+    explanation: 每份 604，共有 8 份：$604 \times 8 = 4832$，共有 4832 片拼圖。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-40
+  - no: 25
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 小竹收集了 8 張貼紙，小芸的貼紙張數是小竹的 3 倍，小凱的貼紙張數是小芸的 4 倍。小凱有幾張貼紙？
+    space: 6
+    answer: 小凱有 96 張貼紙。
+    explanation: 先求中間一份：$8 \times 3 = 24$；再求所問的量：$24 \times 4 = 96$，是 96 張貼紙。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-41
+  - no: 26
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 小宜存了 25 元，小承存的錢是小宜的 4 倍，小潔存的錢是小承的 3 倍。小潔存了多少元？
+    space: 6
+    answer: 小潔存了 300 元。
+    explanation: 先求中間一份：$25 \times 4 = 100$；再求所問的量：$100 \times 3 = 300$，是 300 元。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-41
+  - no: 27
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 紅積木有 12 塊，藍積木的塊數是紅積木的 2 倍，黃積木的塊數是藍積木的 5 倍。黃積木有幾塊？
+    space: 6
+    answer: 黃積木有 120 塊。
+    explanation: 先求中間一份：$12 \times 2 = 24$；再求所問的量：$24 \times 5 = 120$，是 120 塊。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-41
+  - no: 28
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 甲組摺了 15 隻紙鶴，乙組摺的隻數是甲組的 3 倍，丙組摺的隻數是乙組的 2 倍。丙組摺了幾隻紙鶴？
+    space: 6
+    answer: 丙組摺了 90 隻紙鶴。
+    explanation: 先求中間一份：$15 \times 3 = 45$；再求所問的量：$45 \times 2 = 90$，是 90 隻紙鶴。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-41
+  - no: 29
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 小兔玩偶高 7 公分，小熊玩偶的高度是小兔的 3 倍，大熊玩偶的高度是小熊的 4 倍。大熊玩偶高幾公分？
+    space: 6
+    answer: 大熊玩偶高 84 公分。
+    explanation: 先求中間一份：$7 \times 3 = 21$；再求所問的量：$21 \times 4 = 84$，是 84 公分。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-41
+  - no: 30
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 第一區有 18 盆花，第二區的盆數是第一區的 2 倍，第三區的盆數是第二區的 3 倍。第三區有幾盆花？
+    space: 6
+    answer: 第三區有 108 盆花。
+    explanation: 先求中間一份：$18 \times 2 = 36$；再求所問的量：$36 \times 3 = 108$，是 108 盆花。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-41
+  - no: 31
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 小哲看了 9 頁書，小睿看的頁數是小哲的 4 倍，小萱看的頁數是小睿的 2 倍。小萱看了幾頁書？
+    space: 6
+    answer: 小萱看了 72 頁書。
+    explanation: 先求中間一份：$9 \times 4 = 36$；再求所問的量：$36 \times 2 = 72$，是 72 頁書。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-41
+  - no: 32
+    type: word-problem
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 甲袋裝了 14 顆彈珠，乙袋的顆數是甲袋的 3 倍，丙袋的顆數是乙袋的 5 倍。丙袋有幾顆彈珠？
+    space: 6
+    answer: 丙袋有 210 顆彈珠。
+    explanation: 先求中間一份：$14 \times 3 = 42$；再求所問的量：$42 \times 5 = 210$，是 210 顆彈珠。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-41

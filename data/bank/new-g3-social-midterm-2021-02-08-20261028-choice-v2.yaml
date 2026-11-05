@@ -1,0 +1,31 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 家庭經濟
+    stem: 媽媽收到工作薪資後，把其中100元交給爸爸買菜。從全家合在一起的角度看，哪項是這次由家外增加的收入？
+    options:
+      - 媽媽把100元交給爸爸
+      - 爸爸把100元放進自己的口袋
+      - 把同一筆100元從客廳拿到廚房
+      - 收到工作薪資
+    answer: 4
+    explanation: 工作薪資是家外流入的收入；家人之間移交同一筆錢不會再增加全家的收入。
+    derivedFrom:
+      - g3-social-midterm-2021-02-08
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 家庭經濟
+    stem: 家中這個月領到薪水，但生活支出也增加了。只知道領到薪水，能確定哪一件事？
+    options:
+      - 所有收入都一定存下來了
+      - 家中有這筆工作收入
+      - 全家從此再也不用付水電費
+      - 月底剩餘的錢一定比上月多
+    answer: 2
+    explanation: 薪水是收入，但沒有完整支出資料，不能推定結餘或儲蓄增加。
+    derivedFrom:
+      - g3-social-midterm-2021-02-08

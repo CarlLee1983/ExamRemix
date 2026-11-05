@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 小安連續三年都只在三月拍同一株台灣欒樹，三張照片看起來相近。他只憑這三張三月照片，就能證明那株樹在同一年的春、夏、秋、冬都沒有變化。
+    answer: false
+    explanation: 三張照片都來自三月，沒有觀察其他季節；跨年同月相近不能證明同一年四季相同，要補不同季節的觀察。
+    derivedFrom:
+      - g3-science-midterm-2022-original-preview-01

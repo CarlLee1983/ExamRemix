@@ -13,35 +13,41 @@ interface Props {
 }
 
 const { number, question } = Astro.props;
+const oneToOne = question.mode === 'one-to-one';
 ---
 
-<div class="question question-matching" data-question-type="matching">
-  <p class="stem"><span class="number" lang="zh-Hant-TW">{number}.</span><RichText text={question.stem} /></p>
-  <QuestionFigure image={question.image} />
-  <div class="matching-board">
-    <ol class="matching-column matching-left" aria-label="左側題目">
-      {question.left.map((item) => (
-        <li>
-          <span class="matching-answer-slot">
-            {/* 各格依全池代號預留相同空間，避免格寬洩漏正解。 */}
-            {question.right.map((option) => <span class="matching-measure" aria-hidden="true">{option.code}</span>)}
-            <span class="answer">{item.answer}</span>
-          </span>
-          <span class="matching-content"><VisualText content={item.content} /></span>
-          <span class="matching-endpoint" aria-hidden="true">●</span>
-        </li>
-      ))}
-    </ol>
-    <ol class="matching-column matching-right" aria-label="答案池">
-      {question.right.map((item) => (
-        <li>
-          <span class="matching-endpoint" aria-hidden="true">●</span>
-          <span class="matching-code">{item.code}</span>
-          <span class="matching-content"><VisualText content={item.content} /></span>
-        </li>
-      ))}
-    </ol>
+<div class:list={['question', 'question-matching', { 'matching-one-to-one': oneToOne }]} data-question-type="matching">
+  <div class:list={{ 'matching-question-body': oneToOne }}>
+    <p class="stem"><span class="number" lang="zh-Hant-TW">{number}.</span><RichText text={question.stem} /></p>
+    <QuestionFigure image={question.image} />
+    <div class:list={['matching-board', { 'matching-board-dense': oneToOne && question.left.length > 6 }]}>
+      <ol class="matching-column matching-left" aria-label="左側題目">
+        {question.left.map((item, i) => (
+          <li>
+            {oneToOne ? <span class="matching-number" lang="zh-Hant-TW">{i + 1}.</span> : (
+              <span class="matching-answer-slot">
+                {/* 各格依全池代號預留相同空間，避免格寬洩漏正解。 */}
+                {question.right.map((option) => <span class="matching-measure" aria-hidden="true">{option.code}</span>)}
+                <span class="answer">{item.answer}</span>
+              </span>
+            )}
+            <span class="matching-content"><VisualText content={item.content} /></span>
+            <span class="matching-endpoint" aria-hidden="true">●</span>
+          </li>
+        ))}
+      </ol>
+      <ol class="matching-column matching-right" aria-label="答案池">
+        {question.right.map((item) => (
+          <li>
+            <span class="matching-endpoint" aria-hidden="true">●</span>
+            <span class="matching-code">{item.code}</span>
+            <span class="matching-content"><VisualText content={item.content} /></span>
+          </li>
+        ))}
+      </ol>
+    </div>
   </div>
   <AnswerSpace lines={answerSpace(question)} />
+  {oneToOne && <p class="matching-key" lang="zh-Hant-TW">第 {number} 題配對答案：{question.left.map((item, i) => `左${i + 1} → 右${item.answer}`).join('；')}</p>}
   <Explanation text={question.explanation} />
 </div>

@@ -1,0 +1,227 @@
+# 原件 URL：https://www.maiyajiaoan.com/wiki/24822.html
+# page.html SHA-256: 4577da09f4a0a496eb960a746239287459977d02a8f38d37069aa173b7724702
+# 來源：臺北市大同區太平國小 112 學年度第一學期自然科期中評量試題（南一版）
+# 無官方答案，答案皆依原題獨立推核。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 將海綿放入水中擠壓產生氣泡，表示只要有縫隙可能就有空氣。
+    answer: true
+    explanation: 海綿內部有許多微小縫隙，裡面充滿了空氣；壓入水中擠壓時，空氣被擠出而形成氣泡。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 一、是非題
+      number: 10
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 我們可以觀察物體擺動的幅度，判斷風的強弱，物體擺動的幅度越大，代表風越強。
+    answer: true
+    explanation: 風吹動樹枝、旗幟或紙條時，擺動幅度越大代表風力越強。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 一、是非題
+      number: 11
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 風無法用人力製造，一定要靠機器才能產生風，例如：電風扇。
+    answer: false
+    explanation: 人力也可以製造風，例如用手拿扇子搧風、用嘴吹氣或快速揮動墊板，都能使空氣流動產生風。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 一、是非題
+      number: 12
+  - no: 4
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 風對我們的生活有幫助，但風太大時，可能會帶來災害。
+    answer: true
+    explanation: 適度的風可以吹乾衣物、帶來涼爽、推動風力發電，但強風（如颱風）可能會吹倒路樹與招牌造成災害。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 一、是非題
+      number: 13
+  - no: 5
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 搭乘摩天輪時，風可以幫助摩天輪旋轉。
+    answer: false
+    explanation: 摩天輪是依靠電力馬達帶動旋轉，並不是靠風力驅動；強風時為了安全甚至會暫停營運。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 八、下列哪些是風和我們生活有關的敘述
+      number: 3
+  - no: 6
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 水的特性
+    stem: 帆船航行在海面上是靠水力來推動的。
+    answer: false
+    explanation: 帆船主要是利用風吹在船帆上的風力推動船隻前進，而不是靠水力。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 九、下列是水可以傳送動力，改變物品位置的例子
+      number: 3
+  - no: 7
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 水的特性
+    stem: 洗車時，可以利用水柱沖走車上的灰塵，這是水可以傳送動力的例子。
+    answer: true
+    explanation: 高壓水柱噴出的水具有動能與力量，能將車身上的灰塵推移沖走，是水傳送動力改變物品位置的應用。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 九、下列是水可以傳送動力，改變物品位置的例子
+      number: 4
+  - no: 8
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 我們可以利用空氣的什麼特性做出造型氣球？
+    options:
+      - 佔有空間
+      - 具有重量
+      - 沒有固定形狀
+      - 沒有顏色
+    answer: 3
+    explanation: 空氣沒有固定的形狀，會隨著容器或氣球的擠壓變形而改變形狀，因此能做出各種造型氣球。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 二、選擇題
+      number: 7
+  - no: 9
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 下列哪個物品無法拿來裝空氣？
+    options:
+      - 塑膠袋
+      - 寶特瓶
+      - 馬克杯
+      - 漁網
+    answer: 4
+    explanation: 漁網具有許多較大的網眼與網孔，空氣會直接從網孔流失，因此無法用來收集或裝空氣。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 二、選擇題
+      number: 8
+  - no: 10
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 水的特性
+    stem: 用注射筒分別裝空氣和水，對準紙偶，將活塞向下壓，哪一個可以推倒紙偶？
+    options:
+      - 裝水
+      - 裝空氣
+      - 兩種都可以
+      - 兩種都不行
+    answer: 3
+    explanation: 不論是空氣還是水，在推壓活塞時都能流動並傳送力量，將前方較輕的紙偶推倒。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 二、選擇題
+      number: 9
+  - no: 11
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 植物有各式各樣的外形，這和植物的生長環境有很大的關係。
+    answer: true
+    explanation: 植物的根、莖、葉等構造型態，常常是為了適應其所處的生存環境（如水分、陽光等）而演化出的多樣特徵。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 一、是非題
+      number: 2
+  - no: 12
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 在觀察植物時，可以在同一棵植物上同時看到花朵和果實。
+    answer: true
+    explanation: 許多植物開花結果具有連續性，在同一時期可能有些花朵正在盛開，而先前受粉的花已經發育成果實。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 一、是非題
+      number: 5
+  - no: 13
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 有些樹木的枝幹，可以讓鳥類或小動物築巢和休息。
+    answer: true
+    explanation: 樹木高大繁茂的枝葉與樹幹，提供了許多動物良好的遮蔽與棲息環境，是自然生態中不可或缺的一部分。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 一、是非題
+      number: 8
+  - no: 14
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 竹製存錢筒是利用竹子的哪個部位製作的？
+    options:
+      - 根
+      - 莖
+      - 葉
+      - 花
+    answer: 2
+    explanation: 竹子的竹筒部位屬於植物的「莖」（地下有地下莖，地上直立的是地上莖），質地堅韌中空，常用於製作容器或工藝品。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 二、選擇題
+      number: 5
+  - no: 15
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 木製椅子是人們將植物應用在生活的哪個部分？
+    options:
+      - 衣
+      - 住
+      - 行
+      - 育樂
+    answer: 2
+    explanation: 木製家具（如桌椅、櫥櫃）屬於日常生活中的「住」（居家生活）相關應用。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 二、選擇題
+      number: 6
+  - no: 16
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 哪種植物的根會露出地面，一條一條的，而且粗細差不多？
+    options:
+      - 酒瓶椰子
+      - 樟樹
+      - 臺灣欒樹
+      - 金桔
+    answer: 1
+    explanation: 酒瓶椰子為單子葉植物，基部常長出叢生、粗細相近的支持根（鬚根系），露出於地面附近。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區太平國小112學年度第一學期自然科期中評量試題
+      section: 二、選擇題
+      number: 1

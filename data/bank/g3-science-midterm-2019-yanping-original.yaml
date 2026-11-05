@@ -1,0 +1,213 @@
+# 原件 URL：https://www.maiyajiaoan.com/wiki/25101.html
+# page.html SHA-256: 5b311446cf2d9ffde3e1abc7925ff4c46b6d07fca44d7347ef02f1e52fbe1b0a
+# 來源：臺北市大同區延平國民小學 108 學年度第一學期三年級期中評量試卷（康軒版）
+# 無官方答案，答案皆依原題獨立推核。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 榕樹的莖是木本莖，通常粗粗壯壯的，比較不容易被風吹彎。
+    answer: true
+    explanation: 榕樹為木本植物，木本莖質地堅硬、粗大，能支撐整株植物且不易被風吹彎。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 一、是非題
+      number: 3
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 所有的植物都會開花，只是有些植物的花並不明顯藏在果實中。
+    answer: false
+    explanation: 並非所有植物都會開花，例如蕨類、苔蘚等不開花植物即可推翻「所有植物都會開花」的說法。無花果等植物的花可能不顯眼，不能以看不到花就認定不開花。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 一、是非題
+      number: 4
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 不是所有的金屬都可以被磁鐵吸引。
+    answer: true
+    explanation: 磁鐵主要能吸引鐵製品（以及鈷、鎳等少數金屬），對於銅、鋁、金、銀等其他金屬則不能吸引。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 一、是非題
+      number: 8
+  - no: 4
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 葉面上的紋路像直線一樣的是網狀脈。
+    answer: false
+    explanation: 葉面上的紋路如果像直線平行排列，稱為平行脈；紋路像網子一樣交錯分布的才是網狀脈。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 一、是非題
+      number: 10
+  - no: 5
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列哪一項不是草本莖的特色？
+    options:
+      - 有縱向裂紋
+      - 會攀附著物體生長
+      - 莖上有細軟的毛
+      - 莖為綠色或略帶紫色
+    answer: 1
+    explanation: 草本莖通常較細軟多汁，顏色常為綠色或略帶紫色，有些有細毛或會攀附生長；老莖上有明顯縱向裂紋通常是木本莖（如樟樹）的特徵。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 二、選擇題
+      number: 2
+  - no: 6
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 磁鐵兩旁附加什麼物品可以增加磁鐵吸力？
+    options:
+      - 木片
+      - 鋁片
+      - 鐵片
+      - 塑膠片
+    answer: 3
+    explanation: 磁鐵兩旁附加鐵片可以導引磁力線，使磁力集中，進而增強磁鐵的吸力。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 二、選擇題
+      number: 4
+  - no: 7
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列哪一種葉子屬於披針形？
+    options:
+      - 榕樹葉
+      - 百合葉
+      - 捕蠅草
+      - 紫蘇葉
+    answer: 2
+    explanation: 百合葉形狀細長且兩端漸尖，屬於披針形葉；榕樹葉多為卵形或橢圓形。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 二、選擇題
+      number: 5
+  - no: 8
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 長在枝條頂端的芽稱為什麼？
+    options:
+      - 側芽
+      - 頂芽
+      - 腋芽
+      - 花芽
+    answer: 2
+    explanation: 長在枝條頂端的芽稱為頂芽，長在枝條側面或葉腋處的稱為側芽或腋芽。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 二、選擇題
+      number: 6
+  - no: 9
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 下列哪一項事情是因受力影響發生改變？
+    options:
+      - 將水放入冷凍庫會結成冰塊
+      - 將濕衣服掛在太陽底下曬乾
+      - 冰淇淋拿出冰箱後會融化
+      - 球棒擊中棒球飛出場外
+    answer: 4
+    explanation: 球棒擊中棒球施加了力，使棒球的運動方向和位置改變飛出場外，這是受力作用的現象；水結冰、曬乾、冰淇淋融化屬於溫度與狀態變化。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 二、選擇題
+      number: 7
+  - no: 10
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 下列哪項物品的設計有應用到磁鐵的特性？
+    options:
+      - 背包上的暗扣
+      - 鐵釘
+      - 迴紋針
+      - 剪刀
+    answer: 1
+    explanation: 背包上的磁性暗扣利用磁鐵相吸的特性來固定包蓋；鐵釘、迴紋針是鐵製品，剪刀利用槓桿原理，都不是磁鐵特性應用。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 二、選擇題
+      number: 8
+  - no: 11
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 婷婷到公園玩耍，聞到特殊香氣卻沒看到任何花朵，請問公園中可能會有哪一種植物？
+    options:
+      - 萬年青
+      - 榕樹
+      - 迷迭香
+      - 福木
+    answer: 3
+    explanation: 迷迭香的葉子含有芳香油，散發強烈香氣，即使沒有開花也能聞到特殊香味。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 二、選擇題
+      number: 9
+  - no: 12
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 節是葉子在莖或枝條上的生長位置。
+    answer: true
+    explanation: 莖或枝條上生長葉子的交接處或隆起處稱為節。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 一、是非題
+      number: 11
+  - no: 13
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 同樣大小的磁鐵，圓形磁鐵磁力比U形磁鐵磁力大。
+    answer: false
+    explanation: 磁鐵的磁力強弱不能僅憑形狀來推斷，需要透過吸引迴紋針等實驗實際測試。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 一、是非題
+      number: 7
+  - no: 14
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 植物葉子在莖或枝條上的生長方式，稱為什麼？
+    options:
+      - 節
+      - 芽
+      - 葉序
+      - 葉生
+    answer: 3
+    explanation: 葉子在莖或枝條上的排列與生長方式稱為「葉序」，常見的有互生、對生、輪生與叢生。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 臺北市大同區延平國民小學108學年度第一學期三年級期中評量試卷
+      section: 二、選擇題
+      number: 1

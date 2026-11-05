@@ -1,0 +1,25 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 植物不但能美化環境，也能提供動物棲息的環境。
+    answer: true
+    explanation: 植物除了美化環境，也能讓動物在枝葉、樹幹或其他部位停棲、躲藏或築巢，提供棲息環境，因此原敘述正確。這是在說植物可以具有這些作用，不是說每一株植物都必須同時供所有動物棲息。答案依公開預覽原題及科學資料獨立推核，未取得官方答案。
+    source:
+      originalPaper: 113學年度第一學期第一次自然科學定期成績考查試卷
+      section: 一、是非題：14%
+      number: 3
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 如果打翻裝鐵粉的盒子，就無法將地上的鐵粉和沙土分離。
+    answer: false
+    explanation: 可以利用磁鐵吸引鐵粉，把鐵粉從不被磁鐵吸引的沙土中取出，所以不能說一定無法分離，原敘述錯誤。若沙土本身含有會被磁鐵吸引的顆粒，也可能一併被吸起；本題不表示任何地面材料都能藉一次磁吸完全純化。答案依公開預覽原題及科學資料獨立推核，未取得官方答案。
+    source:
+      originalPaper: 113學年度第一學期第一次自然科學定期成績考查試卷
+      section: 一、是非題：14%
+      number: 6

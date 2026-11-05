@@ -1,0 +1,90 @@
+groups:
+  - no: 1
+    paragraphs:
+      - 下面是喜樂國小的地圖：
+    image:
+      src: g3-social-midterm-2023-06-original/group-01.png
+      alt: 喜樂國小校園圖，含標北的箭頭、停車場、籃球場、301至306教室、正門、側門、警衛室、健康中心、播音室與辦公室。
+    members: [3, 4, 5]
+    source:
+      originalPaper: 112學年度上學期三年級社會領域期中評量卷
+      section: 一、選擇題：／3.下面是喜樂國小的地圖：
+      number: 3
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 認識社區及地圖
+    stem: 繪製地圖時，「深美國小」的位置應該由下列哪一個符號表示？
+    options:
+      - image:
+          src: g3-social-midterm-2023-06-original/01-option-1.png
+          alt: 有旗幟與「學」字的黑色方形圖示。
+      - image:
+          src: g3-social-midterm-2023-06-original/01-option-2.png
+          alt: 黑底白色P字圖示。
+      - image:
+          src: g3-social-midterm-2023-06-original/01-option-3.png
+          alt: 黑底白色男女站立人形圖示。
+      - image:
+          src: g3-social-midterm-2023-06-original/01-option-4.png
+          alt: 黑底白色加油機與油管圖示。
+    answer: 1
+    explanation: ①有旗幟及「學」字，表示學校；②P表示停車場，③表示廁所，④表示加油站。「深美國小」是學校，因此選①。答案依原題及四張原選項圖獨立推核，未取得官方答案。
+    source:
+      originalPaper: 112學年度上學期三年級社會領域期中評量卷
+      section: 一、選擇題：
+      number: 1
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 認識社區及地圖
+    stem: 阿傑想要將自己繪製的地圖加上方向標，但需要先確認實際的方位，請問他應該使用什麼工具來確認？
+    options: [手電筒, 指北針, 收音機, 以上都適合]
+    answer: 2
+    explanation: 指北針能協助確認北方，進而判斷其他方位，適合用來確認地圖方向標所需的實際方位。手電筒用於照明，收音機用於接收廣播，都不是本題用來確認方位的工具；④也不成立。因此選②。答案依完整原題獨立推核，未取得官方答案。
+    source:
+      originalPaper: 112學年度上學期三年級社會領域期中評量卷
+      section: 一、選擇題：
+      number: 2
+  - no: 3
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 認識社區及地圖
+    stem: 停車場在籃球場的哪個方向？
+    options: [北方, 南方, 西方, 東方]
+    answer: 3
+    explanation: 共同校園圖的北箭頭朝圖上方，因此圖左方是西方。以籃球場為基準，停車場位於左側，應選③西方。這是依題圖判讀相對位置，不是推定真實學校的方位。答案依原圖獨立推核，未取得官方答案。
+    source:
+      originalPaper: 112學年度上學期三年級社會領域期中評量卷
+      section: 一、選擇題：／3.下面是喜樂國小的地圖：
+      number: 1
+  - no: 4
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 認識社區及地圖
+    stem: 306教室在籃球場的哪個方向？
+    options: [西北方, 西南方, 東北方, 東南方]
+    answer: 1
+    explanation: 依共同校園圖的北箭頭，圖上方是北、左方是西。以籃球場為基準，306教室在左上方，即西北方，應選①。其餘三個方向分別在左下、右上、右下，與306教室的位置不符。答案依原圖獨立推核，未取得官方答案。
+    source:
+      originalPaper: 112學年度上學期三年級社會領域期中評量卷
+      section: 一、選擇題：／3.下面是喜樂國小的地圖：
+      number: 2
+  - no: 5
+    type: choice
+    subject: 社會
+    grade: 3
+    unit: 認識社區及地圖
+    stem: 301教室在籃球場的哪個方向？
+    options: [東北方, 西南方, 西北方, 東南方]
+    answer: 4
+    explanation: 依共同校園圖的北箭頭，圖下方是南、右方是東。以籃球場為基準，301教室在右下方，即東南方，應選④。其餘三個方向分別在右上、左下、左上，與301教室的位置不符。答案依原圖獨立推核，未取得官方答案。
+    source:
+      originalPaper: 112學年度上學期三年級社會領域期中評量卷
+      section: 一、選擇題：／3.下面是喜樂國小的地圖：
+      number: 3

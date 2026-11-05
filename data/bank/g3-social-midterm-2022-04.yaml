@@ -1,0 +1,44 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只要是被分在同一班，就會有相同的成長經歷。
+    answer: false
+    explanation: 同班只代表一起上課；每個人的家庭生活、以前的學習與成長經歷仍可能不同。
+    source:
+      originalPaper: 111學年度上學期三年級期中評量社會領域試卷
+      section: 一、是非題2分，24分
+      number: 6
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下列班級幹部工作內容配對，請問何者正確
+    options:
+      - 衛生股長帶領同學布置教室環境
+      - 體育股長帶大家做暖身操、借器材
+      - 學藝股長幫老師開關投影機
+      - 組長幫同學寫作業
+    answer: 2
+    explanation: 帶領暖身操和借用運動器材屬於體育股長的職責；布置教室環境通常由學藝股長協助，開關投影機由資訊相關幹部協助，組長也不應代寫作業。
+    source:
+      originalPaper: 111學年度上學期三年級期中評量社會領域試卷
+      section: 二、選擇題2分，22分
+      number: 7
+  - no: 3
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 小安閱讀課文「我們在決定分工方式時，可以採用自由選擇、輪流或透過討論來決定。」時，在「自由選擇」、「輪流」、「透過討論」的地方，用螢光筆畫線。請問小安是在做什麼事
+    options:
+      - 圈出生詞
+      - 圈出看不懂的地方
+      - 塗鴉
+      - 標示課文重點
+    answer: 4
+    explanation: 畫線的位置是課文列出的三種分工方式，因此是在標示重點；題目未說這些詞語是生詞或小安不懂的內容。
+    source:
+      originalPaper: 111學年度上學期三年級期中評量社會領域試卷
+      section: 二、選擇題2分，22分
+      number: 8

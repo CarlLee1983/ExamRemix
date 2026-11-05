@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 會議結束後發現沒有人保存通過的提案內容。下次應特別落實哪個職務的工作？
+    options:
+      - 司儀比較同學的鞋子
+      - 記錄整理會議內容與決議
+      - 主席代替全班決定所有私人事務
+      - 導師更改每張選票內容
+    answer: 2
+    explanation: 記錄應保存會議內容與決議，方便日後執行與查考。
+    derivedFrom:
+      - g3-social-midterm-2023-02-23

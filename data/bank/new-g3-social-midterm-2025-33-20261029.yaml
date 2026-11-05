@@ -1,0 +1,10 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班上共同約定上課不吃零食。小宏當選班長後，就可以只要求別人遵守，自己不必遵守這項公約。
+    answer: false
+    explanation: 班級公約適用於班上全體同學，班長也是班級成員；當選幹部不會因此取得不遵守共同公約的特權。這裡判斷的是幹部是否能豁免自己的行為規範，不是幹部能否安排大家發言或服務同學。
+    derivedFrom:
+      - g3-social-midterm-2025-33

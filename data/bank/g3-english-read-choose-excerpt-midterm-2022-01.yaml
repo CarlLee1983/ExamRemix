@@ -1,0 +1,46 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: 請選出正確的句子。
+    options:
+      - my name is Amy.
+      - My name is kevin.
+      - My name is Sandy.
+    answer: 3
+    explanation: 句首 My 與姓名 Sandy 的首字母均須大寫。選項1句首 my 未大寫；選項2姓名 kevin 未大寫，故只有選項3正確。
+    source:
+      originalPaper: 111學年度第一學期三年級英語第一次定期評量
+      section: 九、Read and Choose 請選出正確的句子：(每題2分，共10分)
+      number: 1
+  - no: 2
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: 請選出正確的句子。
+    options:
+      - I’m hungry.
+      - Are you happy.
+      - No, i’m not.
+    answer: 1
+    explanation: 選項1的大小寫及陳述句句點正確。選項2是問句卻用句點；選項3的 i 未大寫，故只有選項1正確。
+    source:
+      originalPaper: 111學年度第一學期三年級英語第一次定期評量
+      section: 九、Read and Choose 請選出正確的句子：(每題2分，共10分)
+      number: 3
+  - no: 3
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: 請選出正確的句子。
+    options:
+      - Thank you, Amy.
+      - no, I’m not
+      - yes, I am.
+    answer: 1
+    explanation: 選項1句首、姓名及句尾標點皆正確。選項2句首 no 未大寫且缺句尾標點；選項3句首 yes 未大寫，故只有選項1正確。
+    source:
+      originalPaper: 111學年度第一學期三年級英語第一次定期評量
+      section: 九、Read and Choose 請選出正確的句子：(每題2分，共10分)
+      number: 4

@@ -1,0 +1,22 @@
+# 第十份補題：依已核原題衍生的不同完整推理任務，非原卷逐字題。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 已調平的等臂天平，左盤放甲物品和一顆標準砝碼，右盤放乙物品和另一顆完全相同的標準砝碼，天平正好平衡。現在兩邊各取走那顆砝碼，可以判定甲、乙物品的重量相同。
+    answer: true
+    explanation: 兩盤原本總重量相同，取走的兩顆砝碼也一樣重，所以剩下的甲、乙物品仍然一樣重。
+    derivedFrom:
+      - g3-science-yongan-midterm-2024-01
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 用同一個等臂天平，每次測量前都先調平，每盤只放一件物品。先比較甲、乙，甲側較低；再比較乙、丙，乙側較低。測量過程中，三件物品的重量都沒有改變。即使甲、丙還沒直接放上去比較，仍能判定甲比丙重。
+    answer: true
+    explanation: 第一次可知甲比乙重，第二次可知乙比丙重。因此甲比乙重、乙又比丙重，可推得甲比丙重。這裡兩次都只比較同一批單件物品，重量也沒有變動。
+    derivedFrom:
+      - g3-science-yongan-midterm-2024-01

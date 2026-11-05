@@ -1,0 +1,89 @@
+questions:
+  - no: 1
+    type: matching
+    subject: 英語
+    grade: 3
+    stem: Read and Match 將文字連到正確的圖片。
+    left:
+      - content: one elephant
+        answer: "1"
+      - content: ten eggs
+        answer: "3"
+      - content: three ducks
+        answer: "2"
+      - content: six jets
+        answer: "4"
+      - content: five keys
+        answer: "7"
+      - content: eight fish
+        answer: "6"
+      - content: eight fans
+        answer: "5"
+      - content: two kites
+        answer: "9"
+      - content: nine kites
+        answer: "10"
+      - content: two lions
+        answer: "8"
+    right:
+      - code: "1"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-01.png
+            alt: 一隻大象
+      - code: "2"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-02.png
+            alt: 三隻鴨子
+      - code: "3"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-03.png
+            alt: 十顆蛋
+      - code: "4"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-04.png
+            alt: 六架噴射機
+      - code: "5"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-05.png
+            alt: 八把扇子
+      - code: "6"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-06.png
+            alt: 八條魚
+      - code: "7"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-07.png
+            alt: 五把鑰匙
+      - code: "8"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-08.png
+            alt: 兩隻獅子
+      - code: "9"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-09.png
+            alt: 兩個風箏
+      - code: "10"
+        content:
+          image:
+            src: g3-english-visual-midterm-2024-01/01-right-10.png
+            alt: 九個風箏
+    explanation: 依原卷可見圖數與字義獨立推核，非官方答案：one elephant→右欄1；ten eggs→右欄3；three
+      ducks→右欄2；six jets→右欄4；five keys→右欄7；eight fish→右欄6；eight fans→右欄5；two
+      kites→右欄9；nine kites→右欄10；two
+      lions→右欄8。兩個kites圖須另辨2與9，其餘物件類別只有一個對應，可能單靠名詞即可配對，不宣稱十對均需計數。
+    source:
+      originalPaper: 113學年度第一學期三年級英語領域期中評量卷
+      section: |-
+        VII. Read and Match 將文字連到正確的圖片。
+        3-Ⅱ-2 能辨識課堂中所學的字詞。
+        表現優異：10題；表現良好：9-8題；已經做到：7-6題；還要加油：5-4題；努力改進：3題以下。
+    mode: one-to-one

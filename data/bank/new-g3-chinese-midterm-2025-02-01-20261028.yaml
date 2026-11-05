@@ -1,0 +1,108 @@
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 依注音寫國字：校___（ㄩㄢˊ）裡種著許多花草。
+    answer:
+      - 園
+    explanation: 「校園」指學校的範圍；園讀ㄩㄢˊ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-01
+  - no: 2
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 寫出「吹」的注音：風把帽子吹（注音：___）走了。
+    answer:
+      - ㄔㄨㄟ
+    explanation: 「吹」在風吹動東西的意思下讀ㄔㄨㄟ，第一聲不標聲調。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-03
+  - no: 3
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的兩個錯字，按出現順序填寫正確的字：___、___。我把新買的鉛比放進書色裡。
+    answer:
+      - 筆
+      - 包
+    explanation: 寫字的工具是「鉛筆」，裝書和文具的用品是「書包」；比改筆，色改包。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-08
+  - no: 4
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 改正句中的一個錯字，填寫正確的字：___。同學們把桌椅排得很整其。
+    answer:
+      - 齊
+    explanation: 「整齊」指有條理、不凌亂，最後一字應為齊。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-10
+  - no: 5
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字，將所選的字依序填入空格。今天天氣___（晴／睛）朗，妹妹睜大眼___（晴／睛）看蝴蝶。
+    answer:
+      - 晴
+      - 睛
+    explanation: 天氣晴朗用日字旁的「晴」；眼睛用目字旁的「睛」。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-21
+  - no: 6
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 圈出適合的字，將所選的字依序填入空格。我在日___（記／紀）本上，___（記／紀）下今天有趣的事情。
+    answer:
+      - 記
+      - 記
+    explanation: 記錄生活的本子是「日記本」；把事情寫下來是「記下」。兩格都填記。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28
+  - no: 7
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①乾淨、②熱鬧、③勇敢、④緩慢中選出意思相反的詞語，填代號。「骯髒」的相反詞：___；「膽小」的相反詞：___。
+    answer:
+      - ①
+      - ③
+    explanation: 乾淨與骯髒相反，勇敢與膽小相反；熱鬧說人多而活躍，緩慢說速度慢。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-27
+  - no: 8
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①自言自語、②七嘴八舌、③大吃一驚中選出適當成語填空。房間裡只有我一個人，我對著自己說：「書包放在哪裡呢？」這種自己對自己說話的情形，可以用___來形容。（填代號）
+    answer:
+      - ①
+    explanation: 自言自語指自己對自己說話；七嘴八舌形容許多人爭著說話；大吃一驚形容非常驚訝。
+    derivedFrom:
+      - g3-chinese-midterm-2025-09
+  - no: 9
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 每格填一個標點符號，只可使用冒號（：）、前引號（「）、問號（？），各一次；句末的後引號已印好。老師問___ ___你帶水壺了嗎___」
+    answer:
+      - ：
+      - 「
+      - ？
+    explanation: 完整句子是：老師問：「你帶水壺了嗎？」提示語後用冒號，引語前用前引號，直接問句末用問號。
+    derivedFrom:
+      - g3-chinese-midterm-2025-12
+  - no: 10
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 每格填一個標點符號，只可使用頓號「、」或句號「。」。書包裡有課本___鉛筆盒和水壺___
+    answer:
+      - 、
+      - 。
+    explanation: 課本、鉛筆盒和水壺是並列用品，第一格用頓號；全句是平常語氣的完整敘述，第二格用句號。
+    derivedFrom:
+      - g3-chinese-midterm-2025-12

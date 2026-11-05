@@ -1,0 +1,15 @@
+title: 英語四線格測試卷
+subject: 英語
+grade: 3
+sections:
+  - title: 書寫
+    questions:
+      - four-line-01
+      - four-line-02
+      - four-line-03
+      - four-line-04
+      - four-line-05
+      - four-line-06
+examScope:
+  semester: 1
+  stage: midterm

@@ -1,0 +1,95 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物大發現
+    stem: 公園裡散發出的香氣可能來自鮮豔的花朵，也可能來自葉子。
+    answer: true
+    explanation: 有些植物的花或葉都可能散發氣味；題目說的是可能，不表示所有鮮豔花朵或葉子都有香氣。答案依題意獨立推核，未取得官方答案。
+    source:
+      originalPaper: 基隆市五堵國民小學112學年度第一學期期中評量三年級自然與生活科技試卷
+      section: 一、是非題（每題2分，共20分）
+      number: 1
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物大發現
+    stem: 風大時，小草會隨風搖擺、不容易被吹斷，是因為草本莖具有柔軟的特性。
+    answer: true
+    explanation: 小草的草本莖較柔軟，受風時容易彎曲搖擺；「不容易」不表示無論風多強都不會折斷。答案依題意獨立推核，未取得官方答案。
+    source:
+      originalPaper: 基隆市五堵國民小學112學年度第一學期期中評量三年級自然與生活科技試卷
+      section: 一、是非題（每題2分，共20分）
+      number: 3
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 奇妙的溶解
+    stem: 觀察辣椒粉時，我們可以直接將鼻子靠近嗅聞。
+    answer: false
+    explanation: 辣椒粉可能刺激鼻腔，觀察時不應把鼻子直接靠近粉末吸聞；應遵照老師的安全操作方式。答案依題意獨立推核，未取得官方答案。
+    source:
+      originalPaper: 基隆市五堵國民小學112學年度第一學期期中評量三年級自然與生活科技試卷
+      section: 一、是非題（每題2分，共20分）
+      number: 6
+  - no: 4
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 奇妙的溶解
+    stem: 冰塊放室溫變成水，屬於溶解的現象。
+    answer: false
+    explanation: 冰塊變成水是由固態變成液態的融化，不是物質溶於水的溶解。答案依題意獨立推核，未取得官方答案。
+    source:
+      originalPaper: 基隆市五堵國民小學112學年度第一學期期中評量三年級自然與生活科技試卷
+      section: 一、是非題（每題2分，共20分）
+      number: 8
+  - no: 5
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 奇妙的溶解
+    stem: 在溶解實驗，可以使用溫度計攪拌，幫助物質均勻混合。
+    answer: false
+    explanation: 溫度計用來測量溫度，拿來攪拌可能碰撞損壞，應使用適合的攪拌工具。答案依題意獨立推核，未取得官方答案。
+    source:
+      originalPaper: 基隆市五堵國民小學112學年度第一學期期中評量三年級自然與生活科技試卷
+      section: 一、是非題（每題2分，共20分）
+      number: 9
+  - no: 6
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物大發現
+    stem: 花粉是由哪一個構造產生的？
+    options:
+      - 雄蕊
+      - 雌蕊
+      - 花瓣
+      - 花萼
+    answer: 1
+    explanation: 花粉由雄蕊的花藥產生，因此四個構造中選雄蕊。答案依題意獨立推核，未取得官方答案。
+    source:
+      originalPaper: 基隆市五堵國民小學112學年度第一學期期中評量三年級自然與生活科技試卷
+      section: 二、選擇題（每題3分，共36分）
+      number: 1
+  - no: 7
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物大發現
+    stem: 小明不小心將朝天椒的盆栽踢倒，過了一段時間後會發現朝天椒的根、莖如何生長？
+    options:
+      - 根向下生長，莖向上生長
+      - 根向上生長，莖向下生長
+      - 根、莖沿著地板平行生長
+      - 根、莖向下生長
+    answer: 1
+    explanation: 一般情況下，根會朝下生長，莖會朝上生長，因此選①；這是在問後續生長的方向。答案依題意獨立推核，未取得官方答案。
+    source:
+      originalPaper: 基隆市五堵國民小學112學年度第一學期期中評量三年級自然與生活科技試卷
+      section: 二、選擇題（每題3分，共36分）
+      number: 5

@@ -1,0 +1,262 @@
+# 僅候選，未入庫；無官方答案，答案均獨立作答。見 mingyi-109/REPORT.md。
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: |-
+      改錯字：路口的教通警察竟然被闖紅燈的車子撞商了﹗
+      依出現順序寫出正確的字：___、___。
+    answer:
+      - 交
+      - 傷
+    explanation: 「教通」應為「交通」，「撞商」應為「撞傷」。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 二、改錯字(每字1分，共8分)
+      number: 1
+  - no: 2
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: |-
+      改錯字：我和爸爸和力把舊抱紙回收。
+      依出現順序寫出正確的字：___、___。
+    answer:
+      - 合
+      - 報
+    explanation: 「和力」應為「合力」，「抱紙」應為「報紙」。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 二、改錯字(每字1分，共8分)
+      number: 2
+  - no: 3
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: |-
+      改錯字：無論晴天還是雨天，爸媽都要上班，時在很幸苦。
+      依出現順序寫出正確的字：___、___。
+    answer:
+      - 實
+      - 辛
+    explanation: 「時在」應為「實在」，「幸苦」應為「辛苦」。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 二、改錯字(每字1分，共8分)
+      number: 3
+  - no: 4
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: |-
+      改錯字：婚裡上，當新狼牽著新娘出場時，大家都舉起雙手用力鼓掌。
+      依出現順序寫出正確的字：___、___。
+    answer:
+      - 禮
+      - 郎
+    explanation: 「婚裡」應為「婚禮」，「新狼」應為「新郎」。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 二、改錯字(每字1分，共8分)
+      number: 4
+  - no: 5
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 眨：部首___，造詞___。
+    answer:
+      - 目
+      - 眨眼
+    explanation: 「眨」的部首是「目」；「眨眼」是造詞範例，其他正確詞語也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 三、寫出部首並造詞(部首1分，語詞2分，共15分)
+      number: 1
+  - no: 6
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 困：部首___，造詞___。
+    answer:
+      - 囗
+      - 困難
+    explanation: 「困」的部首是「囗」；「困難」是造詞範例，其他正確詞語也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 三、寫出部首並造詞(部首1分，語詞2分，共15分)
+      number: 2
+  - no: 7
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 跨：部首___，造詞___。
+    answer:
+      - 足
+      - 跨越
+    explanation: 「跨」的部首是「足」；「跨越」是造詞範例，其他正確詞語也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 三、寫出部首並造詞(部首1分，語詞2分，共15分)
+      number: 3
+  - no: 8
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 業：部首___，造詞___。
+    answer:
+      - 木
+      - 作業
+    explanation: 「業」的部首是「木」；「作業」是造詞範例，其他正確詞語也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 三、寫出部首並造詞(部首1分，語詞2分，共15分)
+      number: 4
+  - no: 9
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 視：部首___，造詞___。
+    answer:
+      - 見
+      - 視線
+    explanation: 「視」的部首是「見」；「視線」是造詞範例，其他正確詞語也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 三、寫出部首並造詞(部首1分，語詞2分，共15分)
+      number: 5
+  - no: 10
+    type: true-false
+    subject: 國語
+    grade: 3
+    stem: 比較兩個讀音，相同的打○，不同的打×：「背」包；「背」部。
+    answer: false
+    explanation: 「背」包讀ㄅㄟ，「背」部讀ㄅㄟˋ，讀音不同。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 四、比較兩個讀音，相同的打○，不同的打×(每格1分，共6分)
+      number: 1
+  - no: 11
+    type: true-false
+    subject: 國語
+    grade: 3
+    stem: 比較兩個讀音，相同的打○，不同的打×：勉「強」；「強」迫。
+    answer: true
+    explanation: 兩個「強」都讀ㄑㄧㄤˇ。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 四、比較兩個讀音，相同的打○，不同的打×(每格1分，共6分)
+      number: 2
+  - no: 12
+    type: true-false
+    subject: 國語
+    grade: 3
+    stem: 比較兩個讀音，相同的打○，不同的打×：「盛」大；「盛」怒。
+    answer: true
+    explanation: 兩個「盛」都讀ㄕㄥˋ。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 四、比較兩個讀音，相同的打○，不同的打×(每格1分，共6分)
+      number: 3
+  - no: 13
+    type: true-false
+    subject: 國語
+    grade: 3
+    stem: 比較兩個讀音，相同的打○，不同的打×：流「露」；「露」出。
+    answer: false
+    explanation: 教育部《國語辭典簡編本》「流露」（196200030）讀ㄌㄧㄡˊ ㄌㄨˋ，「露出」（181400006）讀ㄌㄡˋ ㄔㄨ，因此兩個「露」讀音不同。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 四、比較兩個讀音，相同的打○，不同的打×(每格1分，共6分)
+      number: 4
+  - no: 14
+    type: true-false
+    subject: 國語
+    grade: 3
+    stem: 比較兩個讀音，相同的打○，不同的打×：「處」理；相「處」。
+    answer: true
+    explanation: 兩個「處」都讀ㄔㄨˇ。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 四、比較兩個讀音，相同的打○，不同的打×(每格1分，共6分)
+      number: 5
+  - no: 15
+    type: true-false
+    subject: 國語
+    grade: 3
+    stem: 比較兩個讀音，相同的打○，不同的打×：「撒」嬌；「撒」種。
+    answer: false
+    explanation: 撒嬌的「撒」讀ㄙㄚ；撒種的「撒」讀ㄙㄚˇ。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 四、比較兩個讀音，相同的打○，不同的打×(每格1分，共6分)
+      number: 6
+  - no: 16
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 短語練習：照樣寫。
+    example: 「扶著」「東東」「慢慢」「坐下」。
+    answer: 牽著弟弟輕輕走過。
+    explanation: 答案為依原短語結構寫出的範例；符合相同結構且語意通順的短語也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 七、短語練習：每格1分，共9分
+      number: 1
+  - no: 17
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 短語練習：照樣寫。
+    example: 「一張張」「開心滿足」的「笑臉」。
+    answer: 一朵朵鮮豔美麗的花朵。
+    explanation: 答案為依原短語結構寫出的範例；符合相同結構且語意通順的短語也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 七、短語練習：每格1分，共9分
+      number: 2
+  - no: 18
+    type: imitate-sentence
+    subject: 國語
+    grade: 3
+    stem: 短語練習：照樣寫。
+    example: 向「陽光」「招招手」。
+    answer: 向朋友揮揮手。
+    explanation: 答案為依原短語結構寫出的範例；符合相同結構且語意通順的短語也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 七、短語練習：每格1分，共9分
+      number: 3
+  - no: 19
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 挨家挨戶
+    answer: 志工挨家挨戶送上溫暖的便當。
+    explanation: 答案為造句範例；用指定詞語或句型寫出語意通順的句子也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 八、造句(1題3分，共9分)
+      number: 1
+  - no: 20
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 先……接著……
+    answer: 我先寫完作業，接著整理書包。
+    explanation: 答案為造句範例；用指定詞語或句型寫出語意通順的句子也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 八、造句(1題3分，共9分)
+      number: 2
+  - no: 21
+    type: make-sentence
+    subject: 國語
+    grade: 3
+    stem: 除了……就是……
+    answer: 假日裡，他除了看書，就是畫畫。
+    explanation: 答案為造句範例；用指定詞語或句型寫出語意通順的句子也可。
+    source:
+      originalPaper: 109學年度第一學期三年級國語科期中定期評量試卷
+      section: 八、造句(1題3分，共9分)
+      number: 3

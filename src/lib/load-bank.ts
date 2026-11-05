@@ -1,3 +1,4 @@
+import { assessScopes, scopeStatus, SUPPORTED_SCOPES } from '../domain/exam-scope.ts';
 // 建置時載入題庫與試卷，一律跑跨檔檢查；有錯誤就讓建置失敗並列出全部問題，只有警告時印出警告後繼續。
 import { getCollection } from 'astro:content';
 import { basename } from 'node:path';
@@ -35,7 +36,11 @@ async function load() {
     .map(([id, question]) => ({ id, question, group: membership.get(id) }))
     .sort((a, b) => compareIds(a.id, b.id));
 
-  return { papers, questions, entries, membership };
+  const scopes=assessScopes(bankInputs,paperInputs);
+  const eligiblePapers=papers.filter(p=>scopes.papers.get(`papers/${actualFileName(p.id,p.filePath)}`)?.length === 0);
+  for (const [file,reasons] of scopes.papers) if (reasons.length) console.warn(`停用｜${file}：${reasons.join('；')}`);
+  const capacities=SUPPORTED_SCOPES.map(scope=>scopeStatus(scopes,scope));
+  return { papers:eligiblePapers, questions, entries, membership, capacities };
 }
 
 let loaded: ReturnType<typeof load> | undefined;

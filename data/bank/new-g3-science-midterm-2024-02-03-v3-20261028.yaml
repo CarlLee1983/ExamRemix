@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 把同一份水從高窄杯倒入矮寬杯，沒有潑灑、沒有加水，短時間內忽略蒸發，秤重時也扣除各容器的重量。因為水面變低，這份水本身的重量就一定變輕。
+    answer: false
+    explanation: 水面高度會隨容器形狀改變；題目中水沒有增減，所以這份水本身的重量不會只因水面降低而變輕。比較時須扣除不同容器的重量。
+    derivedFrom:
+      - g3-science-midterm-2024-02-03

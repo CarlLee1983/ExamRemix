@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="180" viewBox="0 0 600 180" role="img" aria-label="磁鐵數量1個、2個、3個；能吸住的迴紋針數量2個、4個、5個">
+  <rect x="1" y="1" width="598" height="178" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="2" y="2" width="596" height="77" fill="#ddd"/>
+  <path d="M150 1V179M300 1V179M450 1V179M1 80H599" fill="none" stroke="black" stroke-width="2"/>
+  <g fill="black" font-family="serif" font-size="25" text-anchor="middle">
+    <text x="75" y="34">磁鐵<tspan x="75" dy="30">數量</tspan></text>
+    <text x="225" y="50">1個</text><text x="375" y="50">2個</text><text x="525" y="50">3個</text>
+    <text x="75" y="107">能吸住的<tspan x="75" dy="28">迴紋針數</tspan><tspan x="75" dy="28">量</tspan></text>
+    <text x="225" y="140">2個</text><text x="375" y="140">4個</text><text x="525" y="140">5個</text>
+  </g>
+</svg>

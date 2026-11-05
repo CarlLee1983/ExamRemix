@@ -1,0 +1,56 @@
+# 官方原卷及紅筆官方答案逐項目視；候選尚待獨立審查。
+# 保留原題中文、選項順序與原題號；僅省略作答括號／排版底線，不重製旁題圖。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: 植物果實的顏色一定會和種子的顏色一樣。
+    answer: false
+    explanation: 果實和種子是不同構造，顏色不一定相同，例如西瓜的果皮、果肉和成熟種子的顏色就可不同。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級自然科學評量試卷
+      section: 三、是非題
+      number: 1
+  - no: 5
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: 大強幫爸爸拔除院子裡的雜草，他發現拔起小草的根有一條明顯的主根，旁邊再長出細細的側根，這種根稱為「鬚根」。
+    answer: false
+    explanation: 有明顯主根，主根旁長側根，是軸根系的特徵；鬚根系沒有這樣明顯的主根，通常是許多粗細相近的根。不能只因題目寫小草就判鬚根。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級自然科學評量試卷
+      section: 三、是非題
+      number: 5
+  - no: 10
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 用手提水，可以感覺到水是有重量的。
+    answer: true
+    explanation: 提起裝水的容器時能感受到水帶來的負擔；水本身有重量。原題是日常感受，不是用手精確測量重量數值。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級自然科學評量試卷
+      section: 三、是非題
+      number: 10
+  - no: 12
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 在家中你會發現哪一項與空氣流動的應用無關？
+    options:
+      - 電風扇
+      - 吹風機
+      - 電爐
+      - 風鈴
+    answer: 3
+    explanation: 電風扇與吹風機以吹動空氣工作，風鈴利用流動空氣推動發聲；一般電爐的主要功能是電能加熱，不靠製造或利用空氣流動。熱造成的自然對流不等於這裡所問的空氣流動應用。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級自然科學評量試卷
+      section: 四、選擇題
+      number: 12

@@ -1,10 +1,10 @@
 groups:
   - no: 1
-    paragraphs: [小安星期六在圖書館借了兩本書。]
-    members: [1, 2]
+    paragraphs: [ 小安星期六在圖書館借了兩本書。 ]
+    members: [ 1, 2 ]
   - no: 2
-    paragraphs: [小文星期天在圖書館借了三本書。]
-    members: [3, 4]
+    paragraphs: [ 小文星期天在圖書館借了三本書。 ]
+    members: [ 3, 4 ]
     derivedFrom: derived-reading#1
 questions:
   - no: 1
@@ -13,10 +13,13 @@ questions:
     grade: 3
     unit: 題組衍生
     stem: 小安星期幾借書？
-    options: [星期六, 星期天]
+    options: [ 星期六, 星期天 ]
     answer: 1
     explanation: 原材料寫星期六。
     source: { originalPaper: 自編閱讀, number: 1 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 2
     type: true-false
     subject: 國語
@@ -26,16 +29,22 @@ questions:
     answer: true
     explanation: 原材料寫兩本。
     source: { originalPaper: 自編閱讀, number: 2 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 3
     type: choice
     subject: 國語
     grade: 3
     unit: 題組衍生
     stem: 小文星期幾借書？
-    options: [星期六, 星期天]
+    options: [ 星期六, 星期天 ]
     answer: 2
     explanation: 新材料寫星期天。
-    derivedFrom: [derived-reading-01]
+    derivedFrom: [ derived-reading-01 ]
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 4
     type: true-false
     subject: 國語
@@ -44,4 +53,7 @@ questions:
     stem: 小文借了兩本書。
     answer: false
     explanation: 新材料寫三本。
-    derivedFrom: [derived-reading-02]
+    derivedFrom: [ derived-reading-02 ]
+    examScope:
+      semester: 1
+      stage: midterm

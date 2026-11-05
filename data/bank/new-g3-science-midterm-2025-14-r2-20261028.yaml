@@ -1,0 +1,31 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 磁鐵靠近一個不明物品時，物品被吸過來。只靠這個現象能確定它也是磁鐵嗎？
+    options:
+      - 能，所有被吸引的都是磁鐵
+      - 能，玻璃一定被磁鐵吸引
+      - 不能，因為磁鐵從不吸引另一塊磁鐵
+      - 不能，鐵製品也可能被磁鐵吸引
+    answer: 4
+    explanation: 鐵製品及另一塊磁鐵都可能被吸引，單看吸引不足以判定物品本身是磁鐵。
+    derivedFrom:
+      - g3-science-midterm-2025-14
+  - no: 2
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 一塊磁鐵標示N極的一端靠近另一塊條形磁鐵的甲端時互相排斥，另一塊的甲、乙兩端分別是什麼極？
+    options:
+      - 甲為N極，乙為S極
+      - 甲為S極，乙為N極
+      - 甲與乙都是N極
+      - 甲與乙都是S極
+    answer: 1
+    explanation: 同極相斥，因此甲是N極；完整條形磁鐵另一端乙是S極。
+    derivedFrom:
+      - g3-science-midterm-2025-14

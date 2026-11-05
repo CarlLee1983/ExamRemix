@@ -1,0 +1,41 @@
+# 原卷來源：https://www.maiyajiaoan.com/wiki/25741.html（麥芽教案公開預覽，第三方轉載，非校方原件）
+# page.html SHA-256: 7684025b2e2bb18bde4456e9032995f22727b8ef646c2cb5ed5e675feeecb7ad
+# full-page.png SHA-256: 33d0c43baddfe5fb767c1900f2419ff2c0d38c8540f578f0c7643db96d31a77e
+# 隔離候選題庫：只收 可用題；HOLD / HOLD_NEAR 題見 ../../REPORT.md。無官方答案，答案皆依原題獨立推核。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 生物與非生物
+    stem: "樟樹和蝴蝶都是有生命的，蝴蝶長大後會死亡，樟樹長大後不會死亡。"
+    answer: false
+    explanation: "樟樹和蝴蝶都是生物，生物都會經歷生長、老化直到死亡，大樹也不例外，所以樟樹長大後仍會死亡。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "110學年度第1學期臺南市海佃國小三年級自然與生活科技第一次評量試卷"
+      section: "一、對的畫○，錯的打╳：(30分，每題2分)"
+      number: 1
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "部分植物的莖長有許多尖刺或會分泌乳汁，可以直接觸摸。"
+    answer: false
+    explanation: "有尖刺的莖會刺傷皮膚，分泌的乳汁可能讓皮膚紅腫發癢，觀察這類植物時不可直接觸摸。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "110學年度第1學期臺南市海佃國小三年級自然與生活科技第一次評量試卷"
+      section: "一、對的畫○，錯的打╳：(30分，每題2分)"
+      number: 5
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "生石花長得像石頭的外表，可以避免被動物吃掉。"
+    answer: true
+    explanation: "生石花的葉子厚厚的，外表像石頭，動物不容易發現，可以減少被吃掉的機會。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "110學年度第1學期臺南市海佃國小三年級自然與生活科技第一次評量試卷"
+      section: "一、對的畫○，錯的打╳：(30分，每題2分)"
+      number: 8

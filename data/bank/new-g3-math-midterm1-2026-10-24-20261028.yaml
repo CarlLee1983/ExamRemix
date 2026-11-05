@@ -1,0 +1,89 @@
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 紅盒裝有 120 顆珠子，藍盒的數量是前者的 4 倍，藍盒有 ___ 顆珠子。
+    answer:
+      - "480"
+    explanation: 120 的 4 倍是 120×4＝480。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-24
+  - no: 2
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 閱讀角原有 210 本書，圖書室的數量是前者的 3 倍，圖書室有 ___ 本書。
+    answer:
+      - "630"
+    explanation: 210 的 3 倍是 210×3＝630。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-24
+  - no: 3
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 甲隊募得 140 元，乙隊的數量是前者的 5 倍，乙隊有 ___ 元。
+    answer:
+      - "700"
+    explanation: 140 的 5 倍是 140×5＝700。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-24
+  - no: 4
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 小袋裝著 230 顆種子，大袋的數量是前者的 2 倍，大袋有 ___ 顆種子。
+    answer:
+      - "460"
+    explanation: 230 的 2 倍是 230×2＝460。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-24
+  - no: 5
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 第一天收到 160 張卡片，第二天的數量是前者的 4 倍，第二天有 ___ 張卡片。
+    answer:
+      - "640"
+    explanation: 160 的 4 倍是 160×4＝640。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-24
+  - no: 6
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 圓罐裝有 310 顆彈珠，方罐的數量是前者的 3 倍，方罐有 ___ 顆彈珠。
+    answer:
+      - "930"
+    explanation: 310 的 3 倍是 310×3＝930。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-24
+  - no: 7
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 上午收集到 180 張郵票，下午的數量是前者的 5 倍，下午有 ___ 張郵票。
+    answer:
+      - "900"
+    explanation: 180 的 5 倍是 180×5＝900。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-24
+  - no: 8
+    type: fill-blank
+    subject: 數學
+    grade: 3
+    unit: 乘法
+    stem: 短架放著 220 個積木，長架的數量是前者的 4 倍，長架有 ___ 個積木。
+    answer:
+      - "880"
+    explanation: 220 的 4 倍是 220×4＝880。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-24

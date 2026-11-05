@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 同一所學校有兩位李侑安，一位是三年一班4號，另一位是三年二班4號。失物上的標籤只寫「三年級、李侑安、4號」。若再補上下面哪一項，就能在這兩人之間分辨主人？
+    options:
+      - 班級
+      - 年級
+      - 座號
+      - 學校名稱
+    answer: 1
+    explanation: 兩人的姓名、年級、座號和學校都相同，只有班級不同。加上一班或二班，才能在這兩位同學之間區分主人。
+    derivedFrom:
+      - g3-social-midterm-2025-02-18

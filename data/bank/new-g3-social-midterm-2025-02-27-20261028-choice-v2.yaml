@@ -1,0 +1,15 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 我晚上才有空，但阿姨那時正在照顧嬰兒、不方便接電話。哪個做法最能兼顧聯繫與她的需要？
+    options:
+      - 每晚連打十次直到接通
+      - 要求她先不管嬰兒只陪我聊天
+      - 先詢問可否留言，讓她方便時再回覆
+      - 認定不接電話就是不關心我
+    answer: 3
+    explanation: 協調非即時聯繫方式，可表達關心又避免打擾。
+    derivedFrom:
+      - g3-social-midterm-2025-02-27

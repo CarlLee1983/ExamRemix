@@ -1,0 +1,21 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 風向穩定時，一條一端固定在竿上的輕細布帶，持續被吹向東邊伸展，周圍沒有遮擋。這表示空氣是從東邊吹來，往西邊流動。
+    answer: false
+    explanation: 布帶自由端順著空氣流去的方向延伸；吹向東邊時，空氣大致由西往東流，不能把去向當成來向。
+    derivedFrom:
+      - g3-science-yongan-midterm-2024-02
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 同一處正有風吹，正常的小風車會轉；另一個小風車的輪軸被卡住而不轉。小華只看卡住的風車沒轉，就能確定這裡完全沒有空氣流動。
+    answer: false
+    explanation: 輪軸卡住使風車無法正常顯示風的作用；沒轉是故障造成，不等於沒風。應先檢查觀測工具能否正常運作。
+    derivedFrom:
+      - g3-science-yongan-midterm-2024-02

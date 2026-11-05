@@ -21,6 +21,7 @@ import HorizontalCalcQuestion from './HorizontalCalcQuestion.astro';
 import ImitateSentenceQuestion from './ImitateSentenceQuestion.astro';
 import MakeSentenceQuestion from './MakeSentenceQuestion.astro';
 import MultiSelectQuestion from './MultiSelectQuestion.astro';
+import PersonalResponseQuestion from './PersonalResponseQuestion.astro';
 import MatchingQuestion from './MatchingQuestion.astro';
 import TableFillQuestion from './TableFillQuestion.astro';
 import TrueFalseQuestion from './TrueFalseQuestion.astro';
@@ -50,6 +51,7 @@ switch (question.type) {
   case 'table-fill':
   case 'true-false':
   case 'fill-blank':
+  case 'personal-response':
   case 'char-to-zhuyin':
   case 'zhuyin-to-char':
   case 'make-sentence':
@@ -72,6 +74,7 @@ switch (question.type) {
 {question.type === 'table-fill' && <TableFillQuestion number={number} question={question} />}
 {question.type === 'true-false' && <TrueFalseQuestion number={number} question={question} />}
 {question.type === 'fill-blank' && <FillBlankQuestion number={number} question={question} />}
+{question.type === 'personal-response' && <PersonalResponseQuestion number={number} question={question} />}
 {question.type === 'char-to-zhuyin' && <CharToZhuyinQuestion number={number} question={question} />}
 {question.type === 'zhuyin-to-char' && <ZhuyinToCharQuestion number={number} question={question} />}
 {question.type === 'make-sentence' && <MakeSentenceQuestion number={number} question={question} />}

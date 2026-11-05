@@ -1,0 +1,100 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: SUN ___
+    answer:
+      - sun
+    explanation: 依題意將大寫轉為小寫，保留字母順序：SUN → sun。
+    derivedFrom:
+      - original-english-04
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: TOY ___
+    answer:
+      - toy
+    explanation: 依題意將大寫轉為小寫，保留字母順序：TOY → toy。
+    derivedFrom:
+      - original-english-04
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: VAN ___
+    answer:
+      - van
+    explanation: 依題意將大寫轉為小寫，保留字母順序：VAN → van。
+    derivedFrom:
+      - original-english-04
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: ZOO ___
+    answer:
+      - zoo
+    explanation: 依題意將大寫轉為小寫，保留字母順序：ZOO → zoo。
+    derivedFrom:
+      - original-english-04
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: BOOK ___
+    answer:
+      - book
+    explanation: 依題意將大寫轉為小寫，保留字母順序：BOOK → book。
+    derivedFrom:
+      - original-english-04
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: CAKE ___
+    answer:
+      - cake
+    explanation: 依題意將大寫轉為小寫，保留字母順序：CAKE → cake。
+    derivedFrom:
+      - original-english-04
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: DOOR ___
+    answer:
+      - door
+    explanation: 依題意將大寫轉為小寫，保留字母順序：DOOR → door。
+    derivedFrom:
+      - original-english-04
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: FROG ___
+    answer:
+      - frog
+    explanation: 依題意將大寫轉為小寫，保留字母順序：FROG → frog。
+    derivedFrom:
+      - original-english-04
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: GIFT ___
+    answer:
+      - gift
+    explanation: 依題意將大寫轉為小寫，保留字母順序：GIFT → gift。
+    derivedFrom:
+      - original-english-04

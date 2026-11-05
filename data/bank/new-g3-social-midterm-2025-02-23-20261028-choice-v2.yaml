@@ -1,0 +1,29 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 小安看見三個人穿同款球鞋，就認為他們一定屬於同一族群。這個判斷為何證據不足？
+    options:
+      - 買同款物品不代表具有共同語言與文化背景
+      - 球鞋顏色可以直接決定族群
+      - 族群只依商品品牌區分
+      - 同款鞋表示每個人的家族歷史都相同
+    answer: 1
+    explanation: 族群與文化背景有關，偶然相同的消費選擇不足以判定身分。
+    derivedFrom:
+      - g3-social-midterm-2025-02-23
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 要了解某族群代代傳承的生活文化，哪組訪談主題最合適？
+    options:
+      - 今天手機還剩多少電
+      - 每個人鞋帶綁了幾圈
+      - 語言、節慶習俗與生活故事
+      - 桌子長寬與教室燈泡數量
+    answer: 3
+    explanation: 語言、習俗與生活故事直接涉及文化傳承，其他問題無法回答研究目的。
+    derivedFrom:
+      - g3-social-midterm-2025-02-23

@@ -1,0 +1,29 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 外套只掉了一顆鈕扣，尺寸合身且可以縫好。哪個決定較能避免不必要浪費？
+    options:
+      - 故意剪破後要求買新的
+      - 修補後繼續使用
+      - 把家中所有完好衣物都丟掉
+      - 因廣告有新款就借錢全買下
+    answer: 2
+    explanation: 能安全修補且仍合用的衣物可繼續使用，減少無必要的消費。
+    derivedFrom:
+      - g3-social-midterm-2025-02-26
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 全家發現無人使用的房間每天仍開燈。要直接改善這項浪費，應先做什麼？
+    options:
+      - 只把電費帳單藏起來
+      - 把不用的房間再多裝幾盞長亮的燈
+      - 建立離開時確認並關掉不需要燈光的習慣
+      - 要求家人從此連必要照明也不能用
+    answer: 3
+    explanation: 針對無人使用卻開燈的原因調整行為，才能減少不必要耗電。
+    derivedFrom:
+      - g3-social-midterm-2025-02-26

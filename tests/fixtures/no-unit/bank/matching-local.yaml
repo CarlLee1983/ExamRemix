@@ -1,0 +1,42 @@
+questions:
+  - no: 1
+    type: matching
+    subject: 英語
+    grade: 3
+    unit: 配對練習
+    stem: 將英文單字與對應圖文連線。
+    left:
+      - content: apple
+        answer: "2"
+      - content: tree
+        answer: "4"
+      - content: fish
+        answer: "6"
+      - content: sun
+        answer: "1"
+      - content: book
+        answer: "3"
+      - content: moon
+        answer: "5"
+    right:
+      - code: "1"
+        content: 太陽
+      - code: "2"
+        content: 蘋果
+      - code: "3"
+        content: 書本
+      - code: "4"
+        content:
+          image:
+            src: reading/tree.svg
+            alt: 一棵樹
+      - code: "5"
+        content: 月亮
+      - code: "6"
+        content: 魚
+    explanation: 六個單字分別對應蘋果、樹、魚、太陽、書本和月亮。
+    source: { originalPaper: 自編配對練習, section: 連連看 }
+    mode: one-to-one
+    examScope:
+      semester: 1
+      stage: midterm

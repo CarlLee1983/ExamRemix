@@ -168,6 +168,69 @@ body {
   visibility: hidden;
 }
 
+/* 四線格是實際線條而非背景，未啟用背景列印時仍可寫字。 */
+.question-four-line .stem {
+  white-space: pre-line;
+  /* 四線格比一般文字高；每行要容得下完整格線。 */
+  line-height: 3;
+}
+
+.blank-four-line {
+  container-type: inline-size;
+  height: 2.4em;
+  /* .blank 左右各有 0.25em margin，格線本身須扣掉這段空間。 */
+  max-width: calc(100% - 0.5em);
+  border: 0;
+  vertical-align: middle;
+}
+
+.writing-guide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.writing-guide span {
+  display: block;
+  border-top: 1px solid #000;
+}
+
+.writing-guide span:nth-child(2) {
+  border-top-style: dashed;
+}
+
+.blank-four-line .blank-answer {
+  inset: auto 0 calc(33.333% - 0.22em);
+  font-family: Arial, sans-serif;
+  font-size: min(1.75em, var(--writing-font-cap));
+  line-height: 1;
+}
+
+/* 個人回答使用完整寬度的四線書寫區；範例獨立顯示，不決定格線寬度。 */
+.personal-writing-lines {
+  display: grid;
+  gap: 2mm;
+  margin: 1mm 0 0 var(--question-indent);
+}
+
+.personal-writing-line {
+  position: relative;
+  height: 2.4em;
+}
+
+.personal-answer {
+  display: none;
+  margin: 1.5mm 0 0 var(--question-indent);
+  color: var(--answer-color);
+  overflow-wrap: anywhere;
+}
+
+html[data-mode='answer'] .personal-answer {
+  display: block;
+}
+
 /* 國字注音：被考的字加底線，旁邊的作答格寬度依注音組數（--syllables）；
    注音寫國字：每個字一格，注音是格子上方的 ruby。答案疊在格內，不佔版面，兩種模式格子大小不變 */
 .target-char {
@@ -473,6 +536,42 @@ body {
 .check-options li {
   display: flex;
   align-items: baseline;
+}
+
+/* 一對一書寫板保留原有行距；一般答案池沿用上方的彈性欄位。 */
+.matching-one-to-one .matching-question-body {
+  break-inside: avoid;
+}
+
+.matching-one-to-one .matching-board {
+  gap: 24mm;
+  margin-left: var(--question-indent);
+}
+
+.matching-one-to-one .matching-column {
+  grid-auto-rows: minmax(24mm, auto);
+  gap: 0;
+}
+
+.matching-one-to-one .matching-board-dense .matching-column {
+  /* 十項連同抬頭、題幹及答案鍵須能放入一張 A4；圖片上限同為 18mm。 */
+  grid-auto-rows: minmax(18mm, auto);
+}
+
+.matching-one-to-one .visual-text-image {
+  max-height: 18mm;
+}
+
+.matching-key {
+  display: none;
+  margin: 1.5mm 0 0 var(--question-indent);
+  color: var(--answer-color);
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+html[data-mode='answer'] .matching-key {
+  display: block;
 }
 
 .diagram-figure {

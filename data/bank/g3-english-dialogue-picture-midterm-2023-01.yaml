@@ -1,0 +1,31 @@
+questions:
+  - no: 1
+    type: diagram-label
+    subject: 英語
+    grade: 3
+    stem: Read and Match 讀一讀，在括號中填入正確的圖片代號a、b、c或d。
+    image:
+      src: g3-english-dialogue-picture-midterm-2023-01/01.png
+      alt: 四幅生日情境圖，各標a至d；下方有三段英語敘述與空白括號。
+    labels:
+      - x: 3.4
+        y: 60
+        width: 7
+        height: 4
+        answer: a
+      - x: 3.4
+        y: 69.8
+        width: 7
+        height: 4
+        answer: b
+      - x: 3.4
+        y: 85
+        width: 7
+        height: 4
+        answer: c
+    space: 0
+    explanation: 依原圖與文字獨立推核，非官方答案：第一段seven對應a圖蛋糕上的7；第二段nine對應b圖的9；第三段six對應c圖的6。d圖為8，不選。原三小題與四圖完整保留，無須猜Alan是哪個教材角色。
+    source:
+      originalPaper: 112學年度第一學期第一次定期評量三年級語文領域英語試題卷
+      section: H、Read and Match 讀一讀，在括號中填入正確的圖片代號a、b、c、或d：(每題6分，共12分)
+      number: 2

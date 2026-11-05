@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="520" viewBox="0 0 530 260"><rect width="530" height="260" fill="white"/><g stroke="#222" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+<!-- Stem and leaves -->
+<path d="M92 238 Q87 192 89 163 Q84 142 78 121 L87 115 Q95 138 100 156 Q137 133 168 116 L174 125 Q133 149 102 174 L102 238" fill="#d8d8d8"/>
+<path d="M84 135 C43 150 18 120 18 88 C45 76 81 83 90 120 Z" fill="#ececec"/>
+<path d="M84 132 Q57 107 24 92 M49 114 L49 100 M65 126 L67 110" fill="none" stroke="#999" stroke-width="1"/>
+<path d="M94 118 C89 69 119 49 161 48 C164 83 137 113 94 127 Z" fill="#e5e5e5"/>
+<path d="M97 119 Q124 82 157 54 M110 103 L112 82 M129 82 L148 81" fill="none" stroke="#888" stroke-width="1"/>
+<path d="M88 171 C64 161 39 169 26 183 C33 217 62 224 92 196 Z" fill="#ededed"/>
+<path d="M88 183 L32 185 M60 185 L43 199" fill="none" stroke="#999" stroke-width="1"/>
+<!-- Petals, rear to front; retain side view -->
+<path d="M204 113 C182 91 164 83 178 65 C187 53 202 48 213 58 C209 31 207 15 219 15 C235 33 240 68 229 97 L213 122 Z" fill="#fafafa"/>
+<path d="M218 111 C238 88 272 88 295 99 C311 109 306 125 307 141 C277 150 252 143 224 129 Z" fill="#f6f6f6"/>
+<path d="M212 120 C224 132 229 149 244 159 C258 172 264 184 249 189 C230 184 215 169 208 151 Z" fill="#fafafa"/>
+<path d="M204 114 C178 114 163 126 154 141 C173 148 192 139 209 132 Z" fill="#fafafa"/>
+<!-- Calyx at flower base -->
+<path d="M165 128 Q174 113 192 108 L179 125 L196 121 Q186 133 166 139 L152 147 L155 134 Z" fill="#bdbdbd"/>
+<!-- Stamens: filaments ending in distinct anthers -->
+<g fill="none" stroke-width="1.4">
+<path d="M204 112 Q215 88 239 70"/><path d="M202 115 Q223 96 253 88"/>
+<path d="M209 120 Q234 120 253 128"/><path d="M211 121 Q232 129 244 137"/>
+</g>
+<g fill="#b5b5b5">
+<ellipse cx="240" cy="69" rx="9" ry="3.4" transform="rotate(-38 240 69)"/>
+<ellipse cx="254" cy="88" rx="9" ry="3.4" transform="rotate(-25 254 88)"/>
+<ellipse cx="254" cy="129" rx="8" ry="3.3" transform="rotate(15 254 129)"/>
+<ellipse cx="244" cy="138" rx="7" ry="3.2" transform="rotate(28 244 138)"/>
+</g>
+<!-- Pistil: swollen ovary, narrow style and lobed stigma -->
+<path d="M186 125 Q181 117 191 110 Q198 106 205 106 L213 103 L214 108 L205 112 Q196 116 192 128 Z" fill="#d7d7d7"/>
+<path d="M212 104 Q209 100 212 98 Q216 97 218 101 Q223 101 221 106 Q217 109 213 107 Z" fill="#777"/>
+<!-- Foreground petal -->
+<path d="M203 116 C209 120 210 131 208 143 C205 153 203 165 214 170 C229 171 238 158 231 146 C224 135 219 121 217 115" fill="white"/>
+<!-- Original four leader positions: petal, stamen, pistil, calyx -->
+<g fill="none" stroke="#555" stroke-width="1.8">
+<path d="M220 29 L368 25"/>
+<path d="M240 69 L368 75"/>
+<path d="M215 104 L368 128"/>
+<path d="M153 142 L222 212 L368 226"/>
+</g>
+<!-- Empty answer parentheses -->
+<g fill="none" stroke-width="1.5">
+<path d="M393 9 Q378 24 393 39 M466 9 Q481 24 466 39"/>
+<path d="M393 59 Q378 74 393 89 M466 59 Q481 74 466 89"/>
+<path d="M393 112 Q378 127 393 142 M466 112 Q481 127 466 142"/>
+<path d="M393 211 Q378 226 393 241 M466 211 Q481 226 466 241"/>
+</g></g></svg>

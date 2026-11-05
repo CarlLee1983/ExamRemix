@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      EXAMREMIX_DATA_DIR: examples
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.21.0'
+          package-manager-cache: false
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0; reads packageManager
+      - name: Locate pnpm store
+        id: pnpm
+        run: |
+          echo "store=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
+          echo "version=$(pnpm --version)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ steps.pnpm.outputs.store }}
+          key: ${{ runner.os }}-${{ runner.arch }}-pnpm-${{ steps.pnpm.outputs.version }}-${{ hashFiles('pnpm-lock.yaml') }}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm test
+      - run: pnpm check:bank examples
+      - run: pnpm exec playwright install --with-deps chromium
+      # Playwright builds examples and the no-unit fixture before starting preview.
+      - run: pnpm test:e2e

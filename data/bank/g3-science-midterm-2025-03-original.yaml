@@ -1,0 +1,25 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 物質溶解
+    stem: 砂糖加入水中充分攪拌後消失看不見了，此時用放大鏡來觀察看不到砂糖。
+    answer: true
+    explanation: 砂糖溶解後均勻分散在水中，不能再用一般放大鏡看出原來的砂糖顆粒。看不到顆粒不代表糖這種物質不再存在，而是已溶在水中。
+    source:
+      originalPaper: 114學年度上學期三年級自然科學領域期中評量試卷
+      section: 一、是非題：(每題2分，共20分)
+      number: 7
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 物質溶解
+    stem: 當水中的食鹽沉澱無法繼續溶解時，只要放著10分鐘就會繼續溶解。
+    answer: false
+    explanation: 食鹽在原水量和水溫下若已不能再溶解，單純等待10分鐘並不能保證它繼續溶解。要讓更多食鹽溶解，不能只靠延長等待；可以在適當條件下增加水量等。
+    source:
+      originalPaper: 114學年度上學期三年級自然科學領域期中評量試卷
+      section: 一、是非題：(每題2分，共20分)
+      number: 10

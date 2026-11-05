@@ -1,0 +1,14 @@
+# 官方空白試卷；答案獨立推核，未附官方解答。僅省略作答括號與輔助注音。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 空氣與水
+    stem: 空氣占有空間，因此小樺出國時將衣物收納在密封袋並把空氣抽出來，就可以節省許多空間。
+    answer: true
+    explanation: 把衣物間及袋內的空氣抽出後，柔軟袋子和衣物所占的收納體積可以減少；並不是衣物本身消失。
+    source:
+      originalPaper: 高雄市永安國小111學年度上學期三年級自然與生活科技科領域期中評量
+      section: 一、是非題：(每題2分、共22分)
+      number: 9

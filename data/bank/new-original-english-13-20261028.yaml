@@ -1,0 +1,118 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ bag is red.
+    options:
+      - my
+      - I
+      - My
+    answer: 3
+    explanation: 名詞前用所有格 My 表示「我的」；句首首字母須大寫。
+    derivedFrom:
+      - original-english-13
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ hat is blue.
+    options:
+      - My
+      - my
+      - I
+    answer: 1
+    explanation: 名詞前用所有格 My 表示「我的」；句首首字母須大寫。
+    derivedFrom:
+      - original-english-13
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ pen is black.
+    options:
+      - my
+      - My
+      - I
+    answer: 2
+    explanation: 名詞前用所有格 My 表示「我的」；句首首字母須大寫。
+    derivedFrom:
+      - original-english-13
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ book is green.
+    options:
+      - my
+      - I
+      - My
+    answer: 3
+    explanation: 名詞前用所有格 My 表示「我的」；句首首字母須大寫。
+    derivedFrom:
+      - original-english-13
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ cup is yellow.
+    options:
+      - My
+      - my
+      - I
+    answer: 1
+    explanation: 名詞前用所有格 My 表示「我的」；句首首字母須大寫。
+    derivedFrom:
+      - original-english-13
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ desk is brown.
+    options:
+      - my
+      - My
+      - I
+    answer: 2
+    explanation: 名詞前用所有格 My 表示「我的」；句首首字母須大寫。
+    derivedFrom:
+      - original-english-13
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ dog is big.
+    options:
+      - my
+      - I
+      - My
+    answer: 3
+    explanation: 名詞前用所有格 My 表示「我的」；句首首字母須大寫。
+    derivedFrom:
+      - original-english-13
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ cat is small.
+    options:
+      - My
+      - my
+      - I
+    answer: 1
+    explanation: 名詞前用所有格 My 表示「我的」；句首首字母須大寫。
+    derivedFrom:
+      - original-english-13
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ kite is pink.
+    options:
+      - my
+      - My
+      - I
+    answer: 2
+    explanation: 名詞前用所有格 My 表示「我的」；句首首字母須大寫。
+    derivedFrom:
+      - original-english-13

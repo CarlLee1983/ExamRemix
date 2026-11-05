@@ -1,0 +1,16 @@
+questions:
+  - no: 2
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 想公平比較膠泥與橡皮筋放開後能否恢復形狀，哪種記錄方法較完整？
+    options:
+      - 只比較兩種材料受力前的形狀
+      - 記錄受力前、受力時和放開後的形狀
+      - 只比較施力時兩者變形的樣子
+      - 只記錄放開後的形狀，不記錄原狀
+    answer: 2
+    explanation: 要判斷能否恢復原狀，須比較受力前與放開後，並確認施力時確實發生變形。
+    derivedFrom:
+      - g3-science-midterm-2025-12

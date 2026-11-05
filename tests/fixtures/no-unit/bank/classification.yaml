@@ -13,3 +13,6 @@ questions:
       - { text: "$2+1$ 的結果。", answer: 2 }
     explanation: "$1+1=2$ 小於三；$2+1=3$ 至少三。"
     source: { originalPaper: "虛構分類測試", number: 1 }
+    examScope:
+      semester: 1
+      stage: midterm

@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小昀和家人週末一起做點心、聊近況，可以增加相處與交流的機會。
+    answer: true
+    explanation: 共同活動並分享近況，有助增進家庭感情。
+    derivedFrom:
+      - g3-social-midterm-2020-02-01
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 一家人雖然坐在同一張桌旁，卻完全不交流，也一定比彼此聊天更能了解近況。
+    answer: false
+    explanation: 了解彼此需要交流，僅同處一個空間不保證能互相了解。
+    derivedFrom:
+      - g3-social-midterm-2020-02-01
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 晚飯後家人輪流分享今天的事情，能幫助彼此了解生活。
+    answer: true
+    explanation: 分享日常經驗有助家人了解與情感交流。
+    derivedFrom:
+      - g3-social-midterm-2020-02-01
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 想增進家庭感情，就應該規定每個人都不能說出自己的想法。
+    answer: false
+    explanation: 表達與傾聽有助交流，禁止說出想法會阻礙溝通。
+    derivedFrom:
+      - g3-social-midterm-2020-02-01
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 全家一起散步時，小琳聽哥哥分享學校趣事，也是情感交流。
+    answer: true
+    explanation: 共同活動時的傾聽與分享能增進感情。
+    derivedFrom:
+      - g3-social-midterm-2020-02-01
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 和家人相處只需要送禮物，完全不必花時間傾聽或陪伴。
+    answer: false
+    explanation: 陪伴、傾聽和分享也是維繫感情的重要方式。
+    derivedFrom:
+      - g3-social-midterm-2020-02-01
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 阿公說起小時候的生活，小文耐心聽完並回應，可以增加祖孫互動。
+    answer: true
+    explanation: 傾聽與回應有助家人之間的了解。
+    derivedFrom:
+      - g3-social-midterm-2020-02-01
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家人談話時，故意嘲笑別人的感受，一定能讓大家更願意分享。
+    answer: false
+    explanation: 嘲笑會阻礙交流，應尊重彼此感受。
+    derivedFrom:
+      - g3-social-midterm-2020-02-01
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小凱和家人安排每週一次共同用餐，留時間聊天，有助維持情感聯繫。
+    answer: true
+    explanation: 安排相處與交流時間，可增進家人感情。
+    derivedFrom:
+      - g3-social-midterm-2020-02-01

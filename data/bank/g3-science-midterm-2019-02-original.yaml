@@ -1,0 +1,30 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 力與運動
+    stem: 下列哪一種情況不是「力的作用」？
+    options:
+      - 樹枝折斷
+      - 球滾出去
+      - 冰棒融化
+      - 氣球吹破
+    answer: 3
+    explanation: 冰棒融化主要是受熱造成的物態變化；其他選項描述的折斷、滾動或吹破與力的作用有關。答案依原題獨立推核，未取得官方答案。
+    source:
+      originalPaper: 108學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、選擇題（每題2分、共18分）
+      number: 5
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 所有的花聞起來的氣味都相同。
+    answer: false
+    explanation: 不同植物的花氣味可能不同，也有不明顯的氣味，不能說所有花聞起來都一樣。答案依原題獨立推核，未取得官方答案。
+    source:
+      originalPaper: 108學年度第一學期三年級自然科期中定期評量試卷
+      section: 二、是非題／1. 下列對植物的敘述，正確的打○，錯的打╳（每個答案2分、共22分）
+      number: 2

@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 有些原住民族的名字取材自自然事物，顯示命名可以和文化環境有關。
+    answer: true
+    explanation: 原住民族的命名方式多樣，部分取材自自然。
+    derivedFrom:
+      - g3-social-midterm-2025-02-11
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 臺灣所有原住民族替孩子命名的方法都完全相同。
+    answer: false
+    explanation: 不同原住民族有不同的命名文化，不能視為完全相同。
+    derivedFrom:
+      - g3-social-midterm-2025-02-11
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 有些原住民族會在孩子名字後面加上父親或母親的名字，表達親子關係。
+    answer: true
+    explanation: 部分原住民族會以親子的名字表示關係。
+    derivedFrom:
+      - g3-social-midterm-2025-02-11
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 原住民族的姓名不可能和大自然的事物有關。
+    answer: false
+    explanation: 部分原住民族會取用自然事物命名。
+    derivedFrom:
+      - g3-social-midterm-2025-02-11
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 認識不同原住民族的命名習慣，可以幫助我們了解姓名中的文化特色。
+    answer: true
+    explanation: 姓名和命名方式可能呈現不同文化的特色。
+    derivedFrom:
+      - g3-social-midterm-2025-02-11
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只要是原住民族的孩子，名字後面一定都接著父親的名字，不會有其他方式。
+    answer: false
+    explanation: 不同民族命名方式不同，不能把一種方式套用到全部。
+    derivedFrom:
+      - g3-social-midterm-2025-02-11
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 聽到原住民族不同於自己的命名方式時，可以尊重並了解其中的意義。
+    answer: true
+    explanation: 不同命名文化各有意義，應予尊重。
+    derivedFrom:
+      - g3-social-midterm-2025-02-11
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 有些原住民族名字會連著母親的名字，所以所有民族也必須如此命名。
+    answer: false
+    explanation: 部分民族的命名方式不代表所有民族都必須遵循。
+    derivedFrom:
+      - g3-social-midterm-2025-02-11
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 同學說他的族人有取用自然事物的命名習慣，我不能因此認定其他原住民族也全部一樣。
+    answer: true
+    explanation: 各原住民族有不同的命名文化，不能以偏概全。
+    derivedFrom:
+      - g3-social-midterm-2025-02-11

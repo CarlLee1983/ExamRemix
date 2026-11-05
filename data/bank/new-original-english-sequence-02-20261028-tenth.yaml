@@ -1,0 +1,17 @@
+questions:
+  - no: 1
+    type: fill-blank
+    writingGuide: four-line
+    subject: 英語
+    grade: 3
+    stem: |-
+      依字母順序補寫 A 到 J 的大寫字母。
+      A ___ ___ D E ___ G H ___ J
+    answer:
+      - B
+      - C
+      - F
+      - I
+    explanation: 完整順序是 A B C D E F G H I J；依空格出現順序填 B、C、F、I。
+    derivedFrom:
+      - original-english-sequence-02

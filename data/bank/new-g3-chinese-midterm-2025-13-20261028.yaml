@@ -1,0 +1,85 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 下列「」中的字，哪一個與「晴天」的「晴」讀音相同？
+    options:
+      - 心「情」
+      - 「請」問
+      - 「清」水
+      - 安「靜」
+    answer: 1
+    explanation: 晴、情都讀ㄑㄧㄥˊ；請讀ㄑㄧㄥˇ，清讀ㄑㄧㄥ，靜讀ㄐㄧㄥˋ。
+    derivedFrom:
+      - g3-chinese-midterm-2025-13
+  - no: 2
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 下列哪個詞語的兩個字都讀第二聲？
+    options:
+      - 天空
+      - 河流
+      - 土地
+      - 夜晚
+    answer: 2
+    explanation: 天空讀ㄊㄧㄢ ㄎㄨㄥ（第一、第一聲）；河流讀ㄏㄜˊ ㄌㄧㄡˊ（第二、第二聲）；土地讀ㄊㄨˇ ㄉㄧˋ（第三、第四聲）；夜晚讀ㄧㄝˋ ㄨㄢˇ（第四、第三聲）。
+    derivedFrom:
+      - g3-chinese-midterm-2025-15
+  - no: 3
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 下列哪個「」中的字，部首和「校」相同？
+    options:
+      - 「河」水
+      - 「根」本
+      - 「明」天
+      - 「吃」飯
+    answer: 2
+    explanation: 校和根都屬木部；河屬水部，明屬日部，吃屬口部。
+    derivedFrom:
+      - g3-chinese-midterm-2025-14
+  - no: 4
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 「我把掉在地上的橡皮擦拾起來。」句中的「拾」是什麼意思？
+    options:
+      - 撿
+      - 丟
+      - 踩
+      - 推
+    answer: 1
+    explanation: 拾在句中是撿起的意思，表示把地上的東西拿起來；丟、踩、推都不是這個動作。
+    derivedFrom:
+      - g3-chinese-midterm-2025-16
+  - no: 5
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 請判斷每組兩個字的意思，哪一組沒有相反關係？
+    options:
+      - 進／出
+      - 冷／熱
+      - 新／舊
+      - 甜／香
+    answer: 4
+    explanation: 進出、冷熱、新舊分別表示相反方向、溫度和新舊程度；甜是味道，香是氣味，兩者不是相反意思。
+    derivedFrom:
+      - g3-chinese-midterm-2025-18
+  - no: 6
+    type: choice
+    subject: 國語
+    grade: 3
+    stem: 「下課後，同學們排□□，一個接一個走進圖書館。」空格中應填入哪個詞語？
+    options:
+      - 隊伍
+      - 對話
+      - 推車
+      - 退步
+    answer: 1
+    explanation: 排隊伍指人依序站好；題幹的「一個接一個」也提示依序排列，其他選項不合句意。
+    derivedFrom:
+      - g3-chinese-midterm-2025-17

@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 觀察莖上長葉的位置，甲植物每個節長兩片葉，乙植物每個節長四片葉；因為兩種植物每節都不只一片，所以葉序都應記為對生。
+    answer: false
+    explanation: 同一節長兩片葉屬對生；同一節長三片或更多葉屬輪生，不能只以「不只一片」合併成對生。
+    derivedFrom:
+      - g3-science-midterm-2025-02-04

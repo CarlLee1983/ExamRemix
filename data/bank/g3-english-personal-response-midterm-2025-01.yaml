@@ -1,0 +1,25 @@
+questions:
+  - no: 1
+    type: personal-response
+    subject: 英語
+    grade: 3
+    writingGuide: four-line
+    stem: What is your name? (4%)
+    sampleAnswer: I am Alex.
+    explanation: 依學生本人使用的姓名人工判斷。Alex是虛構示範姓名，只用來示範回答句型，不是學生資料，也不是唯一正解；可接受其他符合本人情況、語法自然的回答。書寫須注意大小寫、詞間空格與標點，原卷的評分說明保留於來源；沒有官方答案卷可供核對特定句式配分。
+    source:
+      originalPaper: 114學年度上學期三年級語文領域英語科期中評量
+      section: 八、請依自己的狀況，照實回答問題（每字和標點符號1分，共10分）
+      number: 1
+  - no: 2
+    type: personal-response
+    subject: 英語
+    grade: 3
+    writingGuide: four-line
+    stem: How old are you? (4%)
+    sampleAnswer: I am eight.
+    explanation: 依學生作答時的實際年齡人工判斷。範例的八歲是虛構情境，只示範完整回答，不是學生資料或唯一正解，不可由三年級推定每人都八歲或九歲。可接受符合本人情況、語法自然的其他回答；收縮形式、數字拼法與實際配分仍須依教師原評分要求核對，沒有自行新增唯一規則。
+    source:
+      originalPaper: 114學年度上學期三年級語文領域英語科期中評量
+      section: 八、請依自己的狀況，照實回答問題（每字和標點符號1分，共10分）
+      number: 2

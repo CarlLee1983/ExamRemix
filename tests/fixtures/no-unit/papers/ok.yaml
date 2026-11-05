@@ -5,3 +5,6 @@ sections:
   - title: 一、選擇題
     questions:
       - loose-01
+examScope:
+  semester: 1
+  stage: midterm

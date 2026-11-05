@@ -1,0 +1,133 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: |-
+      Read and Write. 大寫變小寫，小寫變大寫。（一個字錯扣一分）請在四線格中書寫。
+      thank ___
+    answer:
+      - THANK
+    explanation: 每一字母保持次序改為大寫。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 六、Read and Write. 大寫變小寫, 小寫變大寫。(1% ; 16%)(一個字錯扣一分)
+      number: 1
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: |-
+      Read and Write. 大寫變小寫，小寫變大寫。（一個字錯扣一分）請在四線格中書寫。
+      AGE ___
+    answer:
+      - age
+    explanation: A、G、E 改為 a、g、e。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 六、Read and Write. 大寫變小寫, 小寫變大寫。(1% ; 16%)(一個字錯扣一分)
+      number: 2
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: |-
+      Read and Write. 大寫變小寫，小寫變大寫。（一個字錯扣一分）請在四線格中書寫。
+      lion ___
+    answer:
+      - LION
+    explanation: 依原題指示將小寫改成大寫，逐字母轉換：l → L、i → I、o → O、n → N，答案是 LION。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 六、Read and Write. 大寫變小寫, 小寫變大寫。(1% ; 16%)(一個字錯扣一分)
+      number: 3
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: |-
+      Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。（注意格線位置，全對才給分）
+      Aa ___ Cc
+      （Bb, Dd, Ff）
+    answer:
+      - Bb
+    explanation: A、B、C 連續，缺 Bb。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 八、Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。(2% ;
+        14%)(注意格線位置，全對才給分)
+      number: 1
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: |-
+      Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。（注意格線位置，全對才給分）
+      ___ Hh Ii
+      （Ll, Gg, Ee）
+    answer:
+      - Gg
+    explanation: G、H、I 連續，缺 Gg。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 八、Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。(2% ;
+        14%)(注意格線位置，全對才給分)
+      number: 2
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: |-
+      Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。（注意格線位置，全對才給分）
+      ___ Kk Ll
+      （Jj, Ff, Mm）
+    answer:
+      - Jj
+    explanation: J、K、L 連續，缺 Jj。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 八、Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。(2% ;
+        14%)(注意格線位置，全對才給分)
+      number: 3
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: |-
+      Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。（注意格線位置，全對才給分）
+      Dd ___ ___
+      （Nn, Ff, Ee）
+    answer:
+      - Ee
+      - Ff
+    explanation: D、E、F 連續；按空格順序是 Ee、Ff，不能把選項顯示順序當答案順序。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 八、Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。(2% ;
+        14%)(注意格線位置，全對才給分)
+      number: 4
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: fill-blank
+    writingGuide: four-line
+    stem: |-
+      Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。（注意格線位置，全對才給分）
+      Ll ___ ___
+      （Nn, Mm, Aa）
+    answer:
+      - Mm
+      - Nn
+    explanation: L、M、N 連續；按空格順序是 Mm、Nn。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 八、Read, Choose, and Write. 讀一讀，從括弧的選項裡選出正確答案，並依序寫出正確的大寫和小寫字母。(2% ;
+        14%)(注意格線位置，全對才給分)
+      number: 5

@@ -1,0 +1,16 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 觀察一段莖，上面標出四個依序相連的節；相鄰兩節之間算一段，這四個節之間共有幾段？
+    options:
+      - 四段
+      - 兩段
+      - 八段
+      - 三段
+    answer: 4
+    explanation: 四個依序排列的節，相鄰間隔為第一與第二、第二與第三、第三與第四，共三段。
+    derivedFrom:
+      - g3-science-midterm-2024-02-12

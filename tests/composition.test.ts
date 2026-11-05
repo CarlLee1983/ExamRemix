@@ -24,4 +24,10 @@ describe('bankComposition', () => {
     expect(bankComposition([entry('自然', 'choice')]).map((c) => c.subject)).toEqual(['自然']);
     expect(bankComposition([])).toEqual([]);
   });
+
+  it('把英語題納入科目組成', () => {
+    expect(bankComposition([entry('英語', 'choice')])).toEqual([
+      { subject: '英語', count: 1, types: [{ type: 'choice', label: '選擇題', count: 1 }] },
+    ]);
+  });
 });

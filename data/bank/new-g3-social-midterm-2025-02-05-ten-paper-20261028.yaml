@@ -1,0 +1,73 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 轉學後一直想念舊同學，小庭可以向信任的家人說明自己的感受。
+    answer: true
+    explanation: 向可信任的家人表達心情，有助得到理解與支持。
+    derivedFrom:
+      - g3-social-midterm-2025-02-05
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 被同學誤會時很委屈，為了不讓家人知道，應該永遠把這件事藏在心裡。
+    answer: false
+    explanation: 難過時可以向可信任的家人傾訴，不必永遠獨自承受。
+    derivedFrom:
+      - g3-social-midterm-2025-02-05
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小翔擔心第一次上臺表演，可以和家人聊聊，請他們陪自己練習。
+    answer: true
+    explanation: 表達擔心能讓家人了解需要，提供支持。
+    derivedFrom:
+      - g3-social-midterm-2025-02-05
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 向家人說出自己失落的心情，一定會破壞家庭感情，所以不能說。
+    answer: false
+    explanation: 適當分享心情有助相互了解，並非一定破壞感情。
+    derivedFrom:
+      - g3-social-midterm-2025-02-05
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 心愛的寵物走失，小莉很難過，可以告訴願意傾聽的家人，尋求安慰。
+    answer: true
+    explanation: 難過時可以向可信任的家人尋求情緒支持。
+    derivedFrom:
+      - g3-social-midterm-2025-02-05
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家人問我最近是否有煩惱，我必須假裝開心，才算是體貼家人。
+    answer: false
+    explanation: 體貼家人不表示必須隱藏所有煩惱，可以適當溝通。
+    derivedFrom:
+      - g3-social-midterm-2025-02-05
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小凱怕家人正忙，可以約一個方便的時間，再和他們談自己的煩惱。
+    answer: true
+    explanation: 選合適時間溝通，也能向家人表達心情。
+    derivedFrom:
+      - g3-social-midterm-2025-02-05
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 搬家後覺得孤單的人，只能自己忍耐，沒有資格向家人求助。
+    answer: false
+    explanation: 感到孤單時也可以表達感受，尋求可信任家人的支持。
+    derivedFrom:
+      - g3-social-midterm-2025-02-05

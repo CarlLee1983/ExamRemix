@@ -1,0 +1,27 @@
+# StudyArk公開原卷首頁JPEG；無官方答案，answer為獨立推核；未核全卷。
+# 中文逐字保留，僅省略輔助注音及作答括號；原圖未見印出頁碼。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物與力
+    stem: 仙人掌的葉退化成尖尖刺刺的樣子，是為了適應沙漠炎熱缺水的環境。
+    answer: true
+    explanation: 仙人掌的刺是特化的葉，可提供些許遮蔭、減少水分散失，有助適應炎熱乾燥的環境。
+    source:
+      originalPaper: 彰化縣伸港鄉伸仁國民小學111學年度第一學期期中評量試卷自然領域（三年級，公開首頁預覽）
+      section: 一、是非題：30分(每題2分)
+      number: 7
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物與力
+    stem: 晴晴推牆壁時，牆壁的形狀和位置都沒有改變，表示晴晴沒有用力。
+    answer: false
+    explanation: 對牆壁施力時，牆壁仍可能沒有可觀察的形狀或位置變化；不能只憑牆壁沒變就判斷沒有用力。
+    source:
+      originalPaper: 彰化縣伸港鄉伸仁國民小學111學年度第一學期期中評量試卷自然領域（三年級，公開首頁預覽）
+      section: 一、是非題：30分(每題2分)
+      number: 10

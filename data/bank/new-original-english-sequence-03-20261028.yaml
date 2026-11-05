@@ -1,0 +1,37 @@
+questions:
+  - no: 1
+    type: fill-blank
+    writingGuide: four-line
+    subject: 英語
+    grade: 3
+    stem: |-
+      依字母順序補寫 e 到 n 的小寫字母。
+      e ___ g ___ ___ j ___ ___ ___ n
+    answer:
+      - f
+      - h
+      - i
+      - k
+      - l
+      - m
+    explanation: 完整順序是 e f g h i j k l m n；依空格出現順序填 f、h、i、k、l、m。
+    derivedFrom:
+      - original-english-sequence-03
+  - no: 2
+    type: fill-blank
+    writingGuide: four-line
+    subject: 英語
+    grade: 3
+    stem: |-
+      依字母順序補寫 e 到 n 的小寫字母。
+      e ___ ___ ___ i ___ k ___ ___ n
+    answer:
+      - f
+      - g
+      - h
+      - j
+      - l
+      - m
+    explanation: 完整順序是 e f g h i j k l m n；依空格出現順序填 f、g、h、j、l、m。
+    derivedFrom:
+      - original-english-sequence-03

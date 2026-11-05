@@ -1,0 +1,118 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: What is your name ___
+    options:
+      - "?"
+      - .
+      - ","
+    answer: 1
+    explanation: 此句在詢問資訊或確認情況，是問句，句尾使用問號。
+    derivedFrom:
+      - original-english-14
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: How old are you ___
+    options:
+      - .
+      - "?"
+      - ","
+    answer: 2
+    explanation: 此句在詢問資訊或確認情況，是問句，句尾使用問號。
+    derivedFrom:
+      - original-english-14
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: Are you OK ___
+    options:
+      - .
+      - ","
+      - "?"
+    answer: 3
+    explanation: 此句在詢問資訊或確認情況，是問句，句尾使用問號。
+    derivedFrom:
+      - original-english-14
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: Is this a cat ___
+    options:
+      - "?"
+      - .
+      - ","
+    answer: 1
+    explanation: 此句在詢問資訊或確認情況，是問句，句尾使用問號。
+    derivedFrom:
+      - original-english-14
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: Is that a dog ___
+    options:
+      - .
+      - "?"
+      - ","
+    answer: 2
+    explanation: 此句在詢問資訊或確認情況，是問句，句尾使用問號。
+    derivedFrom:
+      - original-english-14
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: Is it red ___
+    options:
+      - .
+      - ","
+      - "?"
+    answer: 3
+    explanation: 此句在詢問資訊或確認情況，是問句，句尾使用問號。
+    derivedFrom:
+      - original-english-14
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: Is this your bag ___
+    options:
+      - "?"
+      - .
+      - ","
+    answer: 1
+    explanation: 此句在詢問資訊或確認情況，是問句，句尾使用問號。
+    derivedFrom:
+      - original-english-14
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: Are you a student ___
+    options:
+      - .
+      - "?"
+      - ","
+    answer: 2
+    explanation: 此句在詢問資訊或確認情況，是問句，句尾使用問號。
+    derivedFrom:
+      - original-english-14
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: Is your hat blue ___
+    options:
+      - .
+      - ","
+      - "?"
+    answer: 3
+    explanation: 此句在詢問資訊或確認情況，是問句，句尾使用問號。
+    derivedFrom:
+      - original-english-14

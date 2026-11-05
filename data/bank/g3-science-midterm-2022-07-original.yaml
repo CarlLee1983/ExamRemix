@@ -1,0 +1,107 @@
+# 原卷 SHA-256: 21f4fb3775a96507f643fceef6dad13fa7d88d49ba2410eeb8df5024f6f9580a
+# 僅收 p1 二8、p2 三1 全組。來源定位與答案證據見 ../../DRAFT.md。
+groups:
+  - no: 1
+    paragraphs:
+      - 今日小盛家晚餐媽媽準備了下列幾道菜，請問下列的菜餚中，分別用到植物身體的哪個部位？請在（　）裡打ˇ
+    members: [2, 3, 4, 5, 6, 7]
+    source:
+      originalPaper: 111學年度上學期三年級自然與生活科技科領域期中評量
+      section: 三、題組：(每題2分、共34分)
+      number: 1
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: 想要比較不同花朵的香味，怎麼做才正確？
+    options:
+      - 靠近花朵用手搧著聞
+      - 把花摘下來聞
+      - 用手搓揉花朵，再聞手上的氣味
+      - 把鼻子貼近花瓣
+    answer: 1
+    explanation: 用手輕輕搧動花朵周圍的空氣，讓香味飄向鼻子來聞，不必摘花、搓揉花朵或把鼻子貼近花瓣。
+    source:
+      originalPaper: 111學年度上學期三年級自然與生活科技科領域期中評量
+      section: 二、選擇題：(每題2分、共22分)
+      number: 8
+  - no: 2
+    type: multi-select
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: (１)炒一盤高麗菜。
+    options: [①根, ②葉子]
+    answer: [2]
+    explanation: 高麗菜主要食用的部位是葉子，應勾選②葉子。
+    source:
+      originalPaper: 111學年度上學期三年級自然與生活科技科領域期中評量
+      section: 三、題組：(每題2分、共34分)／第1題(１)
+      number: 1
+  - no: 3
+    type: multi-select
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: (２)煮一鍋排骨冬瓜湯。
+    options: [①花, ②果實]
+    answer: [2]
+    explanation: 冬瓜是植物的果實，應勾選②果實。
+    source:
+      originalPaper: 111學年度上學期三年級自然與生活科技科領域期中評量
+      section: 三、題組：(每題2分、共34分)／第1題(２)
+      number: 1
+  - no: 4
+    type: multi-select
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: (３)炒一盤花椰菜。
+    options: [①花, ②果實]
+    answer: [1]
+    explanation: 花椰菜主要食用的部位是花，應勾選①花。
+    source:
+      originalPaper: 111學年度上學期三年級自然與生活科技科領域期中評量
+      section: 三、題組：(每題2分、共34分)／第1題(３)
+      number: 1
+  - no: 5
+    type: multi-select
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: (４)餐後甜點綠豆湯。
+    options: [①種子, ②果實]
+    answer: [1]
+    explanation: 綠豆湯所用的綠豆是植物的種子，應勾選①種子。
+    source:
+      originalPaper: 111學年度上學期三年級自然與生活科技科領域期中評量
+      section: 三、題組：(每題2分、共34分)／第1題(４)
+      number: 1
+  - no: 6
+    type: multi-select
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: (５)餐後的水果香蕉。
+    options: [①根, ②果實]
+    answer: [2]
+    explanation: 香蕉是植物的果實，應勾選②果實。
+    source:
+      originalPaper: 111學年度上學期三年級自然與生活科技科領域期中評量
+      section: 三、題組：(每題2分、共34分)／第1題(５)
+      number: 1
+  - no: 7
+    type: multi-select
+    subject: 自然
+    grade: 3
+    unit: 植物的身體
+    stem: (6)餐後的飲料珍珠奶茶。
+    options: [①葉, ②果實]
+    answer: [1]
+    explanation: 珍珠奶茶中的茶是用茶葉製成，茶葉是植物的葉，應勾選①葉。本題以茶的植物部位判答；珍珠常用木薯粉製作，木薯食用部位是塊根，不能把珍珠說成莖或果實。
+    source:
+      originalPaper: 111學年度上學期三年級自然與生活科技科領域期中評量
+      section: 三、題組：(每題2分、共34分)／第1題(6)
+      number: 1

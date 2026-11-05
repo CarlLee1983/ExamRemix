@@ -1,0 +1,31 @@
+groups:
+  - no: 1
+    paragraphs: [ "小芸和小志在菜園裡照顧菜。" ]
+    members: [ 1, 2 ]
+    derivedFrom: reading-local#4
+questions:
+  - no: 1
+    type: choice
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: "孩子們在哪裡？"
+    options: [ "菜園", "圖書館" ]
+    answer: 1
+    explanation: "短文寫在菜園。"
+    derivedFrom: [ reading-local-06 ]
+    examScope:
+      semester: 1
+      stage: midterm
+  - no: 2
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    unit: 閱讀
+    stem: "孩子們照顧___。"
+    answer: [ "菜" ]
+    explanation: "短文寫照顧菜。"
+    derivedFrom: [ reading-local-07 ]
+    examScope:
+      semester: 1
+      stage: midterm

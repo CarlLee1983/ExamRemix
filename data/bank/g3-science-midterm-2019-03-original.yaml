@@ -1,0 +1,18 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列哪種植物的果實，常會伴隨種子一起食用？
+    options:
+      - 芒果
+      - 木瓜
+      - 柚子
+      - 番茄
+    answer: 4
+    explanation: 番茄的種子通常會隨果肉一起吃；芒果、木瓜與柚子一般食用時會去除種子。這是常見的食用方式，不表示每個人每次都相同。答案依原題獨立推核，未取得官方答案。
+    source:
+      originalPaper: 108學年度第一學期三年級自然科期中定期評量試卷
+      section: 一、選擇題（每題2分、共18分）
+      number: 9

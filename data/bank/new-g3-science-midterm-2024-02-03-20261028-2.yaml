@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 利用氣嘴把空氣打入硬瓶，關閉氣嘴後，瓶子的外形大小保持不變；用夠精密的秤比較打氣前後，瓶子和內容物的總重量會增加。
+    answer: true
+    explanation: 打入瓶內的空氣有重量；外形不變可避免把容器大小的變化當成比較依據。
+    derivedFrom:
+      - g3-science-midterm-2024-02-03

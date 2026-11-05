@@ -1,0 +1,118 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - A B C
+      - B A C
+      - C B A
+    answer: 1
+    explanation: 依字母表由前到後，這些字母應排列為 A → B → C，選項1正確；字母不一定連續。
+    derivedFrom:
+      - original-english-05
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - D C E
+      - C D E
+      - E D C
+    answer: 2
+    explanation: 依字母表由前到後，這些字母應排列為 C → D → E，選項2正確；字母不一定連續。
+    derivedFrom:
+      - original-english-05
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - E D F
+      - F E D
+      - D E F
+    answer: 3
+    explanation: 依字母表由前到後，這些字母應排列為 D → E → F，選項3正確；字母不一定連續。
+    derivedFrom:
+      - original-english-05
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - F G H
+      - G F H
+      - H G F
+    answer: 1
+    explanation: 依字母表由前到後，這些字母應排列為 F → G → H，選項1正確；字母不一定連續。
+    derivedFrom:
+      - original-english-05
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - H G I
+      - G H I
+      - I H G
+    answer: 2
+    explanation: 依字母表由前到後，這些字母應排列為 G → H → I，選項2正確；字母不一定連續。
+    derivedFrom:
+      - original-english-05
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - I H J
+      - J I H
+      - H I J
+    answer: 3
+    explanation: 依字母表由前到後，這些字母應排列為 H → I → J，選項3正確；字母不一定連續。
+    derivedFrom:
+      - original-english-05
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - I J K
+      - J I K
+      - K J I
+    answer: 1
+    explanation: 依字母表由前到後，這些字母應排列為 I → J → K，選項1正確；字母不一定連續。
+    derivedFrom:
+      - original-english-05
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - K J L
+      - J K L
+      - L K J
+    answer: 2
+    explanation: 依字母表由前到後，這些字母應排列為 J → K → L，選項2正確；字母不一定連續。
+    derivedFrom:
+      - original-english-05
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: 依字母表由前到後排列，勾出正確的字母順序。
+    options:
+      - L K M
+      - M L K
+      - K L M
+    answer: 3
+    explanation: 依字母表由前到後，這些字母應排列為 K → L → M，選項3正確；字母不一定連續。
+    derivedFrom:
+      - original-english-05

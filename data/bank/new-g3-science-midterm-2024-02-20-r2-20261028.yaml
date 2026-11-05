@@ -1,0 +1,16 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 戶外活動時，風已強到樹枝劇烈搖動，地上開始有斷枝。哪個安排最適當？
+    options:
+      - 繼續站在樹下等斷枝掉落
+      - 離開樹下，依老師指示移到安全處
+      - 為了觀察風而攀到高樹上
+      - 到有鬆動招牌的地方避風
+    answer: 2
+    explanation: 強風可能造成斷枝與招牌掉落，應離開危險位置並依指示移到安全處。
+    derivedFrom:
+      - g3-science-midterm-2024-02-20

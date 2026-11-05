@@ -1,0 +1,91 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 比賽落選後心裡很難過，我可以找願意聽我說話的家人，說出自己的心情。
+    answer: true
+    explanation: 把心情告訴可信任、願意傾聽的家人，可以獲得陪伴與支持。
+    derivedFrom:
+      - g3-social-midterm-2025-02-05
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 同學已經說他不喜歡被叫某個綽號，但我覺得好玩，仍一直用那個綽號叫他，這是尊重他的做法。
+    answer: false
+    explanation: 對方已明確表示不喜歡，仍繼續用那個綽號叫他，並不尊重對方。應使用對方願意接受的稱呼。
+    derivedFrom:
+      - g3-social-midterm-2025-02-06
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 兩位同學的水壺外觀相同，找到其中一個水壺時，只看顏色就能確定它屬於哪位同學，不必再核對姓名標籤。
+    answer: false
+    explanation: 水壺外觀相同，單看顏色不能分辨主人；應核對姓名標籤等資訊。
+    derivedFrom:
+      - g3-social-midterm-2025-02-04
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 我訂了存錢買文具的計畫，卻每天把原定要存的錢全部買零食，這樣仍能照原計畫累積那筆存款。
+    answer: false
+    explanation: 原定要存的錢全部花掉，就沒有存下那筆錢，不能照原計畫累積存款。
+    derivedFrom:
+      - g3-social-midterm-2025-02-12
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小組製作海報時，一人找資料、一人畫圖、一人整理文字，最後一起檢查內容；這是分工合作。
+    answer: true
+    explanation: 組員負責不同工作，再共同檢查完成的海報，是為同一目標分工合作。
+    derivedFrom:
+      - g3-social-midterm-2025-14
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班級公約只寫「東西要放好」，卻沒有說哪些東西放在哪裡，這樣已經比「掃具用完放回掃具櫃」更明確。
+    answer: false
+    explanation: 「掃具用完放回掃具櫃」說明了物品、時間與位置，比「東西要放好」更明確。
+    derivedFrom:
+      - g3-social-midterm-2025-29
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 明天美勞課通知要帶色紙，我整理書包時，只檢查課本有沒有放入，就能確定美勞用品也帶齊了。
+    answer: false
+    explanation: 課本和色紙是不同物品，應另外依通知檢查色紙，才能確認是否帶齊。
+    derivedFrom:
+      - g3-social-midterm-2025-01
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 溜滑梯前掛著「維修中，暫停使用」的牌子，即使沒有人排隊，我也應先改玩其他開放的安全器材。
+    answer: true
+    explanation: 維修中的器材不應使用；有沒有人排隊不會改變暫停使用的規定。
+    derivedFrom:
+      - g3-social-midterm-2025-04
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班會討論時，我還沒聽完同學提出的理由，就替他決定他一定和我想的一樣，這樣已經充分尊重他的發言。
+    answer: false
+    explanation: 應先聽完對方的理由，不可以把自己的想法當成對方的意見。
+    derivedFrom:
+      - g3-social-midterm-2025-02-09
+  - no: 10
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 我想了解校園樹木，可以先觀察樹上的介紹牌，再到圖書館找相關書籍，比對查到的內容。
+    answer: true
+    explanation: 介紹牌與書籍都是學習資源，觀察後再查書比對，有助了解校園樹木。
+    derivedFrom:
+      - g3-social-midterm-2025-05

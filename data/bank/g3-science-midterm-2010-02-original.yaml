@@ -1,0 +1,37 @@
+questions:
+  - no: 1
+    type: diagram-label
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下列哪些葉子的葉緣是鋸齒狀？請寫出代號。
+    image:
+      src: g3-science-midterm-2010-02-original/01.png
+      alt: 四片編號葉子，上排一、二，下排三、四；葉圖下方有一個完整答題括號。
+    labels:
+      - { x: 21.52, y: 85.80, width: 45.45, height: 9.28, answer: '3、4' }
+    explanation: 第3、4片葉的葉緣具有明顯鋸齒；第1、2片葉的葉緣平滑。
+    source:
+      originalPaper: 99學年度第一學期期中定期評量三年級自然與生活科技領域試題
+      section: 三、做一做：每個答案1分，共40分。
+      number: 1
+  - no: 2
+    type: diagram-label
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 下圖中哪些葉子是平行脈？請打勾。
+    image:
+      src: g3-science-midterm-2010-02-original/02.png
+      alt: 五種葉子及五個完整作答括號；一棕葉狗尾草、二洋紫荊、三竹葉、四百合、五菩提樹葉，保留原有上下位置。
+    labels:
+      - { x: 5.30, y: 1.88, width: 4.55, height: 6.18, answer: '✓' }
+      - { x: 5.30, y: 28.23, width: 4.55, height: 6.18, answer: '—' }
+      - { x: 58.18, y: 30.65, width: 4.55, height: 6.18, answer: '✓' }
+      - { x: 6.06, y: 65.86, width: 4.55, height: 6.18, answer: '✓' }
+      - { x: 58.48, y: 65.32, width: 4.55, height: 6.18, answer: '—' }
+    explanation: 第1棕葉狗尾草、第3竹葉、第4百合具有平行脈，在這三格打勾。第2洋紫荊與第5菩提樹葉是網狀脈，不勾選。答案卷的「—」表示不勾選。
+    source:
+      originalPaper: 99學年度第一學期期中定期評量三年級自然與生活科技領域試題
+      section: 三、做一做：每個答案1分，共40分。
+      number: 2

@@ -1,0 +1,407 @@
+# 三上期中社會；來源為兩頁公開JPEG預覽，非PDF；無官方答案。
+# no1–19：第1頁一1–19；no20–26：第1頁二1–7；no27–29：第2頁二8–10；no30：第2頁四（四格保留一題）。
+# 原印無注音；頁首學校與學生資訊不轉入。未匯入與疑點詳見REPORT.md。
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 上臺自我介紹時，為了把握時間，應該快速說完內容，不用管臺下的人是否聽得懂。
+    answer: false
+    explanation: 自我介紹應用清楚、適當的速度表達，也要注意聽眾是否理解。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 1
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 對於別人的優點、長處，我們應該要發自內心的欣賞、讚美。
+    answer: true
+    explanation: 真誠欣賞與讚美他人的優點，有助建立良好的人際關係。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 2
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 對於同學自我介紹的內容，就算是覺得很感興趣，也不能公開或是私下提出問題，這樣才是對同學的尊重。
+    answer: false
+    explanation: 有興趣時可在適當時機有禮貌地提問，並尊重對方是否願意回答。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 3
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班級掃除事務定期輪換，也是一種班級事務的分工。
+    answer: true
+    explanation: 不同成員輪流負責掃除工作，屬於班級事務的分工。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 4
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 下課時，我們可以查詢課表，得知下一節課的科目，並提早準備好相關的物品。
+    answer: true
+    explanation: 依課表提早準備下一節課用品，可以做好上課準備。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 5
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小組工作分配時，因為只有小李沒有上臺報告過，所以不用考慮小李非常害羞和他的意願，直接分配他要報告，這是好的分工方式。
+    answer: false
+    explanation: 分工應考量成員的特質和意願，經討論協調後安排，不能直接忽略他的困難。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 6
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 透過課文標題的掌握，我們可以了解課文的架構與主題，有助於對內容的大致認識。
+    answer: true
+    explanation: 課文標題可提供主題與架構的線索，幫助先掌握內容概要。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 7
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 訪問他人、利用網路查詢等方法，都可以幫助我們蒐集自己需要的資料。
+    answer: true
+    explanation: 訪問與網路查詢都是蒐集資料的管道，還應判讀資料是否正確、適切。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 8
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 假日不但能從事休閒活動，也是進行課業學習活動的好時機。
+    answer: true
+    explanation: 假日可依時間安排休閒及學習活動，兩者可以兼顧。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 9
+  - no: 10
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小馬想要增加自己的音樂素養，他可以利用寒暑假參加校外團體舉辦的音樂營活動。
+    answer: true
+    explanation: 音樂營是校外學習資源，可以提供音樂學習與體驗機會。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 10
+  - no: 11
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 閱讀課外讀物除了浪費時間，也對學校的功課沒有幫助。
+    answer: false
+    explanation: 適當的課外閱讀能增加知識、理解與閱讀能力，也能幫助課業學習。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 11
+  - no: 12
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 上課時可以將課本和作業放在桌上，一邊上課一邊寫作業，這樣能夠充分利用時間。
+    answer: false
+    explanation: 上課應專心參與當下課程；同時寫其他作業容易分心。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 12
+  - no: 13
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小組活動過程中如果有不同意見，可以透過溝通協調，培養解決問題與合作的能力。
+    answer: true
+    explanation: 尊重不同意見並溝通協調，有助共同解決問題及合作。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 13
+  - no: 14
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 透過學習，能發現自己的興趣，並培養其他的專長與能力。
+    answer: true
+    explanation: 嘗試不同學習活動，有助探索興趣並培養專長和能力。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 14
+  - no: 15
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 參與戶外學習活動，除了可以驗證課堂的學習，也可以現場體驗、感受不同的學習樂趣。
+    answer: true
+    explanation: 戶外學習能連結課堂知識與實際環境，提供觀察和體驗的機會。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 15
+  - no: 16
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 訂定班級公約時，要注意彈性、模糊、和公平原則。
+    answer: false
+    explanation: 班級公約應具體、明確、公平；模糊的內容會使成員難以遵守。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 16
+  - no: 17
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 三年十五班的班上學生因為大多數人都住得比較遠，所以可以訂定班規允許三年十五班的師生每天八點十五分到校。
+    answer: false
+    explanation: 班級公約須符合全校共同規範，不能自行變更學校到校時間；有實際困難應向學校反映。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 17
+  - no: 18
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 臨時動議提出後就可以直接進行討論，不須經過任何人同意。
+    answer: false
+    explanation: 依一般班會議事程序，臨時議案經附議後才交付討論。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 18
+  - no: 19
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 開班會可以讓我們學到許多事，但其中不包括民主的精神。
+    answer: false
+    explanation: 班會透過共同討論、表達意見與表決，能學習民主精神。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 一、是非題（每題2分，共40分）
+      number: 19
+  - no: 20
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 班級自治通常透過哪一項活動實行？
+    options:
+      - 朝會
+      - 班會
+      - 園遊會
+      - 家長會
+    answer: 2
+    explanation: 班會讓班級成員共同討論並處理班級事務，是實行班級自治的活動。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 1
+  - no: 21
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下列哪一個不是班級舉行自治活動的目的？
+    options:
+      - 排擠人緣差的同學
+      - 實踐民主精神
+      - 處理班級公共事務
+      - 增進獨立思考的能力
+    answer: 1
+    explanation: 班級自治應尊重並讓成員參與，排擠同學不符合自治及民主精神。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 2
+  - no: 22
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下列哪一項屬於班級自治活動？
+    options:
+      - 決定下課的長度
+      - 選出學藝股長
+      - 安排寒假的時間
+      - 訂定校規
+    answer: 2
+    explanation: 選出班級幹部是班級成員可以共同決定的事務；下課長度、寒假與校規屬學校等層級的安排。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 3
+  - no: 23
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 開班會時，關於每個人負責的事，下列哪一項是正確的？
+    options:
+      - 司儀：會後講評
+      - 老師：宣布會議程序
+      - 主席：鼓勵同學表達不同的意見
+      - 記錄：報告上次會議決議執行情形
+    answer: 3
+    explanation: 主席主持會議，應鼓勵不同意見的表達；宣布程序由司儀負責，會後講評由老師負責。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 4
+  - no: 24
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下列關於校規變遷的敘述，請挑選出錯誤的選項。
+    options:
+      - 早期訂定的規範無論過了多久都無法改變
+      - 為了因應時代的變遷，人們會修改早期的規範
+      - 早期的規範到了現在，可能早就不符合新的情況
+      - 早期團體訂定的規範有時會有缺漏
+    answer: 1
+    explanation: 規範可因時代、實際需求與原有缺漏，經適當程序修訂。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 5
+  - no: 25
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 「施工危險，請勿靠近」黃色施工警示帶可能會在校園的哪裡出現？
+    options:
+      - 建築工地
+      - 臨時壞掉的遊戲器材
+      - 正在修補地板的區域
+      - 以上皆是
+    answer: 4
+    explanation: 建築施工、損壞器材與修補地板處都可能設警示帶，應遵守警示並遠離危險。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 6
+  - no: 26
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 小林考試成績很不好，下列哪種讀書習慣可以幫助他改善成績？
+    options:
+      - 作業抄正確答案
+      - 上課看其他書籍
+      - 課前預習，課後複習
+      - 上課不做筆記
+    answer: 3
+    explanation: 課前預習與課後複習有助理解、整理與鞏固學習內容。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 7
+  - no: 27
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 下列哪個不是參加體育競賽會培養的能力？
+    options:
+      - 觀摩其他選手、交流學習
+      - 提升體育能力
+      - 增加個人參賽經驗
+      - 以上皆是
+    answer: 4
+    explanation: 選項1至3都可能是參加體育競賽的收穫；原題卻問「不是」，沒有合理的唯一正解。此答案4只按疑似原意「哪些是參加體育競賽的收穫」暫列，不能當作原題已有確定答案。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 8
+    doubt: 原卷問「不是」參加體育競賽會培養的能力，但選項1至3均可能是競賽收穫，沒有合理唯一正解；answer 4僅依疑似正向命題意圖暫列，須連同題幹否定詞一起複核。
+  - no: 28
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 小劉想要介紹就讀的學校，請問他可以善用哪種學習資源？
+    options:
+      - 查詢網路資料
+      - 詢問學校師長
+      - 查詢圖書館的校史資料
+      - 以上皆是
+    answer: 4
+    explanation: 網路、學校師長與圖書館的校史資料都是認識學校的資源，可互相比對。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 9
+  - no: 29
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 為了讓學習更有效率，我們應該要培養哪一種學習習慣？
+    options:
+      - 抽屜課本習作擺放整齊
+      - 熬夜讀書
+      - 出門前才檢查書包和文具
+      - 回家先娛樂和休息，才寫功課
+    answer: 1
+    explanation: 課本習作擺放整齊便於取用，減少尋找時間；熬夜及出門前才檢查用品不利學習準備。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 二、選擇題：（每題2分，共20分）
+      number: 10
+  - no: 30
+    type: diagram-label
+    subject: 社會
+    grade: 3
+    stem: 請在校園團體的規範選項畫○，在班級規範的選項打✓。
+    image:
+      src: g3-social-midterm-2023-02/30.png
+      alt: 四項規範由上至下為限制遊樂器材的使用年齡、志工服務有專屬的任務、繳交國語作業的規定、班級清潔作業的分工；各項左側各有一個未作答方框。
+    labels:
+      - x: 2.5
+        y: 6.8
+        width: 4.5
+        height: 14.5
+        answer: ○
+      - x: 2.5
+        y: 31
+        width: 4.5
+        height: 14.5
+        answer: ○
+      - x: 2.5
+        y: 55.3
+        width: 4.5
+        height: 14.5
+        answer: ✓
+      - x: 2.5
+        y: 79.5
+        width: 4.5
+        height: 14.5
+        answer: ✓
+    explanation: 遊樂器材使用年齡與校園志工任務屬校園團體規範；國語作業與班級清潔分工屬班級規範。依原卷分類判斷，作業規定在此指班級課業要求。
+    source:
+      originalPaper: 112學年度第1學期期中定期評量三年級社會領域試題
+      section: 四、請在校園團體的規範選項畫○，在班級規範的選項打✓：（每個答案2分，共8分）

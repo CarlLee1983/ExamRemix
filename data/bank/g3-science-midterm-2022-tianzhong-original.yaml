@@ -1,0 +1,63 @@
+# 原件 URL：https://www.maiyajiaoan.com/wiki/29558.html
+# page.html SHA-256: 84d43782bf3b718f557d2d7126725a92230c09fa5e524841964db9cc8ae47558
+# full-page.png SHA-256: 75ea87c733b81ceb209310c775b0418bbebe748db981cb21b4aa05b1448a4198
+# 隔離候選題庫：只收 可用題；HOLD / HOLD_NEAR 題見 ../../REPORT.md。無官方答案，答案皆依原題獨立推核。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 我們生活的空間裡，到處都有空氣，連縫隙中也有。
+    answer: true
+    explanation: 空氣看不見也摸不到，但存在於生活空間的各處，連縫隙中也有。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 彰化縣田中國小111學年度上學期三年級自然領域期中學業評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 1
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 水的特性
+    stem: 暖水袋在熱敷時，會順著身體改變形狀，是因為水沒有固定形狀。
+    answer: true
+    explanation: 水沒有固定的形狀，會隨容器改變形狀，所以暖水袋能貼合身體。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 彰化縣田中國小111學年度上學期三年級自然領域期中學業評量試卷
+      section: 一、是非題：每題2分，共30分
+      number: 6
+  - no: 3
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 下列各種風對我們生活的影響，哪一種是缺點？
+    options:
+      - 吹乾食物
+      - 吹倒電線桿
+      - 吹動帆船航行
+      - 吹動風力電機發電
+    answer: 2
+    explanation: 吹乾食物、吹動帆船航行、吹動風力電機發電都是風的優點；風大時吹倒電線桿會造成危害，是缺點。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 彰化縣田中國小111學年度上學期三年級自然領域期中學業評量試卷
+      section: 二、選擇題：每題2分，共30分
+      number: 7
+  - no: 4
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 當海綿被壓入水中會出現何種現象？
+    options:
+      - 許多小泡泡冒出來
+      - 海綿消失不見
+      - 水量變少
+      - 海綿開始發熱
+    answer: 1
+    explanation: 海綿裡有許多小孔含著空氣，壓入水中時，空氣被水擠出來，會看到許多小泡泡冒出來。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 彰化縣田中國小111學年度上學期三年級自然領域期中學業評量試卷
+      section: 二、選擇題：每題2分，共30分
+      number: 8

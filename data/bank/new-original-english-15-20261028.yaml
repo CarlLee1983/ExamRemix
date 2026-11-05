@@ -1,0 +1,118 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: I am fine ___
+    options:
+      - ","
+      - .
+      - "?"
+    answer: 2
+    explanation: 此句敘述完整意思，沒有提出問題，句尾使用句點。
+    derivedFrom:
+      - original-english-15
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: My name is Mia ___
+    options:
+      - ","
+      - "?"
+      - .
+    answer: 3
+    explanation: 此句敘述完整意思，沒有提出問題，句尾使用句點。
+    derivedFrom:
+      - original-english-15
+  - no: 3
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: I am eight years old ___
+    options:
+      - .
+      - ","
+      - "?"
+    answer: 1
+    explanation: 此句敘述完整意思，沒有提出問題，句尾使用句點。
+    derivedFrom:
+      - original-english-15
+  - no: 4
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: This is a cat ___
+    options:
+      - ","
+      - .
+      - "?"
+    answer: 2
+    explanation: 此句敘述完整意思，沒有提出問題，句尾使用句點。
+    derivedFrom:
+      - original-english-15
+  - no: 5
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: That is a dog ___
+    options:
+      - ","
+      - "?"
+      - .
+    answer: 3
+    explanation: 此句敘述完整意思，沒有提出問題，句尾使用句點。
+    derivedFrom:
+      - original-english-15
+  - no: 6
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: My bag is red ___
+    options:
+      - .
+      - ","
+      - "?"
+    answer: 1
+    explanation: 此句敘述完整意思，沒有提出問題，句尾使用句點。
+    derivedFrom:
+      - original-english-15
+  - no: 7
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: It is a kite ___
+    options:
+      - ","
+      - .
+      - "?"
+    answer: 2
+    explanation: 此句敘述完整意思，沒有提出問題，句尾使用句點。
+    derivedFrom:
+      - original-english-15
+  - no: 8
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: I am a student ___
+    options:
+      - ","
+      - "?"
+      - .
+    answer: 3
+    explanation: 此句敘述完整意思，沒有提出問題，句尾使用句點。
+    derivedFrom:
+      - original-english-15
+  - no: 9
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: My hat is blue ___
+    options:
+      - .
+      - ","
+      - "?"
+    answer: 1
+    explanation: 此句敘述完整意思，沒有提出問題，句尾使用句點。
+    derivedFrom:
+      - original-english-15

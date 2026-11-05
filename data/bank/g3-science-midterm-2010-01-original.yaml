@@ -1,0 +1,29 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 我們拿放大鏡來觀察大樹的莖時，也可以順便拿來觀察太陽。
+    answer: false
+    explanation: 不可以用放大鏡觀察太陽；強光可能傷害眼睛。答案依原題獨立推核，未取得官方答案。
+    source:
+      originalPaper: 99學年度第一學期期中定期評量三年級自然與生活科技領域試題
+      section: 一、是非題（對的打○，錯的打×，每題2分，共30分）
+      number: 3
+  - no: 2
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: 鮮豔的花瓣具備下列哪一項最主要的功能？
+    options:
+      - 保護種子
+      - 吸引昆蟲傳粉
+      - 提供人類食用
+    answer: 2
+    explanation: 鮮豔的花瓣能吸引昆蟲等動物訪花，幫助傳粉。答案依原題獨立推核，未取得官方答案。
+    source:
+      originalPaper: 99學年度第一學期期中定期評量三年級自然與生活科技領域試題
+      section: 二、選擇題（每題2分，共30分）
+      number: 7

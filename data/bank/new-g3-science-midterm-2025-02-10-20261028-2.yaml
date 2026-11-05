@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 三節玩具車各沿車長固定一支雙極條形磁鐵，排成甲、乙、丙。甲乙相對處互相吸引，乙丙相對處互相排斥；只把乙車整個前後轉向，就能讓兩處都變成互相吸引。
+    answer: false
+    explanation: 乙車轉向會同時交換朝甲與朝丙的磁極；原本相斥的一處會相吸，但原本相吸的一處會改為相斥。
+    derivedFrom:
+      - g3-science-midterm-2025-02-10

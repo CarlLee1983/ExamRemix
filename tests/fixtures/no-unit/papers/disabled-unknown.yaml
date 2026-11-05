@@ -1,0 +1,10 @@
+title: 不得輸出的未知範圍合成卷
+subject: 數學
+grade: 3
+examScope:
+  semester: 1
+  stage: midterm
+sections:
+  - title: 一
+    questions:
+      - unclassified-01

@@ -1,0 +1,76 @@
+# 原件 URL：https://www.yap.kh.edu.tw/upload/33/104_44061/110上三年級自然與生活科技科領域期中評量.pdf
+# 原卷 SHA-256: 906d4f107538caf25b5094435c22ff8f87b7f6ead9c4de3278ceaca5f6c24761
+# 隔離候選題庫：只收 可用題；HOLD 題見 ../../REPORT.md。無官方答案，答案皆依原題獨立推核。
+groups:
+  - no: 1
+    paragraphs:
+      - 下面的磁鐵互相靠近會有什麼現象？用代號回答問題。
+    image:
+      src: g3-science-midterm-2021-yongan-original/03.png
+      alt: 四格磁鐵圖，每格兩個磁鐵相對靠近，圖上標有N極與S極。ㄅ為兩個U形磁鐵，上方左N右S、下方左S右N；ㄆ為兩個U形磁鐵，上方都是S、下方都是N；ㄇ為兩個圓形磁鐵，左磁鐵右端是N、右磁鐵左端是N；ㄈ為一個U形磁鐵的下端N對著長條磁鐵的左端S。
+    members: [3, 4]
+    source:
+      originalPaper: 高雄市 永安國小 110 學年上學期 三年級 自然與生活科技領域 期中評量卷
+      section: "三、 勾選題: 每答 2 分、共 60 分"
+      number: 4
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: 鉛筆盒開關的磁鐵兩旁有鐵片，主要是為了
+    options:
+      - 讓鉛筆盒容易掀開
+      - 增加磁鐵吸力
+      - 增加美觀
+      - 固定磁鐵
+    answer: 2
+    explanation: 磁鐵兩旁加上鐵片，可以讓磁力集中，增強吸住鉛筆盒蓋的力量，盒蓋才不容易自己彈開；鐵片不是為了讓盒子更容易掀開，也不是裝飾。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 高雄市 永安國小 110 學年上學期 三年級 自然與生活科技領域 期中評量卷
+      section: 二、 選擇題：每題 2 分、共 20 分
+      number: 2
+  - no: 2
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 下面哪一個東西使用時，跟空氣特性無關？
+    options:
+      - 輪胎
+      - 氣球
+      - 鉛筆
+      - 游泳圈
+    answer: 3
+    explanation: 輪胎、氣球和游泳圈都要充入空氣，利用空氣占有空間、能撐起外形的特性；鉛筆使用時不需要空氣的特性，所以跟空氣特性無關。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 高雄市 永安國小 110 學年上學期 三年級 自然與生活科技領域 期中評量卷
+      section: 二、 選擇題：每題 2 分、共 20 分
+      number: 7
+  - no: 3
+    type: multi-select
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: (1)互相排斥：
+    options: [ㄅ, ㄆ, ㄇ, ㄈ]
+    answer: [2, 3]
+    explanation: 兩個磁鐵相對的端點是同極時互相排斥。ㄆ相對的是S與S、N與N；ㄇ兩個圓形磁鐵相對的都是N極，所以ㄆ、ㄇ互相排斥。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 高雄市 永安國小 110 學年上學期 三年級 自然與生活科技領域 期中評量卷
+      section: "三、 勾選題: 每答 2 分、共 60 分"
+      number: 4
+  - no: 4
+    type: multi-select
+    subject: 自然
+    grade: 3
+    unit: 磁鐵
+    stem: (2)互相吸引：
+    options: [ㄅ, ㄆ, ㄇ, ㄈ]
+    answer: [1, 4]
+    explanation: 兩個磁鐵相對的端點是異極時互相吸引。ㄅ相對的是N與S、S與N；ㄈ是U形磁鐵下端的N極對著長條磁鐵左端的S極，所以ㄅ、ㄈ互相吸引。答案依原題獨立推核，非官方答案。
+    source:
+      originalPaper: 高雄市 永安國小 110 學年上學期 三年級 自然與生活科技領域 期中評量卷
+      section: "三、 勾選題: 每答 2 分、共 60 分"
+      number: 4

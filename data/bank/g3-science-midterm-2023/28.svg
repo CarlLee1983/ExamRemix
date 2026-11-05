@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="860" viewBox="0 0 590 430"><rect width="590" height="430" fill="white"/><g stroke="#222" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+<!-- Main stem and branches -->
+<g fill="#c8c8c8">
+<path d="M328 328 Q334 281 329 226 Q323 180 334 133 Q338 96 362 64 L366 68 Q342 106 343 142 Q336 181 340 223 Q344 283 340 329 Z"/>
+<path d="M333 213 Q307 177 281 161 L286 157 Q313 173 337 203 Z"/>
+<path d="M336 185 Q367 151 383 112 L388 115 Q375 158 339 195 Z"/>
+<path d="M331 222 Q351 209 378 209 L378 214 Q352 216 337 231 Z"/>
+<path d="M333 154 Q309 137 285 116 L289 113 Q315 132 338 147 Z"/>
+<path d="M343 114 Q330 93 320 78 L324 76 Q338 94 348 108 Z"/>
+</g>
+<!-- Leaves and veins -->
+<g fill="#ececec">
+<path d="M286 116 Q237 91 169 132 Q220 124 271 128 Z"/>
+<path d="M304 152 Q309 113 273 103 Q266 125 289 149 Z"/>
+<path d="M290 165 Q250 164 226 193 Q266 191 300 174 Z"/>
+<path d="M316 184 Q302 167 301 151 Q320 147 333 191 Q336 207 329 221 Z"/>
+<path d="M351 172 Q381 155 414 188 Q380 174 353 180 Z"/>
+<path d="M346 187 Q378 172 430 211 Q382 197 351 200 Z"/>
+<path d="M378 212 Q354 203 350 233 Q361 260 352 280 Q376 263 367 239 Z"/>
+<path d="M322 222 Q294 205 292 252 Q311 240 327 230 Z"/>
+<path d="M363 72 Q331 33 304 83 Q336 65 363 81 Z"/>
+<path d="M367 67 Q386 38 429 38 Q418 64 374 77 Z"/>
+<path d="M365 70 Q349 38 343 45 Q339 57 357 73 Z"/>
+<path d="M387 151 Q386 169 423 175 Q411 151 392 144 Z"/>
+</g>
+<g fill="none" stroke="#888" stroke-width="1">
+<path d="M176 130 Q238 106 281 120 M283 115 L299 147 M234 188 L291 169 M305 157 Q323 184 328 215 M358 175 Q387 166 410 184 M354 192 Q388 186 421 207 M357 220 Q367 249 355 274 M296 244 L321 226 M309 76 Q335 49 360 75 M375 71 L423 41 M389 153 L419 172"/>
+</g>
+<!-- Chili fruits: upper-left and middle -->
+<path d="M278 82 Q273 94 277 111 L284 117" fill="none" stroke-width="3"/>
+<path d="M276 82 Q268 80 274 64 Q280 51 287 48 Q289 62 283 79 Z" fill="#fafafa"/>
+<path d="M272 79 Q277 85 284 79" fill="none" stroke="#888" stroke-width="1"/>
+<path d="M330 133 Q334 143 334 150" fill="none" stroke-width="3"/>
+<path d="M326 132 Q319 117 326 94 Q332 95 336 115 Q341 136 326 132 Z" fill="#fafafa"/>
+<path d="M325 129 Q332 135 338 129" fill="none" stroke="#888" stroke-width="1"/>
+<!-- White five-petal pepper flower at right -->
+<path d="M384 118 C371 106 369 97 377 92 C386 89 390 101 391 108 C399 91 409 93 410 101 C412 109 400 116 396 117 C416 115 425 121 419 129 C414 136 403 129 395 125 C398 141 391 152 384 146 C378 141 383 130 384 125 C371 137 358 134 361 126 C364 118 376 119 384 118 Z" fill="white"/>
+<ellipse cx="387" cy="122" rx="8" ry="6" fill="#bdbdbd"/>
+<g fill="#777" stroke-width=".8"><circle cx="382" cy="120" r="1.5"/><circle cx="389" cy="118" r="1.5"/><circle cx="391" cy="124" r="1.5"/><circle cx="384" cy="126" r="1.5"/></g>
+<!-- Root system is drawn but has no leader / answer field -->
+<g fill="none" stroke="#888" stroke-width="1.2">
+<path d="M333 327 Q307 346 301 380 L292 414 M334 329 Q335 369 352 416 M337 328 Q363 346 378 389 M331 328 Q284 341 279 386 M336 331 Q318 377 323 420 M337 334 Q350 358 365 373 M327 343 L302 357 L285 357 M316 360 L290 377 L284 397 M310 378 L302 399 M330 353 L343 368 L342 397 M331 377 L339 404 M353 351 L372 355 L388 372 M361 364 L380 383 L375 408 M286 351 L269 366 L266 383 M323 386 L313 411 M351 384 L364 397 L366 417"/>
+</g>
+<!-- Magnified open fruit / seeds at lower left, original circular inset -->
+<path d="M221 178 L236 100 L246 94 L240 179" fill="white"/>
+<path d="M232 91 Q227 80 225 73 Q247 79 253 90 Q251 100 241 103 Z" fill="#aaa"/>
+<circle cx="195" cy="235" r="64" fill="white"/>
+<path d="M140 249 Q146 215 170 205 Q183 207 191 194 L218 181 Q210 195 190 210 Q184 222 167 232 Q155 237 140 249 Z" fill="#bcbcbc"/>
+<path d="M160 257 Q181 239 208 237 Q226 238 239 222 Q236 244 211 253 Q183 264 160 257 Z" fill="#bcbcbc"/>
+<g fill="white" stroke="#777" stroke-width=".8">
+<ellipse cx="170" cy="214" rx="4" ry="2.6" transform="rotate(-30 170 214)"/>
+<ellipse cx="175" cy="219" rx="4" ry="2.6" transform="rotate(-30 175 219)"/>
+<ellipse cx="164" cy="221" rx="4" ry="2.6" transform="rotate(-30 164 221)"/>
+<ellipse cx="198" cy="247" rx="4" ry="2.6" transform="rotate(-18 198 247)"/>
+<ellipse cx="209" cy="244" rx="4" ry="2.6" transform="rotate(-18 209 244)"/>
+<ellipse cx="218" cy="240" rx="4" ry="2.6" transform="rotate(-25 218 240)"/>
+</g>
+<!-- Five leads in source order: upper left, lower left; upper, middle, lower right -->
+<g fill="none" stroke="#555" stroke-width="1.8">
+<path d="M115 29 L283 59"/>
+<path d="M66 151 L168 219"/>
+<path d="M404 122 L454 122"/>
+<path d="M357 220 L449 230"/>
+<path d="M337 296 L450 326"/>
+</g>
+<g fill="none" stroke-width="1.5">
+<path d="M18 10 Q3 25 18 40 M92 10 Q107 25 92 40"/>
+<path d="M18 111 Q3 126 18 141 M92 111 Q107 126 92 141"/>
+<path d="M477 108 Q462 123 477 138 M551 108 Q566 123 551 138"/>
+<path d="M477 214 Q462 229 477 244 M551 214 Q566 229 551 244"/>
+<path d="M477 311 Q462 326 477 341 M551 311 Q566 326 551 341"/>
+</g></g></svg>

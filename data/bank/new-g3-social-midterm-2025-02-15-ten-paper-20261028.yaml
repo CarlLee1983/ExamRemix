@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小晴由媽媽獨自照顧，她可以用說謝謝和分擔家事表達感謝。
+    answer: true
+    explanation: 應感謝照顧者的付出，並以能力所及的行動回應。
+    derivedFrom:
+      - g3-social-midterm-2025-02-15
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 小傑由爸爸獨自扶養，所以爸爸的照顧完全不值得感謝。
+    answer: false
+    explanation: 照顧孩子的家人付出辛勞，值得感謝。
+    derivedFrom:
+      - g3-social-midterm-2025-02-15
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 媽媽工作回家很累，小欣主動整理自己的用品，是體貼照顧者的表現。
+    answer: true
+    explanation: 做好自己能做的事，可減輕照顧者負擔。
+    derivedFrom:
+      - g3-social-midterm-2025-02-15
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只要照顧自己的是一位家長，就不需要珍惜他的付出。
+    answer: false
+    explanation: 不論家庭組成，照顧者的付出都值得珍惜。
+    derivedFrom:
+      - g3-social-midterm-2025-02-15
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 爸爸獨自照顧小豪，小豪對爸爸說謝謝，是表達感恩的方式。
+    answer: true
+    explanation: 可以用言語表達對照顧者的感謝。
+    derivedFrom:
+      - g3-social-midterm-2025-02-15
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 感謝辛苦扶養自己的媽媽，唯一的方法就是買昂貴禮物。
+    answer: false
+    explanation: 表達感謝不一定要花錢，也可用言語與行動。
+    derivedFrom:
+      - g3-social-midterm-2025-02-15
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 媽媽獨自扶養小芷；放學後若經家長同意留下練習，小芷先依約請老師協助通知媽媽，能減少媽媽找不到她的擔心。
+    answer: true
+    explanation: 行程改變時依約讓照顧者知道去向，是體貼其辛勞、減少擔心的方式。
+    derivedFrom:
+      - g3-social-midterm-2025-02-15
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 家長照顧孩子是理所當然的，所以孩子完全不必關心家長是否疲累。
+    answer: false
+    explanation: 家人的付出值得感謝，也應彼此關心。
+    derivedFrom:
+      - g3-social-midterm-2025-02-15
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 即使和同學的家庭成員不同，小琳仍可以珍惜照顧自己的媽媽。
+    answer: true
+    explanation: 家庭組成不同，不影響對照顧者的感謝與珍惜。
+    derivedFrom:
+      - g3-social-midterm-2025-02-15

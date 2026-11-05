@@ -1,0 +1,31 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 生物與非生物
+    stem: 同學在牆縫看到綠色小苗，原先認為「只有土色花圃才有生物」。這個發現最支持哪項修正？
+    options:
+      - 牆縫等小空間也可能有生物
+      - 所有牆縫都一定有相同植物
+      - 只要是石頭旁就不會有生物
+      - 小苗長在牆縫就不是生物
+    answer: 1
+    explanation: 綠色小苗證明這處牆縫有生物，支持生物可能存在於花圃以外的環境，但不能推論所有牆縫都相同。
+    derivedFrom:
+      - g3-science-midterm-2025-02-18
+  - no: 2
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 生物與非生物
+    stem: 觀察一塊石頭的表面沒有看到動物，能不能就說石頭旁完全沒有生物？
+    options:
+      - 可以，生物一定都很大而容易看見
+      - 可以，只要沒看到動物就不會有植物
+      - 不能，還要觀察周圍、縫隙等位置
+      - 可以，石頭旁一律不能生長植物
+    answer: 3
+    explanation: 一次在單一表面的觀察不能證明周圍完全沒有生物，應擴大位置並仔細記錄。
+    derivedFrom:
+      - g3-science-midterm-2025-02-18

@@ -1,0 +1,89 @@
+# 原卷來源：https://www.maiyajiaoan.com/wiki/29574.html（麥芽教案公開預覽，第三方轉載，非校方原件）
+# 取件時間：2026-10-29 21:21:19 +0800
+# page.html SHA-256: 24fc586975c0ea989569ccd9e10346699adb292f692aabd909548c2fb8a194e2
+# full-page.png SHA-256: 026cf98832ee37db72329cdc0bf93c64c4bd939cbe12ca6e125a7e499ad8d010
+# 原卷無官方答案；答案與解析皆為獨立推核。僅收可用題，HOLD / HOLD_NEAR 題見 ../../REPORT.md。
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "所有植物的葉子一定都是綠色的，不會有其他顏色的葉子。"
+    answer: false
+    explanation: "有些植物的葉子不是綠色，例如彩葉草的葉子有紅、黃、紫等顏色，所以不能說所有葉子都一定是綠色。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "112學年度上學期三年級自然領域期中學業評量試卷"
+      section: "一、是非題：每題2分，共30分"
+      number: 3
+  - no: 2
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: "物體內只要有縫隙，就有空氣，因此空氣無所不在。"
+    answer: true
+    explanation: "物體內有縫隙的地方就有空氣，我們身邊的各個地方幾乎都有空氣，所以說空氣無所不在。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "112學年度上學期三年級自然領域期中學業評量試卷"
+      section: "一、是非題：每題2分，共30分"
+      number: 4
+  - no: 3
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 水的特性
+    stem: "水可以裝在各種形狀的容器中，且形狀會隨著容器的形狀改變。"
+    answer: true
+    explanation: "水沒有固定的形狀，裝進什麼形狀的容器，水就變成那個形狀。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "112學年度上學期三年級自然領域期中學業評量試卷"
+      section: "一、是非題：每題2分，共30分"
+      number: 5
+  - no: 4
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "下列哪一項不適合寫在植物的觀察紀錄表呢？"
+    options:
+      - 植物的生長地點
+      - 葉子的顏色
+      - 葉子的大小
+      - 觀察時穿的衣服
+    answer: 4
+    explanation: "觀察紀錄表應記錄植物本身的資料，例如生長地點、葉子的顏色和大小；觀察時穿的衣服與植物無關，不適合寫。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "112學年度上學期三年級自然領域期中學業評量試卷"
+      section: "二、選擇題：每題2分，共30分"
+      number: 7
+  - no: 5
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: "在水上划龍舟，可以看出和風有關。"
+    answer: false
+    explanation: "划龍舟是靠人用槳划水前進，不是靠風力，所以看不出和風有關；高速列車遇強風停駛、路樹搖晃、海邊掛風向袋才和風有關。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "112學年度上學期三年級自然領域期中學業評量試卷"
+      section: "三、做一做：每格2分，共40分（第1大題第4小題，下列哪些活動或現象可以看出和風有關）"
+      number: 1
+  - no: 6
+    type: choice
+    subject: 自然
+    grade: 3
+    unit: 植物
+    stem: "植物和生活息息相關，下列情形是應用在哪一方面？爸爸用竹子製作成竹蜻蜓。"
+    options:
+      - 食
+      - 衣
+      - 住
+      - 行
+      - 育樂
+    answer: 5
+    explanation: "竹蜻蜓是用竹子做成的玩具，屬於植物在育樂方面的應用。答案依原題獨立推核，非官方答案。"
+    source:
+      originalPaper: "112學年度上學期三年級自然領域期中學業評量試卷"
+      section: "三、做一做：每格2分，共40分（第5大題第1小題，植物應用在食衣住行育樂哪一方面）"
+      number: 5

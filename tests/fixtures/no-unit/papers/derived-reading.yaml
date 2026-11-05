@@ -3,4 +3,7 @@ subject: 國語
 grade: 3
 sections:
   - title: 新材料
-    questions: [derived-reading-04, derived-reading-03]
+    questions: [ derived-reading-04, derived-reading-03 ]
+examScope:
+  semester: 1
+  stage: midterm

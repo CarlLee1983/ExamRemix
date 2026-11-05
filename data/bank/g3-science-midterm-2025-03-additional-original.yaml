@@ -1,0 +1,13 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 物質溶解
+    stem: 在相同的水溫和水量下，食鹽和砂糖的溶解量一樣多。
+    answer: false
+    explanation: 即使水溫和水量相同，不同物質能溶解在水中的最大量仍可能不同。一般課堂比較中，砂糖可以溶解的量比食鹽多，不能因為兩者都能溶解，就說溶解量一樣多。
+    source:
+      originalPaper: 114學年度上學期三年級自然科學領域期中評量試卷
+      section: 一、是非題：(每題2分，共20分)
+      number: 8

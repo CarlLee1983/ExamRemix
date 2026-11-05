@@ -1,0 +1,11 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 把沒有裝水、也沒蓋蓋子的透明瓶，瓶口朝下直立壓進水盆，瓶內空氣不易全部跑出；在水中把瓶子慢慢傾斜，看到氣泡冒出時，水便能進入更多。
+    answer: true
+    explanation: 原先瓶內有空氣占著空間；傾斜讓部分空氣由瓶口逸出，水才能占據更多瓶內空間。
+    derivedFrom:
+      - g3-science-midterm-2024-02-11

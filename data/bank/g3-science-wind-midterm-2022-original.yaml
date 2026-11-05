@@ -1,0 +1,31 @@
+questions:
+  - no: 1
+    type: diagram-label
+    subject: 自然
+    grade: 3
+    unit: 風與空氣
+    stem: 請依據下面圖回答問題，填入代號。
+    image:
+      src: g3-science-wind-midterm-2022-original/01.png
+      alt: 四支相同支架上的布帶以ㄅ、ㄆ、ㄇ、ㄈ標示，左側為A、右側為B。下方有最大風力、最小風力及放風箏跑向三個作答空格。
+    labels:
+      - x: 60
+        y: 68.6
+        width: 14.5
+        height: 4.4
+        answer: ㄈ
+      - x: 60
+        y: 76.7
+        width: 14.5
+        height: 4.4
+        answer: ㄆ
+      - x: 60
+        y: 91.9
+        width: 14.5
+        height: 4.4
+        answer: A
+    explanation: 依原圖的相同布帶比較，被吹得最接近水平伸展的ㄈ表示風力最大；最靠近鉛直下垂的ㄆ表示風力最小。四條布帶皆向右偏，表示風由左往右吹；放風箏應迎風朝左側A跑。三格共同使用原圖，整組計一題。這是依圖與題意獨立推核，未取得官方答案；不把不同材質或不同尺寸布帶的伸展程度直接比較。
+    source:
+      originalPaper: 111學年度上學期三年級自然領域期中評量試卷
+      section: 三、活用題：1-2題每答1分，共12分；3-6題每答2分，共34分（總共46分）
+      number: 6

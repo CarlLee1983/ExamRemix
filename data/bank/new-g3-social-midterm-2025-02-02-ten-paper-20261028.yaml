@@ -1,0 +1,82 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班上約定閱讀時間降低音量，能幫助大家專心看書。
+    answer: true
+    explanation: 共同遵守公約有助維持安靜的學習環境。
+    derivedFrom:
+      - g3-social-midterm-2025-02-02
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 訂定班級公約的唯一目的，就是讓老師有理由處罰學生。
+    answer: false
+    explanation: 公約是為了維持秩序和良好學習環境，不是只為處罰。
+    derivedFrom:
+      - g3-social-midterm-2025-02-02
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 大家約定使用教具後歸位，可以讓下一位同學順利找到教具。
+    answer: true
+    explanation: 公約能維持共同使用物品的秩序。
+    derivedFrom:
+      - g3-social-midterm-2025-02-02
+  - no: 4
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 只要班上的考試成績很好，就完全不需要維持教室秩序。
+    answer: false
+    explanation: 良好的學習環境仍需要共同規範與維護。
+    derivedFrom:
+      - g3-social-midterm-2025-02-02
+  - no: 5
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 下課借用班書時按照登記順序，能減少爭搶，讓借閱更有秩序。
+    answer: true
+    explanation: 共同遵守借閱規則，有助維持班級秩序。
+    derivedFrom:
+      - g3-social-midterm-2025-02-02
+  - no: 6
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 遵守班級公約只對老師有好處，對同學的學習沒有幫助。
+    answer: false
+    explanation: 公約能減少干擾，幫助全班在良好環境中學習。
+    derivedFrom:
+      - g3-social-midterm-2025-02-02
+  - no: 7
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班上約定走道不堆放書包，可以讓同學在教室活動時更安全。
+    answer: true
+    explanation: 合理的共同規範有助建立安全的學習環境。
+    derivedFrom:
+      - g3-social-midterm-2025-02-02
+  - no: 8
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 班級公約訂好後，只要貼在牆上就能維持秩序，不需要大家實際遵守。
+    answer: false
+    explanation: 公約要透過大家實際遵守，才能發揮作用。
+    derivedFrom:
+      - g3-social-midterm-2025-02-02
+  - no: 9
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 全班一起遵守午休保持安靜的約定，能讓需要休息的同學安心休息。
+    answer: true
+    explanation: 共同規範有助維護班級生活品質。
+    derivedFrom:
+      - g3-social-midterm-2025-02-02

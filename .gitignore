@@ -15,4 +15,7 @@ graft/
 .astro/
 test-results/
 playwright-report/
-data/
+# 上線題庫與試卷納入 Git；封存、操作紀錄與資料目錄工具快取留在本機。
+data/*
+!data/bank/
+!data/papers/

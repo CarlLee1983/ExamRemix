@@ -1,0 +1,12 @@
+questions:
+  - no: 1
+    type: fill-blank
+    subject: 國語
+    grade: 3
+    stem: 從①柳、②仰、③抑、④迎選出適合的字，填代號。岸邊的___樹垂下細長枝條。我抬起頭，___望天上的白雲。
+    answer:
+      - ①
+      - ②
+    explanation: 依序組成「柳樹」、「仰望」。「柳」是樹木名稱；「仰望」指抬頭向上看，符合看天上白雲的句意。「抑」有壓制的意思；「迎」有迎接或朝向的意思，均不能組成這兩個指定詞語。
+    derivedFrom:
+      - g3-chinese-midterm-2025-02-28

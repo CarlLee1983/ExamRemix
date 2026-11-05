@@ -15,6 +15,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 1
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 2
     type: choice
     subject: 數學
@@ -28,10 +31,12 @@ questions:
       - "52"
     answer: 2
     explanation: "6 × 7 = 42。"
-    doubt: 範例疑點：原卷這題被筆跡蓋住，題幹依上下文推定
     source:
       originalPaper: 虛構三年級數學小考
       number: 2
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 3
     type: choice
     subject: 數學
@@ -48,6 +53,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 3
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 4
     type: choice
     subject: 數學
@@ -64,6 +72,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 4
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 5
     type: choice
     subject: 數學
@@ -80,6 +91,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 5
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 6
     type: choice
     subject: 數學
@@ -96,6 +110,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 6
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 7
     type: choice
     subject: 數學
@@ -112,6 +129,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 7
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 8
     type: choice
     subject: 數學
@@ -128,6 +148,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 8
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 9
     type: choice
     subject: 數學
@@ -144,6 +167,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 9
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 10
     type: choice
     subject: 數學
@@ -160,6 +186,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 10
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 11
     type: choice
     subject: 數學
@@ -176,6 +205,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 11
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 12
     type: choice
     subject: 數學
@@ -192,6 +224,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 12
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 13
     type: choice
     subject: 數學
@@ -208,6 +243,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 13
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 14
     type: choice
     subject: 數學
@@ -224,6 +262,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 14
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 15
     type: choice
     subject: 數學
@@ -240,6 +281,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 15
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 16
     type: choice
     subject: 數學
@@ -256,6 +300,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 16
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 17
     type: choice
     subject: 數學
@@ -272,6 +319,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 17
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 18
     type: choice
     subject: 數學
@@ -288,6 +338,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 18
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 19
     type: choice
     subject: 數學
@@ -304,6 +357,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 19
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 20
     type: choice
     subject: 數學
@@ -320,6 +376,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 20
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 21
     type: choice
     subject: 數學
@@ -336,6 +395,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 21
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 22
     type: choice
     subject: 數學
@@ -353,6 +415,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 22
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 23
     type: true-false
     subject: 數學
@@ -364,6 +429,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 23
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 24
     type: true-false
     subject: 數學
@@ -375,6 +443,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 24
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 25
     type: true-false
     subject: 數學
@@ -386,6 +457,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 25
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 26
     type: fill-blank
     subject: 數學
@@ -399,6 +473,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 26
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 27
     type: fill-blank
     subject: 數學
@@ -412,6 +489,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 27
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 28
     type: fill-blank
     subject: 數學
@@ -424,6 +504,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 28
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 29
     type: horizontal-calc
     subject: 數學
@@ -435,6 +518,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 29
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 30
     type: horizontal-calc
     subject: 數學
@@ -446,6 +532,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 30
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 31
     type: horizontal-calc
     subject: 數學
@@ -457,58 +546,73 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 31
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 32
     type: vertical-calc
     subject: 數學
     grade: 3
     unit: 加減法
     stem: "用直式計算。"
-    operands: ["358", "467"]
+    operands: [ "358", "467" ]
     operator: "+"
     answer: "825"
     explanation: "個位 8 + 7 = 15，進 1；十位 5 + 6 + 1 = 12，進 1；百位 3 + 4 + 1 = 8。"
     source:
       originalPaper: 虛構三年級數學小考
       number: 32
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 33
     type: vertical-calc
     subject: 數學
     grade: 3
     unit: 小數加減
     stem: "用直式計算。"
-    operands: ["4.6", "2.75"]
+    operands: [ "4.6", "2.75" ]
     operator: "+"
     answer: "7.35"
     explanation: "小數點對齊再相加：$4.60 + 2.75 = 7.35$。"
     source:
       originalPaper: 虛構三年級數學小考
       number: 33
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 34
     type: vertical-calc
     subject: 數學
     grade: 3
     unit: 加減法
     stem: "用直式計算。"
-    operands: ["902", "478"]
+    operands: [ "902", "478" ]
     operator: "-"
     answer: "424"
     explanation: "個位向十位借不到，要連續向百位借：$902 - 478 = 424$。"
     source:
       originalPaper: 虛構三年級數學小考
       number: 34
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 35
     type: vertical-calc
     subject: 數學
     grade: 3
     unit: 乘法
     stem: "用直式計算。"
-    operands: ["34", "12"]
+    operands: [ "34", "12" ]
     operator: "×"
     answer: "408"
     explanation: "$34 \\times 2 = 68$，$34 \\times 10 = 340$，$68 + 340 = 408$。"
     source:
       originalPaper: 虛構三年級數學小考
       number: 35
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 36
     type: word-problem
     subject: 數學
@@ -520,6 +624,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 36
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 37
     type: word-problem
     subject: 數學
@@ -531,6 +638,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 37
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 38
     type: word-problem
     subject: 數學
@@ -542,6 +652,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 38
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 39
     type: word-problem
     subject: 數學
@@ -556,6 +669,9 @@ questions:
     source:
       originalPaper: 虛構三年級數學小考
       number: 39
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 40
     type: word-problem
     subject: 數學
@@ -564,7 +680,11 @@ questions:
     stem: "小美買了 3 枝鉛筆，每枝 12 元，又買了 2 本筆記本，每本 35 元。她付了 200 元，老闆應該找她多少元？"
     space: 8
     answer: "老闆應該找她 94 元。"
-    explanation: "鉛筆 $12 \\times 3 = 36$ 元，筆記本 $35 \\times 2 = 70$ 元，共 $36 + 70 = 106$ 元，$200 - 106 = 94$。"
+    explanation: "鉛筆 $12 \\times 3 = 36$ 元，筆記本 $35 \\times 2 = 70$ 元，共 $36 + 70 =
+      106$ 元，$200 - 106 = 94$。"
     source:
       originalPaper: 虛構三年級數學小考
       number: 40
+    examScope:
+      semester: 1
+      stage: midterm

@@ -1,0 +1,29 @@
+questions:
+  - no: 1
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: My name is ___.
+    options:
+      - Ken
+      - ken
+    answer: 1
+    explanation: Ken 是人名，開頭 K 應大寫；官方答案圈 Ken。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 七、Read and Circle. 在( )裡把正確的答案圈起來。(2% ; 10%)
+      number: 3
+  - no: 2
+    subject: 英語
+    grade: 3
+    type: choice
+    stem: ___ you.
+    options:
+      - Thank
+      - thank
+    answer: 1
+    explanation: Thank 位於句首，T 應大寫；官方答案圈 Thank。
+    source:
+      originalPaper: 臺南市和順國小112學年度第一學期第一次評量三年級英語科評量試卷
+      section: 七、Read and Circle. 在( )裡把正確的答案圈起來。(2% ; 10%)
+      number: 5

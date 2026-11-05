@@ -1,0 +1,55 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: It is a pen ___
+    options:
+      - ","
+      - .
+      - "?"
+    answer: 2
+    explanation: It is a pen. 表示「它是一支筆」，是完整陳述句，句尾使用句點。逗號不能作為這個完整句子的結尾；問號用於問句，因此選②。
+    derivedFrom:
+      - original-english-15
+  - no: 2
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: My bag is big ___
+    options:
+      - .
+      - ","
+      - "?"
+    answer: 1
+    explanation: My bag is big. 表示「我的袋子很大」，是完整陳述句，句尾使用句點。逗號不能作為這個完整句子的結尾；問號用於問句，因此選①。
+    derivedFrom:
+      - original-english-15
+  - no: 3
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: ___ hat is red.
+    options:
+      - My
+      - my
+      - I
+    answer: 1
+    explanation: hat 是名詞，前面使用所有格 My 表示「我的」；句首首字母須大寫。my 雖是所有格，但小寫不適合句首；I 是主詞，不能直接接
+      hat。因此選①，完整句為 My hat is red.。
+    derivedFrom:
+      - original-english-13
+  - no: 4
+    type: choice
+    subject: 英語
+    grade: 3
+    stem: ___ am nine years old.
+    options:
+      - I
+      - I’m
+      - My
+    answer: 1
+    explanation: am 前使用第一人稱主詞 I，完整句為 I am nine years old.，表示「我九歲」。I’m 已包含 am，再接 am
+      會重複；My 是所有格，不能當這裡的主詞，因此選①。
+    derivedFrom:
+      - original-english-12

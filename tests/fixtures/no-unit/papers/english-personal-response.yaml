@@ -1,0 +1,12 @@
+title: 英語個人回答測試卷
+subject: 英語
+grade: 3
+sections:
+  - title: 依自己的情況回答
+    questions:
+      - personal-response-01
+      - personal-response-02
+      - personal-response-03
+examScope:
+  semester: 1
+  stage: midterm

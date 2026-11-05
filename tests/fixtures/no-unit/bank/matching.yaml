@@ -1,64 +1,70 @@
 questions:
-- 'no': 1
-  type: matching
-  subject: 社會
-  grade: 3
-  unit: 配對測試
-  stem: 把相同物件連起來。
-  left:
-  - content:
-      text: '[樹|ㄕㄨˋ]'
-      image:
-        src: reading/tree.svg
-        alt: 左側樹的示意圖
-    answer: '[A|B]'
-  - content: $2+1$ 的結果。
-    answer: <b>iiiiiiiiiiiiiiiiiiii</b>
-  right:
-  - code: '[A|B]'
-    content:
-      image:
-        src: reading/tree.svg
-        alt: 右側樹的示意圖
-  - code: <b>iiiiiiiiiiiiiiiiiiii</b>
-    content: $3$
-  explanation: 樹對應同一物件；$2+1=3$。
-  source: &id001
-    originalPaper: 自編配對版面測試
-    section: 配對
-- 'no': 2
-  type: matching
-  subject: 社會
-  grade: 3
-  unit: 配對測試
-  stem: 將下列圖書館活動與場所連起來，同一代號可重複使用。
-  left:
-  - content: 第01項：在館內借閱圖書。
-    answer: A
-  - content: 第02項：在館內借閱圖書。
-    answer: A
-  - content: 第03項：在館內借閱圖書。
-    answer: A
-  - content: 第04項：在館內借閱圖書。
-    answer: A
-  - content: 第05項：在館內借閱圖書。
-    answer: A
-  - content: 第06項：在館內借閱圖書。
-    answer: A
-  - content: 第07項：在館內借閱圖書。
-    answer: A
-  - content: 第08項：在館內借閱圖書。
-    answer: A
-  - content: 第09項：在館內借閱圖書。
-    answer: A
-  - content: 第10項：在館內借閱圖書。
-    answer: A
-  - content: 第11項：在館內借閱圖書。
-    answer: A
-  right:
-  - code: A
-    content: 圖書館
-  - code: B
-    content: 公園
-  explanation: 這些都是圖書館的活動。
-  source: *id001
+  - 'no': 1
+    type: matching
+    subject: 社會
+    grade: 3
+    unit: 配對測試
+    stem: 把相同物件連起來。
+    left:
+      - content:
+          text: '[樹|ㄕㄨˋ]'
+          image:
+            src: reading/tree.svg
+            alt: 左側樹的示意圖
+        answer: '[A|B]'
+      - content: $2+1$ 的結果。
+        answer: <b>iiiiiiiiiiiiiiiiiiii</b>
+    right:
+      - code: '[A|B]'
+        content:
+          image:
+            src: reading/tree.svg
+            alt: 右側樹的示意圖
+      - code: <b>iiiiiiiiiiiiiiiiiiii</b>
+        content: $3$
+    explanation: 樹對應同一物件；$2+1=3$。
+    source: &id001
+      originalPaper: 自編配對版面測試
+      section: 配對
+    examScope:
+      semester: 1
+      stage: midterm
+  - 'no': 2
+    type: matching
+    subject: 社會
+    grade: 3
+    unit: 配對測試
+    stem: 將下列圖書館活動與場所連起來，同一代號可重複使用。
+    left:
+      - content: 第01項：在館內借閱圖書。
+        answer: A
+      - content: 第02項：在館內借閱圖書。
+        answer: A
+      - content: 第03項：在館內借閱圖書。
+        answer: A
+      - content: 第04項：在館內借閱圖書。
+        answer: A
+      - content: 第05項：在館內借閱圖書。
+        answer: A
+      - content: 第06項：在館內借閱圖書。
+        answer: A
+      - content: 第07項：在館內借閱圖書。
+        answer: A
+      - content: 第08項：在館內借閱圖書。
+        answer: A
+      - content: 第09項：在館內借閱圖書。
+        answer: A
+      - content: 第10項：在館內借閱圖書。
+        answer: A
+      - content: 第11項：在館內借閱圖書。
+        answer: A
+    right:
+      - code: A
+        content: 圖書館
+      - code: B
+        content: 公園
+    explanation: 這些都是圖書館的活動。
+    source: *id001
+    examScope:
+      semester: 1
+      stage: midterm

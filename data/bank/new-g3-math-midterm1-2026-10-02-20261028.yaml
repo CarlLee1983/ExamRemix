@@ -1,0 +1,121 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 4070 的正確讀法是哪一個？
+    options:
+      - 四千七十
+      - 四千七百
+      - 四千零七十
+      - 四千零七
+    answer: 3
+    explanation: 千位是 4，百位是 0，十位是 7，個位是 0，讀作「四千零七十」。反向核對：4×1000＋7×10＝4070。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-02
+  - no: 2
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 5020 的正確讀法是哪一個？
+    options:
+      - 五千零二
+      - 五千二十
+      - 五千零二十
+      - 五千二百
+    answer: 3
+    explanation: 千位是 5，百位是 0，十位是 2，個位是 0，讀作「五千零二十」。反向核對：5×1000＋2×10＝5020。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-02
+  - no: 3
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 6080 的正確讀法是哪一個？
+    options:
+      - 六千零八
+      - 六千八百
+      - 六千零八十
+      - 六千八十
+    answer: 3
+    explanation: 千位是 6，百位是 0，十位是 8，個位是 0，讀作「六千零八十」。反向核對：6×1000＋8×10＝6080。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-02
+  - no: 4
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 7030 的正確讀法是哪一個？
+    options:
+      - 七千零三十
+      - 七千零三
+      - 七千三百
+      - 七千三十
+    answer: 1
+    explanation: 千位是 7，百位是 0，十位是 3，個位是 0，讀作「七千零三十」。反向核對：7×1000＋3×10＝7030。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-02
+  - no: 5
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 8090 的正確讀法是哪一個？
+    options:
+      - 八千零九十
+      - 八千九十
+      - 八千九百
+      - 八千零九
+    answer: 1
+    explanation: 千位是 8，百位是 0，十位是 9，個位是 0，讀作「八千零九十」。反向核對：8×1000＋9×10＝8090。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-02
+  - no: 6
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 9040 的正確讀法是哪一個？
+    options:
+      - 九千四十
+      - 九千零四
+      - 九千四百
+      - 九千零四十
+    answer: 4
+    explanation: 千位是 9，百位是 0，十位是 4，個位是 0，讀作「九千零四十」。反向核對：9×1000＋4×10＝9040。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-02
+  - no: 7
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 2060 的正確讀法是哪一個？
+    options:
+      - 二千六百
+      - 二千六十
+      - 二千零六十
+      - 二千零六
+    answer: 3
+    explanation: 千位是 2，百位是 0，十位是 6，個位是 0，讀作「二千零六十」。反向核對：2×1000＋6×10＝2060。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-02
+  - no: 8
+    type: choice
+    subject: 數學
+    grade: 3
+    unit: 10000 以內的數
+    stem: 3010 的正確讀法是哪一個？
+    options:
+      - 三千零一十
+      - 三千零一
+      - 三千一百
+      - 三千一十
+    answer: 1
+    explanation: 千位是 3，百位是 0，十位是 1，個位是 0，讀作「三千零一十」。反向核對：3×1000＋1×10＝3010。
+    derivedFrom:
+      - g3-math-midterm1-2026-10-02

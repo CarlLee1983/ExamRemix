@@ -1,0 +1,33 @@
+questions:
+  - no: 1
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 夏天用扇子扇涼席子，冬天先將棉被睡暖，再請父親去睡。這是哪一位古人孝敬父親的作法？
+    options:
+      - 老萊子
+      - 屈原
+      - 楊香
+      - 黃香
+    answer: 4
+    explanation: 題目描述的是「扇枕溫席」的故事，傳說中的人物是黃香。答案依原題與教育部辭典獨立推核，未取得官方答案；這是辨識故事人物。
+    source:
+      originalPaper: 基隆市五堵國民小學110學年度第一學期期中評量三年級社會科試卷
+      section: 二、選擇題：每題3分，共36分
+      number: 4
+  - no: 2
+    type: choice
+    subject: 社會
+    grade: 3
+    stem: 在電腦教室應遵守什麼規範才不會損壞設備？
+    options:
+      - 不可以上網
+      - 不可以飲食
+      - 不可以開機
+      - 不可以脫鞋
+    answer: 2
+    explanation: 電腦教室通常禁止飲食，以免食物或飲料污染、損壞設備；其他三項不是本題保護設備所需的一般規範。答案依題意獨立推核，未取得官方答案。
+    source:
+      originalPaper: 基隆市五堵國民小學110學年度第一學期期中評量三年級社會科試卷
+      section: 二、選擇題：每題3分，共36分
+      number: 6

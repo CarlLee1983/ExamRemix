@@ -1,0 +1,51 @@
+questions:
+  - no: 1
+    type: diagram-label
+    subject: 社會
+    grade: 3
+    stem: 小強在幫爸媽整理親人的相片，他要將爸爸及媽媽的親人分開來，放在不同的相簿，請你幫忙他加以分類，請填代號。
+    image:
+      src: g3-social-family-side-classification-2023-01/01.png
+      alt: 七個親屬稱謂與代號的字庫，下方分為爸爸的親人四個空格、媽媽的親人三個空格。
+    labels:
+      - x: 37.5
+        y: 59.5
+        width: 7.5
+        height: 16
+        answer: ㄅ
+      - x: 51
+        y: 59.5
+        width: 7.5
+        height: 16
+        answer: ㄇ
+      - x: 64.5
+        y: 59.5
+        width: 7.5
+        height: 16
+        answer: ㄊ
+      - x: 78
+        y: 59.5
+        width: 7.5
+        height: 16
+        answer: ㄋ
+      - x: 37.5
+        y: 80.5
+        width: 7.5
+        height: 16
+        answer: ㄆ
+      - x: 51
+        y: 80.5
+        width: 7.5
+        height: 16
+        answer: ㄈ
+      - x: 64.5
+        y: 80.5
+        width: 7.5
+        height: 16
+        answer: ㄉ
+    space: 0
+    explanation: 依題目稱謂的父系、母系方向分類：爸爸一列為ㄅ奶奶、ㄇ姑姑、ㄊ堂姐、ㄋ伯伯；媽媽一列為ㄆ阿姨、ㄈ舅媽、ㄉ外婆。奶奶是爸爸的媽媽，姑姑是爸爸的姊妹，堂姐是爸爸兄弟的女兒，伯伯是爸爸的哥哥；阿姨是媽媽的姊妹，舅媽是媽媽兄弟的太太，外婆是媽媽的媽媽。同一列內代號順序可交換，應按兩列完整集合核對，不限定答案卷所示順序。獨立核答與校方官方答案卷相符；分類不表示兩方家族不能因婚姻而互有親屬關係。
+    source:
+      originalPaper: 112學年度第一學期第一次評量三年級社會科評量試卷
+      section: 三、配合題：(每題1分)
+      number: 1

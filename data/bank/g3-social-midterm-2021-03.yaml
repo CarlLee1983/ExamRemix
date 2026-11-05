@@ -1,0 +1,34 @@
+questions:
+  - no: 1
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 從古代到現在，孝順父母，尊敬長輩的方式不同，但心意相同。
+    answer: true
+    explanation: 生活方式會隨時代改變，表達孝順與尊敬的方法也會不同；關心父母、尊敬長輩的心意仍可延續。
+    source:
+      originalPaper: 110學年度第一學期三年級期中評量試卷（社會科）
+      section: 一、正確寫○，錯誤寫×(每題2分，共20分)
+      number: 1
+  - no: 2
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 我姓張，媽媽姐姐的小孩姓陳，我們不同姓所以沒有親戚關係。
+    answer: false
+    explanation: 媽媽姐姐的小孩是自己的表親。親戚可能有不同的姓氏，不能只因姓氏不同就否認親戚關係。
+    source:
+      originalPaper: 110學年度第一學期三年級期中評量試卷（社會科）
+      section: 一、正確寫○，錯誤寫×(每題2分，共20分)
+      number: 5
+  - no: 3
+    type: true-false
+    subject: 社會
+    grade: 3
+    stem: 選舉班級幹部時，同學可以相互推選，也可以推薦自己為班上服務。
+    answer: true
+    explanation: 願意為班級服務的同學，可以由其他同學推薦，也可以自我推薦成為候選人；自我推薦不等於已當選，仍須依班級選舉方式選出幹部。
+    source:
+      originalPaper: 110學年度第一學期三年級期中評量試卷（社會科）
+      section: 一、正確寫○，錯誤寫×(每題2分，共20分)
+      number: 6

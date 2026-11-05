@@ -1,0 +1,649 @@
+# 附圖30、33–35、38依原卷重繪 SVG，原 PNG 保留供核對。
+# 原卷：113學年度上學期三年級自然期中評量，共3頁，全題待家長確認。
+# no1–24：一1、3–9、11–26；no25–27：二1A–C；no28–29：二2A–B；
+# no30：二3(1)；no31：二3(3)；no32：二3(4)；no33：二8；no34：二9B；
+# no35–37：二10B–D；no38–40：二11B–D。
+# source.originalPaper 記錄原大題與題組；source.number 為原題號，A/B/C/D分別以1/2/3/4表示。
+# 未匯入一2：題幹以砂糖進行實驗卻問食鹽量；答案卷標①，但由原文無法判定，未採用或改寫。
+# 未匯入一10：砂糖可溶解8平匙，無法精確推出食鹽可溶解2平匙；0完整平匙也不表示完全不溶。
+# 未匯入二3(2)：第一平匙不能完全溶解，不能單據此證明該物質完全不溶於水。
+# 未匯入二4（排序）、二5（複選）、二6(1)–(2)（閱讀題組）、二7（複選）、二9A／二10A／二11A（圈圖）。
+# 未匯入三全題（木櫃、草帽、沙拉、竹橋、積木5項連線）；四1–6（閱讀測驗）。
+questions:
+- 'no': 1
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 哪一種物質無法完全溶解在水裡？
+  options:
+  - 二砂
+  - 細沙
+  - 特砂
+  - 鹽巴
+  answer: 2
+  explanation: 細沙不會溶解在水裡；二砂、特砂和鹽巴在適當水量下都能溶解。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 1
+- 'no': 2
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 哪一種情形可以看到溶解現象？
+  options:
+  - 在玉米濃湯上撒黑胡椒
+  - 蛤蜊在水中吐沙
+  - 奶茶加珍珠
+  - 紅豆湯加糖
+  answer: 4
+  explanation: 糖加入紅豆湯後可溶解在湯水裡；黑胡椒、沙和珍珠仍以原來的顆粒或固體存在。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 3
+- 'no': 3
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 想要繼續增加鍋子裡綠豆湯的甜度，但是加入的糖已無法溶解，下列哪種方式能增加甜度？
+  options:
+  - 加入更多水
+  - 加入冰塊
+  - 加入磨成粉的砂糖
+  - 提高水溫
+  answer: 4
+  explanation: 提高水溫通常能讓更多砂糖溶解，因而增加甜度；加水或冰塊會稀釋，磨細主要影響溶解快慢。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 4
+- 'no': 4
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 比較食鹽和砂糖的溶解量，哪個做法最正確？
+  options:
+  - 分別用不同大小的湯匙量取食鹽和砂糖
+  - 兩個燒杯的水溫和水量要相同
+  - 砂糖顆粒大，水要裝多一點
+  - 每次可加入3平匙攪拌
+  answer: 2
+  explanation: 公平比較不同物質的溶解量時，水溫、水量及量匙大小等條件應相同，並逐匙確認溶解情形。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 5
+- 'no': 5
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 哪一種方法不適合用來觀察不知名的物質？
+  options:
+  - 用手搧聞
+  - 用嘴巴嚐嚐看
+  - 用放大鏡觀察
+  - 眼睛觀察外觀
+  answer: 2
+  explanation: 不知名物質可能有害，不能用嘴巴品嚐。搧聞也必須先由大人確認安全，不能直接湊近吸聞。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 6
+- 'no': 6
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 裝有食鹽水的燒杯出現沉澱，把燒杯浸在熱水中充分攪拌，可能會發現什麼現象？
+  options:
+  - 沉澱物變多
+  - 燒杯水溫降低
+  - 沉澱物不見或變少了
+  - 燒杯水位降低
+  answer: 3
+  explanation: 熱水使杯中的食鹽水升溫，原本未溶解的食鹽可能繼續溶解，因此沉澱減少或消失。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 7
+- 'no': 7
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 關於溶解的敘述，哪一個正確？
+  options:
+  - 提高水溫，可以溶解部分細沙
+  - 二砂顆粒較大，無法溶解於水中
+  - 白砂糖和食鹽都可以溶解在水中
+  - 食鹽溶解後變黃色
+  answer: 3
+  explanation: 白砂糖和食鹽都能溶解於水；細沙不會因提高水溫就溶解，二砂也能溶解，食鹽水不會變黃色。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 8
+- 'no': 8
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 相同條件下做溶解量實驗，會發現什麼？
+  options:
+  - 食鹽和砂糖的溶解量相同
+  - 砂糖溶解量比食鹽大
+  - 食鹽溶解量比砂糖大
+  - 提高水溫後，只有食鹽會增加溶解量
+  answer: 2
+  explanation: 水量、水溫等條件相同時，水通常能溶解較多砂糖、較少食鹽；兩者的溶解量不同。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 9
+- 'no': 9
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 關於溫度計的使用方式，下列何者正確？
+  options:
+  - 溫度計跟玻棒一樣，可以攪拌水溶液
+  - 溫度單位通常用℉
+  - 液囊放入水中要碰到杯底才能準確測量溫度
+  - 眼睛要平視液柱頂端，讀取度數
+  answer: 4
+  explanation: 讀取液柱溫度計時，視線應與液柱頂端同高。液囊要浸在水中，避免碰杯底或杯壁，不能拿溫度計攪拌；本課通常用攝氏溫度。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 11
+- 'no': 10
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 哪一個不是食鹽和特砂的相同特性？
+  options:
+  - 顏色都是白色
+  - 摸起來粗粗的
+  - 喝起來甜甜的
+  - 都可溶解於水中
+  answer: 3
+  explanation: 特砂是糖，溶解後呈甜味；食鹽溶解後呈鹹味，所以甜味不是兩者的共同特性。不可為了觀察而品嚐不明物質。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 12
+- 'no': 11
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 哪一個例子可以看到溶解現象？
+  options:
+  - 湯裡加蔥花
+  - 味噌湯加海帶芽
+  - 黑咖啡加糖
+  - 餛飩湯加黑胡椒粒
+  answer: 3
+  explanation: 糖可以溶解在黑咖啡中；蔥花、海帶芽和黑胡椒粒仍是可辨認的固體。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 13
+- 'no': 12
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 進行溶解實驗時，哪一個條件不必相同？
+  options:
+  - 水溫
+  - 水量
+  - 量匙大小
+  - 量匙顏色
+  answer: 4
+  explanation: 水溫、水量和量匙大小會影響溶解量的比較；量匙顏色不影響溶解結果。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 14
+- 'no': 13
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 水溫相同時，食鹽在哪個水量下溶解量最多？
+  options:
+  - 25毫升
+  - 20毫升
+  - 15毫升
+  - 10毫升
+  answer: 1
+  explanation: 水溫相同時，水越多，通常能溶解的食鹽總量越多；25毫升是四個選項中最多的水量。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 15
+- 'no': 14
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 大成觀察校園植物時，最可能發現哪個現象？
+  options:
+  - 葉子都是紅色的
+  - 有些植物有花朵
+  - 植物都有氣味
+  - 樹皮都是滑滑的
+  answer: 2
+  explanation: 校園中有些植物會開花；不同植物的葉色、氣味是否明顯及樹皮粗細並不相同，不能一概而論。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 16
+- 'no': 15
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 大有在觀察花蕊時，發現花蕊上有一些的粉末，他想知道這是什麼，哪個做法最不正確？
+  options:
+  - 自己取名叫做「花蕊粉」
+  - 用網路查詢
+  - 問經常照顧植物的人
+  - 去圖書館查書
+  answer: 1
+  explanation: 自行命名無法確認粉末是什麼；查詢可靠資料、詢問熟悉植物的人或查書，才能獲得有根據的答案。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 17
+- 'no': 16
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 大雅觀察莖的生長，可能會發現什麼？
+  options:
+  - 莖的顏色都是綠色的
+  - 大多向上生長
+  - 大樹的莖比小草的莖柔軟
+  - 大多向下生長
+  answer: 2
+  explanation: 多數植物的莖向上生長以爭取陽光；木本莖通常比草本莖堅硬，莖也不一定都是綠色。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 18
+- 'no': 17
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 何者不是藤本莖的植物？
+  options:
+  - 水稻
+  - 地錦
+  - 槭葉牽牛
+  - 紫藤
+  answer: 1
+  explanation: 水稻的莖屬於草本莖；地錦、槭葉牽牛和紫藤都是會攀爬的藤本植物。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 19
+- 'no': 18
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 哪一個敘述是花或果實的功用？
+  options:
+  - 吸引動物
+  - 支撐植物
+  - 製造氧氣
+  - 防颱
+  answer: 1
+  explanation: 花可吸引動物幫忙傳粉，果實可吸引動物取食並幫助傳播種子；支撐植物主要是莖的功能。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 20
+- 'no': 19
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 昭和草是下列哪種型態的莖？
+  options:
+  - 樹本莖
+  - 木本莖
+  - 藤本莖
+  - 草本莖
+  answer: 4
+  explanation: 昭和草的莖較柔軟，屬於草本莖；「樹本莖」不是這裡的莖分類名稱。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 21
+- 'no': 20
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 觀察下圖植物會發現什麼？
+  options:
+  - 最上面的葉子能夠覆蓋住下面所有葉子
+  - 下面的葉子比上面的小
+  - 葉子相互錯開生長
+  - 葉子生長在根上
+  image:
+    src: g3-science-midterm-2024/20.png
+    alt: 同一盆植物從側面與上面看的葉片排列
+  answer: 3
+  explanation: 從側面和上面觀察，可以看出葉片彼此錯開，減少互相遮擋，讓更多葉片接收到陽光。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 22
+- 'no': 21
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 哪一個不是植物用來爭取陽光的方式？
+  options:
+  - 莖向上生長
+  - 葉子錯開生長
+  - 葉片通常為扁平狀
+  - 根深入土中
+  answer: 4
+  explanation: 莖向上生長、葉子錯開及葉片扁平都有助接收陽光；根深入土中主要是固定植物及吸收水分。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 23
+- 'no': 22
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 哪種植物所開的花是「不完全花」？
+  options:
+  - 龍葵
+  - 杜鵑
+  - 絲瓜
+  - 番茄
+  answer: 3
+  explanation: 完全花具有花萼、花瓣、雄蕊和雌蕊；絲瓜的雄花與雌花分開，單朵花缺少其中一種花蕊，屬於不完全花。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 24
+- 'no': 23
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 哪個關於葉脈的敘述是不正確的？
+  options:
+  - 是葉片上的脈紋
+  - 能輸送水分
+  - 能保護花瓣和花蕊
+  - 能輸送養分
+  answer: 3
+  explanation: 葉脈是葉片上的脈紋，能輸送水分與養分；保護花瓣和花蕊是花萼等花部構造的功能。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 25
+- 'no': 24
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 何者是珍惜植物資源的好方法？
+  options:
+  - 使用環保餐具
+  - 衛生紙也做紙類回收
+  - 用塑膠代替紙製品
+  - 愛護植物不吃蔬果
+  answer: 1
+  explanation: 使用可重複使用的環保餐具有助減少一次性用品消耗。衛生紙不宜做一般紙類回收；珍惜植物資源也不是停止吃蔬果。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（一、選出正確的答案）
+    number: 26
+- 'no': 25
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請填入符合題目敘述的葉子代號。ㄅ．菩提葉　ㄆ．落地生根　ㄇ．薄荷葉。葉肉特別厚，可以儲存水分。 ___。
+  image:
+    src: g3-science-midterm-2024/25.png
+    alt: 葉子代號：ㄅ菩提葉、ㄆ落地生根、ㄇ薄荷葉
+  answer:
+  - ㄆ
+  explanation: 落地生根的葉片厚，能儲存水分。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（1））
+    number: 1
+- 'no': 26
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請填入符合題目敘述的葉子代號。ㄅ．菩提葉　ㄆ．落地生根　ㄇ．薄荷葉。氣味讓一些動物不喜歡，減少被咬食。 ___。
+  image:
+    src: g3-science-midterm-2024/25.png
+    alt: 葉子代號：ㄅ菩提葉、ㄆ落地生根、ㄇ薄荷葉
+  answer:
+  - ㄇ
+  explanation: 薄荷葉具有特殊氣味，可減少一些動物取食。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（1））
+    number: 2
+# 不確定：菩提葉尾尖有助排水，但防止樹枝折斷的效果待核對。
+- 'no': 27
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請填入符合題目敘述的葉子代號。ㄅ．菩提葉　ㄆ．落地生根　ㄇ．薄荷葉。尾尖讓雨水滑落，避免積水折斷樹枝。 ___。
+  image:
+    src: g3-science-midterm-2024/25.png
+    alt: 葉子代號：ㄅ菩提葉、ㄆ落地生根、ㄇ薄荷葉
+  answer:
+  - ㄅ
+  explanation: 菩提葉的長尾尖有助葉面雨水流走；原題敘述將此作用連結到減少積水。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（1））
+    number: 3
+- 'no': 28
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 在水溫相同的情形下，已知10毫升的水能完全溶解6平匙砂糖，加第7平匙會有沉澱。請依照下列實驗記錄中砂糖溶解的情形，推測該實驗所用的水量，填入ㄅ、ㄆ、ㄇ。ㄅ．40毫升　ㄆ．20毫升　ㄇ．5毫升。第12平匙完全溶解，加第13平匙有沉澱。
+    ___。
+  answer:
+  - ㄆ
+  explanation: 同樣水溫下，能完全溶解的砂糖由6平匙增加到12平匙，水量為原來的2倍，也就是20毫升。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（2））
+    number: 1
+- 'no': 29
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 在水溫相同的情形下，已知10毫升的水能完全溶解6平匙砂糖，加第7平匙會有沉澱。請依照下列實驗記錄中砂糖溶解的情形，推測該實驗所用的水量，填入ㄅ、ㄆ、ㄇ。ㄅ．40毫升　ㄆ．20毫升　ㄇ．5毫升。第3平匙完全溶解，加第4平匙有沉澱。
+    ___。
+  answer:
+  - ㄇ
+  explanation: 能完全溶解的砂糖由6平匙減為3平匙，水量為原來的一半，也就是5毫升。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（2））
+    number: 2
+- 'no': 30
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 水溫相同下，分別用10毫升的水進行溶解實驗；下表就是ㄅ、ㄆ、ㄇ三種物質在水中的溶解情形的紀錄，請依照下表回答數字或代號。物質ㄇ的溶解量是幾平匙？___。
+  image:
+    src: g3-science-midterm-2024/30.svg
+    alt: 三種物質加入一至六平匙的溶解實驗紀錄；○表示完全溶解，×表示不能完全溶解
+  answer:
+  - '3'
+  explanation: 表中ㄇ加入1、2、3平匙都能完全溶解，到第4平匙就不能完全溶解，因此最多是3平匙。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（3））
+    number: 1
+- 'no': 31
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 水溫相同下，分別用10毫升的水進行溶解實驗；下表就是ㄅ、ㄆ、ㄇ三種物質在水中的溶解情形的紀錄，請依照下表回答數字或代號。哪一種物質的溶解量最多？___。
+  image:
+    src: g3-science-midterm-2024/30.svg
+    alt: 三種物質加入一至六平匙的溶解實驗紀錄；○表示完全溶解，×表示不能完全溶解
+  answer:
+  - ㄆ
+  explanation: ㄆ最多能完全溶解5平匙，ㄇ最多3平匙，ㄅ連一平匙也不能完全溶解，所以ㄆ最多。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（3））
+    number: 3
+- 'no': 32
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 水溫相同下，分別用10毫升的水進行溶解實驗；下表就是ㄅ、ㄆ、ㄇ三種物質在水中的溶解情形的紀錄，請依照下表回答數字或代號。若這三種物質分別是砂糖、食鹽、細沙，請根據表格資料判斷ㄅ、ㄆ、ㄇ分別是哪一個物質？A．___是砂糖；B．___是食鹽；C．___是細沙。
+  image:
+    src: g3-science-midterm-2024/30.svg
+    alt: 三種物質加入一至六平匙的溶解實驗紀錄；○表示完全溶解，×表示不能完全溶解
+  answer:
+  - ㄆ
+  - ㄇ
+  - ㄅ
+  explanation: 細沙不能溶解，對應ㄅ；相同條件下砂糖的溶解量比食鹽大，因此5平匙的ㄆ是砂糖，3平匙的ㄇ是食鹽。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（3））
+    number: 4
+- 'no': 33
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 「拔蘿蔔、拔蘿蔔、嘿呦嘿呦拔蘿蔔～」下圖就是長在土中的蘿蔔。原來，蘿蔔是植物的根呀！你能判斷蘿蔔是哪一種根嗎？（虛線以下長在土中。）
+  options:
+  - 鬚根
+  - 軸根
+  image:
+    src: g3-science-midterm-2024/33.svg
+    alt: 蘿蔔的根部與土面虛線
+  answer: 2
+  explanation: 蘿蔔有一條明顯粗大的主根，旁邊長出較細的側根，屬於軸根。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題）
+    number: 8
+- 'no': 34
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請觀察圖中的植物，選出對的葉序。
+  options:
+  - 互生：葉子交互排列生長
+  - 對生：葉子相對生長
+  - 輪生：一個節上長了三片或三片以上的葉子
+  image:
+    src: g3-science-midterm-2024/34.svg
+    alt: 植物枝條與葉子的排列
+  answer: 1
+  explanation: 圖中各節的葉子交互排列，屬於互生；對生是一個節有相對的兩片葉，輪生是一個節有三片或更多葉。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（9））
+    number: 2
+- 'no': 35
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請觀察圖中的葉子，選出對的特徵。葉形：
+  options:
+  - 卵形
+  - 掌形
+  image:
+    src: g3-science-midterm-2024/35.svg
+    alt: 葉形、葉緣與葉脈清楚可見的葉片
+  answer: 2
+  explanation: 圖中葉片有多個向外伸出的裂片，外形像張開的手掌，屬於掌形。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（10））
+    number: 2
+- 'no': 36
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請觀察圖中的葉子，選出對的特徵。葉緣：
+  options:
+  - 平滑狀
+  - 鋸齒狀
+  image:
+    src: g3-science-midterm-2024/35.svg
+    alt: 葉形、葉緣與葉脈清楚可見的葉片
+  answer: 1
+  explanation: 葉片邊緣沒有連續小鋸齒，依圖示屬於平滑狀。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（10））
+    number: 3
+- 'no': 37
+  type: choice
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請觀察圖中的葉子，選出對的特徵。葉脈：
+  options:
+  - 網狀脈
+  - 平行脈
+  image:
+    src: g3-science-midterm-2024/35.svg
+    alt: 葉形、葉緣與葉脈清楚可見的葉片
+  answer: 1
+  explanation: 葉脈分枝連成網狀，屬於網狀脈；不是大致平行排列的平行脈。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（10））
+    number: 4
+- 'no': 38
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請觀察花的構造圖。圖中有___片花瓣。
+  image:
+    src: g3-science-midterm-2024/38.svg
+    alt: 花的構造圖，可見花瓣、雌蕊與雄蕊
+  answer:
+  - '3'
+  explanation: 圖中左、右各有一片花瓣，後方上面還有一片，共3片。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（11））
+    number: 2
+- 'no': 39
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請觀察花的構造圖。圖中有___根雌蕊。
+  image:
+    src: g3-science-midterm-2024/38.svg
+    alt: 花的構造圖，可見花瓣、雌蕊與雄蕊
+  answer:
+  - '1'
+  explanation: 中央較長、頂端有柱頭的構造是雌蕊，圖中共1根。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（11））
+    number: 3
+- 'no': 40
+  type: fill-blank
+  subject: 自然
+  grade: 3
+  unit: 單元1～單元2
+  stem: 請觀察花的構造圖。圖中有___根雄蕊。
+  image:
+    src: g3-science-midterm-2024/38.svg
+    alt: 花的構造圖，可見花瓣、雌蕊與雄蕊
+  answer:
+  - '5'
+  explanation: 雌蕊兩旁帶有花藥的細長構造是雄蕊，逐一數出共5根。
+  source:
+    originalPaper: 113學年度上學期三年級自然期中評量（二、根據題目回答問題（11））
+    number: 4

@@ -16,6 +16,7 @@ const base = {
 
 describe('英語個人問答', () => {
   it('允許沒有範例，或以含標點、數字及姓名的句子作範例', () => {
+    expect(questionSchema.safeParse({ ...base, sampleAnswer: 'A' }).success).toBe(true);
     const noSample = questionSchema.parse(base);
     expect(noSample.type).toBe('personal-response');
     expect(answerSpace(noSample)).toBe(1);

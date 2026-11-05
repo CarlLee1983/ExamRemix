@@ -60,3 +60,10 @@ describe('共用範圍資格、容量與試卷輸出', () => {
     expect(assessScopes([bank([q,{...derived,no:2,derivedFrom:['sample-01']}])],[]).questions.get('sample-02')?.length).toBeGreaterThan(0);
   });
 });
+
+it('無圖的文字配對原題可以衍生，不因配對題型一律拒絕', () => {
+  const original={no:1,type:'matching',subject:'英語',grade:3,examScope:mid,stem:'單字配對',left:[{content:'cat',answer:'a'},{content:'dog',answer:'b'}],right:[{code:'a',content:'貓'},{code:'b',content:'狗'}],explanation:'依單字意義配對。',source:{originalPaper:'合成',number:1}};
+  const {source,...fields}=original;
+  const derived={...fields,no:2,derivedFrom:['sample-01']};
+  expect(checkBank({banks:[bank([original,derived])],papers:[],images:[]})).toEqual([]);
+});

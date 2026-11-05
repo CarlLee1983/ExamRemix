@@ -6,7 +6,9 @@
 
 本輪整合基底（[#56](https://github.com/CarlLee1983/ExamRemix/issues/56)）保留既有題型、題組、英語四線格／個人問答、一對一配對及 A4 列印，並帶入正式資料建置。本輪 #57 加入範圍／容量與舊卷停用（見下方「考試範圍與可用容量」）。以下描述的 CLI、頁面與「只支援 A4」是目前程式行為。
 
-[#55 工程規格](https://github.com/CarlLee1983/ExamRemix/issues/55)所定的可靠入庫、固定完整卷／重抽、正式入口、國語直排／SVG 注音與 A3 列印，以及正式發布／回復仍由後續子票完成。已合併的[新題契約](docs/question-generation-contract.md)、[範圍契約](docs/exam-scope-contract.md)、[組卷契約](docs/paper-composition-contract.md)與已接受原型是驗收依據，不代表目前程式已提供這些能力。現有題數及歷史練習卷不代表可組出幾份符合新配置的完整卷；不增加逐題確認流程。
+[#55 工程規格](https://github.com/CarlLee1983/ExamRemix/issues/55)所定的固定完整卷／重抽、正式入口、國語直排／SVG 注音與 A3 列印，以及正式發布／回復仍由後續子票完成。已合併的[新題契約](docs/question-generation-contract.md)、[範圍契約](docs/exam-scope-contract.md)、[組卷契約](docs/paper-composition-contract.md)與已接受原型是驗收依據，不代表目前程式已提供這些能力。現有題數及歷史練習卷不代表可組出幾份符合新配置的完整卷；不增加逐題確認流程。
+
+完整候選批次已支援可靠入庫、中斷恢復及指定批次安全回復，使用 `pnpm bank:batch`；命令、衝突與恢復方式見[題庫受管操作](docs/bank-operations.md)。正式 AI 產題流程仍待後續整合。
 
 ## 功能目標
 

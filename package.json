@@ -15,6 +15,8 @@
     "check": "astro check",
     "check:bank": "node scripts/check-bank.ts",
     "list:questions": "node scripts/list-questions.ts",
+    "bank:batch": "node scripts/bank-batch.ts",
+    "bank:access": "node scripts/bank-access.ts",
     "test": "vitest run",
     "test:e2e": "playwright test"
   },

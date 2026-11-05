@@ -95,6 +95,8 @@ EXAMREMIX_DATA_DIR=data pnpm dev
 
 ### 題庫檢查
 
+可靠批次入庫、中斷恢復及匯入／組卷／疑點修改的共用排他協定見[題庫受管操作](docs/bank-operations.md)。
+
 ```sh
 pnpm check:bank [資料目錄]    # 沒給參數時依序取 EXAMREMIX_DATA_DIR、examples
 ```

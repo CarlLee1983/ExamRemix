@@ -14,6 +14,9 @@ questions:
     answer: 1
     explanation: "短文寫在菜園。"
     derivedFrom: [ reading-local-06 ]
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 2
     type: fill-blank
     subject: 國語
@@ -23,3 +26,6 @@ questions:
     answer: [ "菜" ]
     explanation: "短文寫照顧菜。"
     derivedFrom: [ reading-local-07 ]
+    examScope:
+      semester: 1
+      stage: midterm

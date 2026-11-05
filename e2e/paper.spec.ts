@@ -83,7 +83,7 @@ test.describe('試卷頁', () => {
 });
 
 test.describe('試卷頁不顯示疑點', () => {
-  // sample-math 引用了帶疑點資料的題目（sample-math-02），網站仍然完全不顯示
+  // 題庫仍含未引用的疑點題；合格範例卷不顯示疑點流程介面
   test('沒有疑點提示，頁面上也找不到「疑點」', async ({ page }) => {
     await page.goto(PAPER);
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();

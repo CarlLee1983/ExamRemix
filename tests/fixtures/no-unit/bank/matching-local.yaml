@@ -37,3 +37,6 @@ questions:
     explanation: 六個單字分別對應蘋果、樹、魚、太陽、書本和月亮。
     source: { originalPaper: 自編配對練習, section: 連連看 }
     mode: one-to-one
+    examScope:
+      semester: 1
+      stage: midterm

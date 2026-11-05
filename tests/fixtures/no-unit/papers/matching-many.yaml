@@ -2,6 +2,9 @@ title: 自編配對many
 subject: 社會
 grade: 3
 sections:
-- title: 配對題
-  questions:
-  - matching-02
+  - title: 配對題
+    questions:
+      - matching-02
+examScope:
+  semester: 1
+  stage: midterm

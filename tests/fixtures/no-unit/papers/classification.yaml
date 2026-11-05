@@ -3,4 +3,7 @@ subject: 社會
 grade: 3
 sections:
   - title: 分類
-    questions: [classification-01]
+    questions: [ classification-01 ]
+examScope:
+  semester: 1
+  stage: midterm

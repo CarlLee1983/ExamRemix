@@ -3,4 +3,7 @@ subject: 英語
 grade: 3
 sections:
   - title: 語言邊界
-    questions: [english-labels-01, english-labels-02, english-labels-03]
+    questions: [ english-labels-01, english-labels-02, english-labels-03 ]
+examScope:
+  semester: 1
+  stage: midterm

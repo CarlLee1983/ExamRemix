@@ -10,3 +10,6 @@ sections:
       - four-line-04
       - four-line-05
       - four-line-06
+examScope:
+  semester: 1
+  stage: midterm

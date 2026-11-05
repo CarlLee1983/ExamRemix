@@ -1,7 +1,7 @@
 groups:
   - no: 1
-    paragraphs: ["Mia has a red book. She reads it in the park."]
-    members: [2, 3]
+    paragraphs: [ "Mia has a red book. She reads it in the park." ]
+    members: [ 2, 3 ]
     source: { originalPaper: 自編三年級英語練習, section: 閱讀 }
 questions:
   - no: 1
@@ -10,19 +10,25 @@ questions:
     grade: 3
     unit: 字母
     stem: "Copy the letters: ___ and ___."
-    answer: ["WWWWWWWW", "MMMMMMMM"]
+    answer: [ "WWWWWWWW", "MMMMMMMM" ]
     explanation: "Copy eight capital Ws and eight capital Ms."
     source: { originalPaper: 自編三年級英語練習, number: 1 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 2
     type: choice
     subject: 英語
     grade: 3
     unit: 閱讀
     stem: "[圈選|ㄑㄩㄢ ㄒㄩㄢˇ] \\[is|are]: The book ___ red."
-    options: ["is", "are"]
+    options: [ "is", "are" ]
     answer: 1
     explanation: "The book is red."
     source: { originalPaper: 自編三年級英語練習, section: 閱讀, number: 2 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 3
     type: true-false
     subject: 英語
@@ -32,6 +38,9 @@ questions:
     answer: true
     explanation: "She reads the book in the park."
     source: { originalPaper: 自編三年級英語練習, section: 閱讀, number: 3 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 4
     type: word-problem
     subject: 英語
@@ -42,6 +51,9 @@ questions:
     explanation: "Two plus one is three."
     space: 1
     source: { originalPaper: 自編三年級英語練習, number: 4 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 5
     type: matching
     subject: 英語
@@ -56,3 +68,6 @@ questions:
       - { code: "B", content: "something we read" }
     explanation: "A book is something we read. A park has trees and grass."
     source: { originalPaper: 自編三年級英語練習, number: 5 }
+    examScope:
+      semester: 1
+      stage: midterm

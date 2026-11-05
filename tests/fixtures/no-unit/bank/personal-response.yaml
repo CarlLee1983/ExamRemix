@@ -9,6 +9,9 @@ questions:
     sampleAnswer: "My name is Anne-Marie O'Neil."
     explanation: "依自己的姓名回答。"
     source: { originalPaper: "測試用英語卷", number: 1 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 2
     type: personal-response
     subject: 英語
@@ -18,6 +21,9 @@ questions:
     stem: "How old are you?"
     explanation: "依自己的年齡回答。"
     source: { originalPaper: "測試用英語卷", number: 2 }
+    examScope:
+      semester: 1
+      stage: midterm
   - no: 3
     type: personal-response
     subject: 英語
@@ -26,6 +32,11 @@ questions:
     writingGuide: four-line
     space: 2
     stem: "Write about yourself."
-    sampleAnswer: "My name is ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ."
+    sampleAnswer: "My name is
+      ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTU\
+      VWXYZ."
     explanation: "依自己的情況回答。"
     source: { originalPaper: "測試用英語卷", number: 3 }
+    examScope:
+      semester: 1
+      stage: midterm

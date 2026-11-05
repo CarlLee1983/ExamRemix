@@ -3,4 +3,7 @@ subject: 英語
 grade: 3
 sections:
   - title: 將單字與圖文連線
-    questions: [matching-local-01]
+    questions: [ matching-local-01 ]
+examScope:
+  semester: 1
+  stage: midterm

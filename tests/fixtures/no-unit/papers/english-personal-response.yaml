@@ -7,3 +7,6 @@ sections:
       - personal-response-01
       - personal-response-02
       - personal-response-03
+examScope:
+  semester: 1
+  stage: midterm

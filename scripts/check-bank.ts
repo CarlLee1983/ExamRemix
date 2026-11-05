@@ -1,3 +1,4 @@
+import { assessScopes, scopeStatus, SUPPORTED_SCOPES } from '../src/domain/exam-scope.ts';
 // 檢查指令：pnpm check:bank [資料目錄]
 // 讀 <資料目錄>/bank/*.yaml 與 papers/*.yaml，先以 schema 驗證，通過後再跑跨檔檢查。
 // 資料目錄依序取 CLI 參數、EXAMREMIX_DATA_DIR、examples。先列錯誤再列警告，最後一行是摘要。
@@ -47,6 +48,14 @@ const { lines, summary, failed } = reportProblems(
 );
 
 for (const line of lines) console.log(line);
+if (!failed) {
+  const scopes=assessScopes(banks.loaded,papers.loaded);
+  for (const [file,reasons] of scopes.papers) if (reasons.length) console.log(`停用｜${file}：${reasons.join('；')}`);
+  for (const scope of SUPPORTED_SCOPES) {
+    const status=scopeStatus(scopes,scope);
+    console.log(`容量｜${scope.grade}上期中 ${scope.subject}：${status.count} 題、${status.groups} 完整題組；${status.state==='empty'?'沒有可用題目':'完整卷規則尚未配置'}`);
+  }
+}
 if (failed) {
   console.log(`題庫檢查失敗：${summary}（資料目錄 ${dataDir}）`);
   process.exit(1);

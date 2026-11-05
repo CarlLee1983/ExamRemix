@@ -13,6 +13,11 @@ export const SUBJECTS = ['國語', '英語', '數學', '社會', '自然'] as co
 const subjectSchema = z.enum(SUBJECTS);
 const gradeSchema = z.number().int().min(1).max(6);
 
+export const examScopeSchema = z.strictObject({
+  semester: z.union([z.literal(1), z.literal(2)]),
+  stage: z.enum(['midterm', 'final']),
+});
+
 /** 題目 ID：題庫檔名（不含副檔名）加兩位數序號，例如 sample-math-01。 */
 export function deriveQuestionId(bankName: string, no: number): string {
   return `${bankName}-${String(no).padStart(2, '0')}`;
@@ -98,6 +103,7 @@ const questionBase = z.strictObject({
   no: z.number().int().positive(),
   subject: subjectSchema,
   grade: gradeSchema,
+  examScope: examScopeSchema.optional(),
   unit: z
     .string()
     .min(1)
@@ -517,6 +523,7 @@ export const paperFileSchema = z.strictObject({
   title: z.string().min(1),
   subject: subjectSchema,
   grade: gradeSchema,
+  examScope: examScopeSchema.optional(),
   sections: z.array(sectionSchema).min(1),
 });
 
@@ -541,3 +548,5 @@ export type VerticalCalcQuestion = z.infer<typeof verticalCalcQuestionSchema>;
 export type WordProblemQuestion = z.infer<typeof wordProblemQuestionSchema>;
 export type BankFile = z.infer<typeof bankFileSchema>;
 export type PaperFile = z.infer<typeof paperFileSchema>;
+
+export type ExamScope = z.infer<typeof examScopeSchema>;

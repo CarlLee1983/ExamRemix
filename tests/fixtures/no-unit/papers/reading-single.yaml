@@ -3,4 +3,7 @@ subject: 國語
 grade: 3
 sections:
   - title: 閱讀
-    questions: [reading-02]
+    questions: [ reading-02 ]
+examScope:
+  semester: 1
+  stage: midterm

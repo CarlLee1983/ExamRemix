@@ -12,10 +12,11 @@ function run(...args: string[]) {
 }
 
 describe('pnpm check:bank', () => {
-  it('範例資料通過：只有範例試卷引用有疑點題目的警告，結束狀態 0', () => {
+  it('已分類範例卷不引用疑點題，結束狀態 0', () => {
     const { status, output } = run('examples');
-    expect(output).toContain('警告｜papers/sample-math.yaml：試卷引用了有疑點的題目 sample-math-02');
-    expect(output).toContain('0 個錯誤、1 個警告');
+    expect(output).not.toContain('停用｜papers/sample-math.yaml');
+    expect(output).toContain('完整卷規則尚未配置');
+    expect(output).toContain('0 個錯誤、0 個警告');
     expect(status).toBe(0);
   });
 

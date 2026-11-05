@@ -29,7 +29,7 @@ describe('pnpm list:questions', () => {
 
   it('過濾條件以 AND 組合：科目、題型與疑點', () => {
     const { rows } = run('examples', '--subject', '數學', '--type', 'choice', '--doubt');
-    expect(rows.map((r) => r[0])).toEqual(['sample-math-02', 'sample-math-22']);
+    expect(rows.map((r) => r[0])).toEqual(['sample-math-22']);
     expect(new Set(rows.map((r) => r[5]))).toEqual(new Set(['doubt']));
   });
 
@@ -135,4 +135,21 @@ describe('pnpm list:questions', () => {
     expect(status).toBe(2);
     expect(stderr).toContain(missing);
   });
+});
+
+it('考試範圍旗標嚴格驗證且未知資料不被當作期中', () => {
+  expect(run('tests/fixtures/no-unit','--semester','3').status).toBe(2);
+  expect(run('tests/fixtures/no-unit','--stage','第一次評量').status).toBe(2);
+  const unknown=run('tests/fixtures/no-unit','--semester','1','--stage','midterm','--id','unclassified-01');
+  expect(unknown.status).toBe(0);
+  expect(unknown.rows).toEqual([]);
+});
+
+it('範圍篩選可盤點疑點資料，只有 --eligible 才排除不合格題', () => {
+  const diagnostic=run('examples','--semester','1','--stage','midterm','--doubt');
+  expect(diagnostic.status).toBe(0);
+  expect(diagnostic.rows.map(r=>r[0])).toEqual(['sample-math-22']);
+  const eligible=run('examples','--semester','1','--stage','midterm','--eligible','--id','sample-math-22');
+  expect(eligible.status).toBe(0);
+  expect(eligible.rows).toEqual([]);
 });

@@ -50,3 +50,6 @@ questions:
     explanation: 依照兩欄數字的意思連線。
     source: { originalPaper: 自編十項練習, section: 連連看 }
     mode: one-to-one
+    examScope:
+      semester: 1
+      stage: midterm

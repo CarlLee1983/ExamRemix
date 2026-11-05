@@ -3,4 +3,7 @@ subject: 英語
 grade: 3
 sections:
   - title: 將數字連線
-    questions: [matching-ten-01]
+    questions: [ matching-ten-01 ]
+examScope:
+  semester: 1
+  stage: midterm

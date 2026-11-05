@@ -66,3 +66,6 @@ sections:
     questions:
       - sample-math-39
       - sample-math-40
+examScope:
+  semester: 1
+  stage: midterm

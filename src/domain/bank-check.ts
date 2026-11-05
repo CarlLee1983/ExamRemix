@@ -34,7 +34,7 @@ const INHERITED_FIELDS = [
 const show = (value: string | number | undefined) => (value === undefined ? '無' : String(value));
 
 /** 包括題目附圖、選項圖、配對兩欄與表格欄標題圖；標示圖使用共通的 image 欄位。 */
-function imageReferences(question: Question): string[] {
+export function imageReferences(question: Question): string[] {
   const paths = question.image ? [question.image.src] : [];
   const add = (content: VisualText) => {
     if (typeof content !== 'string' && content.image) paths.push(content.image.src);

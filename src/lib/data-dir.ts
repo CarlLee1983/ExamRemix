@@ -6,6 +6,7 @@ import { basename, join, resolve, sep } from 'node:path';
 import { parse } from 'yaml';
 import type { Problem } from '../domain/problem.ts';
 import { isImageFile } from '../domain/image.ts';
+import { withBankRead } from './bank-access.ts';
 
 const EXTENSION = '.yaml';
 
@@ -66,8 +67,10 @@ export function readDataDir(dataDir: string): DataDirContents {
   if (!existsSync(dataDir)) {
     throw new Error(`找不到資料目錄 ${dataDir}（可用第一個參數或 EXAMREMIX_DATA_DIR 指定）`);
   }
-  const problems: Problem[] = [];
-  const banks = readSubdir(dataDir, 'bank', problems);
-  const papers = readSubdir(dataDir, 'papers', problems);
-  return { banks, papers, images: listImages(dataDir), problems };
+  return withBankRead(dataDir, () => {
+    const problems: Problem[] = [];
+    const banks = readSubdir(dataDir, 'bank', problems);
+    const papers = readSubdir(dataDir, 'papers', problems);
+    return { banks, papers, images: listImages(dataDir), problems };
+  });
 }

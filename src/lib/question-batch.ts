@@ -2,13 +2,14 @@ import { createHash, randomUUID } from 'node:crypto';
 import { existsSync, linkSync, mkdirSync, readFileSync, readdirSync, renameSync, unlinkSync } from 'node:fs';
 import { basename, dirname, isAbsolute, join, relative, resolve } from 'node:path';
 import { parse } from 'yaml';
+import { arithmeticEntrySchema, arithmeticProfile, checkArithmeticBinding } from '../domain/generation-math.ts';
 import { z } from 'astro/zod';
 import { checkBank, buildQuestionIndex } from '../domain/bank-check.ts';
 import { assessScopes, fullScope, sameScope, supportedScope, type FullScope } from '../domain/exam-scope.ts';
 import { imageReferences } from '../domain/bank-check.ts';
 import { groupMembership } from '../domain/question-groups.ts';
 import { fileNameProblem } from '../domain/file-name.ts';
-import { bankFileSchema, paperFileSchema, deriveQuestionId } from '../domain/schema.ts';
+import { bankFileSchema, paperFileSchema, questionSchema, deriveQuestionId } from '../domain/schema.ts';
 import { readDataDir } from './data-dir.ts';
 import { acquireBank, canonicalRoot, durableWrite, syncDirectory, type BankLease } from './bank-access.ts';
 
@@ -93,8 +94,19 @@ function snapshot(root: string, omit?: string) {
   return { banks, papers, images: contents.images, manifest, targetHash: hash(canonical(manifest)) };
 }
 function pending(control: string, omit?: string) {
-  return records(control).filter(r=>r.request.batchId !== omit && !r.result && r.phase!=='failed').map(r=>({batchId:r.request.batchId, candidateHash:r.request.candidateHash, candidate:r.candidate}));
+  const batches=records(control);
+  const waiting=batches.filter(r=>r.request.batchId !== omit && !r.result && r.phase!=='failed').map(r=>({batchId:r.request.batchId,candidateHash:r.request.candidateHash,candidate:r.candidate}));
+  for(const g of generationRecords(control)) {
+    const last=g.attempts.at(-1);
+    if(g.request.batchId!==omit && last && ['reviewing','ready'].includes(last.state) && !batches.some(b=>b.request.batchId===g.request.batchId) && !waiting.some(b=>b.batchId===g.request.batchId))waiting.push({batchId:g.request.batchId,candidateHash:hash(last.candidate),candidate:last.candidate});
+  }
+  return waiting.sort((a,b)=>a.batchId<b.batchId?-1:a.batchId>b.batchId?1:0);
 }
+function pendingQuestionIds(control:string,omit:string) {
+  const targets=new Map([...records(control),...generationRecords(control)].map(r=>[r.request.batchId,basename(r.request.target,'.yaml')]));
+  return pending(control,omit).flatMap(p=>bankFileSchema.parse(parse(p.candidate)).questions.map(q=>deriveQuestionId(targets.get(p.batchId)!,q.no)));
+}
+
 export function checkManagedRoot(root: string) {
   const problems=checkBank(snapshot(root));
   if (problems.some(p=>p.severity==='error')) throw new Error(problems.map(p=>`${p.files}: ${p.message}`).join('\n'));
@@ -107,7 +119,9 @@ export function inspectBatchRoot(root: string) {
     const view=snapshot(lease.root);
     const waiting=pending(lease.control);
     return {dataDir:lease.root,targetHash:view.targetHash,pendingHash:hash(canonical(waiting)),
-      sourceIds:[...buildQuestionIndex(view.banks)].filter(([,q])=>q.source).map(([id])=>id), pending:waiting};
+      sourceIds:[...buildQuestionIndex(view.banks)].filter(([,q])=>q.source).map(([id])=>id),
+      pending:waiting.map(p=>{const r=[...records(lease.control),...generationRecords(lease.control)].find(r=>r.request.batchId===p.batchId)!;return {...p,target:r.request.target,ids:bankFileSchema.parse(parse(p.candidate)).questions.map(q=>deriveQuestionId(basename(r.request.target,'.yaml'),q.no))};}),
+      generations:generationRecords(lease.control).map(g=>{const published=records(lease.control).find(b=>b.request.batchId===g.request.batchId);return {batchId:g.request.batchId,state:published?.result?.state??g.attempts.at(-1)?.state,attempts:g.attempts.at(-1)?.counts,errors:g.attempts.at(-1)?.errors,publicationError:published?.error};})};
   } finally { restoreEnv(previous); lease.release(); }
 }
 function restoreEnv(value: string | undefined) {
@@ -351,4 +365,167 @@ export function rollbackBatch(root: string, batchId: string): Result {
     withdraw(lease,record);
     return record.result!;
   } finally { restoreEnv(previous); lease.release(); }
+}
+
+
+const generationRulesSchema=z.object({concept:text,allowedChanges:text,invariants:text,verification:text,mathSources:z.array(arithmeticEntrySchema).optional()}).strict();
+const comparisonSchema=z.object({left:text,right:text,decision:z.enum(['distinct','duplicate','uncertain']),reason:text}).strict();
+const generationRequestSchema=requestSchema.extend({rules:generationRulesSchema,comparisons:z.array(comparisonSchema),arithmetic:z.array(arithmeticEntrySchema).optional(),haltReason:text.optional()});
+interface GenerationAttempt {
+  receipt:string; candidate:string; counts:Record<string,number>; hashes:Record<string,string>;
+  request:Request; state:'reviewing'|'rejected'|'ready'|'stopped'; errors:string[];
+}
+interface GenerationRecord { fingerprint:string; request:Request; sources:{file:string;content:string;hash:string}[]; attempts:GenerationAttempt[] }
+function generationRecords(control:string):GenerationRecord[] {
+  const dir=join(control,'generations');
+  return existsSync(dir) ? readdirSync(dir).filter(p=>p.endsWith('.json')).sort().map(p=>{
+    const envelope=JSON.parse(readFileSync(join(dir,p),'utf8'));
+    if(hash(canonical(envelope.data))!==envelope.hash)throw new Error(`產題紀錄損毀：${p}`);
+    const record=envelope.data as GenerationRecord;
+    requestSchema.parse(record.request);
+    if(fingerprint(record.request)!==record.fingerprint)throw new Error(`產題紀錄指紋不符：${p}`);
+    return record;
+  }) : [];
+}
+function saveGeneration(control:string,record:GenerationRecord) {
+  const dir=join(control,'generations');
+  mkdirSync(dir,{recursive:true,mode:0o700});syncDirectory(control);
+  const path=join(dir,`${record.request.batchId}.json`),temp=`${path}.next`;
+  if(existsSync(temp))unlinkSync(temp);
+  durableWrite(temp,JSON.stringify({hash:hash(canonical(record)),data:record}));
+  renameSync(temp,path);syncDirectory(dir);
+}
+function generationSources(root:string,r:Request) {
+  const view=snapshot(root);
+  checkManagedRoot(root);
+  if(view.targetHash!==r.targetHash)throw new Error('來源／目標版本已變動；停止產題，重新核對來源');
+  const index=buildQuestionIndex(view.banks),scopes=assessScopes(view.banks,view.papers),members=groupMembership(view.banks);
+  const first=index.get(r.sourceIds[0]!);
+  for(const id of r.sourceIds) {
+    const q=index.get(id);
+    if(!q?.source || q.derivedFrom || scopes.questions.get(id)?.length || !sameScope(fullScope(q),r.scope as FullScope) || !supportedScope(r.scope as FullScope))throw new Error(`${id}：原題範圍／疑點／來源不合格`);
+    if(members.has(id))throw new Error(`${id}：本入口只處理獨立原題，完整題組由後續入口承接`);
+    if(imageReferences(q).length)throw new Error(`${id}：含圖原題不可衍生`);
+    if(q.type!==first?.type || q.unit!==first?.unit || q.subject!==first?.subject || q.grade!==first?.grade)throw new Error(`${id}：多來源題型／單元／科目／年級不一致`);
+  }
+  return view;
+}
+
+function immutableGenerationFile(path:string,content:string) {
+  if(existsSync(path)) {
+    if(readFileSync(path,'utf8')!==content)throw new Error(`產題交付檔衝突：${path}`);
+    syncDirectory(dirname(path));return;
+  }
+  const temp=`${path}.${randomUUID()}.tmp`;
+  try {durableWrite(temp,content);linkSync(temp,path);syncDirectory(dirname(path));}
+  finally {if(existsSync(temp)){unlinkSync(temp);syncDirectory(dirname(path));}}
+}
+function generationPublication(control:string,request:Request,candidate?:string) {
+  const dir=join(control,'generations');mkdirSync(dir,{recursive:true,mode:0o700});syncDirectory(control);
+  const candidatePath=join(dir,`${request.batchId}.candidate.yaml`);
+  if(candidate!==undefined)immutableGenerationFile(candidatePath,candidate);
+  const accepted=candidate===undefined?request:{...request,candidate:candidatePath};
+  const path=join(dir,`${request.batchId}.publish-request`);
+  immutableGenerationFile(path,JSON.stringify(accepted));
+  return path;
+}
+
+/** Local AI supplies solved candidates and content-bound evidence; no AI API is called. */
+export function generateQuestions(requestPath:string) {
+  const input=generationRequestSchema.parse(JSON.parse(readFileSync(requestPath,'utf8')));
+  if(input.quantity.unit!=='questions')throw new Error('本入口僅接受獨立題');
+  const {rules,comparisons,arithmetic,haltReason,...base}=input;
+  const request:Request={...base,dataDir:canonicalRoot(resolve(base.dataDir)),constraints:canonical({description:base.constraints,rules})};
+  if(fileNameProblem(request.target)||!request.target.startsWith('new-'))throw new Error('新檔名不合格');
+  const lease=acquireBank(request.dataDir,'write',true),previous=process.env.EXAMREMIX_BANK_LEASE;
+  process.env.EXAMREMIX_BANK_LEASE=lease.token;
+  let publication:string|undefined;
+  try {
+    const all=generationRecords(lease.control);
+    let record=all.find(g=>g.request.batchId===request.batchId);
+    if(record && record.fingerprint!==fingerprint(request))throw new Error('同批來源／約束已改變；不能重置嘗試');
+    record??=all.find(g=>g.fingerprint===fingerprint(request));
+    const alias=record!==undefined && record.request.batchId!==request.batchId;
+    if(record)request.batchId=record.request.batchId;
+    const completed=records(lease.control).find(r=>r.fingerprint===fingerprint(request));
+    const prior=record?.attempts.at(-1);
+    if(record && record.request.target!==request.target && !completed?.result)throw new Error(`沿用原批 ${record.request.batchId} 與目的檔 ${record.request.target}`);
+    if(completed?.result && !alias && (completed.request.candidateHash!==request.candidateHash || completed.request.target!==request.target))throw new Error('同批已發布候選衝突；不能替換已核對內容');
+    if(prior?.state==='ready' && !completed?.result && hash(canonical({request,comparisons,candidate:prior.candidate,arithmetic,haltReason}))!==prior.receipt)throw new Error('已核對請求衝突；保留原候選，停止發布');
+    if(completed?.result || prior?.state==='ready') {
+      const accepted=prior?.request ?? completed!.request;
+      publication=generationPublication(lease.control,accepted,prior?.candidate);
+    } else {
+      if(existsSync(join(lease.control,'maintenance.json')))throw new Error('其他操作尚待恢復；停止產題');
+      if(prior?.state==='stopped')throw new Error(`本批已停止，不能重置嘗試：${prior.errors.join('；')}`);
+      const view=generationSources(lease.root,request);
+      if(hash(canonical(pending(lease.control,request.batchId)))!==request.pendingHash)throw new Error('待發布批次已變動；停止並重新核對');
+      const stored=record?.attempts.find(a=>a.request.candidateHash===request.candidateHash);
+      const candidatePath=stored ? resolve(request.candidate) : canonicalRoot(resolve(request.candidate));
+      assertOutside(lease.root,candidatePath);assertOutside(lease.root,canonicalRoot(resolve(requestPath)));
+      const candidate=stored?.candidate ?? readFileSync(candidatePath,'utf8');
+      if(hash(candidate)!==request.candidateHash)throw new Error('候選內容雜湊不符');
+      const raw=z.looseObject({questions:z.array(z.looseObject({no:z.number().int().positive()})).min(1)}).parse(parse(candidate));
+      if(raw.groups || raw.questions.length!==request.quantity.count || raw.questions.some((q,i)=>q.no!==i+1))throw new Error('獨立候選須完整並依序編號；不得交付部分批次');
+      const sourceIndex=buildQuestionIndex(view.banks);
+      if(request.scope.subject==='數學') {
+        if(canonical((rules.mathSources??[]).map(s=>s.id).sort())!==canonical([...request.sourceIds].sort()))throw new Error('數學原題須有完整且明確的求解模型');
+        const profiles=rules.mathSources!.map(s=>{checkArithmeticBinding(sourceIndex.get(s.id)!,s.model);return canonical(arithmeticProfile(s.model));});
+        if(new Set(profiles).size!==1)throw new Error('多來源數學難度特徵互相衝突');
+      }
+      const receipt=hash(canonical({request,comparisons,candidate,arithmetic,haltReason}));
+      if(prior?.state==='reviewing' && prior.receipt!==receipt)throw new Error('未完成的品質核對尚待恢復；須使用同一請求');
+      const cached=record?.attempts.find(a=>a.receipt===receipt);
+      const counts={...prior?.counts},hashes:Record<string,string>={};
+      const name=basename(request.target,'.yaml');
+      for(const q of raw.questions) {
+        const id=deriveQuestionId(name,q.no);
+        const evidence=request.evidence.find(e=>e.id===id);
+        hashes[id]=hash(canonical({question:q,evidence:evidence?{...evidence,attempt:undefined}:undefined,arithmetic:arithmetic?.find(a=>a.id===id),comparisons:comparisons.filter(p=>p.left===id||p.right===id).sort((a,b)=>canonical(a).localeCompare(canonical(b)))}));
+        counts[id]=(prior?.counts[id]??0)+(prior?.hashes[id]===hashes[id]?0:1);
+      }
+      if(!record)record={fingerprint:fingerprint(request),request,sources:view.banks.filter(b=>b.data.questions.some(q=>request.sourceIds.includes(deriveQuestionId(b.name,q.no)))).map(b=>{const content=readFileSync(join(lease.root,b.file),'utf8');return {file:b.file,content,hash:hash(content)};}),attempts:[]};
+      const attempt=cached??{receipt,candidate,counts,hashes,request,state:'reviewing' as const,errors:[]};
+      if(!cached){record.attempts.push(attempt);saveGeneration(lease.control,record);}
+      if(attempt.state==='reviewing') {
+        const errors:string[]=[],failedIds=new Set<string>();
+        const basis=cached ? record.attempts[record.attempts.indexOf(cached)-1] : prior;
+        const changedIds=Object.keys(hashes).filter(id=>basis?.hashes[id]!==hashes[id]);
+        if(haltReason)errors.push(`無法核對／工具失敗：${haltReason}`);
+        if(request.scope.subject==='數學') {
+          const ids=raw.questions.map(q=>deriveQuestionId(name,q.no));
+          if(canonical((arithmetic??[]).map(a=>a.id).sort())!==canonical([...ids].sort())){errors.push('每個數學候選須有明確求解模型');ids.filter(id=>!arithmetic?.some(a=>a.id===id)).forEach(id=>failedIds.add(id));}
+          for(const a of arithmetic??[])try {
+            const rawQuestion=raw.questions.find(q=>deriveQuestionId(name,q.no)===a.id);
+            if(!rawQuestion)throw new Error('候選 ID 不存在');
+            const q=questionSchema.parse(rawQuestion);
+            checkArithmeticBinding(q,a.model);
+            if(canonical(arithmeticProfile(a.model))!==canonical(arithmeticProfile(rules.mathSources![0]!.model)))throw new Error('數學難度／進退位／整除／單位約束漂移');
+          }catch(error){errors.push(`${a.id}：${(error as Error).message}`);failedIds.add(a.id);}
+        }
+        if(Object.values(counts).some(n=>n>3))errors.push('已達三次上限；整批停止');
+        for(const e of request.evidence) {
+          if(e.attempt!==counts[e.id]){errors.push(`${e.id}：嘗試次數須為 ${counts[e.id]}`);failedIds.add(e.id);}
+          if(e.decision==='reject'){errors.push(`${e.id}：內容核對拒絕：${e.independentCheck}；${e.explanation}`);failedIds.add(e.id);}
+        }
+        try{validate(lease.root,lease.control,{request:{...request,evidence:request.evidence.map(e=>({...e,decision:'accept'}))},fingerprint:record.fingerprint,candidate},false);}catch(error){
+          if((error as NodeJS.ErrnoException).code)throw error;
+          const message=(error as Error).message;errors.push(message);
+          const implicated=error instanceof z.ZodError ? error.issues.flatMap(issue=>issue.path[0]==='questions'&&typeof issue.path[1]==='number'?[deriveQuestionId(name,raw.questions[issue.path[1]]!.no)]:[]) : Object.keys(hashes).filter(id=>message.includes(id));
+          (implicated.length?implicated:changedIds).forEach(id=>failedIds.add(id));
+        }
+        const ids=Object.keys(hashes),others=[...buildQuestionIndex(view.banks).keys(),...pendingQuestionIds(lease.control,request.batchId)];
+        const required=ids.flatMap((id,i)=>[...others,...ids.slice(i+1)].map(other=>`${id}\0${other}`));
+        const actual=comparisons.map(p=>`${p.left}\0${p.right}`);
+        if(canonical([...actual].sort())!==canonical([...required].sort())){errors.push('比較範圍不完整：須逐對核對完整題庫及本批候選');const missing=required.filter(pair=>!actual.includes(pair)).map(pair=>pair.split('\0')[0]!);(missing.length?missing:changedIds).forEach(id=>failedIds.add(id));}
+        for(const pair of comparisons)if(pair.decision!=='distinct'){errors.push(`${pair.left}／${pair.right}：${pair.decision}：${pair.reason}`);failedIds.add(pair.left);}
+        attempt.errors=errors;
+        attempt.state=errors.length ? haltReason || Object.values(counts).some(n=>n>3) || [...failedIds].some(id=>(counts[id]??0)>=3)?'stopped':'rejected' : 'ready';
+        saveGeneration(lease.control,record);
+      }
+      if(attempt.state!=='ready')return {state:attempt.state,batchId:request.batchId,added:0,attempts:attempt.counts,errors:attempt.errors};
+      publication=generationPublication(lease.control,attempt.request,attempt.candidate);
+    }
+  } finally {restoreEnv(previous);lease.release();}
+  return publishBatch(publication!);
 }

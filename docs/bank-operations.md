@@ -1,6 +1,6 @@
 # 題庫受管操作
 
-契約以 [#59](https://github.com/CarlLee1983/ExamRemix/issues/59)、[#58](https://github.com/CarlLee1983/ExamRemix/issues/58)、[新題與入庫契約](question-generation-contract.md) 及 ADR 0005 為準。本頁說明已實作入口；正式 AI 產題流程由後票交付。
+契約以 [#59](https://github.com/CarlLee1983/ExamRemix/issues/59)、[#58](https://github.com/CarlLee1983/ExamRemix/issues/58)、[新題與入庫契約](question-generation-contract.md) 及 ADR 0005 為準。本頁說明已實作入口；獨立題的 AI 品質流程見[獨立新題品質流程](question-generation-workflow.md)，題組調度由後票交付。
 
 ## 準備與發布完整候選
 
@@ -79,7 +79,7 @@ pnpm bank:access write /absolute/path/to/data --expected <targetHash> -- node /a
 pnpm bank:access read /absolute/path/to/data -- node /absolute/work/read.mjs
 ```
 
-write wrapper 持鎖、鎖內核對目標版本、建立持久維護標記、執行腳本、檢查完整目標，成功才清除標記。腳本只修改本次授權檔案並在鎖內重新核對準備時的品質及選題條件。這是既有修改入口的共同排他協定，**不是多檔原子交易**；腳本失敗或中斷時保留標記，一致性讀者持續拒絕混合版本，須先核對／恢復該次修改。禁止背景 writer／daemon。正式 AI 產題流程切換至批次入口由後票交付；此票只統一它現有寫入區段的排他協定。
+write wrapper 持鎖、鎖內核對目標版本、建立持久維護標記、執行腳本、檢查完整目標，成功才清除標記。腳本只修改本次授權檔案並在鎖內重新核對準備時的品質及選題條件。這是既有修改入口的共同排他協定，**不是多檔原子交易**；腳本失敗或中斷時保留標記，一致性讀者持續拒絕混合版本，須先核對／恢復該次修改。禁止背景 writer／daemon。獨立題已改用 `bank:generate`，由入口保存嘗試並呼叫批次發布；既有題組流程仍使用受管寫入區段，持久品質調度由 #61 承接。
 
 `check:bank`、`list:questions` 持鎖取得固定記憶體快照；Astro integration 在載入 collections 前取得讀取 lease，持有至程序結束，涵蓋全部頁面與圖片。讀者也循序使用同一排他鎖；忙碌或有持久維護標記時明確失敗。開發伺服器會持有 lease，改資料前先停止。非受管編輯器／腳本須停止；直接編輯不在協定保證內。
 

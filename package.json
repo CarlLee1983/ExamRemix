@@ -18,8 +18,10 @@
     "bank:batch": "node scripts/bank-batch.ts",
     "bank:access": "node scripts/bank-access.ts",
     "test": "vitest run",
-    "test:e2e": "playwright test",
-    "bank:generate": "node scripts/generate-questions.ts"
+    "test:e2e": "playwright test && playwright test --config playwright.redraw.config.ts",
+    "bank:generate": "node scripts/generate-questions.ts",
+    "bank:classify": "node scripts/classify-bank.ts",
+    "paper:compose": "node scripts/compose-math.ts"
   },
   "dependencies": {
     "astro": "7.4.2",

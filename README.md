@@ -443,3 +443,7 @@ pnpm test:e2e      # Playwright：以範例資料建置後測試首頁、題庫�
 ## 正式部署決策
 
 正式網址採用 `https://examremix.gravito.dev/`。目前已整合正式資料載入、`dev:data`、`build:deploy` 及驗證 CI；託管、手動發布與指定版本回復以[部署決策與操作契約](docs/deployment.md)為準。發布 workflow、帳號／網域設定與上線驗收仍待完成，這份基底不是已上線版本。
+
+分類遷移、恢復與回復：見[逐批操作說明](docs/classification-operations.md)，入口為 `pnpm bank:classify`。
+
+限制組卷與重抽核心：見[數學組卷](docs/math-composition.md)及[重抽與預覽狀態](docs/paper-redraw.md)。`pnpm paper:compose` 操作明示快照；`pnpm test:e2e` 同時驗證既有網站與隔離重抽 fixture。正式五科候選、UI 與列印驗收仍由後續工作承接。

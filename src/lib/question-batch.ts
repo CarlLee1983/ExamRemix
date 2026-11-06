@@ -102,9 +102,12 @@ function pending(control: string, omit?: string) {
   }
   return waiting.sort((a,b)=>a.batchId<b.batchId?-1:a.batchId>b.batchId?1:0);
 }
-function pendingQuestionIds(control:string,omit:string) {
+function pendingQuestionIds(control:string,omit:string,includeGroups=false) {
   const targets=new Map([...records(control),...generationRecords(control)].map(r=>[r.request.batchId,basename(r.request.target,'.yaml')]));
-  return pending(control,omit).flatMap(p=>bankFileSchema.parse(parse(p.candidate)).questions.map(q=>deriveQuestionId(targets.get(p.batchId)!,q.no)));
+  return pending(control,omit).flatMap(p=>{
+    const bank=bankFileSchema.parse(parse(p.candidate)),name=targets.get(p.batchId)!;
+    return [...bank.questions.map(q=>deriveQuestionId(name,q.no)),...(includeGroups?(bank.groups??[]).map(g=>`${name}#${g.no}`):[])];
+  });
 }
 
 export function checkManagedRoot(root: string) {
@@ -179,6 +182,13 @@ function validate(root: string, control: string, record: RecordData, published: 
     const key=normalize(q);
     if (seen.has(key)) throw new Error(`${deriveQuestionId(name,q.no)}：正規化重複題`);
     seen.add(key);
+  }
+  const materialKey=(paragraphs: string[])=>canonical(paragraphs).normalize('NFKC').replace(/[\p{P}\p{Z}\s]/gu,'');
+  const materials=new Set([...view.banks.flatMap(b=>b.data.groups??[]),...waiting.flatMap(p=>bankFileSchema.parse(parse(p.candidate)).groups??[])].map(g=>materialKey(g.paragraphs)));
+  for(const group of candidate.groups??[]) {
+    const key=materialKey(group.paragraphs);
+    if(materials.has(key))throw new Error(`${name}#${group.no}：正規化重複材料`);
+    materials.add(key);
   }
   const warnings=problems.filter(p=>p.severity==='warning').map(p=>`${p.files}: ${p.message}`);
   const sources=view.banks.filter(b=>b.data.questions.some(q=>r.sourceIds.includes(deriveQuestionId(b.name,q.no)))).map(b=>{
@@ -404,9 +414,12 @@ function generationSources(root:string,r:Request) {
   for(const id of r.sourceIds) {
     const q=index.get(id);
     if(!q?.source || q.derivedFrom || scopes.questions.get(id)?.length || !sameScope(fullScope(q),r.scope as FullScope) || !supportedScope(r.scope as FullScope))throw new Error(`${id}：原題範圍／疑點／來源不合格`);
-    if(members.has(id))throw new Error(`${id}：本入口只處理獨立原題，完整題組由後續入口承接`);
+    const group=members.get(id)?.group;
+    if(r.quantity.unit==='groups') {
+      if(!group || group.derivedFrom || group.doubt || group.image)throw new Error(`${id}：原題組材料／來源／疑點／圖片不合格`);
+    } else if(group)throw new Error(`${id}：題組成員須以完整題組為生成單位`);
     if(imageReferences(q).length)throw new Error(`${id}：含圖原題不可衍生`);
-    if(q.type!==first?.type || q.unit!==first?.unit || q.subject!==first?.subject || q.grade!==first?.grade)throw new Error(`${id}：多來源題型／單元／科目／年級不一致`);
+    if(r.quantity.unit==='questions' && (q.type!==first?.type || q.unit!==first?.unit || q.subject!==first?.subject || q.grade!==first?.grade))throw new Error(`${id}：多來源題型／單元／科目／年級不一致`);
   }
   return view;
 }
@@ -433,7 +446,6 @@ function generationPublication(control:string,request:Request,candidate?:string)
 /** Local AI supplies solved candidates and content-bound evidence; no AI API is called. */
 export function generateQuestions(requestPath:string) {
   const input=generationRequestSchema.parse(JSON.parse(readFileSync(requestPath,'utf8')));
-  if(input.quantity.unit!=='questions')throw new Error('本入口僅接受獨立題');
   const {rules,comparisons,arithmetic,haltReason,...base}=input;
   const request:Request={...base,dataDir:canonicalRoot(resolve(base.dataDir)),constraints:canonical({description:base.constraints,rules})};
   if(fileNameProblem(request.target)||!request.target.startsWith('new-'))throw new Error('新檔名不合格');
@@ -441,6 +453,14 @@ export function generateQuestions(requestPath:string) {
   process.env.EXAMREMIX_BANK_LEASE=lease.token;
   let publication:string|undefined;
   try {
+    if(request.quantity.unit==='groups') {
+      const members=groupMembership(snapshot(lease.root,basename(request.target,'.yaml')).banks);
+      request.sourceIds=[...new Set(request.sourceIds.flatMap(id=>{
+        const entry=members.get(id);
+        if(!entry)throw new Error(`${id}：須指定完整原題組的組員`);
+        return entry.group.members.map(no=>deriveQuestionId(entry.id.split('#')[0]!,no));
+      }))].sort();
+    }
     const all=generationRecords(lease.control);
     let record=all.find(g=>g.request.batchId===request.batchId);
     if(record && record.fingerprint!==fingerprint(request))throw new Error('同批來源／約束已改變；不能重置嘗試');
@@ -465,13 +485,16 @@ export function generateQuestions(requestPath:string) {
       assertOutside(lease.root,candidatePath);assertOutside(lease.root,canonicalRoot(resolve(requestPath)));
       const candidate=stored?.candidate ?? readFileSync(candidatePath,'utf8');
       if(hash(candidate)!==request.candidateHash)throw new Error('候選內容雜湊不符');
-      const raw=z.looseObject({questions:z.array(z.looseObject({no:z.number().int().positive()})).min(1)}).parse(parse(candidate));
-      if(raw.groups || raw.questions.length!==request.quantity.count || raw.questions.some((q,i)=>q.no!==i+1))throw new Error('獨立候選須完整並依序編號；不得交付部分批次');
+      const raw=z.looseObject({questions:z.array(z.looseObject({no:z.number().int().positive()})).min(1),groups:z.array(z.looseObject({no:z.number().int().positive(),members:z.array(z.number().int().positive()).min(1)})).optional()}).parse(parse(candidate));
+      if(raw.questions.some((q,i)=>q.no!==i+1))throw new Error('候選須完整並依序編號；不得交付部分批次');
+      if(request.quantity.unit==='groups') {
+        if(raw.groups?.length!==request.quantity.count || raw.groups.some((g,i)=>g.no!==i+1) || canonical(raw.groups.flatMap(g=>g.members).sort((a,b)=>a-b))!==canonical(raw.questions.map(q=>q.no)))throw new Error('完整題組數量／成員不符；不得交付部分批次');
+      } else if(raw.groups || raw.questions.length!==request.quantity.count)throw new Error('獨立候選須完整並依序編號；不得交付部分批次');
       const sourceIndex=buildQuestionIndex(view.banks);
       if(request.scope.subject==='數學') {
         if(canonical((rules.mathSources??[]).map(s=>s.id).sort())!==canonical([...request.sourceIds].sort()))throw new Error('數學原題須有完整且明確的求解模型');
         const profiles=rules.mathSources!.map(s=>{checkArithmeticBinding(sourceIndex.get(s.id)!,s.model);return canonical(arithmeticProfile(s.model));});
-        if(new Set(profiles).size!==1)throw new Error('多來源數學難度特徵互相衝突');
+        if(request.quantity.unit==='questions' && new Set(profiles).size!==1)throw new Error('多來源數學難度特徵互相衝突');
       }
       const receipt=hash(canonical({request,comparisons,candidate,arithmetic,haltReason}));
       if(prior?.state==='reviewing' && prior.receipt!==receipt)throw new Error('未完成的品質核對尚待恢復；須使用同一請求');
@@ -483,6 +506,13 @@ export function generateQuestions(requestPath:string) {
         const evidence=request.evidence.find(e=>e.id===id);
         hashes[id]=hash(canonical({question:q,evidence:evidence?{...evidence,attempt:undefined}:undefined,arithmetic:arithmetic?.find(a=>a.id===id),comparisons:comparisons.filter(p=>p.left===id||p.right===id).sort((a,b)=>canonical(a).localeCompare(canonical(b)))}));
         counts[id]=(prior?.counts[id]??0)+(prior?.hashes[id]===hashes[id]?0:1);
+      }
+      for(const group of raw.groups??[]) {
+        const id=`${name}#${group.no}`,ids=group.members.map(no=>deriveQuestionId(name,no));
+        const evidence=request.evidence.find(e=>e.id===id);
+        const groupHash=hash(canonical({group,members:ids.map(id=>hashes[id]),evidence:evidence?{...evidence,attempt:undefined}:undefined,comparisons:comparisons.filter(p=>p.left===id||p.right===id)}));
+        const count=(prior?.counts[id]??0)+(prior?.hashes[id]===groupHash?0:1);
+        for(const member of [...ids,id]){hashes[member]=groupHash;counts[member]=count;}
       }
       if(!record)record={fingerprint:fingerprint(request),request,sources:view.banks.filter(b=>b.data.questions.some(q=>request.sourceIds.includes(deriveQuestionId(b.name,q.no)))).map(b=>{const content=readFileSync(join(lease.root,b.file),'utf8');return {file:b.file,content,hash:hash(content)};}),attempts:[]};
       const attempt=cached??{receipt,candidate,counts,hashes,request,state:'reviewing' as const,errors:[]};
@@ -500,7 +530,8 @@ export function generateQuestions(requestPath:string) {
             if(!rawQuestion)throw new Error('候選 ID 不存在');
             const q=questionSchema.parse(rawQuestion);
             checkArithmeticBinding(q,a.model);
-            if(canonical(arithmeticProfile(a.model))!==canonical(arithmeticProfile(rules.mathSources![0]!.model)))throw new Error('數學難度／進退位／整除／單位約束漂移');
+            const source=request.quantity.unit==='groups' ? rules.mathSources!.find(s=>s.id===q.derivedFrom?.[0]) : rules.mathSources![0];
+            if(!source || canonical(arithmeticProfile(a.model))!==canonical(arithmeticProfile(source.model)))throw new Error('數學難度／進退位／整除／單位約束漂移');
           }catch(error){errors.push(`${a.id}：${(error as Error).message}`);failedIds.add(a.id);}
         }
         if(Object.values(counts).some(n=>n>3))errors.push('已達三次上限；整批停止');
@@ -514,7 +545,8 @@ export function generateQuestions(requestPath:string) {
           const implicated=error instanceof z.ZodError ? error.issues.flatMap(issue=>issue.path[0]==='questions'&&typeof issue.path[1]==='number'?[deriveQuestionId(name,raw.questions[issue.path[1]]!.no)]:[]) : Object.keys(hashes).filter(id=>message.includes(id));
           (implicated.length?implicated:changedIds).forEach(id=>failedIds.add(id));
         }
-        const ids=Object.keys(hashes),others=[...buildQuestionIndex(view.banks).keys(),...pendingQuestionIds(lease.control,request.batchId)];
+        const ids=Object.keys(hashes),others=[...buildQuestionIndex(view.banks).keys(),...pendingQuestionIds(lease.control,request.batchId,request.quantity.unit==='groups'),
+          ...(request.quantity.unit==='groups' ? view.banks.flatMap(b=>(b.data.groups??[]).map(g=>`${b.name}#${g.no}`)) : [])];
         const required=ids.flatMap((id,i)=>[...others,...ids.slice(i+1)].map(other=>`${id}\0${other}`));
         const actual=comparisons.map(p=>`${p.left}\0${p.right}`);
         if(canonical([...actual].sort())!==canonical([...required].sort())){errors.push('比較範圍不完整：須逐對核對完整題庫及本批候選');const missing=required.filter(pair=>!actual.includes(pair)).map(pair=>pair.split('\0')[0]!);(missing.length?missing:changedIds).forEach(id=>failedIds.add(id));}

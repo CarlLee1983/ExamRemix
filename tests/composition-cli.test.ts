@@ -1,0 +1,50 @@
+import { spawnSync } from 'node:child_process';
+import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { expect, it } from 'vitest';
+import { stringify } from 'yaml';
+import { mathFixture } from './fixtures/composition/math.ts';
+
+it('CLI reads an explicit isolated snapshot and validates its complete saved witness', () => {
+  const root=mkdtempSync(join(tmpdir(),'examremix-composition-'));
+  try {
+    for(const dir of ['bank','papers','profiles'])mkdirSync(join(root,dir));
+    const input=mathFixture();
+    writeFileSync(join(root,'bank/synthetic.yaml'),stringify(input.banks[0]!.data));
+    writeFileSync(join(root,'profiles/math.yaml'),stringify(input.profile));
+    writeFileSync(join(root,'selection-conflicts.yaml'),stringify(input.conflicts));
+    const args=['scripts/compose-math.ts','--data-dir',root,'--profile','math','--seed','cli'];
+    const result=spawnSync(process.execPath,args,{encoding:'utf8'});
+    expect(result.status,result.stderr).toBe(0);
+    const composed=JSON.parse(result.stdout);
+    expect(composed.status).toBe('success');
+    expect(composed.witness.totalPoints).toBe(100);
+    expect(composed.witness.sections.flatMap((s:{items:unknown[]})=>s.items)).toHaveLength(41);
+    writeFileSync(join(root,'witness.json'),JSON.stringify(composed.witness));
+    const verified=spawnSync(process.execPath,[...args,'--witness',join(root,'witness.json')],{encoding:'utf8'});
+    expect(verified.status,verified.stderr).toBe(0);
+    expect(JSON.parse(verified.stdout).status).toBe('valid');
+    writeFileSync(join(root,'profiles/duplicate.yaml'),stringify({...input.profile,id:'another-profile'}));
+    const duplicate=spawnSync(process.execPath,args,{encoding:'utf8'});
+    expect(duplicate.status).toBe(1);
+    expect(JSON.parse(duplicate.stdout).diagnostics[0].message).toContain('同一考試範圍只能有一份配置');
+    rmSync(join(root,'profiles/duplicate.yaml'));
+    input.conflicts.pairs.push({kind:'question',ids:['synthetic-01','synthetic-02'],reason:'checked'});
+    writeFileSync(join(root,'selection-conflicts.yaml'),stringify(input.conflicts));
+    const impossible=spawnSync(process.execPath,args,{encoding:'utf8'});
+    expect(impossible.status).toBe(3);
+    expect(JSON.parse(impossible.stdout)).toMatchObject({status:'insufficient'});
+    input.profile.sections[0]!.slots[0]!.referenceIds=['missing-01'];
+    writeFileSync(join(root,'profiles/math.yaml'),stringify(input.profile));
+    const invalid=spawnSync(process.execPath,args,{encoding:'utf8'});
+    expect(invalid.status).toBe(1);
+    expect(JSON.parse(invalid.stdout).status).toBe('data-error');
+    input.profile.sections[0]!.slots[0]!.referenceIds=['synthetic-01'];
+    delete input.profile.evidence;
+    writeFileSync(join(root,'profiles/math.yaml'),stringify(input.profile));
+    const disabled=spawnSync(process.execPath,args,{encoding:'utf8'});
+    expect(disabled.status).toBe(2);
+    expect(JSON.parse(disabled.stdout).status).toBe('unconfigured');
+  } finally {rmSync(root,{recursive:true,force:true});rmSync(`${root}.examremix-operations`,{recursive:true,force:true});}
+});

@@ -1,6 +1,6 @@
 // All managed readers and writers use the canonical data root's control directory.
 // Local filesystems only: hard links and file/directory fsync must be supported.
-import { closeSync, existsSync, fsyncSync, linkSync, mkdirSync, openSync, readFileSync, realpathSync, unlinkSync, writeFileSync } from 'node:fs';
+import { closeSync, existsSync, fsyncSync, linkSync, lstatSync, mkdirSync, openSync, readFileSync, realpathSync, unlinkSync, writeFileSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import { hostname } from 'node:os';
 import { dirname, join } from 'node:path';
@@ -34,10 +34,21 @@ function reclaimDeadLock(control: string) {
   } finally { unlinkSync(recovery); syncDirectory(control); }
 }
 
+const validationTokens = new Set<string>();
+/** In-process validation only; an inherited environment token cannot authorize mixed reads. */
+export function withClassificationValidation<T>(lease: BankLease, marker: string, read: () => T): T {
+  const owner=JSON.parse(readFileSync(join(lease.control,'lock'),'utf8'));
+  if(owner.token!==lease.token || owner.pid!==process.pid || owner.mode!=='write' ||
+    readFileSync(join(lease.control,'maintenance.json'),'utf8')!==marker || JSON.parse(marker).operation!=='classification') throw new Error('遷移驗證所有權衝突');
+  validationTokens.add(lease.token);
+  try { return read(); } finally { validationTokens.delete(lease.token); }
+}
+
 export interface BankLease { root: string; control: string; token: string; release: () => void }
 export function acquireBank(root: string, mode: 'read' | 'write', recovery = false): BankLease {
   root = canonicalRoot(root);
   const control = controlDir(root);
+  if (existsSync(control) && lstatSync(control).isSymbolicLink()) throw new Error('操作目錄不可為符號連結');
   mkdirSync(control, { recursive: true, mode: 0o700 });
   syncDirectory(dirname(control));
   if (existsSync(join(control, 'lock-recovery'))) throw new Error('鎖恢復未完成；停止並檢查操作紀錄');
@@ -47,6 +58,7 @@ export function acquireBank(root: string, mode: 'read' | 'write', recovery = fal
     const owner = JSON.parse(readFileSync(join(control, 'lock'), 'utf8'));
     if (inherited === owner.token && owner.host === hostname()) {
       process.kill(owner.pid, 0);
+      if (existsSync(join(control,'maintenance.json')) && JSON.parse(readFileSync(join(control,'maintenance.json'),'utf8')).operation==='classification' && !validationTokens.has(inherited)) throw new Error('持久維護標記存在；遷移中拒絕讀取');
       if (mode === 'write') throw new Error('受管子行程不可巢狀取得寫鎖');
       return { root, control, token: inherited, release() {} };
     }

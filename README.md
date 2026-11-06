@@ -8,7 +8,7 @@
 
 [#55 工程規格](https://github.com/CarlLee1983/ExamRemix/issues/55)所定的固定完整卷／重抽、正式入口、國語直排／SVG 注音與 A3 列印，以及正式發布／回復仍由後續子票完成。已合併的[新題契約](docs/question-generation-contract.md)、[範圍契約](docs/exam-scope-contract.md)、[組卷契約](docs/paper-composition-contract.md)與已接受原型是驗收依據，不代表目前程式已提供這些能力。現有題數及歷史練習卷不代表可組出幾份符合新配置的完整卷；不增加逐題確認流程。
 
-完整候選批次已支援可靠入庫、中斷恢復及指定批次安全回復，使用 `pnpm bank:batch`；命令、衝突與恢復方式見[題庫受管操作](docs/bank-operations.md)。獨立題已可使用 `pnpm bank:generate` 保存逐題品質證據與有限嘗試，再接可靠入庫；見[獨立新題品質流程](docs/question-generation-workflow.md)。題組的持久品質調度由後續子票完成。
+完整候選批次已支援可靠入庫、中斷恢復及指定批次安全回復，使用 `pnpm bank:batch`；命令、衝突與恢復方式見[題庫受管操作](docs/bank-operations.md)。獨立題及完整題組可使用 `pnpm bank:generate` 保存品質證據與有限嘗試，再接可靠入庫；題組材料與所有成員共同計次及驗證，詳見[本機新題品質流程](docs/question-generation-workflow.md)。
 
 ## 功能目標
 
